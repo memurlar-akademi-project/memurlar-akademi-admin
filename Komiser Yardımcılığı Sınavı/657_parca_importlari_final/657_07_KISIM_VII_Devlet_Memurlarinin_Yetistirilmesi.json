@@ -1,0 +1,266 @@
+{
+  "subject_id": 1,
+  "topics": [
+    {
+      "name": "KISIM - VII - Devlet Memurlarının Yetiştirilmesi",
+      "status": "draft",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "KISIM - VII"
+        },
+        {
+          "type": "section_title",
+          "content": "Devlet Memurlarının Yetiştirilmesi"
+        },
+        {
+          "type": "subheading",
+          "content": "Kurumların memurlarını hizmet içinde yetiştirme esasları"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 214",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Devlet memurlarının yetişmelerini sağlamak, verimliliğini artırmak ve daha ileriki görevlere hazırlamak amaciyle uygulanacak hizmet içi eğitim, Devlet Personel Başkanlığı tarafından ilgili kurumlarla birlikte hazırlanacak yönetmelikler dahilinde yürütülür."
+        },
+        {
+          "type": "subheading",
+          "content": "Eğitim birimleri"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 215",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Her kurumda, yetiştirme faaliyetlerini düzenlemek, yürütmek ve değerlendirmekle görevli bir \"Eğitim birimi\" kurulur. Birden çok birim kurulan kurumlarda bunlardan biri \"Merkez Eğitim Birimi\" adını alır."
+        },
+        {
+          "type": "subheading",
+          "content": "Eğitim merkezleri"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 216",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kurumlar kendi eğitim ihtiyaçlarını karşılamak üzere eğitim merkezleri açabilirler. Kurumlararası eğitim ihtiyaçlarını karşılamak üzere, Cumhurbaşkanı kararıyla, kurumlararası eğitim merkezleri de açılabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Eğitim birim ve merkezlerinin kuruluş ve işleyişleri Başbakanlık Devlet Personel Başkanlığının görüşü alınmak suretiyle kurumlarınca hazırlanacak yönetmeliklerle düzenlenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurları eğitimi genel planı"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 217",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurları eğitimi genel planı, Cumhurbaşkanı kararıyla yürürlüğe konulur."
+        },
+        {
+          "type": "subheading",
+          "content": "Yurt dışında yetiştirme"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 218",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurları, yabancı memleketlerin hizmetle ilgili kurumlarında veya yetiştirme - eğitim merkezlerinde de yetiştirilebilirler."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bunlardan sınıflarının kapsadığı hizmetlerin niteliği bakımından, aynı zamanda belirli bir dalda öğrenim ve ihtisas yapması gerektiği kurumları ve Başbakanlık Devlet Personel Başkanlığınca kararlaştırılmış olanlara öğrenim veya ihtısas yapma müsaadesi verilebilir. Bu maddede söz konusu olan Devlet memurları hakkında 79 uncu madde hükümleri uygulanır."
+        },
+        {
+          "type": "subheading",
+          "content": "Rapor verme"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 219",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kurumlar yıllık eğitim programlarına göre yapmakta oldukları eğitim çalışmalarının sonuçlarını her altı aylık dönemin bitiminden en geç bir ay sonra Başbakanlık Devlet Personel Başkanlığına bir raporla bildirmek zorundadırlar."
+        },
+        {
+          "type": "subheading",
+          "content": "Koordinasyon ve denetleme"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 220",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Başbakanlık Devlet Personel Başkanlığı kurumları yurt içi ve yurt dışı eğitim programlarının hazırlanmasında ve uygulanmasında yol göstermek, yetiştirme faaliyetlerini koordine etmek ve denetlemekle görevlidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurluğuna eleman yetiştirilmesi"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 221",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kurumlar belirli sınıflardaki memurluklara eleman yetiştirmek amaciyle"
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "A) Kendi bünyeleri içerisinde mesleki öğretim ve eğitim yapabilirler."
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "B) Yurt içindeki öğrenim kurumlarında öğrenci okutabilir ve ihtisas yaptırabilirler."
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "C) Dış memleketlerde öğrenci okutabilir ve ihtısas yaptırabilirler."
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Seçme usulü"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 222",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kurumlarca yurt içinde veya yurt dışında okutulacak öğrenciler yarışma sınavı ile seçilirler."
+        },
+        {
+          "type": "subheading",
+          "content": "Öğrenci okutma şartlarını düzenliyen yönetmelikler"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 223",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Hangi kurumların ve sınıfların eleman ihtiyaçlarını karşılamak üzere okul ve kurslar açabileceği, yurt içinde veya dışında hangi öğrenim dallarında öğrenci okutabileceği, okutulacak öğrencilerin ayrılma ve seçilme usulleri, çalışmalarının izlenip denetlenmesi, çıkarılma veya geri çağrılma usulleri, ilgili kurumların ve Devlet Planlama Teşkilatının görüşleri alınmak suretiyle, Milli Eğitim ve Maliye Bakanlıklariyle Başbakanlık Devlet Personel Başkanlığının birlikte hazırlıyacakları yönetmeliklerde belirtilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Öğrenimi sırasında Devlet hesabına okuma hakkını kaybeden veya öğrenim kurumunu terk edenler için kurumlarınca yapılmış masraflar kendilerinden faizi ile birlikte tahsil olunur. Özel kanun ve yüklenme senedi hükümleri saklıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "Mecburi hizmet"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 224",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Cumhurbaşkanınca belirtilen her derecedeki öğretim kurumları ve öğretim dalları dışında kalan kurum ve dallarda Devlet tarafından okutulanlardan,"
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "a) Yurtiçinde Devlet hesabına okutulan öğrenciler (Tatiller dahil) öğrenim süreleri kadar,",
+            "b) Yurtdışındaki öğretim kurumlarında Devlet hesabına öğrenimlerini bitiren öğrenciler (Tatiller dahil) öğrenim sürelerinin iki katı kadar, Mecburi hizmetle yükümlüdürler. Yetiştirilmek, eğitilmek, bilgilerini artırmak veya staj yapmak üzere 3 ay ve daha fazla süre ile dış memleketlere gönderilen memurlara gönderilme şekillerine bakılmaksızın yurtdışında kaldıkları sürenin iki katı kadar mecburi hizmet yüklenir. Mecburi hizmet yükümlülüğünün 13/12/1960 tarihli ve 160 sayılı Kanunun 4 üncü maddesinin a, b, d fıkraları kapsamına giren kurumlar arasında devri mümkündür. Mecburi hizmetle yükümlü bulunanlar, yarışma sınavına tabi tutulmaksızın atanırlar. Mecburi hizmetle ilgili yükümlülükler:"
+          ]
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 225",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Mecburi hizmetle yükümlü bulunanlar yetiştirme, eğitim veya staj sürelerinin bitiminden itibaren en çok iki ay içinde kurumlarına başvurmak zorundadırlar. Bunlardan;"
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "a) Başvurma tarihinden itibaren en geç 3 ay içinde bir göreve atanmayanların mecburi hizmet yükümlülükleri kalkar. Mecburi hizmetin (d) fıkrasına göre krediye dönüştürülmesi istendiği takdirde bu süre istemin karara bağlandığı tarihten başlar. Bu durumun oluşuna kendi kusuru ile sebep olan memurlar bundan doğan zararı tazminle yükümlüdürler.",
+            "b) Başvurmayanlar veya atanma için gerekli belgelerini tamamlamayanlar yol giderleri de dahil olmak üzere, kendilerine kurumlarınca yapılmış bulunan bütün giderleri yüzde elli fazlasiyle ödemek zorundadırlar.",
+            "c) Atanıp da yükümlü bulundukları mecburi hizmeti bitmeden ayrılmış veya bir ceza sebebiyle memurluktan çıkarılmış olanlar mecburi hizmetlerinin eksik kalan kısmı ile orantılı tutarı yüzde elli fazlasiyle ödemek zorundadırlar.",
+            "d) Hizmetlerine lüzum olmadığına Cumhurbaşkanınca karar verilenlerin mecburi hizmet yükümlülükleri krediye dönüştürülebilir.",
+            "e) İlk ve orta dereceli okullar ile, kurslarda Milli Eğitim Bakanlığı tarafından okutulan parasız yatılı öğrencilerin mecburi hizmetlerine, bu kanuna tabi kurum ve kuruluşlarda ihtiyaç olmaması halinde Milli Eğitim Bakanlığı bunların mecburi hizmet yükümlülüğünü kaldırmaya yetkilidir. Bu fıkraya göre kurumların, ihtiyaci olup olmadığı bir aylık süre verilmek ve Resmî Gazete'de ilan edilmek suretiyle tespit olunur. Askerlikte geçen süre mecburi hizmetten sayılmaz. Mecburi hizmetini yapmakta iken yasama organına seçilenlerin yükümlülükleri seçildikleri sürece ertelenir."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  --color-admin-bg: #f4f7fb;
+  --color-admin-bg-raised: #ffffff;
+  --color-admin-panel: #ffffff;
+  --color-admin-panel-soft: #f8fafc;
+  --color-admin-panel-muted: #eef2f7;
+  --color-admin-sidebar: #16233a;
+  --color-admin-sidebar-2: #1d2d49;
+  --color-admin-sidebar-line: rgba(255, 255, 255, 0.08);
+  --color-admin-ink: #162033;
+  --color-admin-muted: #6b778c;
+  --color-admin-line: #e2e8f0;
+  --color-admin-accent: #2563eb;
+  --color-admin-accent-soft: #dbeafe;
+  --color-admin-success: #0f9f6e;
+  --color-admin-success-soft: #dcfce7;
+  --color-admin-warn: #c7771a;
+  --color-admin-warn-soft: #fff1dd;
+  --color-admin-danger: #d14343;
+  --color-admin-danger-soft: #fee2e2;
+}
+
+html[data-admin-theme="dark"] {
+  --color-admin-bg: #0b1220;
+  --color-admin-bg-raised: #101a2c;
+  --color-admin-panel: #111c30;
+  --color-admin-panel-soft: #0f1728;
+  --color-admin-panel-muted: #16233a;
+  --color-admin-sidebar: #0a1120;
+  --color-admin-sidebar-2: #111c30;
+  --color-admin-sidebar-line: rgba(255, 255, 255, 0.08);
+  --color-admin-ink: #edf2ff;
+  --color-admin-muted: #94a3b8;
+  --color-admin-line: rgba(148, 163, 184, 0.16);
+  --color-admin-accent: #60a5fa;
+  --color-admin-accent-soft: rgba(96, 165, 250, 0.18);
+  --color-admin-success: #34d399;
+  --color-admin-success-soft: rgba(52, 211, 153, 0.12);
+  --color-admin-warn: #f59e0b;
+  --color-admin-warn-soft: rgba(245, 158, 11, 0.14);
+  --color-admin-danger: #fb7185;
+  --color-admin-danger-soft: rgba(251, 113, 133, 0.14);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.05), transparent 26%),
+    radial-gradient(circle at top right, rgba(15, 159, 110, 0.05), transparent 22%),
+    var(--color-admin-bg);
+  color: var(--color-admin-ink);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+.admin-shell-grid {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 286px minmax(0, 1fr);
+}
+
+.admin-card {
+  border: 1px solid var(--color-admin-line);
+  border-radius: 20px;
+  background: var(--color-admin-panel);
+}
+
+.admin-input {
+  width: 100%;
+  border: 1px solid var(--color-admin-line);
+  border-radius: 14px;
+  background: var(--color-admin-bg-raised);
+  color: var(--color-admin-ink);
+  padding: 0.78rem 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.admin-input::placeholder {
+  color: color-mix(in srgb, var(--color-admin-muted) 88%, transparent);
+}
+
+.admin-input:focus {
+  border-color: color-mix(in srgb, var(--color-admin-accent) 42%, white);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-admin-accent) 12%, transparent);
+}
+
+.admin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  padding: 0.78rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.admin-button:hover {
+  transform: translateY(-1px);
+}
+
+.admin-button:disabled {
+  transform: none;
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-button-primary {
+  background: var(--color-admin-accent);
+  color: white;
+}
+
+.admin-button-secondary {
+  background: var(--color-admin-bg-raised);
+  border-color: var(--color-admin-line);
+  color: var(--color-admin-ink);
+}
+
+.admin-button-ghost {
+  background: transparent;
+  color: var(--color-admin-muted);
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.82rem;
+  border-radius: 14px;
+  padding: 0.78rem 0.9rem;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.68);
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.admin-nav-item:hover {
+  transform: translateX(2px);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.admin-nav-item-active {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.admin-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.34rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.admin-status-pill[data-tone="active"] {
+  background: var(--color-admin-success-soft);
+  color: var(--color-admin-success);
+}
+
+.admin-status-pill[data-tone="draft"] {
+  background: var(--color-admin-warn-soft);
+  color: var(--color-admin-warn);
+}
+
+.admin-status-pill[data-tone="passive"] {
+  background: var(--color-admin-panel-muted);
+  color: var(--color-admin-muted);
+}
+
+.admin-skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-admin-panel-muted) 80%, transparent) 0%,
+    color-mix(in srgb, var(--color-admin-bg-raised) 90%, white) 50%,
+    color-mix(in srgb, var(--color-admin-panel-muted) 80%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: admin-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes admin-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .admin-shell-grid {
+    grid-template-columns: 1fr;
+  }
+}

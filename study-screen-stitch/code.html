@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Memurlar Akademi - Mevzuat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;600;700;800&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#c8d8f3",
+                      "secondary-container": "#d5e3fc",
+                      "primary-container": "#e4e2e1",
+                      "surface-container-low": "#f1f4f6",
+                      "surface-dim": "#d1dce0",
+                      "on-tertiary": "#f7f9ff",
+                      "secondary": "#526074",
+                      "inverse-primary": "#ffffff",
+                      "on-tertiary-container": "#3c4c61",
+                      "on-primary-container": "#525151",
+                      "surface-container-high": "#e3e9ec",
+                      "on-tertiary-fixed": "#29394e",
+                      "inverse-on-surface": "#9b9d9e",
+                      "outline-variant": "#abb3b7",
+                      "surface": "#f8f9fa",
+                      "primary": "#5f5e5e",
+                      "surface-variant": "#dbe4e7",
+                      "on-secondary-fixed-variant": "#4e5c71",
+                      "inverse-surface": "#0c0f10",
+                      "tertiary-dim": "#44546a",
+                      "on-secondary-fixed": "#324053",
+                      "secondary-fixed-dim": "#c7d5ed",
+                      "primary-fixed-dim": "#d6d4d3",
+                      "outline": "#737c7f",
+                      "error": "#9f403d",
+                      "on-secondary": "#f8f8ff",
+                      "tertiary": "#506076",
+                      "tertiary-fixed-dim": "#bacae4",
+                      "on-error": "#fff7f6",
+                      "secondary-dim": "#465468",
+                      "tertiary-container": "#c8d8f3",
+                      "primary-dim": "#535252",
+                      "secondary-fixed": "#d5e3fc",
+                      "error-container": "#fe8983",
+                      "surface-container": "#eaeff1",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#586064",
+                      "on-primary-fixed-variant": "#5c5b5b",
+                      "on-primary-fixed": "#3f3f3f",
+                      "on-surface": "#2b3437",
+                      "on-secondary-container": "#455367",
+                      "surface-bright": "#f8f9fa",
+                      "primary-fixed": "#e4e2e1",
+                      "on-error-container": "#752121",
+                      "background": "#f8f9fa",
+                      "surface-container-highest": "#dbe4e7",
+                      "on-background": "#2b3437",
+                      "on-tertiary-fixed-variant": "#46556b",
+                      "error-dim": "#4e0309",
+                      "surface-tint": "#5f5e5e",
+                      "on-primary": "#faf7f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Newsreader", "serif"
+                      ],
+                      "body": [
+                              "Public Sans", "sans-serif"
+                      ],
+                      "label": [
+                              "Public Sans", "sans-serif"
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-secondary selection:text-inverse-primary min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant/15 bg-surface/80 backdrop-blur-md h-16 flex justify-between items-center px-8 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-on-background font-headline tracking-tight">Memurlar Akademi</span>
+<nav class="hidden md:flex gap-6 h-full items-end pt-2">
+<a class="text-on-background border-b-2 border-primary pb-1 font-medium transition-colors" href="#">Mevzuat</a>
+<a class="text-on-surface-variant hover:text-on-background pb-[6px] font-medium transition-colors" href="#">Sınavlar</a>
+<a class="text-on-surface-variant hover:text-on-background pb-[6px] font-medium transition-colors" href="#">Notlarım</a>
+<a class="text-on-surface-variant hover:text-on-background pb-[6px] font-medium transition-colors" href="#">İstatistik</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low border-b border-outline-variant/15 border-x-0 border-t-0 focus:border-secondary focus:ring-0 text-sm py-1.5 pl-8 pr-3 w-48 rounded-none transition-colors" placeholder="Ara..." type="text"/>
+<span class="material-symbols-outlined absolute left-2 top-2 text-on-surface-variant text-sm">search</span>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined">history_edu</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined">bookmarks</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high p-2 rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="Kullanıcı Profili" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover" data-alt="professional headshot of a person looking forward against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKzwWKozxSxT7waJ2-IeUQ7U6HOPzn6jritAUUOT3Z_acvWmJPZXWXgm56QS3kPXkSLZRs2vZLHv7VAtfM5QY9z_o302gtNM1hDb6asqRDQxRYRCfTNqmh5FLN2_2cyXGgd-FadU9ldq6n4mLq1Z5Ijq7e112HlCRxH-A9wr_qaxgrCUADAz8P_UI6kK9zWfxxaqf8KVyNURJNkzKVD9Z5xbmqomeniJHH8s0yeomLJV-FrVjKwLflaYuuMOasWpGH6xL1oJ7R6AEZ"/>
+</div>
+</header>
+<div class="flex pt-16 h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-full w-72 border-r border-outline-variant/15 bg-surface-container-low p-4 gap-2 overflow-y-auto shrink-0">
+<div class="mb-6 px-3">
+<h2 class="font-headline text-lg font-semibold text-on-background">657 Sayılı Kanun</h2>
+<p class="text-xs text-on-surface-variant font-medium mt-1 uppercase tracking-wider">Devlet Memurları Kanunu</p>
+</div>
+<nav class="flex flex-col gap-1 flex-1 font-body text-sm font-medium">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-background rounded-DEFAULT transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">menu_book</span>
+                    Giriş
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-surface-container-highest text-on-background font-bold rounded-DEFAULT transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">gavel</span>
+                    Genel Hükümler
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-background rounded-DEFAULT transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">shield_person</span>
+                    Hak ve Ödevler
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-background rounded-DEFAULT transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">balance</span>
+                    Disiplin
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container hover:text-on-background rounded-DEFAULT transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">more_horiz</span>
+                    Çeşitli Hükümler
+                </a>
+</nav>
+<div class="mt-auto pt-4">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-2 px-4 rounded-DEFAULT hover:bg-primary-dim transition-colors text-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+                    Not Ekle
+                </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface relative">
+<!-- Document Area -->
+<article class="max-w-4xl mx-auto px-8 sm:px-12 md:px-20 py-16 lg:py-24">
+<!-- Document Header -->
+<header class="mb-16">
+<div class="inline-block bg-secondary-fixed-dim text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                        BİRİNCİ KISIM: GENEL HÜKÜMLER
+                    </div>
+<h1 class="font-headline text-5xl md:text-6xl text-on-background leading-tight mb-8">
+                        657 Sayılı Devlet Memurları Kanunu
+                    </h1>
+<div class="h-px bg-outline-variant/20 w-full mb-8"></div>
+<h2 class="font-body text-xl md:text-2xl font-bold text-on-surface-variant tracking-tight">
+                        Kapsam ve Amaç
+                    </h2>
+</header>
+<!-- Article Blocks -->
+<div class="space-y-16">
+<!-- Madde 1 -->
+<section class="group">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="font-headline text-2xl font-bold text-secondary shrink-0">Madde 1 —</span>
+<h3 class="font-headline text-2xl font-semibold text-on-background">Kapsam</h3>
+</div>
+<div class="prose prose-slate max-w-none font-body text-base text-on-surface leading-relaxed">
+<p class="mb-4">
+                                Bu Kanun, Genel ve Katma Bütçeli Kurumlar, İl Özel İdareleri, Belediyeler, İl Özel İdareleri ve Belediyelerin kurdukları birlikler ile bunlara bağlı döner sermayeli kuruluşlarda, kanunlarla kurulan fonlarda, kefalet sandıklarında veya Beden Terbiyesi Bölge Müdürlüklerinde çalışan memurlar hakkında uygulanır.
+                            </p>
+<p>
+                                Sözleşmeli ve geçici personel hakkında bu Kanunda belirtilen özel hükümler uygulanır.
+                            </p>
+<!-- Alpha List -->
+<div class="mt-6 pl-6 border-l border-outline-variant/20">
+<ol class="list-none space-y-4">
+<li class="flex gap-3">
+<span class="font-bold text-on-background font-body w-5 shrink-0">a)</span>
+<span>Anayasa Mahkemesi üye ve yedek üyeleri ile raportörleri;</span>
+</li>
+<li class="flex gap-3">
+<span class="font-bold text-on-background font-body w-5 shrink-0">b)</span>
+<span>Hakimlik ve Savcılık mesleklerinde veya bu mesleklerden sayılan görevlerde bulunanlar;</span>
+</li>
+<li class="flex gap-3">
+<span class="font-bold text-on-background font-body w-5 shrink-0">c)</span>
+<span>Danıştay ve Sayıştay meslek mensupları ve Sayıştay savcı ve yardımcıları;</span>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<!-- Madde 2 -->
+<section class="group">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="font-headline text-2xl font-bold text-secondary shrink-0">Madde 2 —</span>
+<h3 class="font-headline text-2xl font-semibold text-on-background">Amaç</h3>
+</div>
+<div class="prose prose-slate max-w-none font-body text-base text-on-surface leading-relaxed">
+<p class="mb-4">
+                                Bu Kanun, Devlet memurlarının hizmet şartlarını, niteliklerini, atanma ve yetiştirilmelerini, ilerleme ve yükselmelerini, ödev, hak, yüküm ve sorumluluklarını, aylıklarını ve ödeneklerini ve diğer özlük işlerini düzenler.
+                            </p>
+<!-- Ordered List -->
+<div class="mt-6">
+<p class="font-semibold text-on-background mb-3">Bu kanunun uygulanmasında ana ilkeler şunlardır:</p>
+<ol class="list-decimal list-outside ml-5 space-y-3 pl-2 marker:text-secondary marker:font-bold">
+<li><strong>Sınıflandırma:</strong> Devlet kamu hizmetleri görevlerini ve bu görevlerde çalışan Devlet memurlarını görevlerin gerektirdiği niteliklere ve mesleklere göre sınıflara ayırmaktır.</li>
+<li><strong>Kariyer:</strong> Devlet memurlarına, yaptıkları hizmetler için lüzumlu bilgilere ve yetişme şartlarına uygun şekilde, sınıfları içinde en yüksek derecelere kadar ilerleme imkanını sağlamaktır.</li>
+<li><strong>Liyakat:</strong> Devlet kamu hizmetleri görevlerine girmeyi, sınıflar içinde ilerleme ve yükselmeyi, görevin sona erdirilmesini liyakat sistemine dayandırmak ve bu sistemin eşit imkanlarla uygulanmasında Devlet memurlarını güvenliğe sahip kılmaktır.</li>
+</ol>
+</div>
+</div>
+</section>
+<!-- Table Section -->
+<section class="mt-12">
+<h4 class="font-headline text-xl font-semibold text-on-background mb-6">Örnek Gösterge Tablosu</h4>
+<div class="overflow-x-auto border-y border-outline-variant/30">
+<table class="w-full text-left text-sm font-body">
+<thead>
+<tr class="border-b border-outline-variant/30 bg-surface-container-low/50">
+<th class="py-4 px-4 font-bold text-on-surface-variant uppercase tracking-wide text-xs">Hizmet Sınıfı</th>
+<th class="py-4 px-4 font-bold text-on-surface-variant uppercase tracking-wide text-xs">Kadro Derecesi</th>
+<th class="py-4 px-4 font-bold text-on-surface-variant uppercase tracking-wide text-xs text-right">Ek Gösterge</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/15 text-on-surface">
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-medium">Genel İdare Hizmetleri</td>
+<td class="py-3 px-4">1</td>
+<td class="py-3 px-4 text-right font-mono text-secondary">3600</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-medium">Eğitim Öğretim Hizmetleri</td>
+<td class="py-3 px-4">1</td>
+<td class="py-3 px-4 text-right font-mono text-secondary">3600</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-medium">Sağlık Hizmetleri</td>
+<td class="py-3 px-4">1</td>
+<td class="py-3 px-4 text-right font-mono text-secondary">3600</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-medium">Teknik Hizmetler</td>
+<td class="py-3 px-4">1</td>
+<td class="py-3 px-4 text-right font-mono text-secondary">3600</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-on-surface-variant mt-3 italic">Not: Bu tablo temsilidir, güncel değerler için kanun eklerine bakınız.</p>
+</section>
+</div>
+<!-- Bottom Spacer for reading comfort -->
+<div class="h-32"></div>
+</article>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,388 @@
+{
+  "subject_id": 1,
+  "topics": [
+    {
+      "name": "KISIM - VI - Sosyal Haklar ve Yardımlar",
+      "status": "draft",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "KISIM - VI"
+        },
+        {
+          "type": "section_title",
+          "content": "Sosyal Haklar ve Yardımlar"
+        },
+        {
+          "type": "subheading",
+          "content": "Emeklilik hakları"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 187",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurlarının emeklilik ve malûllük hallerinde kendilerinin, ölümleri halinde dul ve yetimlerinin sahip bulundukları haklar emeklilik kanunlariyle düzenlenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Hastalık ve analık sigortası"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 188",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "A) Devlet memurlarının hastalık, analık ve görevden doğan kaza ile mesleki hastalık,"
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "B) Devlet memurlarının eşleri ve bakmakla yükümlü oldukları ana, baba ve çocuklarının hastalık ve analık,"
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "C) Bir kanuna dayanılarak emekli veya malûllük aylığı alanların (Sosyal Sigortalar Kurumunca uygulanan iş kazaları ile meslek hastalıkları, malûllük ve yaşlılık sigortalarından gelir veya aylık bağlananlar hariç) hastalık ve analık,"
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "Ç) (C) bendinde belirtilen emekli veya malûllük aylığı alanların aile fertlerinin hastalık ve analık,"
+          ]
+        },
+        {
+          "type": "alpha_list",
+          "items": [
+            "D) Bir kanuna dayanılarak dul veya yetim aylığı alanların (Sosyal Sigortalar Kurumundan gelir veya aylık alanlar hariç) hastalık ve analık."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Hallerinde, gerekli sosyal sigorta yardımları sağlanır. Bu sigorta yardımları özel kanunlarla düzenlenir. Bu sigortalardan tanınan hak ve sağlanan yardımlar, genel sosyal sigorta rejimleri ile kabul edilen hak ve yardımlardan az olamaz."
+        },
+        {
+          "type": "subheading",
+          "content": "Yeniden işe alıştırma"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 189",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Malûllük aylığı bağlanan Devlet memurlarından çalışma gücünün artırılabileceği umulanlar eski sınıflarında veya yeni sınıf veyahut meslekte çalışabilmelerini sağlamak üzere işe alıştırılmaya tabi tutulabilirler."
+        },
+        {
+          "type": "paragraph",
+          "content": "İşe alıştırmanın ne suretle ve hangi esaslara göre yapılacağı özel kanununda gösterilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Ek sosyal sigorta ve Yardımlaşma"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 191",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Devlet Memurları için lüzum ve ihtiyaç görülen yerlerde çocuk bakımevi ve sosyal tesisler kurulabilir. Bunların kuruluş ve işletme esas ve usulleri Devlet Personel Başkanlığı ile Maliye ve Gümrük Bakanlığınca birlikte hazırlanacak genel yönetmelikle belirlenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurları için konut kredisi"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 192",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Devlet Memurlarından T. C. Emekli Sandığına tabi hizmeti 10 yıl ve daha fazla olanlara, istekleri üzerine Toplu Konut Fonundan özel şartlarla ve öncelikle konut kredisi verilebilir. Bu krediden faydalanma şartları ile kredi borcunun memurlardan tahsili ve her yıl ödenecek toplam kredi tutarı gibi diğer hususlar Toplu Konut ve Kamu Ortaklığı İdaresi Başkanlığınca hazırlanacak yönetmelikle düzenlenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurları için konut"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 193",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Devlet memurlarının lüzum ve zaruret görülen yerlerle kiralık konut ihtiyaçları, Cumhurbaşkanınca onanacak programlar gereğince, genel ve katma bütçelere her yıl konulacak ödeneklerle tesis edilecek fondan karşılanır. Bu madde hükmü özel kanunlarla düzenlenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Bazı devlet memurları için konut tahsisi"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 199",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Mahrumiyet yerlerinde çalışan Devlet memurları görev yerlerinde çocuğunun girmesi gereken orta dereceli okul bulunmadığı takdirde, bu dereceli okullarda okuma hakkını kazanmış bulunan çocuklarını yatılı okullarda okutmak isterlerse, pansiyon ücret indiriminden faydalanırlar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu indirim her yıl bütçe kanunu ile tesbit olunan pansiyon ücretlerinden en azının çocukların her biri için % 50 si oranındadır. İndirim sonucunda meydana çıkan fark Devlet bütçesinden ödenir. Ancak, memurlar çocuklarını daha yüksek ücretli okul pansiyonlarından veya Milli Eğitim Bakanlığının denetimi altında faaliyette bulunan özel pansiyonlardan faydalandırmak isterlerse aradaki ücret farkı kendileri tarafından ödenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Sınıfta kalan çocuklar için burs verilemiyeceği"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 200",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Pansiyonlarda ücret indiriminden faydalanan memurların çocukları sınıfta kalırlarsa aynı sınıf için ikinci sene bu haktan faydalanamazlar."
+        },
+        {
+          "type": "subheading",
+          "content": "Mahrumiyet yerinden başka yere atanan, ölen, emekliye ayrılanların burs haklarının devamı"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 201",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Öğrenim yılı içinde mahrumiyet yeri ödeneğine tabi olmayan yerlerdeki bir göreve atanan veya ölen veyahut emekliye ayrılan memurların çocukları için yapılan indirim, bulundukları ders yılı sonuna kadarı kendi isteğiyle atananlar için de, atandıkları tarihteki taksit dönemi sonuna kadar devam eder."
+        },
+        {
+          "type": "subheading",
+          "content": "Aile yardımı ödeneği"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 202",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Evli bulunan Devlet memurlarına aile yardımı ödeneği verilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu yardım, memurun her ne şekilde olursa olsun menfaat karşılığı çalışmayan veya herhangi bir sosyal güvenlik kuruluşundan aylık almayan eşi için 1500, çocuklarından herbiri için de 250 gösterge rakamının (72 nci ay dahil olmak üzere 0-6 yaş grubunda yer alan çocuklar için bir kat artırımlı) aylık katsayısı ile çarpılması sonucu elde edilecek miktar üzerinden ödenir. Eşlerden birine iş akdi veya toplu sözleşme gereği çocukları için yapılan aile yardımı ödeneği daha düşük ise, yalnız aradaki fark ödenir. Bu fıkrada yer alan gösterge rakamlarını 3 katına kadar artırmaya Cumhurbaşkanı yetkilidir. Dul memurların çocukları için yukarıki fıkralar hükmü uygulanır. Boşanma veya ayrılık vukuunda mahkeme bu yardımın hangi tarafa ve ne oranda verileceğini de kararında belirtir. Devlet memurunun, geçimini sağladığı üvey çocukları için de bu ödenek verilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Aile yardımı ödeneğinin ödeme usulü"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 203",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Aile yardımı ödeneği Devlet memurlarına her ay aylıklariyle birlikte ödenir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Karı ve kocanın her ikisi de memur iseler bu ödenek yalnız kocaya verilir. Aile yardımı ödenekleri hiç bir vergi ve kesintiye tabi tutulmaksızın ödenir ve borç için haczedilemez."
+        },
+        {
+          "type": "subheading",
+          "content": "Aile yardımı ödeneğine hak kazanma"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 204",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Memur, eş için ödenen aile yardımı ödeneğine evlendiği; çocuk için ödenen yardıma da çocuğunun doğduğu tarihi takip eden ay başından itibaren hak kazanır."
+        },
+        {
+          "type": "subheading",
+          "content": "Aile yardımı ödeneği hakkını kaybetme"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 205",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Memur, eş için ödenen aile yardımı ödeneği hakkını eşinden boşanma veya eşinin ölümü, çocuk için ödenen yardım ödeneği hakkını da çocuğun ölümü veya 206 ncı maddedeki hallerin vukuunu takip eden ay başından itibaren kaybeder."
+        },
+        {
+          "type": "subheading",
+          "content": "Çocuk için aile yardımı ödeneği verilmiyecek haller"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 206",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Aşağıdaki hallerde çocuklar için aile yardımı ödeneği verilmez"
+        },
+        {
+          "type": "ordered_list",
+          "items": [
+            "Evlenen çocuklar,",
+            "25 yaşını dolduran çocuklar (25 yaşını bitirdiği halde evlenmemiş kız çocukları ile çalışamayacak derecede malûllükleri resmi sağlık kurulu raporuyla tespit edilenler için süresiz olarak ödeneğin verilmesine devam olunur.),",
+            "Kendileri hesabına ticaret yapan veya gerçek veya tüzel kişiler yanında her ne şekilde olursa olsun menfeat karşılığı çalışan çocuklar (Öğrenim yapmakta iken tatil devresinde çalışanlar hariç),",
+            "Burs alan veya Devletçe okutulan çocuklar."
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Doğum yardımı ödeneği"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 208",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurlarından: memur olmayan eşi ile aile yardımı ödeneğine müstehak çocuğu ölenlere en yüksek Devlet memuru aylığı (ek gösterge dahil) tutarında, memurun ölümü halinde sağlığında bildiri ile gösterdiği kimseye, eğer bildiri vermemiş ise eşine ve çocuklarına, bunlar yoksa ana ve babasına, bunlar da yoksa kardeşlerine en yüksek Devlet memuru aylığının (ek gösterge dahil) iki katı tutarında, ölüm yardımı ödeneği verilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Ölüm yardımı ödeneği, hiçbir vergi ve kesintiye tabi tutulmaksızın ve ödeme emri aranmaksızın saymanlarca derhal ödenir. Bu yardım borç için hacizedilemez. Yurt dışında sürekli görevde bulunan memurlara verilecek ölüm yardımı ödeneğinde 156 ıncı maddede yazılı katsayı uygulanmaz."
+        },
+        {
+          "type": "subheading",
+          "content": "Tedavi yardımı"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 210",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Devlet memurlarının ölümü halinde cenaze giderleri (cenazenin başka yere nakil dahil) kurumlarınca ödenir. Sürekli veya geçici görevle veyahut 78 inci maddeye göre yurt dışında bulunan Devlet memurlarından ölenlerin ve yurt dışında sürekli görevlerde bulunanların eşleri, bakmakla yükümlü oldukları ana, baba ve çocuklarının cenazelerini yurda getirmek için yapılması zorunlu olan giderler kurumlarınca karşılanır. 209 uncu madde ile bu madde hükümleri Maliye ve Sağlık ve Sosyal Yardım Bakanlıklarının görüşleri alınmak suretiyle Devlet Personel Başkanlığınca hazırlanacak yönetmeliğe göre uygulanır."
+        },
+        {
+          "type": "subheading",
+          "content": "Giyecek yardımı"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 211",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurlarından hangilerinin ne şekilde giyecek yardımından faydalanacakları Maliye Bakanlığı ile Başbakanlık Devlet Personel Başkanlığının birlikte hazırlıyacakları bir yönetmelik ile tesbit olunur."
+        },
+        {
+          "type": "subheading",
+          "content": "Yiyecek yardımı"
+        },
+        {
+          "type": "article_line",
+          "segments": [
+            {
+              "text": "Madde 212",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet memurlarının hangi hallerde yiyecek yardımından ne şekilde faydalanacakları ve bu yardımın uygulanması ile ilgili esaslar Maliye Bakanlığı ile Başbakanlık Devlet Personel Başkanlığının birlikte hazırlıyacakları bir yönetmelik ile tesbit olunur."
+        },
+        {
+          "type": "subheading",
+          "content": "Yakacak yardımı"
+        }
+      ]
+    }
+  ]
+}

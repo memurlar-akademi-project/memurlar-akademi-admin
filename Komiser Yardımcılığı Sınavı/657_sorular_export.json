@@ -1,0 +1,929 @@
+{
+  "questions": [
+    {
+      "topic_id": 33,
+      "topic_name": "KISIM - I - Genel Hükümler",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi temel ilkeler arasında sayılmamıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kanunda temel ilkeler sınıflandırma, kariyer ve liyakat olarak sayılmıştır. Yerinden yönetim temel ilkeler arasında yer almaz.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sınıflandırma",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Kariyer",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Liyakat",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Yerinden yönetim",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "option_text": "Hiçbiri",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 33,
+      "topic_name": "KISIM - I - Genel Hükümler",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi bu Kanun kapsamı dışındadır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kanun kapsamı dışında kalanlar arasında hâkimlik ve savcılık mesleklerinde bulunanlar yer alır. Genel ve katma bütçeli kurumlar, il özel idareleri, belediyeler ve bunlara bağlı döner sermayeli kuruluşlarda çalışan memurlar ise kapsam içindedir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İl özel idarelerinde çalışan memurlar",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Belediyelerde çalışan memurlar",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Hâkimlik ve savcılık mesleklerinde bulunanlar",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "option_text": "Kefalet sandıklarında çalışan memurlar",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Döner sermayeli kuruluşlarda çalışan memurlar",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 33,
+      "topic_name": "KISIM - I - Genel Hükümler",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre; \nI. Devlet memurları, Türkiye Cumhuriyeti Anayasasına ve kanunlarına sadakatle bağlı kalmak zorundadır.\nII. Devlet memurları bu bağlılığı, asli Devlet memurluğuna atandıktan sonra en geç bir ay içinde yapacakları yeminle belirtirler.\nIII. Yemin belgesi özlük dosyasına konulur.\nYukarıdakilerden hangileri doğrudur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kanuna göre sadakat yükümlülüğü vardır; bu husus asli Devlet memurluğuna atandıktan sonra en geç bir ay içinde yeminle belirtilir ve yemin belgesi özlük dosyasına konulur.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "I ve II",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "II ve III",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "I ve III",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic_id": 34,
+      "topic_name": "KISIM - II - Sınıflandırma",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, Devlet memurları kaç hizmet sınıfına ayrılmıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kanunda Devlet memurları 12 hizmet sınıfına ayrılmıştır.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "10",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "11",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "12",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "option_text": "13",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 34,
+      "topic_name": "KISIM - II - Sınıflandırma",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi hizmet sınıflarından biri değildir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kanunda genel idare, teknik hizmetler, sağlık hizmetleri, eğitim ve öğretim hizmetleri, avukatlık hizmetleri gibi sınıflar sayılmıştır. Mülki idare amirliği hizmetleri sınıfı adıyla ayrı bir hizmet sınıfı düzenlenmemiştir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Genel İdare Hizmetleri Sınıfı",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Teknik Hizmetler Sınıfı",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Eğitim ve Öğretim Hizmetleri Sınıfı",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Avukatlık Hizmetleri Sınıfı",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Mülki İdare Amirliği Hizmetleri Sınıfı",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic_id": 34,
+      "topic_name": "KISIM - II - Sınıflandırma",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, avukatlık hizmetleri sınıfına girenlerin memuriyete girmeden önce veya memurluktan ayrılarak avukatlıkla geçirdikleri sürelerin ne kadarı memuriyette geçmiş sayılarak değerlendirilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kanuna göre avukatlık hizmetleri sınıfına girenlerin belirtilen sürelerinin dörtte üçü memuriyette geçmiş sayılır.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dörtte biri",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Üçte biri",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Yarısı",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Dörtte üçü",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "option_text": "Tamamı",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 34,
+      "topic_name": "KISIM - II - Sınıflandırma",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre; \nI. Teknik hizmetler sınıfına girenlerin belirli süreleri değerlendirilirken kalan sürenin dörtte üçü esas alınır.\nII. Özel okullarda öğretmenlik veya yöneticilik yaptıktan sonra Milli Eğitim Bakanlığı emrinde memuriyet kabul edenlerin özel okullarda geçen hizmet sürelerinin üçte ikisi değerlendirilir.\nIII. Basın kartına sahip olmak suretiyle gazetecilik yaparak memurluğa girenlerin gazetecilikte geçen sürelerinin yarısı değerlendirilir.\nYukarıdakilerden hangileri doğrudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Teknik hizmetler sınıfında kalan sürenin dörtte üçü, özel okul öğretmenlik ve yöneticilik sürelerinde ise üçte iki oranı esas alınır. Basın kartlı gazetecilikte geçen sürenin yarısı değil dörtte üçü değerlendirilir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "I ve II",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "option_text": "I ve III",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 35,
+      "topic_name": "KISIM - III - Devlet Memurluğuna Alınma",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi Devlet memurluğuna alınacaklarda genel şartlardan biri değildir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Genel şartlar arasında Türk vatandaşı olmak, kamu haklarından mahrum bulunmamak, askerlikle ilişiği bulunmamak ve görevi yapmaya engel akıl hastalığı bulunmamak sayılmıştır. Evli olmak genel şart değildir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Türk vatandaşı olmak",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu haklarından mahrum bulunmamak",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Askerlikle ilişiği bulunmamak",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Evli olmak",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "option_text": "Görevini devamlı yapmasına engel akıl hastalığı bulunmamak",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 35,
+      "topic_name": "KISIM - III - Devlet Memurluğuna Alınma",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, meslek veya sanat okulu bitirenler için Devlet memurluğuna alınmada aranacak asgari yaş kaçtır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kanunda genel yaş şartı 18 olmakla birlikte, meslek veya sanat okulu bitirenler için en az 15 yaşını doldurmuş olmak ve Türk Medeni Kanununa göre kazai rüşt kararı almak şartıyla memuriyete girilebileceği düzenlenmiştir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "15",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "option_text": "16",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "17",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "18",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "20",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 35,
+      "topic_name": "KISIM - III - Devlet Memurluğuna Alınma",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre; \nI. Aday olarak atanan Devlet memurunun adaylık süresi bir yıldan az, iki yıldan çok olamaz.\nII. Adaylık süresi içinde aday memurun başka kurumlara nakli yapılamaz.\nIII. Adaylık devresi içinde ilişiği kesilenler aynı kurumda yeniden aday memur olarak göreve başlatılabilir.\nYukarıdakilerden hangileri doğrudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Adaylık süresi bir yıldan az, iki yıldan çok olamaz ve bu süre içinde nakil yapılamaz. Adaylık devresi içinde ilişiği kesilenler yeniden aday memur olarak göreve başlatılamaz.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "I ve II",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "option_text": "I ve III",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 35,
+      "topic_name": "KISIM - III - Devlet Memurluğuna Alınma",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, adaylık süresi içinde görevine son verilenler kaç yıl süre ile Devlet memurluğuna alınamaz?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kanuna göre adaylık devresi içinde görevine son verilenler üç yıl süre ile Devlet memurluğuna alınamaz.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1 yıl",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "2 yıl",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "3 yıl",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "option_text": "4 yıl",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "5 yıl",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, hizmeti 1 yıldan 10 yıla kadar olan memurların yıllık izin süresi kaç gündür?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kanuna göre hizmeti 1 yıldan 10 yıla kadar olan memurların yıllık izin süresi 20 gündür. Hizmeti 10 yıldan fazla olanlarda bu süre 30 gündür.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "15 gün",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "20 gün",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "option_text": "24 gün",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "30 gün",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "40 gün",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, yıllık izinlere zorunlu hâllerde gidiş ve dönüş için en çok kaçar gün eklenebilir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kanuna göre zorunlu hâllerde yıllık izinlere gidiş ve dönüş için en çok ikişer gün eklenebilir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Birer gün",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Üçer gün",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "İkişer gün",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "option_text": "Dörder gün",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Beşer gün",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi mazeret iznine ilişkin yanlış bir ifadedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Memura, eşinin doğum yapması hâlinde isteği üzerine 10 gün babalık izni verilir. Üç gün değil, on gün düzenlenmiştir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Memura, eşinin doğum yapması hâlinde üç gün izin verilir.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "option_text": "Memurun kendisinin veya çocuğunun evlenmesi hâlinde yedi gün izin verilebilir.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Memurun eşinin ölümü hâlinde yedi gün izin verilebilir.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Memurun ana, baba veya kardeşinin ölümü hâlinde yedi gün izin verilebilir.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Mazeret iznine ilişkin süreler Kanunda ayrıca gösterilmiştir.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, doğum yapan memura çocuğunu emzirmesi için ilk altı ayda günde kaç saat süt izni verilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kanuna göre doğum yapan memura ilk altı ayda günde üç saat, ikinci altı ayda günde bir buçuk saat süt izni verilir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1 saat",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "1,5 saat",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "2 saat",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "3 saat",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "option_text": "4 saat",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, kamu görevleri hakkında basına bilgi veya demeç verme yetkisi aşağıdakilerden hangisine aittir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kanuna göre kamu görevleri hakkında basına bilgi veya demeç verme yetkisi, bakanın yetkili kılacağı görevliye; illerde valiye veya valinin yetki vereceği görevliye aittir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her memura, görev alanı ile sınırlı olarak",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız kurum amirine",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız merkez teşkilatındaki birim başkanına",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Memurun sendika temsilcisine",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Bakanın yetkili kılacağı görevliye veya illerde valiye ya da yetki vereceği görevliye",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre; \nI. Özürsüz olarak bir veya iki gün göreve gelmemek aylıktan kesme cezasını gerektirir.\nII. Özürsüz ve kesintisiz olarak üç ila dokuz gün göreve gelmemek kademe ilerlemesinin durdurulması cezasını gerektirir.\nIII. Özürsüz olarak bir yılda toplam yirmi gün göreve gelmemek Devlet memurluğundan çıkarma cezasını gerektirir.\nYukarıdakilerden hangileri doğrudur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kanunda bu üç fiil sırasıyla aylıktan kesme, kademe ilerlemesinin durdurulması ve Devlet memurluğundan çıkarma cezasını gerektiren hâller arasında sayılmıştır.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "I ve II",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "II ve III",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "I ve III",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi aylıktan kesme cezasını gerektiren fiil ve hâllerden biridir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Özürsüz olarak bir veya iki gün göreve gelmemek aylıktan kesme cezasını gerektirir. Üç ila dokuz gün gelmemek ise kademe ilerlemesinin durdurulması cezası kapsamında değerlendirilir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özürsüz ve kesintisiz olarak üç ila dokuz gün göreve gelmemek",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Özürsüz olarak bir veya iki gün göreve gelmemek",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "option_text": "Özürsüz olarak bir yılda toplam yirmi gün göreve gelmemek",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Amirine veya maiyetindekilere fiili tecavüzde bulunmak",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Memurluk sıfatı ile bağdaşmayacak nitelik ve derecede yüz kızartıcı hareketlerde bulunmak",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi kademe ilerlemesinin durdurulması cezasını gerektiren fiil ve hâllerden biridir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Özürsüz ve kesintisiz olarak üç ila dokuz gün göreve gelmemek kademe ilerlemesinin durdurulması cezasını gerektirir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özürsüz olarak bir veya iki gün göreve gelmemek",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Verilen emir ve görevlerin tam ve zamanında yapılmasında kusurlu davranmak",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Özürsüz ve kesintisiz olarak üç ila dokuz gün göreve gelmemek",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "option_text": "Usulsüz müracaat veya şikâyette bulunmak",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Görev mahallinde genel ahlak ve edep dışı davranışlarda bulunmak",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 36,
+      "topic_name": "KISIM - IV - Hizmet Şartları ve Şekilleri",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi Devlet memurluğundan çıkarma cezasını gerektiren fiil ve hâllerden biridir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Özürsüz olarak bir yılda toplam yirmi gün göreve gelmemek Devlet memurluğundan çıkarma cezasını gerektiren fiiller arasındadır.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özürsüz olarak bir yılda toplam yirmi gün göreve gelmemek",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "option_text": "Özürsüz olarak bir veya iki gün göreve gelmemek",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Özürsüz ve kesintisiz olarak üç ila dokuz gün göreve gelmemek",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "İş sahiplerine kötü muamelede bulunmak",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Verilen emirleri kasten yapmamak",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 37,
+      "topic_name": "KISIM - V - Mali Hükümler",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, memur aylıkları ne zaman ödenir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kanuna göre memurlara aylıkları her ay başında peşin ödenir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her ay sonunda peşin",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Her ay ortasında peşin",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Her ay sonunda çalıştıktan sonra",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Her ay başında peşin",
+          "is_correct": true
+        },
+        {
+          "label": "E",
+          "option_text": "Her üç ayda bir peşin",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 37,
+      "topic_name": "KISIM - V - Mali Hükümler",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, aşağıdakilerden hangisi ek göstergeye ilişkin yanlış bir ifadedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kanuna göre bu Kanuna tabi kurumlarda istihdam edilen her sınıf ve derecedeki memurlara bulundukları kadro derecelerine göre ek gösterge uygulanır. Yalnız belirli bir hizmet sınıfına özgülenmemiştir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ek göstergeler, kanunda gösterilen esaslara göre uygulanır.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Ek gösterge yalnızca Genel İdare Hizmetleri Sınıfındaki memurlara uygulanır.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "option_text": "Ek gösterge, memurun bulunduğu kadro derecesine göre belirlenir.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Bu Kanuna tabi kurumlarda istihdam edilen memurlara ek gösterge uygulanabilir.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Ek göstergeye ilişkin usul ve esaslar kanunda gösterilmiştir.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 37,
+      "topic_name": "KISIM - V - Mali Hükümler",
+      "question_type": "multiple_choice",
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, zam ve tazminatlara ilişkin aşağıdaki ifadelerden hangisi yanlıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kanuna göre zam ve tazminatlar damga vergisi hariç herhangi bir vergi ve kesintiye tabi tutulmaz. Gelir vergisine tabi oldukları söylenemez.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Zam ve tazminatlar, ilgili personelin mali hakları arasında yer alır.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Zam ve tazminatlar, kanunda gösterilen esaslar çerçevesinde ödenir.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Zam ve tazminatlar, damga vergisi hariç kesintiye tabi tutulmaz.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "Zam ve tazminatlara ilişkin usul ve esaslar ayrıca belirlenebilir.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Zam ve tazminatlar gelir vergisine tabidir.",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "topic_id": 38,
+      "topic_name": "KISIM - VI - Sosyal Haklar ve Yardımlar",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, hizmetleri sırasında radyoaktif ışınlarla çalışan personele her yıl yıllık izinlerine ilaveten ne kadar sağlık izni verilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kanuna göre hizmetleri sırasında radyoaktif ışınlarla çalışan personele her yıl yıllık izinlerine ilaveten bir aylık sağlık izni verilir.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1 ay",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "option_text": "15 gün",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "20 gün",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "option_text": "45 gün",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "2 ay",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "topic_id": 39,
+      "topic_name": "KISIM - VII - Devlet Memurlarının Yetiştirilmesi",
+      "question_type": "multiple_choice",
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "657 sayılı Devlet Memurları Kanunu’na göre, Devlet memurlarının yetiştirilmelerine ilişkin aşağıdaki ifadelerden hangisi yanlıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kanuna göre Devlet memurlarının yetiştirilmeleri, verimliliklerinin artırılması ve daha ileri görevlere hazırlanmaları amacıyla kurumlarınca hizmet içinde yetiştirilmeleri esastır. Hizmet içi eğitimin kurumların görevi olmadığı söylenemez.",
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Devlet memurlarının verimliliklerini artırmak amacıyla yetiştirilmeleri esastır.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "option_text": "Devlet memurlarının daha ileri görevlere hazırlanmaları amacıyla yetiştirilmeleri öngörülmüştür.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "option_text": "Devlet memurlarının hizmet içinde yetiştirilmeleri kurumların görevi değildir.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet içi eğitim, Devlet memurlarının yetiştirilmesinde esas alınmıştır.",
+          "is_correct": false
+        },
+        {
+          "label": "E",
+          "option_text": "Yetiştirme faaliyeti, kamu hizmetinin daha verimli yürütülmesine yöneliktir.",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

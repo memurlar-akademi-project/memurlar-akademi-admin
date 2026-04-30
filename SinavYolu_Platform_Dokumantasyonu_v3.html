@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memurlar Akademi — Platform Dokümantasyonu v1.0</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;color:#1E293B;background:#F1F5F9;line-height:1.6}
+.toc{position:fixed;top:0;left:0;width:220px;height:100vh;background:#1E293B;overflow-y:auto;z-index:100;padding:0}
+.toc-logo{padding:16px;border-bottom:1px solid rgba(255,255,255,.1)}
+.toc-logo-name{font-size:15px;font-weight:700;color:#fff}
+.toc-logo-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+.toc-sec{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);padding:12px 16px 4px}
+.toc a{display:flex;align-items:center;gap:8px;padding:7px 16px;font-size:12px;color:rgba(255,255,255,.6);text-decoration:none;transition:background .1s}
+.toc a:hover{background:rgba(255,255,255,.06);color:#fff}
+.toc-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.main{margin-left:220px}
+.cover{background:#1E3A8A;padding:80px 60px;text-align:center}
+.cover h1{font-size:56px;font-weight:800;color:#fff;margin-bottom:10px}
+.cover .sub{font-size:20px;color:#93C5FD;margin-bottom:6px}
+.cover .sub2{font-size:14px;color:#60A5FA;margin-bottom:28px}
+.cover-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.ctag{background:rgba(255,255,255,.12);color:#fff;border-radius:99px;padding:6px 16px;font-size:12px}
+.sec{padding:44px 56px;border-bottom:1px solid #E2E8F0;background:#fff}
+.sec:nth-child(even){background:#F8FAFC}
+.sec-hdr{background:#1E3A8A;color:#fff;padding:13px 18px;border-radius:10px;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.sec-num{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;flex-shrink:0}
+.sec-title{font-size:19px;font-weight:700;color:#fff}
+h2{font-size:16px;font-weight:700;color:#1E3A8A;margin:28px 0 10px;padding-bottom:7px;border-bottom:2px solid #1E3A8A}
+h3{font-size:14px;font-weight:700;color:#1E293B;margin:18px 0 8px}
+p{margin-bottom:10px;color:#374151;font-size:13px}
+.ib{border-left:4px solid #1E3A8A;background:#EFF6FF;padding:11px 15px;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#1E3A8A}
+.ib.a{border-color:#D97706;background:#FFFBEB;color:#92400E}
+.ib.g{border-color:#16A34A;background:#F0FDF4;color:#166534}
+.ib.p{border-color:#7C3AED;background:#F5F3FF;color:#4C1D95}
+.ib.r{border-color:#DC2626;background:#FEF2F2;color:#991B1B}
+ul.bl{list-style:none;margin:6px 0 12px;padding:0}
+ul.bl li{padding:3px 0 3px 18px;position:relative;font-size:13px;color:#374151}
+ul.bl li::before{content:"•";position:absolute;left:0;color:#1E3A8A;font-weight:700}
+.tw{overflow-x:auto;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1E293B;color:#fff;padding:8px 11px;text-align:left;font-size:12px}
+td{padding:7px 11px;border-bottom:1px solid #E2E8F0;vertical-align:top}
+tr:nth-child(even) td{background:#F8FAFC}
+.badge{display:inline-block;border-radius:99px;padding:2px 9px;font-size:11px;font-weight:600}
+.bg{background:#DCFCE7;color:#166534}.ba{background:#FEF3C7;color:#92400E}.bb{background:#DBEAFE;color:#1D4ED8}.br{background:#FEE2E2;color:#991B1B}.bp{background:#EDE9FE;color:#4C1D95}.bgr{background:#F1F5F9;color:#475569}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:12px 0}
+.card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden}
+.card.b{border-top:3px solid #185FA5}.card.r{border-top:3px solid #993C1D}.card.am{border-top:3px solid #854F0B}.card.g{border-top:3px solid #3B6D11}.card.pk{border-top:3px solid #993556}.card.pu{border-top:3px solid #534AB7}
+.card-h{background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:9px 14px;font-size:12px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.card-h a{font-size:11px;color:#3B82F6;text-decoration:none}
+.card-b{padding:12px 14px}
+.card-title{font-size:13px;font-weight:700;margin-bottom:5px}
+.card-sub{font-size:12px;color:#64748B;line-height:1.5}
+.flow{display:flex;flex-direction:column;gap:5px;margin:10px 0}
+.flow-step{display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:7px;font-size:13px}
+.flow-n{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.sbox{border:1px solid #E2E8F0;border-radius:10px;overflow:hidden;margin:10px 0}
+.sbox-h{padding:9px 15px;font-size:13px;font-weight:700;color:#fff}
+.sbox-i{padding:8px 15px;border-bottom:1px solid #E2E8F0;font-size:13px;display:flex;gap:8px}
+.sbox-i:last-child{border-bottom:none}
+.sbox-i::before{content:"›";color:#1E3A8A;font-weight:700;flex-shrink:0}
+/* SIDEBAR PREVIEW */
+.sb-p{background:#1E293B;border-radius:10px;padding:12px 0;width:190px;flex-shrink:0}
+.sbp-logo{padding:0 14px 10px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:6px}
+.sbp-logo-n{font-size:13px;font-weight:700;color:#fff}
+.sbp-logo-s{font-size:10px;color:rgba(255,255,255,.4)}
+.sbp-prof{margin:8px 10px 4px;border:1px solid rgba(255,255,255,.1);border-radius:7px;overflow:hidden}
+.sbp-prof-h{background:rgba(255,255,255,.07);padding:5px 9px;font-size:10px;font-weight:600;color:rgba(255,255,255,.5);display:flex;justify-content:space-between}
+.sbp-prof-h span{color:#60A5FA}
+.sbp-s{padding:5px 9px;border-bottom:1px solid rgba(255,255,255,.06)}
+.sbp-s:last-child{border-bottom:none}
+.sbp-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.3);font-weight:700;margin-bottom:3px}
+.sbp-pill{font-size:10px;padding:2px 6px;border-radius:4px;margin-bottom:2px}
+.sbp-sec{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.3);font-weight:700;padding:8px 14px 3px}
+.sbp-item{display:flex;align-items:center;gap:7px;padding:6px 14px;font-size:11px;color:rgba(255,255,255,.55)}
+.sbp-item.on{background:rgba(255,255,255,.1);color:#fff;font-weight:600}
+.sbp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sbp-badge{margin-left:auto;background:#DC2626;color:#fff;border-radius:99px;padding:1px 5px;font-size:9px}
+.sbp-user{padding:10px 12px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:7px;margin-top:4px}
+.sbp-av{width:24px;height:24px;border-radius:50%;background:#3B82F6;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sbp-un{font-size:11px;font-weight:600;color:#fff}
+.sbp-ur{font-size:10px;color:rgba(255,255,255,.4)}
+.lp{display:flex;gap:14px;align-items:flex-start}
+.lp-main{flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden}
+.lp-topbar{background:#fff;border-bottom:1px solid #E2E8F0;padding:9px 14px;font-size:13px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+/* ONBOARDING */
+.ob-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+.ob-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden}
+.ob-hdr{padding:10px 14px;display:flex;align-items:center;gap:8px}
+.ob-num{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ob-title{font-size:13px;font-weight:600;color:#fff}
+.ob-body{padding:14px}
+.ob-url{background:#F1F5F9;border-radius:5px;padding:3px 9px;font-size:10px;color:#64748B;margin-bottom:9px;font-family:monospace}
+.sc-mini{border:1px solid #E2E8F0;border-radius:7px;padding:7px;margin-bottom:5px;font-size:11px;cursor:pointer}
+.sc-mini.sel{border-color:#1E3A8A;border-width:1.5px;background:#EFF6FF}
+.sc-mini-lbl{font-size:10px;color:#64748B;margin-bottom:1px}
+.sc-mini-t{font-weight:600}
+.sc-mini-s{font-size:10px;color:#94A3B8;margin-top:2px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.col-box{border:1px solid #E2E8F0;border-radius:7px;overflow:hidden}
+.col-h{background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:6px 10px;font-size:11px;font-weight:600;display:flex;justify-content:space-between}
+.col-h a{font-size:10px;color:#3B82F6}
+.col-i{display:flex;align-items:center;gap:7px;padding:7px 10px;border-bottom:1px solid #E2E8F0;font-size:11px}
+.col-i:last-child{border-bottom:none}
+.col-i.on{background:#EFF6FF}
+.cb{width:14px;height:14px;border-radius:3px;border:1.5px solid #CBD5E1;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:8px}
+.cb.on{background:#1E3A8A;border-color:#1E3A8A;color:#fff}
+.sum-bar{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:6px;padding:7px 10px;font-size:11px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.sum-tag{background:#fff;border:1px solid #CBD5E1;border-radius:99px;padding:2px 8px;font-size:10px}
+.ob-btn{background:#1E3A8A;color:#fff;border:none;border-radius:7px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;width:100%;margin-top:9px}
+/* DASHBOARD COMPONENTS */
+.lm-banner{background:#1E3A8A;padding:13px 14px}
+.lm-bt{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.lm-bs{font-size:11px;color:rgba(255,255,255,.65)}
+.lm-chips{display:flex;gap:5px;margin-top:7px;flex-wrap:wrap}
+.lm-chip{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border-radius:99px;padding:2px 8px;font-size:10px}
+.lm-chip.w{background:rgba(245,158,11,.2);color:#fcd34d}
+.lm-flt{background:#fff;border-bottom:1px solid #E2E8F0;padding:7px 10px}
+.lm-fr{display:flex;gap:5px;flex-wrap:wrap;padding:4px 0;font-size:10px}
+.lm-fr:first-child{border-bottom:1px solid #E2E8F0;padding-bottom:6px;margin-bottom:2px}
+.lm-flbl{color:#64748B;font-weight:600;width:74px;flex-shrink:0}
+.lm-pill{border-radius:99px;padding:2px 8px;font-size:10px;font-weight:600}
+.lm-devam{background:#fff;border:1px solid #3B82F6;margin:7px;border-radius:8px;padding:8px 11px;display:flex;justify-content:space-between;align-items:center}
+.lm-devam-t{font-size:12px;font-weight:600}
+.lm-devam-s{font-size:10px;color:#64748B;margin-top:2px}
+.lm-btn{background:#1E3A8A;color:#fff;border:none;border-radius:5px;padding:4px 9px;font-size:10px;font-weight:600;cursor:pointer}
+.lm-mods{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:0 7px 6px}
+.lm-mod{border-radius:7px;padding:9px 5px;text-align:center;color:#fff}
+.lm-mn{font-size:10px;font-weight:700;margin-top:3px}
+.lm-ms{font-size:9px;opacity:.8}
+.lm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:0 7px 6px}
+.lm-stat{background:#fff;border:1px solid #E2E8F0;border-radius:6px;padding:7px}
+.lm-sv{font-size:15px;font-weight:700}
+.lm-sl{font-size:10px;color:#64748B}
+.lm-g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;padding:0 7px 8px}
+.lm-c{background:#fff;border:1px solid #E2E8F0;border-radius:7px;overflow:hidden}
+.lm-ch{background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:6px 9px;font-size:10px;font-weight:600;display:flex;justify-content:space-between}
+.lm-ch a{font-size:10px;color:#3B82F6}
+.lm-cb{padding:7px 9px}
+.perf-r{margin-bottom:5px}
+.perf-t{display:flex;justify-content:space-between;font-size:10px;margin-bottom:2px}
+.pbg{height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden}
+.pf{height:4px;border-radius:2px}
+.ai-mini{background:#1E3A8A;border-radius:5px;padding:7px;margin-top:5px}
+.ai-lbl{font-size:9px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:2px}
+.ai-txt{font-size:10px;color:#fff;line-height:1.5;margin-bottom:4px}
+.ai-btn2{background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:4px;padding:2px 7px;font-size:9px;cursor:pointer}
+/* SORU ÇÖZ */
+.test-hdr{background:#fff;border-bottom:1px solid #E2E8F0;padding:9px 13px;display:flex;align-items:center;gap:10px}
+.t-prog-w{flex:1;display:flex;align-items:center;gap:7px}
+.t-prog-bg{flex:1;height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden}
+.t-prog-f{height:5px;border-radius:3px}
+.t-timer{background:#FEF3C7;border-radius:6px;padding:4px 9px;font-size:12px;font-weight:600;color:#92400E}
+.t-body{padding:15px;display:grid;grid-template-columns:1fr 155px;gap:13px}
+.s-num{font-size:11px;color:#64748B;margin-bottom:7px;display:flex;gap:7px}
+.s-text{font-size:13px;font-weight:600;line-height:1.7;margin-bottom:13px}
+.siklar{display:flex;flex-direction:column;gap:7px}
+.sik{display:flex;align-items:center;gap:9px;padding:9px 11px;border:1px solid #CBD5E1;border-radius:7px;cursor:pointer;font-size:13px}
+.sik.ok{border-color:#16A34A;background:#F0FDF4}
+.sik.no{border-color:#DC2626;background:#FEF2F2}
+.sik-h{width:24px;height:24px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.sik.ok .sik-h{background:#16A34A;border-color:#16A34A;color:#fff}
+.sik.no .sik-h{background:#DC2626;border-color:#DC2626;color:#fff}
+.acik{background:#F0FDF4;border-left:3px solid #16A34A;padding:9px 11px;border-radius:0 6px 6px 0;margin-top:9px;font-size:12px;color:#166534}
+.s-map{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.sm{border-radius:4px;padding:5px;font-size:10px;font-weight:600;text-align:center;border:none;cursor:pointer}
+.sm-t{background:#F1F5F9;color:#64748B}.sm-d{background:#DCFCE7;color:#166534}.sm-y{background:#FEE2E2;color:#991B1B}.sm-a{background:#993C1D;color:#fff}.sm-f{background:#FEF3C7;color:#92400E}
+.s-sum{margin-top:8px;border:1px solid #E2E8F0;border-radius:6px;overflow:hidden}
+.ss-r{display:flex;justify-content:space-between;padding:5px 8px;border-bottom:1px solid #E2E8F0;font-size:11px}
+.ss-r:last-child{border-bottom:none}
+/* DENEME SONUÇ */
+.hero-s{background:#1E3A8A;border-radius:10px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:9px}
+.hs-l h3{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.hs-l p{font-size:11px;color:rgba(255,255,255,.6)}
+.hs-r{display:flex;gap:13px;align-items:center}
+.hs-st{text-align:center}
+.hs-v{font-size:24px;font-weight:700;color:#FCD34D;line-height:1}
+.hs-lb{font-size:10px;color:rgba(255,255,255,.5);margin-top:2px}
+.hs-div{width:1px;height:38px;background:rgba(255,255,255,.15)}
+.rank-b{background:rgba(255,255,255,.1);border-radius:8px;padding:9px 13px;text-align:center}
+.rank-v{font-size:20px;font-weight:700;color:#fff}
+.rank-lb{font-size:10px;color:rgba(255,255,255,.5);margin-top:2px}
+.rank-d{font-size:11px;color:#FCD34D;margin-top:3px}
+/* ANALİZ */
+.a-chart{display:flex;align-items:flex-end;gap:5px;height:88px;margin:8px 0}
+.a-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px}
+.a-bar{width:100%;border-radius:3px 3px 0 0}
+.a-v{font-size:9px;font-weight:600;color:#475569}
+.a-l{font-size:9px;color:#94A3B8}
+/* TOPLULUK */
+.f-card{background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:11px;margin-bottom:7px}
+.f-card.pin{border-color:#DB2777;border-left:3px solid #DB2777}
+.f-card.hot{border-left:3px solid #EA580C}
+.f-top{display:flex;gap:8px;margin-bottom:6px}
+.f-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.f-title{font-size:12px;font-weight:600;margin-bottom:2px}
+.f-meta{font-size:10px;color:#64748B}
+.f-preview{font-size:12px;color:#475569;margin:5px 0}
+.f-footer{display:flex;gap:10px;font-size:11px;color:#94A3B8}
+/* ADMIN */
+.adm-layout{display:flex;gap:14px}
+.adm-sb{background:#1E293B;border-radius:10px;padding:12px 0;width:175px;flex-shrink:0}
+.as-logo{padding:0 13px 9px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:6px}
+.as-ln{font-size:13px;font-weight:700;color:#fff}
+.as-ls{font-size:10px;color:rgba(255,255,255,.35)}
+.as-sec{font-size:9px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:rgba(255,255,255,.3);padding:7px 13px 3px}
+.as-i{display:flex;align-items:center;gap:7px;padding:6px 13px;font-size:11px;color:rgba(255,255,255,.55)}
+.as-i.on{background:rgba(255,255,255,.1);color:#fff}
+.as-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.as-b{margin-left:auto;background:#DC2626;color:#fff;border-radius:99px;padding:1px 5px;font-size:9px}
+.adm-main{flex:1}
+.a-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:10px}
+.a-stat{background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px}
+.a-sv{font-size:17px;font-weight:700}
+.a-sl{font-size:10px;color:#64748B;margin-top:2px}
+.a-sd{font-size:10px;margin-top:2px}
+.alerts{background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin-bottom:9px}
+.al-i{display:flex;align-items:center;gap:8px;padding:8px 11px;border-bottom:1px solid #E2E8F0;font-size:12px}
+.al-i:last-child{border-bottom:none}
+.al-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.al-btn{margin-left:auto;font-size:10px;border:none;border-radius:4px;padding:2px 8px;cursor:pointer;color:#fff}
+.tree-c{background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden}
+.tr-i{display:flex;align-items:center;gap:8px;padding:9px 11px;border-bottom:1px solid #E2E8F0;font-size:12px}
+.tr-i:last-child{border-bottom:none}
+.tr-i.l0{background:#F8FAFC;font-weight:700}
+.tr-i.l1{padding-left:26px}
+.tr-i.l2{padding-left:44px}
+.tr-i.l3{padding-left:62px}
+.tr-i.crit{background:#FEE2E2}
+.tr-ic{width:19px;height:19px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+.tr-bar{width:48px;height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden;flex-shrink:0}
+.tr-bar-f{height:4px;border-radius:2px}
+.tr-btns{margin-left:auto;display:flex;gap:3px}
+.tb-s{border:1px solid #CBD5E1;background:transparent;border-radius:4px;padding:2px 7px;font-size:10px;cursor:pointer;color:#475569}
+/* PODCAST */
+.pod-p{background:#1E3A8A;border-radius:9px;padding:14px;margin-bottom:9px}
+.pp-top{display:flex;gap:11px;align-items:flex-start;margin-bottom:11px}
+.pp-th{width:48px;height:48px;border-radius:8px;background:#854F0B;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pp-t{font-size:12px;font-weight:700;color:#fff;margin-bottom:3px}
+.pp-m{font-size:10px;color:rgba(255,255,255,.6)}
+.pp-seek{height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin-bottom:4px}
+.pp-sf{height:4px;background:#fff;border-radius:2px;width:40%}
+.pp-times{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.5);margin-bottom:9px}
+.pp-ctrl{display:flex;align-items:center;gap:4px}
+.pp-btn{background:rgba(255,255,255,.1);color:#fff;border:none;border-radius:5px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px}
+.pp-btn.pl{background:#fff;color:#1E3A8A;width:34px;height:34px;border-radius:50%;font-size:13px}
+.pp-sp{margin-left:auto;background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:5px;padding:2px 7px;font-size:11px;cursor:pointer}
+/* CANLIDER */
+.live-b{background:#26215C;border-radius:9px;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:11px;margin-bottom:9px}
+.lb-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.12);border-radius:99px;padding:2px 8px;font-size:10px;color:#fff;margin-bottom:6px}
+.lb-dot{width:6px;height:6px;border-radius:50%;background:#EF4444}
+.lb-t{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.lb-m{font-size:11px;color:rgba(255,255,255,.6)}
+.lb-btns{display:flex;gap:5px;flex-shrink:0}
+.lb-btn{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 10px;font-size:11px;cursor:pointer}
+.lb-red{background:#DC2626;color:#fff;border:none;border-radius:6px;padding:5px 10px;font-size:11px;cursor:pointer}
+@media print{.toc{display:none}.main{margin-left:0}}
+</style>
+</head>
+<body>
+<nav class="toc">
+  <div class="toc-logo"><div class="toc-logo-name">Memurlar Akademi</div><div class="toc-logo-sub">Platform Dok. v1.0</div></div>
+  <div class="toc-sec">Genel</div>
+  <a href="#ozet"><div class="toc-dot" style="background:#64748B"></div>Proje Özeti</a>
+  <div class="toc-sec">Katmanlar</div>
+  <a href="#k1"><div class="toc-dot" style="background:#7C3AED"></div>K1 — Onboarding</a>
+  <a href="#k2"><div class="toc-dot" style="background:#1D9E75"></div>K2 — Dashboard</a>
+  <a href="#k3"><div class="toc-dot" style="background:#185FA5"></div>K3 — Modüller</a>
+  <a href="#k3-konu" style="padding-left:28px"><div class="toc-dot" style="background:#185FA5"></div>Konu Çalış</a>
+  <a href="#k3-soru" style="padding-left:28px"><div class="toc-dot" style="background:#993C1D"></div>Soru Çöz</a>
+  <a href="#k3-deneme" style="padding-left:28px"><div class="toc-dot" style="background:#854F0B"></div>Deneme Sınavı</a>
+  <a href="#k3-analiz" style="padding-left:28px"><div class="toc-dot" style="background:#3B6D11"></div>Analiz</a>
+  <a href="#k3-topluluk" style="padding-left:28px"><div class="toc-dot" style="background:#993556"></div>Topluluk</a>
+  <a href="#k4"><div class="toc-dot" style="background:#BA7517"></div>K4 — Veri Mimarisi</a>
+  <a href="#k5"><div class="toc-dot" style="background:#DC2626"></div>K5 — Admin Paneli</a>
+  <a href="#k5-hiyerarsi" style="padding-left:28px"><div class="toc-dot" style="background:#7C3AED"></div>Hiyerarşi</a>
+  <a href="#k5-soru" style="padding-left:28px"><div class="toc-dot" style="background:#B91C1C"></div>Soru Bankası</a>
+  <a href="#k5-anlatim" style="padding-left:28px"><div class="toc-dot" style="background:#1D4ED8"></div>Anlatımlar</a>
+  <a href="#k5-podcast" style="padding-left:28px"><div class="toc-dot" style="background:#B45309"></div>Podcast</a>
+  <a href="#k5-canli" style="padding-left:28px"><div class="toc-dot" style="background:#5B21B6"></div>Canlı Dersler</a>
+  <a href="#k5-deneme" style="padding-left:28px"><div class="toc-dot" style="background:#B45309"></div>Deneme Yönetimi</a>
+  <a href="#k5-kullanici" style="padding-left:28px"><div class="toc-dot" style="background:#16A34A"></div>Kullanıcı & Premium</a>
+  <a href="#ekler"><div class="toc-dot" style="background:#64748B"></div>Ekler & Dev Notları</a>
+</nav>
+<div class="main">
+
+<!-- COVER -->
+<div class="cover">
+  <h1>Memurlar Akademi</h1>
+  <div class="sub">Platform Mimarisi & Tasarım Dokümantasyonu</div>
+  <div class="sub2">Türkiye Memurluk Sınavları Hazırlık SaaS Platformu — Geliştirici Referans Dökümanı v1.0</div>
+  <div class="cover-tags">
+    <span class="ctag">Mart 2026</span>
+    <span class="ctag">5 Katman</span>
+    <span class="ctag">13 Modül Ekranı</span>
+    <span class="ctag">Admin Paneli — 8 Bölüm</span>
+    <span class="ctag">Veri Mimarisi</span>
+  </div>
+</div>
+
+<!-- PROJE ÖZETİ -->
+<div class="sec" id="ozet">
+  <div class="sec-hdr" style="background:#334155">
+    <div class="sec-num">0</div>
+    <div class="sec-title">Proje Özeti</div>
+  </div>
+  <p>Memurlar Akademi, Türkiye'deki Bakanlıklara bağlı memurluk sınavlarına (GSB, MEB, Sağlık vb.) hazırlanan adaylar için geliştirilmiş bir SaaS eğitim platformudur. Her aday kendi sınav ve konu profiline göre kişiselleştirilmiş bir deneyim yaşar.</p>
+  <div class="ib a"><strong>Temel fark:</strong> Kullanıcı ders &amp; konu profilini seçer. Bu profil tüm modüllerde sabit filtre olarak çalışır — sorular, anlatımlar, sınavlar hepsi bu profile göre gelir. Profil <code>konu_profili</code> tablosunda saklanır ve her API isteğinde WHERE koşulu olarak eklenir.</div>
+  <div class="grid3" style="margin-top:14px">
+    <div class="card b"><div class="card-b"><div class="card-title">İçerik Hiyerarşisi</div><div class="card-sub">Bakanlık → Sınav → Ders → Konu → İçerik (5 tip)</div></div></div>
+    <div class="card g"><div class="card-b"><div class="card-title">5 Ana Modül</div><div class="card-sub">Konu Çalış, Soru Çöz, Deneme, Analiz, Topluluk</div></div></div>
+    <div class="card am"><div class="card-b"><div class="card-title">TR Geneli Sınavlar</div><div class="card-sub">Anlık sıralama, Türkiye karşılaştırması, haftalık program</div></div></div>
+    <div class="card pu"><div class="card-b"><div class="card-title">AI Analiz</div><div class="card-sub">Kişisel öneri, zayıf konu tespiti, çalışma planı önerisi</div></div></div>
+    <div class="card r"><div class="card-b"><div class="card-title">Freemium Model</div><div class="card-sub">Ücretsiz / Aylık ₺149 / Yıllık ₺990 (%44 indirim)</div></div></div>
+    <div class="card pk"><div class="card-b"><div class="card-title">Admin CMS</div><div class="card-sub">İçerik, soru, podcast, canlı ders, sınav, kullanıcı yönetimi</div></div></div>
+  </div>
+  <h2>Renk & Modül Sistemi</h2>
+  <div class="tw"><table>
+    <tr><th>Modül</th><th>Renk</th><th>Hex</th><th>Alt tipler</th></tr>
+    <tr><td>Konu Çalış</td><td><span class="badge bb">Mavi</span></td><td>#185FA5</td><td>Anlatım, Hap Bilgi, Podcast, Canlı Ders</td></tr>
+    <tr><td>Soru Çöz</td><td><span class="badge" style="background:#FAECE7;color:#712B13">Koyu Kırmızı</span></td><td>#993C1D</td><td>Test Çöz (4 şık), Doğru-Yanlış</td></tr>
+    <tr><td>Deneme Sınavı</td><td><span class="badge ba">Amber</span></td><td>#854F0B</td><td>Bireysel, TR Geneli</td></tr>
+    <tr><td>Analiz</td><td><span class="badge bg">Yeşil</span></td><td>#3B6D11</td><td>Performans, Sıralama</td></tr>
+    <tr><td>Topluluk</td><td><span class="badge" style="background:#FBEAF0;color:#72243E">Pembe</span></td><td>#993556</td><td>Forum, Soru-Cevap, Duyurular</td></tr>
+    <tr><td>Admin Sidebar</td><td><span class="badge bgr">Koyu Lacivert</span></td><td>#1E293B</td><td>Kullanıcı panelinden net ayrışır</td></tr>
+  </table></div>
+</div>
+
+<!-- KATMAN 1: ONBOARDING -->
+<div class="sec" id="k1">
+  <div class="sec-hdr" style="background:#4C1D95">
+    <div class="sec-num">1</div>
+    <div class="sec-title">Katman 1 — Kullanıcı Yolculuğu & Onboarding</div>
+  </div>
+  <p>Kullanıcı platforma ilk girdiğinde hesap oluşturmadan önce sınavını seçer. Bu seçim onboarding'in tüm adımlarını şekillendirir.</p>
+  <div style="display:flex;gap:8px;align-items:center;margin:14px 0;flex-wrap:wrap">
+    <div style="text-align:center"><div style="width:34px;height:34px;border-radius:50%;background:#4C1D95;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 5px">1</div><div style="font-size:11px;font-weight:600">Sınav Seç</div><div style="font-size:10px;color:#64748B">Hesap öncesi</div></div>
+    <div style="color:#94A3B8;font-size:18px;padding-top:2px">›</div>
+    <div style="text-align:center"><div style="width:34px;height:34px;border-radius:50%;background:#4C1D95;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 5px">2</div><div style="font-size:11px;font-weight:600">Kayıt Ol</div><div style="font-size:10px;color:#64748B">Ad, mail, şifre</div></div>
+    <div style="color:#94A3B8;font-size:18px;padding-top:2px">›</div>
+    <div style="text-align:center"><div style="width:34px;height:34px;border-radius:50%;background:#4C1D95;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 5px">3</div><div style="font-size:11px;font-weight:600">Ders &amp; Konu Seç</div><div style="font-size:10px;color:#64748B">Profil oluştur</div></div>
+    <div style="color:#94A3B8;font-size:18px;padding-top:2px">›</div>
+    <div style="text-align:center"><div style="width:34px;height:34px;border-radius:50%;background:#1D9E75;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 5px">4</div><div style="font-size:11px;font-weight:600">Dashboard</div><div style="font-size:10px;color:#64748B">Ana ekran</div></div>
+  </div>
+  <div class="ob-grid">
+    <!-- ADIM 1 -->
+    <div class="ob-card">
+      <div class="ob-hdr" style="background:#4C1D95"><div class="ob-num">1</div><div class="ob-title">Sınav Seç — Kayıt Öncesi</div></div>
+      <div class="ob-body">
+        <div class="ob-url">sinavyolu.com</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:3px">Hangi sınava hazırlanıyorsunuz?</div>
+        <div style="font-size:11px;color:#64748B;margin-bottom:9px">Sınavınızı seçin, size özel içerikler hazırlayalım.</div>
+        <div style="font-size:10px;font-weight:700;color:#64748B;margin-bottom:5px;text-transform:uppercase">GENÇLİK VE SPOR BAKANLIĞI</div>
+        <div class="sc-mini sel"><div class="sc-mini-lbl">GSB</div><div class="sc-mini-t">Gençlik Merkezi Müdürü</div><div class="sc-mini-s">8 ders · 64 konu · 3.420 aday</div></div>
+        <div class="sc-mini"><div class="sc-mini-lbl">GSB</div><div class="sc-mini-t">Spor Federasyonu Uzmanı</div><div class="sc-mini-s">5 ders · 40 konu</div></div>
+        <div style="font-size:10px;font-weight:700;color:#64748B;margin:7px 0 5px;text-transform:uppercase">MİLLİ EĞİTİM BAKANLIĞI</div>
+        <div class="sc-mini"><div class="sc-mini-lbl">MEB</div><div class="sc-mini-t">Öğretmen Atama Sınavı</div><div class="sc-mini-s">12 ders · 96 konu</div></div>
+        <button class="ob-btn">Devam et →</button>
+      </div>
+    </div>
+    <!-- ADIM 2 -->
+    <div class="ob-card">
+      <div class="ob-hdr" style="background:#4C1D95"><div class="ob-num">2</div><div class="ob-title">Kayıt Ol</div></div>
+      <div class="ob-body">
+        <div class="ob-url">sinavyolu.com/kayit</div>
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px"><span style="background:#DBEAFE;color:#1D4ED8;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600">GSB — Gençlik Merkezi Müdürü ✓</span><span style="font-size:11px;color:#3B82F6;cursor:pointer">Değiştir</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px">
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Ad Soyad</div><div style="border:1px solid #CBD5E1;border-radius:5px;padding:5px 9px;font-size:12px">Ahmet Yılmaz</div></div>
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">E-posta</div><div style="border:1px solid #CBD5E1;border-radius:5px;padding:5px 9px;font-size:12px">ahmet@email.com</div></div>
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Şifre</div><div style="border:1px solid #CBD5E1;border-radius:5px;padding:5px 9px;font-size:12px">••••••••</div></div>
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Şifre tekrar</div><div style="border:1px solid #CBD5E1;border-radius:5px;padding:5px 9px;font-size:12px">••••••••</div></div>
+        </div>
+        <button class="ob-btn">Hesap oluştur →</button>
+        <div style="text-align:center;margin-top:7px;font-size:11px;color:#94A3B8">veya Google ile devam et</div>
+      </div>
+    </div>
+    <!-- ADIM 3 - full width -->
+    <div class="ob-card" style="grid-column:1/-1">
+      <div class="ob-hdr" style="background:#4C1D95"><div class="ob-num">3</div><div class="ob-title">Ders &amp; Konu Seç — Çalışma Profili Oluştur (En Kritik Adım)</div></div>
+      <div class="ob-body">
+        <div class="ob-url">sinavyolu.com/kurulum — adım 3/4</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:3px">Derslerinizi ve konularınızı seçin</div>
+        <div style="font-size:11px;color:#64748B;margin-bottom:10px">Önce ders seçin — seçtiğiniz dersin konuları sağda listelenir. Sol sütunda bir derse tıklamak sağ sütunu dinamik günceller.</div>
+        <div class="two-col">
+          <div class="col-box">
+            <div class="col-h">Dersler <a href="#">Tümünü seç</a></div>
+            <div class="col-i on"><div class="cb on">✓</div><div><div style="font-size:11px;font-weight:600">Mevzuat ve Yönetim</div><div style="font-size:10px;color:#64748B">9 konu · 5/9 seçili</div></div></div>
+            <div class="col-i"><div class="cb"></div><div><div style="font-size:11px">Bütçe ve Planlama</div><div style="font-size:10px;color:#64748B">6 konu</div></div></div>
+            <div class="col-i on"><div class="cb on">✓</div><div><div style="font-size:11px;font-weight:600">Eğitim Programları</div><div style="font-size:10px;color:#64748B">7 konu · 7/7 seçili</div></div></div>
+            <div class="col-i"><div class="cb"></div><div style="font-size:11px">Tesis Yönetimi<div style="font-size:10px;color:#64748B">5 konu</div></div></div>
+          </div>
+          <div class="col-box">
+            <div class="col-h">Konular — Mevzuat ve Yönetim <a href="#">Tümü</a></div>
+            <div class="col-i on"><div class="cb on">✓</div><div style="font-size:11px;font-weight:600">Kamp Lideri Görev ve Sorumlulukları</div></div>
+            <div class="col-i on"><div class="cb on">✓</div><div style="font-size:11px;font-weight:600">Disiplin Cezaları</div></div>
+            <div class="col-i"><div class="cb"></div><div style="font-size:11px">Değerlendirme Komisyonu</div></div>
+            <div class="col-i on"><div class="cb on">✓</div><div style="font-size:11px;font-weight:600">Başvuru Şartları ve Seçim</div></div>
+            <div class="col-i on"><div class="cb on">✓</div><div style="font-size:11px;font-weight:600">İdari Yaptırımlar</div></div>
+            <div class="col-i"><div class="cb"></div><div style="font-size:11px">Etik İlkeler</div></div>
+          </div>
+        </div>
+        <div class="sum-bar">
+          <span style="font-size:11px;color:#64748B">Seçilenler:</span>
+          <span class="sum-tag" style="background:#DBEAFE;border-color:#93C5FD;color:#1D4ED8">Mevzuat ve Yönetim</span>
+          <span class="sum-tag" style="background:#DCFCE7;border-color:#86EFAC;color:#166534">Eğitim Programları</span>
+          <span style="font-size:11px;color:#64748B;margin-left:auto">12 konu · ~2.840 soru</span>
+        </div>
+        <button class="ob-btn" style="margin-top:8px">Çalışmaya başla →</button>
+      </div>
+    </div>
+  </div>
+  <div class="ib g"><strong>Teknik not:</strong> Checkbox ile ders seçmek o dersin tüm konu id'lerini <code>konu_profili.konu_ids[]</code> dizisine ekler. En az 1 konu seçilmeden "Başla" butonu disabled kalır. Soru motoru: <code>WHERE konu_id = ANY(konu_ids[])</code></div>
+</div>
+
+<!-- KATMAN 2: DASHBOARD -->
+<div class="sec" id="k2">
+  <div class="sec-hdr" style="background:#1D9E75">
+    <div class="sec-num">2</div>
+    <div class="sec-title">Katman 2 — Dashboard</div>
+  </div>
+  <div class="ib"><strong>Temel kural:</strong> Banner sadece bilgi verir — CTA içermez. Aksiyonlar modül kartlarında. "Devam Et" kartı sadece yarım kalan içerik varsa görünür.</div>
+
+  <!-- DASHBOARD MOCKUP -->
+  <div style="display:flex;gap:14px;margin:14px 0;align-items:flex-start">
+    <!-- SIDEBAR -->
+    <div class="sb-p">
+      <div class="sbp-logo"><div class="sbp-logo-n">Memurlar Akademi</div><div class="sbp-logo-s">GSB — Müdür Sınavı</div></div>
+      <div class="sbp-prof">
+        <div class="sbp-prof-h">Çalışma profili <span>Değiştir →</span></div>
+        <div class="sbp-s"><div class="sbp-lbl">Dersler</div>
+          <div class="sbp-pill" style="background:#DBEAFE;color:#1E3A8A">Mevzuat ve Yönetim</div>
+          <div class="sbp-pill" style="background:#FEF3C7;color:#92400E">Bütçe ve Planlama</div>
+        </div>
+        <div class="sbp-s"><div class="sbp-lbl">Konular</div>
+          <div class="sbp-pill" style="background:#DBEAFE;color:#1E3A8A;display:flex;justify-content:space-between">Kamp Liderliği <span style="opacity:.6">64s</span></div>
+          <div class="sbp-pill" style="background:#DBEAFE;color:#1E3A8A;display:flex;justify-content:space-between">Disiplin Cezaları <span style="opacity:.6">38s</span></div>
+          <div style="font-size:9px;color:rgba(255,255,255,.3);padding:2px 0">+11 konu daha</div>
+        </div>
+      </div>
+      <div class="sbp-sec">Menü</div>
+      <div class="sbp-item on"><div class="sbp-dot" style="background:#60A5FA"></div>Dashboard</div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#3B82F6"></div>Konu Çalış</div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#B91C1C"></div>Soru Çöz</div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#B45309"></div>Deneme Sınavı<span class="sbp-badge">1</span></div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#16A34A"></div>Analiz</div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#BE185D"></div>Topluluk</div>
+      <div class="sbp-sec">Hesap</div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#64748B"></div>Ayarlar</div>
+      <div class="sbp-item"><div class="sbp-dot" style="background:#5B21B6"></div>Premium'a Geç</div>
+      <div class="sbp-user"><div class="sbp-av">AK</div><div><div class="sbp-un">Ahmet K.</div><div class="sbp-ur">Türkiye #247</div></div></div>
+    </div>
+    <!-- MAIN -->
+    <div style="flex:1;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden">
+      <div class="lp-topbar">Dashboard<div style="display:flex;gap:7px"><div style="border:1px solid #CBD5E1;border-radius:6px;padding:4px 9px;font-size:11px;color:#64748B">Konu veya soru ara...</div></div></div>
+      <div class="lm-banner">
+        <div class="lm-bt">GSB — Gençlik Merkezi Müdürü Sınavı</div>
+        <div class="lm-bs">Sınava 38 gün kaldı · Bugünkü hedef: 15 soru çöz, 1 konu tekrar et</div>
+        <div class="lm-chips"><span class="lm-chip">3.420 aday</span><span class="lm-chip">Türkiye #247</span><span class="lm-chip w">Deneme — Pazar 14:00</span></div>
+      </div>
+      <div class="lm-flt">
+        <div class="lm-fr">
+          <span class="lm-flbl">Aktif dersler:</span>
+          <span class="lm-pill" style="background:#DBEAFE;color:#1D4ED8">Mevzuat ve Yönetim</span>
+          <span class="lm-pill" style="background:#FEF3C7;color:#92400E">Bütçe ve Planlama</span>
+          <span style="font-size:10px;color:#3B82F6;margin-left:auto">Düzenle</span>
+        </div>
+        <div class="lm-fr">
+          <span class="lm-flbl">Aktif konular:</span>
+          <span class="lm-pill" style="background:#DBEAFE;color:#1D4ED8">Kamp Liderliği</span>
+          <span class="lm-pill" style="background:#DBEAFE;color:#1D4ED8">Disiplin Cezaları</span>
+          <span class="lm-pill" style="background:#FEF3C7;color:#92400E">Bütçe Hazırlama</span>
+          <span style="font-size:10px;color:#94A3B8">+9</span>
+          <span style="font-size:10px;color:#3B82F6;margin-left:auto">Düzenle</span>
+        </div>
+      </div>
+      <div style="padding:6px 7px">
+        <div class="lm-devam"><div><div class="lm-devam-t">Bireysel Deneme #4 — yarım bırakıldı</div><div class="lm-devam-s">24 soru kaldı · 2 gün önce · %62 doğruluk</div></div><button class="lm-btn">Devam Et →</button></div>
+      </div>
+      <div class="lm-mods">
+        <div class="lm-mod" style="background:#185FA5"><div style="font-size:13px">📖</div><div class="lm-mn">Konu Çalış</div><div class="lm-ms">Anlatım · Podcast</div></div>
+        <div class="lm-mod" style="background:#993C1D"><div style="font-size:13px">✏️</div><div class="lm-mn">Soru Çöz</div><div class="lm-ms">Test · D/Y</div></div>
+        <div class="lm-mod" style="background:#854F0B"><div style="font-size:13px">🎯</div><div class="lm-mn">Deneme</div><div class="lm-ms">Bireysel · TR</div></div>
+        <div class="lm-mod" style="background:#3B6D11"><div style="font-size:13px">📊</div><div class="lm-mn">Analiz</div><div class="lm-ms">Performans</div></div>
+        <div class="lm-mod" style="background:#993556"><div style="font-size:13px">💬</div><div class="lm-mn">Topluluk</div><div class="lm-ms">Forum</div></div>
+      </div>
+      <div class="lm-stats">
+        <div class="lm-stat"><div class="lm-sv">1.248</div><div class="lm-sl">Çözülen soru</div></div>
+        <div class="lm-stat"><div class="lm-sv" style="color:#166534">%74</div><div class="lm-sl">Başarı</div></div>
+        <div class="lm-stat"><div class="lm-sv">64 sa</div><div class="lm-sl">Çalışma</div></div>
+        <div class="lm-stat"><div class="lm-sv" style="color:#1D4ED8">#247</div><div class="lm-sl">TR sırası</div></div>
+      </div>
+      <div class="lm-g3">
+        <div class="lm-c">
+          <div class="lm-ch">Konu performansı <a href="#">Tümü →</a></div>
+          <div class="lm-cb">
+            <div class="perf-r"><div class="perf-t"><span>Kamp Liderliği</span><span style="color:#166534;font-weight:700">%88</span></div><div class="pbg"><div class="pf" style="width:88%;background:#16A34A"></div></div></div>
+            <div class="perf-r"><div class="perf-t"><span>Disiplin Cezaları</span><span style="color:#D97706;font-weight:700">%55</span></div><div class="pbg"><div class="pf" style="width:55%;background:#D97706"></div></div></div>
+            <div class="perf-r"><div class="perf-t"><span>Değ. Komisyonu</span><span style="color:#DC2626;font-weight:700">%48</span></div><div class="pbg"><div class="pf" style="width:48%;background:#DC2626"></div></div></div>
+            <div class="ai-mini"><div class="ai-lbl">AI Analizi</div><div class="ai-txt">Değerlendirme Komisyonu'na odaklan — %48 ile en zayıf konun.</div><button class="ai-btn2">Konuya git →</button></div>
+          </div>
+        </div>
+        <div class="lm-c">
+          <div class="lm-ch">Günlük hedef</div>
+          <div class="lm-cb">
+            <div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-bottom:1px solid #E2E8F0"><div><span style="width:14px;height:14px;border-radius:50%;background:#16A34A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:8px;margin-right:5px">✓</span>Konu tekrarı</div><span style="color:#16A34A">Tamam</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-bottom:1px solid #E2E8F0"><div><span style="width:14px;height:14px;border-radius:50%;border:1.5px solid #CBD5E1;display:inline-flex;align-items:center;justify-content:center;margin-right:5px"></span>20 soru çöz</div><span>13/20</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0"><div><span style="width:14px;height:14px;border-radius:50%;border:1.5px solid #CBD5E1;display:inline-flex;align-items:center;justify-content:center;margin-right:5px"></span>1 deneme</div><span style="color:#94A3B8">0/1</span></div>
+          </div>
+        </div>
+        <div class="lm-c">
+          <div class="lm-ch">Liderlik tablosu <a href="#">Tümü →</a></div>
+          <div class="lm-cb">
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 0;border-bottom:1px solid #E2E8F0;font-size:11px"><span style="color:#B45309;font-weight:700;width:16px">1</span><div style="width:18px;height:18px;border-radius:50%;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">ME</div><div style="flex:1">Mehmet E.</div><span style="font-weight:700">1.840</span></div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 0;border-bottom:1px solid #E2E8F0;font-size:11px"><span style="width:16px;color:#64748B">2</span><div style="width:18px;height:18px;border-radius:50%;background:#FCE7F3;color:#BE185D;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">FY</div><div style="flex:1">Fatma Y.</div><span style="font-weight:700">1.712</span></div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 0;background:#EFF6FF;border-radius:5px;font-size:11px"><span style="color:#1D4ED8;font-weight:700;width:16px">247</span><div style="width:18px;height:18px;border-radius:50%;background:#DBEAFE;color:#1D4ED8;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">AK</div><div style="flex:1;color:#1D4ED8;font-weight:600">Ahmet K. <span style="background:#DBEAFE;border-radius:99px;padding:1px 4px;font-size:9px">Sen</span></div><span style="font-weight:700;color:#1D4ED8">1.248</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2>Dashboard Bileşen Sırası (Zorunlu)</h2>
+  <div class="tw"><table>
+    <tr><th>#</th><th>Bileşen</th><th>İçerik</th><th>CTA?</th><th>Koşul</th></tr>
+    <tr><td>1</td><td><strong>Banner</strong></td><td>Sınav adı, gün sayacı, meta chip'ler (aday sayısı, sıralama, yaklaşan sınav)</td><td>YOK</td><td>Her zaman görünür</td></tr>
+    <tr><td>2</td><td><strong>Aktif Filtre Şeridi</strong></td><td>Satır 1: Aktif Dersler + "Düzenle" · Satır 2: Aktif Konular + "Düzenle"</td><td>Düzenle</td><td>Her zaman</td></tr>
+    <tr><td>3</td><td><strong>Devam Et Kartı</strong></td><td>Yarım kalan içerik başlığı, ilerleme, "Devam Et" butonu</td><td>Devam Et →</td><td>Sadece yarım içerik varsa</td></tr>
+    <tr><td>4</td><td><strong>5 Modül Kartı</strong></td><td>Konu Çalış, Soru Çöz, Deneme, Analiz, Topluluk — tam renkli arka plan</td><td>Her kart modüle git</td><td>Her zaman</td></tr>
+    <tr><td>5</td><td><strong>4 İstatistik</strong></td><td>Çözülen soru, başarı oranı, çalışma süresi, TR sıralaması</td><td>—</td><td>Her zaman</td></tr>
+    <tr><td>6</td><td><strong>Alt 3'lü Grid</strong></td><td>Konu performansı + AI · Günlük hedef + Aktivite · Liderlik + Sınavlar</td><td>Tümü →</td><td>Her zaman</td></tr>
+  </table></div>
+</div>
+
+<!-- KATMAN 3: MODÜLLER -->
+<div class="sec" id="k3">
+  <div class="sec-hdr" style="background:#185FA5">
+    <div class="sec-num">3</div>
+    <div class="sec-title">Katman 3 — Modüllerin İç Sayfaları</div>
+  </div>
+  <p>Her modül seçili konu profiline göre filtrelenmiş içerik sunar. Tüm sayfalarda topbar'da breadcrumb ve içerik tipi geçiş butonları bulunur. Profil sidebar'da her zaman görünür.</p>
+</div>
+
+<!-- KONU ÇALIŞ -->
+<div class="sec" id="k3-konu">
+  <h2 style="color:#185FA5;border-bottom-color:#185FA5">3.1 Konu Çalış Modülü</h2>
+  <div class="ib">Ana sayfa: 4 alt tip kartı (Anlatım, Hap Bilgi, Podcast, Canlı Ders), ilerleme özeti, devam et kartı, konu listesi (filtrelenmiş profile göre).</div>
+
+  <!-- 4 ALT TİP -->
+  <div class="grid4" style="margin:12px 0">
+    <div style="background:#185FA5;border-radius:9px;padding:13px;color:#fff;text-align:center">
+      <div style="font-size:22px">📖</div>
+      <div style="font-size:13px;font-weight:700;margin:5px 0 3px">Konu Anlatımı</div>
+      <div style="font-size:11px;opacity:.8">Detaylı metin & görsel</div>
+      <div style="background:rgba(255,255,255,.15);border-radius:99px;padding:2px 8px;font-size:10px;margin-top:5px;display:inline-block">186 içerik</div>
+    </div>
+    <div style="background:#0F6E56;border-radius:9px;padding:13px;color:#fff;text-align:center">
+      <div style="font-size:22px">⚡</div>
+      <div style="font-size:13px;font-weight:700;margin:5px 0 3px">Hap Bilgi</div>
+      <div style="font-size:11px;opacity:.8">Kısa özet kartlar</div>
+      <div style="background:rgba(255,255,255,.15);border-radius:99px;padding:2px 8px;font-size:10px;margin-top:5px;display:inline-block">94 kart</div>
+    </div>
+    <div style="background:#854F0B;border-radius:9px;padding:13px;color:#fff;text-align:center">
+      <div style="font-size:22px">🎧</div>
+      <div style="font-size:13px;font-weight:700;margin:5px 0 3px">Podcast</div>
+      <div style="font-size:11px;opacity:.8">Dinleyerek öğren</div>
+      <div style="background:rgba(255,255,255,.15);border-radius:99px;padding:2px 8px;font-size:10px;margin-top:5px;display:inline-block">48 bölüm</div>
+    </div>
+    <div style="background:#533AB7;border-radius:9px;padding:13px;color:#fff;text-align:center">
+      <div style="font-size:22px">🎥</div>
+      <div style="font-size:13px;font-weight:700;margin:5px 0 3px">Canlı Ders</div>
+      <div style="font-size:11px;opacity:.8">Eğitmenle anlık</div>
+      <div style="background:rgba(255,255,255,.15);border-radius:99px;padding:2px 8px;font-size:10px;margin-top:5px;display:inline-block">Pzt–Cum 20:00</div>
+    </div>
+  </div>
+
+  <h3>3.1.1 Konu Anlatımı — İçerik Sayfası (3 Sütun)</h3>
+  <div class="ib">Sol: Bölüm listesi (tamamlanan ✓, aktif vurgulu, bekleyen gri) | Orta: Zengin metin içeriği | Sağ: Not alma, örnek soru, favoriler, çalışma süresi</div>
+  <ul class="bl">
+    <li>Topbar: Breadcrumb + Anlatım/Hap Bilgi/Podcast/Sorular geçiş pill'leri</li>
+    <li>İçerik: Düz metin, H1/H2 başlıklar, <span style="background:#FEF3C7;padding:0 3px;border-radius:3px">vurgulu sınav notu kutusu</span>, bilgi grid'i, madde listesi</li>
+    <li>Önceki / Sonraki bölüm butonları footer'da</li>
+    <li>Sağ panel: Not textarea (kona özel, kalıcı), örnek soru kartı, favori toggle, çalışma süre sayacı</li>
+  </ul>
+
+  <h3>3.1.2 Hap Bilgi — Spaced Repetition Kart Sistemi</h3>
+  <div class="ib a">Öğrenildi = koyu yeşil. Tekrar lazım = koyu kırmızı. Bilmediğin kartlar ertesi gün hatırlatılır (spaced repetition).</div>
+  <div class="grid3" style="margin:10px 0">
+    <div style="border-radius:8px;overflow:hidden;border:1px solid #E2E8F0">
+      <div style="background:#085041;padding:11px"><div style="font-size:10px;color:rgba(255,255,255,.5);margin-bottom:4px">01 — Öğrenildi ✓</div><div style="font-size:12px;font-weight:600;color:#fff">Uyarı cezasını hangi makam verir?</div></div>
+      <div style="background:#fff;padding:8px;display:flex;justify-content:space-between;align-items:center"><div style="font-size:11px">Disiplin amiri tarafından verilir.</div><button style="background:#DCFCE7;border:1px solid #16A34A;color:#166534;border-radius:4px;padding:2px 7px;font-size:10px;cursor:pointer">✓ Biliyorum</button></div>
+    </div>
+    <div style="border-radius:8px;overflow:hidden;border:1.5px solid #DC2626">
+      <div style="background:#991B1B;padding:11px"><div style="font-size:10px;color:rgba(255,255,255,.5);margin-bottom:4px">03 — Tekrar lazım</div><div style="font-size:12px;font-weight:600;color:#fff">Kademe durdurma hangi kurul verir?</div></div>
+      <div style="background:#fff;padding:8px;display:flex;justify-content:space-between;align-items:center"><div style="font-size:11px">Yüksek Disiplin Kurulu</div><div style="display:flex;gap:4px"><button style="background:#FEE2E2;border:1px solid #DC2626;color:#991B1B;border-radius:4px;padding:2px 6px;font-size:10px;cursor:pointer">Tekrar bak</button><button style="background:#DCFCE7;border:1px solid #16A34A;color:#166534;border-radius:4px;padding:2px 6px;font-size:10px;cursor:pointer">✓</button></div></div>
+    </div>
+    <div style="border-radius:8px;overflow:hidden;border:1px solid #E2E8F0">
+      <div style="background:#085041;padding:11px"><div style="font-size:10px;color:rgba(255,255,255,.5);margin-bottom:4px">02 — Öğrenildi ✓</div><div style="font-size:12px;font-weight:600;color:#fff">Savunma için minimum süre?</div></div>
+      <div style="background:#fff;padding:8px;display:flex;justify-content:space-between;align-items:center"><div style="font-size:11px">En az 7 gün zorunludur.</div><button style="background:#DCFCE7;border:1px solid #16A34A;color:#166534;border-radius:4px;padding:2px 7px;font-size:10px;cursor:pointer">✓ Biliyorum</button></div>
+    </div>
+  </div>
+
+  <h3>3.1.3 Podcast — Player + Transkript</h3>
+  <div class="pod-p">
+    <div class="pp-top">
+      <div class="pp-th">🎧</div>
+      <div><div class="pp-t">Disiplin Cezaları — İdari Yaptırım Süreci</div><div class="pp-m">Ahmet Hoca · 18:24 dk · Bölüm 2/3</div></div>
+    </div>
+    <div class="pp-seek"><div class="pp-sf"></div></div>
+    <div class="pp-times"><span>07:42</span><span>18:24</span></div>
+    <div class="pp-ctrl">
+      <button class="pp-btn">⏮</button><button class="pp-btn">⏪</button>
+      <button class="pp-btn pl">▶</button>
+      <button class="pp-btn">⏩</button><button class="pp-btn">⏭</button>
+      <button class="pp-sp">1.5x</button>
+    </div>
+  </div>
+  <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:11px;font-size:12px;margin-bottom:4px">
+    <div style="font-weight:600;margin-bottom:5px;display:flex;justify-content:space-between">Transkript <span style="color:#3B82F6;cursor:pointer">Tam ekran</span></div>
+    <div style="color:#64748B;line-height:1.8"><span style="color:#94A3B8;font-size:10px">07:32 </span>Savunma için verilen süre <span style="background:#FEF3C7;border-radius:3px;padding:0 3px;color:#92400E">en az 7 gündür</span> ve bu süre tanınmadan verilen cezalar hukuka aykırı kabul edilir.</div>
+  </div>
+  <ul class="bl">
+    <li>Hız butonu: 1x, 1.25x, 1.5x, 2x</li>
+    <li>Transkript: Aktif cümle highlight, zaman damgasına tıklayarak atlama</li>
+    <li>Sağ panel: Not alma, Yer işaretleri (dakikaya atlama), Dinleme istatistikleri</li>
+  </ul>
+
+  <h3>3.1.4 Canlı Ders — Takvim Odaklı</h3>
+  <div class="live-b">
+    <div><div class="lb-badge"><div class="lb-dot"></div>Şu an canlı — 248 izleyici</div><div class="lb-t">Disiplin Cezaları — Soru-Cevap ve Özet</div><div class="lb-m">Ahmet Hoca · Başladı: 20:00 · ~22 dk kaldı</div></div>
+    <div class="lb-btns"><button class="lb-btn">Kayıt Durumu</button><button class="lb-btn">Derse Katıl</button><button class="lb-red">Yayını Sonlandır</button></div>
+  </div>
+  <ul class="bl">
+    <li>Haftalık takvim: Tamamlanan (kaydı izle + izlenme barı), Canlı (mor banner), Yaklaşan (tarih + hatırlatıcı)</li>
+    <li>Sağ panel: Eğitmen kartı (puan, ders sayısı), ders konuları, hatırlatıcı toggle'ları (1 gün, 1 saat önce)</li>
+    <li>Ders bitince kayıt otomatik işlenir ve "Geçmiş Kayıtlar" bölümünde izlenebilir</li>
+  </ul>
+</div>
+
+<!-- SORU ÇÖZ -->
+<div class="sec" id="k3-soru">
+  <h2 style="color:#993C1D;border-bottom-color:#993C1D">3.2 Soru Çöz Modülü</h2>
+  <div class="ib r">Ana sayfa: Test Çöz ve Doğru-Yanlış mod kartları. Filtreler: zorluk, durum (yeni/yanlış/işaretli), soru sayısı. Son çözülen testler listesi.</div>
+
+  <h3>3.2.1 Test Çöz — Aktif Soru Ekranı</h3>
+  <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin:10px 0">
+    <div class="test-hdr">
+      <div><div style="font-size:11px;font-weight:600">Disiplin Cezaları — Karma Test</div><div style="font-size:10px;color:#64748B">20 soru · Karma zorluk</div></div>
+      <div class="t-prog-w"><div class="t-prog-bg"><div class="t-prog-f" style="width:40%;background:#993C1D"></div></div><span style="font-size:11px;color:#64748B">8/20</span></div>
+      <div class="t-timer">⏱ 12:34</div>
+      <button style="border:1px solid #CBD5E1;border-radius:5px;padding:3px 9px;font-size:11px;cursor:pointer;background:transparent;color:#64748B">Çıkış</button>
+    </div>
+    <div class="t-body">
+      <div>
+        <div class="s-num"><span>Soru 8 / 20</span><span class="badge ba">Disiplin Cezaları</span></div>
+        <div class="s-text">Bir kamu görevlisine disiplin cezası verilebilmesi için savunma hakkı tanınması zorunludur. Bu kapsamda verilmesi gereken <span style="background:#FEF3C7;border-radius:3px;padding:0 3px">minimum savunma süresi</span> kaç gündür?</div>
+        <div class="siklar">
+          <div class="sik"><div class="sik-h">A</div><span>3 gün</span></div>
+          <div class="sik ok"><div class="sik-h">B</div><span>7 gün</span></div>
+          <div class="sik no"><div class="sik-h">C</div><span>10 gün</span></div>
+          <div class="sik"><div class="sik-h">D</div><span>15 gün</span></div>
+        </div>
+        <div class="acik"><strong>Yanlış — Doğru: B</strong><br>657 Sayılı DMK'ya göre savunma için en az 7 gün tanınması zorunludur. Kınama cezasında bu süre 3 gün olabilir.</div>
+        <div style="display:flex;justify-content:space-between;margin-top:9px">
+          <div style="display:flex;gap:6px"><button style="border:1px solid #FCD34D;border-radius:5px;padding:3px 9px;font-size:11px;cursor:pointer;background:#FEF3C7;color:#92400E">🚩 İşaretli</button><button style="border:1px solid #CBD5E1;border-radius:5px;padding:3px 9px;font-size:11px;cursor:pointer;background:transparent;color:#64748B">📝 Not</button></div>
+          <div style="display:flex;gap:5px"><button style="border:1px solid #CBD5E1;border-radius:5px;padding:3px 11px;font-size:11px;cursor:pointer;background:transparent;color:#64748B">← Önceki</button><button style="background:#993C1D;color:#fff;border:none;border-radius:5px;padding:3px 14px;font-size:11px;font-weight:600;cursor:pointer">Sonraki →</button></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:6px">Soru haritası</div>
+        <div class="s-map">
+          <button class="sm sm-d">1</button><button class="sm sm-d">2</button><button class="sm sm-d">3</button><button class="sm sm-y">4</button>
+          <button class="sm sm-d">5</button><button class="sm sm-f">6</button><button class="sm sm-d">7</button><button class="sm sm-a">8</button>
+          <button class="sm sm-t">9</button><button class="sm sm-t">10</button><button class="sm sm-t">11</button><button class="sm sm-t">12</button>
+          <button class="sm sm-t">13</button><button class="sm sm-t">14</button><button class="sm sm-t">15</button><button class="sm sm-t">16</button>
+          <button class="sm sm-t">17</button><button class="sm sm-t">18</button><button class="sm sm-t">19</button><button class="sm sm-t">20</button>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin:8px 0;font-size:10px">
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:10px;height:8px;border-radius:2px;background:#DCFCE7;border:1px solid #16A34A;display:inline-block"></span>Doğru</span>
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:10px;height:8px;border-radius:2px;background:#FEE2E2;border:1px solid #DC2626;display:inline-block"></span>Yanlış</span>
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:10px;height:8px;border-radius:2px;background:#993C1D;display:inline-block"></span>Aktif</span>
+          <span style="display:flex;align-items:center;gap:3px"><span style="width:10px;height:8px;border-radius:2px;background:#FEF3C7;border:1px solid #D97706;display:inline-block"></span>İşaretli</span>
+        </div>
+        <div class="s-sum">
+          <div class="ss-r"><span>Doğru</span><span style="color:#16A34A;font-weight:700">6</span></div>
+          <div class="ss-r"><span>Yanlış</span><span style="color:#DC2626;font-weight:700">2</span></div>
+          <div class="ss-r"><span>İşaretli</span><span style="color:#D97706;font-weight:700">1</span></div>
+          <div class="ss-r" style="border-bottom:none"><span>Başarı</span><span style="color:#16A34A;font-weight:700">%75</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>3.2.2 Doğru-Yanlış — Aktif Ekran</h3>
+  <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin:10px 0">
+    <div class="test-hdr">
+      <div><div style="font-size:11px;font-weight:600">Disiplin Cezaları — D/Y</div><div style="font-size:10px;color:#64748B">30 ifade</div></div>
+      <div class="t-prog-w"><div class="t-prog-bg"><div class="t-prog-f" style="width:37%;background:#712B13"></div></div><span style="font-size:11px;color:#64748B">11/30</span></div>
+      <div class="t-timer">⏱ 04:18</div>
+    </div>
+    <div style="padding:18px;display:flex;flex-direction:column;align-items:center;gap:13px">
+      <div style="font-size:14px;font-weight:600;text-align:center;line-height:1.7;max-width:460px">Kınama cezası için savunma süresi, diğer disiplin cezalarından farklı olarak <span style="background:#FEF3C7;border-radius:3px;padding:0 4px">3 gün</span> olarak uygulanabilir.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px;width:100%;max-width:380px">
+        <div style="background:#16A34A;color:#fff;border:2px solid #16A34A;border-radius:9px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;text-align:center">✓ Doğru</div>
+        <div style="background:#DC2626;color:#fff;border:2px solid #DC2626;border-radius:9px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;text-align:center">✗ Yanlış</div>
+      </div>
+      <div style="background:#FEE2E2;border:1px solid #FCA5A5;border-radius:8px;padding:10px 12px;max-width:380px;width:100%">
+        <div style="font-size:12px;font-weight:700;color:#991B1B;margin-bottom:3px">✗ Yanlış — Doğru cevap: Doğru</div>
+        <div style="font-size:12px;color:#7F1D1D">Bu ifade doğrudur. Kınama cezasında 3 gün, diğerlerinde minimum 7 gündür.</div>
+      </div>
+    </div>
+  </div>
+  <div class="ib">D/Y farkı: Sağ panelde hız istatistiği eklenir — ortalama yanıt süresi, en hızlı, en yavaş. Bir kullanıcının refleks hızını gösterir.</div>
+</div>
+
+<!-- DENEME SINAVI -->
+<div class="sec" id="k3-deneme">
+  <h2 style="color:#854F0B;border-bottom-color:#854F0B">3.3 Deneme Sınavı Modülü</h2>
+  <div class="ib a">Ana sayfa: Bireysel (amber) ve TR Geneli (koyu mavi) mod kartları, özet istatistikler, yaklaşan TR sınavı sayacı, geçmiş denemeler (yarım bırakılan/tamamlanan/bireysel).</div>
+
+  <h3>3.3.1 TR Geneli Deneme — Sonuç ve Analiz Sayfası</h3>
+  <div class="hero-s">
+    <div class="hs-l"><h3>GSB — Gençlik Merkezi Müdürü Sınavı</h3><p>TR Geneli #12 · 22 Mart 2026 · 3.420 katılımcı · 87 dk kullandın</p></div>
+    <div class="hs-r">
+      <div class="hs-st"><div class="hs-v">56.4</div><div class="hs-lb">Net puan</div></div>
+      <div class="hs-div"></div>
+      <div class="hs-st"><div class="hs-v" style="color:#fff">62</div><div class="hs-lb">Doğru</div></div>
+      <div class="hs-st"><div class="hs-v" style="color:#FCA5A5">16</div><div class="hs-lb">Yanlış</div></div>
+      <div class="hs-st"><div class="hs-v" style="opacity:.5;color:#fff">2</div><div class="hs-lb">Boş</div></div>
+      <div class="hs-div"></div>
+      <div class="rank-b"><div class="rank-v">#247</div><div class="rank-lb">Türkiye sırası</div><div class="rank-d">↑ 31 basamak yükseldi</div></div>
+    </div>
+  </div>
+  <div class="grid4" style="margin-bottom:12px">
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#166534">%78</div><div style="font-size:10px;color:#64748B">Başarı oranı</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700">87 dk</div><div style="font-size:10px;color:#64748B">Kullanılan süre</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#1D4ED8">%7</div><div style="font-size:10px;color:#64748B">TR üst dilimi</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700">48.2</div><div style="font-size:10px;color:#64748B">TR ortalaması</div></div>
+  </div>
+  <div class="grid2">
+    <div><h3>Ders bazlı performans</h3>
+      <div class="tw"><table>
+        <tr><th>Ders</th><th>D</th><th>Y</th><th>Net</th><th>%</th></tr>
+        <tr><td>Mevzuat ve Yönetim</td><td style="color:#166534">22</td><td style="color:#DC2626">4</td><td>19.5</td><td style="color:#166534">%85</td></tr>
+        <tr><td>Bütçe ve Planlama</td><td>14</td><td>6</td><td>12.0</td><td style="color:#D97706">%67</td></tr>
+        <tr><td>Eğitim Programları</td><td>18</td><td>4</td><td>16.7</td><td style="color:#166534">%78</td></tr>
+        <tr><td>Hukuk ve Mevzuat</td><td>8</td><td>2</td><td>7.3</td><td style="color:#D97706">%80</td></tr>
+      </table></div>
+    </div>
+    <div><h3>AI Analizi</h3>
+      <div style="background:#1E3A8A;border-radius:9px;padding:14px">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px;font-size:12px;color:#fff">↑ Bütçe ve Planlama'da TR ortalamasının altındasın. Stratejik Planlama konusuna odaklan.</div>
+          <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px;font-size:12px;color:#fff">⚠️ Hukuk ve Mevzuat'ta ortalama gerisinde. Kamu İhale Hukuku en zayıf konun.</div>
+          <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px;font-size:12px;color:#fff">✓ Mevzuat ve Yönetim harika — Türkiye'nin en iyi %15'indesin.</div>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:9px">
+          <button style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer">Zayıf konuları çalış →</button>
+          <button style="background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer">Yanlışları gözden geçir →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>3.3.2 Bireysel Deneme — Sonuç Sayfası (TR'den Farkı)</h3>
+  <div class="ib a"><strong>TR Geneli sonucunda:</strong> Türkiye sıralaması, TR ortalamasıyla karşılaştırma, kaç basamak yükseldi. Hero lacivert. <br><strong>Bireysel sonucunda:</strong> TR sıralaması YOK. Yerine "Önceki bireysel denemeden +3.5 net fark" ve son 5 bireysel denemenin gelişim grafiği. Hero amber/kahverengi.</div>
+  <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:14px;margin:10px 0">
+    <div style="font-size:12px;font-weight:600;margin-bottom:10px">Kişisel gelişim — son 5 bireysel deneme</div>
+    <div class="a-chart">
+      <div class="a-col"><div class="a-v">18.2</div><div class="a-bar" style="height:19px;background:#B5D4F4"></div><div class="a-l">#1</div></div>
+      <div class="a-col"><div class="a-v">21.5</div><div class="a-bar" style="height:28px;background:#85B7EB"></div><div class="a-l">#2</div></div>
+      <div class="a-col"><div class="a-v">25.0</div><div class="a-bar" style="height:40px;background:#378ADD"></div><div class="a-l">#3</div></div>
+      <div class="a-col"><div class="a-v">25.5</div><div class="a-bar" style="height:42px;background:#185FA5"></div><div class="a-l">#4</div></div>
+      <div class="a-col"><div class="a-v" style="color:#854F0B;font-weight:700">28.5</div><div class="a-bar" style="height:56px;background:#854F0B"></div><div class="a-l" style="color:#854F0B;font-weight:600">Bu #5</div></div>
+    </div>
+    <div style="font-size:11px;color:#64748B;border-top:1px solid #E2E8F0;padding-top:7px;display:flex;justify-content:space-between"><span>Ortalama: 23.7</span><span style="color:#166534;font-weight:600">+10.3 net artış (5 denemede)</span></div>
+  </div>
+</div>
+
+<!-- ANALİZ -->
+<div class="sec" id="k3-analiz">
+  <h2 style="color:#3B6D11;border-bottom-color:#3B6D11">3.4 Analiz Modülü</h2>
+  <div class="ib g">2 sekme: Performans Analizi | Sıralama Analizi. Zaman filtresi: Son 30 gün / 3 ay / Tümü.</div>
+  <div class="grid2" style="margin:12px 0">
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:13px">
+      <div style="font-size:12px;font-weight:600;margin-bottom:9px">Net puan gelişimi — son 8 deneme</div>
+      <div class="a-chart">
+        <div class="a-col"><div class="a-v">18</div><div class="a-bar" style="height:14px;background:#B5D4F4"></div><div class="a-l">1.Mar</div></div>
+        <div class="a-col"><div class="a-v">25</div><div class="a-bar" style="height:23px;background:#85B7EB"></div><div class="a-l">8.Mar</div></div>
+        <div class="a-col"><div class="a-v">42</div><div class="a-bar" style="height:44px;background:#378ADD"></div><div class="a-l">12.Mar</div></div>
+        <div class="a-col"><div class="a-v">46</div><div class="a-bar" style="height:50px;background:#185FA5"></div><div class="a-l">15.Mar</div></div>
+        <div class="a-col"><div class="a-v">50</div><div class="a-bar" style="height:57px;background:#0F6E56"></div><div class="a-l">18.Mar</div></div>
+        <div class="a-col"><div class="a-v">53</div><div class="a-bar" style="height:64px;background:#085041"></div><div class="a-l">21.Mar</div></div>
+        <div class="a-col"><div class="a-v" style="color:#085041;font-weight:700">56</div><div class="a-bar" style="height:76px;background:#085041"></div><div class="a-l" style="color:#085041;font-weight:600">25.Mar</div></div>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:13px">
+      <div style="font-size:12px;font-weight:600;margin-bottom:9px">Türkiye sıralama trendi</div>
+      <div style="display:flex;flex-direction:column;gap:5px;font-size:12px">
+        <div style="display:flex;align-items:center;gap:7px"><span style="width:42px;color:#64748B;font-size:11px">1 Mar</span><div style="height:15px;background:#B4B2A9;border-radius:3px;padding:0 6px;font-size:10px;color:#fff;display:flex;align-items:center;width:18%">#892</div></div>
+        <div style="display:flex;align-items:center;gap:7px"><span style="width:42px;color:#64748B;font-size:11px">12 Mar</span><div style="height:15px;background:#378ADD;border-radius:3px;padding:0 6px;font-size:10px;color:#fff;display:flex;align-items:center;width:52%">#480</div></div>
+        <div style="display:flex;align-items:center;gap:7px"><span style="width:42px;color:#64748B;font-size:11px">18 Mar</span><div style="height:15px;background:#185FA5;border-radius:3px;padding:0 6px;font-size:10px;color:#fff;display:flex;align-items:center;width:70%">#298</div></div>
+        <div style="display:flex;align-items:center;gap:7px"><span style="width:42px;color:#085041;font-size:11px;font-weight:700">25 Mar</span><div style="height:15px;background:#085041;border-radius:3px;padding:0 6px;font-size:10px;color:#fff;display:flex;align-items:center;width:90%">#247</div></div>
+      </div>
+      <div style="font-size:11px;color:#166534;font-weight:600;border-top:1px solid #E2E8F0;padding-top:7px;margin-top:8px">↑ #892 → #247 — 645 basamak yükseldi (25 günde)</div>
+    </div>
+  </div>
+  <h3>Konu bazlı performans tablosu</h3>
+  <div class="tw"><table>
+    <tr><th>Konu</th><th>Başarı</th><th>İlerleme</th><th>Soru sayısı</th><th>Trend</th></tr>
+    <tr><td>Kamp Liderliği</td><td style="color:#166534;font-weight:700">%88</td><td><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden;width:80px"><div style="height:5px;background:#16A34A;border-radius:3px;width:88%"></div></div></td><td>64 soru</td><td style="color:#166534">↑+4%</td></tr>
+    <tr><td>Disiplin Cezaları</td><td style="color:#D97706;font-weight:700">%55</td><td><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden;width:80px"><div style="height:5px;background:#D97706;border-radius:3px;width:55%"></div></div></td><td>38 soru</td><td style="color:#D97706">↑+1%</td></tr>
+    <tr><td>Değ. Komisyonu</td><td style="color:#DC2626;font-weight:700">%48</td><td><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden;width:80px"><div style="height:5px;background:#DC2626;border-radius:3px;width:48%"></div></div></td><td>28 soru</td><td style="color:#166534">↑+3%</td></tr>
+    <tr><td>Personel Yönetimi</td><td style="color:#DC2626;font-weight:700">%41</td><td><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden;width:80px"><div style="height:5px;background:#DC2626;border-radius:3px;width:41%"></div></div></td><td>36 soru</td><td style="color:#DC2626">↓-4%</td></tr>
+  </table></div>
+  <h3>Dikkat / Güçlü Konular &amp; AI Değerlendirmesi</h3>
+  <div class="grid2">
+    <div>
+      <div style="margin-bottom:8px">
+        <div style="background:#FEE2E2;border-radius:7px;padding:8px 11px;display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:12px"><span>🔴</span><span style="flex:1;font-weight:600;color:#991B1B">Personel Yönetimi</span><span style="color:#DC2626">%41 — düşüyor</span><button style="background:#DC2626;color:#fff;border:none;border-radius:4px;padding:2px 9px;font-size:10px;cursor:pointer">Çalış</button></div>
+        <div style="background:#FEE2E2;border-radius:7px;padding:8px 11px;display:flex;align-items:center;gap:8px;font-size:12px"><span>🟡</span><span style="flex:1;font-weight:600;color:#991B1B">Bütçe Hazırlama</span><span style="color:#D97706">%52 — düşüyor</span><button style="background:#D97706;color:#fff;border:none;border-radius:4px;padding:2px 9px;font-size:10px;cursor:pointer">Çalış</button></div>
+      </div>
+      <div>
+        <div style="background:#F0FDF4;border-radius:7px;padding:8px 11px;display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;font-size:12px"><span style="font-weight:600;color:#166534">Kamp Liderliği</span><span style="color:#16A34A">%88 ↑</span></div>
+        <div style="background:#F0FDF4;border-radius:7px;padding:8px 11px;display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="font-weight:600;color:#166534">Başvuru Şartları</span><span style="color:#16A34A">%76 ↑</span></div>
+      </div>
+    </div>
+    <div style="background:#085041;border-radius:9px;padding:14px">
+      <div style="font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">AI Performans Değerlendirmesi</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:8px 10px;font-size:12px;color:#fff">📈 Net puanın 18.2'den 56.4'e yükseldi. Bu hızla sınava hedef net'e ulaşabilirsin.</div>
+        <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:8px 10px;font-size:12px;color:#fff">⚠️ Personel Yönetimi &amp; Bütçe gerilemekte. Bu iki konu 15-20 soru çıkarır — acil müdahale.</div>
+        <div style="background:rgba(255,255,255,.08);border-radius:6px;padding:8px 10px;font-size:12px;color:#fff">💡 Cuma günleri neredeyse hiç çalışmıyorsun. Küçük alışkanlık büyük fark yaratır.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOPLULUK -->
+<div class="sec" id="k3-topluluk">
+  <h2 style="color:#993556;border-bottom-color:#993556">3.5 Topluluk Modülü</h2>
+  <div class="ib p">3 sekme: Forum | Soru-Cevap | Duyurular. Sınav bazlı topluluklar — her sınav için ayrı forum. Sağ panel: duyurular, çevrimiçi kullanıcılar, popüler etiketler, kurallar.</div>
+  <div class="grid2" style="align-items:start">
+    <div>
+      <div class="f-card pin">
+        <div class="f-top"><div class="f-av" style="background:#FCE7F3;color:#BE185D">AY</div><div><div style="display:flex;gap:4px;margin-bottom:3px"><span class="badge bp" style="font-size:10px">📌 Sabitlendi</span></div><div class="f-title">Sınav tarihi açıklandı — 12 Mayıs 2026</div><div class="f-meta">Admin Yusuf · 2 gün önce</div></div></div>
+        <div class="f-footer"><span>💬 84</span><span>👁 1.240</span></div>
+      </div>
+      <div class="f-card hot">
+        <div class="f-top"><div class="f-av" style="background:#FEF3C7;color:#92400E">MK</div><div><div style="display:flex;gap:4px;margin-bottom:3px"><span class="badge ba" style="font-size:10px">🔥 Gündem</span><span class="badge bgr" style="font-size:10px">Disiplin</span></div><div class="f-title">Kınama cezasında 3 gün mü, 7 gün mü? Kesin cevap</div><div class="f-meta">Mehmet K. · 3 sa önce</div></div></div>
+        <div class="f-preview">Geçen TR Geneli'nde bu sorudan yanlış yaptım. Araştırdım, resmi kaynağı buldum...</div>
+        <div class="f-footer"><span>💬 47</span><span>👍 128</span><span>👁 892</span></div>
+      </div>
+      <div class="f-card">
+        <div class="f-top"><div class="f-av" style="background:#DBEAFE;color:#1D4ED8">AT</div><div><div style="display:flex;gap:4px;margin-bottom:3px"><span class="badge bb" style="font-size:10px">Yeni</span></div><div class="f-title">Değerlendirme Komisyonu üye sayısı — 5 mi 7 mi?</div><div class="f-meta">Ali T. · 4 sa önce · <span style="color:#DC2626">Cevaplanmadı</span></div></div></div>
+        <div class="f-footer"><span>💬 8</span><span>👁 112</span></div>
+      </div>
+    </div>
+    <div>
+      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:9px;overflow:hidden;margin-bottom:9px">
+        <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:8px 12px;font-size:11px;font-weight:600">Duyurular</div>
+        <div style="padding:9px 12px;font-size:11px;border-bottom:1px solid #E2E8F0"><div style="font-weight:600;color:#4C1D95;margin-bottom:2px">Sınav tarihi açıklandı</div><div style="color:#64748B">12 Mayıs 2026</div></div>
+        <div style="padding:9px 12px;font-size:11px"><div style="font-weight:600;color:#4C1D95;margin-bottom:2px">TR Geneli #13</div><div style="color:#64748B">Pazar 14:00 · 4 gün kaldı</div></div>
+      </div>
+      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:9px;overflow:hidden">
+        <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:8px 12px;font-size:11px;font-weight:600">Çevrimiçi (18)</div>
+        <div style="padding:9px 12px;display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px"><div style="width:20px;height:20px;border-radius:50%;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">MK</div>Mehmet K.<span style="color:#64748B">· İstanbul</span><div style="width:6px;height:6px;border-radius:50%;background:#16A34A;margin-left:auto"></div></div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:11px"><div style="width:20px;height:20px;border-radius:50%;background:#FCE7F3;color:#BE185D;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">FY</div>Fatma Y.<span style="color:#64748B">· Ankara</span><div style="width:6px;height:6px;border-radius:50%;background:#16A34A;margin-left:auto"></div></div>
+          <div style="font-size:11px;color:#3B82F6;cursor:pointer">+16 kişi daha →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KATMAN 4: VERİ MİMARİSİ -->
+<div class="sec" id="k4">
+  <div class="sec-hdr" style="background:#92400E">
+    <div class="sec-num">4</div>
+    <div class="sec-title">Katman 4 — Veri &amp; Sistem Mimarisi</div>
+  </div>
+
+  <h2>4.1 İçerik Hiyerarşisi — Veri Modeli</h2>
+  <div class="ib a">Tüm içerik Bakanlık → Sınav → Ders → Konu → İçerik zinciriyle ilişkilidir. Her konu birden fazla içerik tipine sahip olabilir (soru, anlatım, hap, podcast, canlı).</div>
+  <div class="tw"><table>
+    <tr><th>Tablo</th><th>Anahtar Alanlar</th><th>İlişki</th><th>Açıklama</th></tr>
+    <tr><td><strong>bakanlik</strong></td><td>id, ad, kisa_ad, logo_url</td><td>1:N → sinav</td><td>GSB, MEB, Sağlık...</td></tr>
+    <tr><td><strong>sinav</strong></td><td>id, bakanlik_id, ad, tarih, durum</td><td>1:N → ders</td><td>durum: aktif / taslak / pasif</td></tr>
+    <tr><td><strong>ders</strong></td><td>id, sinav_id, ad, sira, agirlik</td><td>1:N → konu</td><td>sira: dashboard sıralaması</td></tr>
+    <tr><td><strong>konu</strong></td><td>id, ders_id, ad, sira, etiketler[]</td><td>1:N → icerik</td><td>etiketler: arama ve filtreleme için</td></tr>
+    <tr><td><strong>icerik</strong></td><td>id, konu_id, tip, baslik, icerik_json</td><td>—</td><td>tip: soru / anlatim / hap / podcast / canli</td></tr>
+    <tr><td><strong>konu_profili</strong></td><td>id, user_id, ders_ids[], konu_ids[], updated_at</td><td>→ kullanici</td><td><strong>TÜM sistemin merkezi filtreleme tablosu</strong></td></tr>
+    <tr><td><strong>ilerleme_kaydi</strong></td><td>id, user_id, icerik_id, tip, durum, sure, tarih</td><td>→ kullanici</td><td>Her içerik etkileşimi burada</td></tr>
+    <tr><td><strong>deneme_sonuc</strong></td><td>id, user_id, sinav_id, net, dogru, yanlis, bos, sure, tarih</td><td>→ kullanici</td><td>Her deneme sınavı sonucu</td></tr>
+    <tr><td><strong>hedef_plan</strong></td><td>id, user_id, gunluk_hedef, streak, puan</td><td>→ kullanici</td><td>Gamification ve günlük hedefler</td></tr>
+  </table></div>
+
+  <h2>4.2 Motor Katmanı</h2>
+  <div class="grid2">
+    <div class="sbox"><div class="sbox-h" style="background:#92400E">Soru Motoru</div>
+      <div class="sbox-i">Girdi: user_id + konu_profili</div>
+      <div class="sbox-i">WHERE konu_id = ANY(konu_ids[]) — zorluk — tür (test/dy)</div>
+      <div class="sbox-i">Çıktı: Karıştırılmış, önceliklendirilmiş soru listesi</div>
+      <div class="sbox-i">Yanlış yapılan sorular daha sık döner (spaced repetition)</div>
+    </div>
+    <div class="sbox"><div class="sbox-h" style="background:#0F6E56">Analiz Motoru</div>
+      <div class="sbox-i">ilerleme_kaydi tablosunu periyodik işler</div>
+      <div class="sbox-i">Konu bazlı başarı oranı ve trend hesaplar</div>
+      <div class="sbox-i">Türkiye sıralaması async queue ile güncellenir</div>
+      <div class="sbox-i">AI öneri servisi: zayıf konu + alışkanlık analizi</div>
+      <div class="sbox-i">Çıktılar analiz_db tablosuna yazılır</div>
+    </div>
+    <div class="sbox"><div class="sbox-h" style="background:#185FA5">İçerik Motoru</div>
+      <div class="sbox-i">konu_id → içerik tiplerine dağıtım</div>
+      <div class="sbox-i">Tip bazlı filtre: anlatım, hap, podcast, canlı</div>
+      <div class="sbox-i">İlerleme durumuna göre sıralama</div>
+    </div>
+    <div class="sbox"><div class="sbox-h" style="background:#533AB7">Sınav Motoru</div>
+      <div class="sbox-i">Zamanlayıcı yönetimi (client + server sync)</div>
+      <div class="sbox-i">Cevap kaydetme ve puanlama</div>
+      <div class="sbox-i">TR Geneli: eşzamanlı async sıralama hesabı</div>
+    </div>
+  </div>
+
+  <h2>4.3 Veri Akışı — Kullanıcı Soru Çözdüğünde</h2>
+  <div class="flow">
+    <div class="flow-step" style="background:#DBEAFE"><div class="flow-n" style="background:#1D4ED8">1</div>Kullanıcı → API Gateway (JWT doğrulama + rate limit)</div>
+    <div class="flow-step" style="background:#DBEAFE"><div class="flow-n" style="background:#1D4ED8">2</div>Soru Motoru → konu_profili ile İçerik DB'den sorular çekilir (önce cache kontrol edilir)</div>
+    <div class="flow-step" style="background:#DBEAFE"><div class="flow-n" style="background:#1D4ED8">3</div>Sorular kullanıcıya teslim edilir → Test ekranı render edilir</div>
+    <div class="flow-step" style="background:#FEF3C7"><div class="flow-n" style="background:#D97706">4</div>Kullanıcı cevap verir → Cevap async olarak kaydedilir (beklenmez)</div>
+    <div class="flow-step" style="background:#FEF3C7"><div class="flow-n" style="background:#D97706">5</div>İlerleme Servisi → ilerleme_kaydi güncellenir, puan hesaplanır</div>
+    <div class="flow-step" style="background:#F0FDF4"><div class="flow-n" style="background:#16A34A">6</div>Analiz Servisi → trend + zayıf konu hesabı → analiz_db'ye yazar</div>
+    <div class="flow-step" style="background:#F0FDF4"><div class="flow-n" style="background:#16A34A">7</div>AI Öneri Servisi → kişisel öneri üretir → bildirim kuyruğuna ekler</div>
+    <div class="flow-step" style="background:#F0FDF4"><div class="flow-n" style="background:#085041">8</div>Async batch: Sıralama güncelle · streak hesapla · günlük hedef kontrol · dashboard cache temizle</div>
+  </div>
+
+  <h2>4.4 Altyapı Katmanı</h2>
+  <div class="tw"><table>
+    <tr><th>Servis</th><th>Kullanım</th><th>Not</th></tr>
+    <tr><td>Auth (JWT)</td><td>Kullanıcı girişi, session yönetimi</td><td>Google OAuth destekli</td></tr>
+    <tr><td>İçerik DB (PostgreSQL)</td><td>Bakanlık→Konu hiyerarşisi, sorular, anlatımlar</td><td>Okuma ağırlıklı — cache katmanı eklenebilir (Redis)</td></tr>
+    <tr><td>Kullanıcı DB (PostgreSQL)</td><td>Profil, ilerleme, deneme sonuçları, analiz</td><td>Yazma ağırlıklı</td></tr>
+    <tr><td>CDN / Medya Storage</td><td>Podcast ses dosyaları, görseller, canlı ders kayıtları</td><td>S3 veya benzeri</td></tr>
+    <tr><td>Bildirim Kuyruğu</td><td>Hatırlatıcılar, streak bildirimi, yaklaşan sınav</td><td>Redis veya RabbitMQ — async queue</td></tr>
+    <tr><td>Ödeme</td><td>Premium abonelik yönetimi</td><td>Iyzico (yerel) veya Stripe entegrasyonu</td></tr>
+  </table></div>
+</div>
+
+<!-- KATMAN 5: ADMIN PANELİ -->
+<div class="sec" id="k5">
+  <div class="sec-hdr" style="background:#991B1B">
+    <div class="sec-num">5</div>
+    <div class="sec-title">Katman 5 — Admin Paneli</div>
+  </div>
+  <div class="ib r">Admin paneli koyu lacivert (#1E293B) sidebar ile kullanıcı panelinden net ayrışır. 3 yetki seviyesi: İçerik Editörü → Admin → Süper Admin. Her seviyenin farklı aksiyon yetkileri var.</div>
+
+  <h3>Admin Dashboard — Tam Görünüm</h3>
+  <div class="adm-layout">
+    <!-- SIDEBAR -->
+    <div class="adm-sb">
+      <div class="as-logo"><div class="as-ln">Memurlar Akademi</div><div class="as-ls">Admin Paneli</div></div>
+      <div class="as-sec">Genel Bakış</div>
+      <div class="as-i on"><div class="as-dot" style="background:#60A5FA"></div>Dashboard</div>
+      <div class="as-sec">İçerik Yönetimi</div>
+      <div class="as-i"><div class="as-dot" style="background:#7C3AED"></div>Hiyerarşi<span class="as-b">3</span></div>
+      <div class="as-i"><div class="as-dot" style="background:#B91C1C"></div>Soru Bankası<span class="as-b">118</span></div>
+      <div class="as-i"><div class="as-dot" style="background:#1D4ED8"></div>Konu Anlatımları</div>
+      <div class="as-i"><div class="as-dot" style="background:#B45309"></div>Podcast &amp; Ses</div>
+      <div class="as-i"><div class="as-dot" style="background:#5B21B6"></div>Canlı Dersler</div>
+      <div class="as-sec">Sınav &amp; Takvim</div>
+      <div class="as-i"><div class="as-dot" style="background:#B45309"></div>Deneme Sınavları</div>
+      <div class="as-i"><div class="as-dot" style="background:#64748B"></div>Yayın Takvimi</div>
+      <div class="as-sec">Kullanıcılar</div>
+      <div class="as-i"><div class="as-dot" style="background:#16A34A"></div>Tüm Kullanıcılar</div>
+      <div class="as-i"><div class="as-dot" style="background:#DB2777"></div>Premium Yönetimi</div>
+      <div class="as-sec">Sistem</div>
+      <div class="as-i"><div class="as-dot" style="background:#64748B"></div>Platform Analitiği</div>
+      <div class="as-i"><div class="as-dot" style="background:#64748B"></div>Ayarlar</div>
+      <div style="padding:10px 12px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:7px;margin-top:4px">
+        <div style="width:24px;height:24px;border-radius:50%;background:#3B82F6;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center">AY</div>
+        <div><div style="font-size:11px;font-weight:600;color:#fff">Admin Yusuf</div><div style="font-size:10px;color:rgba(255,255,255,.4)">Süper Admin</div></div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="adm-main">
+      <!-- TOPBAR -->
+      <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <div style="font-size:14px;font-weight:700">Admin Dashboard</div>
+        <div style="display:flex;gap:7px;align-items:center">
+          <div style="border:1px solid #CBD5E1;border-radius:6px;padding:5px 10px;font-size:12px;color:#64748B;background:#F8FAFC">Kullanıcı, soru, konu ara...</div>
+          <button style="border:1px solid #CBD5E1;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;background:#fff;color:#374151">Rapor İndir</button>
+          <button style="background:#1E293B;color:#fff;border:none;border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer">+ Hızlı Ekle</button>
+        </div>
+      </div>
+
+      <!-- 5 STAT -->
+      <div class="a-stats">
+        <div class="a-stat"><div class="a-sv">3.420</div><div class="a-sl">Toplam kullanıcı</div><div class="a-sd" style="color:#166534">+124 bu hafta</div></div>
+        <div class="a-stat"><div class="a-sv">8.420</div><div class="a-sl">Toplam soru</div><div class="a-sd" style="color:#D97706">118 onay bekliyor</div></div>
+        <div class="a-stat"><div class="a-sv" style="color:#166534">%87</div><div class="a-sl">İçerik doluluğu</div><div class="a-sd" style="color:#64748B">Hedef: %95</div></div>
+        <div class="a-stat"><div class="a-sv">1.840</div><div class="a-sl">Deneme kayıtlı</div><div class="a-sd" style="color:#64748B">TR Geneli #13</div></div>
+        <div class="a-stat"><div class="a-sv" style="color:#1D4ED8">%94</div><div class="a-sl">Sistem sağlığı</div><div class="a-sd" style="color:#166534">Tüm servisler aktif</div></div>
+      </div>
+
+      <!-- UYARILAR + AKTİVİTE GRAFİĞİ -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+        <div class="alerts">
+          <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:7px 11px;font-size:11px;font-weight:600;display:flex;justify-content:space-between">Aksiyon gerektiren uyarılar <a href="#" style="font-size:10px;color:#3B82F6">Tümü →</a></div>
+          <div class="al-i" style="background:#FEE2E2"><div class="al-dot" style="background:#DC2626"></div><span style="color:#991B1B;flex:1;font-size:12px">118 soru onay bekliyor</span><button class="al-btn" style="background:#DC2626">İncele</button></div>
+          <div class="al-i" style="background:#FFFBEB"><div class="al-dot" style="background:#D97706"></div><span style="color:#92400E;flex:1;font-size:12px">TR Geneli #13 — 4 gün kaldı, sorular eksik</span><button class="al-btn" style="background:#D97706">Git</button></div>
+          <div class="al-i" style="background:#FFFBEB"><div class="al-dot" style="background:#D97706"></div><span style="color:#92400E;flex:1;font-size:12px">Değ. Komisyonu %18 doluluk — kritik eksik</span><button class="al-btn" style="background:#D97706">Tamamla</button></div>
+          <div class="al-i" style="background:#EFF6FF"><div class="al-dot" style="background:#1D4ED8"></div><span style="color:#1E3A8A;flex:1;font-size:12px">3 anlatım editör onayı bekliyor</span><button class="al-btn" style="background:#1D4ED8">Onayla</button></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden">
+          <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:7px 11px;font-size:11px;font-weight:600">Günlük kullanıcı aktivitesi</div>
+          <div style="padding:10px 12px">
+            <div style="display:flex;align-items:flex-end;gap:5px;height:72px;margin-bottom:5px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;color:#64748B">1.2k</div><div style="width:100%;background:#B5D4F4;border-radius:3px 3px 0 0;height:22px"></div><div style="font-size:9px;color:#94A3B8">Pzt</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;color:#64748B">1.8k</div><div style="width:100%;background:#85B7EB;border-radius:3px 3px 0 0;height:36px"></div><div style="font-size:9px;color:#94A3B8">Sal</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;color:#64748B">2.1k</div><div style="width:100%;background:#378ADD;border-radius:3px 3px 0 0;height:46px"></div><div style="font-size:9px;color:#94A3B8">Çar</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;color:#64748B">1.9k</div><div style="width:100%;background:#378ADD;border-radius:3px 3px 0 0;height:40px"></div><div style="font-size:9px;color:#94A3B8">Per</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;color:#64748B">0.9k</div><div style="width:100%;background:#B5D4F4;border-radius:3px 3px 0 0;height:18px;opacity:.6"></div><div style="font-size:9px;color:#94A3B8">Cum</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;font-weight:600;color:#1E3A8A">3.1k</div><div style="width:100%;background:#1E3A8A;border-radius:3px 3px 0 0;height:68px"></div><div style="font-size:9px;color:#1E3A8A;font-weight:600">Cmt</div></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px"><div style="font-size:9px;color:#64748B">2.8k</div><div style="width:100%;background:#185FA5;border-radius:3px 3px 0 0;height:58px"></div><div style="font-size:9px;color:#94A3B8">Paz</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:#64748B;border-top:1px solid #E2E8F0;padding-top:6px">
+              <span>Bu hafta: <strong style="color:#1E293B">13.800 oturum</strong></span>
+              <span style="color:#166534">+18% geçen haftadan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- İÇERİK DOLULUK + YAKLAŞAN SINAVLAR + SON AKTİVİTE -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+        <!-- İçerik doluluk -->
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden">
+          <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:7px 11px;font-size:11px;font-weight:600;display:flex;justify-content:space-between">İçerik doluluk durumu <a href="#" style="font-size:10px;color:#3B82F6">Detay →</a></div>
+          <div style="padding:10px 12px;display:flex;flex-direction:column;gap:8px">
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>Kamp Liderliği</span><span style="color:#166534;font-weight:600">%88</span></div><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden"><div style="height:5px;background:#16A34A;border-radius:3px;width:88%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>Disiplin Cezaları</span><span style="color:#166534;font-weight:600">%72</span></div><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden"><div style="height:5px;background:#16A34A;border-radius:3px;width:72%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>Bütçe Hazırlama</span><span style="color:#D97706;font-weight:600">%55</span></div><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden"><div style="height:5px;background:#D97706;border-radius:3px;width:55%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span>Personel Yönetimi</span><span style="color:#D97706;font-weight:600">%38</span></div><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden"><div style="height:5px;background:#D97706;border-radius:3px;width:38%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="color:#DC2626">Değ. Komisyonu</span><span style="color:#DC2626;font-weight:600">%18</span></div><div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden"><div style="height:5px;background:#DC2626;border-radius:3px;width:18%"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Yaklaşan sınavlar -->
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden">
+          <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:7px 11px;font-size:11px;font-weight:600;display:flex;justify-content:space-between">Yaklaşan deneme sınavları <a href="#" style="font-size:10px;color:#3B82F6">Yönet →</a></div>
+          <div style="padding:10px 12px;display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:flex-start;gap:8px;padding-bottom:8px;border-bottom:1px solid #E2E8F0">
+              <div style="flex:1"><div style="font-size:12px;font-weight:600">TR Geneli #13</div><div style="font-size:10px;color:#64748B">29 Mar · 1.840 kayıtlı</div></div>
+              <span style="background:#FFFBEB;color:#92400E;border-radius:99px;padding:2px 7px;font-size:10px;font-weight:600">Hazırlanıyor</span>
+              <button style="border:1px solid #CBD5E1;background:transparent;border-radius:4px;padding:2px 7px;font-size:10px;cursor:pointer;color:#475569">Sorular</button>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:8px;padding-bottom:8px;border-bottom:1px solid #E2E8F0">
+              <div style="flex:1"><div style="font-size:12px;font-weight:600">Mevzuat Denemesi</div><div style="font-size:10px;color:#64748B">1 Nis · 640 kayıtlı</div></div>
+              <span style="background:#DCFCE7;color:#166534;border-radius:99px;padding:2px 7px;font-size:10px;font-weight:600">Hazır</span>
+              <button style="border:1px solid #CBD5E1;background:transparent;border-radius:4px;padding:2px 7px;font-size:10px;cursor:pointer;color:#475569">Detay</button>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:8px">
+              <div style="flex:1"><div style="font-size:12px;font-weight:600">TR Geneli #14</div><div style="font-size:10px;color:#64748B">5 Nis · henüz açılmadı</div></div>
+              <span style="background:#DBEAFE;color:#1D4ED8;border-radius:99px;padding:2px 7px;font-size:10px;font-weight:600">Taslak</span>
+              <button style="border:1px solid #CBD5E1;background:transparent;border-radius:4px;padding:2px 7px;font-size:10px;cursor:pointer;color:#475569">Oluştur</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Son admin aktivitesi -->
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden">
+          <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:7px 11px;font-size:11px;font-weight:600">Son admin aktivitesi</div>
+          <div style="padding:10px 12px;display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid #E2E8F0;font-size:11px"><div style="width:6px;height:6px;border-radius:50%;background:#166534;flex-shrink:0;margin-top:3px"></div><div style="flex:1">Ahmet Hoca — 14 yeni soru ekledi</div><div style="font-size:10px;color:#94A3B8;white-space:nowrap">12 dk</div></div>
+            <div style="display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid #E2E8F0;font-size:11px"><div style="width:6px;height:6px;border-radius:50%;background:#1D4ED8;flex-shrink:0;margin-top:3px"></div><div style="flex:1">Fatma Editör — 3 anlatım onayladı</div><div style="font-size:10px;color:#94A3B8;white-space:nowrap">1 sa</div></div>
+            <div style="display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid #E2E8F0;font-size:11px"><div style="width:6px;height:6px;border-radius:50%;background:#DC2626;flex-shrink:0;margin-top:3px"></div><div style="flex:1">Admin Yusuf — 2 soru reddetti</div><div style="font-size:10px;color:#94A3B8;white-space:nowrap">2 sa</div></div>
+            <div style="display:flex;align-items:flex-start;gap:7px;padding:6px 0;border-bottom:1px solid #E2E8F0;font-size:11px"><div style="width:6px;height:6px;border-radius:50%;background:#D97706;flex-shrink:0;margin-top:3px"></div><div style="flex:1">TR Geneli #12 sonuçları yayınlandı</div><div style="font-size:10px;color:#94A3B8;white-space:nowrap">Dün</div></div>
+            <div style="display:flex;align-items:flex-start;gap:7px;padding:6px 0;font-size:11px"><div style="width:6px;height:6px;border-radius:50%;background:#7C3AED;flex-shrink:0;margin-top:3px"></div><div style="flex:1">MEB Şube Müdürü sınavı oluşturuldu</div><div style="font-size:10px;color:#94A3B8;white-space:nowrap">2 gün</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HİYERARŞİ YÖNETİMİ -->
+<div class="sec" id="k5-hiyerarsi">
+  <h2>5.1 Hiyerarşi Yönetimi — Ağaç Yapısı</h2>
+  <div class="ib p">Açılır-kapanır tree view. Her düğümde doluluk barı + yüzdesi. Kritik eksik konular kırmızı arka planla vurgulanır. "Eksik içerik filtrele" butonu ile sadece eksikler listelenir.</div>
+  <div class="tree-c">
+    <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:8px 12px;font-size:12px;font-weight:600;display:flex;justify-content:space-between">İçerik ağacı — 4 bakanlık · 12 sınav · 68 ders · 420 konu<div style="display:flex;gap:5px"><button class="tb-s">Daralt</button><button class="tb-s">Eksik filtrele</button></div></div>
+    <div class="tr-i l0"><div class="tr-ic" style="background:#EDE9FE;color:#4C1D95">B</div><strong>Gençlik ve Spor Bakanlığı (GSB)</strong><span class="badge bb" style="margin-left:8px;font-size:10px">3 sınav</span><div class="tr-btns"><button class="tb-s">Düzenle</button><button class="tb-s">+ Sınav</button></div></div>
+    <div class="tr-i l1"><div class="tr-ic" style="background:#DBEAFE;color:#1D4ED8">S</div>Gençlik Merkezi Müdürü<span class="badge bg" style="margin-left:7px;font-size:10px">Yayında</span><div style="display:flex;align-items:center;gap:3px;margin-left:8px"><div class="tr-bar"><div class="tr-bar-f" style="width:87%;background:#16A34A"></div></div><span style="font-size:10px;color:#166534">%87</span></div><div class="tr-btns"><button class="tb-s">Düzenle</button><button class="tb-s">+ Ders</button></div></div>
+    <div class="tr-i l2"><div class="tr-ic" style="background:#DCFCE7;color:#166534">D</div>Mevzuat ve Yönetim<span style="font-size:10px;color:#64748B;margin-left:5px">9 konu</span><div style="display:flex;align-items:center;gap:3px;margin-left:8px"><div class="tr-bar"><div class="tr-bar-f" style="width:88%;background:#16A34A"></div></div><span style="font-size:10px;color:#166534">%88</span></div><div class="tr-btns"><button class="tb-s">Düzenle</button><button class="tb-s">+ Konu</button></div></div>
+    <div class="tr-i l3"><div class="tr-ic" style="background:#FEF3C7;color:#92400E">K</div>Kamp Lideri Görev ve Sorumlulukları<span class="badge bg" style="margin-left:6px;font-size:10px">Tam</span><div class="tr-btns"><button class="tb-s">İçerik</button><button class="tb-s">Sorular (64)</button></div></div>
+    <div class="tr-i l3 crit"><div class="tr-ic" style="background:#FCA5A5;color:#991B1B">K</div><span style="color:#991B1B;font-weight:600">Değerlendirme Komisyonu</span><span class="badge br" style="margin-left:6px;font-size:10px">Kritik eksik</span><div style="display:flex;align-items:center;gap:3px;margin-left:8px"><div class="tr-bar"><div class="tr-bar-f" style="width:18%;background:#DC2626"></div></div><span style="font-size:10px;color:#DC2626">%18</span></div><div class="tr-btns"><button class="tb-s" style="background:#DC2626;color:#fff;border-color:#DC2626">Tamamla!</button></div></div>
+    <div class="tr-i l2"><div class="tr-ic" style="background:#DCFCE7;color:#166534">D</div>Bütçe ve Planlama<span style="font-size:10px;color:#64748B;margin-left:5px">6 konu</span><div style="display:flex;align-items:center;gap:3px;margin-left:8px"><div class="tr-bar"><div class="tr-bar-f" style="width:55%;background:#D97706"></div></div><span style="font-size:10px;color:#D97706">%55</span></div><div class="tr-btns"><button class="tb-s">Düzenle</button><button class="tb-s">+ Konu</button></div></div>
+    <div class="tr-i l1"><div class="tr-ic" style="background:#DBEAFE;color:#1D4ED8">S</div>Spor Federasyonu Uzmanı<span class="badge ba" style="margin-left:7px;font-size:10px">Taslak</span><div style="display:flex;align-items:center;gap:3px;margin-left:8px"><div class="tr-bar"><div class="tr-bar-f" style="width:42%;background:#D97706"></div></div><span style="font-size:10px;color:#D97706">%42</span></div><div class="tr-btns"><button class="tb-s">Düzenle</button><button class="tb-s">Yayınla</button></div></div>
+    <div class="tr-i l0"><div class="tr-ic" style="background:#EDE9FE;color:#4C1D95">B</div><strong>Milli Eğitim Bakanlığı (MEB)</strong><span class="badge bb" style="margin-left:8px;font-size:10px">5 sınav</span><div class="tr-btns"><button class="tb-s">Düzenle</button><button class="tb-s">+ Sınav</button></div></div>
+  </div>
+  <div class="ib">Yeni konu ekleme modal alanları: Ad, Sıra no, Tahmini soru sayısı, Etiketler (virgülle), Durum (Taslak/Aktif/Pasif), Öncelik (Normal/Yüksek/Kritik). "Kaydet ve İçerik Ekle" ile direkt içerik ekleme sayfasına yönlendirir.</div>
+</div>
+
+<!-- SORU BANKASI -->
+<div class="sec" id="k5-soru">
+  <h2>5.2 Soru Bankası</h2>
+  <div class="ib a"><strong>Onay akışı:</strong> Editör ekler → "Onaya Gönder" → Admin inceler → Onayla / Reddet. Süper Admin "Onayla ve Yayınla" yapabilir. Yayındaki sorularda kullanıcı doğruluk oranı görünür.</div>
+
+  <!-- TOPBAR + BUTONLAR -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <div style="font-size:13px;font-weight:700;color:#1E293B">Soru Bankası</div>
+    <div style="display:flex;gap:7px">
+      <button style="border:1px solid #CBD5E1;border-radius:6px;padding:6px 13px;font-size:12px;cursor:pointer;background:#fff;color:#374151">Excel'den İçe Aktar</button>
+      <button style="background:#B91C1C;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer">+ Soru Ekle</button>
+    </div>
+  </div>
+
+  <!-- 4 STAT -->
+  <div class="grid4" style="margin-bottom:10px">
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700">8.420</div><div style="font-size:10px;color:#64748B">Toplam soru</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#166534">7.890</div><div style="font-size:10px;color:#64748B">Yayında</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#DC2626">118</div><div style="font-size:10px;color:#64748B">Onay bekliyor</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#D97706">412</div><div style="font-size:10px;color:#64748B">Taslak</div></div>
+  </div>
+
+  <!-- SEKME BAR -->
+  <div style="display:flex;background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin-bottom:10px">
+    <div style="flex:1;padding:8px 14px;font-size:12px;cursor:pointer;color:#64748B;text-align:center;border-right:1px solid #E2E8F0">Tümü (8.420)</div>
+    <div style="flex:1;padding:8px 14px;font-size:12px;cursor:pointer;color:#92400E;background:#FFFBEB;font-weight:600;text-align:center;border-right:1px solid #E2E8F0;display:flex;align-items:center;justify-content:center;gap:5px">Onay bekliyor <span style="background:#FEE2E2;color:#991B1B;border-radius:99px;padding:1px 6px;font-size:10px">118</span></div>
+    <div style="flex:1;padding:8px 14px;font-size:12px;cursor:pointer;color:#64748B;text-align:center;border-right:1px solid #E2E8F0">Yayında (7.890)</div>
+    <div style="flex:1;padding:8px 14px;font-size:12px;cursor:pointer;color:#64748B;text-align:center;border-right:1px solid #E2E8F0">Taslak (412)</div>
+    <div style="flex:1;padding:8px 14px;font-size:12px;cursor:pointer;color:#64748B;text-align:center">Reddedilen (88)</div>
+  </div>
+
+  <!-- FİLTRE BARI -->
+  <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px">
+    <input type="text" placeholder="Soru metninde ara..." style="flex:1;min-width:200px;border:1px solid #CBD5E1;border-radius:6px;padding:6px 10px;font-size:12px;background:#fff">
+    <select style="border:1px solid #CBD5E1;border-radius:6px;padding:6px 10px;font-size:12px;background:#fff;cursor:pointer"><option>Tüm bakanlıklar</option><option>GSB</option><option>MEB</option></select>
+    <select style="border:1px solid #CBD5E1;border-radius:6px;padding:6px 10px;font-size:12px;background:#fff;cursor:pointer"><option>Tüm sınavlar</option><option selected>GSB Müdür</option></select>
+    <select style="border:1px solid #CBD5E1;border-radius:6px;padding:6px 10px;font-size:12px;background:#fff;cursor:pointer"><option>Tüm konular</option><option>Disiplin Cezaları</option></select>
+    <select style="border:1px solid #CBD5E1;border-radius:6px;padding:6px 10px;font-size:12px;background:#fff;cursor:pointer"><option>Tüm zorluklar</option><option>Kolay</option><option>Orta</option><option>Zor</option></select>
+  </div>
+
+  <!-- SORU LİSTESİ TABLOSU -->
+  <div class="tw" style="margin-bottom:14px"><table>
+    <tr><th style="width:28px"><input type="checkbox"></th><th>Soru metni</th><th>Konu</th><th>Tür</th><th>Zorluk</th><th>Ekleyen</th><th>Doğruluk</th><th>Durum</th><th>İşlem</th></tr>
+    <tr>
+      <td><input type="checkbox"></td>
+      <td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600">Kınama cezasında savunma süresi kaç gündür?</td>
+      <td><span class="badge ba">Disiplin Cezaları</span></td><td>Test (4 şık)</td><td>Orta</td><td style="color:#64748B">Ahmet Hoca</td>
+      <td><div style="display:flex;align-items:center;gap:4px"><div style="width:40px;height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden"><div style="height:4px;background:#D97706;border-radius:2px;width:62%"></div></div><span style="font-size:11px;color:#D97706">%62</span></div></td>
+      <td><span class="badge ba">Onay bekliyor</span></td>
+      <td style="white-space:nowrap"><button class="tb-s" style="background:#DCFCE7;border-color:#16A34A;color:#166534">Onayla</button> <button class="tb-s" style="background:#FEE2E2;border-color:#DC2626;color:#991B1B">Reddet</button> <button class="tb-s">Düzenle</button></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox"></td>
+      <td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600">Değerlendirme komisyonu üye sayısı kaçtır?</td>
+      <td><span class="badge br">Değ. Komisyonu</span></td><td>D/Y</td><td>Kolay</td><td style="color:#64748B">Ahmet Hoca</td>
+      <td><span style="font-size:11px;color:#94A3B8">—</span></td>
+      <td><span class="badge ba">Onay bekliyor</span></td>
+      <td style="white-space:nowrap"><button class="tb-s" style="background:#DCFCE7;border-color:#16A34A;color:#166534">Onayla</button> <button class="tb-s" style="background:#FEE2E2;border-color:#DC2626;color:#991B1B">Reddet</button> <button class="tb-s">Düzenle</button></td>
+    </tr>
+    <tr style="background:#F0FDF4">
+      <td><input type="checkbox"></td>
+      <td style="max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600">Kamp liderinin disiplin yetkisi hangi mevzuattan kaynaklanır?</td>
+      <td><span class="badge bg">Kamp Liderliği</span></td><td>Test (4 şık)</td><td>Orta</td><td style="color:#64748B">Ahmet Hoca</td>
+      <td><div style="display:flex;align-items:center;gap:4px"><div style="width:40px;height:4px;background:#E2E8F0;border-radius:2px;overflow:hidden"><div style="height:4px;background:#16A34A;border-radius:2px;width:78%"></div></div><span style="font-size:11px;color:#166534">%78</span></div></td>
+      <td><span class="badge bg">Yayında</span></td>
+      <td style="white-space:nowrap"><button class="tb-s">Düzenle</button> <button class="tb-s" style="color:#DC2626">Kaldır</button></td>
+    </tr>
+  </table></div>
+
+  <!-- TOPLU İŞLEM + SAYFALAMA -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-top:1px solid #E2E8F0">
+    <div style="font-size:11px;color:#64748B">3 / 118 onay bekleyen gösteriliyor</div>
+    <div style="display:flex;gap:6px">
+      <button style="border:1px solid #CBD5E1;background:#fff;border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer">Seçilileri Onayla</button>
+      <button style="border:1px solid #CBD5E1;background:#fff;border-radius:5px;padding:4px 12px;font-size:11px;cursor:pointer">Seçilileri Reddet</button>
+    </div>
+  </div>
+
+  <!-- SORU EDİTÖRÜ -->
+  <h3 style="margin-top:20px">Soru Editörü — Yeni Soru / Düzenleme</h3>
+  <div style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden">
+    <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:9px 14px;display:flex;align-items:center;justify-content:space-between">
+      <div style="font-size:12px;font-weight:700">Soru editörü — Yeni soru / Düzenleme</div>
+      <div style="font-size:11px;color:#64748B">Otomatik kayıt aktif</div>
+    </div>
+    <div style="padding:16px;display:grid;grid-template-columns:1fr 250px;gap:16px">
+      <!-- FORM -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Soru metni</div>
+          <textarea style="width:100%;border:1px solid #CBD5E1;border-radius:7px;padding:8px 10px;font-size:13px;resize:vertical;line-height:1.6;min-height:72px">Bir kamu görevlisine disiplin cezası verilebilmesi için savunma hakkı tanınması zorunludur. Bu kapsamda verilmesi gereken minimum savunma süresi kaç gündür?</textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Konu</div><select style="width:100%;border:1px solid #CBD5E1;border-radius:6px;padding:6px 9px;font-size:12px;background:#fff"><option>Disiplin Cezaları</option></select></div>
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Zorluk</div><select style="width:100%;border:1px solid #CBD5E1;border-radius:6px;padding:6px 9px;font-size:12px;background:#fff"><option>Kolay</option><option selected>Orta</option><option>Zor</option></select></div>
+          <div><div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Tür</div><select style="width:100%;border:1px solid #CBD5E1;border-radius:6px;padding:6px 9px;font-size:12px;background:#fff"><option selected>Test (4 şık)</option><option>Doğru-Yanlış</option></select></div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:5px">Şıklar — doğru cevabı işaretleyin</div>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;color:#64748B">A</div><input type="text" value="3 gün" style="flex:1;border:1px solid #CBD5E1;border-radius:6px;padding:5px 9px;font-size:12px"></div>
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;border:1.5px solid #16A34A;background:#16A34A;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;color:#fff">B</div><input type="text" value="7 gün" style="flex:1;border:1.5px solid #16A34A;border-radius:6px;padding:5px 9px;font-size:12px;background:#F0FDF4"></div>
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;color:#64748B">C</div><input type="text" value="10 gün" style="flex:1;border:1px solid #CBD5E1;border-radius:6px;padding:5px 9px;font-size:12px"></div>
+            <div style="display:flex;align-items:center;gap:8px"><div style="width:26px;height:26px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;color:#64748B">D</div><input type="text" value="15 gün" style="flex:1;border:1px solid #CBD5E1;border-radius:6px;padding:5px 9px;font-size:12px"></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#64748B;margin-bottom:3px">Açıklama / Çözüm</div>
+          <textarea style="width:100%;border:1px solid #CBD5E1;border-radius:7px;padding:7px 10px;font-size:12px;resize:vertical;line-height:1.6">657 Sayılı DMK'ya göre disiplin cezası vermeden önce savunma için en az 7 gün tanınması zorunludur.</textarea>
+        </div>
+      </div>
+      <!-- ÖNİZLEME -->
+      <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#64748B;margin-bottom:8px">Önizleme</div>
+        <div style="font-size:13px;font-weight:600;line-height:1.6;margin-bottom:10px">Bir kamu görevlisine disiplin cezası verilebilmesi için savunma hakkı tanınması zorunludur. Bu kapsamda verilmesi gereken <span style="background:#FEF3C7;border-radius:3px;padding:0 3px">minimum savunma süresi</span> kaç gündür?</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 9px;border:1px solid #E2E8F0;border-radius:6px;background:#fff;font-size:12px"><div style="width:20px;height:20px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">A</div>3 gün</div>
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 9px;border:1.5px solid #16A34A;border-radius:6px;background:#F0FDF4;font-size:12px"><div style="width:20px;height:20px;border-radius:50%;background:#16A34A;border:1.5px solid #16A34A;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0;color:#fff">B</div>7 gün</div>
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 9px;border:1px solid #E2E8F0;border-radius:6px;background:#fff;font-size:12px"><div style="width:20px;height:20px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">C</div>10 gün</div>
+          <div style="display:flex;align-items:center;gap:7px;padding:7px 9px;border:1px solid #E2E8F0;border-radius:6px;background:#fff;font-size:12px"><div style="width:20px;height:20px;border-radius:50%;border:1.5px solid #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">D</div>15 gün</div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:10px 16px;border-top:1px solid #E2E8F0;display:flex;gap:7px;justify-content:flex-end">
+      <button style="border:1px solid #CBD5E1;border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;background:transparent;color:#64748B">Taslak Kaydet</button>
+      <button style="background:#B91C1C;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-size:12px;font-weight:600;cursor:pointer">Onaya Gönder</button>
+      <button style="background:#166534;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-size:12px;font-weight:600;cursor:pointer">Onayla ve Yayınla</button>
+    </div>
+  </div>
+</div>
+
+<!-- KONU ANLATIMLARI -->
+<div class="sec" id="k5-anlatim">
+  <h2>5.3 Konu Anlatımları &amp; İçerik Editörü</h2>
+  <div class="ib">4 sekme: Metin Anlatım | Hap Bilgi | Podcast | Canlı Dersler. Her sekmede onay bekleyenler badge ile gösterilir. İçerik listesinde doluluk durumu ve "Eksik" uyarıları görünür.</div>
+  <h3>Metin Editörü Araç Çubuğu</h3>
+  <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;margin:10px 0">
+    <div style="background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:8px 12px;display:flex;flex-wrap:wrap;gap:4px">
+      <button class="tb-s" style="font-weight:700">B</button>
+      <button class="tb-s"><em style="font-style:italic">I</em></button>
+      <button class="tb-s">H1</button>
+      <button class="tb-s">H2</button>
+      <span style="color:#E2E8F0;padding:0 4px">|</span>
+      <button class="tb-s">Liste</button>
+      <button class="tb-s">Tablo</button>
+      <span style="color:#E2E8F0;padding:0 4px">|</span>
+      <button class="tb-s">Vurgu kutusu</button>
+      <button class="tb-s">Görsel ekle</button>
+      <span style="color:#E2E8F0;padding:0 4px">|</span>
+      <button class="tb-s" style="background:#FFFBEB;border-color:#FCD34D;color:#92400E">Sınav notu</button>
+    </div>
+    <div style="padding:14px;font-size:13px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:7px">Disiplin Cezalarının Türleri</div>
+      <div style="color:#374151;margin-bottom:9px">657 Sayılı Devlet Memurları Kanunu çerçevesinde disiplin cezaları beş ana kategoride incelenmektedir...</div>
+      <div style="border-left:3px solid #D97706;background:#FFFBEB;padding:9px 12px;border-radius:0 6px 6px 0;color:#92400E;font-size:12px;margin-bottom:9px">Sınav notu: Kınama cezasında savunma süresi 3 gün, diğerlerinde 7 gündür. Bu fark sınavda sıklıkla sorulmaktadır.</div>
+    </div>
+    <div style="border-top:1px solid #E2E8F0;padding:10px 12px;display:flex;gap:7px;justify-content:flex-end">
+      <button class="tb-s">Taslak Kaydet</button>
+      <button style="background:#185FA5;color:#fff;border:none;border-radius:5px;padding:5px 14px;font-size:12px;cursor:pointer">Kaydet</button>
+      <button style="background:#166534;color:#fff;border:none;border-radius:5px;padding:5px 14px;font-size:12px;cursor:pointer">Yayınla</button>
+    </div>
+  </div>
+  <ul class="bl">
+    <li>Sağ panel: Başlık, konu, yazar, durum dropdown'ı</li>
+    <li>Bölüm yönetimi: Sürükle-bırak sıralama, +Bölüm ekle, X ile sil</li>
+    <li>İstatistikler: Kelime sayısı, okuma süresi, görüntülenme, tamamlama oranı</li>
+    <li>Durum akışı: Taslak → İncelemede → Yayında</li>
+  </ul>
+</div>
+
+<!-- PODCAST YÖNETİMİ -->
+<div class="sec" id="k5-podcast">
+  <h2>5.4 Podcast &amp; Ses Yönetimi</h2>
+  <div class="ib a">Yükleme alanı sürükle-bırak veya tıklayarak seç. MP3, WAV, M4A — maks 500 MB. Yükleme tamamlanınca otomatik transkript oluşturulur. Admin düzenleyebilir veya yeniden oluşturabilir.</div>
+  <div class="grid2">
+    <div>
+      <div style="border:1.5px dashed #CBD5E1;border-radius:9px;padding:20px;text-align:center;margin-bottom:10px">
+        <div style="font-size:26px;margin-bottom:7px">🎵</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:3px">Ses dosyasını buraya sürükle</div>
+        <div style="font-size:11px;color:#64748B">veya tıklayarak seç</div>
+        <div style="font-size:10px;color:#94A3B8;margin-top:5px">MP3, WAV, M4A · Maks. 500 MB</div>
+      </div>
+      <div style="background:#F8FAFC;border-radius:8px;padding:11px">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:6px"><span style="font-size:15px">🎧</span><span style="font-size:12px;font-weight:600;flex:1">disiplin_bolum3.mp3</span><span style="font-size:11px;color:#64748B">18.4 MB</span></div>
+        <div style="height:5px;background:#E2E8F0;border-radius:3px;overflow:hidden;margin-bottom:3px"><div style="height:5px;background:#854F0B;border-radius:3px;width:72%"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:#64748B"><span>Yükleniyor... %72</span><span>~12 sn kaldı</span></div>
+      </div>
+    </div>
+    <div>
+      <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid #E2E8F0">
+          <div style="font-size:11px;font-weight:600">Otomatik transkript</div>
+          <button style="background:#854F0B;color:#fff;border:none;border-radius:4px;padding:2px 9px;font-size:10px;cursor:pointer">Yeniden Oluştur</button>
+        </div>
+        <div style="padding:10px 12px;font-size:11px;color:#64748B;line-height:1.8">
+          <span style="color:#94A3B8;font-size:10px">00:00 </span>Bu bölümde disiplin cezalarına karşı itiraz yollarını inceleyeceğiz...<br>
+          <span style="color:#94A3B8;font-size:10px">00:18 </span>657 Sayılı Kanun çerçevesinde itiraz süreci <span style="background:#FEF3C7;border-radius:3px;padding:0 3px;color:#92400E">otuz günlük</span> bir süreye tabidir...
+        </div>
+      </div>
+      <div class="ib" style="margin-top:8px">Eksik podcast uyarı listesi: Öncelik sıralamasıyla (kırmızı=kritik, sarı=eksik). Her satırda "Yükle" butonu direkt yükleme formunu açar.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CANLI DERS YÖNETİMİ -->
+<div class="sec" id="k5-canli">
+  <h2>5.5 Canlı Ders Yönetimi</h2>
+  <div class="ib p">Ders oluşturma formu + eğitmen yönetimi + haftalık takvim. Aktif ders varsa üstte mor banner gösterilir.</div>
+  <div class="live-b">
+    <div><div class="lb-badge"><div class="lb-dot"></div>Şu an canlı — 248 izleyici</div><div class="lb-t">Disiplin Cezaları — Soru-Cevap ve Özet</div><div class="lb-m">Ahmet Hoca · 20:00 · 38 dk geçti · ~22 dk kaldı</div></div>
+    <div class="lb-btns"><button class="lb-btn">Kayıt Durumu</button><button class="lb-btn">Derse Katıl</button><button class="lb-red">Yayını Sonlandır</button></div>
+  </div>
+  <h3>Ders Oluşturma Formu</h3>
+  <div class="tw"><table>
+    <tr><th>Alan</th><th>Açıklama</th></tr>
+    <tr><td>Başlık, Konu, Eğitmen</td><td>Dropdown'lar — konu seçimi konu_profili ile ilişkili</td></tr>
+    <tr><td>Tarih, Saat, Tahmini Süre</td><td>Takvim entegrasyonu</td></tr>
+    <tr><td>Platform</td><td>Zoom / Google Meet / YouTube Live seçimi</td></tr>
+    <tr><td>Toplantı Linki + Şifre</td><td>Opsiyonel — kullanıcıya ders saatinde gönderilir</td></tr>
+    <tr><td>Hatırlatıcılar</td><td>Toggle'lar: 1 gün önce / 1 saat önce / 10 dk önce</td></tr>
+    <tr><td>Kayıt Ayarları</td><td>Otomatik kaydet ve yayınla / Sadece kaydet / Kaydetme</td></tr>
+  </table></div>
+  <div class="ib g">"Ders Oluştur &amp; Bildir" butonu: Ders oluşturulur + kayıtlı tüm kullanıcılara bildirim gönderilir. Eğitmen kartlarında: toplam ders sayısı, ortalama puan, toplam öğrenci sayısı.</div>
+</div>
+
+<!-- DENEME YÖNETİMİ -->
+<div class="sec" id="k5-deneme">
+  <h2>5.6 Deneme Sınavı Yönetimi &amp; Takvim</h2>
+  <div class="ib a">Aylık takvim görünümü. Her sınavda hazırlık yüzdesi (soru doluluk oranından hesaplanır). Durum akışı: Taslak → Hazırlanıyor → Hazır → Yayında.</div>
+  <h3>Sınav Oluşturma — Soru Dağılımı Tablosu</h3>
+  <div class="tw"><table>
+    <tr><th>Ders</th><th>Soru Sayısı</th><th>Durum</th></tr>
+    <tr><td>Mevzuat ve Yönetim</td><td><input type="number" value="26" style="width:50px;border:1px solid #CBD5E1;border-radius:4px;padding:2px 6px;font-size:12px"></td><td style="color:#166534">Yeterli soru var</td></tr>
+    <tr><td>Bütçe ve Planlama</td><td><input type="number" value="20" style="width:50px;border:1px solid #CBD5E1;border-radius:4px;padding:2px 6px;font-size:12px"></td><td style="color:#166534">Yeterli soru var</td></tr>
+    <tr><td>Eğitim Programları</td><td><input type="number" value="23" style="width:50px;border:1px solid #CBD5E1;border-radius:4px;padding:2px 6px;font-size:12px"></td><td style="color:#166534">Yeterli soru var</td></tr>
+    <tr><td>Hukuk ve Mevzuat</td><td><input type="number" value="11" style="width:50px;border:1px solid #CBD5E1;border-radius:4px;padding:2px 6px;font-size:12px"></td><td style="color:#166534">Yeterli soru var</td></tr>
+    <tr style="background:#F0FDF4"><td><strong>Toplam</strong></td><td><strong>80 / 80</strong></td><td style="color:#166534;font-weight:600">✓ Tamamlandı</td></tr>
+  </table></div>
+  <div class="ib">80 soru dolmadan "Yayınla" butonu disabled kalır. Soru seçimi: Otomatik (zorluk bazlı karışık) veya Manuel (admin elle seçer).</div>
+</div>
+
+<!-- KULLANICI YÖNETİMİ -->
+<div class="sec" id="k5-kullanici">
+  <h2>5.7 Kullanıcı Yönetimi &amp; Premium</h2>
+  <div class="grid5" style="margin:10px 0">
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700">3.420</div><div style="font-size:10px;color:#64748B">Toplam kullanıcı</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#1D9E75">842</div><div style="font-size:10px;color:#64748B">Premium (%24.6)</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700">2.180</div><div style="font-size:10px;color:#64748B">Bu hafta aktif</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#D97706">₺48.4k</div><div style="font-size:10px;color:#64748B">Aylık gelir</div></div>
+    <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:9px 11px"><div style="font-size:17px;font-weight:700;color:#DC2626">%3.2</div><div style="font-size:10px;color:#64748B">Churn (bu ay)</div></div>
+  </div>
+  <div class="tw"><table>
+    <tr><th>Kullanıcı</th><th>Sınav</th><th>Plan</th><th>Şehir</th><th>Sıralama</th><th>Başarı</th><th>Son Aktif</th><th>İşlem</th></tr>
+    <tr><td><strong>Mehmet E.</strong><div style="font-size:10px;color:#64748B">m.e@gmail.com</div></td><td>GSB Müdür</td><td><span class="badge ba">Premium</span></td><td>İstanbul</td><td style="color:#1D4ED8;font-weight:700">#1</td><td style="color:#166534">%92</td><td>Bugün</td><td><button class="tb-s">Profil</button></td></tr>
+    <tr><td><strong>Ahmet K.</strong><div style="font-size:10px;color:#64748B">a.k@gmail.com</div></td><td>GSB Müdür</td><td><span class="badge bgr">Ücretsiz</span></td><td>Ankara</td><td style="color:#1D4ED8;font-weight:700">#247</td><td style="color:#166534">%74</td><td>Bugün</td><td><button class="tb-s">Profil</button> <button class="tb-s" style="background:#FFFBEB;color:#92400E;border-color:#FCD34D">Premium Yap</button></td></tr>
+    <tr><td><strong>Kemal D.</strong><div style="font-size:10px;color:#64748B">k.d@gmail.com</div></td><td>GSB Müdür</td><td><span class="badge bgr">Ücretsiz</span></td><td>Bursa</td><td>#892</td><td style="color:#D97706">%42</td><td style="color:#DC2626">14 gün önce</td><td><button class="tb-s" style="background:#FEE2E2;color:#991B1B;border-color:#FCA5A5">Hatırlat</button></td></tr>
+  </table></div>
+  <h3>Premium Planlar</h3>
+  <div class="grid3" style="max-width:500px">
+    <div style="border:1px solid #E2E8F0;border-radius:9px;padding:13px;text-align:center"><div style="font-size:13px;font-weight:700;margin-bottom:4px">Ücretsiz</div><div style="font-size:20px;font-weight:700">₺0</div><div style="font-size:11px;color:#64748B;margin-bottom:8px">sonsuza dek</div><div style="font-size:11px;color:#64748B">2.578 kullanıcı</div></div>
+    <div style="border:1.5px solid #1D9E75;border-radius:9px;padding:13px;text-align:center"><div style="font-size:13px;font-weight:700;color:#1D9E75;margin-bottom:4px">Aylık</div><div style="font-size:20px;font-weight:700;color:#1D9E75">₺149</div><div style="font-size:11px;color:#64748B;margin-bottom:8px">/ ay</div><div style="font-size:11px;color:#64748B">512 kullanıcı</div></div>
+    <div style="border:1px solid #E2E8F0;border-radius:9px;padding:13px;text-align:center"><div style="font-size:13px;font-weight:700;color:#1D4ED8;margin-bottom:4px">Yıllık</div><div style="font-size:20px;font-weight:700;color:#1D4ED8">₺990</div><div style="font-size:11px;color:#64748B;margin-bottom:8px">/ yıl (%44 indirim)</div><div style="font-size:11px;color:#64748B">330 kullanıcı</div></div>
+  </div>
+  <ul class="bl" style="margin-top:8px">
+    <li>14 gün aktif olmayan kullanıcılara "Hatırlat" e-postası gönderilebilir</li>
+    <li>Toplu "Premium Ver" işlemi: seçili kullanıcılara toplu premium aktifleştirme</li>
+    <li>Aylık gelir trendi bar chart, churn oranı anlık görünür</li>
+    <li>Dışa aktarma (CSV) desteği — tüm filtrelere göre</li>
+  </ul>
+</div>
+
+<!-- EKLER -->
+<div class="sec" id="ekler">
+  <div class="sec-hdr" style="background:#475569">
+    <div class="sec-num">+</div>
+    <div class="sec-title">Ekler — Geliştirici Notları</div>
+  </div>
+
+  <h2>A. konu_profili — Teknik Detay</h2>
+  <div class="ib a">Bu tablo tüm sistemin merkezidir. Her API isteğinde filtre olarak kullanılır.</div>
+  <ul class="bl">
+    <li><code>konu_profili.ders_ids[]</code>: Seçili ders id'leri dizisi</li>
+    <li><code>konu_profili.konu_ids[]</code>: Seçili konu id'leri dizisi</li>
+    <li>Soru motoru: <code>WHERE konu_id = ANY(konu_ids[])</code></li>
+    <li>İçerik motoru: <code>WHERE konu_id = ANY(konu_ids[])</code></li>
+    <li>Analiz motoru: Sadece seçili konulara ait verilerle hesaplama yapar</li>
+    <li>Profil güncellendiğinde (sidebar "Değiştir" veya dashboard "Düzenle"): <code>konu_profili</code> tablosu güncellenir</li>
+    <li>Checkbox ile ders seçmek: o dersin tüm <code>konu.id</code>'lerini <code>konu_ids[]</code>'ye ekler (toplu ekleme)</li>
+  </ul>
+
+  <h2>B. Onboarding Adım 3 — Dinamik Konu Seçimi</h2>
+  <ul class="bl">
+    <li>Sol sütun ders listesi sabit yüklenir (o sınava ait tüm dersler)</li>
+    <li>Bir derse tıklamak: sağ sütun dinamik güncellenir (client-side state veya API çağrısı)</li>
+    <li>"Tüm dersler" butonu: tüm ders ve konu id'lerini toplu ekler</li>
+    <li>Alt özet bar: <code>konu_ids[].length</code> ve toplam soru sayısı (JOIN ile)</li>
+    <li>En az 1 konu seçilmeden "Çalışmaya Başla" butonu <code>disabled</code> kalır</li>
+    <li>Sonraki girişlerde onboarding atlanır, direkt dashboard açılır</li>
+  </ul>
+
+  <h2>C. TR Geneli Sıralama Sistemi</h2>
+  <ul class="bl">
+    <li>Türkiye sıralaması deneme sınavı netine göre hesaplanır</li>
+    <li>TR Geneli sınavı bitiminden sonra tüm katılımcılar async job ile sıralanır</li>
+    <li>Bireysel denemelerde TR sıralaması gösterilmez — sadece kişisel gelişim</li>
+    <li>Dashboard sıralaması: son TR Geneli sınavındaki sıralama</li>
+    <li>Analiz modülü sıralama trendi: tüm geçmiş TR Geneli sonuçları</li>
+  </ul>
+
+  <h2>D. AI Analiz Servisi — Tetikleyici ve Çıktılar</h2>
+  <ul class="bl">
+    <li>Tetikleyici: Deneme sınavı tamamlandığında VEYA günlük periyodik job (gece 02:00)</li>
+    <li>Veri kaynakları: <code>ilerleme_kaydi</code>, <code>deneme_sonuc</code>, <code>konu_profili</code></li>
+    <li>Çıktı 1: En zayıf 3 konu (son 7 gün doğruluk oranı)</li>
+    <li>Çıktı 2: Çalışma alışkanlığı analizi (hangi günler aktif/pasif, ort. süre)</li>
+    <li>Çıktı 3: Sınav gününe kadar hedef net tahmini (mevcut büyüme oranına göre)</li>
+    <li>Bu çıktılar dashboard AI kartında ve deneme sonuç sayfasında render edilir</li>
+  </ul>
+
+  <h2>E. Freemium Kısıtlama Mantığı</h2>
+  <div class="tw"><table>
+    <tr><th>Özellik</th><th>Ücretsiz</th><th>Premium</th></tr>
+    <tr><td>Konu Anlatımları</td><td>İlk 2 bölüm</td><td>Tamamı</td></tr>
+    <tr><td>Hap Bilgi</td><td>İlk 10 kart / konu</td><td>Sınırsız</td></tr>
+    <tr><td>Podcast</td><td>İlk 5 dakika</td><td>Tamamı</td></tr>
+    <tr><td>Canlı Ders</td><td>Kayıt izleme — yok</td><td>Canlı + Kayıt arşivi</td></tr>
+    <tr><td>Soru Çöz</td><td>20 soru / gün</td><td>Sınırsız</td></tr>
+    <tr><td>Bireysel Deneme</td><td>Ayda 2</td><td>Sınırsız</td></tr>
+    <tr><td>TR Geneli Deneme</td><td>Katılabilir (sıralama: hayır)</td><td>Katılabilir + sıralama</td></tr>
+    <tr><td>Analiz Modülü</td><td>Son 7 gün</td><td>Tüm tarih</td></tr>
+  </table></div>
+
+  <div style="text-align:center;padding:20px 0;font-size:13px;color:#94A3B8;border-top:1px solid #E2E8F0;margin-top:24px">
+    Memurlar Akademi — Platform Dokümantasyonu v1.0 · Mart 2026 · Geliştirici Referans Dökümanı
+  </div>
+</div>
+</div>
+</body>
+</html>

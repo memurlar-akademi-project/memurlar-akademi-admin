@@ -208,11 +208,11 @@ export default function ExamsPage() {
       ),
     },
     {
-      accessorKey: "subject_count",
-      header: "Ders",
+      accessorKey: "topic_count",
+      header: "Konu",
       enableSorting: true,
       cell: ({ row }) => (
-        <p className="font-semibold text-[var(--color-admin-ink)]">{row.original.subject_count}</p>
+        <p className="font-semibold text-[var(--color-admin-ink)]">{row.original.topic_count}</p>
       ),
     },
     {
@@ -254,9 +254,9 @@ export default function ExamsPage() {
         <div className="flex justify-end gap-2">
           <Link
             className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] px-3 py-2 text-xs font-semibold text-[var(--color-admin-muted)] transition hover:border-[var(--color-admin-accent)] hover:text-[var(--color-admin-accent)]"
-            href={`/dersler?examId=${row.original.id}`}
+            href={`/konular?examId=${row.original.id}`}
           >
-            Dersler
+            Konular
             <ArrowRight size={14} />
           </Link>
           <Link

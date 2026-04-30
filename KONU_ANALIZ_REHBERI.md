@@ -120,6 +120,13 @@ Kullanılacak ana block tipleri:
 - `ordered_list`
 - `table`
 
+Hiyerarşi notu:
+
+- çıktı formatı gerçek nested liste destekliyorsa parent-child ilişki açıkça korunur
+- desteklemiyorsa parent blok, child liste ve devam paragrafı ardışık ama kopmadan modellenir
+- hiçbir durumda iç içe liste düz paragrafa eritilmez
+- liste seviyesi kayboluyorsa JSON teknik olarak geçerli olsa bile editoryal olarak hatalıdır
+
 ## Okunabilirlik Kuralı
 
 Structured veri üretirken amaç sadece doğru import almak değil, aynı zamanda konu çalışma ekranında okunabilir bir içerik üretmektir.
@@ -312,6 +319,9 @@ Kural:
 - `a), b), c)` yapıları `alpha_list`
 - `A) Genel şartlar` gibi başlık altında gelen `1, 2, 3...` serileri paragraf dump olmaz
 - liste maddesinin kendi içinde alt bent varsa üst yapı ve alt yapı ayrı bloklara bölünür
+- aynı liste serisi başladıysa sonraki kardeş elemanlar aynı blok ailesinde devam eder; `a)`, `b)` listeyken `c)` paragraf olamaz
+- parent item altında child liste varsa child liste bittikten sonra gelen genel devam metni son child item'a yapıştırılmaz
+- liste içindeki uzun norm metinleri okunabilirlik için bölünebilir ama madde etiketi çoğaltılamaz
 - ana numaralı seri başladıysa (`1, 2, 3, 4...`) keyfi olarak sıfırlanmaz
 - `6` altında `a), b)` gelmesi, `7`nin yeni section olduğu anlamına gelmez
 - child list bittikten sonra parent numbering aynı akıştan devam eder
@@ -347,6 +357,9 @@ Kural:
 - ana numara ile alt harfli bent arasında sahte başlık üretilmez
 - aynı seviyedeki numaralı elemanlar aynı tipografik ağırlıkta kalır
 - alt bent var diye ana bent kalın başlık veya yeni kart başlangıcı gibi davranmaz
+- child liste bitince ana akış kaldığı numaradan devam eder; child seviyesindeki `1, 2` numaraları ana seri gibi gösterilemez
+- ana seri ile child seri birbirine karıştırılamaz; okuyucu "bu 1-2 nereden çıktı?" diye düşünmemelidir
+- çok uzun görünen bir bent, sadece uzun olduğu için yeni section veya kaynak/alinti bloğu sayılmaz; önce dokümandaki hiyerarşik bağ kontrol edilir
 - UI tarafında `ul/ol/li` mantığına yakın bir hiyerarşi hedeflenir; ama amaç HTML etiketi değil, doğru anlamsal ilişkiyi korumaktır
 
 Amaç:
@@ -391,6 +404,51 @@ Kural:
 - yeni bir alt rejimi başlatan etiket satırları `subheading` yapılır
 - madde başlığı mülga olduğu için silinmişse altında kalan bir sonraki gerçek başlık doğru maddeye bağlanır
 - mülga madde başlığı kalmış ama metin yoksa o başlık da atılır
+- paragraf içinde kalan `Madde`, `Ek Madde`, `BÖLÜM`, `KISIM` başlangıçları yakalanır ve ayrı yapıya çıkarılır
+- iki nokta ile biten ve yeni normatif rejim başlatan ifadeler paragraf sonuna gömülü bırakılamaz
+- `Karşılıklı olarak yer değiştirme:`, `İdari görevlere atanma:` gibi ifadeler metnin içinde görünüyorsa önce başlık mı diye kontrol edilir
+- başlık satırı ile ona bağlı metin farklı maddeye kaydırılamaz
+
+## Madde Bütünlüğü ve Kayma Kontrolü
+
+Her `article_line`, doğru madde numarası, doğru madde başlığı ve doğru norm metniyle eşleşmelidir.
+
+Kural:
+
+- `Madde 61/A`, `Ek Madde 8`, `Madde 163` gibi yeni madde başlangıçları paragraf içinde kalamaz
+- bir madde temizlenirken sonraki maddenin başlığı veya metni önceki maddeye yapışamaz
+- mülga veya boş madde düşürüldüğünde takip eden gerçek madde kendi `article_line` bloğuyla başlamalıdır
+- başlık ve içerik uyuşmuyorsa çıktı hazır kabul edilmez
+- sadece `article_line` kalmış, altında gerçek norm metni olmayan kartlar düşürülür
+- madde sırası dokümandaki mantıksal akışla karşılaştırılır; eksik, kaymış veya iç içe geçmiş madde varsa tekrar ayrıştırılır
+
+Amaç:
+
+- "başlık başka, içerik başka" hatasını engellemek
+- temizlik sonrası madde kaymasını yakalamak
+- UI'da boş veya yanlış bağlanmış madde kartı oluşturmamak
+
+## Mevzuat Notu ve Mülga Temizliği
+
+Kullanıcı mevzuat notlarının kaldırılmasını istediyse parantez içindeki resmi değişiklik notları çalışma içeriği değildir.
+
+Temizlenecek tipik yapılar:
+
+- `(Mülga: ...)`
+- `(Değişik: ...)`
+- `(Ek: ...)`
+- `(Aynen kabul: ...)`
+- `(Yeniden düzenleme: ...)`
+- `KHK`, `md.`, tarih ve kanun numarası içeren parantez içi işlem notları
+
+Kural:
+
+- parantez içi mevzuat notu silinir, gerçek norm metni korunur
+- not silindikten sonra içerik tamamen boşalıyorsa o madde/bent/blok düşürülür
+- not silindikten sonra yalnız bağlamı bozuk parça kalıyorsa önceki/sonraki metinle anlam bağı kontrol edilir
+- `d) (Mülga: ...) olması şarttır.` gibi sahte bentler kesinlikle bırakılmaz
+- `(2)`, `[1]`, `(*)` gibi not referansları metinde kalamaz
+- not temizliği norm metnini yeniden yazma bahanesi olamaz; sadece sorumlu olunmayan işlem notu çıkarılır
 
 ## Dipnot Referans Temizliği
 
@@ -410,6 +468,11 @@ Kural:
 - dipnot temizliği sonrası anlam taşımayan çıplak referans numaraları metinde bırakılmaz
 - dipnot referansı temizlenince cümlenin kalan yapısı da normalize edilir
 - yüzde, oran, madde numarası veya gerçek normatif sayı ile dipnot numarası karıştırılmaz
+- kelimeye veya paranteze yapışık dipnot referansları da temizlenir: `Bakanlık123`, `)118`, `,119`
+- satır başında tek başına duran veya kelime önüne yapışmış `100-999` arası çıplak sayılar özel olarak kontrol edilir
+- `60 ıncı`, `141 inci`, `190 sayılı`, `% 60`, `657 sayılı` gibi gerçek normatif sayılar korunur
+- temizlik bağlama göre yapılır; gerçek sayı silinmez, dipnot gürültüsü bırakılmaz
+- final kontrolde `)123`, `,123`, ` 123 Bakanlık` benzeri patternler red flag sayılır
 
 Amaç:
 
@@ -517,6 +580,29 @@ yapısı kullanılır.
 
 Tabloyu text dump'a çevirmek hatalıdır.
 
+## Zorunlu Final QA ve Red Flag Kontrolü
+
+JSON teslim edilmeden önce çıktı otomatik ve gözle kontrol edilir. Aşağıdaki işaretlerden biri kalırsa çıktı hazır değildir.
+
+Red flag listesi:
+
+- kullanıcı temizlenmesini istediyse `Mülga`, `Değişik`, `(Ek:`, `Aynen kabul`, `KHK`, `md.)` gibi mevzuat notları kalmışsa
+- `Madde`, `Ek Madde`, `BÖLÜM`, `KISIM` ifadeleri normal paragraf içinde yeni yapı başlangıcı gibi duruyorsa
+- iki nokta ile biten alt başlıklar paragraf sonuna gömülü kalmışsa
+- boş `article_line`, boş `subheading`, boş liste veya sadece etiket kalan blok varsa
+- liste başladıktan sonra kardeş elemanlardan biri paragraf gibi görünüyorsa
+- `a)`, `b)`, `1.`, `2.` gibi etiketler paragraph metninin başında ham şekilde kalmışsa
+- dipnot kalıntısı olabilecek `)123`, `,123`, satır başı çıplak `123` gibi patternler varsa
+- 150 kelime üstü bloklar yeniden gözden geçirilmemişse
+- 300 kelime üstü paragraf veya liste item'ı varsa
+- aynı konu için import sonrası birden fazla aktif `topic_contents` oluşmuşsa
+
+Kural:
+
+- bu red flag'lerden biri varsa "hazır" denmez
+- önce sorun raporlanır veya mümkünse direkt düzeltilir
+- tek bir örnekte görülen hata aynı tipteki tüm doküman için genel kalite kapısı sayılır
+
 ## Sık Hata
 
 Yapılmaması gereken en büyük hata:
@@ -542,3 +628,8 @@ JSON teslim etmeden önce:
 11. ek maddelerde başlıktaki parantez içi mevzuat notları temizlendi mi?
 12. yalnız başlık kalmış, metni olmayan ek maddeler düşürüldü mü?
 13. kullanıcı hangi yapıya göre ayır dediyse gerçekten ona göre mi ayrıldı?
+14. mevzuat notu silindikten sonra sahte veya bağlamsız bent kaldı mı?
+15. `Madde` / `Ek Madde` başlangıcı paragraf içinde kaldı mı?
+16. madde başlığı ve madde içeriği doğru eşleşiyor mu?
+17. nested listelerde parent-child ilişkisi korunuyor mu?
+18. red flag kontrolünde kalan pattern var mı?

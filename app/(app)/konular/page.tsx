@@ -33,9 +33,10 @@ export default function TopicsPage() {
   const { showToast } = useAdminToast();
   const searchParams = useSearchParams();
   const subjectIdFilter = searchParams.get("subjectId");
+  const examIdFilter = searchParams.get("examId");
 
   const { items, setItems, loading, error, refresh } = useAdminList<AdminTopic>({
-    endpoint: "/admin/topics",
+    endpoint: examIdFilter ? `/admin/topics?exam_id=${examIdFilter}` : "/admin/topics",
     responseKey: "topics",
   });
   const { items: subjects } = useAdminList<AdminSubject>({

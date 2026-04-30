@@ -93,12 +93,14 @@ export type AdminExam = {
   exam_date: string | null;
   is_active_for_signup: boolean;
   subject_ids: number[];
+  topic_ids: number[];
   ministry: {
     id: number;
     name: string;
     slug: string;
   } | null;
   subject_count: number;
+  topic_count: number;
   active_membership_count: number;
   readiness?: AdminReadiness;
   created_at?: string | null;
@@ -125,6 +127,7 @@ export type AdminTopic = {
   slug: string;
   status: string;
   sort_order: number;
+  exam_ids?: number[];
   content_version?: number | null;
   content_count?: number;
   has_podcast?: boolean;

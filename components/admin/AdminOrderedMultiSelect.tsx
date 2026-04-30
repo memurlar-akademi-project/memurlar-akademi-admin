@@ -15,12 +15,16 @@ export function AdminOrderedMultiSelect({
   value,
   onChange,
   helperText,
+  entityLabel = "Ders",
+  entityPluralLabel = "Dersler",
 }: {
   label: string;
   options: Option[];
   value: number[];
   onChange: (next: number[]) => void;
   helperText?: string;
+  entityLabel?: string;
+  entityPluralLabel?: string;
 }) {
   const [query, setQuery] = useState("");
 
@@ -96,7 +100,7 @@ export function AdminOrderedMultiSelect({
         <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-              Ders Havuzu
+              {entityLabel} Havuzu
             </p>
             <span className="text-xs font-semibold text-[var(--color-admin-muted)]">
               {filteredOptions.length} uygun kayıt
@@ -106,13 +110,13 @@ export function AdminOrderedMultiSelect({
           <input
             className="admin-input h-11"
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Ders ara"
+            placeholder={`${entityLabel} ara`}
             value={query}
           />
 
           <div className="h-72 overflow-y-auto rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)]">
             {filteredOptions.length === 0 ? (
-              <p className="p-4 text-sm text-[var(--color-admin-muted)]">Eklenebilecek ders bulunamadı.</p>
+              <p className="p-4 text-sm text-[var(--color-admin-muted)]">Eklenebilecek {entityLabel.toLocaleLowerCase("tr")} bulunamadı.</p>
             ) : (
               filteredOptions.map((option, index) => (
                 <button
@@ -143,17 +147,17 @@ export function AdminOrderedMultiSelect({
         <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-              Seçili Dersler
+              Seçili {entityPluralLabel}
             </p>
             <span className="text-xs font-semibold text-[var(--color-admin-muted)]">
-              {value.length} ders seçildi
+              {value.length} {entityLabel.toLocaleLowerCase("tr")} seçildi
             </span>
           </div>
 
           <div className="h-72 overflow-y-auto rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)]">
             {selectedOptions.length === 0 ? (
               <p className="p-4 text-sm text-[var(--color-admin-muted)]">
-                Sağ tarafta sıralanacak ders yok. Soldan ders ekleyebilirsin.
+                Sağ tarafta sıralanacak {entityLabel.toLocaleLowerCase("tr")} yok. Soldan {entityLabel.toLocaleLowerCase("tr")} ekleyebilirsin.
               </p>
             ) : (
               selectedOptions.map((option, index) => (

@@ -10,7 +10,7 @@ from pathlib import Path
 
 BASE_DIR = Path("/Users/pazanova-5/Desktop/projects/memurlar-akademi-admin/Komiser Yardımcılığı Sınavı")
 RAW_PATH = BASE_DIR / "657_raw.txt"
-OUTPUT_DIR = BASE_DIR / "657_parca_importlari_final"
+OUTPUT_DIR = BASE_DIR / "657_konu_importlari_v12"
 SUBJECT_ID = 1
 TARGET_PARAGRAPH_WORDS = 95
 HARD_PARAGRAPH_WORDS = 150
@@ -18,6 +18,7 @@ MIN_SPLIT_WORDS = 28
 
 
 KISIMS = [
+    ("I", "Genel Hükümler", "657_01_KISIM_I_Genel_Hukumler.json"),
     ("II", "Sınıflandırma", "657_02_KISIM_II_Siniflandirma.json"),
     ("III", "Devlet Memurluğuna Alınma", "657_03_KISIM_III_Devlet_Memurluguna_Alinma.json"),
     ("IV", "Hizmet Şartları ve Şekilleri", "657_04_KISIM_IV_Hizmet_Sartlari_ve_Sekilleri.json"),
@@ -28,7 +29,7 @@ KISIMS = [
 ]
 
 
-ARTICLE_RE = re.compile(r"^Madde\s+(\d+)\s*[–-]\s*(.*)$")
+ARTICLE_RE = re.compile(r"^(?P<prefix>Ek\s+)?Madde\s+(?P<number>\d+(?:/[A-Z])?)\s*[–-]\s*(?P<remainder>.*)$", re.I)
 ORDERED_RE = re.compile(r"^(\d+)\s*(?:[.)]|[-–])\s*(.*)$")
 ALPHA_RE = re.compile(r"^([A-Za-zÇĞİÖŞÜçğıöşü])\)\s*(.*)$")
 
@@ -45,6 +46,18 @@ def normalize_space(text: str) -> str:
     text = re.sub(r"\s+([,.;:])", r"\1", text)
     text = re.sub(r"([.!?])([A-ZÇĞİÖŞÜ])", r"\1 \2", text)
     return text.strip()
+
+
+def strip_footnote_refs(text: str) -> str:
+    """Remove orphan footnote markers without touching normative numbers."""
+    if not text:
+        return ""
+
+    text = re.sub(r"\[\d+\]", "", text)
+    text = re.sub(r"(?<=[\)\],;:])\d{2,3}(?=\s|$|[,.;:])", "", text)
+    text = re.sub(r"(?<=[A-Za-zÇĞİÖŞÜçğıöşü])\d{2,3}(?=\s|$|[,.;:])", "", text)
+    text = re.sub(r"(?<=\s)\d{2,3}(?=\s+[A-ZÇĞİÖŞÜ])", " ", text)
+    return normalize_space(text)
 
 
 def word_count(text: str) -> int:
@@ -126,23 +139,70 @@ def postprocess_blocks(blocks: list[dict]) -> list[dict]:
         block_type = block.get("type")
 
         if block_type == "paragraph" and isinstance(block.get("content"), str):
-            for part in split_long_text(block["content"]):
+            for part in split_long_text(clean_block_text(block["content"])):
                 processed.append({**block, "content": part})
+            continue
+
+        if block_type in {"heading", "section_heading", "section_title", "subheading"} and isinstance(block.get("content"), str):
+            content = clean_block_text(block["content"]).rstrip(":")
+            if content:
+                processed.append({**block, "content": content})
             continue
 
         if block_type in {"list", "ordered_list", "alpha_list"} and isinstance(block.get("items"), list):
             items = []
             for item in block["items"]:
                 if isinstance(item, str):
-                    items.append("\n\n".join(split_long_text(item)))
+                    item = clean_block_text(item)
+                    if item:
+                        items.append("\n\n".join(split_long_text(item)))
                 else:
                     items.append(item)
-            processed.append({**block, "items": items})
+            if items:
+                processed.append({**block, "items": items})
             continue
 
         processed.append(block)
 
-    return processed
+    return prune_empty_articles(processed)
+
+
+def block_has_study_content(block: dict) -> bool:
+    block_type = block.get("type")
+    if block_type == "paragraph":
+        return bool(block.get("content"))
+    if block_type in {"ordered_list", "alpha_list", "list"}:
+        return bool(block.get("items"))
+    if block_type == "table":
+        return bool(block.get("rows"))
+    return False
+
+
+def is_structure_boundary(block: dict) -> bool:
+    return block.get("type") in {"section_heading", "section_title"} or block.get("type") == "article_line"
+
+
+def prune_empty_articles(blocks: list[dict]) -> list[dict]:
+    pruned: list[dict] = []
+    i = 0
+
+    while i < len(blocks):
+        block = blocks[i]
+        if block.get("type") != "article_line":
+            pruned.append(block)
+            i += 1
+            continue
+
+        j = i + 1
+        while j < len(blocks) and not is_structure_boundary(blocks[j]):
+            j += 1
+
+        article_group = blocks[i:j]
+        if any(block_has_study_content(entry) for entry in article_group[1:]):
+            pruned.extend(article_group)
+        i = j
+
+    return pruned
 
 
 def strip_legal_notes(text: str) -> str:
@@ -151,13 +211,17 @@ def strip_legal_notes(text: str) -> str:
 
     text = text.replace("(…)", "").replace("(...)", "")
     note_pattern = re.compile(
-        r"\((?=[^)]*(?:\d{1,2}/\d{1,2}/\d{2,4}|KHK|md\.|Mülga|Değişik|Ek paragraf|Ek fıkra|Aynen kabul|İptal|Yeniden düzenleme))[^)]*\)"
+        r"\((?=[^)]*(?:\d{1,2}/\d{1,2}/\d{2,4}|KHK|md\.|Mülga|Değişik|Ek:|Ek paragraf|Ek fıkra|Aynen kabul|İptal|Yeniden düzenleme))[^)]*\)"
     )
     prev = None
     while prev != text:
         prev = text
         text = note_pattern.sub("", text)
-    return normalize_space(text)
+    return strip_footnote_refs(normalize_space(text))
+
+
+def clean_block_text(text: str) -> str:
+    return strip_footnote_refs(strip_legal_notes(text))
 
 
 def is_substantive(text: str) -> bool:
@@ -411,7 +475,9 @@ def parse_generic_kisim(section_text: str, roman: str, title: str) -> list[dict]
 
         article_match = ARTICLE_RE.match(line)
         if article_match:
-            article_no, remainder = article_match.groups()
+            article_no = article_match.group("number")
+            remainder = article_match.group("remainder")
+            article_label = "Ek Madde" if article_match.group("prefix") else "Madde"
             cleaned_remainder = strip_legal_notes(remainder)
             if "Mülga" in remainder and not cleaned_remainder:
                 i += 1
@@ -419,7 +485,7 @@ def parse_generic_kisim(section_text: str, roman: str, title: str) -> list[dict]
                     i += 1
                 continue
 
-            blocks.append({"type": "article_line", "segments": [seg(f"Madde {article_no}")]})
+            blocks.append({"type": "article_line", "segments": [seg(f"{article_label} {article_no}")]})
             inline_alpha = split_inline_alpha(cleaned_remainder)
             if inline_alpha:
                 blocks.append({"type": "alpha_list", "items": inline_alpha})
@@ -546,16 +612,34 @@ def write_topic(filename: str, topic_name: str, blocks: list[dict]) -> None:
     (OUTPUT_DIR / filename).write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
+def write_combined_import() -> None:
+    topics = []
+    for _, _, filename in KISIMS:
+        payload = json.loads((OUTPUT_DIR / filename).read_text())
+        topics.extend(payload["topics"])
+
+    combined = {
+        "subject_id": SUBJECT_ID,
+        "topics": topics,
+    }
+    (OUTPUT_DIR / "657_TUM_KISIMLAR_TEK_IMPORT.json").write_text(json.dumps(combined, ensure_ascii=False, indent=2) + "\n")
+
+
 def main() -> None:
     raw = RAW_PATH.read_text()
     kisim_texts = split_kisims(raw)
 
-    write_topic(KISIMS[0][2], "KISIM - II - Sınıflandırma", build_kisim_ii())
+    first_roman, first_title, first_filename = KISIMS[0]
+    write_topic(first_filename, f"KISIM - {first_roman} - {first_title}", parse_generic_kisim(kisim_texts[first_roman], first_roman, first_title))
 
-    for roman, title, filename in KISIMS[1:]:
+    write_topic(KISIMS[1][2], "KISIM - II - Sınıflandırma", build_kisim_ii())
+
+    for roman, title, filename in KISIMS[2:]:
         section_text = kisim_texts[roman]
         blocks = parse_generic_kisim(section_text, roman, title)
         write_topic(filename, f"KISIM - {roman} - {title}", blocks)
+
+    write_combined_import()
 
     print(OUTPUT_DIR)
 

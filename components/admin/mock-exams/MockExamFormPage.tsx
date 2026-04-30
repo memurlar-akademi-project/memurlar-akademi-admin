@@ -165,8 +165,8 @@ export function MockExamFormPage({
     [exams],
   );
 
-  const examSubjectIds = useMemo(
-    () => new Set(selectedExam?.subject_ids ?? []),
+  const examTopicIds = useMemo(
+    () => new Set(selectedExam?.topic_ids ?? []),
     [selectedExam],
   );
 
@@ -181,7 +181,7 @@ export function MockExamFormPage({
           return;
         }
 
-        if (!(selectedExam?.subject_ids ?? []).includes(subject.id)) {
+        if (!question.topic?.id || !(selectedExam?.topic_ids ?? []).includes(question.topic.id)) {
           return;
         }
 
@@ -192,16 +192,16 @@ export function MockExamFormPage({
 
       return Array.from(subjectMap.values());
     },
-    [questions, selectedExam?.subject_ids],
+    [questions, selectedExam?.topic_ids],
   );
 
   const examQuestions = useMemo(
     () =>
       questions.filter((question) => {
-        const subjectId = question.topic?.subject?.id;
-        return subjectId ? examSubjectIds.has(subjectId) : false;
+        const topicId = question.topic?.id;
+        return topicId ? examTopicIds.has(topicId) : false;
       }),
-    [examSubjectIds, questions],
+    [examTopicIds, questions],
   );
 
   const topicOptions = useMemo(() => {

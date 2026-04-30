@@ -11,7 +11,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminExam, AdminMinistry, AdminSubject } from "@/lib/types";
+import type { AdminExam, AdminMinistry, AdminTopic } from "@/lib/types";
 
 const emptyForm = {
   ministry_id: "",
@@ -22,6 +22,7 @@ const emptyForm = {
   exam_date: "",
   is_active_for_signup: true,
   subject_ids: [] as number[],
+  topic_ids: [] as number[],
 };
 
 function toDateTimeLocalValue(value: string | null) {
@@ -59,19 +60,19 @@ export function ExamFormPage({
   const [form, setForm] = useState(emptyForm);
   const [exam, setExam] = useState<AdminExam | null>(null);
   const [ministries, setMinistries] = useState<AdminMinistry[]>([]);
-  const [subjects, setSubjects] = useState<AdminSubject[]>([]);
+  const [topics, setTopics] = useState<AdminTopic[]>([]);
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const subjectOptions = useMemo(
+  const topicOptions = useMemo(
     () =>
-      subjects.map((subject) => ({
-        id: subject.id,
-        label: subject.name,
-        hint: `${subject.topic_count} konu`,
+      topics.map((topic) => ({
+        id: topic.id,
+        label: topic.name,
+        hint: topic.subject?.name ?? "Ders bilgisi yok",
       })),
-    [subjects],
+    [topics],
   );
 
   const selectedMinistry = useMemo(
@@ -91,9 +92,9 @@ export function ExamFormPage({
       setError(null);
 
       try {
-        const [ministriesResponse, subjectsResponse, examResponse] = await Promise.all([
+        const [ministriesResponse, topicsResponse, examResponse] = await Promise.all([
           adminApiRequest<{ ministries: AdminMinistry[] }>("/admin/ministries", { token }),
-          adminApiRequest<{ subjects: AdminSubject[] }>("/admin/subjects", { token }),
+          adminApiRequest<{ topics: AdminTopic[] }>("/admin/topics", { token }),
           mode === "edit" && id
             ? adminApiRequest<{ exam: AdminExam }>(`/admin/exams/${id}`, { token })
             : Promise.resolve(null),
@@ -104,7 +105,7 @@ export function ExamFormPage({
         }
 
         setMinistries(ministriesResponse.data.ministries);
-        setSubjects(subjectsResponse.data.subjects);
+        setTopics(topicsResponse.data.topics);
 
         if (examResponse?.data.exam) {
           const exam = examResponse.data.exam;
@@ -118,6 +119,7 @@ export function ExamFormPage({
             exam_date: toDateTimeLocalValue(exam.exam_date),
             is_active_for_signup: exam.is_active_for_signup,
             subject_ids: exam.subject_ids ?? [],
+            topic_ids: exam.topic_ids ?? [],
           });
         }
       } catch (loadError) {
@@ -173,7 +175,7 @@ export function ExamFormPage({
           price: Number(form.price || 0),
           exam_date: form.exam_date ? new Date(form.exam_date).toISOString() : null,
           is_active_for_signup: form.is_active_for_signup,
-          subject_ids: form.subject_ids,
+          topic_ids: form.topic_ids,
         },
       });
 
@@ -217,7 +219,7 @@ export function ExamFormPage({
                   Sınav Kaydı
                 </h2>
                 <p className="mt-1 text-sm text-[var(--color-admin-muted)]">
-                  Sınav burada tanımlanır; dersler ortak katalogdan seçilerek bağlanır.
+                  Sınav burada tanımlanır; ortak ders kataloğundaki konular sınav kapsamına bağlanır.
                 </p>
               </div>
             </div>
@@ -280,7 +282,7 @@ export function ExamFormPage({
                 <section className="space-y-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]/70 p-4">
                   <div className="pb-1">
                     <h3 className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-                      Takvim ve Dersler
+                      Takvim ve Konular
                     </h3>
                   </div>
 
@@ -308,11 +310,13 @@ export function ExamFormPage({
                   </div>
 
                   <AdminOrderedMultiSelect
-                    helperText="Dersleri ekledikten sonra sınav içindeki gösterim sırasını ayrıca düzenleyebilirsin."
-                    label="Sınava Dahil Edilen Dersler"
-                    onChange={(subject_ids) => setForm((current) => ({ ...current, subject_ids }))}
-                    options={subjectOptions}
-                    value={form.subject_ids}
+                    entityLabel="Konu"
+                    entityPluralLabel="Konular"
+                    helperText="Aynı ders farklı sınavlarda farklı konu kapsamıyla kullanılabilir. Burada sadece bu sınava dahil edilecek konuları seç."
+                    label="Sınava Dahil Edilen Konular"
+                    onChange={(topic_ids) => setForm((current) => ({ ...current, topic_ids }))}
+                    options={topicOptions}
+                    value={form.topic_ids}
                   />
                 </section>
 

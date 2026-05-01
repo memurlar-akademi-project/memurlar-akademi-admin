@@ -32,3 +32,4 @@ pnpm-debug.log*
 # generated
 next-env.d.ts
 *.tsbuildinfo
+/_local_dokuman_calismalari/

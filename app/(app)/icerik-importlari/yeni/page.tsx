@@ -117,7 +117,7 @@ export default function NewContentImportPage() {
                   Kaynak Seçimi
                 </h2>
                 <p className="mt-1 text-sm text-[var(--color-admin-muted)]">
-                  Yönetmelik metnini sisteme ver, sistem konu adayları ve ilk içerik taslaklarını review için hazırlasın.
+                  Mevzuat veya ders dokümanını ortak ders-konu havuzuna hazırlamak için yükle. Sınav kapsamı daha sonra bu havuzdaki konulardan seçilecek.
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export default function NewContentImportPage() {
               <section className="space-y-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]/70 p-4">
                 <div className="pb-1">
                   <h3 className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-                    Opsiyonel Bağlantı
+                    Opsiyonel Sınav Bağlantısı
                   </h3>
                 </div>
 
@@ -203,7 +203,7 @@ export default function NewContentImportPage() {
                     onChange={(event) => setTargetExamId(event.target.value)}
                     value={targetExamId}
                   >
-                    <option value="">Sonradan bağlarım</option>
+                  <option value="">Kataloga yaz, sınav kapsamını sonra seçerim</option>
                     {exams.map((exam) => (
                       <option key={exam.id} value={exam.id}>
                         {exam.name}
@@ -239,11 +239,11 @@ export default function NewContentImportPage() {
               <div className="mt-4 space-y-4 text-sm text-[var(--color-admin-muted)]">
                 <div className="flex items-start gap-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
                   <FileUp size={18} className="mt-0.5 text-[var(--color-admin-accent)]" />
-                  <p>İlk fazda ders, konu ve ilk içerik taslağı üretilir. Soru üretimi sonraki fazda eklenecek.</p>
+                  <p>İlk fazda ders, konu ve konu anlatımı ortak havuza yazılır. Aynı konu daha sonra birden fazla sınavda kullanılabilir.</p>
                 </div>
                 <div className="flex items-start gap-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
                   <Link2 size={18} className="mt-0.5 text-[var(--color-admin-accent)]" />
-                  <p>{selectedExamName ? `Bu import onaylanırsa ${selectedExamName} sınavına da bağlanabilir.` : "Hedef sınav seçmezsen ders ortak katalogda taslak olarak bekler."}</p>
+                  <p>{selectedExamName ? `Bu import onaylanırsa kabul edilen konular ${selectedExamName} sınav kapsamına da eklenir.` : "Sınav seçmezsen konular sadece ortak katalogda oluşur; sınavı oluştururken bu konuları kapsam olarak seçebilirsin."}</p>
                 </div>
               </div>
             </div>

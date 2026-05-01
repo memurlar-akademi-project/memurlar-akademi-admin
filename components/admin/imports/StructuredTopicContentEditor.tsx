@@ -11,21 +11,42 @@ type InlineSegment = {
   href?: string;
 };
 
+type ListStyle = "alpha" | "ordered" | "unordered" | "roman" | "dash" | "custom";
+
+type StructuredListItem = {
+  marker?: string;
+  content?: string;
+  segments?: InlineSegment[];
+  blocks?: ContentBlock[];
+  children?: StructuredListItem[];
+};
+
+type TableCell = string | {
+  content?: string;
+  segments?: InlineSegment[];
+  blocks?: ContentBlock[];
+};
+
 type ContentBlock =
   | { type: "heading"; content: string }
   | { type: "paragraph"; content: string }
   | { type: "section_heading"; content: string }
   | { type: "section_title"; content: string }
   | { type: "subheading"; content: string }
-  | { type: "list" | "ordered_list" | "alpha_list"; items: string[] }
+  | { type: "list"; style?: ListStyle; items: StructuredListItem[] }
+  | { type: "ordered_list" | "alpha_list"; items: Array<string | StructuredListItem> }
   | { type: "article_line" | "rich_paragraph"; segments: InlineSegment[] }
-  | { type: "table"; headers?: string[]; rows: string[][] }
+  | { type: "quote"; content: string }
+  | { type: "divider" }
+  | { type: "table"; caption?: string; headers?: string[]; rows: TableCell[][] }
   | {
       type: string;
       content?: string;
-      items?: string[];
+      items?: Array<string | StructuredListItem>;
+      style?: ListStyle;
+      caption?: string;
       headers?: string[];
-      rows?: string[][];
+      rows?: TableCell[][];
       segments?: InlineSegment[];
     };
 
@@ -53,7 +74,7 @@ function hasSegments(block: ContentBlock): block is Extract<ContentBlock, { segm
   return "segments" in block && Array.isArray(block.segments);
 }
 
-function hasItems(block: ContentBlock): block is Extract<ContentBlock, { items: string[] }> {
+function hasItems(block: ContentBlock): block is Extract<ContentBlock, { items: Array<string | StructuredListItem> }> {
   return "items" in block && Array.isArray(block.items);
 }
 
@@ -97,25 +118,185 @@ function renderSegments(segments: InlineSegment[]) {
   });
 }
 
-function splitAlphaItem(item: string) {
-  const match = item.match(/^([a-zçğıöşü]\))\s*(.+)$/iu);
-  if (!match) {
-    return null;
+function splitTextParts(value: string) {
+  return value
+    .split(/\n{2,}/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+}
+
+function isStructuredListItem(item: string | StructuredListItem): item is StructuredListItem {
+  return typeof item === "object" && item !== null;
+}
+
+function getListItemBlocks(item: StructuredListItem): ContentBlock[] {
+  if (Array.isArray(item.blocks) && item.blocks.length > 0) {
+    return item.blocks;
   }
 
-  const label = match[1];
-  const rest = match[2];
-  const colonIndex = rest.indexOf(":");
+  if (Array.isArray(item.children) && item.children.length > 0) {
+    return [
+      {
+        type: "list",
+        style: "alpha",
+        items: item.children,
+      },
+    ];
+  }
 
-  if (colonIndex === -1) {
-    return { label, term: null, description: rest };
+  if (Array.isArray(item.segments) && item.segments.length > 0) {
+    return [
+      {
+        type: "rich_paragraph",
+        segments: item.segments,
+      },
+    ];
+  }
+
+  if (typeof item.content === "string" && item.content.trim()) {
+    return splitTextParts(item.content).map((part) => ({
+      type: "paragraph",
+      content: part,
+    }));
+  }
+
+  return [];
+}
+
+function listItemToEditableText(item: string | StructuredListItem) {
+  if (!isStructuredListItem(item)) {
+    return item;
+  }
+
+  const blocks = getListItemBlocks(item);
+
+  return blocks
+    .map((block) => {
+      if ("content" in block && typeof block.content === "string") {
+        return block.content;
+      }
+
+      if ("segments" in block && Array.isArray(block.segments)) {
+        return block.segments.map((segment) => segment.text).join("");
+      }
+
+      return "";
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+function updateListItemText(item: string | StructuredListItem, value: string): string | StructuredListItem {
+  if (!isStructuredListItem(item)) {
+    return value;
   }
 
   return {
-    label,
-    term: rest.slice(0, colonIndex).trim(),
-    description: rest.slice(colonIndex + 1).trim(),
+    ...item,
+    blocks: splitTextParts(value).map((part) => ({
+      type: "paragraph",
+      content: part,
+    })),
   };
+}
+
+function updateListItemMarker(item: string | StructuredListItem, marker: string): StructuredListItem {
+  return {
+    ...(isStructuredListItem(item) ? item : { blocks: [{ type: "paragraph", content: item }] }),
+    marker,
+  };
+}
+
+function resolveListStyle(block: ContentBlock): ListStyle {
+  if (block.type === "alpha_list") {
+    return "alpha";
+  }
+
+  if (block.type === "ordered_list") {
+    return "ordered";
+  }
+
+  if (block.type === "list" && block.style) {
+    return block.style;
+  }
+
+  return "unordered";
+}
+
+function renderPreviewListItem(item: string | StructuredListItem, itemIndex: number, style: ListStyle) {
+  if (!isStructuredListItem(item)) {
+    return (
+      <div className="text-slate-700" key={`legacy-${itemIndex}`}>
+        {item}
+      </div>
+    );
+  }
+
+  const blocks = getListItemBlocks(item);
+
+  if (blocks.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="flex gap-3" key={`${item.marker ?? "item"}-${itemIndex}`}>
+      {item.marker ? (
+        <dt className="w-9 shrink-0 font-semibold text-slate-900">{item.marker}</dt>
+      ) : style === "unordered" ? (
+        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" />
+      ) : null}
+      <dd className="min-w-0 flex-1 space-y-2 text-slate-700">
+        {blocks.map((nestedBlock, nestedIndex) => renderPreviewBlock(nestedBlock, nestedIndex))}
+      </dd>
+    </div>
+  );
+}
+
+function renderPreviewTableCell(cell: TableCell, index: string) {
+  if (typeof cell === "string") {
+    return cell;
+  }
+
+  const blocks = Array.isArray(cell.blocks)
+    ? cell.blocks
+    : getListItemBlocks({
+        content: cell.content,
+        segments: cell.segments,
+      });
+
+  return blocks.length > 0 ? (
+    <div className="space-y-2" key={index}>
+      {blocks.map((block, blockIndex) => renderPreviewBlock(block, blockIndex))}
+    </div>
+  ) : null;
+}
+
+function tableCellToEditableText(cell: TableCell) {
+  if (typeof cell === "string") {
+    return cell;
+  }
+
+  const blocks = Array.isArray(cell.blocks)
+    ? cell.blocks
+    : getListItemBlocks({
+        content: cell.content,
+        segments: cell.segments,
+      });
+
+  return blocks
+    .map((block) => {
+      if ("content" in block && typeof block.content === "string") {
+        return block.content;
+      }
+
+      if ("segments" in block && Array.isArray(block.segments)) {
+        return block.segments.map((segment) => segment.text).join("");
+      }
+
+      return "";
+    })
+    .filter(Boolean)
+    .join("\n\n");
 }
 
 function renderPreviewBlock(block: ContentBlock, index: number) {
@@ -143,42 +324,12 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
     );
   }
 
-  if ((block.type === "list" || block.type === "ordered_list") && Array.isArray(block.items)) {
-    const ListTag = block.type === "ordered_list" ? "ol" : "ul";
-    const className = block.type === "ordered_list" ? "list-decimal space-y-2 pl-5 text-slate-700" : "space-y-2 text-slate-700";
+  if ((block.type === "list" || block.type === "ordered_list" || block.type === "alpha_list") && Array.isArray(block.items)) {
+    const style = resolveListStyle(block);
 
-    return (
-      <ListTag className={className} key={`${block.type}-${index}`}>
-        {block.items.map((item, itemIndex) => (
-          <li key={`${index}-${itemIndex}`}>{item}</li>
-        ))}
-      </ListTag>
-    );
-  }
-
-  if (block.type === "alpha_list" && Array.isArray(block.items)) {
     return (
       <dl className="space-y-3 text-sm" key={`${block.type}-${index}`}>
-        {block.items.map((item, itemIndex) => {
-          const parsed = splitAlphaItem(item);
-
-          if (!parsed) {
-            return (
-              <div className="text-slate-700" key={`${index}-${itemIndex}`}>
-                {item}
-              </div>
-            );
-          }
-
-          return (
-            <div className="flex gap-3" key={`${index}-${itemIndex}`}>
-              <dt className="w-8 shrink-0 font-semibold text-slate-900">{parsed.label}</dt>
-              <dd className="text-slate-700">
-                {parsed.term ? <span className="font-semibold text-slate-900">{parsed.term}:</span> : null} {parsed.description}
-              </dd>
-            </div>
-          );
-        })}
+        {block.items.map((item, itemIndex) => renderPreviewListItem(item, itemIndex, style))}
       </dl>
     );
   }
@@ -186,6 +337,11 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
   if (block.type === "table" && Array.isArray(block.rows)) {
     return (
       <div className="overflow-x-auto rounded-lg border border-slate-200" key={`${block.type}-${index}`}>
+        {block.caption ? (
+          <div className="border-b border-slate-200 bg-slate-50 p-3 text-xs font-semibold uppercase tracking-wide text-slate-600">
+            {block.caption}
+          </div>
+        ) : null}
         <table className="min-w-full border-collapse text-sm text-slate-700">
           {Array.isArray(block.headers) && block.headers.length > 0 ? (
             <thead className="bg-slate-100 text-slate-700">
@@ -203,7 +359,7 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
               <tr className={rowIndex % 2 === 1 ? "bg-slate-50" : ""} key={`${index}-row-${rowIndex}`}>
                 {row.map((cell, cellIndex) => (
                   <td className="border-b border-slate-100 p-3 align-top last:border-b-0" key={`${index}-cell-${rowIndex}-${cellIndex}`}>
-                    {cell}
+                    {renderPreviewTableCell(cell, `${index}-cell-content-${rowIndex}-${cellIndex}`)}
                   </td>
                 ))}
               </tr>
@@ -211,6 +367,18 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
           </tbody>
         </table>
       </div>
+    );
+  }
+
+  if (block.type === "divider") {
+    return <hr className="border-slate-200" key={`${block.type}-${index}`} />;
+  }
+
+  if (block.type === "quote" && block.content) {
+    return (
+      <blockquote className="border-l-4 border-slate-300 bg-white py-2 pl-4 text-sm leading-7 text-slate-700" key={`${block.type}-${index}`}>
+        {block.content}
+      </blockquote>
     );
   }
 
@@ -286,8 +454,19 @@ function defaultBlock(type: "paragraph" | "subheading" | "article_line" | "alpha
 
   if (type === "alpha_list") {
     return {
-      type: "alpha_list",
-      items: ["a) Yeni bent"],
+      type: "list",
+      style: "alpha",
+      items: [
+        {
+          marker: "a)",
+          blocks: [
+            {
+              type: "paragraph",
+              content: "Yeni bent",
+            },
+          ],
+        },
+      ],
     };
   }
 
@@ -373,23 +552,39 @@ export default function StructuredTopicContentEditor({ blocks, onChange }: Props
         {hasItems(block) ? (
           <div className="space-y-3">
             {block.items.map((item, itemIndex) => (
-              <textarea
-                autoFocus={itemIndex === 0}
-                className="admin-input min-h-[74px] resize-y"
-                key={`${index}-item-${itemIndex}`}
-                onChange={(event) =>
-                  commit(
-                    updateBlock(editableBlocks, index, (current) => ({
-                      ...current,
-                      items: (hasItems(current) ? current.items : []).map((entry, entryIndex) =>
-                        entryIndex === itemIndex ? event.target.value : entry,
-                      ),
-                    })),
-                  )
-                }
-                placeholder={block.type === "alpha_list" ? `Bent ${itemIndex + 1}` : `Satır ${itemIndex + 1}`}
-                value={item}
-              />
+              <div className="grid gap-2 md:grid-cols-[92px_1fr]" key={`${index}-item-${itemIndex}`}>
+                <input
+                  autoFocus={itemIndex === 0}
+                  className="admin-input h-11 text-sm font-semibold text-slate-700"
+                  onChange={(event) =>
+                    commit(
+                      updateBlock(editableBlocks, index, (current) => ({
+                        ...current,
+                        items: (hasItems(current) ? current.items : []).map((entry, entryIndex) =>
+                          entryIndex === itemIndex ? updateListItemMarker(entry, event.target.value) : entry,
+                        ),
+                      })),
+                    )
+                  }
+                  placeholder="a)"
+                  value={isStructuredListItem(item) ? item.marker ?? "" : ""}
+                />
+                <textarea
+                  className="admin-input min-h-[74px] resize-y"
+                  onChange={(event) =>
+                    commit(
+                      updateBlock(editableBlocks, index, (current) => ({
+                        ...current,
+                        items: (hasItems(current) ? current.items : []).map((entry, entryIndex) =>
+                          entryIndex === itemIndex ? updateListItemText(entry, event.target.value) : entry,
+                        ),
+                      })),
+                    )
+                  }
+                  placeholder={block.type === "alpha_list" || block.type === "list" ? `Bent ${itemIndex + 1}` : `Satır ${itemIndex + 1}`}
+                  value={listItemToEditableText(item)}
+                />
+              </div>
             ))}
           </div>
         ) : null}
@@ -448,7 +643,7 @@ export default function StructuredTopicContentEditor({ blocks, onChange }: Props
                         )
                       }
                       placeholder={`Satır ${rowIndex + 1} / Hücre ${cellIndex + 1}`}
-                      value={cell}
+                      value={tableCellToEditableText(cell)}
                     />
                   ))}
                 </div>

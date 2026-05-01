@@ -12,7 +12,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminExam, AdminMinistry, AdminQuestion, AdminSubject, AdminSubjectTest } from "@/lib/types";
+import type { AdminExam, AdminMinistry, AdminQuestion, AdminSubject, AdminSubjectTest, AdminTopic } from "@/lib/types";
 
 const emptyForm = {
   subject_id: null as number | null,
@@ -43,6 +43,7 @@ export function SubjectTestFormPage({
   const [ministries, setMinistries] = useState<AdminMinistry[]>([]);
   const [exams, setExams] = useState<AdminExam[]>([]);
   const [subjects, setSubjects] = useState<AdminSubject[]>([]);
+  const [topics, setTopics] = useState<AdminTopic[]>([]);
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
@@ -60,10 +61,11 @@ export function SubjectTestFormPage({
 
     async function loadCatalog() {
       try {
-        const [ministriesResponse, examsResponse, subjectsResponse, questionsResponse] = await Promise.all([
+        const [ministriesResponse, examsResponse, subjectsResponse, topicsResponse, questionsResponse] = await Promise.all([
           adminApiRequest<{ ministries: AdminMinistry[] }>("/admin/ministries", { token }),
           adminApiRequest<{ exams: AdminExam[] }>("/admin/exams", { token }),
           adminApiRequest<{ subjects: AdminSubject[] }>("/admin/subjects", { token }),
+          adminApiRequest<{ topics: AdminTopic[] }>("/admin/topics", { token }),
           adminApiRequest<{ questions: AdminQuestion[] }>("/admin/questions", { token }),
         ]);
 
@@ -74,6 +76,7 @@ export function SubjectTestFormPage({
         setMinistries(ministriesResponse.data.ministries);
         setExams(examsResponse.data.exams);
         setSubjects(subjectsResponse.data.subjects);
+        setTopics(topicsResponse.data.topics);
         setQuestions(questionsResponse.data.questions);
       } catch (loadError) {
         if (!cancelled) {
@@ -159,7 +162,9 @@ export function SubjectTestFormPage({
 
   const filteredSubjects = useMemo(() => {
     if (selectedExamId !== null) {
-      return subjects.filter((subject) => subject.exam_ids.includes(selectedExamId));
+      return subjects.filter((subject) =>
+        topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).includes(selectedExamId)),
+      );
     }
 
     if (selectedMinistryId === null) {
@@ -167,8 +172,10 @@ export function SubjectTestFormPage({
     }
 
     const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
-    return subjects.filter((subject) => subject.exam_ids.some((examId) => visibleExamIds.has(examId)));
-  }, [filteredExams, selectedExamId, selectedMinistryId, subjects]);
+    return subjects.filter((subject) =>
+      topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId))),
+    );
+  }, [filteredExams, selectedExamId, selectedMinistryId, subjects, topics]);
 
   const subjectQuestions = useMemo(
     () => questions.filter((question) => question.topic?.subject?.id === form.subject_id),
@@ -253,11 +260,11 @@ export function SubjectTestFormPage({
       return;
     }
 
-    const examId = subject.exam_ids?.[0] ?? null;
+    const examId = topics.find((topic) => topic.subject_id === subject.id)?.exam_ids?.[0] ?? null;
     setSelectedExamId(examId);
     const exam = examId ? exams.find((entry) => entry.id === examId) : null;
     setSelectedMinistryId(exam?.ministry?.id ?? null);
-  }, [exams, form.subject_id, subjects]);
+  }, [exams, form.subject_id, subjects, topics]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

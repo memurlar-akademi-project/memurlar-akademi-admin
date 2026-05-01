@@ -288,7 +288,7 @@ export default function ContentImportReviewPage() {
                     Belge Özeti
                   </h2>
                   <p className="mt-1 text-sm text-[var(--color-admin-muted)]">
-                    Bu review ekranında ders adı, hedef sınav ve konu taslakları son haline getirilir.
+                    Bu review ekranında ders adı ve konu taslakları ortak katalog için son haline getirilir. Sınav bağlantısı opsiyoneldir.
                   </p>
                 </div>
                 <button className="admin-button admin-button-secondary" onClick={() => window.location.reload()} type="button">
@@ -325,13 +325,13 @@ export default function ContentImportReviewPage() {
               </label>
 
               <label className="block space-y-2.5">
-                <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Hedef Sınav</span>
+                <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Opsiyonel Sınav Bağlantısı</span>
                 <select
                   className="admin-input h-12"
                   onChange={(event) => setTargetExamId(event.target.value)}
                   value={targetExamId}
                 >
-                  <option value="">Sonradan bağlarım</option>
+                  <option value="">Sadece kataloga yaz, sınav kapsamını sonra seçerim</option>
                   {exams.map((exam) => (
                     <option key={exam.id} value={exam.id}>
                       {exam.name}
@@ -517,7 +517,7 @@ export default function ContentImportReviewPage() {
                 <ConfirmDialog
                   busy={approving}
                   confirmLabel="Onayla ve Yaz"
-                  description="Kabul edilen konular canlı ders, konu ve içerik kayıtlarına yazılacak. Bu işlem sonrası import yeniden onaylanamaz."
+                  description="Kabul edilen konular ortak ders-konu havuzuna yazılacak. Opsiyonel sınav seçiliyse bu konular o sınav kapsamına da eklenecek. Bu işlem sonrası import yeniden onaylanamaz."
                   onConfirm={() => void handleApprove()}
                   title="Import kataloga yazılsın mı?"
                   tone="primary"

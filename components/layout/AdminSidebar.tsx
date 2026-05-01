@@ -8,6 +8,7 @@ import {
   Building2,
   FileAudio2,
   FileUp,
+  WandSparkles,
   Files,
   GraduationCap,
   LayoutDashboard,
@@ -36,6 +37,7 @@ const navigation = [
     title: "İçerik",
     items: [
       { href: "/konular/import", label: "Konu Import", icon: FileUp },
+      { href: "/ai-konu-import", label: "AI Konu Import", icon: WandSparkles },
       { href: "/icerik-importlari", label: "İçerik Importları", icon: FileUp },
       { href: "/sorular", label: "Sorular", icon: ScrollText },
       { href: "/testler", label: "Testler", icon: Waypoints },

@@ -1,635 +1,483 @@
-# KONU ANALİZ REHBERİ
+# KONU ANALIZ REHBERI
 
-Bu dosya, Memurlar Akademi için dokümanları konu import JSON’una çevirirken kullanılacak tek resmi referanstır.
+Bu dosya, Memurlar Akademi icin mevzuat ve ders dokumanlarini konu import JSON'una cevirirken kullanilacak tek genel referanstir.
 
-## Ana Kural
+Bu rehber hicbir kanuna, sinava veya dosyaya ozel degildir. Bugun bir kanun, yarin baska bir yonetmelik gelebilir; ayni mantik uygulanir.
 
-Konu import çıktısı **daima structured content** olmalıdır.
+## Temel Ilke
 
-Yani:
+Konu analizi bir metin donusturme isi degildir. Isin asil amaci, dokumani bir insan editor gibi okuyup kullaniciya calisilabilir bir konu anlatimi haline getirmektir.
 
-- `content_blocks` zorunlu
-- yalnız `content_body` kabul edilmez
-- düz metin dumpı üretilemez
+Kesin kurallar:
 
-## Temel Beklenti
+- Metindeki sorumlu olunan hicbir kelime degistirilemez.
+- Mevzuat metnindeki anlamli noktalama korunur; baslik sonundaki `:` gibi kaynak isaretler keyfi olarak dusurulemez.
+- Metin ozetlenemez, yorumlanamaz, sadeleştirilemez.
+- Kullanici tarafindan cikarilmasi istenen kisimlar temizlenir.
+- Temizlikten sonra kalan metin mantik filtresinden gecirilir.
+- Bos, anlamsiz, yalniz kalmis veya baglamdan kopmus bloklar uretilmez.
+- Sadece kaynak/degisiklik gecmisi anlatan ve gercek normatif metin icermeyen maddeler icerik sayilmaz. Ornegin yalnizca "su kanunun ilgili hukmu olup hukmu kalmamistir" veya benzeri aciklama varsa blok uretilmez.
+- Cikti daima structured content olur; yalniz `content_body` veya duz metin dump kabul edilmez.
 
-Konu ayrıştırma işi yalnızca teknik bir dönüştürme değildir.
+Basarili cikti, ham OCR/DOCX dokumu gibi degil; mevzuata sadik, duzenli bir konu anlatimi gibi gorunmelidir.
 
-Beklenen şey:
+## Zorunlu Is Akisi
 
-- dokümanı bir insan gibi okumak
-- kullanıcının verdiği bölme kuralını mantıksal olarak uygulamak
-- mantıksız ayrımlar yapmamak
-- puntolama farkını, kalın-ince hiyerarşisini, başlık seviyelerini ve maddeleme düzenini anlamak
-- `A)`, `B)`, `C)`, `a)`, `b)`, `1.`, `2.`, `3 –` gibi yapıların birbirleriyle ilişkisini doğru kurmak
-- ortaya kullanıcıya gerçekten çalışılabilir, mantıklı bir konu anlatımı çıkarmak
+Her dokuman icin su sira bozulmaz:
 
-Bu rehberin amacı sadece JSON üretmek değil, mevzuatı kullanıcıya anlamlı ve düzenli bir çalışma yüzeyi olarak sunmaktır.
+1. Dokumani once bolmeden oku ve ana haritayi cikar.
+2. Kullanici hangi kurala gore ayir dediyse onu ana bolme kurali yap.
+3. Baslik, madde, alt baslik, liste, tablo ve not yapilarini ayirt et.
+4. Kullanici tarafindan cikarilacak kisimlari temizle.
+5. Temizlikten sonra kalan metni yeniden mantik kontrolunden gecir.
+6. Bloklari structured content olarak kur.
+7. Final QA yapmadan JSON teslim etme.
 
-Önemli sınırlar:
+Onemli: Ilk gorulen satir yapisina gore acele blok uretilmez. Once "bu satir dokumanda ne ise yariyor?" sorusu cevaplanir.
 
-- metnin hiçbir kelimesi değiştirilemez
-- metin özetlenemez
-- sorumlu olunmayan bölümler kullanıcı talimatına göre temizlenebilir
-- temizlik yapılırken kalan metnin anlam akışı bozulamaz
+## Structured Content V2
 
-## Editoryal Düzenleme İlkeleri
-
-Bu iş sadece metni JSON'a çevirmek değildir. Amaç, aynı mevzuatı daha okunabilir ve daha düzenli bir çalışma yüzeyi haline getirmektir.
-
-Bu yüzden ayrıştırma sırasında şu editoryal mantık uygulanır:
-
-- metin korunur, sunum iyileştirilir
-- kanun dili yeniden yazılmaz ama ham OCR / satır kırığı / düzensiz akış aynen taşınmaz
-- kullanıcıya "ham belge dumpı" değil, mantıklı akışı olan konu anlatımı sunulur
-
-Beklenen editoryal sonuç:
-
-- `KISIM`, `BÖLÜM`, `Madde`, alt başlık ve bent yapıları görsel olarak seçilebilir olur
-- aynı seviyedeki öğeler tutarlı biçimde sunulur
-- bir üst başlığa bağlı alt metinler birbirinden koparılmaz
-- özel bloklar normal paragraf gibi eritilmez
-
-Özel dikkat verilecek yapılar:
-
-- `A)`, `B)`, `C)` gibi harfli bentler
-- `1.`, `2.`, `3.` veya `1 –`, `2 –`, `3 –` gibi numaralı yapılar
-- yemin metni, cetvel, tablo, istisna listesi, oran listesi gibi yoğun normatif bloklar
-- kalın yazılmış kısa satırlarla başlayan alt rejimler
+Konu anlatimi bir HTML stringi degildir. Cikti, HTML'e render edilebilen semantik bir dokuman agaci gibi davranmalidir.
 
 Kural:
 
-- metin değişmez
-- yapı daha iyi okunur hale getirilir
-- belge hissi korunur
-- kullanıcıya mevzuatla uyumlu, sakin ve mantıklı bir okuma akışı verilir
+- UI metinden anlam cikarmamalidir.
+- Liste etiketi, tablo hucreleri, baslik seviyesi, vurgu ve nested yapilar JSON icinde acikca temsil edilmelidir.
+- Yeni importlarda liste elemanlari string olarak verilmez; obje olarak verilir.
+- Regex ile `a)`, `1.`, `ğ)` yakalamaya muhtac veri yeni import icin hatalidir.
+- Renderer sadece verilen semantik alana gore HTML uretir; metni parse edip yapi tahmin etmez.
 
-## Kullanım Mantığı
-
-Kullanıcı her doküman için genelde şunu söyler:
-
-- hangi derse ait olduğu
-- hangi yapıya göre bölüneceği
-  - örn. `KISIM`
-  - örn. `BÖLÜM`
-  - örn. `Başlık`
-- nelerin çıkarılacağı
-  - örn. `Geçici maddeler`
-  - örn. `Dipnotlar`
-  - örn. `Mülga / Ek / Değişik`
-
-Bu talimatlar doğrudan uygulanır. Ekstra yapı uydurulmaz.
-
-Ama bu, mekanik bölme anlamına gelmez.
-
-Kullanıcının verdiği kurallar uygulanırken:
-
-- başlık hiyerarşisi okunur
-- hangi satırın başlık, hangisinin alt başlık, hangisinin liste elemanı olduğu anlaşılır
-- mevzuat akışı korunur
-- yalnızca satır sonuna veya OCR çıktısına bakarak blok kararı verilmez
-
-## Çıktı Standardı
-
-Her zaman şu iskelet kullanılır:
+Her konu importu su genel yapida olmalidir:
 
 ```json
 {
   "subject_id": 2,
   "topics": [
     {
-      "name": "BİRİNCİ KISIM - GENEL ESASLAR",
+      "name": "Konu adi",
       "status": "draft",
+      "content_schema_version": 2,
       "content_blocks": []
     }
   ]
 }
 ```
 
-## Block Standardı
+### Blok Tipleri
 
-Kullanılacak ana block tipleri:
+Kabul edilen ana blok tipleri:
 
 - `section_heading`
 - `section_title`
+- `heading`
 - `subheading`
 - `article_line`
 - `paragraph`
+- `rich_paragraph`
+- `list`
+- `table`
+- `callout`
+- `quote`
+- `divider`
+
+Legacy bloklar:
+
 - `alpha_list`
 - `ordered_list`
-- `table`
 
-Hiyerarşi notu:
+Not: `alpha_list` ve `ordered_list` sadece eski importlari bozmamak icin kabul edilir. Yeni uretilen JSON'da liste blogu daima `type: "list"` seklinde olur.
 
-- çıktı formatı gerçek nested liste destekliyorsa parent-child ilişki açıkça korunur
-- desteklemiyorsa parent blok, child liste ve devam paragrafı ardışık ama kopmadan modellenir
-- hiçbir durumda iç içe liste düz paragrafa eritilmez
-- liste seviyesi kayboluyorsa JSON teknik olarak geçerli olsa bile editoryal olarak hatalıdır
+Zorunlu:
 
-## Okunabilirlik Kuralı
+- `content_blocks` bos veya duz metin yerine gecen tek dev paragraf olamaz.
+- Tablo varsa `table` olarak kalir.
+- Liste varsa liste olarak kalir.
+- Madde varsa `article_line` ile baslar.
 
-Structured veri üretirken amaç sadece doğru import almak değil, aynı zamanda konu çalışma ekranında okunabilir bir içerik üretmektir.
+### Inline Metin
 
-Bu yüzden:
+Vurgu gerekiyorsa metin HTML olarak verilmez, segment olarak verilir.
 
-- çok uzun norm metni tek bir `paragraph` içinde bırakılmaz
-- anlam bozulmadan doğal satır/paragraf sınırlarından bölünür
-- aynı madde içindeki farklı fıkralar mümkünse ayrı `paragraph` blokları olarak verilir
-- bentlerden sonra gelen uzun açıklamalar tek parça dump yapılmaz
-- hedef paragraf uzunluğu genellikle `70-120 kelime` aralığında tutulur
-- `150 kelime` üstüne çıkan bloklar özel olarak kontrol edilir ve doğal kırılım aranır
-- `200+ kelime` tek paragraf ancak metinde hiçbir güvenli kırılım yoksa geçici olarak kabul edilebilir; normal çıktı standardı değildir
-- `300-500 kelimelik` paragraf veya liste item'ı kabul edilmez
-- önce cümle sonlarında bölünür; yetmezse mevzuat dilindeki doğal duraklar olan `;`, `:` ve numaralı/harfli alt yapı geçişleri kullanılır
-- tek cümle çok uzunsa ve noktalı virgüllerle bağlı alt hükümler içeriyorsa, metin değiştirilmeden bu noktalı virgül duraklarında okunabilir alt parçalara ayrılır
-- uzun bir liste maddesi bölünecekse madde numarası/harfi çoğaltılmaz; aynı liste item'ı içinde iç paragraf kırılımı verilir
-- okunabilirlik için yapılan kırılım, `8` maddesini `8, 9, 10` gibi yeni maddelere dönüştüremez ve mevcut sıralamayı değiştiremez
-
-Önemli:
-
-- metin değiştirilemez
-- özetlenemez
-- sadeleştirilemez
-- sadece doğal kırılım noktalarından parçalanabilir
-- kırılım metnin anlamını değiştiren yeni cümle üretimi değildir; sadece aynı norm metninin daha okunabilir bloklara ayrılmasıdır
-
-Amaç:
-
-- UI'da çok uzun, nefes almayan paragraf blokları oluşturmamak
-- mevzuat metnini daha rahat okunur hale getirmek
-
-## Tipografi ve Hiyerarşi Algısı
-
-Dokümandaki görsel ipuçları anlamsal karar için kullanılır.
-
-Örnek ipuçları:
-
-- kalın / ince farkı
-- büyük / küçük başlık yapısı
-- ortalı başlıklar
-- alt alta gelen numaralı veya harfli diziler
-- başlık altında içerden başlayan alt bentler
+```json
+{
+  "type": "rich_paragraph",
+  "segments": [
+    { "text": "Bu kisim normal metindir. " },
+    { "text": "Bu ifade vurguludur", "bold": true },
+    { "text": "." }
+  ]
+}
+```
 
 Kural:
 
-- görsel olarak aynı seviyede duran elemanlar anlamsal olarak da aynı seviyede modellenmelidir
-- kalın yazılmış ve yeni bir rejim başlatan satırlar paragraf diye yedirilmez
-- içerden başlayan bentler üst başlıkla ilişkili alt yapı olarak modellenir
-- yalnızca text içeriğine değil, metnin sunuluş biçimine de bakılarak karar verilir
+- `<strong>`, `<em>`, `<u>`, `<a>` gibi HTML stringleri uretilmez.
+- `bold`, `italic`, `underline`, `href` gibi alanlar kullanilir.
+- Kanun metni degistirilmeden korunur; vurgu sadece kaynak dokumanda gercekten varsa veya editoriyal olarak daha sonra sistem tarafindan eklenirse kullanilir.
 
-Amaç:
+### Liste Modeli
 
-- kullanıcıya doğal ve düzenli bir konu anlatımı sunmak
-- belge yapısını UI'da mümkün olduğunca sadık biçimde korumak
+Yeni liste modeli:
 
-## PDF Sunum Mantığı
-
-İyi bir çıktı, ham DOCX / OCR akışına değil, editoryal olarak düzenlenmiş bir PDF çalışma sayfasına benzemelidir.
-
-Bu mantıkta:
-
-- `KISIM` ve `BÖLÜM` başlıkları belge üst yapısı olarak belirgin kalır
-- `Madde` satırı ana giriş noktasıdır
-- `A) Memur`, `B) Sözleşmeli personel` gibi yapılar madde altı rejim başlığı olarak okunur
-- başlık altında gelen açıklama metni o başlığa bağlı tek akış olarak devam eder
-- uzun metinler kullanıcıyı boğmayacak doğal parçalara ayrılır
-- yoğun liste yapıları paragraf dumpına çevrilmez
-
-Amaç:
-
-- "kanun metni değişmiş" hissi vermeden
-- "ham metin dökülmüş" hissini azaltmak
-- kullanıcıya PDF benzeri düzgün bir çalışma yüzeyi üretmek
-
-## Gömülü Alt Bent Kuralı
-
-Bir paragraf içine gömülü çoklu bent veya alt madde yapısı tek paragraf halinde bırakılamaz.
-
-Örnek problemli yapı:
-
-- `a) ... b) ... c) ...`
-- `1 – ... 2 – ... 3 – ...`
-- `c) ...` altında ayrıca `a), b), c)` diye devam eden alt yapı
-
-Kural:
-
-- harfli yapı ayrı `alpha_list` veya uygun alt bloklara ayrılır
-- numaralı yapı ayrı bloklara ayrılır
-- paragraf içine gömülü çoklu madde yapısı dump edilmez
-
-Amaç:
-
-- konu çalışma ekranında taranabilir hiyerarşi üretmek
-- tek blokta ezilmiş mevzuat yapısını önlemek
-
-## Standardizasyon Kuralı
-
-Aynı seviyedeki mevzuat elemanları aynı görsel ve anlamsal yapıyla üretilmelidir.
-
-Örnek:
-
-- `A) Memur`
-- `B) Sözleşmeli personel`
-- `C) Geçici personel`
-
-aynı üst yapının parçalarıysa biri `alpha_list`, biri `subheading`, biri düz `paragraph` olamaz.
+```json
+{
+  "type": "list",
+  "style": "alpha",
+  "items": [
+    {
+      "marker": "a)",
+      "blocks": [
+        { "type": "paragraph", "content": "Liste elemani metni." }
+      ]
+    },
+    {
+      "marker": "b)",
+      "blocks": [
+        { "type": "paragraph", "content": "Liste elemani girisi:" },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "marker": "1.",
+              "blocks": [
+                { "type": "paragraph", "content": "Ic liste elemani." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
 Kural:
 
-- aynı mantıktaki kardeş elemanlar aynı block ailesiyle verilir
-- bir alt bent başlığı içeriden başlatılıp diğeri dışarıda başlatılamaz
-- `4 –`, `5 –`, `6 –`, `7 –` gibi numaralı dizilerde bir kısmı düz paragraf, bir kısmı başlık gibi davranmamalıdır
+- `marker` alani etiketi tutar: `a)`, `A)`, `1.`, `1 -`, `I.`, `ğ)` gibi.
+- `blocks` alani liste elemaninin icindeki gercek icerigi tutar.
+- Liste elemaninin icinde paragraf, rich paragraph, tablo, callout veya baska liste olabilir.
+- Uzun liste elemani gerekiyorsa ayni `marker` altinda birden fazla paragraph bloguna bolunur; yeni liste elemani uydurulmaz.
+- Nested liste, parent liste item'inin `blocks` icinde yer alir.
+- Liste item'i string olamaz.
 
-Amaç:
+`style` degerleri:
 
-- UI'da tutarlı ritim kurmak
-- okuyucuya hiyerarşi kırılması yaşatmamak
+- `alpha`
+- `ordered`
+- `unordered`
+- `roman`
+- `dash`
+- `custom`
 
-## Cümle Bütünlüğü Kuralı
+### Tablo Modeli
 
-Metin doğal olmayan yerlerden bölünemez.
+Tablo metne ezilmez. Basit tablo:
 
-Örnek hatalı durum:
+```json
+{
+  "type": "table",
+  "caption": "Tablo basligi varsa",
+  "headers": ["Sutun 1", "Sutun 2"],
+  "rows": [
+    ["Hucre 1", "Hucre 2"]
+  ]
+}
+```
 
-- bir cümlenin ilk yarısı bir paragrafta
-- devamı sonraki paragrafta
+Hucre icinde coklu paragraf veya liste gerekiyorsa hucre obje olabilir:
 
-Kural:
-
-- paragraf bölme yalnız anlamlı duraklarda yapılır
-- satır sonu var diye tek başına paragraf bölünmez
-- `... görevli bulunanlardan` ile başlayıp `dışında kalanları kapsar` ile biten yapı tek cümleyse aynı paragrafta kalır
-
-Amaç:
-
-- mevzuat anlam bütünlüğünü korumak
-- yapay satır kırılımlarını önlemek
-
-## Devam Parçası Birleştirme Kuralı
-
-OCR veya satır kırığı sebebiyle oluşan küçük devam parçaları ayrı paragraf olarak bırakılamaz.
-
-Örnek:
-
-- önceki paragraf: `"Yemin Belgesi"`
-- sonraki paragraf: `ni imzalayarak göreve başlarlar.`
-
-Kural:
-
-- kısa ve tek başına anlamsız kalan devam parçaları önceki paragrafla birleştirilir
-- kelime parçalanmışsa yeniden doğal kelime akışına bağlanır
-- `eder.`, `kapsar.`, `ni imzalayarak...` gibi tek başına orphan satırlar ayrı block olarak kalmaz
-
-## Gereksiz Paragraf Yasağı
-
-Temizlik veya ayrıştırma sonrası yapay paragraf üretilemez.
-
-Örnek hatalı durum:
-
-- bir başlık temizlenir ama altında kalan kısa satır ayrı paragraf olur
-- bir cümle iki satırdan geldiği için iki `paragraph` üretilir
-- aynı düşüncenin devamı olan kısa kırık satırlar alt alta ayrı blok olur
-- yalnızca satır sonu olduğu için metin `br` yemiş gibi birkaç paragrafa bölünür
-
-Kural:
-
-- ayrı paragraf üretmek için gerçek anlamsal kırılım olmalı
-- tek cümlenin devamı olan satırlar tek `paragraph` içinde birleştirilir
-- kısa, zayıf, bağlamsız veya tek başına anlam taşımayan satırlar bağımsız paragraf olamaz
-- temizlik sonrası kalan metin önceki veya sonraki normatif blokla anlamlı biçimde birleşebiliyorsa birleşmelidir
-
-Amaç:
-
-- UI'da sahte boşluk ve kırık akış üretmemek
-- kullanıcıya belgeyi doğal akışında göstermek
-
-## Listeleme Kuralı
-
-Mevzuatta numaralı veya harfli seri yapı varsa bunlar düz paragraf olarak bırakılmaz.
-
-Örnek:
-
-- `1. ... 2. ... 3. ...`
-- `a) ... b) ... c) ...`
+```json
+{
+  "type": "table",
+  "headers": ["Durum", "Aciklama"],
+  "rows": [
+    [
+      "Birinci durum",
+      {
+        "blocks": [
+          { "type": "paragraph", "content": "Hucre icindeki ilk paragraf." },
+          {
+            "type": "list",
+            "style": "ordered",
+            "items": [
+              {
+                "marker": "1.",
+                "blocks": [
+                  { "type": "paragraph", "content": "Hucre icindeki liste." }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ]
+}
+```
 
 Kural:
 
-- `1., 2., 3.` gibi yapılar mümkünse `ordered_list`
-- `a), b), c)` yapıları `alpha_list`
-- `A) Genel şartlar` gibi başlık altında gelen `1, 2, 3...` serileri paragraf dump olmaz
-- liste maddesinin kendi içinde alt bent varsa üst yapı ve alt yapı ayrı bloklara bölünür
-- aynı liste serisi başladıysa sonraki kardeş elemanlar aynı blok ailesinde devam eder; `a)`, `b)` listeyken `c)` paragraf olamaz
-- parent item altında child liste varsa child liste bittikten sonra gelen genel devam metni son child item'a yapıştırılmaz
-- liste içindeki uzun norm metinleri okunabilirlik için bölünebilir ama madde etiketi çoğaltılamaz
-- ana numaralı seri başladıysa (`1, 2, 3, 4...`) keyfi olarak sıfırlanmaz
-- `6` altında `a), b)` gelmesi, `7`nin yeni section olduğu anlamına gelmez
-- child list bittikten sonra parent numbering aynı akıştan devam eder
-- `6, 7, 8, 9...` gibi ana bentler sırf altında alt bent var diye `subheading` veya bağımsız section'a çevrilmez
-- uzun bir bent (`11` gibi) görsel olarak büyük görünse bile semantik olarak hâlâ aynı seviyedeki liste elemanıdır
-- ana seri ile alt seri ilişkisi bozulmamalıdır: `8 > a/b/c > 9` akışı korunur, `8 > a/b/c > 1/2` gibi sahte reset yapılmaz
+- Tablo hucreleri string veya `{ "blocks": [] }` olabilir.
+- Hucre icinde liste varsa stringe cevrilmez.
+- Tablo basligi varsa `caption` alanina yazilir.
 
-Amaç:
+### Yardimci Bloklar
 
-- taranabilirlik
-- sınava çalışırken madde madde okunabilirlik
-- mevzuattaki ana akışın kullanıcı gözünde bozulmaması
+Alinti, not veya ayrac gerekiyorsa paragraf gibi gizlenmez:
 
-## Liste Sürekliliği ve Nested Yapı
+```json
+{ "type": "quote", "content": "Alinti metni." }
+```
 
-İç içe liste bulunan mevzuat yapılarında asıl hedef sadece parçalamak değil, parent-child ilişkisini korumaktır.
+```json
+{ "type": "callout", "variant": "info", "content": "Kisa not metni." }
+```
 
-Örnek doğru mantık:
-
-- `1, 2, 3, 4, 5`
-- `6`
-- `a), b)`
-- `7`
-- `a), b)`
-- `8`
-- `a), b), c)`
-- `9, 10, 11, 12`
+```json
+{ "type": "divider" }
+```
 
 Kural:
 
-- nested yapı varsa parent item görünür kalır, child item'lar onun altına bağlanır
-- child item'lar hafif içerden başlayan alt yapı mantığında modellenir
-- ana numara ile alt harfli bent arasında sahte başlık üretilmez
-- aynı seviyedeki numaralı elemanlar aynı tipografik ağırlıkta kalır
-- alt bent var diye ana bent kalın başlık veya yeni kart başlangıcı gibi davranmaz
-- child liste bitince ana akış kaldığı numaradan devam eder; child seviyesindeki `1, 2` numaraları ana seri gibi gösterilemez
-- ana seri ile child seri birbirine karıştırılamaz; okuyucu "bu 1-2 nereden çıktı?" diye düşünmemelidir
-- çok uzun görünen bir bent, sadece uzun olduğu için yeni section veya kaynak/alinti bloğu sayılmaz; önce dokümandaki hiyerarşik bağ kontrol edilir
-- UI tarafında `ul/ol/li` mantığına yakın bir hiyerarşi hedeflenir; ama amaç HTML etiketi değil, doğru anlamsal ilişkiyi korumaktır
+- Bu bloklar kaynak dokumanda gercekten ayri anlam tasiyorsa kullanilir.
+- Sadece gorsel sus icin gereksiz blok uretilmez.
 
-Amaç:
+## Dokuman Haritasi
 
-- kullanıcının “burada neden yeni bölüm açıldı?” hissine kapılmaması
-- mevzuatın iç içe yapısının doğal görünmesi
-- nested listelerin hafif içerde ama kopmadan görünmesi
+Ayristrmadan once dokumanin iskeleti belirlenir.
 
-## Etiket-Metin Bağlılığı Kuralı
+Bakilacak yapilar:
 
-Liste etiketi mümkün olduğunca kendi norm metninden koparılamaz.
-
-Örnek hatalı durum:
-
-- `F)` ayrı bir blok
-- altında gelen norm cümlesi başka bir `paragraph`
+- ana kisimlar
+- bolumler
+- maddeler
+- ek maddeler
+- gecici maddeler
+- alt basliklar
+- harfli bentler
+- numarali bentler
+- tablolar
+- dipnotlar ve mevzuat notlari
 
 Kural:
 
-- `A)`, `B)`, `C)`, `F)` gibi tek harfli etiketler gerçekten alt başlık değilse ayrı `subheading` yapılmaz
-- bu etiketler bağlı oldukları norm metinle aynı liste yapısı içinde tutulur
-- aynı serideki kardeş elemanlar (`D)`, `E)`, `F)`, `G)`) aynı blok mantığıyla modellenir
+- Kullanici "KISIM'a gore ayir" dediyse konu siniri KISIM olur.
+- Kullanici "BOLUM'e gore ayir" dediyse konu siniri BOLUM olur.
+- Kullanici farkli bir bolme kurali verdiyse o uygulanir.
+- Bolme kurali uygulanirken madde veya liste yapisi kirilamaz.
+- Bir konu bitmeden sonraki konunun maddesi onceki konuya yapisamaz.
 
-Amaç:
+## Temizlik Kurallari
 
-- UI'da parçalanmış mevzuat hissini önlemek
-- kullanıcıya doğal liste akışı göstermek
+Kullanici hangi yapilarin cikarilacagini soylerse sadece onlar temizlenir. Kullanici istemedikce normatif metin veya ek madde silinmez.
 
-## Başlık Algılama Kuralı
+Tipik temizlenecek yapilar:
 
-Bir madde satırından sonra gelen ve yeni bir normatif alt başlık başlatan ifadeler paragraf olarak bırakılamaz.
+- dipnot metinleri
+- dipnot referanslari
+- kullanicinin istemedigi gecici maddeler
+- kullanicinin istemedigi tablolar
+- parantez icindeki resmi mevzuat islem notlari
 
-Örnek:
+Mevzuat islem notu ornekleri:
 
-- `Madde 163 – ...`
-- ardından gelen `İstisnai memuriyetlere:`
-
-Bu yapı paragraf değil başlıktır.
-
-Kural:
-
-- yeni bir alt rejimi başlatan etiket satırları `subheading` yapılır
-- madde başlığı mülga olduğu için silinmişse altında kalan bir sonraki gerçek başlık doğru maddeye bağlanır
-- mülga madde başlığı kalmış ama metin yoksa o başlık da atılır
-- paragraf içinde kalan `Madde`, `Ek Madde`, `BÖLÜM`, `KISIM` başlangıçları yakalanır ve ayrı yapıya çıkarılır
-- iki nokta ile biten ve yeni normatif rejim başlatan ifadeler paragraf sonuna gömülü bırakılamaz
-- `Karşılıklı olarak yer değiştirme:`, `İdari görevlere atanma:` gibi ifadeler metnin içinde görünüyorsa önce başlık mı diye kontrol edilir
-- başlık satırı ile ona bağlı metin farklı maddeye kaydırılamaz
-
-## Madde Bütünlüğü ve Kayma Kontrolü
-
-Her `article_line`, doğru madde numarası, doğru madde başlığı ve doğru norm metniyle eşleşmelidir.
-
-Kural:
-
-- `Madde 61/A`, `Ek Madde 8`, `Madde 163` gibi yeni madde başlangıçları paragraf içinde kalamaz
-- bir madde temizlenirken sonraki maddenin başlığı veya metni önceki maddeye yapışamaz
-- mülga veya boş madde düşürüldüğünde takip eden gerçek madde kendi `article_line` bloğuyla başlamalıdır
-- başlık ve içerik uyuşmuyorsa çıktı hazır kabul edilmez
-- sadece `article_line` kalmış, altında gerçek norm metni olmayan kartlar düşürülür
-- madde sırası dokümandaki mantıksal akışla karşılaştırılır; eksik, kaymış veya iç içe geçmiş madde varsa tekrar ayrıştırılır
-
-Amaç:
-
-- "başlık başka, içerik başka" hatasını engellemek
-- temizlik sonrası madde kaymasını yakalamak
-- UI'da boş veya yanlış bağlanmış madde kartı oluşturmamak
-
-## Mevzuat Notu ve Mülga Temizliği
-
-Kullanıcı mevzuat notlarının kaldırılmasını istediyse parantez içindeki resmi değişiklik notları çalışma içeriği değildir.
-
-Temizlenecek tipik yapılar:
-
-- `(Mülga: ...)`
-- `(Değişik: ...)`
+- `(Mulga: ...)`
+- `(Degisik: ...)`
 - `(Ek: ...)`
 - `(Aynen kabul: ...)`
-- `(Yeniden düzenleme: ...)`
-- `KHK`, `md.`, tarih ve kanun numarası içeren parantez içi işlem notları
+- tarih, kanun numarasi, KHK veya madde atfi iceren parantezler
+
+Mevzuat islem notu olmayan normatif parantezler korunur.
+
+Korunacak parantez ornekleri:
+
+- `(ek gosterge dahil)`
+- `(aday ... dahil)`
+- `(mahalli idareler dahil)`
+- `(ceza infaz kurumlari ... dahil)`
+- `(A) bendi`, `(B) fikrasi`, `(c) alt bendi` gibi normatif atiflar
 
 Kural:
 
-- parantez içi mevzuat notu silinir, gerçek norm metni korunur
-- not silindikten sonra içerik tamamen boşalıyorsa o madde/bent/blok düşürülür
-- not silindikten sonra yalnız bağlamı bozuk parça kalıyorsa önceki/sonraki metinle anlam bağı kontrol edilir
-- `d) (Mülga: ...) olması şarttır.` gibi sahte bentler kesinlikle bırakılmaz
-- `(2)`, `[1]`, `(*)` gibi not referansları metinde kalamaz
-- not temizliği norm metnini yeniden yazma bahanesi olamaz; sadece sorumlu olunmayan işlem notu çıkarılır
+- Parantez icinde `Mulga:`, `Degisik:`, `Ek:`, `Aynen kabul:`, `Iptal:`, `Yeniden duzenleme:` gibi resmi islem etiketi yoksa otomatik silinmez.
+- `dahil`, `haric`, `sakli kalmak kaydiyla`, `bendi`, `fikrasi`, `alt bendi`, `ek gosterge` gibi ifadeler normatif metindir; islem notu sanilip temizlenemez.
+- Parantez icinde sadece sayi varsa otomatik dipnot sayilmaz. Hemen ardindan `numarali bent`, `numarali alt bent`, `fikra`, `bent`, `cetvel`, `sirasi` gibi normatif baglac geliyorsa parantez aynen korunur.
+- Mevzuat islem notu satirin basinda olup arkasindan norm metin devam ediyorsa sadece islem notu temizlenir, devam eden norm metin korunur.
+- Parantez icindeki uc nokta veya benzeri dipnot yeri tutucular temizlenirken hemen ardindan gelen dipnot numarasi da tamamen temizlenir. `(…)10`, `(...)14` gibi yapilardan `0`, `4` gibi artakalan rakam birakilamaz.
 
-## Dipnot Referans Temizliği
+Temizlik sonrasi zorunlu kontrol:
 
-Dipnot metni temizlenince dipnot referans kalıntıları da temizlenmelidir.
+- Bir madde sadece baslik ve temizlenmis nottan ibaret kaldiysa dusurulur.
+- Bir bent sadece temizlenmis nottan ibaret kaldiysa dusurulur.
+- Bir liste elemani temizlendikten sonra sadece `a)`, `b)`, `1.`, `-` gibi marker kaldiysa eleman tamamen dusurulur.
+- Temizlik sonrasi yalniz kalan cumle parcasi varsa onceki veya sonraki baglamla birlestirilir.
+- Temizlik norm metnini yeniden yazma bahanesi olamaz.
+- Kanun numarasi, madde numarasi, oran, tarih veya gercek normatif sayi dipnot sanilip silinmez.
+- Normatif metin icindeki tarihler parca parca temizlenemez; `30.4.1992`, `8.4.1929`, `(1.1.1995 ...)` gibi tarihler aynen kalir. Temizlik sonrasi `.1992`, `8..1929`, `1..1995` gibi eksik tarih kaliplari kalite hatasidir ve kaynaga donulup duzeltilir.
+- Parantez icindeki mevzuat islem notu temizlenirken temizlik sadece parantez iciyle sinirlidir; kapanis parantezinden sonra gelen `87 nci madde`, `94 uncu madde`, `105 inci maddenin` gibi normatif atif numaralari asla silinmez.
+- Temizlik sonrasi `uncu madde`, `inci madde`, `ncı madde`, `nci madde`, `nci maddede`, `ncı maddede`, `nci maddenin`, `ncı maddenin`, `nci fıkra` gibi basinda madde numarasi eksik kalan ifadeler kalite hatasidir; import JSON'u verilmeden once kaynaga donulup numara tamamlanir.
+- Liste etiketi ile madde atfi karistirilmaz: `1) 87 nci maddede...` ifadesindeki `1)` liste elemani, `87` ise normatif madde atfidir; ikisi de korunur.
 
-Örnek problemli kalıntılar:
+## Madde ve Baslik Butunlugu
 
-- `201`
-- `221`
-- `199`
-- `222`
-
-özellikle kelime aralarında veya virgül dizilerinde kalan çıplak numaralar
-
-Kural:
-
-- dipnot temizliği sonrası anlam taşımayan çıplak referans numaraları metinde bırakılmaz
-- dipnot referansı temizlenince cümlenin kalan yapısı da normalize edilir
-- yüzde, oran, madde numarası veya gerçek normatif sayı ile dipnot numarası karıştırılmaz
-- kelimeye veya paranteze yapışık dipnot referansları da temizlenir: `Bakanlık123`, `)118`, `,119`
-- satır başında tek başına duran veya kelime önüne yapışmış `100-999` arası çıplak sayılar özel olarak kontrol edilir
-- `60 ıncı`, `141 inci`, `190 sayılı`, `% 60`, `657 sayılı` gibi gerçek normatif sayılar korunur
-- temizlik bağlama göre yapılır; gerçek sayı silinmez, dipnot gürültüsü bırakılmaz
-- final kontrolde `)123`, `,123`, ` 123 Bakanlık` benzeri patternler red flag sayılır
-
-Amaç:
-
-- anlamsız sayı gürültüsünü temizlemek
-- mevzuat metnini okunabilir tutmak
-
-## Boşluk ve Noktalama Normalizasyonu
-
-OCR veya satır kırığı sonrası oluşan boşluk ve noktalama kusurları temizlenmelidir.
-
-Örnek hatalar:
-
-- `zorundadırlar.Devlet`
-- `"Yemin Belgesi" ni`
-- birden fazla ardışık boşluk
-- kelime ile noktalama arasında anlamsız boşluk
+Her madde kendi basligi ve kendi metniyle eslesmelidir.
 
 Kural:
 
-- cümle sonu noktalamadan sonra eksik boşluk gerekiyorsa eklenir
-- tırnak, parantez ve ek birleşmelerindeki kırık boşluklar normalize edilir
-- birden fazla boşluk tek boşluğa indirilir
-- ancak normatif metin yeniden yazılmaz; yalnızca yazım akışı temizlenir
+- `Madde`, `Ek Madde`, `Gecici Madde` baslangici paragraf icinde kalamaz.
+- Madde basligi baska maddenin metnine yapisamaz.
+- Bir madde temizlenince sonraki madde onceki maddeye kayamaz.
+- Sadece `article_line` kalmis ve altinda gercek metin olmayan madde JSON'a yazilmaz.
+- Iki nokta ile biten ve yeni alt rejim baslatan satirlar paragraf icine gomulmez.
+- Alt baslik gercekten baslik degilse, sadece etiket diye `subheading` yapilmaz.
 
-Amaç:
+Madde kaymasi, eksik madde ve bos madde hatasi kritik hatadir. Bu hatalardan biri varsa cikti hazir sayilmaz.
 
-- insan review'ünü kolaylaştırmak
-- UI'da kırık OCR izlerini azaltmak
+## Liste ve Hiyerarsi
 
-## Parça Parça Import Önerisi
+Mevzuat listeleri paragraf dumpina cevrilemez.
 
-Uzun mevzuatlarda tek büyük import yerine konu bazlı shard import tercih edilir.
+Taniman gereken yapilar:
 
-Kural:
-
-- uzun dokümanlarda her `KISIM` için ayrı JSON üretmek tercih edilir
-- tek `KISIM` çok uzunsa kendi içinde `BÖLÜM` veya mantıklı madde gruplarına bölünür
-- tek review ekranında bakılacak içerik yönetilebilir uzunlukta tutulur
-
-Amaç:
-
-- hatayı daha hızlı yakalamak
-- yeniden üretim maliyetini düşürmek
-- import review'u daha kullanışlı hale getirmek
-
-## İçerik Sadakati
-
-- metin özetlenmez
-- metin yeniden yazılmaz
-- madde metni yorumlanmaz
-- tarih, sayı, resmi kavramlar korunur
-- kullanıcı istemedikçe mevzuat notları çıkarılmaz
-
-## Ek Madde Kuralı
-
-Ek maddeler varsayılan olarak dahil edilir.
+- `A)`, `B)`, `C)`
+- `a)`, `b)`, `c)`
+- `1.`, `2.`, `3.`
+- `1 -`, `2 -`, `3 -`
+- `-` ile baslayan alt maddeler
+- ic ice liste yapilari
 
 Kural:
 
-- `Ek Madde`
-- `EK MADDE`
-- `Ek Geçici Madde`
+- Ayni seviyedeki ogeler ayni blok ailesiyle verilir.
+- Bir liste basladiysa kardes elemanlardan biri paragraf, biri liste olamaz.
+- Parent-child iliskisi korunur.
+- Ic ice liste duz metne eritilmez.
+- Liste elemanlari string degil obje olur; etiket `marker`, icerik `blocks` icinde verilir.
+- Parent liste item'inin altindaki liste yine ayni item'in `blocks` icinde yer alir.
+- Bir liste elemani icinde tablo varsa tablo o item'in `blocks` icinde `table` olarak kalir.
+- Child liste bittiginde ana liste kaldigi yerden devam eder.
+- Ana numara ile alt harfli bent karistirilmaz.
+- Uzun bir bent sadece uzun diye yeni section sayilmaz.
+- Tek basina duran `A)`, `F)` gibi etiketler norm metinden koparilmaz.
+- Ayni liste blogunda ayni marker serisi tekrar basliyorsa bu yeni liste akisi demektir. Ornek: `a), b), c)` bittikten sonra tekrar `a), b)` geliyorsa ayni `items` dizisine yapistirilmez; aradaki giris paragrafi korunur ve yeni `list` blogu acilir.
+- Liste icinde ust marker ile alt marker ayni satirda gelebilir. Ornek: `G) a) ...` gibi bir yapi varsa `G)` parent item, `a)` child list item olarak modellenir; `G)` metin icine gomulmez.
+- Dash item'lar tekrar eden marker olarak degerlendirilmez; `-` ayni seviyede birden fazla kez kullanilabilir.
+- Liste akisi bittikten sonra gelen aciklayici paragraf son liste elemanina otomatik yapistirilmez. Yeni bir giris, kapsam veya kapanis cumlesiyse ayri `paragraph` olur.
 
-başlıklı yapılar otomatik olarak silinmez
-- başlıktaki parantez içi mevzuat notları temizlenir
-- ek madde altında gerçek norm metni varsa başlık korunur ve metin işlenir
-- yalnızca başlık + parantez içi açıklama kalmışsa, yani altında gerçek metin yoksa o ek madde tamamen düşürülür
+Ornek dogru mantik:
 
-Örnek:
+- `8`
+- `a), b), c)`
+- `9`
+- `10`
+- `G)` parent
+- `a), b), c)` child
 
-- `Ek Madde 7 – (...)` ve altında norm metni yoksa: çıkar
-- `Ek Madde 8 – (...)` ve altında norm metni varsa: `Ek Madde 8 –` korunur, parantez içi kısım silinir, norm metni alınır
+Yanlis mantik:
 
-## Boş Blok Yasağı
+- `8`
+- `a), b), c)`
+- sonra sebepsiz `1), 2)` ana seri gibi baslatmak
+- `a), b), c), a), b)` ayni liste blogunda devam ediyormus gibi gostermek
+- `G) a) ...` satirini tek paragraf veya tek liste item metni yapmak
 
-Temizlik uygulandıktan sonra anlamsız veya boş kalan yapılar JSON'a konulmaz.
+## Paragraf ve Akis
 
-Örnek:
-
-- sadece başlığı kalmış ama altında içerik kalmamış `subheading`
-- yalnızca `Madde 213 –` etiketi kalmış ama norm metni kalmamış `article_line`
-- tamamen temizlenmiş `alpha_list` veya boş liste blokları
-- yalnızca satır kırığından doğmuş zayıf `paragraph`
-
-Kural:
-
-- temizleme sonrası gerçek içerik kalmıyorsa o blok düşürülür
-- boş başlık kartı üretecek yapı bırakılmaz
-- mülga olduğu için tamamen boşalan madde/başlık JSON'a yazılmaz
-
-## Tablo Kuralı
-
-Dokümanda tablo varsa:
-
-- tablo düz metne çevrilmez
-- satır satır paragraf gibi yazılmaz
-- mutlaka `table` bloğu olarak korunur
-
-Yani:
-
-- `headers`
-- `rows`
-
-yapısı kullanılır.
-
-Tabloyu text dump'a çevirmek hatalıdır.
-
-## Zorunlu Final QA ve Red Flag Kontrolü
-
-JSON teslim edilmeden önce çıktı otomatik ve gözle kontrol edilir. Aşağıdaki işaretlerden biri kalırsa çıktı hazır değildir.
-
-Red flag listesi:
-
-- kullanıcı temizlenmesini istediyse `Mülga`, `Değişik`, `(Ek:`, `Aynen kabul`, `KHK`, `md.)` gibi mevzuat notları kalmışsa
-- `Madde`, `Ek Madde`, `BÖLÜM`, `KISIM` ifadeleri normal paragraf içinde yeni yapı başlangıcı gibi duruyorsa
-- iki nokta ile biten alt başlıklar paragraf sonuna gömülü kalmışsa
-- boş `article_line`, boş `subheading`, boş liste veya sadece etiket kalan blok varsa
-- liste başladıktan sonra kardeş elemanlardan biri paragraf gibi görünüyorsa
-- `a)`, `b)`, `1.`, `2.` gibi etiketler paragraph metninin başında ham şekilde kalmışsa
-- dipnot kalıntısı olabilecek `)123`, `,123`, satır başı çıplak `123` gibi patternler varsa
-- 150 kelime üstü bloklar yeniden gözden geçirilmemişse
-- 300 kelime üstü paragraf veya liste item'ı varsa
-- aynı konu için import sonrası birden fazla aktif `topic_contents` oluşmuşsa
+Uzun metinler okunabilir hale getirilir ama anlam bozulmaz.
 
 Kural:
 
-- bu red flag'lerden biri varsa "hazır" denmez
-- önce sorun raporlanır veya mümkünse direkt düzeltilir
-- tek bir örnekte görülen hata aynı tipteki tüm doküman için genel kalite kapısı sayılır
+- Tek cumle satir sonu yuzunden bolunmez.
+- Tek basina anlamsiz kalan devam parcasi onceki metinle birlestirilir.
+- Kelime bolunmesi varsa dogal kelime akisi kurulur.
+- Cok uzun paragraflar dogal duraklarda bolunur.
+- Dogal duraklar: cumle sonu, fikra gecisi, noktalı virgül, iki nokta, liste baslangici.
+- Hedef paragraf genellikle 70-120 kelimedir.
+- 150 kelime ustu blok tekrar kontrol edilir.
+- 300 kelime ustu paragraf veya liste item'i kabul edilmez.
+- Uzun liste item'i bolunurken madde etiketi cogaltilmaz.
+- `A.B.`, `T.C.`, `A. B.` gibi kisaltmalar cumle sonu sanilip ayri paragraph bloklarina bolunemez.
+- Dipnot veya islem notu temizlenince iki liste/kurum/unvan parcasi birbirine yapisiyorsa aradaki noktalama korunur veya dogal ayirac geri konur.
 
-## Sık Hata
+Yasak:
 
-Yapılmaması gereken en büyük hata:
+- Cümlenin ortasından yapay paragraf uretmek.
+- Sadece satir sonu var diye yeni paragraph acmak.
+- Temizlikten sonra kalan `eder.`, `kapsar.`, `ni imzalayarak...` gibi parcayi tek blok yapmak.
 
-- dokümanı topic’lere ayırıp içeriği düz `content_body` olarak vermek
+## Tablo Kurali
 
-Bu hata UI’ı tekrar “düz belge” görünümüne düşürür.
+Dokumanda tablo varsa tablo olarak korunur.
 
-## Son Kontrol
+Kural:
 
-JSON teslim etmeden önce:
+- Tablo duz metne cevrilmez.
+- Satir satir paragraf yapilmaz.
+- `table` blogu kullanilir.
+- Tablo basligi veya aciklamasi varsa tabloyla baglamli tutulur.
+- Kullanici belirli bir tabloyu cikar dediyse sadece o tablo cikarilir.
 
-1. `content_blocks` var mı?
-2. `article_line` gereken yerlerde kullanıldı mı?
-3. küçük başlıklar `subheading` oldu mu?
-4. tablo varsa `table` olarak korundu mu?
-5. çok uzun paragraflar doğal yerlerinden bölündü mü?
-6. paragraf içine gömülü bent/madde yapıları ayrı bloklara çıkarıldı mı?
-7. aynı seviyedeki elemanlar aynı yapıda mı üretildi?
-8. cümle ortasında yapay paragraf bölünmesi var mı?
-9. numaralı ve harfli yapılar liste/block olarak mı verildi?
-10. dipnot referans kalıntıları temizlendi mi?
-11. ek maddelerde başlıktaki parantez içi mevzuat notları temizlendi mi?
-12. yalnız başlık kalmış, metni olmayan ek maddeler düşürüldü mü?
-13. kullanıcı hangi yapıya göre ayır dediyse gerçekten ona göre mi ayrıldı?
-14. mevzuat notu silindikten sonra sahte veya bağlamsız bent kaldı mı?
-15. `Madde` / `Ek Madde` başlangıcı paragraf içinde kaldı mı?
-16. madde başlığı ve madde içeriği doğru eşleşiyor mu?
-17. nested listelerde parent-child ilişkisi korunuyor mu?
-18. red flag kontrolünde kalan pattern var mı?
+## Ek Madde Kurali
+
+Ek maddeler varsayilan olarak dahil edilir.
+
+Kural:
+
+- Ek madde otomatik silinmez.
+- Basligindaki parantez icindeki mevzuat islem notlari temizlenir.
+- Altinda gercek norm metni varsa ek madde korunur.
+- Altinda gercek norm metni yoksa ek madde dusurulur.
+- Ek madde sadece kaynak/surec notundan ibaretse veya "hukmu kalmamistir" gibi normatif olmayan aciklama disinda metin icermiyorsa dusurulur.
+- `Ek Gecici Madde` icin kullanicinin "gecici maddeler cikarilsin" talimati varsa cikarilir.
+
+## Final QA
+
+JSON teslim edilmeden once su kontrol yapilir. Herhangi biri varsa cikti hazir degildir.
+
+Kritik red flag listesi:
+
+- Atlanmis madde var.
+- Madde basligi ve madde metni kaymis.
+- Bos `article_line`, bos `subheading`, bos liste veya bos tablo var.
+- Paragraf icinde `Madde`, `Ek Madde`, `KISIM`, `BOLUM` baslangici kalmis.
+- Liste etiketi ham paragraf basinda duruyor.
+- Yeni importta `alpha_list`, `ordered_list` veya `items: ["a) ..."]` gibi string liste elemani kullanilmis.
+- `marker` metnin icine gomulmus; ayri alan olarak verilmemis.
+- Ayni `list.items` icinde `a), b), c)` bittikten sonra tekrar `a), b)` gibi yeni seri baslamis.
+- Temizlikten sonra sadece marker kalmis liste elemani duruyor.
+- Normatif parantezler islem notu sanilip silinmis.
+- `G) a)`, `H) 1.` gibi parent-child markerlari tek metne ezilmis.
+- Ayni seviyedeki liste ogeleri farkli blok tipleriyle verilmis.
+- Tablolar metne cevrilmis.
+- Tablo hucrelerinde liste/paragraf gerektiren yapi stringe ezilmis.
+- Temizlik sonrasi anlamsiz orphan satir kalmis.
+- Dipnot veya mevzuat notu kalintisi duruyor.
+- 300 kelime ustu tek paragraf veya liste item'i var.
+- Kullanici tarafindan cikarilmasi istenen bolum kalmis.
+- Kullanici tarafindan korunmasi gereken norm metin silinmis.
+
+Final kontrol sorulari:
+
+1. Dokuman kullanicinin istedigi ana bolme kuralina gore mi ayrildi?
+2. Her konu kendi basligi altinda mantikli bir butun mu?
+3. Her madde dogru yerde mi?
+4. Silinen kisimlardan sonra anlam akisi dogal mi?
+5. Listeler ve tablolar kullaniciya okunabilir gorunur mu?
+6. Bos veya anlamsiz blok var mi?
+7. Bu cikti bir ogrencinin calisabilecegi konu anlatimi gibi mi?
+
+Bu sorulardan biri "hayir" ise JSON teslim edilmez; once duzeltilir.
+
+## Model Davranis Kurali
+
+Emin olunmayan yerde tahminle JSON uretme.
+
+Yapilacak sey:
+
+- Sorunu acikca belirt.
+- Hangi bolumde risk oldugunu soyle.
+- Gerekirse ilgili konuyu daha kucuk parca halinde isle.
+- Mantik kontrolu gecmeden "hazir" deme.
+
+Bu rehberin amaci hizli cikti degil, dogru ve guvenilir konu anlatimi uretmektir.

@@ -92,14 +92,12 @@ export type AdminExam = {
   price: number;
   exam_date: string | null;
   is_active_for_signup: boolean;
-  subject_ids: number[];
   topic_ids: number[];
   ministry: {
     id: number;
     name: string;
     slug: string;
   } | null;
-  subject_count: number;
   topic_count: number;
   active_membership_count: number;
   readiness?: AdminReadiness;
@@ -503,4 +501,128 @@ export type AdminContentImport = {
   updated_at?: string | null;
   normalized_text?: string | null;
   topics?: AdminContentImportTopic[];
+};
+
+export type AdminDocumentProcessingChunk = {
+  id: number;
+  chunk_no: number;
+  name: string;
+  marker: string | null;
+  title: string | null;
+  source_start_index: number | null;
+  source_end_index: number | null;
+  processing_status:
+    | "chunked"
+    | "queued_for_generation"
+    | "generating"
+    | "generated"
+    | "validation_failed"
+    | "generation_failed"
+    | string;
+  review_status: "pending" | "needs_revision" | "approved" | string;
+  final_topic: {
+    id: number;
+    name: string;
+    slug: string;
+    status: string;
+  } | null;
+  stats: {
+    block_count?: number;
+    paragraph_count?: number;
+    table_count?: number;
+    char_count?: number;
+    long_paragraph_count?: number;
+  };
+  warnings: Array<{
+    code?: string;
+    message?: string;
+    severity?: string;
+  }>;
+  preview_blocks: Array<Record<string, unknown>>;
+  has_source_blocks: boolean;
+  has_draft_topic: boolean;
+  source_blocks?: Array<Record<string, unknown>>;
+  draft_topic?: Record<string, unknown> | null;
+  validation_errors: string[];
+  attempt_count: number;
+  generated_at?: string | null;
+  validated_at?: string | null;
+  approved_at?: string | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
+export type AdminDocumentProcessingJob = {
+  id: number;
+  subject: {
+    id: number;
+    name: string;
+    slug: string;
+  } | null;
+  target_exam: {
+    id: number;
+    name: string;
+  } | null;
+  source_type: "docx_upload" | string;
+  source_title: string | null;
+  original_filename: string | null;
+  storage_disk: string | null;
+  stored_path: string | null;
+  instruction_version: string;
+  ai_provider: string | null;
+  ai_model: string | null;
+  processing_status: string;
+  review_status: string;
+  document_stats: Record<string, number>;
+  detected_rules: Record<string, unknown>;
+  chunking_strategy: string | null;
+  chunking_confidence: string | null;
+  chunking_warnings: Array<{
+    code?: string;
+    message?: string;
+    severity?: string;
+  }>;
+  processing_log: Array<{
+    level: "info" | "warning" | "success" | "error";
+    message: string;
+    timestamp: string;
+  }>;
+  failure_message: string | null;
+  source_fingerprint: string | null;
+  chunk_count: number | null;
+  queued_at?: string | null;
+  started_at?: string | null;
+  processed_at?: string | null;
+  approved_at?: string | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+  chunks?: AdminDocumentProcessingChunk[];
+};
+
+export type AdminDocumentPromptPreview = {
+  model: string | null;
+  provider: string | null;
+  chunk: {
+    id: number;
+    chunk_no: number;
+    name: string;
+    stats: AdminDocumentProcessingChunk["stats"];
+    warnings: AdminDocumentProcessingChunk["warnings"];
+  };
+  estimates: {
+    prompt_char_count: number;
+    prompt_word_count: number;
+    estimated_input_tokens: number;
+    source_block_count: number;
+    source_char_count: number;
+    source_word_count: number;
+  };
+  preflight_warnings: Array<{
+    code: string;
+    message: string;
+  }>;
+  messages: Array<{
+    role: string;
+    content: string;
+  }>;
 };

@@ -34,6 +34,7 @@ function createTopicTemplate(subjectId: number | null) {
     {
       "name": "Amaç, Kapsam, Dayanak, Tanımlar ve İlkeler",
       "status": "draft",
+      "content_schema_version": 2,
       "content_blocks": [
         {
           "type": "section_heading",
@@ -113,11 +114,51 @@ type SortableTopicListItemProps = {
   badge: (item: ReviewTopicItem) => React.ReactNode;
 };
 
-function blockListToText(items: unknown[]): string {
-  return items
-    .map((item) => (typeof item === "string" ? item : ""))
-    .filter(Boolean)
-    .join("\n");
+function segmentsToText(segments: unknown): string {
+  if (!Array.isArray(segments)) {
+    return "";
+  }
+
+  return segments
+    .map((segment) =>
+      typeof segment === "object" &&
+      segment !== null &&
+      "text" in segment &&
+      typeof segment.text === "string"
+        ? segment.text
+        : "",
+    )
+    .join("")
+    .trim();
+}
+
+function tableCellToText(cell: unknown): string {
+  if (typeof cell === "string") {
+    return cell;
+  }
+
+  if (typeof cell === "object" && cell !== null && "blocks" in cell && Array.isArray(cell.blocks)) {
+    return blocksToPlainText(cell.blocks as Array<Record<string, unknown>>).replace(/\s*\n+\s*/g, " ");
+  }
+
+  return "";
+}
+
+function structuredListItemToText(item: unknown): string {
+  if (typeof item === "string") {
+    return item;
+  }
+
+  if (typeof item !== "object" || item === null) {
+    return "";
+  }
+
+  const marker = "marker" in item && typeof item.marker === "string" ? item.marker : "";
+  const blocks = "blocks" in item && Array.isArray(item.blocks) ? blocksToPlainText(item.blocks as Array<Record<string, unknown>>) : "";
+  const content = "content" in item && typeof item.content === "string" ? item.content : "";
+  const segments = "segments" in item ? segmentsToText(item.segments) : "";
+
+  return [marker, blocks || content || segments].filter(Boolean).join(" ").trim();
 }
 
 function blocksToPlainText(blocks: Array<Record<string, unknown>> | null | undefined): string {
@@ -128,9 +169,19 @@ function blocksToPlainText(blocks: Array<Record<string, unknown>> | null | undef
   return blocks
     .map((block) => {
       const content = typeof block.content === "string" ? block.content : "";
-      const items = Array.isArray(block.items) ? blockListToText(block.items) : "";
+      const segments = Array.isArray(block.segments) ? segmentsToText(block.segments) : "";
+      const items = Array.isArray(block.items)
+        ? block.items.map((item) => structuredListItemToText(item)).filter(Boolean).join("\n")
+        : "";
+      const table =
+        block.type === "table" && Array.isArray(block.rows)
+          ? block.rows
+              .map((row) => (Array.isArray(row) ? row.map((cell) => tableCellToText(cell)).join("\t") : ""))
+              .filter(Boolean)
+              .join("\n")
+          : "";
 
-      return [content, items].filter(Boolean).join("\n");
+      return [content, segments, items, table].filter(Boolean).join("\n");
     })
     .filter(Boolean)
     .join("\n\n")

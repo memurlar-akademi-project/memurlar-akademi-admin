@@ -21,7 +21,6 @@ const emptyForm = {
   price: "",
   exam_date: "",
   is_active_for_signup: true,
-  subject_ids: [] as number[],
   topic_ids: [] as number[],
 };
 
@@ -118,7 +117,6 @@ export function ExamFormPage({
             price: String(exam.price ?? 0),
             exam_date: toDateTimeLocalValue(exam.exam_date),
             is_active_for_signup: exam.is_active_for_signup,
-            subject_ids: exam.subject_ids ?? [],
             topic_ids: exam.topic_ids ?? [],
           });
         }
@@ -337,7 +335,7 @@ export function ExamFormPage({
             formId={formId}
             relatedLinks={
               mode === "edit" && id
-                ? [{ href: `/dersler?examId=${id}`, label: "İlgili Dersleri Gör" }]
+                ? [{ href: `/konular?examId=${id}`, label: "Sınav Konularını Gör" }]
                 : []
             }
             saving={saving}
@@ -346,7 +344,7 @@ export function ExamFormPage({
           {mode === "edit" && exam?.readiness ? (
             <AdminTableCard>
               <AdminReadinessPanel
-                actions={id ? [{ href: `/dersler?examId=${id}`, label: "İlgili Derslere Git" }] : []}
+                actions={id ? [{ href: `/konular?examId=${id}`, label: "Sınav Konularına Git" }] : []}
                 entityLabel="Sınav"
                 readiness={exam.readiness}
               />

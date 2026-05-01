@@ -80,7 +80,9 @@ export default function QuestionsPage() {
 
   const filteredSubjects = useMemo(() => {
     if (selectedExamId !== "all") {
-      return subjects.filter((subject) => subject.exam_ids.includes(Number(selectedExamId)));
+      return subjects.filter((subject) =>
+        topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).includes(Number(selectedExamId))),
+      );
     }
 
     if (selectedMinistryId === "all") {
@@ -88,15 +90,36 @@ export default function QuestionsPage() {
     }
 
     const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
-    return subjects.filter((subject) => subject.exam_ids.some((examId) => visibleExamIds.has(examId)));
-  }, [filteredExams, selectedExamId, selectedMinistryId, subjects]);
+    return subjects.filter((subject) =>
+      topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId))),
+    );
+  }, [filteredExams, selectedExamId, selectedMinistryId, subjects, topics]);
 
   const filteredTopics = useMemo(
-    () =>
-      selectedSubjectId === "all"
-        ? topics.filter((topic) => filteredSubjects.some((subject) => subject.id === topic.subject_id))
-        : topics.filter((topic) => String(topic.subject_id) === selectedSubjectId),
-    [filteredSubjects, selectedSubjectId, topics],
+    () => {
+      const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
+
+      return topics.filter((topic) => {
+        if (selectedSubjectId !== "all" && String(topic.subject_id) !== selectedSubjectId) {
+          return false;
+        }
+
+        if (!filteredSubjects.some((subject) => subject.id === topic.subject_id)) {
+          return false;
+        }
+
+        if (selectedExamId !== "all") {
+          return (topic.exam_ids ?? []).includes(Number(selectedExamId));
+        }
+
+        if (selectedMinistryId !== "all") {
+          return (topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId));
+        }
+
+        return true;
+      });
+    },
+    [filteredExams, filteredSubjects, selectedExamId, selectedMinistryId, selectedSubjectId, topics],
   );
 
   const filteredRows = useMemo(() => {
@@ -104,17 +127,16 @@ export default function QuestionsPage() {
     const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
 
     return items.filter((item) => {
-      const subjectId = item.topic?.subject?.id ?? null;
-      const subject = subjectId ? subjects.find((entry) => entry.id === subjectId) : null;
+      const topic = topics.find((entry) => entry.id === item.topic_id) ?? null;
 
       if (selectedMinistryId !== "all") {
-        if (!subject || !subject.exam_ids.some((examId) => visibleExamIds.has(examId))) {
+        if (!topic || !(topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId))) {
           return false;
         }
       }
 
       if (selectedExamId !== "all") {
-        if (!subject || !subject.exam_ids.includes(Number(selectedExamId))) {
+        if (!topic || !(topic.exam_ids ?? []).includes(Number(selectedExamId))) {
           return false;
         }
       }
@@ -166,7 +188,7 @@ export default function QuestionsPage() {
     selectedSubjectId,
     selectedTopicId,
     statusFilter,
-    subjects,
+    topics,
   ]);
 
   async function handleStatusChange(question: AdminQuestion, checked: boolean) {

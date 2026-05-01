@@ -183,7 +183,9 @@ export function TopicTestFormPage({
 
   const filteredSubjects = useMemo(() => {
     if (selectedExamId !== null) {
-      return subjects.filter((subject) => subject.exam_ids.includes(selectedExamId));
+      return subjects.filter((subject) =>
+        topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).includes(selectedExamId)),
+      );
     }
 
     if (selectedMinistryId === null) {
@@ -191,15 +193,36 @@ export function TopicTestFormPage({
     }
 
     const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
-    return subjects.filter((subject) => subject.exam_ids.some((examId) => visibleExamIds.has(examId)));
-  }, [filteredExams, selectedExamId, selectedMinistryId, subjects]);
+    return subjects.filter((subject) =>
+      topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId))),
+    );
+  }, [filteredExams, selectedExamId, selectedMinistryId, subjects, topics]);
 
   const filteredTopics = useMemo(
-    () =>
-      selectedSubjectId === null
-        ? topics.filter((topic) => filteredSubjects.some((subject) => subject.id === topic.subject_id))
-        : topics.filter((topic) => topic.subject_id === selectedSubjectId),
-    [filteredSubjects, selectedSubjectId, topics],
+    () => {
+      const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
+
+      return topics.filter((topic) => {
+        if (selectedSubjectId !== null && topic.subject_id !== selectedSubjectId) {
+          return false;
+        }
+
+        if (!filteredSubjects.some((subject) => subject.id === topic.subject_id)) {
+          return false;
+        }
+
+        if (selectedExamId !== null) {
+          return (topic.exam_ids ?? []).includes(selectedExamId);
+        }
+
+        if (selectedMinistryId !== null) {
+          return (topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId));
+        }
+
+        return true;
+      });
+    },
+    [filteredExams, filteredSubjects, selectedExamId, selectedMinistryId, selectedSubjectId, topics],
   );
 
   const topicOptions = useMemo(
@@ -315,12 +338,11 @@ export function TopicTestFormPage({
     }
 
     setSelectedSubjectId(topic.subject_id);
-    const subject = subjects.find((entry) => entry.id === topic.subject_id);
-    const examId = subject?.exam_ids?.[0] ?? null;
+    const examId = topic.exam_ids?.[0] ?? null;
     setSelectedExamId(examId);
     const exam = examId ? exams.find((entry) => entry.id === examId) : null;
     setSelectedMinistryId(exam?.ministry?.id ?? null);
-  }, [exams, form.topic_id, subjects, topics]);
+  }, [exams, form.topic_id, topics]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

@@ -107,6 +107,7 @@ export type AdminExam = {
 
 export type AdminSubject = {
   id: number;
+  code: string | null;
   name: string;
   slug: string;
   status: string;

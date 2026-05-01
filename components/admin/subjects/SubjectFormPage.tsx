@@ -60,6 +60,7 @@ type TopicPodcastPayload = {
 };
 
 const emptyForm = {
+  code: "",
   name: "",
   slug: "",
   status: "draft",
@@ -159,6 +160,7 @@ export function SubjectFormPage({
 
         setSubject(response.data.subject);
         setForm({
+          code: response.data.subject.code ?? "",
           name: response.data.subject.name,
           slug: response.data.subject.slug,
           status: response.data.subject.status,
@@ -374,6 +376,7 @@ export function SubjectFormPage({
         token,
         method: mode === "edit" ? "PUT" : "POST",
         body: {
+          code: form.code || null,
           name: form.name,
           slug: form.slug || null,
           status: form.status,
@@ -791,6 +794,19 @@ export function SubjectFormPage({
                           placeholder="Örn. Devlet Memurları Kanunu"
                           value={form.name}
                         />
+                      </label>
+
+                      <label className="block space-y-2.5 pt-1">
+                        <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Kanun Numarası / Kod</span>
+                        <input
+                          className="admin-input h-12"
+                          onChange={(event) => setForm((current) => ({ ...current, code: event.target.value }))}
+                          placeholder="Örn. 657, 2709, 2911"
+                          value={form.code}
+                        />
+                        <span className="block text-xs text-[var(--color-admin-muted)]">
+                          Ders adında tekrar yazmak yerine UI rozetlerinde bu alan kullanılır.
+                        </span>
                       </label>
 
                       <label className="block space-y-2.5 pt-1">

@@ -83,7 +83,7 @@ export default function SubjectsPage() {
         return true;
       }
 
-      return [item.name, item.slug].join(" ").toLocaleLowerCase("tr").includes(normalized);
+      return [item.code, item.name, item.slug].filter(Boolean).join(" ").toLocaleLowerCase("tr").includes(normalized);
     });
 
     if (sortMode === "topics") {
@@ -138,7 +138,14 @@ export default function SubjectsPage() {
       header: "Ders",
       cell: ({ row }) => (
         <div className="min-w-[240px]">
-          <p className="font-bold text-[var(--color-admin-ink)]">{row.original.name}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            {row.original.code ? (
+              <span className="rounded-full bg-[var(--color-admin-accent-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--color-admin-accent)]">
+                {row.original.code}
+              </span>
+            ) : null}
+            <p className="font-bold text-[var(--color-admin-ink)]">{row.original.name}</p>
+          </div>
           <p className="mt-1 text-xs text-[var(--color-admin-muted)]">#{row.original.id} · {row.original.slug}</p>
           <AdminReadinessHint readiness={row.original.readiness} />
         </div>

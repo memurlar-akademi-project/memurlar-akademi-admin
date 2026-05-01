@@ -100,6 +100,28 @@ body {
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
+.admin-input-shell {
+  display: block;
+  position: relative;
+}
+
+.admin-input-shell .admin-input-icon,
+.admin-input-shell > svg {
+  pointer-events: none;
+  position: absolute !important;
+  left: 0.95rem;
+  top: 50%;
+  z-index: 2;
+  height: 1rem;
+  width: 1rem;
+  color: var(--color-admin-muted);
+  transform: translateY(-50%);
+}
+
+.admin-input-shell .admin-input-with-icon {
+  padding-left: 2.95rem !important;
+}
+
 .admin-input::placeholder {
   color: color-mix(in srgb, var(--color-admin-muted) 88%, transparent);
 }

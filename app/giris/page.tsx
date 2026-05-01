@@ -7,8 +7,8 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 export default function LoginPage() {
   const router = useRouter();
   const { login, isBootstrapping, session } = useAdminAuth();
-  const [email, setEmail] = useState("admin@test.com");
-  const [password, setPassword] = useState("Test1234");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -110,7 +110,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  placeholder="admin@test.com"
+                  placeholder="yonetici@kurum.com"
                 />
               </label>
 
@@ -123,7 +123,7 @@ export default function LoginPage() {
                   type="password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  placeholder="Test1234"
+                  placeholder="Şifreni gir"
                 />
               </label>
 
@@ -142,10 +142,6 @@ export default function LoginPage() {
                 {submitting ? "Giriş yapılıyor" : "Admin Girişi"}
               </button>
             </form>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-[var(--color-admin-muted)]">
-              Demo yönetici hesabı: <strong>admin@test.com</strong>
-            </div>
           </div>
         </section>
       </div>

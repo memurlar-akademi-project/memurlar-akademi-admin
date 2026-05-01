@@ -1,9 +1,8 @@
 "use client";
 
-import { CalendarDays, GraduationCap, ShieldCheck } from "lucide-react";
+import { CalendarDays, Check, GraduationCap, Plus, Search, ShieldCheck, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { AdminOrderedMultiSelect } from "@/components/admin/AdminOrderedMultiSelect";
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
 import { AdminReadinessPanel } from "@/components/admin/crud/AdminReadinessPanel";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
@@ -44,6 +43,15 @@ function toDateTimeLocalValue(value: string | null) {
   return `${year}-${month}-${day}T${hour}:${minute}`;
 }
 
+type TopicGroup = {
+  subjectId: number;
+  subjectName: string;
+  subjectCode: string | null;
+  topics: AdminTopic[];
+  selectedCount: number;
+  totalCount: number;
+};
+
 export function ExamFormPage({
   mode,
   id,
@@ -63,15 +71,111 @@ export function ExamFormPage({
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [activeSubjectId, setActiveSubjectId] = useState<number | null>(null);
+  const [topicDraftIds, setTopicDraftIds] = useState<Set<number>>(new Set());
+  const [subjectPoolQuery, setSubjectPoolQuery] = useState("");
+  const [topicModalQuery, setTopicModalQuery] = useState("");
+  const [showOnlySelectedTopics, setShowOnlySelectedTopics] = useState(false);
 
-  const topicOptions = useMemo(
+  const selectedTopicIdSet = useMemo(() => new Set(form.topic_ids), [form.topic_ids]);
+
+  const orderedTopicIds = useMemo(() => {
+    return [...topics]
+      .sort((left, right) =>
+        left.subject_id - right.subject_id ||
+        left.sort_order - right.sort_order ||
+        left.id - right.id,
+      )
+      .map((topic) => topic.id);
+  }, [topics]);
+
+  const topicOrderMap = useMemo(
+    () => new Map(orderedTopicIds.map((topicId, index) => [topicId, index])),
+    [orderedTopicIds],
+  );
+
+  const topicGroups = useMemo<TopicGroup[]>(() => {
+    const groups = new Map<number, Omit<TopicGroup, "selectedCount" | "totalCount">>();
+
+    [...topics]
+      .sort((left, right) =>
+        left.subject_id - right.subject_id ||
+        left.sort_order - right.sort_order ||
+        left.id - right.id,
+      )
+      .forEach((topic) => {
+        const subjectId = topic.subject?.id ?? topic.subject_id;
+        const existing = groups.get(subjectId);
+
+        if (existing) {
+          existing.topics.push(topic);
+          return;
+        }
+
+        groups.set(subjectId, {
+          subjectId,
+          subjectName: topic.subject?.name ?? "Ders bilgisi yok",
+          subjectCode: topic.subject?.code?.trim() || null,
+          topics: [topic],
+        });
+      });
+
+    return Array.from(groups.values()).map((group) => ({
+      ...group,
+      selectedCount: group.topics.filter((topic) => selectedTopicIdSet.has(topic.id)).length,
+      totalCount: group.topics.length,
+    }));
+  }, [selectedTopicIdSet, topics]);
+
+  const activeTopicGroup = useMemo(
+    () => topicGroups.find((group) => group.subjectId === activeSubjectId) ?? null,
+    [activeSubjectId, topicGroups],
+  );
+
+  const filteredTopicGroups = useMemo(() => {
+    const normalized = subjectPoolQuery.trim().toLocaleLowerCase("tr");
+
+    if (!normalized) {
+      return topicGroups;
+    }
+
+    return topicGroups.filter((group) =>
+      [group.subjectCode, group.subjectName]
+        .filter(Boolean)
+        .join(" ")
+        .toLocaleLowerCase("tr")
+        .includes(normalized),
+    );
+  }, [subjectPoolQuery, topicGroups]);
+
+  const modalTopics = useMemo(() => {
+    const normalized = topicModalQuery.trim().toLocaleLowerCase("tr");
+
+    return (activeTopicGroup?.topics ?? []).filter((topic) => {
+      if (showOnlySelectedTopics && !topicDraftIds.has(topic.id)) {
+        return false;
+      }
+
+      if (!normalized) {
+        return true;
+      }
+
+      return [topic.name, topic.slug]
+        .join(" ")
+        .toLocaleLowerCase("tr")
+        .includes(normalized);
+    });
+  }, [activeTopicGroup, showOnlySelectedTopics, topicDraftIds, topicModalQuery]);
+
+  const selectedTopicGroups = useMemo(
     () =>
-      topics.map((topic) => ({
-        id: topic.id,
-        label: topic.name,
-        hint: topic.subject?.name ?? "Ders bilgisi yok",
-      })),
-    [topics],
+      topicGroups
+        .map((group) => ({
+          ...group,
+          topics: group.topics.filter((topic) => selectedTopicIdSet.has(topic.id)),
+        }))
+        .filter((group) => group.topics.length > 0),
+    [selectedTopicIdSet, topicGroups],
   );
 
   const selectedMinistry = useMemo(
@@ -203,7 +307,57 @@ export function ExamFormPage({
     }
   }
 
+  function normalizeTopicIds(nextTopicIds: number[]) {
+    return Array.from(new Set(nextTopicIds)).sort((left, right) => {
+      const leftOrder = topicOrderMap.get(left) ?? Number.MAX_SAFE_INTEGER;
+      const rightOrder = topicOrderMap.get(right) ?? Number.MAX_SAFE_INTEGER;
+
+      return leftOrder - rightOrder || left - right;
+    });
+  }
+
+  function openTopicModal(group: TopicGroup) {
+    setActiveSubjectId(group.subjectId);
+    setTopicDraftIds(new Set(group.topics.filter((topic) => selectedTopicIdSet.has(topic.id)).map((topic) => topic.id)));
+    setTopicModalQuery("");
+    setShowOnlySelectedTopics(false);
+  }
+
+  function closeTopicModal() {
+    setActiveSubjectId(null);
+    setTopicDraftIds(new Set());
+    setTopicModalQuery("");
+    setShowOnlySelectedTopics(false);
+  }
+
+  function toggleDraftTopic(topicId: number) {
+    setTopicDraftIds((current) => {
+      const next = new Set(current);
+      next.has(topicId) ? next.delete(topicId) : next.add(topicId);
+      return next;
+    });
+  }
+
+  function saveTopicModal() {
+    if (!activeTopicGroup) {
+      return;
+    }
+
+    const activeTopicIds = new Set(activeTopicGroup.topics.map((topic) => topic.id));
+
+    setForm((current) => {
+      const otherTopicIds = current.topic_ids.filter((topicId) => !activeTopicIds.has(topicId));
+
+      return {
+        ...current,
+        topic_ids: normalizeTopicIds([...otherTopicIds, ...Array.from(topicDraftIds)]),
+      };
+    });
+    closeTopicModal();
+  }
+
   return (
+    <>
     <div className="space-y-5">
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_320px]">
         <AdminTableCard>
@@ -307,15 +461,156 @@ export function ExamFormPage({
                     </label>
                   </div>
 
-                  <AdminOrderedMultiSelect
-                    entityLabel="Konu"
-                    entityPluralLabel="Konular"
-                    helperText="Aynı ders farklı sınavlarda farklı konu kapsamıyla kullanılabilir. Burada sadece bu sınava dahil edilecek konuları seç."
-                    label="Sınava Dahil Edilen Konular"
-                    onChange={(topic_ids) => setForm((current) => ({ ...current, topic_ids }))}
-                    options={topicOptions}
-                    value={form.topic_ids}
-                  />
+                  <div className="space-y-4">
+                    <div>
+                      <label className="text-sm font-semibold text-[var(--color-admin-ink)]">
+                        Sınava Dahil Edilen Konular
+                      </label>
+                      <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">
+                        Konular ders bazında seçilir. Sıralama elle yapılmaz; her dersin kendi konu sırası otomatik korunur.
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+                          Ders Havuzu
+                        </p>
+                        <span className="text-xs font-semibold text-[var(--color-admin-muted)]">
+                          {filteredTopicGroups.length}/{topicGroups.length} ders
+                        </span>
+                      </div>
+
+                      <label className="admin-input-shell block">
+                        <Search className="admin-input-icon" size={15} />
+                        <input
+                          className="admin-input admin-input-with-icon h-10 text-sm"
+                          onChange={(event) => setSubjectPoolQuery(event.target.value)}
+                          placeholder="Ders veya kanun numarası ara"
+                          value={subjectPoolQuery}
+                        />
+                      </label>
+
+                      <div className="max-h-80 overflow-y-auto rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)]">
+                      {topicGroups.length === 0 ? (
+                        <div className="px-3 py-3 text-sm text-[var(--color-admin-muted)]">
+                          Henüz konu havuzu bulunamadı.
+                        </div>
+                      ) : filteredTopicGroups.length === 0 ? (
+                        <div className="px-3 py-3 text-sm text-[var(--color-admin-muted)]">
+                          Aramaya uygun ders bulunamadı.
+                        </div>
+                      ) : (
+                        filteredTopicGroups.map((group, index) => {
+                          const hasSelection = group.selectedCount > 0;
+
+                          return (
+                            <button
+                              className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left transition hover:bg-[var(--color-admin-bg-raised)] ${
+                                hasSelection
+                                  ? "bg-[var(--color-admin-accent-soft)]/45"
+                                  : "bg-[var(--color-admin-panel)]"
+                              } ${index !== filteredTopicGroups.length - 1 ? "border-b border-[var(--color-admin-line)]" : ""}`}
+                              key={group.subjectId}
+                              onClick={() => openTopicModal(group)}
+                              type="button"
+                            >
+                              <div
+                                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-xl ${
+                                  hasSelection
+                                    ? "bg-[var(--color-admin-accent)] text-white"
+                                    : "bg-[var(--color-admin-panel-muted)] text-[var(--color-admin-muted)]"
+                                }`}
+                              >
+                                {hasSelection ? <Check size={13} /> : <Plus size={13} />}
+                              </div>
+
+                              {group.subjectCode ? (
+                                <span className="shrink-0 rounded-full bg-white px-2 py-0.5 text-[10px] font-extrabold text-[var(--color-admin-accent)]">
+                                  {group.subjectCode}
+                                </span>
+                              ) : null}
+
+                              <div className="min-w-0 flex-1">
+                                <p className="truncate text-[13px] font-bold text-[var(--color-admin-ink)]">
+                                  {group.subjectName}
+                                </p>
+                                <div className="mt-0.5 h-1 overflow-hidden rounded-full bg-[var(--color-admin-panel-muted)]">
+                                  <div
+                                    className="h-full rounded-full bg-[var(--color-admin-accent)]"
+                                    style={{ width: `${group.totalCount > 0 ? (group.selectedCount / group.totalCount) * 100 : 0}%` }}
+                                  />
+                                </div>
+                              </div>
+
+                              <span className="shrink-0 rounded-full border border-[var(--color-admin-line)] px-2 py-1 text-[11px] font-bold text-[var(--color-admin-muted)]">
+                                {group.selectedCount}/{group.totalCount}
+                              </span>
+                            </button>
+                          );
+                        })
+                      )}
+                      </div>
+                    </div>
+
+                    <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+                          Seçili Konular
+                        </p>
+                        <span className="text-xs font-semibold text-[var(--color-admin-muted)]">
+                          {form.topic_ids.length} konu seçildi
+                        </span>
+                      </div>
+
+                      {selectedTopicGroups.length === 0 ? (
+                        <p className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-4 text-sm text-[var(--color-admin-muted)]">
+                          Henüz konu seçilmedi. Yukarıdaki ders kartlarından konu ekleyebilirsin.
+                        </p>
+                      ) : (
+                        <div className="space-y-3">
+                          {selectedTopicGroups.map((group) => (
+                            <button
+                              className="w-full rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-4 text-left transition hover:border-[var(--color-admin-accent)]"
+                              key={group.subjectId}
+                              onClick={() => openTopicModal(group)}
+                              type="button"
+                            >
+                              <div className="flex flex-wrap items-center justify-between gap-3">
+                                <div className="min-w-0">
+                                  <div className="flex flex-wrap items-center gap-2">
+                                    {group.subjectCode ? (
+                                      <span className="rounded-full bg-[var(--color-admin-accent-soft)] px-2 py-0.5 text-[10px] font-extrabold text-[var(--color-admin-accent)]">
+                                        {group.subjectCode}
+                                      </span>
+                                    ) : null}
+                                    <p className="font-bold text-[var(--color-admin-ink)]">{group.subjectName}</p>
+                                  </div>
+                                  <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                                    {group.topics.length} konu
+                                  </p>
+                                </div>
+                                <span className="rounded-full border border-[var(--color-admin-line)] px-3 py-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                                  Düzenle
+                                </span>
+                              </div>
+
+                              <ol className="mt-3 space-y-1.5">
+                                {group.topics.map((topic) => (
+                                  <li className="flex items-center gap-2 text-sm text-[var(--color-admin-muted)]" key={topic.id}>
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--color-admin-panel-muted)] text-[10px] font-extrabold">
+                                      {topic.sort_order}
+                                    </span>
+                                    <span className="truncate">{topic.name}</span>
+                                  </li>
+                                ))}
+                              </ol>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </section>
 
                 {error ? (
@@ -405,5 +700,139 @@ export function ExamFormPage({
         </div>
       </div>
     </div>
+
+    {activeTopicGroup ? (
+      <div className="fixed inset-0 z-[90] flex items-center justify-center bg-slate-950/35 p-4 backdrop-blur-[2px]">
+        <div className="flex max-h-[88vh] w-full max-w-3xl flex-col overflow-hidden rounded-[26px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] shadow-2xl">
+          <div className="border-b border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-5 py-5">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  {activeTopicGroup.subjectCode ? (
+                    <span className="rounded-full bg-[var(--color-admin-accent-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--color-admin-accent)]">
+                      {activeTopicGroup.subjectCode}
+                    </span>
+                  ) : null}
+                  <h3 className="text-lg font-extrabold tracking-[-0.02em] text-[var(--color-admin-ink)]">
+                    {activeTopicGroup.subjectName}
+                  </h3>
+                </div>
+                <p className="mt-1 text-sm text-[var(--color-admin-muted)]">
+                  Bu dersten sınava dahil edilecek konuları seç. Konu sırası ders içindeki mevcut sıraya göre korunur.
+                </p>
+              </div>
+              <button
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
+                onClick={closeTopicModal}
+                type="button"
+              >
+                <X size={18} />
+              </button>
+            </div>
+          </div>
+
+          <div className="space-y-4 overflow-y-auto px-5 py-5">
+            <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_auto_auto]">
+              <label className="admin-input-shell block">
+                <Search className="admin-input-icon" size={16} />
+                <input
+                  className="admin-input admin-input-with-icon h-11"
+                  onChange={(event) => setTopicModalQuery(event.target.value)}
+                  placeholder="Konu ara"
+                  value={topicModalQuery}
+                />
+              </label>
+              <button
+                className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition ${
+                  showOnlySelectedTopics
+                    ? "border-[var(--color-admin-accent)] bg-[var(--color-admin-accent-soft)] text-[var(--color-admin-accent)]"
+                    : "border-[var(--color-admin-line)] text-[var(--color-admin-muted)]"
+                }`}
+                onClick={() => setShowOnlySelectedTopics((current) => !current)}
+                type="button"
+              >
+                Sadece seçilenler
+              </button>
+              <span className="inline-flex items-center rounded-xl bg-[var(--color-admin-panel-soft)] px-4 py-2.5 text-sm font-bold text-[var(--color-admin-muted)]">
+                {topicDraftIds.size} seçili
+              </span>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <button
+                className="rounded-xl border border-[var(--color-admin-line)] px-3 py-2 text-xs font-semibold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
+                onClick={() => setTopicDraftIds(new Set(activeTopicGroup.topics.map((topic) => topic.id)))}
+                type="button"
+              >
+                Tümünü seç
+              </button>
+              <button
+                className="rounded-xl border border-[var(--color-admin-line)] px-3 py-2 text-xs font-semibold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-danger)]"
+                onClick={() => setTopicDraftIds(new Set())}
+                type="button"
+              >
+                Seçimi temizle
+              </button>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)]">
+              {modalTopics.length === 0 ? (
+                <p className="px-4 py-5 text-sm text-[var(--color-admin-muted)]">Bu filtrede konu bulunamadı.</p>
+              ) : (
+                modalTopics.map((topic, index) => {
+                  const checked = topicDraftIds.has(topic.id);
+
+                  return (
+                    <button
+                      className={`flex w-full items-start gap-3 px-4 py-3 text-left transition hover:bg-[var(--color-admin-bg-raised)] ${
+                        checked ? "bg-[var(--color-admin-accent-soft)]/45" : "bg-[var(--color-admin-panel)]"
+                      } ${index !== modalTopics.length - 1 ? "border-b border-[var(--color-admin-line)]" : ""}`}
+                      key={topic.id}
+                      onClick={() => toggleDraftTopic(topic.id)}
+                      type="button"
+                    >
+                      <span
+                        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 ${
+                          checked
+                            ? "border-[var(--color-admin-accent)] bg-[var(--color-admin-accent)] text-white"
+                            : "border-[var(--color-admin-line)]"
+                        }`}
+                      >
+                        {checked ? <Check size={13} /> : null}
+                      </span>
+                      <span className="flex h-6 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-admin-panel-muted)] text-[11px] font-extrabold text-[var(--color-admin-muted)]">
+                        {topic.sort_order}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-semibold text-[var(--color-admin-ink)]">{topic.name}</span>
+                        <span className="mt-0.5 block text-xs text-[var(--color-admin-muted)]">{topic.slug}</span>
+                      </span>
+                    </button>
+                  );
+                })
+              )}
+            </div>
+          </div>
+
+          <div className="flex justify-end gap-3 border-t border-[var(--color-admin-line)] px-5 py-4">
+            <button
+              className="rounded-xl border border-[var(--color-admin-line)] px-4 py-2.5 text-sm font-semibold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
+              onClick={closeTopicModal}
+              type="button"
+            >
+              Vazgeç
+            </button>
+            <button
+              className="rounded-xl bg-[var(--color-admin-accent)] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+              onClick={saveTopicModal}
+              type="button"
+            >
+              Seçimi Kaydet
+            </button>
+          </div>
+        </div>
+      </div>
+    ) : null}
+    </>
   );
 }

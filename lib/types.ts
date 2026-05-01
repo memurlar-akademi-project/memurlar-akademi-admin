@@ -135,6 +135,7 @@ export type AdminTopic = {
   readiness?: AdminReadiness;
   subject: {
     id: number;
+    code?: string | null;
     name: string;
   } | null;
   created_at?: string | null;

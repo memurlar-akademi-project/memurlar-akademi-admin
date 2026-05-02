@@ -91,8 +91,12 @@ export type AdminExam = {
   year: number | null;
   price: number;
   exam_date: string | null;
+  total_question_count: number | null;
+  duration_min: number | null;
+  passing_score: number | null;
   is_active_for_signup: boolean;
   topic_ids: number[];
+  sections: AdminExamSection[];
   ministry: {
     id: number;
     name: string;
@@ -103,6 +107,19 @@ export type AdminExam = {
   readiness?: AdminReadiness;
   created_at?: string | null;
   updated_at?: string | null;
+};
+
+export type AdminExamSection = {
+  id: number;
+  title: string;
+  question_count: number;
+  sort_order: number;
+  subject_ids: number[];
+  subjects: Array<{
+    id: number;
+    code: string | null;
+    name: string;
+  }>;
 };
 
 export type AdminSubject = {

@@ -16,7 +16,6 @@ const questionTemplate = `{
   "questions": [
     {
       "topic_id": 101,
-      "topic_name": "Amaç ve Kapsam",
       "question_type": "multiple_choice",
       "difficulty": "medium",
       "status": "draft",
@@ -331,7 +330,7 @@ export function QuestionImportPage() {
               AI Şablonu
             </h3>
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4 text-sm leading-6 text-[var(--color-admin-muted)]">
-              Önce konu import et. Sonra AI’a `topic_id + topic_name` listesi ver. Model konuyu isimden anlayıp JSON’da doğru `topic_id` değerini kullanmalı.
+              Önce konu import et. Sonra AI’a `topic_id + topic_name` listesini bağlam olarak ver. JSON çıktısında sadece `topic_id` kullanılmalı; konu adı DB’den alınır.
             </div>
 
             <pre className="mt-4 overflow-x-auto rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] p-4 text-[12px] leading-6 text-[var(--color-admin-ink)]">

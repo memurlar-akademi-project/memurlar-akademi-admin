@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowUpDown,
   CheckCircle2,
@@ -69,6 +69,8 @@ export default function QuestionsPage() {
   const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
   const [busyId, setBusyId] = useState<number | null>(null);
+  const [bulkBusy, setBulkBusy] = useState(false);
+  const [selectedQuestionIds, setSelectedQuestionIds] = useState<number[]>([]);
 
   const filteredExams = useMemo(
     () =>
@@ -191,6 +193,92 @@ export default function QuestionsPage() {
     topics,
   ]);
 
+  const visibleApprovableQuestionIds = useMemo(
+    () => filteredRows.filter((item) => item.status !== "active").map((item) => item.id),
+    [filteredRows],
+  );
+  const visibleApprovableQuestionIdSet = useMemo(
+    () => new Set(visibleApprovableQuestionIds),
+    [visibleApprovableQuestionIds],
+  );
+  const selectedBulkCount = selectedQuestionIds.filter((questionId) =>
+    visibleApprovableQuestionIdSet.has(questionId),
+  ).length;
+  const allVisibleApprovableSelected =
+    visibleApprovableQuestionIds.length > 0 && selectedBulkCount === visibleApprovableQuestionIds.length;
+
+  useEffect(() => {
+    const activeQuestionIds = new Set(items.filter((item) => item.status !== "active").map((item) => item.id));
+    setSelectedQuestionIds((current) => current.filter((questionId) => activeQuestionIds.has(questionId)));
+  }, [items]);
+
+  function toggleQuestionSelection(question: AdminQuestion) {
+    if (question.status === "active") {
+      return;
+    }
+
+    setSelectedQuestionIds((current) =>
+      current.includes(question.id)
+        ? current.filter((questionId) => questionId !== question.id)
+        : [...current, question.id],
+    );
+  }
+
+  function toggleVisibleSelection() {
+    setSelectedQuestionIds((current) => {
+      if (allVisibleApprovableSelected) {
+        return current.filter((questionId) => !visibleApprovableQuestionIdSet.has(questionId));
+      }
+
+      return Array.from(new Set([...current, ...visibleApprovableQuestionIds]));
+    });
+  }
+
+  async function handleBulkActivate() {
+    if (!token) {
+      return;
+    }
+
+    const questionIds = selectedQuestionIds.filter((questionId) => visibleApprovableQuestionIdSet.has(questionId));
+    if (questionIds.length === 0) {
+      return;
+    }
+
+    setBulkBusy(true);
+
+    try {
+      const response = await adminApiRequest<{
+        updated_count: number;
+        questions: AdminQuestion[];
+      }>("/admin/questions/bulk-status", {
+        token,
+        method: "POST",
+        body: {
+          question_ids: questionIds,
+          status: "active",
+        },
+      });
+
+      const updatedById = new Map(response.data.questions.map((question) => [question.id, question]));
+      setItems((current) => current.map((item) => updatedById.get(item.id) ?? item));
+      setSelectedQuestionIds([]);
+
+      showToast({
+        tone: "success",
+        title: "Seçili sorular aktife alındı",
+        description: `${response.data.updated_count} soru aktif olarak soru havuzuna eklendi.`,
+      });
+    } catch (submitError) {
+      showToast({
+        tone: "error",
+        title: "Toplu onay başarısız",
+        description: submitError instanceof Error ? submitError.message : "Seçili sorular aktife alınamadı.",
+      });
+    } finally {
+      setBulkBusy(false);
+    }
+  }
+
   async function handleStatusChange(question: AdminQuestion, checked: boolean) {
     if (!token) {
       return;
@@ -308,6 +396,34 @@ export default function QuestionsPage() {
   );
 
   const columns: ColumnDef<AdminQuestion>[] = [
+    {
+      id: "select",
+      enableSorting: false,
+      header: () => (
+        <input
+          aria-label="Görünen aktif olmayan soruları seç"
+          checked={allVisibleApprovableSelected}
+          className="h-4 w-4 accent-[var(--color-admin-accent)]"
+          disabled={bulkBusy || visibleApprovableQuestionIds.length === 0}
+          onChange={toggleVisibleSelection}
+          type="checkbox"
+        />
+      ),
+      cell: ({ row }) => {
+        const isApprovable = row.original.status !== "active";
+
+        return (
+          <input
+            aria-label="Soruyu toplu onay için seç"
+            checked={selectedQuestionIds.includes(row.original.id) && isApprovable}
+            className="h-4 w-4 accent-[var(--color-admin-accent)] disabled:opacity-40"
+            disabled={!isApprovable || bulkBusy}
+            onChange={() => toggleQuestionSelection(row.original)}
+            type="checkbox"
+          />
+        );
+      },
+    },
     {
       accessorKey: "question_text",
       header: "Soru",
@@ -569,6 +685,15 @@ export default function QuestionsPage() {
             </AdminListToolbarFields>
 
             <AdminListToolbarActions>
+              <button
+                className="admin-button admin-button-secondary"
+                disabled={bulkBusy || selectedBulkCount === 0}
+                onClick={handleBulkActivate}
+                type="button"
+              >
+                <CheckCircle2 size={16} />
+                Seçili {selectedBulkCount} soruyu aktif yap
+              </button>
               <AdminListToolbarIconButton onClick={refresh} title="Yenile">
                 <RefreshCcw size={15} />
               </AdminListToolbarIconButton>

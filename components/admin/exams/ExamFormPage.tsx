@@ -10,7 +10,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminExam, AdminMinistry, AdminTopic } from "@/lib/types";
+import type { AdminExam, AdminMinistry, AdminSubject, AdminTopic } from "@/lib/types";
 
 const emptyForm = {
   ministry_id: "",
@@ -19,8 +19,12 @@ const emptyForm = {
   status: "active",
   price: "",
   exam_date: "",
+  total_question_count: "",
+  duration_min: "",
+  passing_score: "",
   is_active_for_signup: true,
   topic_ids: [] as number[],
+  sections: [] as ExamSectionForm[],
 };
 
 function toDateTimeLocalValue(value: string | null) {
@@ -52,6 +56,13 @@ type TopicGroup = {
   totalCount: number;
 };
 
+type ExamSectionForm = {
+  client_id: string;
+  title: string;
+  question_count: string;
+  subject_ids: number[];
+};
+
 export function ExamFormPage({
   mode,
   id,
@@ -67,6 +78,7 @@ export function ExamFormPage({
   const [form, setForm] = useState(emptyForm);
   const [exam, setExam] = useState<AdminExam | null>(null);
   const [ministries, setMinistries] = useState<AdminMinistry[]>([]);
+  const [subjects, setSubjects] = useState<AdminSubject[]>([]);
   const [topics, setTopics] = useState<AdminTopic[]>([]);
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
@@ -78,6 +90,24 @@ export function ExamFormPage({
   const [showOnlySelectedTopics, setShowOnlySelectedTopics] = useState(false);
 
   const selectedTopicIdSet = useMemo(() => new Set(form.topic_ids), [form.topic_ids]);
+
+  const subjectOptions = useMemo(
+    () =>
+      subjects.map((subject) => ({
+        id: subject.id,
+        label: subject.name,
+        hint: subject.code ? `Kanun no: ${subject.code}` : undefined,
+      })),
+    [subjects],
+  );
+
+  const sectionQuestionTotal = useMemo(
+    () =>
+      form.sections.reduce((total, section) => total + (Number(section.question_count) || 0), 0),
+    [form.sections],
+  );
+
+  const expectedQuestionTotal = Number(form.total_question_count) || 0;
 
   const orderedTopicIds = useMemo(() => {
     return [...topics]
@@ -195,8 +225,9 @@ export function ExamFormPage({
       setError(null);
 
       try {
-        const [ministriesResponse, topicsResponse, examResponse] = await Promise.all([
+        const [ministriesResponse, subjectsResponse, topicsResponse, examResponse] = await Promise.all([
           adminApiRequest<{ ministries: AdminMinistry[] }>("/admin/ministries", { token }),
+          adminApiRequest<{ subjects: AdminSubject[] }>("/admin/subjects", { token }),
           adminApiRequest<{ topics: AdminTopic[] }>("/admin/topics", { token }),
           mode === "edit" && id
             ? adminApiRequest<{ exam: AdminExam }>(`/admin/exams/${id}`, { token })
@@ -208,6 +239,7 @@ export function ExamFormPage({
         }
 
         setMinistries(ministriesResponse.data.ministries);
+        setSubjects(subjectsResponse.data.subjects);
         setTopics(topicsResponse.data.topics);
 
         if (examResponse?.data.exam) {
@@ -220,8 +252,17 @@ export function ExamFormPage({
             status: exam.status,
             price: String(exam.price ?? 0),
             exam_date: toDateTimeLocalValue(exam.exam_date),
+            total_question_count: exam.total_question_count ? String(exam.total_question_count) : "",
+            duration_min: exam.duration_min ? String(exam.duration_min) : "",
+            passing_score: exam.passing_score !== null && exam.passing_score !== undefined ? String(exam.passing_score) : "",
             is_active_for_signup: exam.is_active_for_signup,
             topic_ids: exam.topic_ids ?? [],
+            sections: (exam.sections ?? []).map((section) => ({
+              client_id: `existing-${section.id}`,
+              title: section.title,
+              question_count: String(section.question_count),
+              subject_ids: section.subject_ids ?? [],
+            })),
           });
         }
       } catch (loadError) {
@@ -276,8 +317,18 @@ export function ExamFormPage({
           status: form.status,
           price: Number(form.price || 0),
           exam_date: form.exam_date ? new Date(form.exam_date).toISOString() : null,
+          total_question_count: form.total_question_count ? Number(form.total_question_count) : null,
+          duration_min: form.duration_min ? Number(form.duration_min) : null,
+          passing_score: form.passing_score ? Number(form.passing_score) : null,
           is_active_for_signup: form.is_active_for_signup,
           topic_ids: form.topic_ids,
+          sections: form.sections
+            .filter((section) => section.title.trim() && Number(section.question_count) > 0 && section.subject_ids.length > 0)
+            .map((section) => ({
+              title: section.title.trim(),
+              question_count: Number(section.question_count),
+              subject_ids: section.subject_ids,
+            })),
         },
       });
 
@@ -354,6 +405,55 @@ export function ExamFormPage({
       };
     });
     closeTopicModal();
+  }
+
+  function addExamSection() {
+    setForm((current) => ({
+      ...current,
+      sections: [
+        ...current.sections,
+        {
+          client_id: `new-${Date.now()}-${current.sections.length}`,
+          title: "",
+          question_count: "",
+          subject_ids: [],
+        },
+      ],
+    }));
+  }
+
+  function updateExamSection(clientId: string, patch: Partial<Omit<ExamSectionForm, "client_id">>) {
+    setForm((current) => ({
+      ...current,
+      sections: current.sections.map((section) =>
+        section.client_id === clientId ? { ...section, ...patch } : section,
+      ),
+    }));
+  }
+
+  function removeExamSection(clientId: string) {
+    setForm((current) => ({
+      ...current,
+      sections: current.sections.filter((section) => section.client_id !== clientId),
+    }));
+  }
+
+  function toggleExamSectionSubject(clientId: string, subjectId: number) {
+    setForm((current) => ({
+      ...current,
+      sections: current.sections.map((section) => {
+        if (section.client_id !== clientId) {
+          return section;
+        }
+
+        return {
+          ...section,
+          subject_ids: section.subject_ids.includes(subjectId)
+            ? section.subject_ids.filter((currentSubjectId) => currentSubjectId !== subjectId)
+            : [...section.subject_ids, subjectId],
+        };
+      }),
+    }));
   }
 
   return (
@@ -459,6 +559,166 @@ export function ExamFormPage({
                         value={form.exam_date}
                       />
                     </label>
+
+                    <label className="block space-y-2.5">
+                      <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Toplam Soru Sayısı</span>
+                      <input
+                        className="admin-input h-12"
+                        inputMode="numeric"
+                        onChange={(event) => setForm((current) => ({ ...current, total_question_count: event.target.value }))}
+                        placeholder="100"
+                        value={form.total_question_count}
+                      />
+                    </label>
+
+                    <label className="block space-y-2.5">
+                      <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Sınav Süresi (dk)</span>
+                      <input
+                        className="admin-input h-12"
+                        inputMode="numeric"
+                        onChange={(event) => setForm((current) => ({ ...current, duration_min: event.target.value }))}
+                        placeholder="120"
+                        value={form.duration_min}
+                      />
+                    </label>
+
+                    <label className="block space-y-2.5">
+                      <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Başarı Barajı</span>
+                      <input
+                        className="admin-input h-12"
+                        inputMode="decimal"
+                        onChange={(event) => setForm((current) => ({ ...current, passing_score: event.target.value }))}
+                        placeholder="70"
+                        value={form.passing_score}
+                      />
+                    </label>
+                  </div>
+
+                  <div className="space-y-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] p-4">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <label className="text-sm font-semibold text-[var(--color-admin-ink)]">
+                          Soru Dağılımı
+                        </label>
+                        <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">
+                          Resmî duyurudaki başlıkları burada gruplarsın. Bu başlıklar ders tablosuna yazılmaz; sadece sınav bilgisi ve deneme şablonu için kullanılır.
+                        </p>
+                      </div>
+                      <button
+                        className="rounded-xl border border-[var(--color-admin-line)] px-3 py-2 text-xs font-bold text-[var(--color-admin-accent)] transition hover:bg-[var(--color-admin-accent-soft)]"
+                        onClick={addExamSection}
+                        type="button"
+                      >
+                        Dağılım Başlığı Ekle
+                      </button>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 text-xs font-bold">
+                      <span className="rounded-full bg-[var(--color-admin-panel-muted)] px-3 py-1 text-[var(--color-admin-muted)]">
+                        Dağılım toplamı: {sectionQuestionTotal}
+                      </span>
+                      {expectedQuestionTotal > 0 ? (
+                        <span className={`rounded-full px-3 py-1 ${
+                          sectionQuestionTotal === expectedQuestionTotal
+                            ? "bg-[var(--color-admin-success-soft)] text-[var(--color-admin-success)]"
+                            : "bg-[var(--color-admin-warn-soft)] text-[var(--color-admin-warn)]"
+                        }`}>
+                          Sınav toplamı: {expectedQuestionTotal}
+                        </span>
+                      ) : null}
+                    </div>
+
+                    {form.sections.length === 0 ? (
+                      <p className="rounded-2xl border border-dashed border-[var(--color-admin-line)] px-4 py-4 text-sm text-[var(--color-admin-muted)]">
+                        Henüz soru dağılımı eklenmedi. Örn. “Polis Meslek Mevzuatı / 30 soru” gibi başlıklar ekleyebilirsin.
+                      </p>
+                    ) : (
+                      <div className="space-y-3">
+                        {form.sections.map((section, sectionIndex) => (
+                          <div
+                            className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-3"
+                            key={section.client_id}
+                          >
+                            <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_130px_auto]">
+                              <label className="block space-y-1.5">
+                                <span className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+                                  Dağılım Başlığı
+                                </span>
+                                <input
+                                  className="admin-input h-10 text-sm"
+                                  onChange={(event) => updateExamSection(section.client_id, { title: event.target.value })}
+                                  placeholder={sectionIndex === 0 ? "Polis Meslek Mevzuatı" : "Başlık"}
+                                  value={section.title}
+                                />
+                              </label>
+
+                              <label className="block space-y-1.5">
+                                <span className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+                                  Soru
+                                </span>
+                                <input
+                                  className="admin-input h-10 text-sm"
+                                  inputMode="numeric"
+                                  onChange={(event) => updateExamSection(section.client_id, { question_count: event.target.value })}
+                                  placeholder="10"
+                                  value={section.question_count}
+                                />
+                              </label>
+
+                              <button
+                                className="self-end rounded-xl border border-[var(--color-admin-line)] px-3 py-2 text-xs font-bold text-[var(--color-admin-muted)] transition hover:border-[var(--color-admin-danger)]/40 hover:text-[var(--color-admin-danger)]"
+                                onClick={() => removeExamSection(section.client_id)}
+                                type="button"
+                              >
+                                Sil
+                              </button>
+                            </div>
+
+                            <details className="mt-3 rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)]">
+                              <summary className="cursor-pointer px-3 py-2 text-xs font-bold text-[var(--color-admin-muted)]">
+                                Bağlı dersler: {section.subject_ids.length}
+                              </summary>
+                              <div className="max-h-48 overflow-y-auto border-t border-[var(--color-admin-line)]">
+                                {subjectOptions.length === 0 ? (
+                                  <p className="px-3 py-3 text-sm text-[var(--color-admin-muted)]">Ders bulunamadı.</p>
+                                ) : (
+                                  subjectOptions.map((subject, subjectIndex) => {
+                                    const selectedElsewhere = form.sections.some(
+                                      (otherSection) =>
+                                        otherSection.client_id !== section.client_id &&
+                                        otherSection.subject_ids.includes(subject.id),
+                                    );
+                                    const selected = section.subject_ids.includes(subject.id);
+
+                                    return (
+                                      <label
+                                        className={`flex cursor-pointer items-start gap-3 px-3 py-2.5 text-sm transition ${
+                                          subjectIndex !== subjectOptions.length - 1 ? "border-b border-[var(--color-admin-line)]/70" : ""
+                                        } ${selected ? "bg-[var(--color-admin-accent-soft)]/50" : "hover:bg-[var(--color-admin-bg-raised)]"} ${
+                                          selectedElsewhere ? "cursor-not-allowed opacity-45" : ""
+                                        }`}
+                                        key={subject.id}
+                                      >
+                                        <input
+                                          checked={selected}
+                                          disabled={selectedElsewhere}
+                                          onChange={() => toggleExamSectionSubject(section.client_id, subject.id)}
+                                          type="checkbox"
+                                        />
+                                        <span className="min-w-0 flex-1">
+                                          <span className="block font-semibold text-[var(--color-admin-ink)]">{subject.label}</span>
+                                          {subject.hint ? <span className="block text-xs text-[var(--color-admin-muted)]">{subject.hint}</span> : null}
+                                        </span>
+                                      </label>
+                                    );
+                                  })
+                                )}
+                              </div>
+                            </details>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-4">

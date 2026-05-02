@@ -154,6 +154,7 @@ export function MockExamFormPage({
     () => exams.find((exam) => exam.id === form.exam_id) ?? null,
     [exams, form.exam_id],
   );
+  const expectedMockQuestionCount = selectedExam?.total_question_count ?? 80;
 
   const examOptions = useMemo(
     () =>
@@ -415,6 +416,7 @@ export function MockExamFormPage({
                     setForm((current) => ({
                       ...current,
                       exam_id: next,
+                      duration_min: String(exams.find((exam) => exam.id === next)?.duration_min ?? current.duration_min),
                     }))
                   }
                   options={examOptions}
@@ -545,7 +547,7 @@ export function MockExamFormPage({
                   ? "Bu filtrelerle eşleşen soru bulunamadı."
                   : "Önce sınav seçerek soru havuzunu daralt."
               }
-              helperText="Denemeye sadece seçilen sınava bağlı derslerin aktif test sorularından ekleme yapılır. Aktif bir deneme tam 80 sorudan oluşmalıdır."
+              helperText={`Denemeye sadece seçilen sınava bağlı derslerin aktif test sorularından ekleme yapılır. Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşmalıdır.`}
               hideSelectedFromOptions
               label="Denemeye Dahil Edilen Sorular"
               onChange={(question_ids) => setForm((current) => ({ ...current, question_ids }))}
@@ -683,7 +685,7 @@ export function MockExamFormPage({
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm text-[var(--color-admin-muted)]">
               {examsLoading || questionsLoading
                 ? "Sınav ve soru havuzu yükleniyor..."
-                : "Aktif bir deneme tam 80 sorudan oluşur. 80 altı veya üstü kayıtlar draft/pasif kalmalıdır."}
+                : `Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşur. Bu sayının altı veya üstü kayıtlar draft/pasif kalmalıdır.`}
             </div>
           </div>
         </AdminTableCard>

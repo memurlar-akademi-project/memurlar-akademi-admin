@@ -119,18 +119,19 @@ export function AdminDataGrid<T>({
                       key={header.id}
                       className="px-5 py-4 text-left text-[10px] font-extrabold uppercase tracking-[0.16em] text-[var(--color-admin-muted)]"
                     >
-                      {header.isPlaceholder ? null : (
+                      {header.isPlaceholder ? null : canSort ? (
                         <button
-                          className={`inline-flex items-center gap-2 ${
-                            canSort ? "cursor-pointer select-none" : "cursor-default"
-                          }`}
-                          disabled={!canSort}
+                          className="inline-flex cursor-pointer select-none items-center gap-2"
                           onClick={header.column.getToggleSortingHandler()}
                           type="button"
                         >
                           {flexRender(header.column.columnDef.header, header.getContext())}
-                          {canSort ? <ChevronsUpDown size={13} className="opacity-60" /> : null}
+                          <ChevronsUpDown size={13} className="opacity-60" />
                         </button>
+                      ) : (
+                        <div className="inline-flex cursor-default items-center gap-2">
+                          {flexRender(header.column.columnDef.header, header.getContext())}
+                        </div>
                       )}
                     </th>
                   );

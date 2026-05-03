@@ -11,20 +11,27 @@ import {
 } from "@tanstack/react-table";
 import { ChevronLeft, ChevronRight, ChevronsUpDown } from "lucide-react";
 import { useState } from "react";
+import type { AdminPaginationMeta } from "@/lib/types";
 
 type Props<T> = {
   data: T[];
   columns: ColumnDef<T>[];
   emptyState: string;
+  pagination?: AdminPaginationMeta & {
+    onPageChange: (page: number) => void;
+    onPageSizeChange: (pageSize: number) => void;
+  };
 };
 
 export function AdminDataGrid<T>({
   data,
   columns,
   emptyState,
+  pagination,
 }: Props<T>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const pageSizeOptions = [8, 20, 50, 100];
+  const manualPagination = Boolean(pagination);
 
   // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
@@ -32,7 +39,9 @@ export function AdminDataGrid<T>({
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    getPaginationRowModel: manualPagination ? undefined : getPaginationRowModel(),
+    manualPagination,
+    pageCount: pagination?.last_page,
     onSortingChange: setSorting,
     state: {
       sorting,
@@ -46,24 +55,54 @@ export function AdminDataGrid<T>({
 
   const headerGroups = table.getHeaderGroups();
   const rows = table.getRowModel().rows;
-  const pageCount = table.getPageCount();
-  const currentPage = table.getState().pagination.pageIndex + 1;
-  const pageSize = table.getState().pagination.pageSize;
-  const firstRow = rows.length === 0 ? 0 : table.getState().pagination.pageIndex * pageSize + 1;
-  const lastRow = rows.length === 0 ? 0 : firstRow + rows.length - 1;
+  const pageCount = pagination?.last_page ?? table.getPageCount();
+  const currentPage = pagination?.current_page ?? table.getState().pagination.pageIndex + 1;
+  const pageSize = pagination?.per_page ?? table.getState().pagination.pageSize;
+  const totalRows = pagination?.total ?? data.length;
+  const firstRow = pagination ? pagination.from ?? 0 : rows.length === 0 ? 0 : table.getState().pagination.pageIndex * pageSize + 1;
+  const lastRow = pagination ? pagination.to ?? 0 : rows.length === 0 ? 0 : firstRow + rows.length - 1;
+  const canPreviousPage = pagination ? currentPage > 1 : table.getCanPreviousPage();
+  const canNextPage = pagination ? currentPage < pageCount : table.getCanNextPage();
+
+  function changePageSize(nextPageSize: number) {
+    if (pagination) {
+      pagination.onPageSizeChange(nextPageSize);
+      return;
+    }
+
+    table.setPageSize(nextPageSize);
+  }
+
+  function previousPage() {
+    if (pagination) {
+      pagination.onPageChange(Math.max(1, currentPage - 1));
+      return;
+    }
+
+    table.previousPage();
+  }
+
+  function nextPage() {
+    if (pagination) {
+      pagination.onPageChange(Math.min(pageCount, currentPage + 1));
+      return;
+    }
+
+    table.nextPage();
+  }
 
   function renderControls(borderClassName: string) {
     return (
       <div className={`flex flex-wrap items-center justify-between gap-3 bg-[var(--color-admin-panel-soft)] px-5 py-3 ${borderClassName}`}>
         <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-[var(--color-admin-muted)]">
           <span>
-            {firstRow}-{lastRow} / {data.length} kayıt
+            {firstRow}-{lastRow} / {totalRows} kayıt
           </span>
           <div className="flex items-center gap-2">
             <span>Göster</span>
             <select
               className="rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] px-2.5 py-1.5 text-xs font-semibold text-[var(--color-admin-ink)] outline-none"
-              onChange={(event) => table.setPageSize(Number(event.target.value))}
+              onChange={(event) => changePageSize(Number(event.target.value))}
               value={pageSize}
             >
               {pageSizeOptions.map((option) => (
@@ -81,16 +120,16 @@ export function AdminDataGrid<T>({
           </p>
           <button
             className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)] disabled:cursor-not-allowed disabled:opacity-45"
-            disabled={!table.getCanPreviousPage()}
-            onClick={() => table.previousPage()}
+            disabled={!canPreviousPage}
+            onClick={previousPage}
             type="button"
           >
             <ChevronLeft size={16} />
           </button>
           <button
             className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)] disabled:cursor-not-allowed disabled:opacity-45"
-            disabled={!table.getCanNextPage()}
-            onClick={() => table.nextPage()}
+            disabled={!canNextPage}
+            onClick={nextPage}
             type="button"
           >
             <ChevronRight size={16} />

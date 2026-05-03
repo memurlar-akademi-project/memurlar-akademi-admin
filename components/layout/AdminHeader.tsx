@@ -145,6 +145,14 @@ function resolvePageMeta(pathname: string) {
     return { title: "Yeni Hap Bilgi", backHref: "/flashcardlar" };
   }
 
+  if (pathname === "/flashcardlar/import") {
+    return { title: "Hap Bilgi Import", backHref: "/flashcardlar" };
+  }
+
+  if (/^\/flashcardlar\/import\/\d+\/incele$/.test(pathname)) {
+    return { title: "Hap Bilgi Import İncele", backHref: "/flashcardlar/import" };
+  }
+
   if (/^\/flashcardlar\/\d+\/duzenle$/.test(pathname)) {
     return { title: "Hap Bilgi Düzenle", backHref: "/flashcardlar" };
   }

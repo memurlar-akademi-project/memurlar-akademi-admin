@@ -1,4 +1,4 @@
-import { SubjectTestFormPage } from "@/components/admin/tests/SubjectTestFormPage";
+import { redirect } from "next/navigation";
 
 export default async function EditSubjectTestPage({
   params,
@@ -7,5 +7,5 @@ export default async function EditSubjectTestPage({
 }) {
   const { id } = await params;
 
-  return <SubjectTestFormPage id={Number(id)} mode="edit" />;
+  redirect(`/testler/${id}/duzenle`);
 }

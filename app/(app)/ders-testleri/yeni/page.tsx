@@ -1,5 +1,5 @@
-import { SubjectTestFormPage } from "@/components/admin/tests/SubjectTestFormPage";
+import { redirect } from "next/navigation";
 
 export default function NewSubjectTestPage() {
-  return <SubjectTestFormPage mode="create" />;
+  redirect("/testler/yeni");
 }

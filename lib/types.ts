@@ -5,6 +5,15 @@ export type ApiEnvelope<T> = {
   meta: Record<string, unknown>;
 };
 
+export type AdminPaginationMeta = {
+  current_page: number;
+  per_page: number;
+  total: number;
+  last_page: number;
+  from: number | null;
+  to: number | null;
+};
+
 export type AdminSession = {
   token: string;
   tokenType: string;
@@ -206,6 +215,7 @@ export type AdminQuestionImportItem = {
     is_correct: boolean;
   }>;
   review_status: "pending_review" | "rejected" | "approved" | "imported";
+  review_note?: string | null;
   imported_at?: string | null;
   topic: {
     id: number;
@@ -255,6 +265,49 @@ export type AdminFlashcard = {
       name: string;
     } | null;
   } | null;
+};
+
+export type AdminFlashcardImportItem = {
+  id: number;
+  topic_id: number;
+  topic_name_snapshot: string;
+  status: "active" | "passive" | "draft";
+  front_text: string;
+  back_text: string;
+  sort_order?: number | null;
+  is_free?: boolean;
+  review_status: "pending_review" | "rejected" | "imported";
+  review_note?: string | null;
+  imported_at?: string | null;
+  topic: {
+    id: number;
+    name: string;
+    subject?: {
+      id: number;
+      name: string;
+    } | null;
+  } | null;
+  final_flashcard: {
+    id: number;
+    front_text: string;
+    status: string;
+  } | null;
+};
+
+export type AdminFlashcardImport = {
+  id: number;
+  source_type: "json_upload" | "json_paste";
+  status: "draft" | "review" | "completed";
+  total_count: number;
+  imported_count: number;
+  rejected_count: number;
+  pending_count: number;
+  topic_count: number;
+  raw_payload?: Record<string, unknown> | null;
+  items?: AdminFlashcardImportItem[];
+  created_at?: string | null;
+  updated_at?: string | null;
+  completed_at?: string | null;
 };
 
 export type AdminPodcastLesson = {
@@ -315,17 +368,26 @@ export type AdminMockExam = {
   } | null;
 };
 
-export type AdminTopicTest = {
+export type AdminTest = {
   id: number;
-  topic_id: number;
+  scope: "subject" | "topic";
+  subject_id: number;
+  topic_id: number | null;
   title: string;
   slug?: string;
   status?: string;
   duration_min: number;
   instructions?: string | null;
+  is_auto_generated?: boolean;
+  auto_generated_key?: string | null;
+  generated_at?: string | null;
   question_count: number;
   question_ids?: number[];
   readiness?: AdminReadiness;
+  subject: {
+    id: number;
+    name: string;
+  } | null;
   topic: {
     id: number;
     name: string;
@@ -338,23 +400,35 @@ export type AdminTopicTest = {
   updated_at?: string | null;
 };
 
-export type AdminSubjectTest = {
-  id: number;
+export type AdminTestGenerationSummary = {
+  subjects_seen: number;
+  topics_seen: number;
+  eligible_question_count: number;
+  selected_question_count: number;
+  planned_create_count: number;
+  planned_update_count: number;
+  planned_deactivate_count: number;
+  skipped_count: number;
+};
+
+export type AdminTestGenerationPlan = {
+  type: "subject" | "topic";
+  auto_generated_key: string;
   subject_id: number;
+  subject_name: string;
+  topic_id: number | null;
+  topic_name: string | null;
   title: string;
-  slug?: string;
-  status?: string;
   duration_min: number;
-  instructions?: string | null;
-  question_count: number;
-  question_ids?: number[];
-  readiness?: AdminReadiness;
-  subject: {
-    id: number;
-    name: string;
-  } | null;
-  created_at?: string | null;
-  updated_at?: string | null;
+  eligible_question_count: number;
+  selected_question_count: number;
+  action: "create" | "update" | "deactivate" | "skip";
+  reason: string;
+};
+
+export type AdminTestGenerationResult = {
+  summary: AdminTestGenerationSummary;
+  plans: AdminTestGenerationPlan[];
 };
 
 export type AdminDashboard = {

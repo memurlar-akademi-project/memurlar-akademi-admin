@@ -1,5 +1,5 @@
-import { TopicTestFormPage } from "@/components/admin/tests/TopicTestFormPage";
+import { UnifiedTestFormPage } from "@/components/admin/tests/UnifiedTestFormPage";
 
 export default function NewTopicTestPage() {
-  return <TopicTestFormPage mode="create" />;
+  return <UnifiedTestFormPage mode="create" />;
 }

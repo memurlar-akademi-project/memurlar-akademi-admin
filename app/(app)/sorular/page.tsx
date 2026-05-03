@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import {
   ArrowUpDown,
   CheckCircle2,
@@ -39,9 +39,38 @@ import type { AdminExam, AdminMinistry, AdminQuestion, AdminSubject, AdminTopic 
 export default function QuestionsPage() {
   const { token } = useAdminAuth();
   const { showToast } = useAdminToast();
-  const { items, setItems, loading, error, refresh } = useAdminList<AdminQuestion>({
+  const [query, setQuery] = useState("");
+  const [selectedMinistryId, setSelectedMinistryId] = useState("all");
+  const [selectedExamId, setSelectedExamId] = useState("all");
+  const [selectedSubjectId, setSelectedSubjectId] = useState("all");
+  const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
+  const [questionTypeFilter, setQuestionTypeFilter] = useState<"all" | "multiple_choice" | "true_false">("all");
+  const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
+  const deferredQuery = useDeferredValue(query);
+  const {
+    items,
+    loading,
+    error,
+    pagination,
+    refresh,
+  } = useAdminList<AdminQuestion>({
     endpoint: "/admin/questions",
     responseKey: "questions",
+    params: {
+      page,
+      per_page: pageSize,
+      search: deferredQuery.trim(),
+      ministry_id: selectedMinistryId,
+      exam_id: selectedExamId,
+      subject_id: selectedSubjectId,
+      topic_id: selectedTopicId,
+      question_type: questionTypeFilter,
+      difficulty: difficultyFilter,
+      status: statusFilter,
+    },
   });
   const { items: ministries } = useAdminList<AdminMinistry>({
     endpoint: "/admin/ministries",
@@ -60,14 +89,6 @@ export default function QuestionsPage() {
     responseKey: "topics",
   });
 
-  const [query, setQuery] = useState("");
-  const [selectedMinistryId, setSelectedMinistryId] = useState("all");
-  const [selectedExamId, setSelectedExamId] = useState("all");
-  const [selectedSubjectId, setSelectedSubjectId] = useState("all");
-  const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
-  const [questionTypeFilter, setQuestionTypeFilter] = useState<"all" | "multiple_choice" | "true_false">("all");
-  const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
   const [busyId, setBusyId] = useState<number | null>(null);
   const [bulkBusy, setBulkBusy] = useState(false);
   const [selectedQuestionIds, setSelectedQuestionIds] = useState<number[]>([]);
@@ -124,73 +145,20 @@ export default function QuestionsPage() {
     [filteredExams, filteredSubjects, selectedExamId, selectedMinistryId, selectedSubjectId, topics],
   );
 
-  const filteredRows = useMemo(() => {
-    const normalized = query.trim().toLocaleLowerCase("tr");
-    const visibleExamIds = new Set(filteredExams.map((exam) => exam.id));
+  const filteredRows = items;
 
-    return items.filter((item) => {
-      const topic = topics.find((entry) => entry.id === item.topic_id) ?? null;
-
-      if (selectedMinistryId !== "all") {
-        if (!topic || !(topic.exam_ids ?? []).some((examId) => visibleExamIds.has(examId))) {
-          return false;
-        }
-      }
-
-      if (selectedExamId !== "all") {
-        if (!topic || !(topic.exam_ids ?? []).includes(Number(selectedExamId))) {
-          return false;
-        }
-      }
-
-      if (selectedSubjectId !== "all" && item.topic?.subject?.id !== Number(selectedSubjectId)) {
-        return false;
-      }
-
-      if (selectedTopicId !== null && item.topic_id !== selectedTopicId) {
-        return false;
-      }
-
-      if (questionTypeFilter !== "all" && item.question_type !== questionTypeFilter) {
-        return false;
-      }
-
-      if (difficultyFilter !== "all" && item.difficulty !== difficultyFilter) {
-        return false;
-      }
-
-      if (statusFilter !== "all" && item.status !== statusFilter) {
-        return false;
-      }
-
-      if (!normalized) {
-        return true;
-      }
-
-      const haystack = [
-        item.question_text,
-        item.topic?.name,
-        item.topic?.subject?.name,
-        item.correct_answer_text,
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLocaleLowerCase("tr");
-
-      return haystack.includes(normalized);
-    });
+  useEffect(() => {
+    setPage(1);
+    setSelectedQuestionIds([]);
   }, [
+    deferredQuery,
     difficultyFilter,
-    filteredExams,
-    items,
-    query,
     questionTypeFilter,
     selectedExamId,
     selectedMinistryId,
     selectedSubjectId,
     selectedTopicId,
     statusFilter,
-    topics,
   ]);
 
   const visibleApprovableQuestionIds = useMemo(
@@ -259,9 +227,8 @@ export default function QuestionsPage() {
         },
       });
 
-      const updatedById = new Map(response.data.questions.map((question) => [question.id, question]));
-      setItems((current) => current.map((item) => updatedById.get(item.id) ?? item));
       setSelectedQuestionIds([]);
+      await refresh();
 
       showToast({
         tone: "success",
@@ -287,7 +254,7 @@ export default function QuestionsPage() {
     setBusyId(question.id);
 
     try {
-      const response = await adminApiRequest<{ question: AdminQuestion }>(`/admin/questions/${question.id}`, {
+      await adminApiRequest<{ question: AdminQuestion }>(`/admin/questions/${question.id}`, {
         token,
         method: "PUT",
         body: {
@@ -306,9 +273,7 @@ export default function QuestionsPage() {
         },
       });
 
-      setItems((current) =>
-        current.map((item) => (item.id === question.id ? response.data.question : item)),
-      );
+      await refresh();
       showToast({
         tone: "success",
         title: checked ? "Soru aktife alındı" : "Soru pasife alındı",
@@ -338,7 +303,8 @@ export default function QuestionsPage() {
         method: "DELETE",
       });
 
-      setItems((current) => current.filter((item) => item.id !== question.id));
+      setSelectedQuestionIds((current) => current.filter((questionId) => questionId !== question.id));
+      await refresh();
       showToast({
         tone: "success",
         title: "Soru silindi",
@@ -707,13 +673,9 @@ export default function QuestionsPage() {
           </AdminListToolbarRow>
 
           <AdminListToolbarMeta>
-            <AdminListToolbarMetaPill>{filteredRows.length} soru</AdminListToolbarMetaPill>
-            <AdminListToolbarMetaPill>
-              {items.filter((item) => item.status === "active").length} aktif
-            </AdminListToolbarMetaPill>
-            <AdminListToolbarMetaPill>
-              {items.filter((item) => item.question_type === "multiple_choice").length} test
-            </AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>{pagination?.total ?? filteredRows.length} soru</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>{filteredRows.length} kayıt bu sayfada</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>Server-side filtreleme aktif</AdminListToolbarMetaPill>
           </AdminListToolbarMeta>
         </AdminListToolbar>
 
@@ -722,7 +684,23 @@ export default function QuestionsPage() {
         ) : error ? (
           <div className="px-5 py-8 text-sm text-[var(--color-admin-danger)]">{error}</div>
         ) : (
-          <AdminDataGrid columns={columns} data={filteredRows} emptyState="Filtrelere uygun soru bulunamadı." />
+          <AdminDataGrid
+            columns={columns}
+            data={filteredRows}
+            emptyState="Filtrelere uygun soru bulunamadı."
+            pagination={
+              pagination
+                ? {
+                    ...pagination,
+                    onPageChange: setPage,
+                    onPageSizeChange: (nextPageSize) => {
+                      setPageSize(nextPageSize);
+                      setPage(1);
+                    },
+                  }
+                : undefined
+            }
+          />
         )}
       </AdminTableCard>
     </div>

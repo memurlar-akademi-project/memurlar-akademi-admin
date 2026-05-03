@@ -3,7 +3,7 @@
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 import { CheckCircle2, CircleAlert, X } from "lucide-react";
 
-type ToastTone = "success" | "error";
+type ToastTone = "success" | "error" | "warning";
 
 type ToastItem = {
   id: number;
@@ -17,6 +17,24 @@ type AdminToastContextValue = {
 };
 
 const AdminToastContext = createContext<AdminToastContextValue | null>(null);
+
+const toastToneStyles: Record<ToastTone, { border: string; bar: string; icon: string }> = {
+  success: {
+    border: "border-emerald-200",
+    bar: "bg-emerald-500",
+    icon: "bg-emerald-50 text-emerald-600",
+  },
+  error: {
+    border: "border-rose-200",
+    bar: "bg-rose-500",
+    icon: "bg-rose-50 text-rose-600",
+  },
+  warning: {
+    border: "border-amber-200",
+    bar: "bg-amber-500",
+    icon: "bg-amber-50 text-amber-700",
+  },
+};
 
 export function AdminToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
@@ -47,24 +65,12 @@ export function AdminToastProvider({ children }: { children: ReactNode }) {
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className={`pointer-events-auto overflow-hidden rounded-2xl border bg-[var(--color-admin-panel)] shadow-sm ${
-              toast.tone === "success"
-                ? "border-emerald-200"
-                : "border-rose-200"
-            }`}
+            className={`pointer-events-auto overflow-hidden rounded-2xl border bg-[var(--color-admin-panel)] shadow-sm ${toastToneStyles[toast.tone].border}`}
           >
-            <div
-              className={`h-1 ${
-                toast.tone === "success" ? "bg-emerald-500" : "bg-rose-500"
-              }`}
-            />
+            <div className={`h-1 ${toastToneStyles[toast.tone].bar}`} />
             <div className="flex items-start gap-3 px-4 py-4">
               <div
-                className={`mt-0.5 flex h-9 w-9 items-center justify-center rounded-full ${
-                  toast.tone === "success"
-                    ? "bg-emerald-50 text-emerald-600"
-                    : "bg-rose-50 text-rose-600"
-                }`}
+                className={`mt-0.5 flex h-9 w-9 items-center justify-center rounded-full ${toastToneStyles[toast.tone].icon}`}
               >
                 {toast.tone === "success" ? <CheckCircle2 size={18} /> : <CircleAlert size={18} />}
               </div>

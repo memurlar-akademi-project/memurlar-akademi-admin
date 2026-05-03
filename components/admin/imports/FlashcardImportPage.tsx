@@ -10,30 +10,22 @@ import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminPaginationMeta, AdminQuestionImport, AdminSubject, AdminTopic } from "@/lib/types";
+import type { AdminFlashcardImport, AdminPaginationMeta, AdminSubject, AdminTopic } from "@/lib/types";
 
-const questionTemplate = `{
-  "questions": [
+const flashcardTemplate = `{
+  "flashcards": [
     {
       "topic_id": 101,
-      "question_type": "multiple_choice",
-      "difficulty": "medium",
+      "front_text": "Cevap süresi kaç gündür?",
+      "back_text": "En geç 30 gün.",
       "status": "draft",
-      "question_text": "Disiplin cezası verilmeden önce savunma için en az kaç gün süre verilir?",
-      "correct_answer_text": "B",
-      "explanation_text": "657 sayılı Kanun'a göre en az 7 gün süre tanınır.",
-      "options": [
-        { "label": "A", "option_text": "3 gün", "is_correct": false },
-        { "label": "B", "option_text": "7 gün", "is_correct": true },
-        { "label": "C", "option_text": "10 gün", "is_correct": false },
-        { "label": "D", "option_text": "15 gün", "is_correct": false },
-        { "label": "E", "option_text": "30 gün", "is_correct": false }
-      ]
+      "sort_order": 1,
+      "is_free": false
     }
   ]
 }`;
 
-export function QuestionImportPage() {
+export function FlashcardImportPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { token } = useAdminAuth();
@@ -42,12 +34,12 @@ export function QuestionImportPage() {
   const subjectIdFromQuery = searchParams.get("subjectId");
   const [subjects, setSubjects] = useState<AdminSubject[]>([]);
   const [topics, setTopics] = useState<AdminTopic[]>([]);
-  const [imports, setImports] = useState<AdminQuestionImport[]>([]);
+  const [imports, setImports] = useState<AdminFlashcardImport[]>([]);
   const [importsMeta, setImportsMeta] = useState<AdminPaginationMeta | null>(null);
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(
     subjectIdFromQuery ? Number(subjectIdFromQuery) : null,
   );
-  const [payload, setPayload] = useState(questionTemplate);
+  const [payload, setPayload] = useState(flashcardTemplate);
   const [sourceType, setSourceType] = useState<"json_upload" | "json_paste">("json_paste");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -68,7 +60,7 @@ export function QuestionImportPage() {
         const [subjectsResponse, topicsResponse, importsResponse] = await Promise.all([
           adminApiRequest<{ subjects: AdminSubject[] }>("/admin/subjects", { token }),
           adminApiRequest<{ topics: AdminTopic[] }>("/admin/topics", { token }),
-          adminApiRequest<{ imports: AdminQuestionImport[] }>("/admin/question-imports?per_page=6", { token }),
+          adminApiRequest<{ imports: AdminFlashcardImport[] }>("/admin/flashcard-imports?per_page=6", { token }),
         ]);
 
         if (cancelled) {
@@ -81,7 +73,7 @@ export function QuestionImportPage() {
         setImportsMeta(parsePagination(importsResponse.meta.pagination));
       } catch (loadError) {
         if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : "Import ekranı yüklenemedi.");
+          setError(loadError instanceof Error ? loadError.message : "Hap bilgi import ekranı yüklenemedi.");
         }
       } finally {
         if (!cancelled) {
@@ -123,7 +115,7 @@ export function QuestionImportPage() {
           .toLocaleLowerCase("tr")
           .includes(normalizedQuery);
       })
-      .slice(0, 60);
+      .slice(0, 80);
   }, [selectedSubjectId, topicSearch, topics]);
 
   const helperJson = useMemo(
@@ -172,12 +164,12 @@ export function QuestionImportPage() {
 
       const parsed = JSON.parse(payload) as unknown;
 
-      if (!parsed || typeof parsed !== "object" || !Array.isArray((parsed as { questions?: unknown[] }).questions)) {
-        throw new Error("JSON kökü `questions` dizisi içeren bir obje olmalı.");
+      if (!parsed || typeof parsed !== "object" || !Array.isArray((parsed as { flashcards?: unknown[] }).flashcards)) {
+        throw new Error("JSON kökü `flashcards` dizisi içeren bir obje olmalı.");
       }
 
-      const invalidTopic = (parsed as { questions: Array<{ topic_id?: unknown }> }).questions.find((question) => {
-        const topicId = typeof question?.topic_id === "number" ? question.topic_id : null;
+      const invalidTopic = (parsed as { flashcards: Array<{ topic_id?: unknown }> }).flashcards.find((flashcard) => {
+        const topicId = typeof flashcard?.topic_id === "number" ? flashcard.topic_id : null;
         if (!topicId) {
           return true;
         }
@@ -191,29 +183,29 @@ export function QuestionImportPage() {
         throw new Error("JSON içindeki tüm `topic_id` değerleri seçtiğin derse ait olmalı.");
       }
 
-      const response = await adminApiRequest<{ import: AdminQuestionImport }>("/admin/question-imports", {
+      const response = await adminApiRequest<{ import: AdminFlashcardImport }>("/admin/flashcard-imports", {
         token,
         method: "POST",
         body: {
           source_type: sourceType,
           raw_payload: parsed,
-          questions: (parsed as { questions: unknown[] }).questions,
+          flashcards: (parsed as { flashcards: unknown[] }).flashcards,
         },
       });
 
       showToast({
         tone: "success",
-        title: "Soru import kaydı oluşturuldu",
+        title: "Hap bilgi import kaydı oluşturuldu",
         description:
           response.data.import.rejected_count > 0
-            ? `${response.data.import.pending_count} soru incelemeye hazır, ${response.data.import.rejected_count} duplicate içeri alınmadı.`
-            : `${response.data.import.total_count} soru incelemeye hazır.`,
+            ? `${response.data.import.pending_count} kart incelemeye hazır, ${response.data.import.rejected_count} duplicate içeri alınmadı.`
+            : `${response.data.import.total_count} kart incelemeye hazır.`,
       });
 
-      router.replace(`/sorular/import/${response.data.import.id}/incele`);
+      router.replace(`/flashcardlar/import/${response.data.import.id}/incele`);
     } catch (submitError) {
       const description =
-        submitError instanceof Error ? submitError.message : "Soru import işlemi başarısız oldu.";
+        submitError instanceof Error ? submitError.message : "Hap bilgi import işlemi başarısız oldu.";
       setError(description);
       showToast({
         tone: "error",
@@ -229,7 +221,7 @@ export function QuestionImportPage() {
     <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_380px]">
       <div className="space-y-4">
         <AdminTableCard>
-          <form className="space-y-5 px-5 py-5" id="question-import-form" onSubmit={handleSubmit}>
+          <form className="space-y-5 px-5 py-5" id="flashcard-import-form" onSubmit={handleSubmit}>
             <label className="block space-y-2">
               <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
                 Ders
@@ -282,7 +274,7 @@ export function QuestionImportPage() {
                   Son Importlar
                 </h3>
                 <p className="mt-1 text-sm text-[var(--color-admin-muted)]">
-                  Onay bekleyen importları buradan tekrar açabilirsin.
+                  Onay bekleyen hap bilgi importlarını buradan tekrar açabilirsin.
                 </p>
               </div>
               <span className="rounded-full border border-[var(--color-admin-line)] px-3 py-1 text-xs font-semibold text-[var(--color-admin-muted)]">
@@ -297,21 +289,21 @@ export function QuestionImportPage() {
                 </div>
               ) : imports.length === 0 ? (
                 <div className="rounded-[18px] border border-dashed border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4 text-sm text-[var(--color-admin-muted)]">
-                  Henüz soru import kaydı yok.
+                  Henüz hap bilgi import kaydı yok.
                 </div>
               ) : (
                 imports.map((item) => (
                   <Link
                     key={item.id}
                     className="flex items-center justify-between gap-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 transition hover:border-[var(--color-admin-accent)]"
-                    href={`/sorular/import/${item.id}/incele`}
+                    href={`/flashcardlar/import/${item.id}/incele`}
                   >
                     <div className="min-w-0">
                       <p className="text-sm font-semibold text-[var(--color-admin-ink)]">
                         Import #{item.id}
                       </p>
                       <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
-                        {item.total_count} soru, {item.topic_count} konu, {item.pending_count} bekliyor
+                        {item.total_count} kart, {item.topic_count} konu, {item.pending_count} bekliyor
                       </p>
                     </div>
                     <div className="flex items-center gap-2 text-xs text-[var(--color-admin-muted)]">
@@ -327,7 +319,7 @@ export function QuestionImportPage() {
       </div>
 
       <div className="space-y-4">
-        <AdminFormActionsCard cancelHref="/sorular" formId="question-import-form" saving={saving} submitLabel="Önizlemeye Geç" />
+        <AdminFormActionsCard cancelHref="/flashcardlar" formId="flashcard-import-form" saving={saving} submitLabel="Önizlemeye Geç" />
 
         <AdminTableCard>
           <div className="px-5 py-5">
@@ -335,11 +327,11 @@ export function QuestionImportPage() {
               AI Şablonu
             </h3>
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4 text-sm leading-6 text-[var(--color-admin-muted)]">
-              Önce konu import et. Sonra AI’a `topic_id + topic_name` listesini bağlam olarak ver. JSON çıktısında sadece `topic_id` kullanılmalı; konu adı DB’den alınır.
+              Hap bilgi JSON'u `topic_id` bazlı gelir. Konu adı JSON'a yazılmaz; konu ve ders bilgisi backend tarafından `topic_id` üzerinden bağlanır.
             </div>
 
             <pre className="mt-4 overflow-x-auto rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] p-4 text-[12px] leading-6 text-[var(--color-admin-ink)]">
-{questionTemplate}
+{flashcardTemplate}
             </pre>
           </div>
         </AdminTableCard>
@@ -382,7 +374,7 @@ export function QuestionImportPage() {
             <div className="mt-4 flex items-start gap-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm text-[var(--color-admin-muted)]">
               <FileJson2 className="mt-0.5 shrink-0" size={16} />
               <p>
-                Bu listeyi dış AI’a verip soru JSON’unu `topic_id` bazlı ürettirebilirsin. Import sonrası sorular review ekranında tek tek incelenir.
+                Bu listeyi AI’a verip hap bilgi JSON’unu `topic_id` bazlı ürettirebilirsin. Import sonrası her kart review ekranında konu bilgisiyle görünür.
               </p>
             </div>
           </div>

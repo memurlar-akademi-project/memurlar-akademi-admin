@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FormEvent, ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, CircleCheckBig, Trash2 } from "lucide-react";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
@@ -9,7 +9,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminQuestionImport, AdminQuestionImportItem } from "@/lib/types";
+import type { AdminPaginationMeta, AdminQuestionImport, AdminQuestionImportItem } from "@/lib/types";
 
 type Props = {
   importId: number;
@@ -79,6 +79,9 @@ export function QuestionImportReviewPage({ importId }: Props) {
 
   const [questionImport, setQuestionImport] = useState<AdminQuestionImport | null>(null);
   const [topics, setTopics] = useState<TopicOptionItem[]>([]);
+  const [itemsMeta, setItemsMeta] = useState<AdminPaginationMeta | null>(null);
+  const [itemsPage, setItemsPage] = useState(1);
+  const [itemsPageSize, setItemsPageSize] = useState(40);
   const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
   const [draft, setDraft] = useState<EditableItem | null>(null);
   const [loading, setLoading] = useState(true);
@@ -87,53 +90,42 @@ export function QuestionImportReviewPage({ importId }: Props) {
   const [bulkSelectedItemIds, setBulkSelectedItemIds] = useState<number[]>([]);
   const queueItemRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
-  useEffect(() => {
+  const loadImport = useCallback(async () => {
     if (!token) {
       return;
     }
 
-    let cancelled = false;
+    setLoading(true);
 
-    async function loadImport() {
-      setLoading(true);
+    try {
+      const response = await adminApiRequest<{
+        import: AdminQuestionImport;
+        items_meta: AdminPaginationMeta;
+        topics: TopicOptionItem[];
+      }>(`/admin/question-imports/${importId}?page=${itemsPage}&per_page=${itemsPageSize}`, { token });
 
-      try {
-        const response = await adminApiRequest<{
-          import: AdminQuestionImport;
-          topics: TopicOptionItem[];
-        }>(`/admin/question-imports/${importId}`, { token });
+      setQuestionImport(response.data.import);
+      setTopics(response.data.topics);
+      setItemsMeta(response.data.items_meta ?? parsePagination(response.meta.pagination));
 
-        if (cancelled) {
-          return;
-        }
+      const firstPending =
+        response.data.import.items?.find((item) => item.review_status === "pending_review") ??
+        response.data.import.items?.[0] ??
+        null;
 
-        setQuestionImport(response.data.import);
-        setTopics(response.data.topics);
-
-        const firstPending =
-          response.data.import.items?.find((item) => item.review_status === "pending_review") ??
-          response.data.import.items?.[0] ??
-          null;
-
-        setSelectedItemId(firstPending?.id ?? null);
-        setDraft(firstPending ? toEditableItem(firstPending) : null);
-      } catch (loadError) {
-        if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : "Import yüklenemedi.");
-        }
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
-      }
+      setSelectedItemId(firstPending?.id ?? null);
+      setDraft(firstPending ? toEditableItem(firstPending) : null);
+      setError(null);
+    } catch (loadError) {
+      setError(loadError instanceof Error ? loadError.message : "Import yüklenemedi.");
+    } finally {
+      setLoading(false);
     }
+  }, [importId, itemsPage, itemsPageSize, token]);
 
+  useEffect(() => {
     void loadImport();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [importId, token]);
+  }, [loadImport]);
 
   const items = useMemo(() => questionImport?.items ?? [], [questionImport]);
   const selectedItem = useMemo(
@@ -145,9 +137,10 @@ export function QuestionImportReviewPage({ importId }: Props) {
     [items, selectedItemId],
   );
 
-  const pendingCount = items.filter((item) => item.review_status === "pending_review").length;
-  const importedCount = items.filter((item) => item.review_status === "imported").length;
-  const rejectedCount = items.filter((item) => item.review_status === "rejected").length;
+  const totalCount = questionImport?.total_count ?? items.length;
+  const pendingCount = questionImport?.pending_count ?? items.filter((item) => item.review_status === "pending_review").length;
+  const importedCount = questionImport?.imported_count ?? items.filter((item) => item.review_status === "imported").length;
+  const rejectedCount = questionImport?.rejected_count ?? items.filter((item) => item.review_status === "rejected").length;
   const pendingItemIds = useMemo(
     () => items.filter((item) => item.review_status === "pending_review").map((item) => item.id),
     [items],
@@ -155,7 +148,8 @@ export function QuestionImportReviewPage({ importId }: Props) {
   const pendingItemIdSet = useMemo(() => new Set(pendingItemIds), [pendingItemIds]);
   const selectedBulkCount = bulkSelectedItemIds.filter((itemId) => pendingItemIdSet.has(itemId)).length;
   const allPendingSelected = pendingItemIds.length > 0 && selectedBulkCount === pendingItemIds.length;
-  const progressPercent = items.length > 0 ? Math.round((importedCount / items.length) * 100) : 0;
+  const progressPercent = totalCount > 0 ? Math.round((importedCount / totalCount) * 100) : 0;
+  const selectedGlobalIndex = selectedIndex === -1 ? 0 : (itemsMeta?.from ?? 1) + selectedIndex;
   const currentTopic = topics.find((topic) => topic.id === draft?.topic_id) ?? selectedItem?.topic ?? null;
   const correctOptionLabel = draft?.options.find((option) => option.is_correct)?.label ?? draft?.correct_answer_text ?? "-";
 
@@ -182,30 +176,41 @@ export function QuestionImportReviewPage({ importId }: Props) {
     setBulkSelectedItemIds((current) => current.filter((itemId) => pendingItemIdSet.has(itemId)));
   }, [pendingItemIdSet]);
 
-  function applyImportState(
+  function applyImportPatch(
     nextImport: AdminQuestionImport,
+    updatedItems: AdminQuestionImportItem[],
     options: { moveToNextPending?: boolean; previousItemId?: number } = {},
   ) {
-    setQuestionImport(nextImport);
+    const updatedById = new Map(updatedItems.map((item) => [item.id, item]));
+    const patchedItems = (questionImport?.items ?? []).map((item) => updatedById.get(item.id) ?? item);
 
-    const updatedItems = nextImport.items ?? [];
-    const currentExists = updatedItems.find((item) => item.id === selectedItemId);
+    setQuestionImport({
+      ...nextImport,
+      items: patchedItems,
+    });
+
+    const currentExists = patchedItems.find((item) => item.id === selectedItemId);
     let nextSelected: AdminQuestionImportItem | null = null;
 
     if (options.moveToNextPending) {
-      const previousIndex = updatedItems.findIndex((item) => item.id === options.previousItemId);
+      const previousIndex = patchedItems.findIndex((item) => item.id === options.previousItemId);
       const searchStart = previousIndex === -1 ? 0 : previousIndex + 1;
-      const afterPrevious = updatedItems.slice(searchStart).find((item) => item.review_status === "pending_review");
-      const beforePrevious = updatedItems.slice(0, Math.max(searchStart, 0)).find(
+      const afterPrevious = patchedItems.slice(searchStart).find((item) => item.review_status === "pending_review");
+      const beforePrevious = patchedItems.slice(0, Math.max(searchStart, 0)).find(
         (item) => item.review_status === "pending_review",
       );
 
-      nextSelected = afterPrevious ?? beforePrevious ?? currentExists ?? updatedItems[0] ?? null;
+      nextSelected = afterPrevious ?? beforePrevious ?? null;
+
+      if (!nextSelected && itemsMeta && itemsMeta.current_page < itemsMeta.last_page) {
+        setItemsPage((current) => current + 1);
+        return;
+      }
     } else {
       nextSelected =
         currentExists ??
-        updatedItems.find((item) => item.review_status === "pending_review") ??
-        updatedItems[0] ??
+        patchedItems.find((item) => item.review_status === "pending_review") ??
+        patchedItems[0] ??
         null;
     }
 
@@ -243,7 +248,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
         body: draft,
       });
 
-      applyImportState(response.data.import);
+      applyImportPatch(response.data.import, [response.data.item]);
 
       showToast({
         tone: "success",
@@ -281,20 +286,24 @@ export function QuestionImportReviewPage({ importId }: Props) {
       const approveResponse = await adminApiRequest<{
         import: AdminQuestionImport;
         item: AdminQuestionImportItem;
+        duplicate_count?: number;
       }>(`/admin/question-imports/${importId}/items/${selectedItem.id}/approve`, {
         token,
         method: "POST",
       });
 
-      applyImportState(approveResponse.data.import, {
+      applyImportPatch(approveResponse.data.import, [approveResponse.data.item], {
         moveToNextPending: true,
         previousItemId: selectedItem.id,
       });
 
+      const wasDuplicate = approveResponse.data.item.review_status === "rejected";
       showToast({
-        tone: "success",
-        title: "Soru içe aktarıldı",
-        description: saveResponse.data.item.topic?.name ?? "Soru havuzu",
+        tone: wasDuplicate ? "warning" : "success",
+        title: wasDuplicate ? "Duplicate soru içeri alınmadı" : "Soru içe aktarıldı",
+        description: wasDuplicate
+          ? approveResponse.data.item.review_note ?? "Bu soru zaten mevcut."
+          : saveResponse.data.item.topic?.name ?? "Soru havuzu",
       });
     } catch (submitError) {
       showToast({
@@ -315,7 +324,10 @@ export function QuestionImportReviewPage({ importId }: Props) {
     setSaving(true);
 
     try {
-      const response = await adminApiRequest<{ import: AdminQuestionImport }>(
+      const response = await adminApiRequest<{
+        import: AdminQuestionImport;
+        item: AdminQuestionImportItem;
+      }>(
         `/admin/question-imports/${importId}/items/${selectedItem.id}`,
         {
           token,
@@ -323,7 +335,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
         },
       );
 
-      applyImportState(response.data.import, {
+      applyImportPatch(response.data.import, [response.data.item], {
         moveToNextPending: true,
         previousItemId: selectedItem.id,
       });
@@ -384,6 +396,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
 
       const response = await adminApiRequest<{
         approved_count: number;
+        duplicate_count?: number;
         import: AdminQuestionImport;
       }>(`/admin/question-imports/${importId}/items/bulk-approve`, {
         token,
@@ -391,16 +404,15 @@ export function QuestionImportReviewPage({ importId }: Props) {
         body: { item_ids: itemIds },
       });
 
-      applyImportState(response.data.import, {
-        moveToNextPending: true,
-        previousItemId: selectedItem?.id,
-      });
+      await loadImport();
       setBulkSelectedItemIds([]);
 
       showToast({
-        tone: "success",
-        title: "Seçili sorular içe aktarıldı",
-        description: `${response.data.approved_count} soru aktif olarak soru havuzuna eklendi.`,
+        tone: response.data.duplicate_count ? "warning" : "success",
+        title: "Seçili sorular işlendi",
+        description: response.data.duplicate_count
+          ? `${response.data.approved_count} soru eklendi, ${response.data.duplicate_count} duplicate içeri alınmadı.`
+          : `${response.data.approved_count} soru aktif olarak soru havuzuna eklendi.`,
       });
     } catch (submitError) {
       showToast({
@@ -464,7 +476,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
 
           <div className="grid gap-3 md:grid-cols-4">
             {[
-              ["Toplam", questionImport?.total_count ?? items.length],
+              ["Toplam", totalCount],
               ["Bekleyen", questionImport?.pending_count ?? pendingCount],
               ["İçe Aktarılan", questionImport?.imported_count ?? importedCount],
               ["Reddedilen", rejectedCount],
@@ -509,7 +521,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="rounded-full bg-[var(--color-admin-accent-soft)] px-3 py-1 text-xs font-extrabold text-[var(--color-admin-accent)]">
-                        Soru {Math.max(selectedIndex + 1, 1)} / {items.length}
+                        Soru {Math.max(selectedGlobalIndex, 1)} / {totalCount}
                       </span>
                       <span className="rounded-full border border-[var(--color-admin-line)] px-3 py-1 text-xs font-semibold text-[var(--color-admin-muted)]">
                         {selectedItem.review_status === "imported" ? "İçe aktarıldı" : selectedItem.review_status === "rejected" ? "Reddedildi" : "Review bekliyor"}
@@ -540,6 +552,12 @@ export function QuestionImportReviewPage({ importId }: Props) {
                       </button>
                     </div>
                   </div>
+
+                  {selectedItem.review_note ? (
+                    <div className="rounded-[18px] border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-semibold text-amber-700">
+                      {selectedItem.review_note}
+                    </div>
+                  ) : null}
 
                   <div className="rounded-[26px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-5">
                     <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold text-[var(--color-admin-muted)]">
@@ -790,7 +808,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
                   </div>
                 </div>
 
-                {pendingCount > 0 ? (
+                {pendingItemIds.length > 0 ? (
                   <div className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-3 py-2">
                     <label className="flex cursor-pointer items-center gap-2 text-xs font-semibold text-[var(--color-admin-muted)]">
                       <input
@@ -800,7 +818,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
                         onChange={toggleAllPendingSelection}
                         type="checkbox"
                       />
-                      Bekleyenlerin tümünü seç
+                      Bu sayfadaki bekleyenleri seç
                     </label>
                     <button
                       className="text-xs font-semibold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-accent)] disabled:opacity-40"
@@ -813,8 +831,59 @@ export function QuestionImportReviewPage({ importId }: Props) {
                   </div>
                 ) : null}
 
+                {itemsMeta ? (
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-[18px] border border-[var(--color-admin-line)] bg-white px-3 py-2">
+                    <span className="text-xs font-semibold text-[var(--color-admin-muted)]">
+                      {itemsMeta.from ?? 0}-{itemsMeta.to ?? 0} / {itemsMeta.total} soru
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <select
+                        className="rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] px-2.5 py-1.5 text-xs font-semibold text-[var(--color-admin-ink)] outline-none"
+                        onChange={(event) => {
+                          setItemsPageSize(Number(event.target.value));
+                          setItemsPage(1);
+                          setBulkSelectedItemIds([]);
+                        }}
+                        value={itemsPageSize}
+                      >
+                        {[20, 40, 80, 100].map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        className="flex h-8 w-8 items-center justify-center rounded-xl border border-[var(--color-admin-line)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)] disabled:opacity-40"
+                        disabled={itemsMeta.current_page <= 1 || saving}
+                        onClick={() => {
+                          setBulkSelectedItemIds([]);
+                          setItemsPage((current) => Math.max(1, current - 1));
+                        }}
+                        type="button"
+                      >
+                        <ChevronLeft size={15} />
+                      </button>
+                      <span className="text-xs font-semibold text-[var(--color-admin-muted)]">
+                        {itemsMeta.current_page}/{Math.max(itemsMeta.last_page, 1)}
+                      </span>
+                      <button
+                        className="flex h-8 w-8 items-center justify-center rounded-xl border border-[var(--color-admin-line)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)] disabled:opacity-40"
+                        disabled={itemsMeta.current_page >= itemsMeta.last_page || saving}
+                        onClick={() => {
+                          setBulkSelectedItemIds([]);
+                          setItemsPage((current) => Math.min(itemsMeta.last_page, current + 1));
+                        }}
+                        type="button"
+                      >
+                        <ChevronRight size={15} />
+                      </button>
+                    </div>
+                  </div>
+                ) : null}
+
                 <div className="mt-4 max-h-[520px] space-y-2 overflow-y-auto pr-1">
                   {items.map((item, index) => {
+                    const globalIndex = (itemsMeta?.from ?? 1) + index;
                     const isActive = item.id === selectedItemId;
                     const isPending = item.review_status === "pending_review";
                     const isBulkSelected = bulkSelectedItemIds.includes(item.id) && isPending;
@@ -843,7 +912,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
                             : "border-transparent bg-[var(--color-admin-panel-soft)] opacity-45"
                         }`}>
                           <input
-                            aria-label={`${index + 1}. soruyu toplu onay için seç`}
+                            aria-label={`${globalIndex}. soruyu toplu onay için seç`}
                             checked={isBulkSelected}
                             className="h-4 w-4 accent-[var(--color-admin-accent)]"
                             disabled={!isPending || saving}
@@ -858,7 +927,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
                         >
                           <div className="flex items-center gap-2">
                             <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl text-xs font-black ${statusClass}`}>
-                              {index + 1}
+                              {globalIndex}
                             </span>
                             <div className="min-w-0">
                               <p className="truncate text-xs font-semibold text-[var(--color-admin-muted)]">
@@ -867,6 +936,11 @@ export function QuestionImportReviewPage({ importId }: Props) {
                               <p className="mt-0.5 line-clamp-2 text-sm font-semibold leading-5 text-[var(--color-admin-ink)]">
                                 {item.question_text}
                               </p>
+                              {item.review_note ? (
+                                <p className="mt-1 rounded-xl border border-amber-200 bg-amber-50 px-2.5 py-1.5 text-[11px] font-semibold text-amber-700">
+                                  {item.review_note}
+                                </p>
+                              ) : null}
                             </div>
                           </div>
                         </button>
@@ -881,4 +955,30 @@ export function QuestionImportReviewPage({ importId }: Props) {
       )}
     </div>
   );
+}
+
+function parsePagination(value: unknown): AdminPaginationMeta | null {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+
+  const meta = value as Partial<AdminPaginationMeta>;
+
+  if (
+    typeof meta.current_page !== "number" ||
+    typeof meta.per_page !== "number" ||
+    typeof meta.total !== "number" ||
+    typeof meta.last_page !== "number"
+  ) {
+    return null;
+  }
+
+  return {
+    current_page: meta.current_page,
+    per_page: meta.per_page,
+    total: meta.total,
+    last_page: meta.last_page,
+    from: typeof meta.from === "number" ? meta.from : null,
+    to: typeof meta.to === "number" ? meta.to : null,
+  };
 }

@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { CheckCircle2, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2 } from "lucide-react";
+import { CheckCircle2, FileUp, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2 } from "lucide-react";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminDataGrid } from "@/components/admin/crud/AdminDataGrid";
 import {
@@ -329,9 +329,13 @@ export default function HapBilgilerPage() {
               <AdminListToolbarIconButton onClick={refresh} title="Yenile">
                 <RefreshCcw size={15} />
               </AdminListToolbarIconButton>
-                <Link className="admin-button admin-button-primary" href="/flashcardlar/yeni">
-                  <Plus size={16} />
-                </Link>
+              <Link className="admin-button admin-button-soft" href="/flashcardlar/import">
+                <FileUp size={16} />
+                Import
+              </Link>
+              <Link className="admin-button admin-button-primary" href="/flashcardlar/yeni">
+                <Plus size={16} />
+              </Link>
             </AdminListToolbarActions>
           </AdminListToolbarRow>
 

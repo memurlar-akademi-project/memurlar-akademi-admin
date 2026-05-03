@@ -35,7 +35,7 @@ type ContentBlock =
   | { type: "subheading"; content: string }
   | { type: "list"; style?: ListStyle; items: StructuredListItem[] }
   | { type: "ordered_list" | "alpha_list"; items: Array<string | StructuredListItem> }
-  | { type: "article_line" | "rich_paragraph"; segments: InlineSegment[] }
+  | { type: "article_line" | "rich_paragraph"; content?: string; segments?: InlineSegment[] }
   | { type: "quote"; content: string }
   | { type: "divider" }
   | { type: "table"; caption?: string; headers?: string[]; rows: TableCell[][] }
@@ -70,8 +70,54 @@ function hasTextContent(block: ContentBlock): block is Extract<ContentBlock, { c
   return "content" in block && typeof block.content === "string";
 }
 
-function hasSegments(block: ContentBlock): block is Extract<ContentBlock, { segments: InlineSegment[] }> {
+function hasSegments(block: ContentBlock): block is ContentBlock & { segments: InlineSegment[] } {
   return "segments" in block && Array.isArray(block.segments);
+}
+
+function stripProcessNotes(value: string) {
+  return value
+    .replace(
+      /\s*\((?:(?:Değişik|Degişik|Değisik|Mülga|Mulga|İptal|Iptal|Aynen kabul|Değiştirilerek kabul|Degistirilerek kabul|Yeniden düzenleme|Yeniden duzenleme)\s*[:\-]|Ek(?:\s+(?:paragraf|fıkra|fikra|cümle|cumle|bent|ibare|madde|iki cümle|iki cumle|üç cümle|uc cumle))?\s*[:\-])[^)]*\)/gi,
+      "",
+    )
+    .replace(/[^\S\r\n]{2,}/g, " ")
+    .replace(/[^\S\r\n]+\n/g, "\n")
+    .replace(/\n[^\S\r\n]+/g, "\n")
+    .trim();
+}
+
+function isOnlyProcessNote(value: string) {
+  return /^\s*\((?:(?:Değişik|Degişik|Değisik|Mülga|Mulga|İptal|Iptal|Aynen kabul|Değiştirilerek kabul|Degistirilerek kabul|Yeniden düzenleme|Yeniden duzenleme)\s*[:\-]|Ek(?:\s+(?:paragraf|fıkra|fikra|cümle|cumle|bent|ibare|madde|iki cümle|iki cumle|üç cümle|uc cumle))?\s*[:\-])/i.test(value);
+}
+
+function blockToSegments(block: ContentBlock, options?: { articleLine?: boolean }): InlineSegment[] {
+  const rawSegments = "segments" in block && Array.isArray(block.segments) ? block.segments : [];
+
+  if (rawSegments.length > 0) {
+    return rawSegments
+      .map((segment) => {
+        const text = options?.articleLine ? stripProcessNotes(segment.text) : segment.text;
+        return { ...segment, text };
+      })
+      .filter((segment) => segment.text.trim() && (!options?.articleLine || !isOnlyProcessNote(segment.text)));
+  }
+
+  if (!hasTextContent(block)) {
+    return [];
+  }
+
+  const text = options?.articleLine ? stripProcessNotes(block.content) : block.content.trim();
+
+  if (!text) {
+    return [];
+  }
+
+  return [
+    {
+      text,
+      bold: Boolean(options?.articleLine),
+    },
+  ];
 }
 
 function hasItems(block: ContentBlock): block is Extract<ContentBlock, { items: Array<string | StructuredListItem> }> {
@@ -254,7 +300,7 @@ function renderPreviewListItem(item: string | StructuredListItem, itemIndex: num
 
 function renderPreviewTableCell(cell: TableCell, index: string) {
   if (typeof cell === "string") {
-    return cell;
+    return stripProcessNotes(cell);
   }
 
   const blocks = Array.isArray(cell.blocks)
@@ -269,6 +315,81 @@ function renderPreviewTableCell(cell: TableCell, index: string) {
       {blocks.map((block, blockIndex) => renderPreviewBlock(block, blockIndex))}
     </div>
   ) : null;
+}
+
+function getTableCellText(cell: TableCell) {
+  if (typeof cell === "string") {
+    return cell;
+  }
+
+  if (typeof cell.content === "string") {
+    return cell.content;
+  }
+
+  if (Array.isArray(cell.segments)) {
+    return cell.segments.map((segment) => segment.text).join("");
+  }
+
+  return "";
+}
+
+function getTableColumnCount(block: Extract<ContentBlock, { type: "table" }>) {
+  const headerCount = Array.isArray(block.headers) ? block.headers.length : 0;
+  const rowColumnCount = block.rows.reduce((max, row) => (Array.isArray(row) ? Math.max(max, row.length) : max), 0);
+
+  return Math.max(headerCount, rowColumnCount, 1);
+}
+
+function getNormalizedHeaders(block: Extract<ContentBlock, { type: "table" }>, columnCount: number) {
+  const headers = Array.isArray(block.headers) ? block.headers : [];
+
+  if (headers.length === 0) {
+    return [];
+  }
+
+  if (headers.length === columnCount) {
+    return headers;
+  }
+
+  const hasLeadingLabelColumn = block.rows.some((row) => {
+    if (!Array.isArray(row) || row.length !== columnCount) {
+      return false;
+    }
+
+    const firstCell = getTableCellText(row[0]).trim();
+    return firstCell.length > 12 && !/^\d+\.?$/.test(firstCell);
+  });
+
+  const missingCount = columnCount - headers.length;
+  const blanks = Array.from({ length: Math.max(missingCount, 0) }, () => "");
+
+  return hasLeadingLabelColumn ? [...blanks, ...headers] : [...headers, ...blanks];
+}
+
+function getNormalizedRow(row: TableCell[], columnCount: number): Array<{ cell: TableCell; colSpan: number; emphasis?: boolean }> {
+  if (row.length === columnCount) {
+    return row.map((cell) => ({ cell, colSpan: 1 }));
+  }
+
+  if (row.length === 1 && columnCount > 1) {
+    return [{ cell: row[0], colSpan: columnCount, emphasis: true }];
+  }
+
+  const firstCellText = getTableCellText(row[0]).trim();
+  const isTotalRow = /^TOPLAM$/i.test(firstCellText);
+
+  if (isTotalRow && row.length === 2 && columnCount > 2) {
+    return [
+      { cell: row[0], colSpan: columnCount - 1, emphasis: true },
+      { cell: row[1], colSpan: 1, emphasis: true },
+    ];
+  }
+
+  const shouldPrependBlank = row.length === columnCount - 1 && /^\d+\.?$/.test(firstCellText);
+  const blankCell: TableCell = "";
+  const normalized = shouldPrependBlank ? [blankCell, ...row] : [...row, ...Array.from({ length: columnCount - row.length }, () => blankCell)];
+
+  return normalized.map((cell) => ({ cell, colSpan: 1 }));
 }
 
 function tableCellToEditableText(cell: TableCell) {
@@ -300,18 +421,30 @@ function tableCellToEditableText(cell: TableCell) {
 }
 
 function renderPreviewBlock(block: ContentBlock, index: number) {
-  if ((block.type === "article_line" || block.type === "rich_paragraph") && Array.isArray(block.segments)) {
+  if (block.type === "article_line" || block.type === "rich_paragraph") {
+    const segments = blockToSegments(block, { articleLine: block.type === "article_line" });
+
+    if (segments.length === 0) {
+      return null;
+    }
+
     return (
       <p className="mb-2 text-slate-700 leading-relaxed last:mb-0" key={`${block.type}-${index}`}>
-        {renderSegments(block.segments)}
+        {renderSegments(segments)}
       </p>
     );
   }
 
   if (block.type === "paragraph" && block.content) {
+    const content = stripProcessNotes(block.content);
+
+    if (!content) {
+      return null;
+    }
+
     return (
       <p className="mb-2 text-slate-700 leading-relaxed last:mb-0" key={`${block.type}-${index}`}>
-        {block.content}
+        {content}
       </p>
     );
   }
@@ -335,6 +468,10 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
   }
 
   if (block.type === "table" && Array.isArray(block.rows)) {
+    const tableBlock = block as Extract<ContentBlock, { type: "table" }>;
+    const columnCount = getTableColumnCount(tableBlock);
+    const headers = getNormalizedHeaders(tableBlock, columnCount);
+
     return (
       <div className="overflow-x-auto rounded-lg border border-slate-200" key={`${block.type}-${index}`}>
         {block.caption ? (
@@ -343,10 +480,10 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
           </div>
         ) : null}
         <table className="min-w-full border-collapse text-sm text-slate-700">
-          {Array.isArray(block.headers) && block.headers.length > 0 ? (
+          {headers.length > 0 ? (
             <thead className="bg-slate-100 text-slate-700">
               <tr>
-                {block.headers.map((header, headerIndex) => (
+                {headers.map((header, headerIndex) => (
                   <th className="border-b border-slate-200 p-3 text-left text-xs font-semibold" key={`${index}-header-${headerIndex}`}>
                     {header}
                   </th>
@@ -357,8 +494,12 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
           <tbody>
             {block.rows.map((row, rowIndex) => (
               <tr className={rowIndex % 2 === 1 ? "bg-slate-50" : ""} key={`${index}-row-${rowIndex}`}>
-                {row.map((cell, cellIndex) => (
-                  <td className="border-b border-slate-100 p-3 align-top last:border-b-0" key={`${index}-cell-${rowIndex}-${cellIndex}`}>
+                {getNormalizedRow(row, columnCount).map(({ cell, colSpan, emphasis }, cellIndex) => (
+                  <td
+                    className={`border-b border-slate-100 p-3 align-top last:border-b-0 ${emphasis ? "bg-slate-100 font-semibold text-slate-800" : ""}`}
+                    colSpan={colSpan}
+                    key={`${index}-cell-${rowIndex}-${cellIndex}`}
+                  >
                     {renderPreviewTableCell(cell, `${index}-cell-content-${rowIndex}-${cellIndex}`)}
                   </td>
                 ))}
@@ -375,17 +516,29 @@ function renderPreviewBlock(block: ContentBlock, index: number) {
   }
 
   if (block.type === "quote" && block.content) {
+    const content = stripProcessNotes(block.content);
+
+    if (!content) {
+      return null;
+    }
+
     return (
       <blockquote className="border-l-4 border-slate-300 bg-white py-2 pl-4 text-sm leading-7 text-slate-700" key={`${block.type}-${index}`}>
-        {block.content}
+        {content}
       </blockquote>
     );
   }
 
   if (hasTextContent(block)) {
+    const content = stripProcessNotes(block.content);
+
+    if (!content) {
+      return null;
+    }
+
     return (
       <p className="mb-2 text-slate-700 leading-relaxed last:mb-0" key={`${block.type}-${index}`}>
-        {block.content}
+        {content}
       </p>
     );
   }

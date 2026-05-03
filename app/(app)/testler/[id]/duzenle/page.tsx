@@ -1,4 +1,4 @@
-import { TopicTestFormPage } from "@/components/admin/tests/TopicTestFormPage";
+import { UnifiedTestFormPage } from "@/components/admin/tests/UnifiedTestFormPage";
 
 export default async function EditTopicTestPage({
   params,
@@ -7,5 +7,5 @@ export default async function EditTopicTestPage({
 }) {
   const { id } = await params;
 
-  return <TopicTestFormPage id={Number(id)} mode="edit" />;
+  return <UnifiedTestFormPage id={Number(id)} mode="edit" />;
 }

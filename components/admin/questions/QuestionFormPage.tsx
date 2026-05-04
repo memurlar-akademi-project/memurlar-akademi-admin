@@ -53,6 +53,8 @@ const emptyForm = {
   question_text: "",
   correct_answer_text: "",
   explanation_text: "",
+  review_flags: [] as string[],
+  review_note: null as string | null,
   published_at: "",
   options: defaultOptions(),
 };
@@ -143,6 +145,8 @@ export function QuestionFormPage({
             question_text: question.question_text ?? "",
             correct_answer_text: question.correct_answer_text ?? "",
             explanation_text: question.explanation_text ?? "",
+            review_flags: question.review_flags ?? [],
+            review_note: question.review_note ?? null,
             published_at: toDateValue(question.published_at),
             options:
               question.question_type === "multiple_choice"
@@ -247,6 +251,8 @@ export function QuestionFormPage({
                 ? form.correct_answer_text
                 : form.options.find((option) => option.is_correct)?.label ?? "A",
             explanation_text: form.explanation_text,
+            review_flags: form.review_flags,
+            review_note: form.review_note,
             published_at: form.published_at || null,
             options:
               form.question_type === "multiple_choice"

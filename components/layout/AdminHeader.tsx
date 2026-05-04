@@ -85,8 +85,20 @@ function resolvePageMeta(pathname: string) {
     return { title: "Sorular" };
   }
 
+  if (pathname === "/sorular/incele") {
+    return { title: "Soru İnceleme", backHref: "/sorular" };
+  }
+
+  if (pathname === "/sorular/onayla") {
+    return { title: "Soru Onayla", backHref: "/sorular" };
+  }
+
   if (pathname === "/sorular/import") {
     return { title: "Soru Import", backHref: "/sorular" };
+  }
+
+  if (pathname === "/sorular/dogru-yanlis-import") {
+    return { title: "D/Y Soru Import", backHref: "/sorular" };
   }
 
   if (/^\/sorular\/import\/\d+\/incele$/.test(pathname)) {

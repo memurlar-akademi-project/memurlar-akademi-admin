@@ -68,8 +68,27 @@ function toEditableItem(item: AdminQuestionImportItem): EditableItem {
     correct_answer_text: item.correct_answer_text,
     explanation_text: item.explanation_text,
     review_status: item.review_status === "rejected" ? "rejected" : "pending_review",
-    options: normalizeReviewOptions(item.options),
+    options: item.question_type === "multiple_choice" ? normalizeReviewOptions(item.options) : [],
   };
+}
+
+function toImportItemPayload(draft: EditableItem): Omit<EditableItem, "options"> & { options?: EditableItem["options"] } {
+  const payload: Omit<EditableItem, "options"> & { options?: EditableItem["options"] } = {
+    topic_id: draft.topic_id,
+    question_type: draft.question_type,
+    difficulty: draft.difficulty,
+    status: draft.status,
+    question_text: draft.question_text,
+    correct_answer_text: draft.correct_answer_text,
+    explanation_text: draft.explanation_text,
+    review_status: draft.review_status,
+  };
+
+  if (draft.question_type === "multiple_choice") {
+    payload.options = draft.options;
+  }
+
+  return payload;
 }
 
 export function QuestionImportReviewPage({ importId }: Props) {
@@ -151,7 +170,14 @@ export function QuestionImportReviewPage({ importId }: Props) {
   const progressPercent = totalCount > 0 ? Math.round((importedCount / totalCount) * 100) : 0;
   const selectedGlobalIndex = selectedIndex === -1 ? 0 : (itemsMeta?.from ?? 1) + selectedIndex;
   const currentTopic = topics.find((topic) => topic.id === draft?.topic_id) ?? selectedItem?.topic ?? null;
-  const correctOptionLabel = draft?.options.find((option) => option.is_correct)?.label ?? draft?.correct_answer_text ?? "-";
+  const correctOptionLabel =
+    draft?.question_type === "multiple_choice"
+      ? draft.options.find((option) => option.is_correct)?.label ?? draft.correct_answer_text ?? "-"
+      : draft?.correct_answer_text === "true"
+        ? "Doğru"
+        : draft?.correct_answer_text === "false"
+          ? "Yanlış"
+          : draft?.correct_answer_text ?? "-";
 
   const topicOptions = useMemo(
     () =>
@@ -245,7 +271,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
       }>(`/admin/question-imports/${importId}/items/${selectedItem.id}`, {
         token,
         method: "PUT",
-        body: draft,
+        body: toImportItemPayload(draft),
       });
 
       applyImportPatch(response.data.import, [response.data.item]);
@@ -280,7 +306,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
       }>(`/admin/question-imports/${importId}/items/${selectedItem.id}`, {
         token,
         method: "PUT",
-        body: { ...draft, status: "active" },
+        body: toImportItemPayload({ ...draft, status: "active" }),
       });
 
       const approveResponse = await adminApiRequest<{
@@ -390,7 +416,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
         }>(`/admin/question-imports/${importId}/items/${selectedItem.id}`, {
           token,
           method: "PUT",
-          body: { ...draft, status: "active" },
+          body: toImportItemPayload({ ...draft, status: "active" }),
         });
       }
 

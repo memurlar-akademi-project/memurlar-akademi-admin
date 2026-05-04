@@ -140,6 +140,10 @@ export type AdminSubject = {
   exam_ids: number[];
   exam_count: number;
   topic_count: number;
+  question_count?: number;
+  approved_question_count?: number;
+  rejected_question_count?: number;
+  pending_approval_question_count?: number;
   readiness?: AdminReadiness;
   created_at?: string | null;
   updated_at?: string | null;
@@ -180,6 +184,9 @@ export type AdminQuestion = {
   question_text?: string;
   correct_answer_text?: string;
   explanation_text?: string;
+  review_flags?: string[];
+  review_note?: string | null;
+  approval_status?: "approved" | "rejected" | null;
   published_at?: string | null;
   topic: {
     id: number;

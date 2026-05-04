@@ -6,6 +6,8 @@ import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import {
   ArrowUpDown,
   CheckCircle2,
+  BookOpenCheck,
+  ListChecks,
   PauseCircle,
   Plus,
   RefreshCcw,
@@ -651,6 +653,14 @@ export default function QuestionsPage() {
             </AdminListToolbarFields>
 
             <AdminListToolbarActions>
+              <Link className="admin-button admin-button-secondary" href="/sorular/onayla">
+                <BookOpenCheck size={16} />
+                Soru Onayla
+              </Link>
+              <Link className="admin-button admin-button-secondary" href="/sorular/dogru-yanlis-import">
+                <ListChecks size={16} />
+                D/Y Import
+              </Link>
               <button
                 className="admin-button admin-button-secondary"
                 disabled={bulkBusy || selectedBulkCount === 0}

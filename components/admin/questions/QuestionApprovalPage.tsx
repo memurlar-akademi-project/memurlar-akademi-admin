@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronLeft, RotateCcw, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronLeft, RotateCcw, Trash2, X } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
@@ -195,6 +195,39 @@ export function QuestionApprovalPage() {
     await updateCurrentApproval(currentQuestion, "rejected", [], note);
   }
 
+  async function deleteCurrent() {
+    if (!token || !currentQuestion || busy) {
+      return;
+    }
+
+    const question = currentQuestion;
+    setBusy(true);
+
+    try {
+      await adminApiRequest(`/admin/questions/${question.id}`, {
+        token,
+        method: "DELETE",
+      });
+
+      removeQuestionFromQueue(question.id);
+      decrementSubjectQuestionCounts(question);
+      setRejectModalOpen(false);
+      showToast({
+        tone: "success",
+        title: "Soru silindi",
+        description: question.topic?.subject?.name ?? selectedSubject?.name ?? "Soru kuyruğu",
+      });
+    } catch (deleteError) {
+      showToast({
+        tone: "error",
+        title: "Silme başarısız",
+        description: deleteError instanceof Error ? deleteError.message : "Soru silinemedi.",
+      });
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function updateCurrentApproval(
     question: AdminQuestion,
     approvalStatus: "approved" | "rejected",
@@ -243,6 +276,28 @@ export function QuestionApprovalPage() {
 
       return next;
     });
+  }
+
+  function decrementSubjectQuestionCounts(question: AdminQuestion) {
+    const subjectId = question.topic?.subject?.id ?? selectedSubjectId;
+
+    if (!subjectId) {
+      return;
+    }
+
+    setSubjects((current) =>
+      current.map((subject) => {
+        if (subject.id !== subjectId) {
+          return subject;
+        }
+
+        return {
+          ...subject,
+          question_count: Math.max((subject.question_count ?? 0) - 1, 0),
+          pending_approval_question_count: Math.max((subject.pending_approval_question_count ?? 0) - 1, 0),
+        };
+      }),
+    );
   }
 
   if (subjectsLoading) {
@@ -375,6 +430,7 @@ export function QuestionApprovalPage() {
             busy={busy}
             currentIndex={currentIndex}
             onApprove={() => void approveCurrent()}
+            onDelete={() => void deleteCurrent()}
             onNext={goNext}
             onPrevious={goPrevious}
             onReject={() => setRejectModalOpen(true)}
@@ -453,6 +509,7 @@ function QuestionCard({
   busy,
   currentIndex,
   onApprove,
+  onDelete,
   onNext,
   onPrevious,
   onReject,
@@ -462,6 +519,7 @@ function QuestionCard({
   busy: boolean;
   currentIndex: number;
   onApprove: () => void;
+  onDelete: () => void;
   onNext: () => void;
   onPrevious: () => void;
   onReject: () => void;
@@ -483,27 +541,40 @@ function QuestionCard({
         Önceki
       </button>
 
-      <button
-        className="absolute left-1/2 top-0 flex h-11 -translate-x-[calc(100%+0.35rem)] items-center gap-2 rounded-2xl bg-rose-600 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-700 disabled:opacity-45"
-        disabled={busy}
-        onClick={onReject}
-        title="Geri gönder"
-        type="button"
-      >
-        <RotateCcw size={17} />
-        Geri gönder
-      </button>
+      <div className="absolute left-1/2 top-0 flex -translate-x-1/2 items-center gap-2">
+        <button
+          className="flex h-11 items-center gap-2 rounded-2xl bg-rose-600 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-700 disabled:opacity-45"
+          disabled={busy}
+          onClick={onReject}
+          title="Geri gönder"
+          type="button"
+        >
+          <RotateCcw size={17} />
+          Geri gönder
+        </button>
 
-      <button
-        className="absolute left-1/2 top-0 flex h-11 translate-x-[0.35rem] items-center gap-2 rounded-2xl bg-emerald-600 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-700 disabled:opacity-45"
-        disabled={busy}
-        onClick={onApprove}
-        title="Onayla"
-        type="button"
-      >
-        <Check size={18} />
-        Onayla
-      </button>
+        <button
+          className="flex h-11 items-center gap-2 rounded-2xl bg-slate-900 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-950 disabled:opacity-45"
+          disabled={busy}
+          onClick={onDelete}
+          title="Sil"
+          type="button"
+        >
+          <Trash2 size={17} />
+          Sil
+        </button>
+
+        <button
+          className="flex h-11 items-center gap-2 rounded-2xl bg-emerald-600 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-700 disabled:opacity-45"
+          disabled={busy}
+          onClick={onApprove}
+          title="Onayla"
+          type="button"
+        >
+          <Check size={18} />
+          Onayla
+        </button>
+      </div>
 
       <article className="rounded-[28px] border border-[var(--color-admin-line)] bg-white px-7 py-6 shadow-[var(--color-admin-shadow)]">
         <div>

@@ -475,6 +475,7 @@ async function fetchApprovalQueue(token: string, subjectId: number): Promise<Adm
     const params = new URLSearchParams({
       subject_id: String(subjectId),
       question_type: "multiple_choice",
+      status: "active",
       approval_status: "unreviewed",
       order: "approval_queue",
       per_page: "500",
@@ -528,6 +529,18 @@ function QuestionCard({
   total: number;
 }) {
   const correctOption = question.options?.find((option) => option.is_correct);
+  const explanationBasis = normalizedExplanationPart(question.explanation_basis ?? question.explanation?.basis);
+  const explanationRelevantProvision = normalizedExplanationPart(
+    question.explanation_relevant_provision ?? question.explanation?.relevant_provision,
+  );
+  const explanationAnswerLink = normalizedExplanationPart(question.explanation_answer_link ?? question.explanation?.answer_link);
+  const explanationRows = [
+    { label: "Dayanak", value: explanationBasis },
+    { label: "İlgili hüküm", value: explanationRelevantProvision },
+    { label: "Cevap bağlantısı", value: explanationAnswerLink },
+  ].filter((item) => item.value);
+  const hasStructuredExplanation = explanationRows.length > 0;
+  const fallbackExplanation = hasStructuredExplanation ? "" : normalizedExplanationPart(question.explanation_text);
 
   return (
     <div className="relative w-full max-w-5xl px-20 pt-16">
@@ -579,9 +592,7 @@ function QuestionCard({
 
       <article className="rounded-[28px] border border-[var(--color-admin-line)] bg-white px-7 py-6 shadow-[var(--color-admin-shadow)]">
         <div>
-          <h2 className="text-[1.28rem] font-extrabold leading-snug tracking-[-0.03em] text-[var(--color-admin-ink)]">
-            {question.question_text}
-          </h2>
+          <QuestionTextBlock text={question.question_text ?? ""} />
 
           <div className="mt-5 grid gap-2.5">
             {(question.options ?? []).map((option) => (
@@ -611,12 +622,27 @@ function QuestionCard({
             <p className="mt-3 text-xs font-bold text-emerald-700">Doğru cevap: {correctOption.label}</p>
           ) : null}
 
-          {question.explanation_text ? (
+          {hasStructuredExplanation || fallbackExplanation ? (
             <div className="mt-5 rounded-2xl border border-sky-100 bg-sky-50 px-4 py-3">
-              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-sky-700">Açıklama</p>
-              <p className="mt-1 text-sm font-semibold leading-6 text-sky-950">
-                {question.explanation_text}
-              </p>
+              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-sky-700">Çözüm / Açıklama</p>
+              {hasStructuredExplanation ? (
+                <div className="mt-3 divide-y divide-sky-100 overflow-hidden rounded-xl border border-sky-100 bg-white/70">
+                  {explanationRows.map((row) => (
+                    <div className="grid gap-1 px-3 py-2.5 md:grid-cols-[145px_1fr] md:gap-3" key={row.label}>
+                      <p className="text-[11px] font-black uppercase tracking-[0.14em] text-sky-700">
+                        {row.label}
+                      </p>
+                      <p className="whitespace-pre-line text-sm font-semibold leading-6 text-sky-950">
+                        {row.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-1 whitespace-pre-line text-sm font-semibold leading-6 text-sky-950">
+                  {fallbackExplanation}
+                </p>
+              )}
             </div>
           ) : null}
         </div>
@@ -634,6 +660,133 @@ function QuestionCard({
       </button>
     </div>
   );
+}
+
+function normalizedExplanationPart(value?: string | null) {
+  const normalized = (value ?? "").trim();
+
+  return normalized.length > 0 ? normalized : null;
+}
+
+const ROMAN_MARKER = /^(I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+/u;
+
+function QuestionTextBlock({ text }: { text: string }) {
+  const parsed = parseQuestionText(text);
+
+  if (parsed.premises.length === 0) {
+    return (
+      <h2 className="whitespace-pre-line text-[1.28rem] font-extrabold leading-snug tracking-[-0.03em] text-[var(--color-admin-ink)]">
+        {text}
+      </h2>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]">
+        {parsed.premises.map((premise) => (
+          <div className="border-b border-[var(--color-admin-line)] px-4 py-3 last:border-b-0" key={premise.marker}>
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-8 min-w-8 items-center justify-center rounded-full bg-white text-xs font-black text-[var(--color-admin-accent)] shadow-sm">
+                {premise.marker}
+              </span>
+              <p className="text-sm font-bold leading-7 text-[var(--color-admin-ink)]">
+                {premise.content}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {parsed.prompt ? (
+        <h2 className="text-[1.28rem] font-extrabold leading-snug tracking-[-0.03em] text-[var(--color-admin-ink)]">
+          {parsed.prompt}
+        </h2>
+      ) : null}
+    </div>
+  );
+}
+
+function parseQuestionText(text: string) {
+  const lines = text
+    .split(/\r?\n/u)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (lines.length > 1 && lines[0] && ROMAN_MARKER.test(lines[0])) {
+    const premises: Array<{ marker: string; content: string }> = [];
+    const promptLines: string[] = [];
+
+    lines.forEach((line) => {
+      const match = line.match(ROMAN_MARKER);
+      if (match && promptLines.length === 0) {
+        premises.push({
+          marker: match[1],
+          content: line.replace(ROMAN_MARKER, "").trim(),
+        });
+        return;
+      }
+
+      promptLines.push(line);
+    });
+
+    return {
+      premises,
+      prompt: promptLines.join(" "),
+    };
+  }
+
+  const inlinePremise = parseInlinePremises(text);
+  if (inlinePremise.premises.length > 1) {
+    return inlinePremise;
+  }
+
+  return {
+    premises: [],
+    prompt: text,
+  };
+}
+
+function parseInlinePremises(text: string) {
+  const matches = [...text.matchAll(/\b(I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+/gu)];
+
+  if (matches.length < 2 || matches[0]?.index !== 0) {
+    return {
+      premises: [],
+      prompt: text,
+    };
+  }
+
+  const premises: Array<{ marker: string; content: string }> = [];
+  let prompt = "";
+
+  matches.forEach((match, index) => {
+    const marker = match[1];
+    const start = (match.index ?? 0) + match[0].length;
+    const nextStart = matches[index + 1]?.index;
+    let raw = text.slice(start, nextStart ?? text.length).trim();
+
+    if (index === matches.length - 1) {
+      const split = raw.match(
+        /^([\s\S]+?[.!?])\s+((?:T\.C\.|Türkiye Cumhuriyeti|[0-9]{3,4}\s+sayılı|[A-ZÇĞİÖŞÜ][\s\S]{0,140}?(?:Kanunu|Yönetmeliği|Anayasası))[\s\S]*)$/u,
+      );
+
+      if (split) {
+        raw = split[1].trim();
+        prompt = split[2].trim();
+      }
+    }
+
+    premises.push({
+      marker,
+      content: raw,
+    });
+  });
+
+  return {
+    premises,
+    prompt,
+  };
 }
 
 function RejectModal({

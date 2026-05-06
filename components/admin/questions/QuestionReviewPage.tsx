@@ -173,7 +173,7 @@ export function QuestionReviewPage() {
   const [topics, setTopics] = useState<AdminTopic[]>([]);
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(null);
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("active");
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [draft, setDraft] = useState<QuestionDraft | null>(null);

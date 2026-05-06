@@ -52,7 +52,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
   const [selectedSubjectId, setSelectedSubjectId] = useState("all");
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
   const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("active");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(20);
   const deferredQuery = useDeferredValue(query);
@@ -640,7 +640,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
                     setSelectedSubjectId("all");
                     setSelectedTopicId(null);
                     setDifficultyFilter("all");
-                    setStatusFilter("all");
+                    setStatusFilter("active");
                   }}
                   options={[{ value: "reset", label: "Filtreleri sıfırla" }]}
                   showSelectedLabel={false}

@@ -69,18 +69,6 @@ function resolvePageMeta(pathname: string) {
     return { title: "Konu İçerikleri" };
   }
 
-  if (pathname === "/icerik-importlari") {
-    return { title: "İçerik Importları" };
-  }
-
-  if (pathname === "/icerik-importlari/yeni") {
-    return { title: "Yeni İçerik Importu", backHref: "/icerik-importlari" };
-  }
-
-  if (/^\/icerik-importlari\/\d+\/incele$/.test(pathname)) {
-    return { title: "Import İncele", backHref: "/icerik-importlari" };
-  }
-
   if (pathname === "/sorular") {
     return { title: "Sorular" };
   }
@@ -91,6 +79,14 @@ function resolvePageMeta(pathname: string) {
 
   if (pathname === "/sorular/onayla") {
     return { title: "Soru Onayla", backHref: "/sorular" };
+  }
+
+  if (pathname === "/sorular/kalite") {
+    return { title: "Soru Kalite", backHref: "/sorular" };
+  }
+
+  if (pathname === "/sorular/dogru-yanlis") {
+    return { title: "D/Y Soruları", backHref: "/sorular" };
   }
 
   if (pathname === "/sorular/import") {

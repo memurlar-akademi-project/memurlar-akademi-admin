@@ -99,7 +99,7 @@ export function QuestionApprovalPage() {
       setError(null);
 
       try {
-        const response = await adminApiRequest<SubjectsResponse>("/admin/subjects", { token });
+        const response = await adminApiRequest<SubjectsResponse>("/admin/subjects?question_type=multiple_choice", { token });
         if (!ignore) {
           setSubjects(response.data.subjects.filter((subject) => subject.topic_count > 0));
         }
@@ -474,6 +474,7 @@ async function fetchApprovalQueue(token: string, subjectId: number): Promise<Adm
   do {
     const params = new URLSearchParams({
       subject_id: String(subjectId),
+      question_type: "multiple_choice",
       approval_status: "unreviewed",
       order: "approval_queue",
       per_page: "500",

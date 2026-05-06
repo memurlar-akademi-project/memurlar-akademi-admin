@@ -38,15 +38,19 @@ import { useAdminList } from "@/hooks/useAdminList";
 import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminExam, AdminMinistry, AdminQuestion, AdminSubject, AdminTopic } from "@/lib/types";
 
-export default function QuestionsPage() {
+type QuestionsListPageProps = {
+  questionType?: "multiple_choice" | "true_false";
+};
+
+export function QuestionsListPage({ questionType = "multiple_choice" }: QuestionsListPageProps) {
   const { token } = useAdminAuth();
   const { showToast } = useAdminToast();
+  const isTrueFalseList = questionType === "true_false";
   const [query, setQuery] = useState("");
   const [selectedMinistryId, setSelectedMinistryId] = useState("all");
   const [selectedExamId, setSelectedExamId] = useState("all");
   const [selectedSubjectId, setSelectedSubjectId] = useState("all");
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
-  const [questionTypeFilter, setQuestionTypeFilter] = useState<"all" | "multiple_choice" | "true_false">("all");
   const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
   const [page, setPage] = useState(1);
@@ -69,7 +73,7 @@ export default function QuestionsPage() {
       exam_id: selectedExamId,
       subject_id: selectedSubjectId,
       topic_id: selectedTopicId,
-      question_type: questionTypeFilter,
+      question_type: questionType,
       difficulty: difficultyFilter,
       status: statusFilter,
     },
@@ -155,7 +159,6 @@ export default function QuestionsPage() {
   }, [
     deferredQuery,
     difficultyFilter,
-    questionTypeFilter,
     selectedExamId,
     selectedMinistryId,
     selectedSubjectId,
@@ -451,6 +454,13 @@ export default function QuestionsPage() {
       ),
     },
     {
+      accessorKey: "quality_status",
+      header: "Kalite",
+      cell: ({ row }) => (
+        <QuestionQualityBadge status={row.original.quality_status ?? null} score={row.original.quality_score ?? null} />
+      ),
+    },
+    {
       accessorKey: "free",
       header: "Erişim",
       cell: ({ row }) => (
@@ -595,18 +605,6 @@ export default function QuestionsPage() {
               <AdminListToolbarField className="min-w-[170px]">
                 <select
                   className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
-                  onChange={(event) => setQuestionTypeFilter(event.target.value as typeof questionTypeFilter)}
-                  value={questionTypeFilter}
-                >
-                  <option value="all">Tüm tipler</option>
-                  <option value="multiple_choice">Çoktan Seçmeli</option>
-                  <option value="true_false">Doğru / Yanlış</option>
-                </select>
-              </AdminListToolbarField>
-
-              <AdminListToolbarField className="min-w-[170px]">
-                <select
-                  className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
                   onChange={(event) => setDifficultyFilter(event.target.value as typeof difficultyFilter)}
                   value={difficultyFilter}
                 >
@@ -641,7 +639,6 @@ export default function QuestionsPage() {
                     setSelectedExamId("all");
                     setSelectedSubjectId("all");
                     setSelectedTopicId(null);
-                    setQuestionTypeFilter("all");
                     setDifficultyFilter("all");
                     setStatusFilter("all");
                   }}
@@ -683,7 +680,9 @@ export default function QuestionsPage() {
           </AdminListToolbarRow>
 
           <AdminListToolbarMeta>
-            <AdminListToolbarMetaPill>{pagination?.total ?? filteredRows.length} soru</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>
+              {pagination?.total ?? filteredRows.length} {isTrueFalseList ? "doğru / yanlış soru" : "çoktan seçmeli soru"}
+            </AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>{filteredRows.length} kayıt bu sayfada</AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>Server-side filtreleme aktif</AdminListToolbarMetaPill>
           </AdminListToolbarMeta>
@@ -714,5 +713,27 @@ export default function QuestionsPage() {
         )}
       </AdminTableCard>
     </div>
+  );
+}
+
+export default function QuestionsPage() {
+  return <QuestionsListPage />;
+}
+
+function QuestionQualityBadge({ status, score }: { status: string | null; score: number | null }) {
+  const config =
+    status === "passed"
+      ? { label: "Kaliteli", className: "border-emerald-200 bg-emerald-50 text-emerald-700" }
+      : status === "failed"
+        ? { label: "Zayıf", className: "border-red-200 bg-red-50 text-red-700" }
+        : status === "borderline"
+          ? { label: "Sınırda", className: "border-amber-200 bg-amber-50 text-amber-700" }
+          : { label: "Yok", className: "border-slate-200 bg-slate-100 text-slate-600" };
+
+  return (
+    <span className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${config.className}`}>
+      {config.label}
+      {score !== null ? ` · ${score}` : ""}
+    </span>
   );
 }

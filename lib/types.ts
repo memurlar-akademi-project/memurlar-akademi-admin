@@ -184,9 +184,23 @@ export type AdminQuestion = {
   question_text?: string;
   correct_answer_text?: string;
   explanation_text?: string;
+  explanation_basis?: string | null;
+  explanation_relevant_provision?: string | null;
+  explanation_answer_link?: string | null;
+  explanation?: {
+    basis: string | null;
+    relevant_provision: string | null;
+    answer_link: string | null;
+  } | null;
   review_flags?: string[];
   review_note?: string | null;
   approval_status?: "approved" | "rejected" | null;
+  quality_status?: "passed" | "failed" | "borderline" | "delete_recommended" | null;
+  quality_score?: number | null;
+  quality_flags?: string[];
+  quality_note?: string | null;
+  quality_model?: string | null;
+  quality_checked_at?: string | null;
   published_at?: string | null;
   topic: {
     id: number;
@@ -206,6 +220,159 @@ export type AdminQuestion = {
   readiness?: AdminReadiness;
 };
 
+export type AdminQuestionQualityCandidate = {
+  id: number;
+  topic_id: number;
+  question_text: string;
+  correct_answer_text: string;
+  explanation_text: string;
+  explanation?: AdminQuestion["explanation"];
+  difficulty: string;
+  status: string;
+  quality_status?: "passed" | "failed" | "borderline" | "delete_recommended" | null;
+  quality_score?: number | null;
+  quality_flags?: string[];
+  quality_note?: string | null;
+  quality_checked_at?: string | null;
+  options: Array<{
+    label: string;
+    option_text: string;
+    is_correct: boolean;
+    sort_order?: number;
+  }>;
+  topic: AdminQuestion["topic"];
+};
+
+export type AdminQuestionQualityRunItem = {
+  question_id: number;
+  predicted_label?: string | null;
+  solver_confidence?: number | null;
+  quality_status: "passed" | "failed" | "borderline" | "delete_recommended";
+  quality_score: number;
+  quality_flags: string[];
+  quality_note: string;
+  question?: {
+    id: number;
+    status: string;
+    approval_status?: "approved" | "rejected" | null;
+    question_text: string;
+    correct_answer_text: string;
+    explanation_text: string;
+    options: Array<{
+      label: string;
+      option_text: string;
+      is_correct: boolean;
+      sort_order?: number;
+    }>;
+  } | null;
+};
+
+export type AdminQuestionQualityRunResult = {
+  run: {
+    id: number;
+    topic_id: number;
+    topic?: {
+      id: number;
+      name: string;
+      subject?: {
+        id: number;
+        code?: string | null;
+        name: string;
+      } | null;
+    } | null;
+    model: string;
+    status: "queued" | "running" | "completed" | "failed";
+    requested_count: number;
+    analyzed_count: number;
+    passed_count: number;
+    failed_count: number;
+    borderline_count: number;
+    failure_message?: string | null;
+    created_at?: string | null;
+  };
+  good_question_ids: number[];
+  bad_question_ids: number[];
+  borderline_question_ids: number[];
+  delete_recommended_question_ids: number[];
+  items: AdminQuestionQualityRunItem[];
+};
+
+export type AdminQuestionQualityRunSummary = {
+  id: number;
+  topic_id: number;
+  topic?: {
+    id: number;
+    name: string;
+    subject?: {
+      id: number;
+      code?: string | null;
+      name: string;
+    } | null;
+  } | null;
+  model?: string | null;
+  requested_count: number;
+  analyzed_count: number;
+  passed_count: number;
+  failed_count: number;
+  borderline_count: number;
+  delete_recommended_count: number;
+  status: "queued" | "running" | "completed" | "failed";
+  failure_message?: string | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
+export type AdminQuestionRewriteRevision = {
+  id: number;
+  question_text: string;
+  correct_answer_text: string;
+  explanation_text: string;
+  explanation?: AdminQuestion["explanation"];
+  explanation_basis?: string | null;
+  explanation_relevant_provision?: string | null;
+  explanation_answer_link?: string | null;
+  changed_question_text: boolean;
+  revision_note: string;
+  quality_flags: string[];
+  quality_note?: string | null;
+  original: {
+    question_text: string;
+    correct_answer_text: string;
+    explanation_text: string;
+    explanation?: AdminQuestion["explanation"];
+    options: Array<{
+      label: string;
+      option_text: string;
+      is_correct: boolean;
+    }>;
+  };
+  options: Array<{
+    label: string;
+    option_text: string;
+    is_correct: boolean;
+  }>;
+};
+
+export type AdminQuestionRewritePreviewResult = {
+  model: string;
+  revision_count: number;
+  revisions: AdminQuestionRewriteRevision[];
+};
+
+export type AdminQuestionRewritePreviewJob = {
+  id: number;
+  question_ids: number[];
+  model?: string | null;
+  status: "queued" | "running" | "completed" | "failed";
+  result?: AdminQuestionRewritePreviewResult | null;
+  revision_count: number;
+  failure_message?: string | null;
+  started_at?: string | null;
+  completed_at?: string | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
 export type AdminQuestionImportItem = {
   id: number;
   topic_id: number;
@@ -216,6 +383,10 @@ export type AdminQuestionImportItem = {
   question_text: string;
   correct_answer_text: string;
   explanation_text: string;
+  explanation_basis?: string | null;
+  explanation_relevant_provision?: string | null;
+  explanation_answer_link?: string | null;
+  explanation?: AdminQuestion["explanation"];
   options: Array<{
     label: string;
     option_text: string;
@@ -378,6 +549,7 @@ export type AdminMockExam = {
 export type AdminTest = {
   id: number;
   scope: "subject" | "topic";
+  exam_id?: number | null;
   subject_id: number;
   topic_id: number | null;
   title: string;
@@ -391,6 +563,10 @@ export type AdminTest = {
   question_count: number;
   question_ids?: number[];
   readiness?: AdminReadiness;
+  exam: {
+    id: number;
+    name: string;
+  } | null;
   subject: {
     id: number;
     name: string;
@@ -408,6 +584,7 @@ export type AdminTest = {
 };
 
 export type AdminTestGenerationSummary = {
+  exams_seen: number;
   subjects_seen: number;
   topics_seen: number;
   eligible_question_count: number;
@@ -421,6 +598,8 @@ export type AdminTestGenerationSummary = {
 export type AdminTestGenerationPlan = {
   type: "subject" | "topic";
   auto_generated_key: string;
+  exam_id?: number | null;
+  exam_name?: string | null;
   subject_id: number;
   subject_name: string;
   topic_id: number | null;
@@ -545,184 +724,4 @@ export type AdminSubscriptionPlan = {
   membership_type: string;
   price: number;
   order_count: number;
-};
-
-export type AdminContentImportTopic = {
-  id: number;
-  proposed_name: string;
-  proposed_content_body: string | null;
-  proposed_sort_order: number;
-  review_status: "accepted" | "excluded";
-  edited_name: string | null;
-  edited_content_body: string | null;
-  edited_sort_order: number | null;
-  final_topic: {
-    id: number;
-    name: string;
-    slug: string;
-  } | null;
-};
-
-export type AdminContentImport = {
-  id: number;
-  source_type: "docx_upload" | "google_doc_link";
-  source_title: string | null;
-  source_reference: string | null;
-  original_filename: string | null;
-  processing_status: "queued" | "processing" | "review" | "approved" | "failed";
-  review_status: "pending" | "review" | "approved";
-  failure_message: string | null;
-  processing_log: Array<{
-    level: "info" | "warning" | "success" | "error";
-    message: string;
-    timestamp: string;
-  }>;
-  candidate_subject_name: string | null;
-  selected_subject: {
-    id: number;
-    name: string;
-    slug: string;
-  } | null;
-  final_subject: {
-    id: number;
-    name: string;
-    slug: string;
-  } | null;
-  target_exam: {
-    id: number;
-    name: string;
-  } | null;
-  topic_count: number;
-  accepted_topic_count: number;
-  excluded_topic_count: number;
-  processed_at?: string | null;
-  approved_at?: string | null;
-  created_at?: string | null;
-  updated_at?: string | null;
-  normalized_text?: string | null;
-  topics?: AdminContentImportTopic[];
-};
-
-export type AdminDocumentProcessingChunk = {
-  id: number;
-  chunk_no: number;
-  name: string;
-  marker: string | null;
-  title: string | null;
-  source_start_index: number | null;
-  source_end_index: number | null;
-  processing_status:
-    | "chunked"
-    | "queued_for_generation"
-    | "generating"
-    | "generated"
-    | "validation_failed"
-    | "generation_failed"
-    | string;
-  review_status: "pending" | "needs_revision" | "approved" | string;
-  final_topic: {
-    id: number;
-    name: string;
-    slug: string;
-    status: string;
-  } | null;
-  stats: {
-    block_count?: number;
-    paragraph_count?: number;
-    table_count?: number;
-    char_count?: number;
-    long_paragraph_count?: number;
-  };
-  warnings: Array<{
-    code?: string;
-    message?: string;
-    severity?: string;
-  }>;
-  preview_blocks: Array<Record<string, unknown>>;
-  has_source_blocks: boolean;
-  has_draft_topic: boolean;
-  source_blocks?: Array<Record<string, unknown>>;
-  draft_topic?: Record<string, unknown> | null;
-  validation_errors: string[];
-  attempt_count: number;
-  generated_at?: string | null;
-  validated_at?: string | null;
-  approved_at?: string | null;
-  created_at?: string | null;
-  updated_at?: string | null;
-};
-
-export type AdminDocumentProcessingJob = {
-  id: number;
-  subject: {
-    id: number;
-    name: string;
-    slug: string;
-  } | null;
-  target_exam: {
-    id: number;
-    name: string;
-  } | null;
-  source_type: "docx_upload" | string;
-  source_title: string | null;
-  original_filename: string | null;
-  storage_disk: string | null;
-  stored_path: string | null;
-  instruction_version: string;
-  ai_provider: string | null;
-  ai_model: string | null;
-  processing_status: string;
-  review_status: string;
-  document_stats: Record<string, number>;
-  detected_rules: Record<string, unknown>;
-  chunking_strategy: string | null;
-  chunking_confidence: string | null;
-  chunking_warnings: Array<{
-    code?: string;
-    message?: string;
-    severity?: string;
-  }>;
-  processing_log: Array<{
-    level: "info" | "warning" | "success" | "error";
-    message: string;
-    timestamp: string;
-  }>;
-  failure_message: string | null;
-  source_fingerprint: string | null;
-  chunk_count: number | null;
-  queued_at?: string | null;
-  started_at?: string | null;
-  processed_at?: string | null;
-  approved_at?: string | null;
-  created_at?: string | null;
-  updated_at?: string | null;
-  chunks?: AdminDocumentProcessingChunk[];
-};
-
-export type AdminDocumentPromptPreview = {
-  model: string | null;
-  provider: string | null;
-  chunk: {
-    id: number;
-    chunk_no: number;
-    name: string;
-    stats: AdminDocumentProcessingChunk["stats"];
-    warnings: AdminDocumentProcessingChunk["warnings"];
-  };
-  estimates: {
-    prompt_char_count: number;
-    prompt_word_count: number;
-    estimated_input_tokens: number;
-    source_block_count: number;
-    source_char_count: number;
-    source_word_count: number;
-  };
-  preflight_warnings: Array<{
-    code: string;
-    message: string;
-  }>;
-  messages: Array<{
-    role: string;
-    content: string;
-  }>;
 };

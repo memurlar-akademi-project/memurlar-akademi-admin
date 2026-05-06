@@ -327,7 +327,7 @@ export function FlashcardImportPage() {
               AI Şablonu
             </h3>
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4 text-sm leading-6 text-[var(--color-admin-muted)]">
-              Hap bilgi JSON'u `topic_id` bazlı gelir. Konu adı JSON'a yazılmaz; konu ve ders bilgisi backend tarafından `topic_id` üzerinden bağlanır.
+              Hap bilgi JSON&apos;u `topic_id` bazlı gelir. Konu adı JSON&apos;a yazılmaz; konu ve ders bilgisi backend tarafından `topic_id` üzerinden bağlanır.
             </div>
 
             <pre className="mt-4 overflow-x-auto rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] p-4 text-[12px] leading-6 text-[var(--color-admin-ink)]">

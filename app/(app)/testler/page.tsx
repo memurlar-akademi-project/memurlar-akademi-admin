@@ -24,7 +24,7 @@ import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { AdminTableSkeleton } from "@/components/ui/Skeleton";
 import { useAdminList } from "@/hooks/useAdminList";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminSubject, AdminTest, AdminTestGenerationResult, AdminTopic } from "@/lib/types";
+import type { AdminExam, AdminSubject, AdminTest, AdminTestGenerationResult, AdminTopic } from "@/lib/types";
 
 export default function TestsPage() {
   const { token } = useAdminAuth();
@@ -43,6 +43,10 @@ export default function TestsPage() {
     endpoint: "/admin/subjects",
     responseKey: "subjects",
   });
+  const { items: exams } = useAdminList<AdminExam>({
+    endpoint: "/admin/exams",
+    responseKey: "exams",
+  });
   const { items: topics } = useAdminList<AdminTopic>({
     endpoint: "/admin/topics",
     responseKey: "topics",
@@ -55,6 +59,7 @@ export default function TestsPage() {
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
   const [busyKey, setBusyKey] = useState<string | null>(null);
   const [generationOpen, setGenerationOpen] = useState(false);
+  const [generationExamId, setGenerationExamId] = useState<number | null>(null);
   const [generationSubjectId, setGenerationSubjectId] = useState<number | null>(null);
   const [generationResult, setGenerationResult] = useState<AdminTestGenerationResult | null>(null);
   const [generationLoading, setGenerationLoading] = useState(false);
@@ -70,6 +75,23 @@ export default function TestsPage() {
     () => subjects.map((subject) => ({ id: subject.id, label: subject.name, hint: `${subject.topic_count} konu` })),
     [subjects],
   );
+
+  const examOptions = useMemo(
+    () => exams.map((exam) => ({ id: exam.id, label: exam.name, hint: exam.ministry?.name })),
+    [exams],
+  );
+
+  const generationSubjectOptions = useMemo(() => {
+    if (generationExamId === null) {
+      return subjectOptions;
+    }
+
+    return subjects
+      .filter((subject) =>
+        topics.some((topic) => topic.subject_id === subject.id && (topic.exam_ids ?? []).includes(generationExamId)),
+      )
+      .map((subject) => ({ id: subject.id, label: subject.name, hint: `${subject.topic_count} konu` }));
+  }, [generationExamId, subjectOptions, subjects, topics]);
 
   const topicOptions = useMemo(
     () =>
@@ -124,6 +146,7 @@ export default function TestsPage() {
         method: "PUT",
         body: {
           subject_id: item.subject_id,
+          exam_id: item.topic_id ? null : item.exam_id,
           topic_id: item.topic_id,
           title: item.title,
           slug: item.slug ?? null,
@@ -183,8 +206,12 @@ export default function TestsPage() {
     }
   }
 
-  function generationPath(subjectId: number | null) {
+  function generationPath(examId: number | null, subjectId: number | null) {
     const params = new URLSearchParams();
+
+    if (examId !== null) {
+      params.set("exam_id", String(examId));
+    }
 
     if (subjectId !== null) {
       params.set("subject_id", String(subjectId));
@@ -193,8 +220,14 @@ export default function TestsPage() {
     return `/admin/tests/auto-generate/preview${params.toString() ? `?${params.toString()}` : ""}`;
   }
 
-  async function loadGenerationPreview(subjectId: number | null) {
+  async function loadGenerationPreview(examId: number | null, subjectId: number | null) {
     if (!token) {
+      return;
+    }
+
+    if (examId === null) {
+      setGenerationResult(null);
+      setGenerationError("Otomatik genel test üretimi için önce sınav seçmelisin.");
       return;
     }
 
@@ -202,7 +235,7 @@ export default function TestsPage() {
     setGenerationError(null);
 
     try {
-      const response = await adminApiRequest<AdminTestGenerationResult>(generationPath(subjectId), { token });
+      const response = await adminApiRequest<AdminTestGenerationResult>(generationPath(examId, subjectId), { token });
       setGenerationResult(response.data);
     } catch (previewError) {
       setGenerationError(previewError instanceof Error ? previewError.message : "Önizleme alınamadı.");
@@ -214,14 +247,21 @@ export default function TestsPage() {
 
   function handleOpenGenerator() {
     const initialSubjectId = selectedSubjectId;
+    const initialExamId = topics.find((topic) => initialSubjectId === null || topic.subject_id === initialSubjectId)?.exam_ids?.[0] ?? exams[0]?.id ?? null;
 
+    setGenerationExamId(initialExamId);
     setGenerationSubjectId(initialSubjectId);
     setGenerationOpen(true);
-    void loadGenerationPreview(initialSubjectId);
+    void loadGenerationPreview(initialExamId, initialSubjectId);
   }
 
   async function handleApplyGeneration() {
     if (!token) {
+      return;
+    }
+
+    if (generationExamId === null) {
+      setGenerationError("Otomatik genel test üretimi için önce sınav seçmelisin.");
       return;
     }
 
@@ -233,6 +273,7 @@ export default function TestsPage() {
         token,
         method: "POST",
         body: {
+          exam_id: generationExamId,
           subject_id: generationSubjectId,
         },
       });
@@ -270,6 +311,7 @@ export default function TestsPage() {
           <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
             {row.original.subject?.name ?? "Ders yok"}
             {row.original.topic ? ` · ${row.original.topic.name}` : ""}
+            {!row.original.topic && row.original.exam ? ` · ${row.original.exam.name}` : ""}
           </p>
           <AdminReadinessHint readiness={row.original.readiness} />
         </div>
@@ -498,13 +540,31 @@ export default function TestsPage() {
               <div className="space-y-4">
                 <div className="rounded-[22px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
                   <AdminSearchSelect
+                    emptyText="Sınav bulunamadı."
+                    label="Sınav"
+                    onChange={(next) => {
+                      setGenerationExamId(next);
+                      setGenerationSubjectId(null);
+                      void loadGenerationPreview(next, null);
+                    }}
+                    options={examOptions}
+                    placeholder="Sınav ara"
+                    value={generationExamId}
+                  />
+                  <p className="mt-3 text-xs leading-5 text-[var(--color-admin-muted)]">
+                    Genel testler sınava özel üretilir; aynı ders farklı sınavlarda ayrı Genel Test alır.
+                  </p>
+                </div>
+
+                <div className="rounded-[22px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
+                  <AdminSearchSelect
                     emptyText="Ders bulunamadı."
                     label="Ders filtresi"
                     onChange={(next) => {
                       setGenerationSubjectId(next);
-                      void loadGenerationPreview(next);
+                      void loadGenerationPreview(generationExamId, next);
                     }}
-                    options={subjectOptions}
+                    options={generationSubjectOptions}
                     placeholder="Ders ara"
                     value={generationSubjectId}
                   />
@@ -534,10 +594,10 @@ export default function TestsPage() {
 
                 <div className="grid gap-3 sm:grid-cols-4">
                   {[
+                    ["Sınav", generationResult?.summary.exams_seen ?? 0],
                     ["Ders", generationResult?.summary.subjects_seen ?? 0],
                     ["Konu", generationResult?.summary.topics_seen ?? 0],
                     ["Oluştur", generationResult?.summary.planned_create_count ?? 0],
-                    ["Güncelle", generationResult?.summary.planned_update_count ?? 0],
                   ].map(([label, value]) => (
                     <div
                       className="rounded-[20px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3"
@@ -581,7 +641,10 @@ export default function TestsPage() {
                               </span>
                               <p className="truncate text-sm font-bold text-[var(--color-admin-ink)]">{plan.title}</p>
                             </div>
-                            <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">{plan.reason}</p>
+                              <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">
+                                {plan.type === "subject" && plan.exam_name ? `${plan.exam_name} · ${plan.subject_name} · ` : ""}
+                                {plan.reason}
+                              </p>
                           </div>
                           <div>
                             <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">Uygun</p>
@@ -627,7 +690,7 @@ export default function TestsPage() {
               <div className="flex gap-2">
                 <button
                   className="rounded-2xl border border-[var(--color-admin-line)] px-4 py-2.5 text-sm font-bold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
-                  onClick={() => void loadGenerationPreview(generationSubjectId)}
+                  onClick={() => void loadGenerationPreview(generationExamId, generationSubjectId)}
                   type="button"
                 >
                   Önizlemeyi Yenile

@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMemo, useState } from "react";
 import {
   BookOpenText,
   Boxes,
   Building2,
   BadgeCheck,
+  ChevronDown,
   FileAudio2,
   FileUp,
   ListChecks,
-  WandSparkles,
   Files,
+  Gauge,
   GraduationCap,
   LayoutDashboard,
   LibraryBig,
@@ -23,35 +25,59 @@ import {
 
 const navigation = [
   {
-    title: "Ana",
-    items: [{ href: "/dashboard", label: "Dashboard", icon: LayoutDashboard }],
-  },
-  {
-    title: "Katalog",
+    id: "exam-setup",
+    title: "Sınav Yapısı",
+    icon: GraduationCap,
     items: [
       { href: "/bakanliklar", label: "Bakanlıklar", icon: Building2 },
       { href: "/sinavlar", label: "Sınavlar", icon: GraduationCap },
-      { href: "/dersler", label: "Dersler", icon: LibraryBig },
-      { href: "/konular", label: "Konular", icon: BookOpenText },
     ],
   },
   {
-    title: "İçerik",
+    id: "lessons",
+    title: "Dersler",
+    icon: LibraryBig,
     items: [
+      { href: "/dersler", label: "Ders Listesi", icon: LibraryBig },
+      { href: "/konular", label: "Konular", icon: BookOpenText },
       { href: "/konular/import", label: "Konu Import", icon: FileUp },
-      { href: "/ai-konu-import", label: "AI Konu Import", icon: WandSparkles },
-      { href: "/icerik-importlari", label: "İçerik Importları", icon: FileUp },
+    ],
+  },
+  {
+    id: "questions",
+    title: "Sorular",
+    icon: ScrollText,
+    items: [
       { href: "/sorular", label: "Sorular", icon: ScrollText },
       { href: "/sorular/onayla", label: "Soru Onayla", icon: BadgeCheck },
+      { href: "/sorular/kalite", label: "Soru Kalite", icon: Gauge },
+      { href: "/sorular/import", label: "Soru Import", icon: FileUp },
+      { href: "/sorular/dogru-yanlis", label: "D/Y Soruları", icon: ListChecks },
       { href: "/sorular/dogru-yanlis-import", label: "D/Y Import", icon: ListChecks },
-      { href: "/testler", label: "Testler", icon: Waypoints },
+    ],
+  },
+  {
+    id: "study",
+    title: "Hap Bilgi",
+    icon: Files,
+    items: [
       { href: "/flashcardlar", label: "Hap Bilgiler", icon: Files },
       { href: "/flashcardlar/import", label: "Hap Bilgi Import", icon: FileUp },
+    ],
+  },
+  {
+    id: "exams",
+    title: "Test ve Deneme",
+    icon: Waypoints,
+    items: [
+      { href: "/testler", label: "Testler", icon: Waypoints },
       { href: "/denemeler", label: "Denemeler", icon: FileAudio2 },
     ],
   },
   {
+    id: "operations",
     title: "Operasyon",
+    icon: ShieldUser,
     items: [
       { href: "/kullanicilar", label: "Kullanıcılar", icon: ShieldUser },
       { href: "/siparisler", label: "Siparişler", icon: ReceiptText },
@@ -59,8 +85,47 @@ const navigation = [
   },
 ];
 
+function isItemActive(pathname: string, href: string) {
+  return pathname === href || (href !== "/dashboard" && pathname.startsWith(`${href}/`));
+}
+
+function findActiveHref(pathname: string) {
+  return navigation
+    .flatMap((group) => group.items)
+    .filter((item) => isItemActive(pathname, item.href))
+    .sort((first, second) => second.href.length - first.href.length)[0]?.href ?? null;
+}
+
+function findActiveGroupId(pathname: string) {
+  const activeHref = findActiveHref(pathname);
+
+  if (!activeHref) {
+    return null;
+  }
+
+  return navigation.find((group) => group.items.some((item) => item.href === activeHref))?.id ?? null;
+}
+
 export function AdminSidebar() {
   const pathname = usePathname();
+  const activeHref = findActiveHref(pathname);
+  const activeGroupId = findActiveGroupId(pathname);
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
+    return navigation.reduce<Record<string, boolean>>((accumulator, group, index) => {
+      accumulator[group.id] = activeGroupId ? group.id === activeGroupId : index === 0;
+
+      return accumulator;
+    }, {});
+  });
+  const visibleOpenGroups = useMemo(() => (
+    activeGroupId ? { ...openGroups, [activeGroupId]: true } : openGroups
+  ), [activeGroupId, openGroups]);
+
+  const isDashboardActive = pathname === "/dashboard";
+
+  function toggleGroup(groupId: string) {
+    setOpenGroups((current) => ({ ...current, [groupId]: !current[groupId] }));
+  }
 
   return (
     <aside className="sticky top-0 hidden h-screen border-r border-[var(--color-admin-sidebar-line)] bg-[linear-gradient(180deg,var(--color-admin-sidebar)_0%,var(--color-admin-sidebar-2)_100%)] px-4 py-5 lg:block">
@@ -80,40 +145,56 @@ export function AdminSidebar() {
         </div>
 
         <nav className="mt-6 flex-1 overflow-y-auto pr-1">
-          {navigation.map((group) => (
-            <div key={group.title} className="mb-6">
-              <p className="px-3 pb-2 text-[9px] font-extrabold uppercase tracking-[0.22em] text-white/30">
-                {group.title}
-              </p>
-              <div className="space-y-1">
-                {group.items.map((item) => {
-                  const isActive = pathname === item.href;
-                  const Icon = item.icon;
+          <Link
+            className={`admin-nav-item mb-3 ${isDashboardActive ? "admin-nav-item-active" : ""}`}
+            href="/dashboard"
+          >
+            <LayoutDashboard size={17} />
+            <span className="font-semibold">Dashboard</span>
+          </Link>
 
-                  return (
-                    <Link
-                      key={item.href}
-                      className={`admin-nav-item ${isActive ? "admin-nav-item-active" : ""}`}
-                      href={item.href}
-                    >
-                      <Icon size={17} />
-                      <span className="font-semibold">{item.label}</span>
-                    </Link>
-                  );
-                })}
+          {navigation.map((group) => {
+            const GroupIcon = group.icon;
+
+            return (
+              <div key={group.id} className="mb-2 rounded-[18px] border border-white/6 bg-white/[0.025] p-1">
+                <button
+                  className="flex w-full items-center gap-3 rounded-[14px] px-3 py-2.5 text-left text-[13px] font-extrabold text-white/78 transition hover:bg-white/5 hover:text-white"
+                  type="button"
+                  aria-expanded={visibleOpenGroups[group.id] ?? false}
+                  onClick={() => toggleGroup(group.id)}
+                >
+                  <GroupIcon size={17} />
+                  <span className="flex-1">{group.title}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`text-white/45 transition-transform ${visibleOpenGroups[group.id] ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {visibleOpenGroups[group.id] ? (
+                  <div className="mt-1 space-y-1 border-t border-white/6 pt-1">
+                    {group.items.map((item) => {
+                      const isActive = activeHref === item.href;
+                      const Icon = item.icon;
+
+                      return (
+                        <Link
+                          key={item.href}
+                          className={`admin-nav-item ${isActive ? "admin-nav-item-active" : ""}`}
+                          href={item.href}
+                        >
+                          <Icon size={17} />
+                          <span className="font-semibold">{item.label}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : null}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </nav>
-
-        <div className="rounded-[20px] border border-[var(--color-admin-sidebar-line)] bg-white/4 px-4 py-4 text-white/60">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/35">
-            Not
-          </p>
-          <p className="mt-2 text-[13px] leading-5.5">
-            Liste ekranı, ayrı oluşturma ve ayrı düzenleme sayfası bu panelin temel kalıbı.
-          </p>
-        </div>
       </div>
     </aside>
   );

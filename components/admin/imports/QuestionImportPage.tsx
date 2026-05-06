@@ -21,7 +21,11 @@ const questionTemplate = `{
       "status": "draft",
       "question_text": "Disiplin cezası verilmeden önce savunma için en az kaç gün süre verilir?",
       "correct_answer_text": "B",
-      "explanation_text": "657 sayılı Kanun'a göre en az 7 gün süre tanınır.",
+      "explanation": {
+        "basis": "657 sayılı Devlet Memurları Kanunu m. 130",
+        "relevant_provision": "Devlet memuru hakkında savunması alınmadan disiplin cezası verilemez.",
+        "answer_link": "Savunma süresi için verilen süre yedi günden az olamayacağından doğru cevap B seçeneğidir."
+      },
       "options": [
         { "label": "A", "option_text": "3 gün", "is_correct": false },
         { "label": "B", "option_text": "7 gün", "is_correct": true },

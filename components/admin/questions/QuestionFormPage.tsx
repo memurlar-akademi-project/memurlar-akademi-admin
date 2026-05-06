@@ -53,6 +53,9 @@ const emptyForm = {
   question_text: "",
   correct_answer_text: "",
   explanation_text: "",
+  explanation_basis: "",
+  explanation_relevant_provision: "",
+  explanation_answer_link: "",
   review_flags: [] as string[],
   review_note: null as string | null,
   published_at: "",
@@ -145,6 +148,9 @@ export function QuestionFormPage({
             question_text: question.question_text ?? "",
             correct_answer_text: question.correct_answer_text ?? "",
             explanation_text: question.explanation_text ?? "",
+            explanation_basis: question.explanation_basis ?? question.explanation?.basis ?? "",
+            explanation_relevant_provision: question.explanation_relevant_provision ?? question.explanation?.relevant_provision ?? "",
+            explanation_answer_link: question.explanation_answer_link ?? question.explanation?.answer_link ?? "",
             review_flags: question.review_flags ?? [],
             review_note: question.review_note ?? null,
             published_at: toDateValue(question.published_at),
@@ -251,6 +257,9 @@ export function QuestionFormPage({
                 ? form.correct_answer_text
                 : form.options.find((option) => option.is_correct)?.label ?? "A",
             explanation_text: form.explanation_text,
+            explanation_basis: form.explanation_basis,
+            explanation_relevant_provision: form.explanation_relevant_provision,
+            explanation_answer_link: form.explanation_answer_link,
             review_flags: form.review_flags,
             review_note: form.review_note,
             published_at: form.published_at || null,
@@ -479,8 +488,48 @@ export function QuestionFormPage({
                       className="space-y-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]/70 p-4"
                       ref={explanationSectionRef}
                     >
-                      <label className="block space-y-2.5">
-                        <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Açıklama / Çözüm</span>
+                      <div className="space-y-4">
+                        <div>
+                          <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Açıklama / Çözüm</span>
+                          <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                            Kullanıcı tarafında ayrı satır/kutu olarak gösterilir. Dayanak, ilgili hüküm ve cevap bağlantısı ayrı saklanır.
+                          </p>
+                        </div>
+                        <label className="block space-y-2">
+                          <span className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">Dayanak</span>
+                          <textarea
+                            className="admin-input min-h-[72px] resize-y"
+                            onChange={(event) =>
+                              setForm((current) => ({ ...current, explanation_basis: event.target.value }))
+                            }
+                            placeholder="Örn. T.C. Anayasası m. 21 - Konut dokunulmazlığı"
+                            value={form.explanation_basis}
+                          />
+                        </label>
+                        <label className="block space-y-2">
+                          <span className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">İlgili Hüküm</span>
+                          <textarea
+                            className="admin-input min-h-[96px] resize-y"
+                            onChange={(event) =>
+                              setForm((current) => ({ ...current, explanation_relevant_provision: event.target.value }))
+                            }
+                            placeholder="Soruyu çözdüren kaynak hüküm parçası"
+                            value={form.explanation_relevant_provision}
+                          />
+                        </label>
+                        <label className="block space-y-2">
+                          <span className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">Cevap Bağlantısı</span>
+                          <textarea
+                            className="admin-input min-h-[96px] resize-y"
+                            onChange={(event) =>
+                              setForm((current) => ({ ...current, explanation_answer_link: event.target.value }))
+                            }
+                            placeholder="Doğru cevabın ilgili hükümle bağlantısı"
+                            value={form.explanation_answer_link}
+                          />
+                        </label>
+                        <label className="block space-y-2">
+                          <span className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">Düz Açıklama (opsiyonel)</span>
                         <textarea
                           className="admin-input min-h-[120px] resize-y"
                           onChange={(event) =>
@@ -489,7 +538,8 @@ export function QuestionFormPage({
                           placeholder="Doğru cevabın gerekçesi veya açıklaması"
                           value={form.explanation_text}
                         />
-                      </label>
+                        </label>
+                      </div>
                     </section>
                 </div>
 

@@ -52,6 +52,7 @@ const emptyReadiness: AdminReadiness = {
 };
 
 const emptyForm = {
+  exam_id: null as number | null,
   subject_id: null as number | null,
   topic_id: null as number | null,
   title: "",
@@ -158,6 +159,7 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
 
         setTest(item);
         setForm({
+          exam_id: item.exam_id ?? null,
           subject_id: item.subject?.id ?? item.subject_id,
           topic_id: item.topic?.id ?? item.topic_id ?? null,
           title: item.title,
@@ -207,7 +209,7 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
     }
 
     const topic = form.topic_id ? topics.find((entry) => entry.id === form.topic_id) : null;
-    const examId = topic?.exam_ids?.[0] ?? topics.find((entry) => entry.subject_id === subject.id)?.exam_ids?.[0] ?? null;
+    const examId = topic?.exam_ids?.[0] ?? form.exam_id ?? null;
     const exam = examId ? exams.find((entry) => entry.id === examId) : null;
 
     setSelectedExamId(examId);
@@ -241,6 +243,8 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
 
         if (form.topic_id) {
           params.set("topic_id", String(form.topic_id));
+        } else if (form.exam_id) {
+          params.set("exam_id", String(form.exam_id));
         }
 
         if (difficultyFilter !== "all") {
@@ -293,6 +297,7 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
     difficultyFilter,
     form.subject_id,
     form.topic_id,
+    form.exam_id,
     questionPage,
     token,
   ]);
@@ -431,6 +436,7 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
       ...current,
       subject_id: nextSubjectId,
       topic_id: null,
+      exam_id: selectedExamId,
       question_ids: [],
     }));
     setQuestionSearch("");
@@ -440,6 +446,7 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
     setForm((current) => ({
       ...current,
       topic_id: nextTopicId,
+      exam_id: nextTopicId ? null : selectedExamId,
       question_ids: [],
     }));
     setQuestionSearch("");
@@ -464,6 +471,12 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
   function validateStep(nextStep: WizardStep): boolean {
     if (nextStep > 0 && (!form.subject_id || !form.title.trim() || !Number(form.duration_min))) {
       setError("Devam etmek için ders, test başlığı ve süre bilgilerini doldurmalısın.");
+      setStep(0);
+      return false;
+    }
+
+    if (nextStep > 0 && !form.topic_id && !form.exam_id) {
+      setError("Ders geneli test için sınav seçimi zorunludur.");
       setStep(0);
       return false;
     }
@@ -512,6 +525,7 @@ export function UnifiedTestFormPage({ mode, id }: Props) {
         token,
         method: mode === "edit" ? "PUT" : "POST",
         body: {
+          exam_id: form.topic_id ? null : form.exam_id,
           subject_id: form.subject_id,
           topic_id: form.topic_id,
           title: form.title,
@@ -764,7 +778,13 @@ function ScopeStep({
               onChange={(next) => {
                 setSelectedMinistryId(next);
                 setSelectedExamId(null);
-                handleSubjectChange(null);
+                onFormChange((current) => ({
+                  ...current,
+                  exam_id: null,
+                  subject_id: null,
+                  topic_id: null,
+                  question_ids: [],
+                }));
               }}
               options={ministryOptions}
               placeholder="Bakanlık ara"
@@ -779,7 +799,13 @@ function ScopeStep({
               label="Sınav"
               onChange={(next) => {
                 setSelectedExamId(next);
-                handleSubjectChange(null);
+                onFormChange((current) => ({
+                  ...current,
+                  exam_id: next,
+                  subject_id: null,
+                  topic_id: null,
+                  question_ids: [],
+                }));
               }}
               options={examOptions}
               placeholder="Sınav ara"
@@ -818,7 +844,7 @@ function ScopeStep({
             <input
               className="admin-input h-11"
               onChange={(event) => onFormChange((current) => ({ ...current, title: event.target.value }))}
-              placeholder="Örn. Genel Test 1"
+              placeholder="Örn. Genel Test"
               value={form.title}
             />
           </Field>
@@ -889,7 +915,7 @@ function ScopeStep({
             {activeScope === "topic" ? "Konu testi" : "Ders geneli test"}
           </p>
           <p className="mt-2 text-sm leading-6 text-[var(--color-admin-muted)]">
-            Konu seçilirse test sadece o konuya bağlanır. Konu boş kalırsa ders geneli test olarak kaydedilir.
+            Konu seçilirse test sadece o konuya bağlanır. Konu boş kalırsa seçili sınava özel Genel Test olarak kaydedilir.
           </p>
         </div>
         <div className="mt-4 grid gap-3">

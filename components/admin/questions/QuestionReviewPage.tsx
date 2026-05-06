@@ -287,6 +287,7 @@ export function QuestionReviewPage() {
             page: String(page),
             per_page: "500",
             subject_id: String(selectedSubjectId),
+            question_type: "multiple_choice",
           });
 
           if (selectedTopicId) {

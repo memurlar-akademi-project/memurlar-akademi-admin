@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronLeft, RotateCcw, Trash2, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronLeft, Pencil, RotateCcw, Save, Trash2, X } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
@@ -16,6 +16,19 @@ type FeedbackValue =
 
 type QuestionsResponse = {
   questions: AdminQuestion[];
+};
+
+type EditableQuestionDraft = {
+  question_text: string;
+  options: Array<{
+    label: string;
+    option_text: string;
+    is_correct: boolean;
+  }>;
+  explanation_text: string;
+  explanation_basis: string;
+  explanation_relevant_provision: string;
+  explanation_answer_link: string;
 };
 
 type SubjectsResponse = {
@@ -228,6 +241,43 @@ export function QuestionApprovalPage() {
     }
   }
 
+  async function saveQuestionEdits(question: AdminQuestion, draft: EditableQuestionDraft) {
+    if (!token || busy) {
+      return false;
+    }
+
+    setBusy(true);
+
+    try {
+      const response = await adminApiRequest<{ question: AdminQuestion }>(`/admin/questions/${question.id}`, {
+        token,
+        method: "PUT",
+        body: buildQuestionUpdatePayload(question, draft),
+      });
+
+      setQuestions((current) =>
+        current.map((item) => (item.id === question.id ? response.data.question : item)),
+      );
+      showToast({
+        tone: "success",
+        title: "Soru güncellendi",
+        description: "Değişiklikler onay kuyruğundaki soruya işlendi.",
+      });
+
+      return true;
+    } catch (saveError) {
+      showToast({
+        tone: "error",
+        title: "Soru kaydedilemedi",
+        description: saveError instanceof Error ? saveError.message : "Düzenleme kaydedilemedi.",
+      });
+
+      return false;
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function updateCurrentApproval(
     question: AdminQuestion,
     approvalStatus: "approved" | "rejected",
@@ -434,6 +484,7 @@ export function QuestionApprovalPage() {
             onNext={goNext}
             onPrevious={goPrevious}
             onReject={() => setRejectModalOpen(true)}
+            onSave={(draft) => saveQuestionEdits(currentQuestion, draft)}
             question={currentQuestion}
             total={total}
           />
@@ -515,6 +566,7 @@ function QuestionCard({
   onNext,
   onPrevious,
   onReject,
+  onSave,
   question,
   total,
 }: {
@@ -525,9 +577,13 @@ function QuestionCard({
   onNext: () => void;
   onPrevious: () => void;
   onReject: () => void;
+  onSave: (draft: EditableQuestionDraft) => Promise<boolean>;
   question: AdminQuestion;
   total: number;
 }) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState<EditableQuestionDraft>(() => createQuestionDraft(question));
+  const [editError, setEditError] = useState<string | null>(null);
   const correctOption = question.options?.find((option) => option.is_correct);
   const explanationBasis = normalizedExplanationPart(question.explanation_basis ?? question.explanation?.basis);
   const explanationRelevantProvision = normalizedExplanationPart(
@@ -541,13 +597,52 @@ function QuestionCard({
   ].filter((item) => item.value);
   const hasStructuredExplanation = explanationRows.length > 0;
   const fallbackExplanation = hasStructuredExplanation ? "" : normalizedExplanationPart(question.explanation_text);
+  const controlsDisabled = busy || editing;
+
+  useEffect(() => {
+    setEditing(false);
+    setDraft(createQuestionDraft(question));
+    setEditError(null);
+  }, [question.id, question]);
+
+  async function handleSave() {
+    const validationError = validateDraft(draft);
+
+    if (validationError) {
+      setEditError(validationError);
+      return;
+    }
+
+    const saved = await onSave(draft);
+    if (saved) {
+      setEditing(false);
+      setEditError(null);
+    }
+  }
+
+  function updateDraftOption(label: string, patch: Partial<EditableQuestionDraft["options"][number]>) {
+    setDraft((current) => ({
+      ...current,
+      options: current.options.map((option) => (option.label === label ? { ...option, ...patch } : option)),
+    }));
+  }
+
+  function setCorrectOption(label: string) {
+    setDraft((current) => ({
+      ...current,
+      options: current.options.map((option) => ({
+        ...option,
+        is_correct: option.label === label,
+      })),
+    }));
+  }
 
   return (
     <div className="relative w-full max-w-5xl px-20 pt-16">
       <button
         aria-label="Önceki soru"
         className="absolute left-4 top-0 flex h-11 items-center gap-2 rounded-2xl border border-[var(--color-admin-line)] bg-white px-4 text-sm font-black text-[var(--color-admin-ink)] shadow-sm transition hover:border-[var(--color-admin-accent)] disabled:opacity-25"
-        disabled={busy || currentIndex === 0}
+        disabled={controlsDisabled || currentIndex === 0}
         onClick={onPrevious}
         type="button"
       >
@@ -558,7 +653,7 @@ function QuestionCard({
       <div className="absolute left-1/2 top-0 flex -translate-x-1/2 items-center gap-2">
         <button
           className="flex h-11 items-center gap-2 rounded-2xl bg-rose-600 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-700 disabled:opacity-45"
-          disabled={busy}
+          disabled={controlsDisabled}
           onClick={onReject}
           title="Geri gönder"
           type="button"
@@ -569,7 +664,7 @@ function QuestionCard({
 
         <button
           className="flex h-11 items-center gap-2 rounded-2xl bg-slate-900 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-950 disabled:opacity-45"
-          disabled={busy}
+          disabled={controlsDisabled}
           onClick={onDelete}
           title="Sil"
           type="button"
@@ -580,7 +675,7 @@ function QuestionCard({
 
         <button
           className="flex h-11 items-center gap-2 rounded-2xl bg-emerald-600 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-700 disabled:opacity-45"
-          disabled={busy}
+          disabled={controlsDisabled}
           onClick={onApprove}
           title="Onayla"
           type="button"
@@ -592,66 +687,213 @@ function QuestionCard({
 
       <article className="rounded-[28px] border border-[var(--color-admin-line)] bg-white px-7 py-6 shadow-[var(--color-admin-shadow)]">
         <div>
-          <QuestionTextBlock text={question.question_text ?? ""} />
-
-          <div className="mt-5 grid gap-2.5">
-            {(question.options ?? []).map((option) => (
-              <div
-                className={`flex items-start gap-3 rounded-2xl border px-4 py-3 ${
-                  option.is_correct
-                    ? "border-emerald-300 bg-emerald-50"
-                    : "border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]"
-                }`}
-                key={`${question.id}-${option.label}`}
-              >
-                <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${
-                    option.is_correct ? "bg-emerald-500 text-white" : "bg-white text-[var(--color-admin-muted)]"
-                  }`}
-                >
-                  {option.label}
-                </span>
-                <p className="min-w-0 flex-1 text-sm font-semibold leading-6 text-[var(--color-admin-ink)]">
-                  {option.option_text}
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+                #{question.id} · {question.topic?.name ?? "Konu yok"}
+              </p>
+              {editing ? (
+                <p className="mt-1 text-xs font-bold text-amber-700">
+                  Düzenleme modunda onay/ret/sil kapalıdır; önce kaydet veya vazgeç.
                 </p>
+              ) : null}
+            </div>
+
+            {editing ? (
+              <div className="flex items-center gap-2">
+                <button
+                  className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-admin-line)] bg-white px-3 py-2 text-xs font-black text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)] disabled:opacity-45"
+                  disabled={busy}
+                  onClick={() => {
+                    setDraft(createQuestionDraft(question));
+                    setEditError(null);
+                    setEditing(false);
+                  }}
+                  type="button"
+                >
+                  <X size={14} />
+                  Vazgeç
+                </button>
+                <button
+                  className="inline-flex items-center gap-2 rounded-xl bg-[var(--color-admin-accent)] px-3 py-2 text-xs font-black text-white transition hover:-translate-y-0.5 disabled:opacity-45"
+                  disabled={busy}
+                  onClick={() => void handleSave()}
+                  type="button"
+                >
+                  <Save size={14} />
+                  Kaydet
+                </button>
               </div>
-            ))}
+            ) : (
+              <button
+                className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] px-3 py-2 text-xs font-black text-[var(--color-admin-ink)] transition hover:border-[var(--color-admin-accent)]"
+                disabled={busy}
+                onClick={() => setEditing(true)}
+                type="button"
+              >
+                <Pencil size={14} />
+                Düzenle
+              </button>
+            )}
           </div>
 
-          {correctOption ? (
-            <p className="mt-3 text-xs font-bold text-emerald-700">Doğru cevap: {correctOption.label}</p>
-          ) : null}
+          {editing ? (
+            <div className="space-y-4">
+              {editError ? (
+                <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-bold text-rose-700">
+                  {editError}
+                </div>
+              ) : null}
 
-          {hasStructuredExplanation || fallbackExplanation ? (
-            <div className="mt-5 rounded-2xl border border-sky-100 bg-sky-50 px-4 py-3">
-              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-sky-700">Çözüm / Açıklama</p>
-              {hasStructuredExplanation ? (
-                <div className="mt-3 divide-y divide-sky-100 overflow-hidden rounded-xl border border-sky-100 bg-white/70">
-                  {explanationRows.map((row) => (
-                    <div className="grid gap-1 px-3 py-2.5 md:grid-cols-[145px_1fr] md:gap-3" key={row.label}>
-                      <p className="text-[11px] font-black uppercase tracking-[0.14em] text-sky-700">
-                        {row.label}
-                      </p>
-                      <p className="whitespace-pre-line text-sm font-semibold leading-6 text-sky-950">
-                        {row.value}
-                      </p>
+              <label className="block">
+                <span className="text-xs font-black uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+                  Soru kökü
+                </span>
+                <textarea
+                  className="admin-input mt-2 min-h-36 resize-y bg-white text-base font-bold leading-7"
+                  disabled={busy}
+                  onChange={(event) => setDraft((current) => ({ ...current, question_text: event.target.value }))}
+                  value={draft.question_text}
+                />
+              </label>
+
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+                  Şıklar
+                </p>
+                <div className="mt-2 grid gap-2.5">
+                  {draft.options.map((option) => (
+                    <div
+                      className={`grid gap-2 rounded-2xl border px-4 py-3 md:grid-cols-[44px_1fr] ${
+                        option.is_correct
+                          ? "border-emerald-300 bg-emerald-50"
+                          : "border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]"
+                      }`}
+                      key={option.label}
+                    >
+                      <button
+                        className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-black transition ${
+                          option.is_correct
+                            ? "bg-emerald-500 text-white"
+                            : "bg-white text-[var(--color-admin-muted)] hover:text-[var(--color-admin-accent)]"
+                        }`}
+                        disabled={busy}
+                        onClick={() => setCorrectOption(option.label)}
+                        title="Doğru cevap yap"
+                        type="button"
+                      >
+                        {option.label}
+                      </button>
+                      <input
+                        className="admin-input bg-white text-sm font-semibold"
+                        disabled={busy}
+                        onChange={(event) => updateDraftOption(option.label, { option_text: event.target.value })}
+                        value={option.option_text}
+                      />
                     </div>
                   ))}
                 </div>
-              ) : (
-                <p className="mt-1 whitespace-pre-line text-sm font-semibold leading-6 text-sky-950">
-                  {fallbackExplanation}
+                <p className="mt-2 text-xs font-bold text-[var(--color-admin-muted)]">
+                  Doğru cevabı değiştirmek için şık harfinin yuvarlağına tıkla.
                 </p>
-              )}
+              </div>
+
+              <div className="rounded-2xl border border-sky-100 bg-sky-50 px-4 py-3">
+                <p className="text-[11px] font-black uppercase tracking-[0.16em] text-sky-700">
+                  Çözüm / Açıklama
+                </p>
+                <div className="mt-3 grid gap-3">
+                  <EditableExplanationField
+                    disabled={busy}
+                    label="Dayanak"
+                    onChange={(value) => setDraft((current) => ({ ...current, explanation_basis: value }))}
+                    value={draft.explanation_basis}
+                  />
+                  <EditableExplanationField
+                    disabled={busy}
+                    label="İlgili hüküm"
+                    onChange={(value) => setDraft((current) => ({ ...current, explanation_relevant_provision: value }))}
+                    value={draft.explanation_relevant_provision}
+                  />
+                  <EditableExplanationField
+                    disabled={busy}
+                    label="Cevap bağlantısı"
+                    onChange={(value) => setDraft((current) => ({ ...current, explanation_answer_link: value }))}
+                    value={draft.explanation_answer_link}
+                  />
+                  <EditableExplanationField
+                    disabled={busy}
+                    label="Düz açıklama"
+                    onChange={(value) => setDraft((current) => ({ ...current, explanation_text: value }))}
+                    value={draft.explanation_text}
+                  />
+                </div>
+              </div>
             </div>
-          ) : null}
+          ) : (
+            <>
+              <QuestionTextBlock text={question.question_text ?? ""} />
+
+              <div className="mt-5 grid gap-2.5">
+                {(question.options ?? []).map((option) => (
+                  <div
+                    className={`flex items-start gap-3 rounded-2xl border px-4 py-3 ${
+                      option.is_correct
+                        ? "border-emerald-300 bg-emerald-50"
+                        : "border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]"
+                    }`}
+                    key={`${question.id}-${option.label}`}
+                  >
+                    <span
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${
+                        option.is_correct ? "bg-emerald-500 text-white" : "bg-white text-[var(--color-admin-muted)]"
+                      }`}
+                    >
+                      {option.label}
+                    </span>
+                    <p className="min-w-0 flex-1 text-sm font-semibold leading-6 text-[var(--color-admin-ink)]">
+                      {option.option_text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {correctOption ? (
+                <p className="mt-3 text-xs font-bold text-emerald-700">Doğru cevap: {correctOption.label}</p>
+              ) : null}
+
+              {hasStructuredExplanation || fallbackExplanation ? (
+                <div className="mt-5 rounded-2xl border border-sky-100 bg-sky-50 px-4 py-3">
+                  <p className="text-[11px] font-black uppercase tracking-[0.16em] text-sky-700">Çözüm / Açıklama</p>
+                  {hasStructuredExplanation ? (
+                    <div className="mt-3 divide-y divide-sky-100 overflow-hidden rounded-xl border border-sky-100 bg-white/70">
+                      {explanationRows.map((row) => (
+                        <div className="grid gap-1 px-3 py-2.5 md:grid-cols-[145px_1fr] md:gap-3" key={row.label}>
+                          <p className="text-[11px] font-black uppercase tracking-[0.14em] text-sky-700">
+                            {row.label}
+                          </p>
+                          <p className="whitespace-pre-line text-sm font-semibold leading-6 text-sky-950">
+                            {row.value}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-1 whitespace-pre-line text-sm font-semibold leading-6 text-sky-950">
+                      {fallbackExplanation}
+                    </p>
+                  )}
+                </div>
+              ) : null}
+            </>
+          )}
         </div>
       </article>
 
       <button
         aria-label="Sonraki soru"
         className="absolute right-4 top-0 flex h-11 items-center gap-2 rounded-2xl border border-[var(--color-admin-line)] bg-white px-4 text-sm font-black text-[var(--color-admin-ink)] shadow-sm transition hover:border-[var(--color-admin-accent)] disabled:opacity-25"
-        disabled={busy || currentIndex >= total - 1}
+        disabled={controlsDisabled || currentIndex >= total - 1}
         onClick={onNext}
         type="button"
       >
@@ -666,6 +908,128 @@ function normalizedExplanationPart(value?: string | null) {
   const normalized = (value ?? "").trim();
 
   return normalized.length > 0 ? normalized : null;
+}
+
+function createQuestionDraft(question: AdminQuestion): EditableQuestionDraft {
+  return {
+    question_text: question.question_text ?? "",
+    options: normalizeDraftOptions(question),
+    explanation_text: question.explanation_text ?? "",
+    explanation_basis: question.explanation_basis ?? question.explanation?.basis ?? "",
+    explanation_relevant_provision:
+      question.explanation_relevant_provision ?? question.explanation?.relevant_provision ?? "",
+    explanation_answer_link: question.explanation_answer_link ?? question.explanation?.answer_link ?? "",
+  };
+}
+
+function normalizeDraftOptions(question: AdminQuestion): EditableQuestionDraft["options"] {
+  const sourceOptions = question.options?.length
+    ? [...question.options].sort((left, right) => (left.sort_order ?? 0) - (right.sort_order ?? 0))
+    : ["A", "B", "C", "D", "E"].map((label) => ({
+        label,
+        option_text: "",
+        is_correct: question.correct_answer_text === label,
+      }));
+
+  return sourceOptions.map((option) => ({
+    label: option.label,
+    option_text: option.option_text,
+    is_correct: option.is_correct,
+  }));
+}
+
+function buildQuestionUpdatePayload(question: AdminQuestion, draft: EditableQuestionDraft) {
+  const correctOption = draft.options.find((option) => option.is_correct);
+  const explanationText = buildExplanationText(draft);
+
+  return {
+    topic_id: question.topic_id,
+    question_type: question.question_type,
+    difficulty: question.difficulty,
+    status: question.status,
+    is_free: question.is_free ?? false,
+    free_preview_order: question.free_preview_order ?? null,
+    is_past_exam_question: question.is_past_exam_question ?? false,
+    question_text: draft.question_text.trim(),
+    correct_answer_text: correctOption?.option_text.trim() || question.correct_answer_text || "",
+    explanation_text: explanationText,
+    explanation_basis: draft.explanation_basis.trim() || null,
+    explanation_relevant_provision: draft.explanation_relevant_provision.trim() || null,
+    explanation_answer_link: draft.explanation_answer_link.trim() || null,
+    review_flags: question.review_flags ?? [],
+    review_note: question.review_note ?? null,
+    approval_status: question.approval_status ?? null,
+    published_at: question.published_at ?? null,
+    options: draft.options.map((option) => ({
+      label: option.label,
+      option_text: option.option_text.trim(),
+      is_correct: option.is_correct,
+    })),
+  };
+}
+
+function buildExplanationText(draft: EditableQuestionDraft) {
+  const rows = [
+    ["Dayanak", draft.explanation_basis],
+    ["İlgili Hüküm", draft.explanation_relevant_provision],
+    ["Cevap Bağlantısı", draft.explanation_answer_link],
+  ]
+    .map(([label, value]) => [label, value.trim()] as const)
+    .filter(([, value]) => value.length > 0);
+
+  if (rows.length > 0) {
+    return rows.map(([label, value]) => `${label}: ${value}`).join("\n");
+  }
+
+  return draft.explanation_text.trim();
+}
+
+function validateDraft(draft: EditableQuestionDraft) {
+  if (!draft.question_text.trim()) {
+    return "Soru kökü boş olamaz.";
+  }
+
+  if (draft.options.length !== 5) {
+    return "Çoktan seçmeli soruda 5 şık olmalı.";
+  }
+
+  if (draft.options.some((option) => !option.option_text.trim())) {
+    return "Şık metinleri boş olamaz.";
+  }
+
+  if (draft.options.filter((option) => option.is_correct).length !== 1) {
+    return "Tek bir doğru cevap seçmelisin.";
+  }
+
+  if (!buildExplanationText(draft)) {
+    return "Açıklama için en az bir alan doldurulmalı.";
+  }
+
+  return null;
+}
+
+function EditableExplanationField({
+  disabled,
+  label,
+  onChange,
+  value,
+}: {
+  disabled: boolean;
+  label: string;
+  onChange: (value: string) => void;
+  value: string;
+}) {
+  return (
+    <label className="block">
+      <span className="text-[11px] font-black uppercase tracking-[0.14em] text-sky-700">{label}</span>
+      <textarea
+        className="admin-input mt-1 min-h-20 resize-y bg-white text-sm font-semibold leading-6"
+        disabled={disabled}
+        onChange={(event) => onChange(event.target.value)}
+        value={value}
+      />
+    </label>
+  );
 }
 
 const ROMAN_MARKER = /^(I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s+/u;

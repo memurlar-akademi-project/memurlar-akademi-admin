@@ -113,7 +113,15 @@ export function QuestionApprovalPage() {
       setError(null);
 
       try {
-        const response = await adminApiRequest<SubjectsResponse>("/admin/subjects?question_type=multiple_choice", { token });
+        const params = new URLSearchParams({
+          question_type: "multiple_choice",
+        });
+
+        if (qVersionFilter !== "all") {
+          params.set("q_version", qVersionFilter);
+        }
+
+        const response = await adminApiRequest<SubjectsResponse>(`/admin/subjects?${params.toString()}`, { token });
         if (!ignore) {
           setSubjects(response.data.subjects.filter((subject) => subject.topic_count > 0));
         }
@@ -133,7 +141,7 @@ export function QuestionApprovalPage() {
     return () => {
       ignore = true;
     };
-  }, [token]);
+  }, [qVersionFilter, token]);
 
   useEffect(() => {
     if (!token || !selectedSubjectId) {

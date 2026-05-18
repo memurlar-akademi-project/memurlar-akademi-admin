@@ -53,6 +53,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
   const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("active");
+  const [qVersionFilter, setQVersionFilter] = useState<"all" | "5">("all");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(20);
   const deferredQuery = useDeferredValue(query);
@@ -74,6 +75,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
       subject_id: selectedSubjectId,
       topic_id: selectedTopicId,
       question_type: questionType,
+      q_version: qVersionFilter === "all" ? undefined : qVersionFilter,
       difficulty: difficultyFilter,
       status: statusFilter,
     },
@@ -159,6 +161,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
   }, [
     deferredQuery,
     difficultyFilter,
+    qVersionFilter,
     selectedExamId,
     selectedMinistryId,
     selectedSubjectId,
@@ -265,6 +268,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
         body: {
           topic_id: question.topic_id,
           question_type: question.question_type,
+          q_version: question.q_version ?? null,
           difficulty: question.difficulty,
           status: checked ? "active" : "passive",
           is_free: Boolean(question.is_free),
@@ -405,6 +409,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
           </p>
           <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
             {row.original.topic?.subject?.name ?? "Ders yok"} · {row.original.topic?.name ?? "Konu yok"}
+            {row.original.q_version ? ` · v${row.original.q_version}` : ""}
           </p>
           <AdminReadinessHint readiness={row.original.readiness} />
         </div>
@@ -417,6 +422,19 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
         <span className="font-semibold text-[var(--color-admin-ink)]">
           {row.original.question_type === "multiple_choice" ? "Çoktan Seçmeli" : "Doğru / Yanlış"}
         </span>
+      ),
+    },
+    {
+      accessorKey: "q_version",
+      header: "Versiyon",
+      cell: ({ row }) => (
+        row.original.q_version ? (
+          <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-bold text-sky-700">
+            v{row.original.q_version}
+          </span>
+        ) : (
+          <span className="text-xs font-semibold text-[var(--color-admin-muted)]">-</span>
+        )
       ),
     },
     {
@@ -628,6 +646,19 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
                 </select>
               </AdminListToolbarField>
 
+              {!isTrueFalseList ? (
+                <AdminListToolbarField className="min-w-[180px]">
+                  <select
+                    className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
+                    onChange={(event) => setQVersionFilter(event.target.value as typeof qVersionFilter)}
+                    value={qVersionFilter}
+                  >
+                    <option value="all">Tüm versiyonlar</option>
+                    <option value="5">v5 yeni üretim</option>
+                  </select>
+                </AdminListToolbarField>
+              ) : null}
+
               <AdminListToolbarField className="self-end pb-[1px]">
                 <AdminFilterMenu
                   compact
@@ -641,6 +672,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
                     setSelectedTopicId(null);
                     setDifficultyFilter("all");
                     setStatusFilter("active");
+                    setQVersionFilter("all");
                   }}
                   options={[{ value: "reset", label: "Filtreleri sıfırla" }]}
                   showSelectedLabel={false}
@@ -685,6 +717,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
             </AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>{filteredRows.length} kayıt bu sayfada</AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>Server-side filtreleme aktif</AdminListToolbarMetaPill>
+            {qVersionFilter !== "all" ? <AdminListToolbarMetaPill>v{qVersionFilter} yeni üretim</AdminListToolbarMetaPill> : null}
           </AdminListToolbarMeta>
         </AdminListToolbar>
 

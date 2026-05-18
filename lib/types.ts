@@ -144,6 +144,7 @@ export type AdminSubject = {
   approved_question_count?: number;
   rejected_question_count?: number;
   pending_approval_question_count?: number;
+  revised_pending_approval_question_count?: number;
   readiness?: AdminReadiness;
   created_at?: string | null;
   updated_at?: string | null;
@@ -176,6 +177,7 @@ export type AdminQuestion = {
   id: number;
   topic_id: number;
   question_type: string;
+  q_version?: number | null;
   difficulty: string;
   status: string;
   is_free?: boolean;
@@ -195,6 +197,9 @@ export type AdminQuestion = {
   review_flags?: string[];
   review_note?: string | null;
   approval_status?: "approved" | "rejected" | null;
+  approval_revision_status?: "needs_revision" | "revised_pending_review" | string | null;
+  approval_revised_at?: string | null;
+  approval_revision_note?: string | null;
   quality_status?: "passed" | "failed" | "borderline" | "delete_recommended" | null;
   quality_score?: number | null;
   quality_flags?: string[];
@@ -223,6 +228,7 @@ export type AdminQuestion = {
 export type AdminQuestionQualityCandidate = {
   id: number;
   topic_id: number;
+  q_version?: number | null;
   question_text: string;
   correct_answer_text: string;
   explanation_text: string;
@@ -254,6 +260,7 @@ export type AdminQuestionQualityRunItem = {
   question?: {
     id: number;
     status: string;
+    q_version?: number | null;
     approval_status?: "approved" | "rejected" | null;
     question_text: string;
     correct_answer_text: string;
@@ -378,6 +385,7 @@ export type AdminQuestionImportItem = {
   topic_id: number;
   topic_name_snapshot: string;
   question_type: "multiple_choice" | "true_false";
+  q_version?: number | null;
   difficulty: "easy" | "medium" | "hard";
   status: "active" | "passive" | "draft";
   question_text: string;

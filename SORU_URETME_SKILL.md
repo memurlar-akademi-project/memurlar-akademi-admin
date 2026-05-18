@@ -33,6 +33,12 @@ Mevzuat sorularinda varsayilan kok yapisi:
 
 Bu kural sadece 657 icin degil, tum kanun/yonetmelik/kararname/genelge sorulari icin gecerlidir. Kaynak adinin baslikta verilmis olmasi, soru kokunden kaynak adini dusurmek icin yeterli sebep degildir.
 
+Kanun sorularinda kaynak adi kisaltilamaz. `6136 sayılı Kanun'a göre`, `2559 sayılı Kanun'a göre`, `bu Kanun'a göre` gibi kisa kokler kullanma. Kanun numarasi ve resmi kanun adi birlikte yazilmalidir. Anayasa icin MEB/ODSGM diline uygun olarak `T.C. Anayasası'na göre` kalibi tercih edilir.
+
+Kanun numarasi ile resmi ad mutlaka eslesmelidir. Numarasi veya resmi adi hatali yazilmis soru kalite hatasidir; emin olunmuyorsa konu/ders kaydindaki `code` ve resmi `name` birlikte kontrol edilir.
+
+Soru kokleri coktan secmeli sinav formunda olmalidir; yazili cevap sorusu gibi bitmemelidir. `Hangi ceza öngörülür?`, `Ne yapılır?`, `Nasıl hareket edilir?` gibi acik uclu kokleri tek basina kullanma. Bunlari `aşağıdaki cezalardan hangisi öngörülür?`, `aşağıdaki işlemlerden hangisi yapılır?`, `aşağıdaki ifadelerden hangisi doğrudur?` gibi secenekli sinav kalibina cevir.
+
 Uygun soru kokleri:
 
 - `[Kaynak mevzuat adı]’na göre, aşağıdakilerden hangisi doğrudur?`
@@ -52,6 +58,19 @@ Kok cesitliligi:
 - Bir partide olumsuz koklu sorular kullan; ama sorularin cogunu `yanlıştır/değildir` kalibina yigma.
 - Bir partide oncul sorular kullan.
 - Bir partide sure, oran, sayi, merci, usul, istisna ve kapsam ayrimi sorularina agirlik ver.
+- Dogrudan bilgi sorulari da sınav diliyle sorulmalidir; soru basit gorunuyorsa bile seçenekler ayni kavram ailesinden güçlü çeldiriciler icermelidir.
+- Kisa bilgi sorusu uretilecekse cevap tek kelime/tek makam olsa bile diger secenekler de ayni turden ve yakin mevzuat evreninden secilmelidir; aksi halde dogru cevap bagirir.
+
+## Revizyon ve geri bildirimden ogrenme
+
+Soru duzenleme/revizyon islerinde oncelik sirasi:
+
+- `approval_status = approved` olan sorulara dokunma; bunlar ekip tarafindan kabul edilmis kabul edilir.
+- Once `approval_status = rejected` ve `review_note` dolu olan sorulari ele al; insan geri bildirimi, genel tahminden daha gucludur.
+- `review_note` icinde onerilen kok, kaynak adlandirmasi, yazim veya cevap duzeltmesi varsa once bunu uygula; sonra şıkları ve aciklamayi yeniden QA'den gecir.
+- Soru revize edilip tekrar onaya gonderildiginde eski `review_note` korunmali; soru `approval_status = null` durumuna alinmali ve revize edilmis oldugu ayri alanda isaretlenmelidir.
+- Revizyon sirasinda sadece sorulan hatayi duzeltmek yetmez; dogru cevap, 4 çeldirici, kaynak dayanak ve aciklama birlikte kontrol edilir.
+- Bir geri bildirim genel bir kalite dersine isaret ediyorsa bu skill'e genellestirilerek eklenir; tek bir soruya ozel istisna gibi yazilmaz.
 
 ## Soru tipi dagilimi
 
@@ -125,12 +144,16 @@ Alan kurallari:
 ## Soru kok kurallari
 
 - Kanun, anayasa, kararname, yonetmelik ve genelge sorularinda kaynak mevzuat adi soru kokunun basinda yer almalidir.
+- Kanunlarda `kanun numarası + resmi kanun adı` birlikte yazilmalidir. Sadece `... sayılı Kanun'a göre` yazmak kalite hatasidir.
+- Geri bildirim notunda `6136 sayılı Kanun'a göre` gibi kisaltilmis bir kok onerilse bile nihai soruda resmi ad tamamlanir: `6136 sayılı Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanun'a göre, ...`
 - Soru kokunu `Madde 45'e göre`, `206 ncı maddeye göre`, `bu maddeye göre` gibi madde numarasi merkezli baslatma. Bunun yerine kaynak mevzuat adiyla basla.
 - Madde numarasi gerekiyorsa aciklamada veya konu icini netlestiren ifadede kullanilabilir; soru kokunun ana referansi kaynak mevzuat adi olmalidir.
-- Kaynak resmi adini makul olcude koru: kanunlarda mumkunse kanun numarasi + resmi ad, Anayasa icin `T.C. Anayasası`, yonetmelik/genelge/kararname icin resmi baslik kullan.
+- Kaynak resmi adini aynen koru: kanunlarda kanun numarasi + resmi ad, Anayasa icin `T.C. Anayasası`, yonetmelik/genelge/kararname icin resmi baslik kullan.
 - Anayasa sorularinda MEB/ODSGM sinav diline yakinlik icin `2709 sayılı Türkiye Cumhuriyeti Anayasası’na göre` yerine varsayilan olarak `T.C. Anayasası’na göre` kalibini kullan.
 - Ayni batchte tum sorular kaynak mevzuat adiyla baslayabilir; cesitlilik kaynak adini kaldirmakla degil, olcum hedefi ve kok tipiyle saglanir.
 - Kisa kok daha iyidir; ancak kisaltma kaynak adini belirsizlestirmemeli.
+- `bakımından` kelimesini otomatik dolgu kalibi gibi kullanma. Gerekli degilse daha dogal sinav dili kur: `... ile ilgili olarak`, `... kapsamında`, `... hakkında`, `... aşağıdakilerden hangisidir?`
+- Secenekli sorularda genellikle `aşağıdakilerden hangisi`, `aşağıdaki ifadelerden hangisi`, `aşağıdaki cezalardan hangisi`, `aşağıdaki sürelerden hangisi` gibi form kullan. Kısa sayi/sure sorularinda `kaç gün`, `kaç ay`, `ne kadar` gibi kokler kullanilabilir.
 - Olumsuz kok kullanildiginda `yanlıştır` veya `değildir` ifadesi acik ve gorunur olsun.
 - Oncul sorularda oncul sayisi genellikle 3 olsun; kaynak cok zenginse 4 olabilir.
 - Oncul ifadeler birbirinden bagimsiz ve test edilebilir olmali.
@@ -144,7 +167,7 @@ Alan kurallari:
 - Her soru tam 5 secenek icermeli: `A`, `B`, `C`, `D`, `E`.
 - Tek bir dogru secenek olmali.
 - Dogru cevap şıklar arasinda dengeli dagilmali; batch icinde hep ayni harfe yigilma.
-- Şıklar ayni gramer turunde olmali: makam sorusunda makamlar, sure sorusunda sureler, hak sorusunda haklar.
+- Şıklar ayni gramer ve kavram turunde olmali: makam sorusunda makamlar, sure sorusunda sureler, hak sorusunda haklar, disiplin cezası sorusunda disiplin cezalari, izin suresi sorusunda benzer sureler.
 - Şık uzunluklari makul olcude dengeli olmali; dogru cevap surekli en uzun veya en detayli şık olmamali.
 - Çeldiriciler kaynak metindeki yakin kavramlardan, benzer makam/sure/usul/kapsam ayrimlarindan uretilmeli.
 - Konu disi, cocukca, komik veya ilk bakista elenen şık yazma.
@@ -153,6 +176,9 @@ Alan kurallari:
 - Bir şık sadece kelime oyunu ile yanlis olmamali; mevzuat bilgisini olcmeli.
 - Dogru şıktaki ifade, kaynak metnin ayni cumlesini birebir kopyalamak zorunda degil; ama anlam degistirilemez.
 - D/Y veya eslestirme tipi seçenekler gerekiyorsa `I: D, II: Y, III: D` gibi okunabilir tek satir format kullan.
+- Dogru cevap resmi merci ise diger secenekler de merci olmalidir; dogru cevap bir izin/ruhsat/islem ise diger secenekler de ayni izin/ruhsat/islem evreninden kurulmalidir.
+- Dogru cevap bir tanimsa diger secenekler de ayni tanim ailesinden makul ama yanlis tanimlar olmalidir; alakasiz esya, meslek, kurum veya gunluk hayat nesnesi kullanma.
+- Dogru cevap bir listedeki unsur ise soru mumkunse `hangisi sayilmamistir`, `hangi set tamamen sayilanlardan olusur`, `hangisi birlikte verilmiştir` gibi sinav kalibina cevrilir; tek dogru uzun cumle, dort absurt secenek yapma.
 
 ## Çeldirici kalitesi
 
@@ -166,12 +192,17 @@ Kullanilabilecek çeldirici kaynaklari:
 - Kapsam icine giren/girmeyen yakin gruplar.
 - Bir usulun farkli asamalari.
 - Ayni mevzuatta bulunan ama sorulan hukum icin gecerli olmayan kavramlar.
+- Soru dogru cevabi bir merci ise diger şıklar da kamu/adli/idari merci olmalidir.
+- Soru dogru cevabi sure/oran/sayi ise diger şıklar da makul ve yakin sure/oran/sayi olmalidir.
+- Soru dogru cevabi bir yaptirim/ceza/hak/yasak ise diger şıklar ayni mevzuat ailesinden benzer yaptirim/ceza/hak/yasak olmalidir.
 
 Kullanilmayacak çeldirici turleri:
 
 - Kaynakta hic gecmeyen uydurma makamlar.
 - Asiri genel ahlaki ifadeler.
 - Bariz sacma secenekler.
+- Ayni hukuk evrenine ait olmayan ve ilk bakista elenen secenekler.
+- Dogru cevabin yaninda konu disi kurumlar, okul/idare/medya/vergi gibi alakasiz alanlardan rastgele secenekler.
 - Dogru cevabi dil bilgisi veya uzunlukla belli eden secenekler.
 - Birden fazla dogru kabul edilebilecek muallak ifadeler.
 
@@ -207,9 +238,17 @@ Kullanilmayacak çeldirici turleri:
 2. Her topic icin olculebilir hukumleri belirle.
 3. Tanim, sure, merci, kapsam, istisna ve usul bilgisini onceliklendir.
 4. Once dogru cevabi belirle.
-5. Sonra ayni konu evreninden 4 guclu celistirici kur.
-6. Soru kokunu en uygun tipe gore sec.
-7. JSON'a yazmadan once topic eslemesini kontrol et.
+5. Dogru cevabin hangi kategoriye ait oldugunu belirle: sure, merci, ceza, hak, yasak, kapsam, istisna, usul, tanim.
+6. Sonra ayni kategori ve mevzuat evreninden 4 guclu celistirici kur.
+7. Soru kokunu yazili cevap gibi degil, coktan secmeli sinav formunda kur.
+8. JSON'a yazmadan once topic eslemesini kontrol et.
+
+## Uretim versiyonu
+
+- Yeni kalite rejimiyle sifirdan uretilen sorularda `q_version` alani kullanilir.
+- Bu tur icin `q_version: 5` yaz.
+- Revize edilen eski sorulara otomatik `q_version` yazma; sadece sifirdan yeni uretilen ve ekip tarafindan yeni kalite seti olarak izlenecek sorular isaretlenir.
+- `q_version`, kalite takibi icindir; soru kokune veya aciklama metnine yazilmaz.
 
 ## Yasaklar
 
@@ -230,6 +269,7 @@ JSON'u dondurmeden once su kontrolu yap:
 - Kokte `questions` var mi?
 - Her soruda `topic_id` var mi?
 - Her soru `multiple_choice` mi?
+- Yeni kalite seti ise `q_version: 5` var mi?
 - Her soruda tam 5 secenek var mi?
 - Secenek etiketleri sirasiyla `A`, `B`, `C`, `D`, `E` mi?
 - Her soruda tek `is_correct: true` var mi?

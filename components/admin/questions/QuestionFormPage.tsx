@@ -45,6 +45,7 @@ function normalizeMultipleChoiceOptions(options?: QuestionOptionForm[] | null): 
 const emptyForm = {
   topic_id: "",
   question_type: "multiple_choice",
+  q_version: "",
   difficulty: "medium",
   status: "active",
   is_free: false,
@@ -140,6 +141,7 @@ export function QuestionFormPage({
           setForm({
             topic_id: String(question.topic_id),
             question_type: question.question_type,
+            q_version: question.q_version ? String(question.q_version) : "",
             difficulty: question.difficulty,
             status: question.status,
             is_free: Boolean(question.is_free),
@@ -246,6 +248,7 @@ export function QuestionFormPage({
           body: {
             topic_id: Number(form.topic_id),
             question_type: form.question_type,
+            q_version: form.q_version ? Number(form.q_version) : null,
             difficulty: form.difficulty,
             status: form.status,
             is_free: form.is_free,
@@ -362,7 +365,7 @@ export function QuestionFormPage({
                         />
                       </label>
 
-                      <div className="grid gap-4 md:grid-cols-3">
+                      <div className="grid gap-4 md:grid-cols-4">
                         <label className="block space-y-2.5">
                           <AdminSearchSelect
                             emptyText="Konu bulunamadı."
@@ -401,6 +404,18 @@ export function QuestionFormPage({
                             <option value="multiple_choice">Test</option>
                             <option value="true_false">Doğru / Yanlış</option>
                           </select>
+                        </label>
+
+                        <label className="block space-y-2.5">
+                          <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Üretim versiyonu</span>
+                          <input
+                            className="admin-input h-12"
+                            min={1}
+                            onChange={(event) => setForm((current) => ({ ...current, q_version: event.target.value }))}
+                            placeholder="Örn. 5"
+                            type="number"
+                            value={form.q_version}
+                          />
                         </label>
                       </div>
                     </section>

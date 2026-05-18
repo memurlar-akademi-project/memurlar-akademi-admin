@@ -30,6 +30,7 @@ type QuestionOptionDraft = {
 type QuestionDraft = {
   topic_id: string;
   question_type: string;
+  q_version: string;
   difficulty: string;
   status: string;
   is_free: boolean;
@@ -91,6 +92,7 @@ function toDraft(question: AdminQuestion): QuestionDraft {
   return {
     topic_id: String(question.topic_id),
     question_type: question.question_type,
+    q_version: question.q_version ? String(question.q_version) : "",
     difficulty: question.difficulty,
     status: question.status,
     is_free: Boolean(question.is_free),
@@ -174,6 +176,7 @@ export function QuestionReviewPage() {
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(null);
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("active");
+  const [qVersionFilter, setQVersionFilter] = useState<"all" | "5">("all");
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [draft, setDraft] = useState<QuestionDraft | null>(null);
@@ -298,6 +301,10 @@ export function QuestionReviewPage() {
             params.set("status", statusFilter);
           }
 
+          if (qVersionFilter !== "all") {
+            params.set("q_version", qVersionFilter);
+          }
+
           const response = await adminApiRequest<{ questions: AdminQuestion[] }>(`/admin/questions?${params.toString()}`, { token });
           const pagination = parsePagination(response.meta.pagination);
 
@@ -337,7 +344,7 @@ export function QuestionReviewPage() {
     return () => {
       cancelled = true;
     };
-  }, [selectedSubjectId, selectedTopicId, statusFilter, token]);
+  }, [qVersionFilter, selectedSubjectId, selectedTopicId, statusFilter, token]);
 
   function goToIndex(nextIndex: number) {
     const boundedIndex = Math.min(Math.max(nextIndex, 0), questions.length - 1);
@@ -397,6 +404,7 @@ export function QuestionReviewPage() {
     return {
       topic_id: Number(draft.topic_id),
       question_type: draft.question_type,
+      q_version: draft.q_version ? Number(draft.q_version) : null,
       difficulty: draft.difficulty,
       status: statusOverride ?? draft.status,
       is_free: draft.is_free,
@@ -555,6 +563,20 @@ export function QuestionReviewPage() {
           </select>
         </label>
 
+        <label className="block min-w-[190px] space-y-2">
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+            Versiyon
+          </span>
+          <select
+            className="admin-input h-11"
+            onChange={(event) => setQVersionFilter(event.target.value as typeof qVersionFilter)}
+            value={qVersionFilter}
+          >
+            <option value="all">Tüm versiyonlar</option>
+            <option value="5">v5 yeni üretim</option>
+          </select>
+        </label>
+
         <Link className="admin-button admin-button-secondary mb-[1px]" href="/sorular">
           <ArrowLeft size={16} />
           Liste
@@ -611,6 +633,11 @@ export function QuestionReviewPage() {
                   <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
                     {draft.question_type === "multiple_choice" ? "Çoktan seçmeli" : "Doğru / Yanlış"}
                   </span>
+                  {draft.q_version ? (
+                    <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-black text-sky-700">
+                      v{draft.q_version}
+                    </span>
+                  ) : null}
                 </div>
                 <p className="mt-2 truncate text-xs font-semibold text-[var(--color-admin-muted)]">
                   {currentQuestion.topic?.subject?.name ?? selectedSubject?.name ?? "Ders"} · {currentQuestion.topic?.name ?? "Konu"}

@@ -27,6 +27,7 @@ type TopicOptionItem = {
 type EditableItem = {
   topic_id: number;
   question_type: "multiple_choice" | "true_false";
+  q_version: string;
   difficulty: "easy" | "medium" | "hard";
   status: "active" | "passive" | "draft";
   question_text: string;
@@ -62,6 +63,7 @@ function toEditableItem(item: AdminQuestionImportItem): EditableItem {
   return {
     topic_id: item.topic_id,
     question_type: item.question_type,
+    q_version: item.q_version ? String(item.q_version) : "",
     difficulty: item.difficulty,
     status: item.review_status === "pending_review" && item.status === "draft" ? "active" : item.status,
     question_text: item.question_text,
@@ -72,10 +74,16 @@ function toEditableItem(item: AdminQuestionImportItem): EditableItem {
   };
 }
 
-function toImportItemPayload(draft: EditableItem): Omit<EditableItem, "options"> & { options?: EditableItem["options"] } {
-  const payload: Omit<EditableItem, "options"> & { options?: EditableItem["options"] } = {
+function toImportItemPayload(
+  draft: EditableItem,
+): Omit<EditableItem, "options" | "q_version"> & { q_version?: number | null; options?: EditableItem["options"] } {
+  const payload: Omit<EditableItem, "options" | "q_version"> & {
+    q_version?: number | null;
+    options?: EditableItem["options"];
+  } = {
     topic_id: draft.topic_id,
     question_type: draft.question_type,
+    q_version: draft.q_version ? Number(draft.q_version) : null,
     difficulty: draft.difficulty,
     status: draft.status,
     question_text: draft.question_text,
@@ -555,6 +563,11 @@ export function QuestionImportReviewPage({ importId }: Props) {
                       <span className="rounded-full border border-[var(--color-admin-line)] px-3 py-1 text-xs font-semibold text-[var(--color-admin-muted)]">
                         Doğru cevap: {correctOptionLabel}
                       </span>
+                      {selectedItem.q_version ? (
+                        <span className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-black text-sky-700">
+                          v{selectedItem.q_version}
+                        </span>
+                      ) : null}
                     </div>
 
                     <div className="flex items-center gap-2">
@@ -750,6 +763,22 @@ export function QuestionImportReviewPage({ importId }: Props) {
                     </label>
 
                     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+                      <label className="block space-y-2">
+                        <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                          Üretim versiyonu
+                        </span>
+                        <input
+                          className="admin-input h-11"
+                          min={1}
+                          onChange={(event) =>
+                            setDraft((current) => (current ? { ...current, q_version: event.target.value } : current))
+                          }
+                          placeholder="Örn. 5"
+                          type="number"
+                          value={draft.q_version}
+                        />
+                      </label>
+
                       <label className="block space-y-2">
                         <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
                           Zorluk
@@ -958,6 +987,7 @@ export function QuestionImportReviewPage({ importId }: Props) {
                             <div className="min-w-0">
                               <p className="truncate text-xs font-semibold text-[var(--color-admin-muted)]">
                                 {item.topic?.name ?? item.topic_name_snapshot}
+                                {item.q_version ? ` · v${item.q_version}` : ""}
                               </p>
                               <p className="mt-0.5 line-clamp-2 text-sm font-semibold leading-5 text-[var(--color-admin-ink)]">
                                 {item.question_text}

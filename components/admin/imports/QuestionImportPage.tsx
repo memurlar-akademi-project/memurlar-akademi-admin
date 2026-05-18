@@ -17,6 +17,7 @@ const questionTemplate = `{
     {
       "topic_id": 101,
       "question_type": "multiple_choice",
+      "q_version": 5,
       "difficulty": "medium",
       "status": "draft",
       "question_text": "Disiplin cezası verilmeden önce savunma için en az kaç gün süre verilir?",

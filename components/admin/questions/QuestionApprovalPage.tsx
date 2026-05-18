@@ -68,6 +68,7 @@ export function QuestionApprovalPage() {
   const { showToast } = useAdminToast();
   const [subjects, setSubjects] = useState<AdminSubject[]>([]);
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(null);
+  const [qVersionFilter, setQVersionFilter] = useState<"all" | "5">("all");
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [subjectsLoading, setSubjectsLoading] = useState(true);
@@ -152,7 +153,7 @@ export function QuestionApprovalPage() {
       setRejectModalOpen(false);
 
       try {
-        const nextQuestions = await fetchApprovalQueue(currentToken, currentSubjectId);
+        const nextQuestions = await fetchApprovalQueue(currentToken, currentSubjectId, qVersionFilter);
 
         if (!ignore) {
           setQuestions(nextQuestions);
@@ -174,7 +175,7 @@ export function QuestionApprovalPage() {
     return () => {
       ignore = true;
     };
-  }, [selectedSubjectId, token]);
+  }, [qVersionFilter, selectedSubjectId, token]);
 
   function goPrevious() {
     setCurrentIndex((current) => Math.max(current - 1, 0));
@@ -378,12 +379,27 @@ export function QuestionApprovalPage() {
             </p>
           </div>
 
+          <div className="mt-5 max-w-xs">
+            <label className="text-[11px] font-black uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+              Üretim versiyonu
+            </label>
+            <select
+              className="admin-input mt-2 h-11 appearance-none pr-9 text-sm font-bold"
+              onChange={(event) => setQVersionFilter(event.target.value as typeof qVersionFilter)}
+              value={qVersionFilter}
+            >
+              <option value="all">Tüm sorular</option>
+              <option value="5">Sadece v5 yeni üretim</option>
+            </select>
+          </div>
+
           <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
             {sortedSubjects.map((subject) => {
               const totalQuestions = subject.question_count ?? 0;
               const approvedCount = subject.approved_question_count ?? 0;
               const rejectedCount = subject.rejected_question_count ?? 0;
               const pendingCount = subject.pending_approval_question_count ?? 0;
+              const revisedPendingCount = subject.revised_pending_approval_question_count ?? 0;
               const reviewedCount = approvedCount + rejectedCount;
               const progressPct = totalQuestions > 0 ? Math.round((reviewedCount / totalQuestions) * 100) : 0;
               const completed = pendingCount === 0;
@@ -422,6 +438,11 @@ export function QuestionApprovalPage() {
                       }`}>
                         {pendingCount} bekleyen · {approvedCount} onay · {rejectedCount} geri
                       </p>
+                      {revisedPendingCount > 0 ? (
+                        <span className="mt-2 inline-flex rounded-full bg-amber-100 px-2.5 py-1 text-[11px] font-black text-amber-800">
+                          {revisedPendingCount} revize tekrar onayda
+                        </span>
+                      ) : null}
                     </div>
                     <ArrowRight className={`shrink-0 transition group-hover:translate-x-1 ${
                       completed ? "text-emerald-600" : "text-[var(--color-admin-muted)] group-hover:text-[var(--color-admin-accent)]"
@@ -465,6 +486,7 @@ export function QuestionApprovalPage() {
           Ders değiştir
         </button>
         <p className="text-xs font-bold text-[var(--color-admin-muted)]">
+          {qVersionFilter !== "all" ? `v${qVersionFilter} · ` : ""}
           {questionsLoading ? "Yükleniyor" : `${currentIndex + (total > 0 ? 1 : 0)} / ${total}`}
         </p>
       </div>
@@ -479,6 +501,7 @@ export function QuestionApprovalPage() {
           <QuestionCard
             busy={busy}
             currentIndex={currentIndex}
+            key={currentQuestion.id}
             onApprove={() => void approveCurrent()}
             onDelete={() => void deleteCurrent()}
             onNext={goNext}
@@ -517,7 +540,7 @@ export function QuestionApprovalPage() {
   );
 }
 
-async function fetchApprovalQueue(token: string, subjectId: number): Promise<AdminQuestion[]> {
+async function fetchApprovalQueue(token: string, subjectId: number, qVersionFilter: "all" | "5"): Promise<AdminQuestion[]> {
   const questions: AdminQuestion[] = [];
   let page = 1;
   let lastPage = 1;
@@ -532,6 +555,9 @@ async function fetchApprovalQueue(token: string, subjectId: number): Promise<Adm
       per_page: "500",
       page: String(page),
     });
+    if (qVersionFilter !== "all") {
+      params.set("q_version", qVersionFilter);
+    }
 
     const response = await adminApiRequest<QuestionsResponse>(`/admin/questions?${params.toString()}`, { token });
     questions.push(...response.data.questions);
@@ -598,12 +624,8 @@ function QuestionCard({
   const hasStructuredExplanation = explanationRows.length > 0;
   const fallbackExplanation = hasStructuredExplanation ? "" : normalizedExplanationPart(question.explanation_text);
   const controlsDisabled = busy || editing;
-
-  useEffect(() => {
-    setEditing(false);
-    setDraft(createQuestionDraft(question));
-    setEditError(null);
-  }, [question.id, question]);
+  const isRevisedPending = question.approval_revision_status === "revised_pending_review";
+  const previousReviewNote = normalizedExplanationPart(question.review_note);
 
   async function handleSave() {
     const validationError = validateDraft(draft);
@@ -691,7 +713,13 @@ function QuestionCard({
             <div>
               <p className="text-[11px] font-black uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
                 #{question.id} · {question.topic?.name ?? "Konu yok"}
+                {question.q_version ? ` · v${question.q_version}` : ""}
               </p>
+              {isRevisedPending ? (
+                <span className="mt-2 inline-flex rounded-full bg-amber-100 px-3 py-1 text-[11px] font-black uppercase tracking-[0.12em] text-amber-800">
+                  Düzenlendi, tekrar onayda
+                </span>
+              ) : null}
               {editing ? (
                 <p className="mt-1 text-xs font-bold text-amber-700">
                   Düzenleme modunda onay/ret/sil kapalıdır; önce kaydet veya vazgeç.
@@ -832,6 +860,24 @@ function QuestionCard({
             </div>
           ) : (
             <>
+              {isRevisedPending || previousReviewNote || question.approval_revision_note ? (
+                <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3">
+                  <p className="text-[11px] font-black uppercase tracking-[0.16em] text-amber-800">
+                    Revizyon bilgisi
+                  </p>
+                  {question.approval_revision_note ? (
+                    <p className="mt-1 whitespace-pre-line text-sm font-bold leading-6 text-amber-950">
+                      {question.approval_revision_note}
+                    </p>
+                  ) : null}
+                  {previousReviewNote ? (
+                    <p className="mt-2 whitespace-pre-line text-sm font-semibold leading-6 text-amber-900">
+                      <span className="font-black">Önceki geri gönderim notu:</span> {previousReviewNote}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
+
               <QuestionTextBlock text={question.question_text ?? ""} />
 
               <div className="mt-5 grid gap-2.5">
@@ -945,6 +991,7 @@ function buildQuestionUpdatePayload(question: AdminQuestion, draft: EditableQues
   return {
     topic_id: question.topic_id,
     question_type: question.question_type,
+    q_version: question.q_version ?? null,
     difficulty: question.difficulty,
     status: question.status,
     is_free: question.is_free ?? false,

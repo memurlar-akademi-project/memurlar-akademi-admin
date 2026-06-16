@@ -1,0 +1,2706 @@
+{
+  "subject": {
+    "code": null,
+    "name": "İdare Hukuku",
+    "slug": "idare-hukuku",
+    "status": "active",
+    "id": 31
+  },
+  "target_exam_id": 1,
+  "exam_note": "8. Dönem İlk Derece Amirlik Eğitimi kapsamına eklenecek İdare Hukuku konu anlatımı.",
+  "source_policy": {
+    "copyright": "Kaynak PDF metinleri kopyalanmadan, kapsam ve doğruluk için incelendi; anlatım özgünleştirildi.",
+    "coverage": "Adalet Bakanlığı ve İstanbul Üniversitesi kaynaklarındaki ana idare hukuku başlıkları tek ders anlatımında kapsandı. Eski sistem başlıkları güncel idari teşkilat mantığına göre sadeleştirildi.",
+    "source_files": [
+      {
+        "file_name": "Adalet_Bakanligi_Idare_Hukuku.pdf",
+        "sha256": "d3d5b55c1fb435fa4caac64eb7ea0b01223c6750a816eca04e85e67839406539"
+      },
+      {
+        "file_name": "Istanbul_Universitesi_Idare_Hukuku.pdf",
+        "sha256": "b83f5f069f0c1a82f36264ca033ed6ad6831927c7fe81a494e50e54f21cb4dc3"
+      }
+    ]
+  },
+  "version": 1,
+  "topics": [
+    {
+      "name": "İdare Kavramı, İdare Hukukunun Kaynakları ve Özellikleri",
+      "slug": "idare-kavrami-idare-hukukunun-kaynaklari-ve-ozellikleri",
+      "status": "active",
+      "summary": "İdare kavramının anlamlarını, idari işlevi ve idare hukukunun temel özelliklerini açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İdare Hukukuna Giriş"
+        },
+        {
+          "type": "section_title",
+          "content": "İdare Kavramı"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare kelimesi günlük dilde yönetme, yürütme ve bir işi çekip çevirme anlamına gelir. Hukuki anlamda ise hem bir faaliyeti hem de bu faaliyeti yürüten teşkilatı ifade edebilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Anlam",
+            "Açıklama",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Organik anlamda idare",
+              "İdari teşkilatı ve kamu kurumlarını anlatır.",
+              "Bakanlık, belediye, üniversite, il özel idaresi"
+            ],
+            [
+              "Fonksiyonel anlamda idare",
+              "Kamu yararını gerçekleştirmek için yürütülen idari faaliyeti anlatır.",
+              "Kolluk, kamu hizmeti, ruhsat verme, kamulaştırma"
+            ],
+            [
+              "Geniş anlamda idare",
+              "Yasama ve yargı organlarının idari nitelikteki faaliyetlerini de kapsar.",
+              "TBMM personel işlemleri, mahkeme kalem hizmetleri"
+            ]
+          ],
+          "caption": "İdare kavramının temel anlamları"
+        },
+        {
+          "type": "subheading",
+          "content": "İdari İşlev"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari işlev, yasama ve yargı dışında kalan, toplumun günlük ihtiyaçlarını karşılamaya yönelen kamu faaliyetidir. Bu işlevin amacı kamu yararıdır; yürütülürken kamu gücü ve idare hukukuna özgü araçlar kullanılır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Amacı kamu yararını gerçekleştirmektir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Konusu çoğunlukla kamu hizmeti ve kolluk faaliyetidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu gücü ayrıcalıklarıyla yürütülür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Süreklilik ve düzenlilik gösterir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yargısal denetime açıktır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İdare Hukukunun Kaynakları"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare hukuku tek bir kanunda toplanmış değildir. Kaynaklar anayasa, kanunlar, Cumhurbaşkanlığı kararnameleri, yönetmelikler, idari düzenleyici işlemler, yargı içtihatları ve genel hukuk ilkeleri şeklinde dağınık bir yapı gösterir."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "İdare hukukunu çalışırken tek kanun ezberi yerine kavram, ilke ve yargısal denetim mantığı kurmak gerekir."
+        },
+        {
+          "type": "subheading",
+          "content": "İdare Hukukunun Özellikleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Özellik",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Yeni bir hukuk dalıdır",
+              "Modern hukuk devletiyle gelişmiştir."
+            ],
+            [
+              "Bağımsızdır",
+              "Özel hukuktan ve diğer kamu hukuku dallarından ayrılan özgü kuralları vardır."
+            ],
+            [
+              "Pozitiftir",
+              "Yürürlükteki hukuk kurallarına dayanır."
+            ],
+            [
+              "Tedvin edilmemiştir",
+              "Bütün kuralları tek bir idare hukuku kanununda toplanmamıştır."
+            ],
+            [
+              "İçtihadidir",
+              "Yargı kararları kavramların gelişmesinde çok önemlidir."
+            ],
+            [
+              "Statü hukukudur",
+              "Kişisel sözleşme ilişkilerinden çok genel, soyut ve sürekli statüler kurar."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Statü Hukuku Mantığı"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare hukukunda memur, öğrenci, ruhsat sahibi veya kamu hizmetinden yararlanan kişi çoğu zaman önceden belirlenmiş bir statüye girer. Bu statü genel kurallarla belirlenir ve idarenin tek yanlı işlemleriyle kişiye uygulanır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu nedenle idare hukukunda özel hukuktaki sözleşme serbestisi aynı genişlikte geçerli değildir. Kamu yararı, kanunilik ve idarenin bağlı yetkisi birçok alanda belirleyici olur."
+        }
+      ],
+      "id": 150,
+      "topic_id": 150,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdareye Hakim Temel İlkeler ve Kamu Tüzel Kişiliği",
+      "slug": "idareye-hakim-temel-ilkeler-ve-kamu-tuzel-kisiligi",
+      "status": "active",
+      "summary": "Hukuk devleti, sosyal devlet, laiklik, idarenin bütünlüğü, hiyerarşi, vesayet ve kamu tüzel kişiliğini işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Temel İlkeler"
+        },
+        {
+          "type": "section_title",
+          "content": "Hukuk Devleti"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hukuk devleti, idarenin keyfî davranamadığı ve bütün işlem ve eylemlerinin hukukla bağlı olduğu devlet anlayışıdır. Bu ilke, idarenin yargısal denetime tabi olmasını ve temel haklara saygılı hareket etmesini gerektirir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İdarenin kanuniliği"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Temel hak ve özgürlüklerin güvence altına alınması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İdarenin yargısal denetimi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hukuki güvenlik ve belirlilik"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mahkeme kararlarına uyma zorunluluğu"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İdarenin mali sorumluluğu"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sosyal Devlet ve Laiklik"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sosyal devlet, kişilerin maddi ve manevi varlığını geliştirebilmesi için sosyal engelleri azaltmayı amaçlar. Eğitim, sağlık, sosyal güvenlik ve çalışma hayatına ilişkin idari faaliyetler bu anlayışla bağlantılıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Laiklik ise idarenin din ve inanç alanında tarafsız davranmasını, kamu hizmetlerinin dini esaslara göre değil hukuk kurallarına göre yürütülmesini gerektirir."
+        },
+        {
+          "type": "subheading",
+          "content": "İdarenin Kanuniliği"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare hem kuruluş hem görev yönünden kanuna dayanmak zorundadır. Anayasa’daki “idare, kuruluş ve görevleriyle bir bütündür ve kanunla düzenlenir” hükmü bu ilkenin temel dayanağıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Tüzel Kişiliği"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu tüzel kişiliği, kamu hizmeti yürütmek veya kamu yararını gerçekleştirmek için kurulmuş, hak ve borç sahibi olabilen kamu hukuku kişiliğidir. Devlet en büyük kamu tüzel kişisidir; yerinden yönetim kuruluşları da ayrı kamu tüzel kişiliğine sahiptir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Başlık",
+            "Kamu Tüzel Kişileri"
+          ],
+          "rows": [
+            [
+              "Kuruluş",
+              "Kanunla veya kanunun açıkça verdiği yetkiye dayanılarak kurulur."
+            ],
+            [
+              "Yetki",
+              "Kamu gücü ayrıcalıklarını kullanabilir."
+            ],
+            [
+              "Malvarlığı",
+              "Kamu malları özel koruma rejimine tabi olabilir."
+            ],
+            [
+              "Gelir",
+              "Kamu gelirleri özel tahsil ve koruma usullerine bağlanabilir."
+            ],
+            [
+              "Sona erme",
+              "Kuruluş usulüne paralel biçimde kanun veya kanuna dayalı işlemle gerçekleşir."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İdarenin Bütünlüğü"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkiye’de idare tek merkezden ibaret değildir; merkezi idare, mahalli idareler, kamu kurumları ve meslek kuruluşları gibi birçok parçadan oluşur. İdarenin bütünlüğü ilkesi bu parçaların kamu yararı doğrultusunda uyumlu çalışmasını ifade eder."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Araç",
+            "Nerede Kullanılır?",
+            "Temel Fark"
+          ],
+          "rows": [
+            [
+              "Hiyerarşi",
+              "Aynı kamu tüzel kişiliği içinde ast-üst ilişkilerinde",
+              "Üst, astın işlemleri ve personeli üzerinde geniş yetkilere sahiptir."
+            ],
+            [
+              "İdari vesayet",
+              "Merkezi idarenin mahalli idareler üzerindeki kanuni denetiminde",
+              "İstisnai ve kanunla sınırlıdır; özerkliği tamamen ortadan kaldırmaz."
+            ],
+            [
+              "Vesayet benzeri denetim",
+              "Hizmet yerinden yönetim kuruluşları ve düzenleyici kurumlarda",
+              "Kurumun özel kanunundaki ilişki ve denetim araçlarına göre değişir."
+            ]
+          ],
+          "caption": "İdarenin bütünlüğünü sağlayan araçlar"
+        },
+        {
+          "type": "subheading",
+          "content": "Hiyerarşi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hiyerarşi, idari teşkilat içinde astı üste bağlayan ilişkidir. Kanunla bir teşkilat kurulduğunda kural olarak kendiliğinden doğar ve kamu hizmetinde birlik sağlar."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Emir ve talimat verme"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Astın işlemlerini denetleme"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Disiplin yetkisi kullanma"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Atama ve görevlendirme alanında yetki kullanma"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İdari Vesayet"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari vesayet merkezi idarenin, mahalli idarelerin işlemleri, organları veya personeli üzerinde kanunda gösterilen usullerle kullandığı sınırlı denetim yetkisidir. Amaç kamu görevlerinde birlik, toplum yararı ve mahalli ihtiyaçların gereği gibi karşılanmasıdır."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Vesayet genel bir üstlük ilişkisi değildir. Kanunda açıkça yoksa merkezi idare mahalli idarenin yerine geçip dilediği işlemi yapamaz."
+        }
+      ],
+      "id": 151,
+      "topic_id": 151,
+      "current_content_version": 1
+    },
+    {
+      "name": "Merkezden Yönetim, Yetki Genişliği, Yetki Devri ve İmza Devri",
+      "slug": "merkezden-yonetim-yetki-genisligi-yetki-devri-ve-imza-devri",
+      "status": "active",
+      "summary": "Merkezden yönetim sistemini, yetki genişliğini, yetki devri ve imza devri ayrımını öğretir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Merkeziyet ve Yetki Teknikleri"
+        },
+        {
+          "type": "section_title",
+          "content": "Merkezden Yönetim"
+        },
+        {
+          "type": "paragraph",
+          "content": "Merkezden yönetim, kamu hizmetlerinin devlet tüzel kişiliği içinde merkezden planlanması ve yürütülmesidir. Bakanlıklar ayrı tüzel kişilik değil, devlet tüzel kişiliğinin parçalarıdır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Özellik",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Tek kamu tüzel kişiliği",
+              "Merkezi idarede devlet tüzel kişiliği vardır."
+            ],
+            [
+              "Tek bütçe mantığı",
+              "Gelir ve giderler merkezi idarenin bütçe düzeni içinde toplanır."
+            ],
+            [
+              "Hiyerarşi",
+              "Merkez ve taşra personeli ast-üst ilişkisiyle bağlıdır."
+            ],
+            [
+              "Karar merkeziliği",
+              "İcrai karar alma yetkisi kural olarak merkezde toplanır."
+            ],
+            [
+              "Taşra örgütü",
+              "Hizmetler ülkeye yayılmış taşra birimleriyle yürütülür."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Merkezden Yönetimin Yarar ve Sakıncaları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Yararlar",
+            "Sakıncalar"
+          ],
+          "rows": [
+            [
+              "Ülke birliği ve kamu hizmetlerinde yeknesaklık sağlar.",
+              "Bürokrasi ve kırtasiyeciliği artırabilir."
+            ],
+            [
+              "Mali denetimi kolaylaştırır.",
+              "Yerel ihtiyaçların geç fark edilmesine yol açabilir."
+            ],
+            [
+              "Milli savunma ve eğitim gibi bütünlük isteyen hizmetlerde etkilidir.",
+              "Halkın kararlara katılımını zayıflatabilir."
+            ],
+            [
+              "Personeli yerel etkilerden koruyabilir.",
+              "Siyasi tercihlerin hizmet dağılımını etkilemesi riski vardır."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Yetki Genişliği"
+        },
+        {
+          "type": "paragraph",
+          "content": "Yetki genişliği, merkezi idarenin taşradaki üst görevlisine merkez adına karar alma ve uygulama yetkisi tanınmasıdır. Türkiye’de il idaresinde vali bakımından önem taşır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu yetki yerinden yönetim değildir; çünkü ayrı bir kamu tüzel kişiliği doğurmaz. Karar hâlâ devlet tüzel kişiliği adına alınır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Yetki genişliği merkezden yönetimi yumuşatır; fakat merkezi idarenin hiyerarşik yapısını ortadan kaldırmaz."
+        },
+        {
+          "type": "subheading",
+          "content": "Yetki Devri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Yetki devri, kanunun izin verdiği hâllerde bir makamın bazı yetkilerini belirli sınırlarla başka bir makama devretmesidir. Devir yazılı olmalı, kapsamı açık olmalı ve ilgililere duyurulmalıdır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yetki devri kanuni dayanak ister."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Devredilen yetkiyi devreden makam geri almadıkça kullanamaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sorumluluk kural olarak yetkiyi devralana geçer."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yetkiyi devreden kişinin görevden kesin ayrılması devri sona erdirir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Devralınmış yetki tekrar devredilemez."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İmza Devri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İmza devri, karar alma yetkisinin değil, işlemi imzalama yetkisinin devridir. İşlem, imza yetkisini devreden makam adına yapılmış sayılır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "Yetki Devri",
+            "İmza Devri"
+          ],
+          "rows": [
+            [
+              "Devredilen şey",
+              "Karar alma yetkisi",
+              "İmzalama yetkisi"
+            ],
+            [
+              "Sorumluluk",
+              "Kural olarak devralana geçer",
+              "İdari sorumluluk devredende kalır"
+            ],
+            [
+              "Devredenin kullanımı",
+              "Geri almadıkça kullanamaz",
+              "Her zaman bizzat kullanabilir"
+            ],
+            [
+              "Kişiye bağlılık",
+              "Devreden makam değişirse sona erer",
+              "Devreden veya devralan kişi değişirse sona erer"
+            ],
+            [
+              "Kanuni dayanak",
+              "Açık dayanak gerekir",
+              "Daha çok iç örgütlenme tekniğidir; bazı hâllerde ilan gerekir"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kanunsuz Emir"
+        },
+        {
+          "type": "paragraph",
+          "content": "Memur, emri hukuka aykırı görürse bunu emri verene bildirir. Üst yazılı olarak ısrar ederse emir yerine getirilir ve sorumluluk emri verene ait olur; ancak konusu suç teşkil eden emir hiçbir şekilde yerine getirilmez."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Kanunsuz emir sorularında kritik ayrım: hukuka aykırı emir yazılı ısrarla uygulanabilir; suç teşkil eden emir uygulanamaz."
+        }
+      ],
+      "id": 152,
+      "topic_id": 152,
+      "current_content_version": 1
+    },
+    {
+      "name": "Türkiye’nin İdari Teşkilatı: Merkezi İdare ve Taşra",
+      "slug": "turkiyenin-idari-teskilati-merkezi-idare-ve-tasra",
+      "status": "active",
+      "summary": "Başkent teşkilatı, bakanlıklar, yardımcı kuruluşlar, il ve ilçe idaresini açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Merkezi İdare Teşkilatı"
+        },
+        {
+          "type": "section_title",
+          "content": "Başkent Teşkilatı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Merkezi idare, başkent teşkilatı ve taşra teşkilatı olarak örgütlenir. Başkent teşkilatı, ülke düzeyindeki idari politikaların belirlenmesi, koordinasyonu ve yürütülmesiyle ilgilidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Cumhurbaşkanı ve Bakanlıklar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Güncel sistemde yürütme yetkisi Cumhurbaşkanına aittir. Bakanlıklar, merkezi idarenin hizmet alanlarına göre örgütlenen ve devlet tüzel kişiliği içinde yer alan temel idari birimlerdir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bakanlıklar ayrı kamu tüzel kişiliğine sahip değildir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bakanlık merkez teşkilatı politika ve koordinasyon işlevi görür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Taşra teşkilatı hizmetin ülke düzeyinde yürütülmesini sağlar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yurt dışı teşkilatı dış temsil ve dış hizmet ihtiyaçlarına göre kurulur."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bağlı, ilgili ve ilişkili kuruluşlar özel kanun veya düzenlemelerine göre bakanlıklarla bağlantı kurar."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Başkentte Yardımcı Kuruluşlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Merkezi idare içinde bazı kuruluşlar hükümete ve idareye danışma, inceleme, denetim veya görüş bildirme işleviyle yardımcı olur. Danıştay ve Sayıştay bu bakımdan idare hukuku derslerinde ayrıca önem taşır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kuruluş",
+            "İdare Hukukundaki Önemi"
+          ],
+          "rows": [
+            [
+              "Danıştay",
+              "Yüksek idare mahkemesi ve bazı idari konularda danışma/inceleme organıdır."
+            ],
+            [
+              "Sayıştay",
+              "Kamu idarelerinin mali faaliyetlerini denetler ve hesap yargısı işlevi görür."
+            ],
+            [
+              "Milli Güvenlik Kurulu",
+              "Milli güvenlik politikaları bakımından anayasal danışma organı niteliği taşır."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Taşra Teşkilatı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Merkezi idare, hizmetlerini yalnız başkentten yürütemez. Bu nedenle ülke il ve ilçe gibi idari bölümlere ayrılır ve merkezi idarenin taşra birimleri bu alanlarda görev yapar."
+        },
+        {
+          "type": "subheading",
+          "content": "İl İdaresi"
+        },
+        {
+          "type": "paragraph",
+          "content": "İl genel idaresinin başı validir. Vali, ilde devletin ve Cumhurbaşkanının temsilcisi olarak merkezi idarenin taşra örgütlenmesinde kilit konumdadır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Vali ilde merkezi idareyi temsil eder."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yetki genişliği ilkesinden yararlanan temel makamdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İl idare şube başkanları kendi hizmet alanlarında valiye bağlı çalışır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İl idare kurulu belirli idari konularda yardımcı kurul işlevi görür."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İlçe İdaresi"
+        },
+        {
+          "type": "paragraph",
+          "content": "İlçe idaresinin başı kaymakamdır. Kaymakam merkezi idarenin ilçedeki temsilcisidir; ancak vali gibi yetki genişliği makamı değildir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kaymakam ilçede kanun ve emirlerin uygulanmasını sağlar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İlçe idare şube başkanları hizmet alanlarına göre görev yapar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İlçe idare kurulu belirli idari görevleri yerine getirir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Bölgesel Örgütlenme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bazı hizmetler il sınırlarını aşan teknik veya coğrafi özellik taşır. Bu durumlarda bölge müdürlükleri gibi bölgesel birimler kurulabilir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Taşra teşkilatında vali-kaymakam ayrımı sınavlarda çok gelir: vali ilde yetki genişliğiyle donatılır, kaymakam ise hiyerarşik taşra görevlisidir."
+        }
+      ],
+      "id": 153,
+      "topic_id": 153,
+      "current_content_version": 1
+    },
+    {
+      "name": "Yerinden Yönetim, Mahalli İdareler ve Hizmet Kuruluşları",
+      "slug": "yerinden-yonetim-mahalli-idareler-ve-hizmet-kuruluslari",
+      "status": "active",
+      "summary": "Mahalli idareleri, kamu kurumlarını, meslek kuruluşlarını ve düzenleyici kurumları açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Yerinden Yönetim"
+        },
+        {
+          "type": "section_title",
+          "content": "Yerinden Yönetimin Anlamı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Yerinden yönetim, mahalli veya teknik nitelikteki bazı kamu hizmetlerinin merkezi idare dışında ayrı kamu tüzel kişileri eliyle yürütülmesidir. Bu kuruluşlar idari ve mali özerkliğe sahiptir; ancak idarenin bütünlüğü içinde kalırlar."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Özellik",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Ayrı kamu tüzel kişiliği",
+              "Devlet tüzel kişiliğinden ayrıdır."
+            ],
+            [
+              "Özerklik",
+              "Kanunun verdiği alanda kendi organlarıyla karar alabilir."
+            ],
+            [
+              "Ayrı bütçe",
+              "Gelir ve giderleri kendi bütçesinde izlenir."
+            ],
+            [
+              "Vesayet/denetim",
+              "Merkezi idarenin sınırlı denetimine tabidir."
+            ],
+            [
+              "Kamu hizmeti",
+              "Mahalli veya uzmanlık gerektiren hizmetleri yürütür."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Mahalli İdareler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mahalli idareler, belirli bir yerde yaşayanların ortak mahalli ihtiyaçlarını karşılamak için kurulan kamu tüzel kişileridir. Anayasa’da il özel idaresi, belediye ve köy mahalli idare olarak kabul edilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mahalli İdare",
+            "Temel Organlar",
+            "Genel Görev Alanı"
+          ],
+          "rows": [
+            [
+              "İl özel idaresi",
+              "İl genel meclisi, il encümeni, vali",
+              "İl sınırları içinde mahalli ortak hizmetler"
+            ],
+            [
+              "Belediye",
+              "Belediye meclisi, belediye encümeni, belediye başkanı",
+              "Beldenin mahalli ortak ihtiyaçları"
+            ],
+            [
+              "Büyükşehir belediyesi",
+              "Büyükşehir belediye meclisi, encümen, başkan",
+              "Büyükşehir ölçeğinde koordinasyon ve üst hizmetler"
+            ],
+            [
+              "Köy",
+              "Köy derneği, ihtiyar meclisi, muhtar",
+              "Köy halkının mahalli ihtiyaçları"
+            ],
+            [
+              "Mahalle",
+              "Muhtar ve ihtiyar heyeti",
+              "Kamu tüzel kişiliği olmayan yerel yardımcı yapı"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Mahalli İdarelerin Anayasal İlkeleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kuruluş ve görevleri kanunla düzenlenir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Karar organları seçimle işbaşına gelir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Merkezi idare idari vesayet yetkisine sahiptir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Görevleriyle orantılı gelir kaynakları sağlanmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Seçilmiş organların organlık sıfatını kazanma ve kaybetme denetimi kural olarak yargı yoluyla olur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Hizmet Yerinden Yönetim Kuruluşları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hizmet yerinden yönetim kuruluşları, uzmanlık gerektiren belirli kamu hizmetlerini yürütmek için kurulmuş kamu kurumlarıdır. Bunlar çoğu zaman kişi topluluğu değil, malvarlığı ve hizmet örgütlenmesi niteliği taşır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Tür",
+            "Örnek Mantık"
+          ],
+          "rows": [
+            [
+              "İdari kamu kurumları",
+              "Karayolları veya DSİ gibi idari hizmet kuruluşları"
+            ],
+            [
+              "İktisadi kamu kurumları",
+              "Kamu iktisadi teşebbüsleri"
+            ],
+            [
+              "Sosyal kamu kurumları",
+              "Sosyal güvenlik ve benzeri hizmet kurumları"
+            ],
+            [
+              "Bilimsel, teknik ve kültürel kurumlar",
+              "Üniversiteler, araştırma ve kültür kurumları"
+            ],
+            [
+              "Düzenleyici ve denetleyici kurumlar",
+              "Piyasa düzenleme ve denetleme görevleri olan bağımsız idari otoriteler"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Kurumu Niteliğindeki Meslek Kuruluşları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Barolar, tabip odaları ve benzeri meslek kuruluşları kamu kurumu niteliğindeki meslek kuruluşlarına örnektir. Bunlar meslek mensuplarını düzenleme, meslek disiplinini sağlama ve kamu yararıyla bağlantılı görevler yürütme amacı taşır."
+        },
+        {
+          "type": "subheading",
+          "content": "Yerinden Yönetimin Artı ve Eksileri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Yarar",
+            "Sakınca"
+          ],
+          "rows": [
+            [
+              "Yerel katılımı ve demokrasi kültürünü güçlendirir.",
+              "Mali kaynak yetersizliği hizmet eşitsizliği doğurabilir."
+            ],
+            [
+              "Hizmetlerin yerel ihtiyaçlara uygun yürütülmesini sağlar.",
+              "Yerel siyasi etkiler hizmet önceliklerini bozabilir."
+            ],
+            [
+              "Bürokrasiyi azaltıp hızı artırabilir.",
+              "Teknik personel ve uzmanlık eksikliği yaşanabilir."
+            ],
+            [
+              "Uzmanlaşmış hizmet yönetimi sağlar.",
+              "Aşırı özerklik üniter devlet bütünlüğü açısından tartışma doğurabilir."
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Yerinden yönetim siyasi özerklik değildir. İdari ve mali özerklik vardır; yasama ve yargı yetkisi doğmaz."
+        }
+      ],
+      "id": 154,
+      "topic_id": 154,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdari Eylemler, İdari İşlemler ve İşlemin Unsurları",
+      "slug": "idari-eylemler-idari-islemler-ve-islemin-unsurlari",
+      "status": "active",
+      "summary": "İdari eylem-işlem ayrımını, işlem türlerini, özelliklerini, unsurlarını ve sakatlık yaptırımlarını anlatır.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İdari İşlemler"
+        },
+        {
+          "type": "section_title",
+          "content": "İdari Eylem ve İdari İşlem Ayrımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari eylem, idarenin maddi dünyada fiilen ortaya çıkan davranışıdır. Yol yapımı, hizmet binasının işletilmesi veya kolluk müdahalesi eylem niteliği taşıyabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari işlem ise idarenin hukuki sonuç doğurmaya yönelen irade açıklamasıdır. Atama, ruhsat verme, disiplin cezası, kamulaştırma kararı ve yönetmelik çıkarma idari işleme örnektir."
+        },
+        {
+          "type": "subheading",
+          "content": "İdari İşlemin Özellikleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tek yanlıdır: Kural olarak ilgilinin rızasına ihtiyaç olmadan doğar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İcraîdir: Hukuki durumda doğrudan sonuç meydana getirir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Re’sen icra edilebilir: Kanuni şartlarla idare kendi kararını uygulayabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hukuka uygunluk karinesinden yararlanır: İptal edilinceye kadar geçerli kabul edilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yargı denetimine tabidir: İşlem hukuka aykırıysa idari yargıda dava konusu olabilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Düzenleyici ve Birel İşlemler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Tür",
+            "Açıklama",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Düzenleyici işlem",
+              "Genel, soyut ve sürekli kural koyar.",
+              "Yönetmelik, genelge, tebliğ"
+            ],
+            [
+              "Birel işlem",
+              "Belirli kişi veya duruma uygulanır.",
+              "Atama, ruhsat, disiplin cezası"
+            ],
+            [
+              "Şart işlem",
+              "Kişiyi önceden düzenlenmiş statüye sokar.",
+              "Memur ataması, öğrencilik kaydı"
+            ],
+            [
+              "Sübjektif işlem",
+              "Belirli kişiye özgü hukuki durum yaratır.",
+              "Belli bir kişiye ödeme veya izin verilmesi"
+            ],
+            [
+              "Yararlandırıcı işlem",
+              "Kişi lehine sonuç doğurur.",
+              "Ruhsat, burs, izin"
+            ],
+            [
+              "Yükümlendirici işlem",
+              "Kişiye yükümlülük getirir.",
+              "Para cezası, yıkım kararı"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İdari İşlemin Unsurları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Unsur",
+            "Soru",
+            "Aykırılık Örneği"
+          ],
+          "rows": [
+            [
+              "Yetki",
+              "İşlemi yapmaya kim yetkilidir?",
+              "Yetkisiz makamın atama yapması"
+            ],
+            [
+              "Şekil",
+              "İşlem hangi usulle yapılmalıdır?",
+              "Zorunlu kurul görüşü alınmadan işlem yapılması"
+            ],
+            [
+              "Sebep",
+              "İşlemin dayandığı maddi/hukuki olgu nedir?",
+              "Gerçekte olmayan disiplin fiiline dayanma"
+            ],
+            [
+              "Konu",
+              "İşlemin doğurduğu hukuki sonuç nedir?",
+              "Hukuken imkânsız sonuç doğurma"
+            ],
+            [
+              "Maksat",
+              "İşlem hangi amaç için yapılmıştır?",
+              "Kamu yararı yerine kişisel/partizan amaçla işlem"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Yetki Aykırılıkları"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Fonksiyon gaspı: İdarenin yasama veya yargı alanına giren işlem yapmasıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yetki gaspı: İdare adına hiçbir yetkisi olmayan kişinin işlem yapmasıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yetki tecavüzü: Bir idari makamın başka bir makamın yetki alanına girmesidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Açık ve bariz yetki tecavüzü: Yetki aşımının herkesçe açıkça fark edilecek derecede ağır olmasıdır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sakatlık Yaptırımları ve Sona Erme"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari işlem hukuka aykırıysa iptal edilebilir veya çok ağır sakatlık hâlinde yok hükmünde kabul edilebilir. Yokluk istisnai bir yaptırımdır; kural, işlemin iptal davasıyla ortadan kaldırılmasıdır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sona Erme Yolu",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Kaldırma",
+              "İşlemin geleceğe etkili biçimde sona erdirilmesi"
+            ],
+            [
+              "Geri alma",
+              "Hukuka aykırı işlemin geçmişe etkili biçimde ortadan kaldırılması"
+            ],
+            [
+              "Değiştirme",
+              "İşlemin bazı unsurlarının yeniden düzenlenmesi"
+            ],
+            [
+              "Düzeltme",
+              "Maddi hata veya eksikliğin giderilmesi"
+            ],
+            [
+              "Sürenin dolması/konunun kalmaması",
+              "İdarenin iradesi dışında işlemin etkisini yitirmesi"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "İdari işlem sorularında beş unsur ezberi çok işe yarar: yetki, şekil, sebep, konu, maksat."
+        }
+      ],
+      "id": 155,
+      "topic_id": 155,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdarenin Sözleşmeleri, Kamu İhaleleri ve Sözleşme Usulleri",
+      "slug": "idarenin-sozlesmeleri-kamu-ihaleleri-ve-sozlesme-usulleri",
+      "status": "active",
+      "summary": "İdari sözleşme-özel hukuk sözleşmesi ayrımını, sözleşme türlerini ve ihale sürecini öğretir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İdarenin Sözleşmeleri"
+        },
+        {
+          "type": "section_title",
+          "content": "İdarenin Sözleşme Yapması"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare yalnız tek yanlı işlem yapmaz; bazı faaliyetleri sözleşmeyle de yürütür. Ancak idarenin yaptığı her sözleşme idari sözleşme değildir."
+        },
+        {
+          "type": "subheading",
+          "content": "İdari Sözleşmenin Ölçütleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bir sözleşmenin idari sözleşme sayılmasında taraflardan birinin idare olması tek başına yeterli değildir. Sözleşmenin kamu hizmetinin yürütülmesine ilişkin olması ve idareye özel hukukta görülmeyen üstün yetkiler tanıması belirleyici ölçütlerdir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Taraf ölçütü",
+              "Taraflardan en az biri idare olmalıdır."
+            ],
+            [
+              "Kamu hizmeti bağlantısı",
+              "Sözleşme kamu hizmetinin yürütülmesiyle bağlantılı olmalıdır."
+            ],
+            [
+              "Üstün yetkiler",
+              "İdareye tek yanlı değiştirme, denetleme, yaptırım gibi kamu gücü ayrıcalıkları tanınabilir."
+            ],
+            [
+              "Yargı yolu",
+              "İdari sözleşmelerden doğan uyuşmazlıklar kural olarak idari yargıda görülür."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İdari Sözleşme Türleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu hizmeti imtiyaz sözleşmeleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İdari hizmet sözleşmeleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yeraltı ve yerüstü servetlerine ilişkin sözleşmeler"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bazı kamu hizmeti yürütüm sözleşmeleri"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İdarenin Özel Hukuk Sözleşmeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare bazı sözleşmelerinde özel hukuk hükümlerine tabi olur. Bu durumda uyuşmazlıklar çoğu zaman adli yargıda görülür ve sözleşmede kamu gücü ayrıcalıkları belirgin değildir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu ihale sözleşmeleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Abonman sözleşmeleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yap-işlet-devret sözleşmeleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yap-işlet sözleşmeleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu özel işbirliği sözleşmeleri"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu İhale İlkeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İhale süreci kamu kaynağının harcanmasıyla ilgili olduğundan şeffaflık ve rekabet ilkeleri önemlidir. Amaç, kamu ihtiyacının uygun şartlarla karşılanması ve keyfî tercihin önlenmesidir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Saydamlık",
+              "Sürecin ilgililerce izlenebilir olması"
+            ],
+            [
+              "Rekabet",
+              "Katılımın mümkün olduğunca geniş tutulması"
+            ],
+            [
+              "Eşit muamele",
+              "İsteklilere aynı kuralların uygulanması"
+            ],
+            [
+              "Güvenirlik",
+              "İhale sürecinin öngörülebilir ve dürüst işlemesi"
+            ],
+            [
+              "Gizlilik",
+              "Tekliflerin korunması gereken aşamalarda açıklanmaması"
+            ],
+            [
+              "Kamuoyu denetimi",
+              "Sürecin hesap verilebilir olması"
+            ],
+            [
+              "İhtiyacın uygun şartlarla karşılanması",
+              "Kamu yararı ve ekonomik etkinlik sağlanması"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İhale Süreci"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hazırlık ve yaklaşık maliyet çalışmaları"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İhale ilanı veya davet"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tekliflerin sunulması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tekliflerin değerlendirilmesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İhale kararının alınması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sözleşmeye davet ve sözleşmenin imzalanması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İhale sonucunun ilanı ve uyuşmazlık yolları"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sözleşmenin Uygulanması ve Sona Ermesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari sözleşmelerde idarenin kamu hizmetinin gereği olarak denetleme, tek yanlı değişiklik yapma, yaptırım uygulama ve bazı hâllerde sözleşmeyi sona erdirme yetkileri bulunabilir. Bu yetkiler kamu yararıyla sınırlıdır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "İdari sözleşme sorularında pratik ölçü: kamu hizmeti + idareye üstün yetki + idari yargı bağlantısı."
+        }
+      ],
+      "id": 156,
+      "topic_id": 156,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdari Faaliyetler: Kamu Hizmeti ve Kolluk",
+      "slug": "idari-faaliyetler-kamu-hizmeti-ve-kolluk",
+      "status": "active",
+      "summary": "Kamu hizmeti ilkelerini, görülme usullerini, kolluk kavramını, türlerini ve sınırlarını açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Kamu Hizmeti ve Kolluk"
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Hizmeti"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu hizmeti, toplumun ortak ve sürekli ihtiyaçlarını karşılamak için idare tarafından veya idarenin denetimi altında yürütülen faaliyettir. Eğitim, sağlık, ulaşım, güvenlik ve altyapı hizmetleri bu kapsamda düşünülebilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Hizmetine Egemen İlkeler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Süreklilik",
+              "Hizmet kesintisiz veya düzenli biçimde yürütülmelidir."
+            ],
+            [
+              "Düzenlilik",
+              "Hizmet önceden belirlenmiş kurallara göre işlemelidir."
+            ],
+            [
+              "Eşitlik",
+              "Benzer durumda olanlar hizmetten eşit yararlanmalıdır."
+            ],
+            [
+              "Uyarlanabilirlik",
+              "Hizmet değişen ihtiyaçlara ve teknolojiye göre yenilenmelidir."
+            ],
+            [
+              "Tarafsızlık",
+              "Hizmet siyasal, kişisel veya ayrımcı tercihle yürütülmemelidir."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Hizmetinin Görülme Usulleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Emanet usulü: Hizmet doğrudan idare tarafından yürütülür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ruhsat usulü: Özel kişi belirli şartlarla faaliyette bulunur."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Müşterek emanet: Gelir ve gider paylaşımı bulunan karma usuldür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İltizam: Hizmet veya gelir belirli bedel karşılığı özel kişiye bırakılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İmtiyaz: Kamu hizmeti özel kişiye uzun süreli sözleşmeyle gördürülür."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kolluk Kavramı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kolluk, kamu düzenini korumaya ve bozulduğunda yeniden sağlamaya yönelen idari faaliyettir. Kolluk faaliyeti hak ve özgürlükleri sınırlayabildiği için kanunilik ve ölçülülük ilkeleri burada özellikle önemlidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Düzeninin Unsurları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Unsur",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Güvenlik",
+              "Kişilerin can ve mal güvenliğinin korunması"
+            ],
+            [
+              "Dirlik ve esenlik",
+              "Günlük hayatın huzur içinde sürmesi"
+            ],
+            [
+              "Genel sağlık",
+              "Toplum sağlığını tehdit eden risklerin önlenmesi"
+            ],
+            [
+              "Genel ahlak",
+              "Kamu düzeniyle bağlantılı asgari toplumsal düzen gerekleri"
+            ],
+            [
+              "İnsan onuru",
+              "Modern kolluk anlayışında kişinin maddi-manevi varlığının korunması"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kolluk Türleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Tür",
+            "Açıklama",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "İdari kolluk",
+              "Suç veya düzensizlik ortaya çıkmadan önlem alır.",
+              "Ruhsat, kapatma, trafik düzeni"
+            ],
+            [
+              "Adli kolluk",
+              "Suç işlendikten sonra fail ve delil araştırır.",
+              "Soruşturma işlemlerine yardım"
+            ],
+            [
+              "Genel idari kolluk",
+              "Genel kamu düzenini korur.",
+              "Polis, jandarma, sahil güvenlik"
+            ],
+            [
+              "Özel idari kolluk",
+              "Belirli sektör veya alanı düzenler.",
+              "İmar kolluğu, çevre kolluğu, sağlık kolluğu"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kolluk Yetkisinin Sınırları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kolluk yetkisi kamu düzenini korumak için vardır; özgürlükleri gereksiz yere sınırlamak için kullanılamaz. Tedbir kanuni, gerekli, elverişli ve ölçülü olmalıdır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kanuni dayanak bulunmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu düzeni amacıyla kullanılmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ölçülülük ilkesine uygun olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Temel hakların özüne dokunmamalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yargısal denetime açık olmalıdır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Hizmeti-Kolluk Ayrımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu hizmeti, toplumsal ihtiyacın karşılanmasına; kolluk ise kamu düzeninin korunmasına yönelir. Aynı idare bazen iki faaliyeti birlikte yürütebilir, fakat hukuki rejimleri farklıdır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kollukta amaç kamu düzeni; kamu hizmetinde amaç toplumsal ihtiyacın düzenli karşılanmasıdır."
+        }
+      ],
+      "id": 157,
+      "topic_id": 157,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdarenin Malları ve Mal Edinme Usulleri",
+      "slug": "idarenin-mallari-ve-mal-edinme-usulleri",
+      "status": "active",
+      "summary": "Kamu malları, özel mallar, kamulaştırma, istimval, devletleştirme ve diğer edinme yollarını işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İdarenin Malları"
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Malı ve Özel Mal Ayrımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdarenin malları kamu malları ve özel mallar olarak ikiye ayrılır. Kamu malları doğrudan kamu yararına veya kamu hizmetine özgülenmiş mallardır; idarenin özel malları ise özel hukuk rejimine daha yakın mallardır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mal Türü",
+            "Açıklama",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Sahipsiz mallar",
+              "Doğal nitelikleri gereği herkesin yararlanmasına açık mallar",
+              "Dağlar, kıyılar, akarsular"
+            ],
+            [
+              "Orta malları",
+              "Bir topluluğun ortak kullanımına ayrılmış mallar",
+              "Yollar, meydanlar, meralar"
+            ],
+            [
+              "Hizmet malları",
+              "Kamu hizmetine tahsis edilmiş mallar",
+              "Okul binası, hastane, adliye binası"
+            ],
+            [
+              "İdarenin özel malları",
+              "Kamu hizmetine doğrudan tahsisli olmayan idare malları",
+              "Kiraya verilebilen taşınmazlar"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Mallarının Özellikleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kural olarak devredilemez ve özel mülkiyete konu edilemez niteliktedir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Zamanaşımıyla kazanılamaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Haczedilmeleri kamu hizmeti gerekleri nedeniyle sınırlıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu yararına tahsis sürdükçe özel koruma rejiminden yararlanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kullanımı genel veya özel yararlanma biçiminde olabilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Mallarından Yararlanma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Genel yararlanma, herkesin eşit ve olağan biçimde kamu malından faydalanmasıdır. Yol, park ve meydan kullanımı buna örnek olabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Özel yararlanma ise kamu malının belirli kişiye özel izin veya sözleşmeyle kullandırılmasıdır. Büfe yeri tahsisi veya iskele kullanım izni bu mantığa girer."
+        },
+        {
+          "type": "subheading",
+          "content": "Mal Edinme Usulleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare kamu hizmetlerini yürütmek için taşınır ve taşınmaz mallara ihtiyaç duyar. Bu ihtiyaç bazen özel hukuk yollarıyla, bazen kamu gücü kullanılan idari usullerle karşılanır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Usul",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Satın alma",
+              "İdarenin özel hukuk yoluyla mal edinmesidir."
+            ],
+            [
+              "Bağış",
+              "Kişilerin malvarlığı değerini idareye karşılıksız devretmesidir."
+            ],
+            [
+              "Kamulaştırma",
+              "Özel mülkiyetteki taşınmazın kamu yararı için bedeli ödenerek alınmasıdır."
+            ],
+            [
+              "İstimval",
+              "Olağanüstü hâllerde taşınır mallara veya hizmetlere el koyma niteliği taşır."
+            ],
+            [
+              "Devletleştirme",
+              "Kamu hizmeti niteliği taşıyan özel teşebbüslerin kamuya geçirilmesidir."
+            ],
+            [
+              "Geçici işgal",
+              "Bir taşınmazdan geçici ve sınırlı süreyle yararlanmadır."
+            ],
+            [
+              "İdareler arası devir",
+              "Kamu idareleri arasında taşınmaz mal devridir."
+            ],
+            [
+              "Kamulaştırmasız el atma",
+              "Usulüne uygun kamulaştırma olmadan mülkiyet hakkına fiili/hukuki müdahaledir."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamulaştırmanın Temel Aşamaları"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu yararı kararı alınır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamulaştırılacak taşınmaz ve malik tespit edilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bedel tespiti yapılır ve satın alma usulü denenir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Anlaşma olmazsa mahkemede bedel tespiti ve tescil süreci işler."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bedel ödenir ve taşınmaz idare adına tescil edilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Özel Kamulaştırma Görünümleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Acele kamulaştırma: Kanunda öngörülen acil durumlarda hızlı el koyma imkânı sağlar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kısmi kamulaştırma: Taşınmazın yalnız ihtiyaç duyulan kısmı alınır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Trampa yoluyla kamulaştırma: Bedel yerine başka taşınmaz verilmesi gündeme gelebilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İdari irtifak kurulması: Mülkiyet alınmadan taşınmaz üzerinde kamu yararı için sınırlı hak kurulur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Kamulaştırma, mülkiyet hakkına ağır müdahaledir; bu yüzden kamu yararı, kanuni usul ve gerçek karşılık ilkeleri birlikte aranır."
+        }
+      ],
+      "id": 158,
+      "topic_id": 158,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdarenin Sorumluluğu ve Kamu Görevlileri",
+      "slug": "idarenin-sorumlulugu-ve-kamu-gorevlileri",
+      "status": "active",
+      "summary": "Kusurlu-kusursuz sorumluluk, sorumluluk koşulları, kamu görevlileri ve memurluk statüsünü açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Sorumluluk ve Personel Rejimi"
+        },
+        {
+          "type": "section_title",
+          "content": "İdarenin Sorumluluğu"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare, yürüttüğü faaliyetler nedeniyle kişilere zarar verdiğinde bu zararı gidermekle yükümlü olabilir. Bu sorumluluk hukuk devleti ilkesinin ve idarenin yargısal denetiminin sonucudur."
+        },
+        {
+          "type": "subheading",
+          "content": "Sorumluluğun Özellikleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu hukuku esaslarına dayanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kural olarak idari yargıda tam yargı davasıyla ileri sürülür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Zarar, idari faaliyetle bağlantılı olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Amaç zararın giderilmesi ve kamu külfetleri dengesinin sağlanmasıdır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kusurlu Sorumluluk"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kusurlu sorumluluk hizmet kusuruna dayanır. Hizmetin hiç işlememesi, geç işlemesi veya kötü işlemesi idarenin kusurlu sorumluluğunu doğurabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Hizmet Kusuru",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Hizmetin hiç işlememesi",
+              "İdarenin yapması gereken hizmeti yerine getirmemesi"
+            ],
+            [
+              "Hizmetin geç işlemesi",
+              "Hizmetin makul sürede yerine getirilmemesi"
+            ],
+            [
+              "Hizmetin kötü işlemesi",
+              "Hizmetin gereklerine uygun yürütülmemesi"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kusursuz Sorumluluk"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bazı hâllerde idarenin kusuru olmasa bile zarar kamu faaliyetiyle bağlantılı olduğu için tazmin yükümlülüğü doğabilir. Bu yaklaşım adalet ve kamu külfetleri karşısında eşitlik düşüncesine dayanır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Risk/tehlike sorumluluğu",
+              "Tehlikeli faaliyet veya araçlardan doğan zararlarda uygulanır."
+            ],
+            [
+              "Sosyal risk",
+              "Toplumsal olaylar ve terör gibi durumlarda zarar gören kişinin korunmasına yönelir."
+            ],
+            [
+              "Kamu külfetleri karşısında eşitlik",
+              "Hukuka uygun faaliyetten bazı kişilerin olağan dışı zarar görmesi hâlinde denkleştirme sağlar."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sorumluluğun Koşulları ve Azaltan Haller"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ortada maddi veya manevi zarar bulunmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Zarar idari faaliyetle bağlantılı olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Nedensellik bağı kurulmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mücbir sebep, zarar görenin kusuru veya üçüncü kişinin kusuru sorumluluğu kaldırabilir ya da azaltabilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu Görevlileri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri, kamu hizmetinin insan unsurudur. Anayasa, kamu hizmetlerinin gerektirdiği asli ve sürekli görevlerin memurlar ve diğer kamu görevlileri eliyle yürütüleceğini kabul eder."
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet Memurluğunun Temel İlkeleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Sınıflandırma",
+              "Görevler niteliklerine göre hizmet sınıflarına ayrılır."
+            ],
+            [
+              "Kariyer",
+              "Memura sınıfı içinde ilerleme ve yükselme imkânı tanınır."
+            ],
+            [
+              "Liyakat",
+              "Göreve giriş ve yükselmede ehliyet ve başarı esas alınır."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Memurluğa Giriş ve Statü"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Genel ve özel şartlar aranır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adaylık süreci uygulanabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Atama işlemiyle memurluk statüsüne girilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Göreve başlama süreleri ve yer değiştirme hükümleri önem taşır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İstisnai memurluklar genel sınav ve kariyer rejiminden farklı özellik gösterebilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Ödev, Hak, Yasak ve Disiplin"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Alan",
+            "Örnekler"
+          ],
+          "rows": [
+            [
+              "Ödevler",
+              "Sadakat, tarafsızlık, emirlere uyma, mal bildirimi, resmi davranış gerekleri"
+            ],
+            [
+              "Haklar",
+              "Güvenlik, izin, aylık, sosyal haklar, emeklilik"
+            ],
+            [
+              "Yasaklar",
+              "Ticaret, hediye alma, siyasi faaliyette bulunma, gizli bilgileri açıklama"
+            ],
+            [
+              "Disiplin cezaları",
+              "Uyarma, kınama, aylıktan kesme, kademe ilerlemesinin durdurulması, memurluktan çıkarma"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kamu görevlileri konusu 657 ile kesişir; burada idare hukuku açısından statü, disiplin ve yargılama mantığı önemlidir."
+        }
+      ],
+      "id": 159,
+      "topic_id": 159,
+      "current_content_version": 1
+    },
+    {
+      "name": "İdari Yargı, Dava Türleri ve Kanun Yolları",
+      "slug": "idari-yargi-dava-turleri-ve-kanun-yollari",
+      "status": "active",
+      "summary": "İdari yargı düzenini, iptal ve tam yargı davalarını, yürütmenin durdurulmasını ve kanun yollarını anlatır.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İdari Yargılama"
+        },
+        {
+          "type": "section_title",
+          "content": "İdari Yargının Görevi"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdari yargı, idarenin kamu hukuku alanındaki işlem ve eylemlerinden doğan uyuşmazlıkları çözmek için kurulmuş yargı düzenidir. İdarenin her işlemi idari yargıya gitmez; özel hukuk ilişkilerinde adli yargı görevli olabilir."
+        },
+        {
+          "type": "subheading",
+          "content": "İdari Yargı Yerleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mahkeme/Organ",
+            "Temel İşlev"
+          ],
+          "rows": [
+            [
+              "İdare mahkemeleri",
+              "Genel görevli ilk derece idari yargı yeridir."
+            ],
+            [
+              "Vergi mahkemeleri",
+              "Vergi, resim, harç ve benzeri mali uyuşmazlıklara bakar."
+            ],
+            [
+              "Bölge idare mahkemeleri",
+              "İstinaf incelemesi ve bazı idari yargı işlevlerini yürütür."
+            ],
+            [
+              "Danıştay",
+              "Bazı davalarda ilk derece, bazı kararlar için temyiz merciidir."
+            ],
+            [
+              "Uyuşmazlık Mahkemesi",
+              "Adli-idari yargı düzenleri arasındaki görev ve hüküm uyuşmazlıklarını çözer."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İptal Davası"
+        },
+        {
+          "type": "paragraph",
+          "content": "İptal davası, idari işlemin yetki, şekil, sebep, konu veya maksat unsurlarından biri yönünden hukuka aykırı olduğu iddiasıyla açılır. Amaç işlemin ortadan kaldırılmasıdır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Dava konusu idari işlem olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Davacının menfaat ihlali bulunmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Davalı işlemi yapan idaredir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Genel dava açma süresi özel süre yoksa idari yargıda 60 gündür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İptal kararı işlemi hukuk aleminden kaldırır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Tam Yargı Davası"
+        },
+        {
+          "type": "paragraph",
+          "content": "Tam yargı davası, idari işlem veya eylem nedeniyle kişisel hakkı ihlal edilenlerin zararlarının giderilmesini istemesine yarar. Tazminat davaları bu kapsamda değerlendirilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "İptal Davası",
+            "Tam Yargı Davası"
+          ],
+          "rows": [
+            [
+              "Amaç",
+              "İşlemin iptali",
+              "Zararın giderilmesi veya hakkın yerine getirilmesi"
+            ],
+            [
+              "Dava şartı",
+              "Menfaat ihlali",
+              "Kişisel hak ihlali"
+            ],
+            [
+              "Sonuç",
+              "İşlem ortadan kalkar",
+              "Tazminat veya eda kararı verilebilir"
+            ],
+            [
+              "Konu",
+              "İdari işlem",
+              "İdari işlem veya eylem"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Dava Açma ve İlk İnceleme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Dilekçelerde taraflar, dava konusu, sebepler, deliller, istem sonucu ve tebligat bilgileri açıkça yer almalıdır. Mahkeme dilekçeyi görev, yetki, ehliyet, süre, husumet ve dava konusu yönlerinden ilk incelemeye tabi tutar."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Görev ve yetki"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İdari merci tecavüzü"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ehliyet"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Süre aşımı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Husumet"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Dilekçe düzeni"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kesin ve yürütülmesi gereken işlem olup olmadığı"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Yürütmenin Durdurulması"
+        },
+        {
+          "type": "paragraph",
+          "content": "İptal davası açılması kural olarak işlemin yürütmesini kendiliğinden durdurmaz. Yürütmenin durdurulması için idari işlemin açıkça hukuka aykırı olması ve uygulanması hâlinde telafisi güç veya imkânsız zarar doğması gerekir."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "YD şartları birlikte aranır: açık hukuka aykırılık + telafisi güç/imkânsız zarar."
+        },
+        {
+          "type": "subheading",
+          "content": "Mahkeme Kararlarının Sonuçları"
+        },
+        {
+          "type": "paragraph",
+          "content": "İdare, mahkeme kararlarına uymak zorundadır. İptal kararından sonra idare gecikmeden işlem tesis etmeli veya hukuka aykırı durumu gidermelidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kanun Yolları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Yol",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "İstinaf",
+              "İlk derece kararlarının bölge idare mahkemesinde incelenmesidir."
+            ],
+            [
+              "Temyiz",
+              "Kanunda sayılan kararların Danıştay tarafından incelenmesidir."
+            ],
+            [
+              "Kanun yararına temyiz",
+              "Kesinleşmiş kararın hukuki yanlışlığının giderilmesine yönelik olağanüstü yoldur."
+            ],
+            [
+              "Yargılamanın yenilenmesi",
+              "Kanunda sayılan ağır nedenlerle kesinleşmiş kararın yeniden incelenmesidir."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Diğer Yargılama Konuları"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Duruşma talebi ve duruşma yapılacak hâller"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bağlantılı davalar ve merci tayini"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Delillerin tespiti ve kanıtlama yöntemleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adli yardım"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hakimin reddi ve çekinmesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çalışmaya ara verme ve nöbetçi mahkemeler"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "İdari yargı konusu, idari işlem unsurlarıyla birlikte düşünülürse daha kolay öğrenilir: önce işlem kurulur, sonra hukuka aykırılığı dava edilir."
+        }
+      ],
+      "id": 160,
+      "topic_id": 160,
+      "current_content_version": 1
+    }
+  ],
+  "subject_id": 31
+}

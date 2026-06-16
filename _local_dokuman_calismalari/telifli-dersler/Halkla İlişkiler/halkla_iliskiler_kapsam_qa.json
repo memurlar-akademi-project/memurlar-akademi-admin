@@ -1,0 +1,167 @@
+{
+  "course": "Halkla İlişkiler",
+  "version": "v3-original-teaching",
+  "source_files": [
+    {
+      "file": "Halkla İlişkiler.pdf",
+      "pages": 21,
+      "role": "primary"
+    }
+  ],
+  "topic_count": 6,
+  "coverage": [
+    {
+      "topic_name": "Halkla İlişkilere Giriş ve Halkla İlişkilerde Sorunlar",
+      "topic_id": 119,
+      "source_pages": "PDF kapsamı: I-II",
+      "covered_headings": [
+        "I) GİRİŞ",
+        "II) HALKLA İLİŞKİLERDE SORUNLAR",
+        "Tanımlamadan kaynaklanan sorunlar",
+        "Belirsiz tanımlar",
+        "Yetersiz tanımlar",
+        "Kuruluşu öne alan tanımlar",
+        "Olumlu imaj yaratmayı öne alan tanımlar",
+        "Reklam/propaganda indirgemesi",
+        "Reklam",
+        "Propaganda",
+        "Krizle bağlantılı görülme"
+      ],
+      "tables": 3,
+      "figures_or_diagrams": 0,
+      "omissions": []
+    },
+    {
+      "topic_name": "Kapsayıcı Yaklaşım ve Halkla İlişkilerin Anlamı",
+      "topic_id": 120,
+      "source_pages": "PDF kapsamı: III-IV",
+      "covered_headings": [
+        "III) HALKLA İLİŞKİLERDE KAPSAYICI YAKLAŞIM",
+        "Seçilmiş tanımlar",
+        "Bilgi verme",
+        "İkna",
+        "Bütünleştirme",
+        "Public Relations News yaklaşımı",
+        "Robinson'un işlevleri",
+        "Etkileşim",
+        "Halk/kamu kavramı",
+        "Uzmanlık",
+        "Yönetim işlevi",
+        "IV) HALKLA İLİŞKİLERİN ANLAMI"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 0,
+      "omissions": []
+    },
+    {
+      "topic_name": "Halkla İlişkilerin İlkeleri ve Yapılanışı",
+      "topic_id": 121,
+      "source_pages": "PDF kapsamı: V-VI",
+      "covered_headings": [
+        "V) HALKLA İLİŞKİLERİN İLKELERİ",
+        "Dürüstlük",
+        "İnandırıcılık",
+        "Tekrarlama",
+        "Bütçe",
+        "VI) HALKLA İLİŞKİLERİN YAPILANIŞI",
+        "Birim",
+        "Örgütlenme",
+        "Danışma",
+        "Yürütme",
+        "Süreç"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 0,
+      "omissions": []
+    },
+    {
+      "topic_name": "Halkla İlişkiler Süreci: Bilgi Toplama ve Planlama",
+      "topic_id": 122,
+      "source_pages": "PDF kapsamı: VII araştırma-planlama",
+      "covered_headings": [
+        "VII) HALKLA İLİŞKİLER SÜRECİNİN AŞAMALARI",
+        "Bilgi toplama/araştırma",
+        "Var olan bilgilerden yararlanma",
+        "Basını izleme",
+        "Kuruluş kaynakları",
+        "Bilimsel yöntemler",
+        "Anlamaya yönelik araştırma",
+        "Betimleyici araştırma",
+        "Açıklayıcı araştırma",
+        "Planlama",
+        "Uzun/orta/kısa plan",
+        "Önleyici/onarıcı plan",
+        "Program planlama noktaları"
+      ],
+      "tables": 3,
+      "figures_or_diagrams": 0,
+      "omissions": []
+    },
+    {
+      "topic_name": "Halkla İlişkiler Süreci: Uygulama ve Değerlendirme",
+      "topic_id": 123,
+      "source_pages": "PDF kapsamı: VII uygulama-değerlendirme",
+      "covered_headings": [
+        "Uygulama/iletişim",
+        "Gönderici",
+        "Mesaj",
+        "Kanal",
+        "Alıcı",
+        "Ortak deney alanı",
+        "Geribildirim",
+        "Değerlendirme",
+        "Dinleyici nitelik/nicelik",
+        "Tepki",
+        "İletişim etkisi",
+        "Etki süresi"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 1,
+      "omissions": []
+    },
+    {
+      "topic_name": "Halkla İlişkilerde Kullanılan Araçlar ve Çalışanlar",
+      "topic_id": 124,
+      "source_pages": "PDF kapsamı: VIII-IX",
+      "covered_headings": [
+        "VIII) HALKLA İLİŞKİLERDE KULLANILAN ARAÇLAR",
+        "Yazılı/basılı araçlar",
+        "Yayım ve görsel-işitsel araçlar",
+        "Sosyal/kültürel araçlar",
+        "Eğitim",
+        "IX) ÇALIŞANLAR VE HALKLA İLİŞKİLER",
+        "İç kamu",
+        "Çalışan davranışları",
+        "Kurum içi ilişkiler"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 1,
+      "omissions": []
+    }
+  ],
+  "global_omissions": [],
+  "copyright_review": {
+    "long_verbatim_passages_found": false,
+    "source_like_paragraphs_rewritten": true,
+    "pdf_paragraph_structure_preserved": false,
+    "tables_rewritten_in_original_words": true,
+    "consecutive_source_sentences_detected": false,
+    "max_paragraph_style": "2-4 cümlelik özgün ders anlatımı; uzun kaynak akışı liste/tablo/paragraflara bölündü."
+  },
+  "needs_human_review": [
+    "PDF/OCR son sayfada 'Kendi içinde tutarsız...' ifadesinden sonra metin kesik göründüğü için çalışanlar bölümü kurum içi tutarlılık anlamı korunarak tamamlandı; orijinal son cümle insan kontrolüne açık."
+  ],
+  "validation_expectations": {
+    "topics_length": 6,
+    "statuses_all_active": true,
+    "target_exam_id": 1,
+    "expected_topic_ids": [
+      119,
+      120,
+      121,
+      122,
+      123,
+      124
+    ]
+  }
+}

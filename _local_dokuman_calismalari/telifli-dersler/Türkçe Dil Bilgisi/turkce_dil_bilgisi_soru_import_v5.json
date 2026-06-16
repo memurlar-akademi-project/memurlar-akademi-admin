@@ -1,0 +1,4437 @@
+{
+  "subject_id": 29,
+  "subject_name": "Türkçe Dil Bilgisi",
+  "q_version": 5,
+  "status": "active",
+  "approval_status": null,
+  "target_exam_id": 1,
+  "source_policy": "Konu anlatımı ve kapsam QA baz alınarak özgün soru diliyle üretildi; kaynak metinden birebir kopya yapılmadı.",
+  "distribution_note": "8 topic x 12 soru = 96 soru. Türkçe uygulama konuları dengeli dağıtıldı.",
+  "questions": [
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Dil ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Dil, toplumla birlikte yaşayan, değişen ve iletişimi sağlayan canlı bir sistemdir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dil değişmeyen ve yalnız yazıdan oluşan kapalı bir yapıdır",
+          "is_correct": false,
+          "id": 72396
+        },
+        {
+          "label": "B",
+          "option_text": "Dil, insanlar arasında anlaşmayı sağlayan canlı bir sistemdir",
+          "is_correct": true,
+          "id": 72397
+        },
+        {
+          "label": "C",
+          "option_text": "Dil yalnız resmî belgelerde kullanılan kurallar bütünüdür",
+          "is_correct": false,
+          "id": 72398
+        },
+        {
+          "label": "D",
+          "option_text": "Dil, seslerden bağımsız bir işaretler toplamıdır",
+          "is_correct": false,
+          "id": 72399
+        },
+        {
+          "label": "E",
+          "option_text": "Dil sadece bireysel alışkanlıklarla oluşur",
+          "is_correct": false,
+          "id": 72400
+        }
+      ],
+      "id": 15175
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Dünya dillerinin yapı bakımından sınıflandırılmasında aşağıdakilerden hangisi esas alınır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yapı bakımından sınıflandırma, dilin biçimsel kuruluşuna; kök, ek ve çekim düzenine bakar.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dillerin konuşulduğu kıta",
+          "is_correct": false,
+          "id": 72401
+        },
+        {
+          "label": "B",
+          "option_text": "Dillerin tarihî akrabalığı",
+          "is_correct": false,
+          "id": 72402
+        },
+        {
+          "label": "C",
+          "option_text": "Sözcüklerin kök ve ek düzeni",
+          "is_correct": true,
+          "id": 72403
+        },
+        {
+          "label": "D",
+          "option_text": "Alfabenin harf sayısı",
+          "is_correct": false,
+          "id": 72404
+        },
+        {
+          "label": "E",
+          "option_text": "Konuşan kişi sayısı",
+          "is_correct": false,
+          "id": 72405
+        }
+      ],
+      "id": 15176
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türkçenin yapı bakımından özelliği aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Türkçede yeni anlam ve görevler çoğunlukla köke eklerin getirilmesiyle kurulur; bu nedenle Türkçe eklemeli dildir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Eklemeli dil olması",
+          "is_correct": true,
+          "id": 72406
+        },
+        {
+          "label": "B",
+          "option_text": "Tek heceli dil olması",
+          "is_correct": false,
+          "id": 72407
+        },
+        {
+          "label": "C",
+          "option_text": "Bükümlü dil olması",
+          "is_correct": false,
+          "id": 72408
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız köklerden oluşması",
+          "is_correct": false,
+          "id": 72409
+        },
+        {
+          "label": "E",
+          "option_text": "Ek almayan yalıtık dil olması",
+          "is_correct": false,
+          "id": 72410
+        }
+      ],
+      "id": 15177
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türkçe, geleneksel kaynak sınıflandırmasında hangi grup içinde gösterilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Geleneksel sınıflandırmada Türkçe, Ural-Altay ailesinin Altay kolu içinde gösterilir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hint-Avrupa ailesinin Germen kolu",
+          "is_correct": false,
+          "id": 72411
+        },
+        {
+          "label": "B",
+          "option_text": "Hami-Sami ailesi",
+          "is_correct": false,
+          "id": 72412
+        },
+        {
+          "label": "C",
+          "option_text": "Çin-Tibet ailesi",
+          "is_correct": false,
+          "id": 72413
+        },
+        {
+          "label": "D",
+          "option_text": "Ural-Altay ailesinin Altay kolu",
+          "is_correct": true,
+          "id": 72414
+        },
+        {
+          "label": "E",
+          "option_text": "Latin dilleri kolu",
+          "is_correct": false,
+          "id": 72415
+        }
+      ],
+      "id": 15178
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ses ile harf arasındaki fark için aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Ses konuşurken çıkarılan birimdir; harf ise o sesin alfabedeki yazılı işaretidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ses yazıda, harf konuşmada kullanılır",
+          "is_correct": false,
+          "id": 72416
+        },
+        {
+          "label": "B",
+          "option_text": "Ses konuşma dilinin birimi, harf bu sesin yazıdaki karşılığıdır",
+          "is_correct": true,
+          "id": 72417
+        },
+        {
+          "label": "C",
+          "option_text": "Ses ve harf her zaman aynı anlama gelen iki noktalama işaretidir",
+          "is_correct": false,
+          "id": 72418
+        },
+        {
+          "label": "D",
+          "option_text": "Harf yalnız ünlüleri gösterir",
+          "is_correct": false,
+          "id": 72419
+        },
+        {
+          "label": "E",
+          "option_text": "Ses yalnız yabancı kelimelerde bulunur",
+          "is_correct": false,
+          "id": 72420
+        }
+      ],
+      "id": 15179
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türk alfabesinde kaç ünlü harf vardır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Türkçede ünlüler a, e, ı, i, o, ö, u, ü olmak üzere sekiz tanedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "8",
+          "is_correct": true,
+          "id": 72421
+        },
+        {
+          "label": "B",
+          "option_text": "10",
+          "is_correct": false,
+          "id": 72422
+        },
+        {
+          "label": "C",
+          "option_text": "21",
+          "is_correct": false,
+          "id": 72423
+        },
+        {
+          "label": "D",
+          "option_text": "24",
+          "is_correct": false,
+          "id": 72424
+        },
+        {
+          "label": "E",
+          "option_text": "29",
+          "is_correct": false,
+          "id": 72425
+        }
+      ],
+      "id": 15180
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki ünlülerden hangisi kalın ünlüdür?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kalın ünlüler a, ı, o, u; ince ünlüler e, i, ö, ü biçimindedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "e",
+          "is_correct": false,
+          "id": 72426
+        },
+        {
+          "label": "B",
+          "option_text": "i",
+          "is_correct": false,
+          "id": 72427
+        },
+        {
+          "label": "C",
+          "option_text": "ö",
+          "is_correct": false,
+          "id": 72428
+        },
+        {
+          "label": "D",
+          "option_text": "ü",
+          "is_correct": false,
+          "id": 72429
+        },
+        {
+          "label": "E",
+          "option_text": "a",
+          "is_correct": true,
+          "id": 72430
+        }
+      ],
+      "id": 15181
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Büyük ünlü uyumu hangi ilişkiye dayanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Büyük ünlü uyumu, sözcükteki ünlülerin kalınsa kalın, inceyse ince devam etmesi kuralıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ünlülerin düz veya yuvarlak olmasına",
+          "is_correct": false,
+          "id": 72431
+        },
+        {
+          "label": "B",
+          "option_text": "Ünsüzlerin sert veya yumuşak olmasına",
+          "is_correct": false,
+          "id": 72432
+        },
+        {
+          "label": "C",
+          "option_text": "Bir sözcükteki ünlülerin kalınlık-incelik bakımından uyumuna",
+          "is_correct": true,
+          "id": 72433
+        },
+        {
+          "label": "D",
+          "option_text": "Sözcüğün anlamca olumlu olmasına",
+          "is_correct": false,
+          "id": 72434
+        },
+        {
+          "label": "E",
+          "option_text": "Eklerin yalnız tek heceli olmasına",
+          "is_correct": false,
+          "id": 72435
+        }
+      ],
+      "id": 15182
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdaki sözcüklerden hangisi büyük ünlü uyumuna uymaz?",
+      "correct_answer_text": "D",
+      "explanation_text": "“kitapçı” sözcüğünde i ince, a kalın ünlüdür; bu nedenle büyük ünlü uyumu bozulur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "kapılar",
+          "is_correct": false,
+          "id": 72436
+        },
+        {
+          "label": "B",
+          "option_text": "gözlük",
+          "is_correct": false,
+          "id": 72437
+        },
+        {
+          "label": "C",
+          "option_text": "sorular",
+          "is_correct": false,
+          "id": 72438
+        },
+        {
+          "label": "D",
+          "option_text": "kitapçı",
+          "is_correct": true,
+          "id": 72439
+        },
+        {
+          "label": "E",
+          "option_text": "evler",
+          "is_correct": false,
+          "id": 72440
+        }
+      ],
+      "id": 15183
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Küçük ünlü uyumu aşağıdakilerden hangisiyle ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Küçük ünlü uyumu, ünlülerin düzlük-yuvarlaklık ve darlık-genişlik özelliklerine göre düzenlenir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece ünsüzlerin sertleşmesiyle",
+          "is_correct": false,
+          "id": 72441
+        },
+        {
+          "label": "B",
+          "option_text": "Düzlük-yuvarlaklık ve darlık-genişlik ilişkisiyle",
+          "is_correct": true,
+          "id": 72442
+        },
+        {
+          "label": "C",
+          "option_text": "Sözcüğün cümledeki özne olmasıyla",
+          "is_correct": false,
+          "id": 72443
+        },
+        {
+          "label": "D",
+          "option_text": "Noktalama işaretlerinin kullanımıyla",
+          "is_correct": false,
+          "id": 72444
+        },
+        {
+          "label": "E",
+          "option_text": "Büyük harf yazımıyla",
+          "is_correct": false,
+          "id": 72445
+        }
+      ],
+      "id": 15184
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi ünlülerin sınıflandırılmasında kullanılan ölçütlerden biri değildir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Ünlüler ses özelliklerine göre sınıflandırılır; sözcüğün türü ünlü sınıflandırma ölçütü değildir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kalınlık-incelik",
+          "is_correct": false,
+          "id": 72446
+        },
+        {
+          "label": "B",
+          "option_text": "Düzlük-yuvarlaklık",
+          "is_correct": false,
+          "id": 72447
+        },
+        {
+          "label": "C",
+          "option_text": "Genişlik-darlık",
+          "is_correct": false,
+          "id": 72448
+        },
+        {
+          "label": "D",
+          "option_text": "Dilin ve dudakların durumu",
+          "is_correct": false,
+          "id": 72449
+        },
+        {
+          "label": "E",
+          "option_text": "Sözcüğün isim veya fiil olması",
+          "is_correct": true,
+          "id": 72450
+        }
+      ],
+      "id": 15185
+    },
+    {
+      "topic_id": 133,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "1928 yılında Türkçe açısından gerçekleşen önemli değişiklik aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "1928’de Latin esaslı Türk alfabesine geçilmiştir; bu bilgi dil tarihi sorularında temel bilgidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Türkçenin ilk kez konuşulmaya başlanması",
+          "is_correct": false,
+          "id": 72451
+        },
+        {
+          "label": "B",
+          "option_text": "Büyük ünlü uyumunun kaldırılması",
+          "is_correct": false,
+          "id": 72452
+        },
+        {
+          "label": "C",
+          "option_text": "Latin esaslı Türk alfabesine geçilmesi",
+          "is_correct": true,
+          "id": 72453
+        },
+        {
+          "label": "D",
+          "option_text": "Ünlü harflerin sayısının azaltılması",
+          "is_correct": false,
+          "id": 72454
+        },
+        {
+          "label": "E",
+          "option_text": "Noktalama işaretlerinin yasaklanması",
+          "is_correct": false,
+          "id": 72455
+        }
+      ],
+      "id": 15186
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türkçede kaç ünsüz harf vardır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Türk alfabesinde 8 ünlü, 21 ünsüz olmak üzere toplam 29 harf vardır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "8",
+          "is_correct": false,
+          "id": 72456
+        },
+        {
+          "label": "B",
+          "option_text": "12",
+          "is_correct": false,
+          "id": 72457
+        },
+        {
+          "label": "C",
+          "option_text": "18",
+          "is_correct": false,
+          "id": 72458
+        },
+        {
+          "label": "D",
+          "option_text": "21",
+          "is_correct": true,
+          "id": 72459
+        },
+        {
+          "label": "E",
+          "option_text": "29",
+          "is_correct": false,
+          "id": 72460
+        }
+      ],
+      "id": 15187
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi sert ünsüzlerden oluşan gruptadır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Sert ünsüzler “fıstıkçı şahap” ifadesiyle hatırlanır: f, s, t, k, ç, ş, h, p.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "ç, f, h, k, p, s, ş, t",
+          "is_correct": true,
+          "id": 72461
+        },
+        {
+          "label": "B",
+          "option_text": "b, c, d, g, ğ, j, l, m",
+          "is_correct": false,
+          "id": 72462
+        },
+        {
+          "label": "C",
+          "option_text": "a, e, ı, i, o, ö, u, ü",
+          "is_correct": false,
+          "id": 72463
+        },
+        {
+          "label": "D",
+          "option_text": "m, n, r, y",
+          "is_correct": false,
+          "id": 72464
+        },
+        {
+          "label": "E",
+          "option_text": "g, ğ, v, z",
+          "is_correct": false,
+          "id": 72465
+        }
+      ],
+      "id": 15188
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ünsüz yumuşamasına aşağıdakilerden hangisi örnektir?",
+      "correct_answer_text": "B",
+      "explanation_text": "p, ç, t, k ile biten bazı sözcükler ünlüyle başlayan ek aldığında b, c, d, ğ/g seslerine dönüşebilir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "kitap + da → kitapta",
+          "is_correct": false,
+          "id": 72466
+        },
+        {
+          "label": "B",
+          "option_text": "kitap + ı → kitabı",
+          "is_correct": true,
+          "id": 72467
+        },
+        {
+          "label": "C",
+          "option_text": "burun + u → burnu",
+          "is_correct": false,
+          "id": 72468
+        },
+        {
+          "label": "D",
+          "option_text": "akıl + ı → aklı",
+          "is_correct": false,
+          "id": 72469
+        },
+        {
+          "label": "E",
+          "option_text": "his + etmek → hissetmek",
+          "is_correct": false,
+          "id": 72470
+        }
+      ],
+      "id": 15189
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ünsüz sertleşmesine aşağıdakilerden hangisi örnektir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Sert ünsüzle biten sözcüğe c, d, g ile başlayan ek gelirse ekin başındaki ünsüz sertleşir: d → t.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "ağaç + ı → ağacı",
+          "is_correct": false,
+          "id": 72471
+        },
+        {
+          "label": "B",
+          "option_text": "renk + i → rengi",
+          "is_correct": false,
+          "id": 72472
+        },
+        {
+          "label": "C",
+          "option_text": "kitap + da → kitapta",
+          "is_correct": true,
+          "id": 72473
+        },
+        {
+          "label": "D",
+          "option_text": "burun + u → burnu",
+          "is_correct": false,
+          "id": 72474
+        },
+        {
+          "label": "E",
+          "option_text": "şehir + i → şehri",
+          "is_correct": false,
+          "id": 72475
+        }
+      ],
+      "id": 15190
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdaki sözcüklerden hangisinde ünlü düşmesi vardır?",
+      "correct_answer_text": "E",
+      "explanation_text": "“burun + u” birleşiminde ikinci hecedeki ünlü düşer: burnu.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "kitabı",
+          "is_correct": false,
+          "id": 72476
+        },
+        {
+          "label": "B",
+          "option_text": "ağacı",
+          "is_correct": false,
+          "id": 72477
+        },
+        {
+          "label": "C",
+          "option_text": "uçtu",
+          "is_correct": false,
+          "id": 72478
+        },
+        {
+          "label": "D",
+          "option_text": "sınıfta",
+          "is_correct": false,
+          "id": 72479
+        },
+        {
+          "label": "E",
+          "option_text": "burnu",
+          "is_correct": true,
+          "id": 72480
+        }
+      ],
+      "id": 15191
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde ünsüz türemesi vardır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bazı birleşmelerde ünsüz tekrarı/türemesi görülür: his + etmek → hissetmek.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "aklı",
+          "is_correct": false,
+          "id": 72481
+        },
+        {
+          "label": "B",
+          "option_text": "kitapta",
+          "is_correct": false,
+          "id": 72482
+        },
+        {
+          "label": "C",
+          "option_text": "rengi",
+          "is_correct": false,
+          "id": 72483
+        },
+        {
+          "label": "D",
+          "option_text": "hissetmek",
+          "is_correct": true,
+          "id": 72484
+        },
+        {
+          "label": "E",
+          "option_text": "ağacı",
+          "is_correct": false,
+          "id": 72485
+        }
+      ],
+      "id": 15192
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde n-b değişimi görülür?",
+      "correct_answer_text": "A",
+      "explanation_text": "Türkçede bazı sözcüklerde n sesi b etkisiyle m’ye dönüşür: saklanbaç → saklambaç.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "saklanbaç değil saklambaç",
+          "is_correct": true,
+          "id": 72486
+        },
+        {
+          "label": "B",
+          "option_text": "kitapta",
+          "is_correct": false,
+          "id": 72487
+        },
+        {
+          "label": "C",
+          "option_text": "ağacı",
+          "is_correct": false,
+          "id": 72488
+        },
+        {
+          "label": "D",
+          "option_text": "burnu",
+          "is_correct": false,
+          "id": 72489
+        },
+        {
+          "label": "E",
+          "option_text": "hissetmek",
+          "is_correct": false,
+          "id": 72490
+        }
+      ],
+      "id": 15193
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Sözcükte yapı bakımından “gözlükçü” sözcüğü nasıl adlandırılır?",
+      "correct_answer_text": "B",
+      "explanation_text": "“gözlükçü” sözcüğü köke yapım ekleri getirilerek oluşturulduğu için türemiştir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Basit sözcük",
+          "is_correct": false,
+          "id": 72491
+        },
+        {
+          "label": "B",
+          "option_text": "Türemiş sözcük",
+          "is_correct": true,
+          "id": 72492
+        },
+        {
+          "label": "C",
+          "option_text": "Birleşik sözcük",
+          "is_correct": false,
+          "id": 72493
+        },
+        {
+          "label": "D",
+          "option_text": "İkileme",
+          "is_correct": false,
+          "id": 72494
+        },
+        {
+          "label": "E",
+          "option_text": "Cümle",
+          "is_correct": false,
+          "id": 72495
+        }
+      ],
+      "id": 15194
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi birleşik sözcüğe örnektir?",
+      "correct_answer_text": "C",
+      "explanation_text": "“hanımeli” iki sözcüğün yeni bir kavramı karşılayacak biçimde birleşmesiyle oluşmuştur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "evler",
+          "is_correct": false,
+          "id": 72496
+        },
+        {
+          "label": "B",
+          "option_text": "gözlük",
+          "is_correct": false,
+          "id": 72497
+        },
+        {
+          "label": "C",
+          "option_text": "hanımeli",
+          "is_correct": true,
+          "id": 72498
+        },
+        {
+          "label": "D",
+          "option_text": "kalemim",
+          "is_correct": false,
+          "id": 72499
+        },
+        {
+          "label": "E",
+          "option_text": "geldim",
+          "is_correct": false,
+          "id": 72500
+        }
+      ],
+      "id": 15195
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kök ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kök, sözcüğün anlam taşıyan en küçük temel parçasıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kök her zaman ek almış biçimdedir",
+          "is_correct": false,
+          "id": 72501
+        },
+        {
+          "label": "B",
+          "option_text": "Kök yalnız cümlede bulunur",
+          "is_correct": false,
+          "id": 72502
+        },
+        {
+          "label": "C",
+          "option_text": "Kök anlamı olmayan ses parçasıdır",
+          "is_correct": false,
+          "id": 72503
+        },
+        {
+          "label": "D",
+          "option_text": "Kök, sözcüğün anlamlı ve daha küçük parçaya ayrılamayan temelidir",
+          "is_correct": true,
+          "id": 72504
+        },
+        {
+          "label": "E",
+          "option_text": "Kök yalnız yabancı sözcüklerde vardır",
+          "is_correct": false,
+          "id": 72505
+        }
+      ],
+      "id": 15196
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdaki eşleştirmelerden hangisi yanlıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "“evler” sözcüğünde ünlü düşmesi yoktur; köke çoğul eki gelmiştir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "kitapta - ünsüz sertleşmesi",
+          "is_correct": false,
+          "id": 72506
+        },
+        {
+          "label": "B",
+          "option_text": "ağacı - ünsüz yumuşaması",
+          "is_correct": false,
+          "id": 72507
+        },
+        {
+          "label": "C",
+          "option_text": "burnu - ünlü düşmesi",
+          "is_correct": false,
+          "id": 72508
+        },
+        {
+          "label": "D",
+          "option_text": "hissetmek - ünsüz türemesi",
+          "is_correct": false,
+          "id": 72509
+        },
+        {
+          "label": "E",
+          "option_text": "evler - ünlü düşmesi",
+          "is_correct": true,
+          "id": 72510
+        }
+      ],
+      "id": 15197
+    },
+    {
+      "topic_id": 134,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Basit sözcük aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Basit sözcük yapım eki almamış sözcüktür; “taş” bu haliyle basittir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "taş",
+          "is_correct": true,
+          "id": 72511
+        },
+        {
+          "label": "B",
+          "option_text": "taşlık",
+          "is_correct": false,
+          "id": 72512
+        },
+        {
+          "label": "C",
+          "option_text": "taşçı",
+          "is_correct": false,
+          "id": 72513
+        },
+        {
+          "label": "D",
+          "option_text": "başkent",
+          "is_correct": false,
+          "id": 72514
+        },
+        {
+          "label": "E",
+          "option_text": "gözlükçü",
+          "is_correct": false,
+          "id": 72515
+        }
+      ],
+      "id": 15198
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Gerçek anlam aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Gerçek anlam, sözcüğün temel anlamını ve bu anlama yakın yan anlamları kapsar.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sözcüğün akla gelen ilk ve temel anlamı",
+          "is_correct": true,
+          "id": 72516
+        },
+        {
+          "label": "B",
+          "option_text": "Sözcüğün tamamen zıt anlamı",
+          "is_correct": false,
+          "id": 72517
+        },
+        {
+          "label": "C",
+          "option_text": "Sözcüğün yalnız şiirde kazandığı anlam",
+          "is_correct": false,
+          "id": 72518
+        },
+        {
+          "label": "D",
+          "option_text": "Sözcüğün yanlış yazılmış biçimi",
+          "is_correct": false,
+          "id": 72519
+        },
+        {
+          "label": "E",
+          "option_text": "Sözcüğün noktalama görevi",
+          "is_correct": false,
+          "id": 72520
+        }
+      ],
+      "id": 15199
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Masanın ayağı kırıldı.” cümlesinde “ayak” sözcüğü hangi anlamdadır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Masa ayağı, biçim/işlev benzerliğiyle oluşmuş yan anlamdır; gerçek anlamla bağını tamamen koparmaz.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mecaz anlam",
+          "is_correct": false,
+          "id": 72521
+        },
+        {
+          "label": "B",
+          "option_text": "Yan anlam",
+          "is_correct": true,
+          "id": 72522
+        },
+        {
+          "label": "C",
+          "option_text": "Terim anlam",
+          "is_correct": false,
+          "id": 72523
+        },
+        {
+          "label": "D",
+          "option_text": "Zıt anlam",
+          "is_correct": false,
+          "id": 72524
+        },
+        {
+          "label": "E",
+          "option_text": "Eş sesli anlam",
+          "is_correct": false,
+          "id": 72525
+        }
+      ],
+      "id": 15200
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Bu sözleri duyunca içim yandı.” cümlesinde “yandı” sözcüğü hangi anlamdadır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Burada fiziksel yanma değil, üzüntü anlatılır; sözcük mecaz anlam kazanmıştır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Temel anlam",
+          "is_correct": false,
+          "id": 72526
+        },
+        {
+          "label": "B",
+          "option_text": "Yan anlam",
+          "is_correct": false,
+          "id": 72527
+        },
+        {
+          "label": "C",
+          "option_text": "Mecaz anlam",
+          "is_correct": true,
+          "id": 72528
+        },
+        {
+          "label": "D",
+          "option_text": "Terim anlam",
+          "is_correct": false,
+          "id": 72529
+        },
+        {
+          "label": "E",
+          "option_text": "Nicel anlam",
+          "is_correct": false,
+          "id": 72530
+        }
+      ],
+      "id": 15201
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde terim anlam vardır?",
+      "correct_answer_text": "D",
+      "explanation_text": "“Üçgen” ve “iç açı” geometri alanına ait özel anlamlı terimlerdir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kırık kalbini kimse fark etmedi",
+          "is_correct": false,
+          "id": 72531
+        },
+        {
+          "label": "B",
+          "option_text": "Sıcak bir gülümsemeyle karşıladı",
+          "is_correct": false,
+          "id": 72532
+        },
+        {
+          "label": "C",
+          "option_text": "Yolun başında bekledi",
+          "is_correct": false,
+          "id": 72533
+        },
+        {
+          "label": "D",
+          "option_text": "Üçgenin iç açıları toplamı 180 derecedir",
+          "is_correct": true,
+          "id": 72534
+        },
+        {
+          "label": "E",
+          "option_text": "Bugün hava çok güzel",
+          "is_correct": false,
+          "id": 72535
+        }
+      ],
+      "id": 15202
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Eş anlamlı sözcükler için aşağıdakilerden hangisi örnektir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Cevap ve yanıt aynı anlam alanında kullanılan eş anlamlı sözcüklerdir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "ak-kara",
+          "is_correct": false,
+          "id": 72536
+        },
+        {
+          "label": "B",
+          "option_text": "cevap-yanıt",
+          "is_correct": true,
+          "id": 72537
+        },
+        {
+          "label": "C",
+          "option_text": "yaz-yaz",
+          "is_correct": false,
+          "id": 72538
+        },
+        {
+          "label": "D",
+          "option_text": "gül-gül",
+          "is_correct": false,
+          "id": 72539
+        },
+        {
+          "label": "E",
+          "option_text": "ileri-geri",
+          "is_correct": false,
+          "id": 72540
+        }
+      ],
+      "id": 15203
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki sözcük çiftlerinden hangisi zıt anlamlıdır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Az ve çok anlamca karşıtlık bildirir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "konut-ev",
+          "is_correct": false,
+          "id": 72541
+        },
+        {
+          "label": "B",
+          "option_text": "öğrenci-talebe",
+          "is_correct": false,
+          "id": 72542
+        },
+        {
+          "label": "C",
+          "option_text": "soru-sual",
+          "is_correct": false,
+          "id": 72543
+        },
+        {
+          "label": "D",
+          "option_text": "yıl-sene",
+          "is_correct": false,
+          "id": 72544
+        },
+        {
+          "label": "E",
+          "option_text": "az-çok",
+          "is_correct": true,
+          "id": 72545
+        }
+      ],
+      "id": 15204
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Yüz” sözcüğünün hem sayı hem organ anlamında kullanılması hangi kavramla ilgilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yazılış ve okunuşları aynı, anlamları farklı olan sözcükler eş seslidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Eş seslilik",
+          "is_correct": true,
+          "id": 72546
+        },
+        {
+          "label": "B",
+          "option_text": "Eş anlamlılık",
+          "is_correct": false,
+          "id": 72547
+        },
+        {
+          "label": "C",
+          "option_text": "Terim anlam",
+          "is_correct": false,
+          "id": 72548
+        },
+        {
+          "label": "D",
+          "option_text": "Deyim",
+          "is_correct": false,
+          "id": 72549
+        },
+        {
+          "label": "E",
+          "option_text": "Dolaylama",
+          "is_correct": false,
+          "id": 72550
+        }
+      ],
+      "id": 15205
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde soyut anlamlı bir sözcük kullanılmıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Umut duyularla algılanamayan bir kavramdır; soyut anlamlıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "masa",
+          "is_correct": false,
+          "id": 72551
+        },
+        {
+          "label": "B",
+          "option_text": "kalem",
+          "is_correct": false,
+          "id": 72552
+        },
+        {
+          "label": "C",
+          "option_text": "umut",
+          "is_correct": true,
+          "id": 72553
+        },
+        {
+          "label": "D",
+          "option_text": "kapı",
+          "is_correct": false,
+          "id": 72554
+        },
+        {
+          "label": "E",
+          "option_text": "defter",
+          "is_correct": false,
+          "id": 72555
+        }
+      ],
+      "id": 15206
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Ad durum ekleriyle ilgili aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Durum ekleri adların cümlede yüklem veya başka sözcüklerle ilişkisini kurar.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız fiillere gelir",
+          "is_correct": false,
+          "id": 72556
+        },
+        {
+          "label": "B",
+          "option_text": "Sözcüğü her zaman birleşik yapar",
+          "is_correct": false,
+          "id": 72557
+        },
+        {
+          "label": "C",
+          "option_text": "Noktalama işareti yerine kullanılır",
+          "is_correct": false,
+          "id": 72558
+        },
+        {
+          "label": "D",
+          "option_text": "Adın cümledeki görevini ve diğer ögelerle ilişkisini gösterir",
+          "is_correct": true,
+          "id": 72559
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece özel adlarda bulunur",
+          "is_correct": false,
+          "id": 72560
+        }
+      ],
+      "id": 15207
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Bahçenin kapısı” söz grubunda hangi tamlama vardır?",
+      "correct_answer_text": "B",
+      "explanation_text": "“Bahçenin” ilgi eki, “kapısı” iyelik eki aldığı için belirtili ad tamlamasıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sıfat tamlaması",
+          "is_correct": false,
+          "id": 72561
+        },
+        {
+          "label": "B",
+          "option_text": "Belirtili ad tamlaması",
+          "is_correct": true,
+          "id": 72562
+        },
+        {
+          "label": "C",
+          "option_text": "Belirtisiz ad tamlaması",
+          "is_correct": false,
+          "id": 72563
+        },
+        {
+          "label": "D",
+          "option_text": "Zincirleme fiil",
+          "is_correct": false,
+          "id": 72564
+        },
+        {
+          "label": "E",
+          "option_text": "Edat grubu",
+          "is_correct": false,
+          "id": 72565
+        }
+      ],
+      "id": 15208
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi sıfat tamlamasıdır?",
+      "correct_answer_text": "A",
+      "explanation_text": "“beyaz” sözcüğü “gömlek” adını nitelediği için sıfat tamlaması oluşur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "beyaz gömlek",
+          "is_correct": true,
+          "id": 72566
+        },
+        {
+          "label": "B",
+          "option_text": "evin kapısı",
+          "is_correct": false,
+          "id": 72567
+        },
+        {
+          "label": "C",
+          "option_text": "okul bahçesi",
+          "is_correct": false,
+          "id": 72568
+        },
+        {
+          "label": "D",
+          "option_text": "çocuğun kitabı",
+          "is_correct": false,
+          "id": 72569
+        },
+        {
+          "label": "E",
+          "option_text": "su sesi",
+          "is_correct": false,
+          "id": 72570
+        }
+      ],
+      "id": 15209
+    },
+    {
+      "topic_id": 135,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "“Keskin bakışları herkesin dikkatini çekti.” cümlesinde “keskin” sözcüğü hangi anlamdadır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Keskin sözcüğü burada fiziksel kesicilik değil, etkili ve dikkat çekici bakış anlamı kazanmıştır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Terim anlam",
+          "is_correct": false,
+          "id": 72571
+        },
+        {
+          "label": "B",
+          "option_text": "Temel anlam",
+          "is_correct": false,
+          "id": 72572
+        },
+        {
+          "label": "C",
+          "option_text": "Eş sesli anlam",
+          "is_correct": false,
+          "id": 72573
+        },
+        {
+          "label": "D",
+          "option_text": "Nicel anlam",
+          "is_correct": false,
+          "id": 72574
+        },
+        {
+          "label": "E",
+          "option_text": "Mecaz anlam",
+          "is_correct": true,
+          "id": 72575
+        }
+      ],
+      "id": 15210
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Neden-sonuç cümlesi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Neden-sonuçta gerçekleşen durumun gerekçesi verilir; törenin kapalı salonda yapılmasının nedeni yağmurdur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yağmur yağdığı için tören kapalı salonda yapıldı",
+          "is_correct": true,
+          "id": 72576
+        },
+        {
+          "label": "B",
+          "option_text": "Daha iyi çalışmak için erken kalktı",
+          "is_correct": false,
+          "id": 72577
+        },
+        {
+          "label": "C",
+          "option_text": "Kitabı almak üzere kütüphaneye gitti",
+          "is_correct": false,
+          "id": 72578
+        },
+        {
+          "label": "D",
+          "option_text": "Toplantıya katılmak için izin istedi",
+          "is_correct": false,
+          "id": 72579
+        },
+        {
+          "label": "E",
+          "option_text": "Seni görmek için buraya geldim",
+          "is_correct": false,
+          "id": 72580
+        }
+      ],
+      "id": 15211
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Amaç-sonuç cümlesi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Amaç-sonuçta hedeflenen sonuç için eylem yapılır; çalışma eyleminin amacı sınavı kazanmaktır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yol kapalı olduğundan geç kaldık",
+          "is_correct": false,
+          "id": 72581
+        },
+        {
+          "label": "B",
+          "option_text": "Hasta olduğu için işe gelmedi",
+          "is_correct": false,
+          "id": 72582
+        },
+        {
+          "label": "C",
+          "option_text": "Sınavı kazanmak için düzenli çalışıyor",
+          "is_correct": true,
+          "id": 72583
+        },
+        {
+          "label": "D",
+          "option_text": "Elektrikler kesildiği için ders yapılamadı",
+          "is_correct": false,
+          "id": 72584
+        },
+        {
+          "label": "E",
+          "option_text": "Kar yağdığı için yollar kapandı",
+          "is_correct": false,
+          "id": 72585
+        }
+      ],
+      "id": 15212
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Cümlenin temel ögesi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Cümlede yargıyı bildiren temel öge yüklemdir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Nesne",
+          "is_correct": false,
+          "id": 72586
+        },
+        {
+          "label": "B",
+          "option_text": "Yüklem",
+          "is_correct": true,
+          "id": 72587
+        },
+        {
+          "label": "C",
+          "option_text": "Dolaylı tümleç",
+          "is_correct": false,
+          "id": 72588
+        },
+        {
+          "label": "D",
+          "option_text": "Zarf tümleci",
+          "is_correct": false,
+          "id": 72589
+        },
+        {
+          "label": "E",
+          "option_text": "Tamlayan",
+          "is_correct": false,
+          "id": 72590
+        }
+      ],
+      "id": 15213
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Öğrenciler bahçede sessizce kitap okudu.” cümlesinin öznesi hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yükleme “kim okudu?” sorusu sorulduğunda “öğrenciler” cevabı alınır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Öğrenciler",
+          "is_correct": true,
+          "id": 72591
+        },
+        {
+          "label": "B",
+          "option_text": "bahçede",
+          "is_correct": false,
+          "id": 72592
+        },
+        {
+          "label": "C",
+          "option_text": "sessizce",
+          "is_correct": false,
+          "id": 72593
+        },
+        {
+          "label": "D",
+          "option_text": "kitap",
+          "is_correct": false,
+          "id": 72594
+        },
+        {
+          "label": "E",
+          "option_text": "okudu",
+          "is_correct": false,
+          "id": 72595
+        }
+      ],
+      "id": 15214
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Ali kitabı masaya bıraktı.” cümlesinde belirtili nesne hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yükleme “neyi bıraktı?” sorusu sorulduğunda “kitabı” belirtili nesnedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ali",
+          "is_correct": false,
+          "id": 72596
+        },
+        {
+          "label": "B",
+          "option_text": "masaya",
+          "is_correct": false,
+          "id": 72597
+        },
+        {
+          "label": "C",
+          "option_text": "kitabı",
+          "is_correct": true,
+          "id": 72598
+        },
+        {
+          "label": "D",
+          "option_text": "bıraktı",
+          "is_correct": false,
+          "id": 72599
+        },
+        {
+          "label": "E",
+          "option_text": "Ali kitabı",
+          "is_correct": false,
+          "id": 72600
+        }
+      ],
+      "id": 15215
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi anlamca çelişen bir cümledir?",
+      "correct_answer_text": "D",
+      "explanation_text": "“Kesinlikle” kesinlik, “belki” olasılık bildirir; birlikte kullanımları çelişki doğurur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bu konu üzerinde uzun süre düşündüm",
+          "is_correct": false,
+          "id": 72601
+        },
+        {
+          "label": "B",
+          "option_text": "Toplantı beklenenden erken bitti",
+          "is_correct": false,
+          "id": 72602
+        },
+        {
+          "label": "C",
+          "option_text": "Kitap sade bir dille yazılmış",
+          "is_correct": false,
+          "id": 72603
+        },
+        {
+          "label": "D",
+          "option_text": "Kesinlikle belki yarın gelir",
+          "is_correct": true,
+          "id": 72604
+        },
+        {
+          "label": "E",
+          "option_text": "Yazar örneklerle düşüncesini açıklıyor",
+          "is_correct": false,
+          "id": 72605
+        }
+      ],
+      "id": 15216
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "“Bu karar, çalışanların verimliliğini artırmak üzere alındı.” cümlesinde anlam ilişkisi nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kararın alınma amacı verimliliği artırmaktır; hedeflenen sonuç henüz amaç düzeyindedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Neden-sonuç",
+          "is_correct": false,
+          "id": 72606
+        },
+        {
+          "label": "B",
+          "option_text": "Amaç-sonuç",
+          "is_correct": true,
+          "id": 72607
+        },
+        {
+          "label": "C",
+          "option_text": "Koşul-sonuç",
+          "is_correct": false,
+          "id": 72608
+        },
+        {
+          "label": "D",
+          "option_text": "Karşılaştırma",
+          "is_correct": false,
+          "id": 72609
+        },
+        {
+          "label": "E",
+          "option_text": "Tanım",
+          "is_correct": false,
+          "id": 72610
+        }
+      ],
+      "id": 15217
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi yüklemin türüne göre fiil cümlesidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Yüklem “oynuyor” çekimli fiil olduğu için cümle fiil cümlesidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bugün hava çok sıcak",
+          "is_correct": false,
+          "id": 72611
+        },
+        {
+          "label": "B",
+          "option_text": "Yeni müdür oldukça dikkatli",
+          "is_correct": false,
+          "id": 72612
+        },
+        {
+          "label": "C",
+          "option_text": "Bu kitap benim",
+          "is_correct": false,
+          "id": 72613
+        },
+        {
+          "label": "D",
+          "option_text": "Sınıf tertemiz",
+          "is_correct": false,
+          "id": 72614
+        },
+        {
+          "label": "E",
+          "option_text": "Çocuklar bahçede oynuyor",
+          "is_correct": true,
+          "id": 72615
+        }
+      ],
+      "id": 15218
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi olumlu cümledir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Olumlu cümlede yargının gerçekleştiği bildirilir; “başladı” olumlu yargıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Toplantı zamanında başladı",
+          "is_correct": true,
+          "id": 72616
+        },
+        {
+          "label": "B",
+          "option_text": "Bugün kimse gelmedi",
+          "is_correct": false,
+          "id": 72617
+        },
+        {
+          "label": "C",
+          "option_text": "Bu işi yapamam",
+          "is_correct": false,
+          "id": 72618
+        },
+        {
+          "label": "D",
+          "option_text": "Kapıyı açmadı",
+          "is_correct": false,
+          "id": 72619
+        },
+        {
+          "label": "E",
+          "option_text": "Ders henüz bitmedi",
+          "is_correct": false,
+          "id": 72620
+        }
+      ],
+      "id": 15219
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "“Bu raporu müdüre dün teslim ettim.” cümlesinde “dün” hangi ögedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "“Ne zaman teslim ettim?” sorusunun cevabı “dün”dür; zaman zarfı görevindedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özne",
+          "is_correct": false,
+          "id": 72621
+        },
+        {
+          "label": "B",
+          "option_text": "Belirtili nesne",
+          "is_correct": false,
+          "id": 72622
+        },
+        {
+          "label": "C",
+          "option_text": "Dolaylı tümleç",
+          "is_correct": false,
+          "id": 72623
+        },
+        {
+          "label": "D",
+          "option_text": "Zarf tümleci",
+          "is_correct": true,
+          "id": 72624
+        },
+        {
+          "label": "E",
+          "option_text": "Yüklem",
+          "is_correct": false,
+          "id": 72625
+        }
+      ],
+      "id": 15220
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Yakın anlamlı cümlelerde aranan temel özellik nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yakın anlamlılık, sözcüklerin aynı olmasından çok iletilen düşüncenin benzer olmasıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Aynı sözcüklerin kullanılması",
+          "is_correct": false,
+          "id": 72626
+        },
+        {
+          "label": "B",
+          "option_text": "Aynı uzunlukta olmaları",
+          "is_correct": false,
+          "id": 72627
+        },
+        {
+          "label": "C",
+          "option_text": "Verilen yargının benzer düşünceyi taşıması",
+          "is_correct": true,
+          "id": 72628
+        },
+        {
+          "label": "D",
+          "option_text": "Aynı noktalama işaretini içermeleri",
+          "is_correct": false,
+          "id": 72629
+        },
+        {
+          "label": "E",
+          "option_text": "Mutlaka atasözü olmaları",
+          "is_correct": false,
+          "id": 72630
+        }
+      ],
+      "id": 15221
+    },
+    {
+      "topic_id": 136,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Koşul-sonuç ilişkisi bulunan cümle hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "“Çalışırsan” ifadesi gerçekleşmesi başka sonuca bağlı koşulu bildirir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hasta olduğu için gelmedi",
+          "is_correct": false,
+          "id": 72631
+        },
+        {
+          "label": "B",
+          "option_text": "Düzenli çalışırsan başarırsın",
+          "is_correct": true,
+          "id": 72632
+        },
+        {
+          "label": "C",
+          "option_text": "Başarmak için çalışıyor",
+          "is_correct": false,
+          "id": 72633
+        },
+        {
+          "label": "D",
+          "option_text": "Yağmur yağdı ve yollar ıslandı",
+          "is_correct": false,
+          "id": 72634
+        },
+        {
+          "label": "E",
+          "option_text": "Bugün hava oldukça serin",
+          "is_correct": false,
+          "id": 72635
+        }
+      ],
+      "id": 15222
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Paragrafın konusu nasıl bulunur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Konu, paragrafta üzerinde durulan kişi, olay, kavram veya düşüncedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Parçada ne hakkında söz söylendiği sorularak",
+          "is_correct": true,
+          "id": 72636
+        },
+        {
+          "label": "B",
+          "option_text": "Yazarın mesleği tahmin edilerek",
+          "is_correct": false,
+          "id": 72637
+        },
+        {
+          "label": "C",
+          "option_text": "En uzun cümle seçilerek",
+          "is_correct": false,
+          "id": 72638
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece son kelimeye bakılarak",
+          "is_correct": false,
+          "id": 72639
+        },
+        {
+          "label": "E",
+          "option_text": "Dış bilgi eklenerek",
+          "is_correct": false,
+          "id": 72640
+        }
+      ],
+      "id": 15223
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ana düşünce ile konu arasındaki fark için hangisi doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Konu “ne hakkında?”, ana düşünce “bu konuda asıl ne söyleniyor?” sorusunun cevabıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Konu her zaman cümle, ana düşünce tek sözcüktür",
+          "is_correct": false,
+          "id": 72641
+        },
+        {
+          "label": "B",
+          "option_text": "İkisi tamamen aynı kavramdır",
+          "is_correct": false,
+          "id": 72642
+        },
+        {
+          "label": "C",
+          "option_text": "Konu üzerinde durulan alanı, ana düşünce bu alanla ilgili temel yargıyı verir",
+          "is_correct": true,
+          "id": 72643
+        },
+        {
+          "label": "D",
+          "option_text": "Ana düşünce yalnız başlıkta bulunur",
+          "is_correct": false,
+          "id": 72644
+        },
+        {
+          "label": "E",
+          "option_text": "Konu paragraf dışında aranır",
+          "is_correct": false,
+          "id": 72645
+        }
+      ],
+      "id": 15224
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Paragraf sorularında dış bilgi eklemek neden sakıncalıdır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Paragraf sorularında doğru cevap, okuyucunun genel bilgisine değil metnin söylediğine dayanır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her paragrafın tek cümleden oluşması nedeniyle",
+          "is_correct": false,
+          "id": 72646
+        },
+        {
+          "label": "B",
+          "option_text": "Dış bilginin daima yanlış olması nedeniyle",
+          "is_correct": false,
+          "id": 72647
+        },
+        {
+          "label": "C",
+          "option_text": "Paragrafta konu bulunmadığı için",
+          "is_correct": false,
+          "id": 72648
+        },
+        {
+          "label": "D",
+          "option_text": "Cevabın metinde verilen bilgiyle sınırlı olması gerektiği için",
+          "is_correct": true,
+          "id": 72649
+        },
+        {
+          "label": "E",
+          "option_text": "Yardımcı düşüncelerin önemsiz olması nedeniyle",
+          "is_correct": false,
+          "id": 72650
+        }
+      ],
+      "id": 15225
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yardımcı düşünceler paragrafta hangi işlevi görür?",
+      "correct_answer_text": "B",
+      "explanation_text": "Yardımcı düşünceler ana düşünceyi açıklayan ve güçlendiren yan yargılardır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ana düşünceyle ilgisiz yeni konu açar",
+          "is_correct": false,
+          "id": 72651
+        },
+        {
+          "label": "B",
+          "option_text": "Ana düşünceyi örnek, açıklama veya gerekçeyle destekler",
+          "is_correct": true,
+          "id": 72652
+        },
+        {
+          "label": "C",
+          "option_text": "Paragrafı mutlaka soru cümlesine çevirir",
+          "is_correct": false,
+          "id": 72653
+        },
+        {
+          "label": "D",
+          "option_text": "Başlığı gereksiz hale getirir",
+          "is_correct": false,
+          "id": 72654
+        },
+        {
+          "label": "E",
+          "option_text": "Metindeki bütün yargıları çürütür",
+          "is_correct": false,
+          "id": 72655
+        }
+      ],
+      "id": 15226
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Paragrafın başlığı seçilirken aşağıdakilerden hangisine dikkat edilmelidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Başlık, paragrafın konusunu dar veya ilgisiz bırakmadan kapsamalıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "En uzun cümlede geçen ilk sözcüğe",
+          "is_correct": false,
+          "id": 72656
+        },
+        {
+          "label": "B",
+          "option_text": "Yazarın kişisel hayatına",
+          "is_correct": false,
+          "id": 72657
+        },
+        {
+          "label": "C",
+          "option_text": "Metinde geçmeyen ilginç bir ifadeye",
+          "is_correct": false,
+          "id": 72658
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece son cümlenin noktalamasına",
+          "is_correct": false,
+          "id": 72659
+        },
+        {
+          "label": "E",
+          "option_text": "Paragrafın konusunu ve ana yönünü kapsamasına",
+          "is_correct": true,
+          "id": 72660
+        }
+      ],
+      "id": 15227
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Paragrafta akışı bozan cümle genellikle nasıl anlaşılır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Akışı bozan cümle, paragrafın ortak konu ve anlam bağlantısına uymayan cümledir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Paragrafın konu ve düşünce çizgisinden ayrılmasıyla",
+          "is_correct": true,
+          "id": 72661
+        },
+        {
+          "label": "B",
+          "option_text": "Kısa olmasıyla",
+          "is_correct": false,
+          "id": 72662
+        },
+        {
+          "label": "C",
+          "option_text": "Virgül içermesiyle",
+          "is_correct": false,
+          "id": 72663
+        },
+        {
+          "label": "D",
+          "option_text": "İlk cümle olmasıyla",
+          "is_correct": false,
+          "id": 72664
+        },
+        {
+          "label": "E",
+          "option_text": "Özel ad kullanmasıyla",
+          "is_correct": false,
+          "id": 72665
+        }
+      ],
+      "id": 15228
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Bu parçada asıl anlatılmak istenen nedir?” sorusu hangi kavrama yöneliktir?",
+      "correct_answer_text": "C",
+      "explanation_text": "“Asıl anlatılmak istenen” ifadesi ana düşünceyi buldurur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yardımcı düşünce",
+          "is_correct": false,
+          "id": 72666
+        },
+        {
+          "label": "B",
+          "option_text": "Konu",
+          "is_correct": false,
+          "id": 72667
+        },
+        {
+          "label": "C",
+          "option_text": "Ana düşünce",
+          "is_correct": true,
+          "id": 72668
+        },
+        {
+          "label": "D",
+          "option_text": "Noktalama",
+          "is_correct": false,
+          "id": 72669
+        },
+        {
+          "label": "E",
+          "option_text": "Sözcük türü",
+          "is_correct": false,
+          "id": 72670
+        }
+      ],
+      "id": 15229
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Paragrafta konu genellikle nasıl ifade edilir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Konu çoğu zaman paragrafın üzerinde durduğu alanı belirten kısa bir söz grubudur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mutlaka uzun bir yargı cümlesiyle",
+          "is_correct": false,
+          "id": 72671
+        },
+        {
+          "label": "B",
+          "option_text": "Kısa bir söz grubu veya kavramla",
+          "is_correct": true,
+          "id": 72672
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece soru işaretiyle",
+          "is_correct": false,
+          "id": 72673
+        },
+        {
+          "label": "D",
+          "option_text": "Yazarın adıyla",
+          "is_correct": false,
+          "id": 72674
+        },
+        {
+          "label": "E",
+          "option_text": "Noktalama listesinden seçilerek",
+          "is_correct": false,
+          "id": 72675
+        }
+      ],
+      "id": 15230
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Bir paragrafta örneklerin kullanılmasının temel amacı nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Örnekler, anlatılan düşüncenin daha anlaşılır ve somut hale gelmesine yardım eder.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ana düşünceyi belirsizleştirmek",
+          "is_correct": false,
+          "id": 72676
+        },
+        {
+          "label": "B",
+          "option_text": "Metni konu dışına çıkarmak",
+          "is_correct": false,
+          "id": 72677
+        },
+        {
+          "label": "C",
+          "option_text": "Başlığı değiştirmek",
+          "is_correct": false,
+          "id": 72678
+        },
+        {
+          "label": "D",
+          "option_text": "Soyut düşünceyi somutlaştırmak ve desteklemek",
+          "is_correct": true,
+          "id": 72679
+        },
+        {
+          "label": "E",
+          "option_text": "Cümlede öge bulmayı sağlamak",
+          "is_correct": false,
+          "id": 72680
+        }
+      ],
+      "id": 15231
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Paragraf tamamlama sorularında seçilecek cümlede aranacak özellik hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Tamamlama sorularında seçenek, paragrafın konu, ton ve bağlantı düzenine uymalıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Önceki ve sonraki cümlelerle anlam ve bağlaç uyumu kurması",
+          "is_correct": true,
+          "id": 72681
+        },
+        {
+          "label": "B",
+          "option_text": "Metindeki konudan tamamen uzak olması",
+          "is_correct": false,
+          "id": 72682
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız en uzun seçenek olması",
+          "is_correct": false,
+          "id": 72683
+        },
+        {
+          "label": "D",
+          "option_text": "Mutlaka atasözü içermesi",
+          "is_correct": false,
+          "id": 72684
+        },
+        {
+          "label": "E",
+          "option_text": "Noktalama işareti bulunmaması",
+          "is_correct": false,
+          "id": 72685
+        }
+      ],
+      "id": 15232
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Paragrafta karşılaştırma yapıldığını gösteren ifadelerden biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "“Daha” sözcüğü çoğu zaman iki varlık veya durum arasında üstünlük/karşılaştırma ilişkisi kurar.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "çünkü",
+          "is_correct": false,
+          "id": 72686
+        },
+        {
+          "label": "B",
+          "option_text": "amacıyla",
+          "is_correct": false,
+          "id": 72687
+        },
+        {
+          "label": "C",
+          "option_text": "daha",
+          "is_correct": true,
+          "id": 72688
+        },
+        {
+          "label": "D",
+          "option_text": "ancak",
+          "is_correct": false,
+          "id": 72689
+        },
+        {
+          "label": "E",
+          "option_text": "oysa",
+          "is_correct": false,
+          "id": 72690
+        }
+      ],
+      "id": 15233
+    },
+    {
+      "topic_id": 137,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Paragraf çözümünde en güvenli tutum aşağıdakilerden hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Paragraf soruları metne bağlı çözülür; cevap metnin verdiği bilgiyle sınırlı aranmalıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kendi düşüncemizi cevaba eklemek",
+          "is_correct": false,
+          "id": 72691
+        },
+        {
+          "label": "B",
+          "option_text": "Metinde olmayan genellemeyi doğru saymak",
+          "is_correct": false,
+          "id": 72692
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece seçeneklerin uzunluğuna bakmak",
+          "is_correct": false,
+          "id": 72693
+        },
+        {
+          "label": "D",
+          "option_text": "Paragrafı okumadan cevaplamak",
+          "is_correct": false,
+          "id": 72694
+        },
+        {
+          "label": "E",
+          "option_text": "Sorunun istediği bilgiyi metnin sınırları içinde aramak",
+          "is_correct": true,
+          "id": 72695
+        }
+      ],
+      "id": 15234
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Belirli bayram adlarında her sözcük büyük harfle başlar: Cumhuriyet Bayramı.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Türkiye Büyük Millet Meclisi bugün toplanacak",
+          "is_correct": false,
+          "id": 72696
+        },
+        {
+          "label": "B",
+          "option_text": "Bu yıl Cumhuriyet bayramı törenleri erken başlayacak",
+          "is_correct": true,
+          "id": 72697
+        },
+        {
+          "label": "C",
+          "option_text": "Ayşe Hanım toplantıya katıldı",
+          "is_correct": false,
+          "id": 72698
+        },
+        {
+          "label": "D",
+          "option_text": "Ankara Kalesi hafta sonu çok kalabalıktı",
+          "is_correct": false,
+          "id": 72699
+        },
+        {
+          "label": "E",
+          "option_text": "Kurtuluş Savaşı üzerine yeni bir kitap okudum",
+          "is_correct": false,
+          "id": 72700
+        }
+      ],
+      "id": 15235
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde “de”nin yazımı doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bağlaç olan “de/da” ayrı yazılır ve kendinden önceki sözcüğe bağlı değildir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Toplantıya sende katıl",
+          "is_correct": false,
+          "id": 72701
+        },
+        {
+          "label": "B",
+          "option_text": "Bu konuda bende konuşacağım",
+          "is_correct": false,
+          "id": 72702
+        },
+        {
+          "label": "C",
+          "option_text": "Kitap da defter de masadaydı",
+          "is_correct": true,
+          "id": 72703
+        },
+        {
+          "label": "D",
+          "option_text": "Evde ki hesap çarşıya uymaz",
+          "is_correct": false,
+          "id": 72704
+        },
+        {
+          "label": "E",
+          "option_text": "Bugünde hava serin",
+          "is_correct": false,
+          "id": 72705
+        }
+      ],
+      "id": 15236
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde “ki”nin yazımı yanlıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bağlaç olan “ki” ayrı yazılır: Biliyorum ki yanlış yaptım.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Evdeki hesap çarşıya uymadı",
+          "is_correct": false,
+          "id": 72706
+        },
+        {
+          "label": "B",
+          "option_text": "Yarınki toplantı ertelendi",
+          "is_correct": false,
+          "id": 72707
+        },
+        {
+          "label": "C",
+          "option_text": "Sanki onu daha önce görmüştüm",
+          "is_correct": false,
+          "id": 72708
+        },
+        {
+          "label": "D",
+          "option_text": "Biliyorum kiyanlış yaptım",
+          "is_correct": true,
+          "id": 72709
+        },
+        {
+          "label": "E",
+          "option_text": "Masadaki dosyayı al",
+          "is_correct": false,
+          "id": 72710
+        }
+      ],
+      "id": 15237
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Soru eki “mi” ile ilgili doğru yazım hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Soru eki “mi/mı/mu/mü” ayrı yazılır ve ünlü uyumuna uyar.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Toplantı başladı mı?",
+          "is_correct": true,
+          "id": 72711
+        },
+        {
+          "label": "B",
+          "option_text": "Toplantı başladımı?",
+          "is_correct": false,
+          "id": 72712
+        },
+        {
+          "label": "C",
+          "option_text": "Toplantımı başladı?",
+          "is_correct": false,
+          "id": 72713
+        },
+        {
+          "label": "D",
+          "option_text": "Başladımı toplantı?",
+          "is_correct": false,
+          "id": 72714
+        },
+        {
+          "label": "E",
+          "option_text": "Toplantı başla dımı?",
+          "is_correct": false,
+          "id": 72715
+        }
+      ],
+      "id": 15238
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde kesme işareti doğru kullanılmıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Özel ada gelen çekim eki kesmeyle ayrılır; kurum kısaltmalarında güncel yazımda ek okunuşa göre gelir, fakat seçenekler içinde kesin doğru kullanım “Atatürk’ün”dür.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Türkçe’nin kuralları",
+          "is_correct": false,
+          "id": 72716
+        },
+        {
+          "label": "B",
+          "option_text": "Ankara’lı öğrenciler",
+          "is_correct": false,
+          "id": 72717
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM nın kararı",
+          "is_correct": false,
+          "id": 72718
+        },
+        {
+          "label": "D",
+          "option_text": "Ayşe’ler geldi",
+          "is_correct": false,
+          "id": 72719
+        },
+        {
+          "label": "E",
+          "option_text": "Atatürk’ün sözleri",
+          "is_correct": true,
+          "id": 72720
+        }
+      ],
+      "id": 15239
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi bitişik yazılması gereken birleşik sözcüktür?",
+      "correct_answer_text": "B",
+      "explanation_text": "Yeni kavram haline gelmiş “başvuru” bitişik yazılır; yardımcı fiille kurulan birçok birleşik yapı ayrı yazılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "fark etmek",
+          "is_correct": false,
+          "id": 72721
+        },
+        {
+          "label": "B",
+          "option_text": "başvuru",
+          "is_correct": true,
+          "id": 72722
+        },
+        {
+          "label": "C",
+          "option_text": "terk etmek",
+          "is_correct": false,
+          "id": 72723
+        },
+        {
+          "label": "D",
+          "option_text": "arz etmek",
+          "is_correct": false,
+          "id": 72724
+        },
+        {
+          "label": "E",
+          "option_text": "yardım etmek",
+          "is_correct": false,
+          "id": 72725
+        }
+      ],
+      "id": 15240
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde ikilemenin yazımı doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "İkilemeler ayrı yazılır; araya virgül veya kısa çizgi konmaz.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "yavaş,yavaş",
+          "is_correct": false,
+          "id": 72726
+        },
+        {
+          "label": "B",
+          "option_text": "yavaş-yavaş",
+          "is_correct": false,
+          "id": 72727
+        },
+        {
+          "label": "C",
+          "option_text": "yavaş yavaş",
+          "is_correct": true,
+          "id": 72728
+        },
+        {
+          "label": "D",
+          "option_text": "yavaşyavaş",
+          "is_correct": false,
+          "id": 72729
+        },
+        {
+          "label": "E",
+          "option_text": "yavaş / yavaş",
+          "is_correct": false,
+          "id": 72730
+        }
+      ],
+      "id": 15241
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Deyimlerin yazımıyla ilgili hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Deyimler kalıplaşmış söz gruplarıdır ve çoğu ayrı yazılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Deyimler her zaman bitişik yazılır",
+          "is_correct": false,
+          "id": 72731
+        },
+        {
+          "label": "B",
+          "option_text": "Deyimler mutlaka kısa çizgiyle yazılır",
+          "is_correct": false,
+          "id": 72732
+        },
+        {
+          "label": "C",
+          "option_text": "Deyimlerdeki her sözcük büyük harfle başlar",
+          "is_correct": false,
+          "id": 72733
+        },
+        {
+          "label": "D",
+          "option_text": "Deyimler genellikle ayrı yazılır ve kalıplaşmış anlam taşır",
+          "is_correct": true,
+          "id": 72734
+        },
+        {
+          "label": "E",
+          "option_text": "Deyimler yalnız özel adlardan oluşur",
+          "is_correct": false,
+          "id": 72735
+        }
+      ],
+      "id": 15242
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde büyük harf kullanımı yanlıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Özel ad olan “Ege Denizi”nde her iki sözcük büyük harfle başlamalıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bu yaz Ege denizi kıyılarını gezdik",
+          "is_correct": true,
+          "id": 72736
+        },
+        {
+          "label": "B",
+          "option_text": "Ahmet Bey raporu sundu",
+          "is_correct": false,
+          "id": 72737
+        },
+        {
+          "label": "C",
+          "option_text": "Ramazan Bayramı yaklaşıyor",
+          "is_correct": false,
+          "id": 72738
+        },
+        {
+          "label": "D",
+          "option_text": "İstiklal Caddesi kalabalıktı",
+          "is_correct": false,
+          "id": 72739
+        },
+        {
+          "label": "E",
+          "option_text": "Türk Dil Kurumu açıklama yaptı",
+          "is_correct": false,
+          "id": 72740
+        }
+      ],
+      "id": 15243
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde “ile”nin yazımı doğrudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "“ile” ekleştiğinde bitişik yazılır ve ses uyumuna girer: arabasıyla.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Arabasile geldik",
+          "is_correct": false,
+          "id": 72741
+        },
+        {
+          "label": "B",
+          "option_text": "Arabasıyla geldik",
+          "is_correct": true,
+          "id": 72742
+        },
+        {
+          "label": "C",
+          "option_text": "Arabası ilegeldik",
+          "is_correct": false,
+          "id": 72743
+        },
+        {
+          "label": "D",
+          "option_text": "Araba sıyla geldik",
+          "is_correct": false,
+          "id": 72744
+        },
+        {
+          "label": "E",
+          "option_text": "Arabasıy la geldik",
+          "is_correct": false,
+          "id": 72745
+        }
+      ],
+      "id": 15244
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Pekiştirmeli sözcüklerin yazımıyla ilgili doğru seçenek hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Pekiştirme hecesiyle kurulan sözcükler bitişik yazılır: masmavi, tertemiz.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "mas mavi",
+          "is_correct": false,
+          "id": 72746
+        },
+        {
+          "label": "B",
+          "option_text": "mas-mavi",
+          "is_correct": false,
+          "id": 72747
+        },
+        {
+          "label": "C",
+          "option_text": "mas, mavi",
+          "is_correct": false,
+          "id": 72748
+        },
+        {
+          "label": "D",
+          "option_text": "mas / mavi",
+          "is_correct": false,
+          "id": 72749
+        },
+        {
+          "label": "E",
+          "option_text": "masmavi",
+          "is_correct": true,
+          "id": 72750
+        }
+      ],
+      "id": 15245
+    },
+    {
+      "topic_id": 138,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde yazım yanlışı yoktur?",
+      "correct_answer_text": "C",
+      "explanation_text": "“hiçbir şey” yazımı doğrudur; “her şey”, “birkaç”, “yalnız” gibi yazımlar sık sorulur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Herşey yolunda",
+          "is_correct": false,
+          "id": 72751
+        },
+        {
+          "label": "B",
+          "option_text": "Bir kaç kişi geldi",
+          "is_correct": false,
+          "id": 72752
+        },
+        {
+          "label": "C",
+          "option_text": "Hiçbir şey söylemedi",
+          "is_correct": true,
+          "id": 72753
+        },
+        {
+          "label": "D",
+          "option_text": "Pek çokşey anlattı",
+          "is_correct": false,
+          "id": 72754
+        },
+        {
+          "label": "E",
+          "option_text": "Yanlız kalmak istedi",
+          "is_correct": false,
+          "id": 72755
+        }
+      ],
+      "id": 15246
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Cümlenin sonuna tamamlanmış yargı bildirdiğinde hangi noktalama işareti konur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Tamamlanmış yargı bildiren cümlenin sonuna nokta konur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Nokta",
+          "is_correct": true,
+          "id": 72756
+        },
+        {
+          "label": "B",
+          "option_text": "Virgül",
+          "is_correct": false,
+          "id": 72757
+        },
+        {
+          "label": "C",
+          "option_text": "İki nokta",
+          "is_correct": false,
+          "id": 72758
+        },
+        {
+          "label": "D",
+          "option_text": "Ünlem",
+          "is_correct": false,
+          "id": 72759
+        },
+        {
+          "label": "E",
+          "option_text": "Kesme işareti",
+          "is_correct": false,
+          "id": 72760
+        }
+      ],
+      "id": 15247
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde virgül doğru kullanılmıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Onay/ret bildiren “evet, hayır” gibi sözcüklerden sonra virgül kullanılabilir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ali ve, Ayşe geldi",
+          "is_correct": false,
+          "id": 72761
+        },
+        {
+          "label": "B",
+          "option_text": "Kitabı, okudu ve anlattı",
+          "is_correct": false,
+          "id": 72762
+        },
+        {
+          "label": "C",
+          "option_text": "Evet, bu konuda haklısınız",
+          "is_correct": true,
+          "id": 72763
+        },
+        {
+          "label": "D",
+          "option_text": "Bugün, ve yarın çalışacağız",
+          "is_correct": false,
+          "id": 72764
+        },
+        {
+          "label": "E",
+          "option_text": "Çünkü, toplantı ertelendi",
+          "is_correct": false,
+          "id": 72765
+        }
+      ],
+      "id": 15248
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Virgülün kullanılmaması gereken yer aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Bağlaçlarla kurulan yapılarda gereksiz virgül sık yapılan hatadır; virgül her bağlaçtan önce otomatik kullanılmaz.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sıralı cümleleri ayırırken",
+          "is_correct": false,
+          "id": 72766
+        },
+        {
+          "label": "B",
+          "option_text": "Tekrarlı bağlaçlarla bağlanan eş görevli sözlerin arasında her zaman",
+          "is_correct": true,
+          "id": 72767
+        },
+        {
+          "label": "C",
+          "option_text": "Hitap sözlerinden sonra",
+          "is_correct": false,
+          "id": 72768
+        },
+        {
+          "label": "D",
+          "option_text": "Ara sözleri ayırırken",
+          "is_correct": false,
+          "id": 72769
+        },
+        {
+          "label": "E",
+          "option_text": "Anlam karışıklığını önlemek için",
+          "is_correct": false,
+          "id": 72770
+        }
+      ],
+      "id": 15249
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Açıklama yapılacak cümlenin sonuna genellikle hangi işaret konur?",
+      "correct_answer_text": "D",
+      "explanation_text": "İki nokta, kendisinden sonra açıklama, örnek veya alıntı gelecekse kullanılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Virgül",
+          "is_correct": false,
+          "id": 72771
+        },
+        {
+          "label": "B",
+          "option_text": "Soru işareti",
+          "is_correct": false,
+          "id": 72772
+        },
+        {
+          "label": "C",
+          "option_text": "Kesme işareti",
+          "is_correct": false,
+          "id": 72773
+        },
+        {
+          "label": "D",
+          "option_text": "İki nokta",
+          "is_correct": true,
+          "id": 72774
+        },
+        {
+          "label": "E",
+          "option_text": "Kısa çizgi",
+          "is_correct": false,
+          "id": 72775
+        }
+      ],
+      "id": 15250
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde noktalı virgül kullanımı daha uygundur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Noktalı virgül, virgüllerle ayrılmış grupları birbirinden ayırmada kullanılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bugün hava çok güzel;",
+          "is_correct": false,
+          "id": 72776
+        },
+        {
+          "label": "B",
+          "option_text": "Nereye gidiyorsun;",
+          "is_correct": false,
+          "id": 72777
+        },
+        {
+          "label": "C",
+          "option_text": "Eyvah; geç kaldık",
+          "is_correct": false,
+          "id": 72778
+        },
+        {
+          "label": "D",
+          "option_text": "Kitabı; okudu",
+          "is_correct": false,
+          "id": 72779
+        },
+        {
+          "label": "E",
+          "option_text": "Elma, armut, kiraz; marul, roka, maydanoz aldık",
+          "is_correct": true,
+          "id": 72780
+        }
+      ],
+      "id": 15251
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Soru anlamı taşıyan cümlenin sonuna hangi işaret konur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Soru cümlelerinin sonuna soru işareti konur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Nokta",
+          "is_correct": false,
+          "id": 72781
+        },
+        {
+          "label": "B",
+          "option_text": "Soru işareti",
+          "is_correct": true,
+          "id": 72782
+        },
+        {
+          "label": "C",
+          "option_text": "Virgül",
+          "is_correct": false,
+          "id": 72783
+        },
+        {
+          "label": "D",
+          "option_text": "Tırnak",
+          "is_correct": false,
+          "id": 72784
+        },
+        {
+          "label": "E",
+          "option_text": "Ayraç",
+          "is_correct": false,
+          "id": 72785
+        }
+      ],
+      "id": 15252
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde kesme işareti doğru kullanılmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Özel ada gelen çekim eki kesmeyle ayrılır: Ankara’ya.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ankara’ya yarın gideceğiz",
+          "is_correct": true,
+          "id": 72786
+        },
+        {
+          "label": "B",
+          "option_text": "Türkçe’de birçok kural vardır",
+          "is_correct": false,
+          "id": 72787
+        },
+        {
+          "label": "C",
+          "option_text": "Okul’un kapısı açık",
+          "is_correct": false,
+          "id": 72788
+        },
+        {
+          "label": "D",
+          "option_text": "Ahmetler’e gittik",
+          "is_correct": false,
+          "id": 72789
+        },
+        {
+          "label": "E",
+          "option_text": "Pazartesi’nin toplantısı ertelendi",
+          "is_correct": false,
+          "id": 72790
+        }
+      ],
+      "id": 15253
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Uzun çizgi hangi kullanımda daha uygundur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Uzun çizgi, özellikle konuşma metinlerinde konuşanın sözünü göstermek için kullanılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tarih aralığı belirtmede",
+          "is_correct": false,
+          "id": 72791
+        },
+        {
+          "label": "B",
+          "option_text": "Satır sonunda kelime bölmede",
+          "is_correct": false,
+          "id": 72792
+        },
+        {
+          "label": "C",
+          "option_text": "Konuşma çizgisi olarak diyalog başında",
+          "is_correct": true,
+          "id": 72793
+        },
+        {
+          "label": "D",
+          "option_text": "Matematikte bölme işareti olarak",
+          "is_correct": false,
+          "id": 72794
+        },
+        {
+          "label": "E",
+          "option_text": "Kısaltmalara ek getirmede",
+          "is_correct": false,
+          "id": 72795
+        }
+      ],
+      "id": 15254
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Üç nokta aşağıdaki durumlardan hangisinde kullanılır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Üç nokta, sözün kesildiğini, tamamlanmadığını veya örneklerin sürdüğünü gösterebilir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tamamlanmış her cümlenin sonunda",
+          "is_correct": false,
+          "id": 72796
+        },
+        {
+          "label": "B",
+          "option_text": "Soru anlamı taşıyan cümlede",
+          "is_correct": false,
+          "id": 72797
+        },
+        {
+          "label": "C",
+          "option_text": "Özel ada gelen eklerde",
+          "is_correct": false,
+          "id": 72798
+        },
+        {
+          "label": "D",
+          "option_text": "Tamamlanmamış, kesilmiş veya örneklerin sürdüğünü gösteren anlatımlarda",
+          "is_correct": true,
+          "id": 72799
+        },
+        {
+          "label": "E",
+          "option_text": "Cümlede özneyi bulmak için",
+          "is_correct": false,
+          "id": 72800
+        }
+      ],
+      "id": 15255
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Tırnak işaretinin görevi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Tırnak işareti doğrudan alıntı ve özel vurgulu sözlerde kullanılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her sayıdan sonra gelmek",
+          "is_correct": false,
+          "id": 72801
+        },
+        {
+          "label": "B",
+          "option_text": "Doğrudan aktarılan sözleri veya özel olarak vurgulanan ifadeleri göstermek",
+          "is_correct": true,
+          "id": 72802
+        },
+        {
+          "label": "C",
+          "option_text": "Soru anlamı vermek",
+          "is_correct": false,
+          "id": 72803
+        },
+        {
+          "label": "D",
+          "option_text": "Cümleyi bitirmek",
+          "is_correct": false,
+          "id": 72804
+        },
+        {
+          "label": "E",
+          "option_text": "Bağlaçları ayırmak",
+          "is_correct": false,
+          "id": 72805
+        }
+      ],
+      "id": 15256
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kısa çizgi aşağıdaki kullanımlardan hangisinde görülür?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kısa çizgi satır sonu bölmelerinde, bazı ara sözlerde ve aralık anlamlarında kullanılabilir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Konuşma başlatmada",
+          "is_correct": false,
+          "id": 72806
+        },
+        {
+          "label": "B",
+          "option_text": "Alıntı cümle göstermede",
+          "is_correct": false,
+          "id": 72807
+        },
+        {
+          "label": "C",
+          "option_text": "Soru cümlesi bitirmede",
+          "is_correct": false,
+          "id": 72808
+        },
+        {
+          "label": "D",
+          "option_text": "Özel ada ek ayırmada",
+          "is_correct": false,
+          "id": 72809
+        },
+        {
+          "label": "E",
+          "option_text": "Satır sonunda kelime bölmede veya ara sözleri göstermede",
+          "is_correct": true,
+          "id": 72810
+        }
+      ],
+      "id": 15257
+    },
+    {
+      "topic_id": 139,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde noktalama yanlışı vardır?",
+      "correct_answer_text": "C",
+      "explanation_text": "“Ali ve Ayşe” arasında bağlaç varken virgül kullanılmaz.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ahmet, dosyayı müdüre teslim etti",
+          "is_correct": false,
+          "id": 72811
+        },
+        {
+          "label": "B",
+          "option_text": "Bu konuda şunu söyledi: “Dikkatli olmalıyız.”",
+          "is_correct": false,
+          "id": 72812
+        },
+        {
+          "label": "C",
+          "option_text": "Toplantıya Ali, ve Ayşe katıldı",
+          "is_correct": true,
+          "id": 72813
+        },
+        {
+          "label": "D",
+          "option_text": "Nereye gittiğini biliyor musun?",
+          "is_correct": false,
+          "id": 72814
+        },
+        {
+          "label": "E",
+          "option_text": "Eyvah, anahtarı unuttum!",
+          "is_correct": false,
+          "id": 72815
+        }
+      ],
+      "id": 15258
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde gereksiz sözcük kullanımından kaynaklanan anlatım bozukluğu vardır?",
+      "correct_answer_text": "A",
+      "explanation_text": "“tekrar” ve “yeniden” aynı anlamı taşıdığı için birlikte kullanımı gereksizdir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bu konuyu tekrar yeniden ele alacağız",
+          "is_correct": true,
+          "id": 72816
+        },
+        {
+          "label": "B",
+          "option_text": "Toplantı saat üçte başlayacak",
+          "is_correct": false,
+          "id": 72817
+        },
+        {
+          "label": "C",
+          "option_text": "Öğrenciler bahçede toplandı",
+          "is_correct": false,
+          "id": 72818
+        },
+        {
+          "label": "D",
+          "option_text": "Raporu müdüre sundu",
+          "is_correct": false,
+          "id": 72819
+        },
+        {
+          "label": "E",
+          "option_text": "Kitapları raflara dizdi",
+          "is_correct": false,
+          "id": 72820
+        }
+      ],
+      "id": 15259
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde sözcüğün yanlış anlamda kullanılmasından kaynaklanan bozukluk vardır?",
+      "correct_answer_text": "C",
+      "explanation_text": "“Ayrıntı” yerine “ayrım” kullanılmalıdır; iki kavram arasındaki fark anlatılır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bu karar herkesi etkiledi",
+          "is_correct": false,
+          "id": 72821
+        },
+        {
+          "label": "B",
+          "option_text": "Konu üzerinde uzun süre düşündü",
+          "is_correct": false,
+          "id": 72822
+        },
+        {
+          "label": "C",
+          "option_text": "Bu iki kavram arasındaki ayrıntıyı iyi görmek gerekir",
+          "is_correct": true,
+          "id": 72823
+        },
+        {
+          "label": "D",
+          "option_text": "Dosyayı zamanında teslim etti",
+          "is_correct": false,
+          "id": 72824
+        },
+        {
+          "label": "E",
+          "option_text": "Yeni düzenleme bugün yürürlüğe girdi",
+          "is_correct": false,
+          "id": 72825
+        }
+      ],
+      "id": 15260
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde mantık hatası vardır?",
+      "correct_answer_text": "D",
+      "explanation_text": "İkinci olan kişinin birinciyi geçmesi mantıksal olarak çelişkilidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Önce başvuruları aldı, sonra değerlendirdi",
+          "is_correct": false,
+          "id": 72826
+        },
+        {
+          "label": "B",
+          "option_text": "Raporu hazırlayıp yönetime sundu",
+          "is_correct": false,
+          "id": 72827
+        },
+        {
+          "label": "C",
+          "option_text": "Konuyu okuyup özet çıkardı",
+          "is_correct": false,
+          "id": 72828
+        },
+        {
+          "label": "D",
+          "option_text": "Yarışmada ikinci olarak birinciyi geçti",
+          "is_correct": true,
+          "id": 72829
+        },
+        {
+          "label": "E",
+          "option_text": "Toplantı bitince salondan ayrıldılar",
+          "is_correct": false,
+          "id": 72830
+        }
+      ],
+      "id": 15261
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde özne-yüklem uyumsuzluğu vardır?",
+      "correct_answer_text": "B",
+      "explanation_text": "“Herkes” tekil öznedir; yüklem “katıldı” olmalıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Öğrenciler sınıfa girdi",
+          "is_correct": false,
+          "id": 72831
+        },
+        {
+          "label": "B",
+          "option_text": "Herkes toplantıya katıldılar",
+          "is_correct": true,
+          "id": 72832
+        },
+        {
+          "label": "C",
+          "option_text": "Çocuklar bahçede oynuyor",
+          "is_correct": false,
+          "id": 72833
+        },
+        {
+          "label": "D",
+          "option_text": "Komisyon raporu hazırladı",
+          "is_correct": false,
+          "id": 72834
+        },
+        {
+          "label": "E",
+          "option_text": "Görevliler evrakı inceledi",
+          "is_correct": false,
+          "id": 72835
+        }
+      ],
+      "id": 15262
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde tamlama yanlışlığı vardır?",
+      "correct_answer_text": "E",
+      "explanation_text": "“Ekonomik sorunlar ve sağlık sorunları” farklı tamlama yapılarıdır; ortak kullanım bozukluk doğurur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurumun çalışma düzeni değişti",
+          "is_correct": false,
+          "id": 72836
+        },
+        {
+          "label": "B",
+          "option_text": "Yeni hizmet binası açıldı",
+          "is_correct": false,
+          "id": 72837
+        },
+        {
+          "label": "C",
+          "option_text": "Okul müdürü konuşma yaptı",
+          "is_correct": false,
+          "id": 72838
+        },
+        {
+          "label": "D",
+          "option_text": "Dosyanın son sayfası eksikti",
+          "is_correct": false,
+          "id": 72839
+        },
+        {
+          "label": "E",
+          "option_text": "Ekonomik ve sağlık sorunları görüşüldü",
+          "is_correct": true,
+          "id": 72840
+        }
+      ],
+      "id": 15263
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde öge eksikliğinden kaynaklanan anlatım bozukluğu vardır?",
+      "correct_answer_text": "C",
+      "explanation_text": "“eleştiriyor” fiili nesne ister; “bu öneriyi eleştiriyor” biçiminde nesne tamamlanmalıdır.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kitabı okudu ve özetledi",
+          "is_correct": false,
+          "id": 72841
+        },
+        {
+          "label": "B",
+          "option_text": "Toplantıya katıldı ve konuştu",
+          "is_correct": false,
+          "id": 72842
+        },
+        {
+          "label": "C",
+          "option_text": "Bu öneriye karşı çıkıyor ve eleştiriyor",
+          "is_correct": true,
+          "id": 72843
+        },
+        {
+          "label": "D",
+          "option_text": "Dosyayı aldı ve inceledi",
+          "is_correct": false,
+          "id": 72844
+        },
+        {
+          "label": "E",
+          "option_text": "Dersi dinledi ve not tuttu",
+          "is_correct": false,
+          "id": 72845
+        }
+      ],
+      "id": 15264
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Zamir belirsizliği bulunan cümle hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "“Onun kitabı” ifadesi Ali’nin mi Mehmet’in mi kitabı olduğu konusunda belirsizlik doğurur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ali, Mehmet’e onun kitabını verdi",
+          "is_correct": true,
+          "id": 72846
+        },
+        {
+          "label": "B",
+          "option_text": "Ayşe kitabını çantasına koydu",
+          "is_correct": false,
+          "id": 72847
+        },
+        {
+          "label": "C",
+          "option_text": "Öğretmen konuyu anlattı",
+          "is_correct": false,
+          "id": 72848
+        },
+        {
+          "label": "D",
+          "option_text": "Komisyon raporu yayımladı",
+          "is_correct": false,
+          "id": 72849
+        },
+        {
+          "label": "E",
+          "option_text": "Çocuk bahçede oynadı",
+          "is_correct": false,
+          "id": 72850
+        }
+      ],
+      "id": 15265
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Anlatım bozukluğu sorularında ilk kontrol edilmesi gereken düzeylerden biri hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Anlatım bozukluğu önce anlam, sonra yapı yönünden kontrol edilmelidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız harf sayısı",
+          "is_correct": false,
+          "id": 72851
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece paragraf uzunluğu",
+          "is_correct": false,
+          "id": 72852
+        },
+        {
+          "label": "C",
+          "option_text": "Yazarın doğum tarihi",
+          "is_correct": false,
+          "id": 72853
+        },
+        {
+          "label": "D",
+          "option_text": "Anlamın açık, doğru ve çelişkisiz olup olmadığı",
+          "is_correct": true,
+          "id": 72854
+        },
+        {
+          "label": "E",
+          "option_text": "Kağıdın kenar boşluğu",
+          "is_correct": false,
+          "id": 72855
+        }
+      ],
+      "id": 15266
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdaki cümlelerin hangisinde deyim yanlış kullanılmıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Doğru deyim “ağzı kulaklarına varmak”tır; deyimin yanlış söylenmesi anlatım bozukluğudur.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bu olaydan sonra etekleri zil çalıyordu",
+          "is_correct": false,
+          "id": 72856
+        },
+        {
+          "label": "B",
+          "option_text": "Sorunu çözmek için kolları sıvadı",
+          "is_correct": false,
+          "id": 72857
+        },
+        {
+          "label": "C",
+          "option_text": "Başarısıyla göze girdi",
+          "is_correct": false,
+          "id": 72858
+        },
+        {
+          "label": "D",
+          "option_text": "Bu konuda ağzını bıçak açmıyordu",
+          "is_correct": false,
+          "id": 72859
+        },
+        {
+          "label": "E",
+          "option_text": "Çok sevinince ağzı kulaklarına düştü",
+          "is_correct": true,
+          "id": 72860
+        }
+      ],
+      "id": 15267
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde gereksiz çoğul eki kullanımından kaynaklanan anlatım bozukluğu vardır?",
+      "correct_answer_text": "B",
+      "explanation_text": "“Birçok” belirsiz sayı sıfatı çoğul anlamı taşıdığı için ardından gelen adın çoğul eki alması anlatımı bozar; doğru kullanım “birçok öğrenci” biçimindedir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Toplantı zamanında başladı",
+          "is_correct": false,
+          "id": 72861
+        },
+        {
+          "label": "B",
+          "option_text": "Birçok öğrenciler törene katıldı",
+          "is_correct": true,
+          "id": 72862
+        },
+        {
+          "label": "C",
+          "option_text": "Raporu müdüre sundu",
+          "is_correct": false,
+          "id": 72863
+        },
+        {
+          "label": "D",
+          "option_text": "Çocuklar bahçede oynadı",
+          "is_correct": false,
+          "id": 72864
+        },
+        {
+          "label": "E",
+          "option_text": "Komisyon kararını açıkladı",
+          "is_correct": false,
+          "id": 72865
+        }
+      ],
+      "id": 15268
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisinde karşılaştırma yanlışlığından kaynaklanan bozukluk vardır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Karşılaştırılanlar aynı türden olmalıdır: “Ali’nin başarısı Mehmet’in başarısından...” denmelidir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bu kitap diğerlerinden daha anlaşılır",
+          "is_correct": false,
+          "id": 72866
+        },
+        {
+          "label": "B",
+          "option_text": "Yeni yöntem eskisine göre daha hızlı",
+          "is_correct": false,
+          "id": 72867
+        },
+        {
+          "label": "C",
+          "option_text": "Ali’nin başarısı Mehmet’ten daha yüksektir",
+          "is_correct": true,
+          "id": 72868
+        },
+        {
+          "label": "D",
+          "option_text": "Bugün hava dünkünden daha serin",
+          "is_correct": false,
+          "id": 72869
+        },
+        {
+          "label": "E",
+          "option_text": "Bu yol ötekine göre daha kısa",
+          "is_correct": false,
+          "id": 72870
+        }
+      ],
+      "id": 15269
+    },
+    {
+      "topic_id": 140,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "“Yaklaşık beş yıl kadar burada çalıştı.” cümlesindeki anlatım bozukluğunun nedeni nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "“Yaklaşık” ve “kadar” aynı belirsizlik anlamını verdiği için birlikte kullanımı gereksizdir.",
+      "explanation_basis": "Türkçe Dil Bilgisi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Gereksiz sözcük kullanımı",
+          "is_correct": true,
+          "id": 72871
+        },
+        {
+          "label": "B",
+          "option_text": "Özne eksikliği",
+          "is_correct": false,
+          "id": 72872
+        },
+        {
+          "label": "C",
+          "option_text": "Yüklem eksikliği",
+          "is_correct": false,
+          "id": 72873
+        },
+        {
+          "label": "D",
+          "option_text": "Noktalama yanlışı",
+          "is_correct": false,
+          "id": 72874
+        },
+        {
+          "label": "E",
+          "option_text": "Tamlama yanlışlığı",
+          "is_correct": false,
+          "id": 72875
+        }
+      ],
+      "id": 15270
+    }
+  ],
+  "import_result": {
+    "imported_at": "2026-06-08T18:47:53",
+    "created_count": 96,
+    "duplicate_count": 0,
+    "db_status": "active",
+    "db_approval_status": null,
+    "approval_flow": "v5_review_pending",
+    "db_q_version": 5
+  }
+}

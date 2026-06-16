@@ -1,0 +1,2259 @@
+{
+  "subject": {
+    "code": null,
+    "name": "Etik Davranış İlkeleri",
+    "slug": "etik-davranis-ilkeleri",
+    "status": "active",
+    "id": 28
+  },
+  "target_exam_id": 1,
+  "exam_note": "8. Dönem İlk Derece Amirlik Eğitimi",
+  "source_policy": "Kaynak PDF'ler kapsam ve doğruluk için kullanıldı; metinler özgün ders anlatımı olarak yeniden yazıldı.",
+  "version": "v1-original-teaching",
+  "topics": [
+    {
+      "name": "Etik Kavramı, Etik-Ahlak İlişkisi ve Temel Yaklaşımlar",
+      "slug": "etik-kavrami-etik-ahlak-iliskisi-ve-temel-yaklasimlar",
+      "status": "active",
+      "summary": "Etik, ahlak, hukuk, erdem, vicdan, değer, norm, etik kodlar, etik sistemler ve temel etik kuramları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Etik Kavramı ve Temel Çerçeve"
+        },
+        {
+          "type": "section_title",
+          "content": "Etik Nedir?"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik, insan davranışlarını doğru-yanlış ve iyi-kötü ölçütleriyle değerlendiren ilkeler alanıdır. Kamu görevlisi bakımından etik, yalnız kişisel ahlak meselesi değil, kamu hizmetinin nasıl yürütüleceğini gösteren rehber değerler bütünüdür."
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik ilkelerin amacı kamu hizmetinde dürüstlüğü, güveni ve kamu yararını güçlendirmektir. Yolsuzluk, kayırmacılık, savurganlık ve keyfilik gibi yozlaşma biçimleri etik ilkelerle sınırlandırılmaya çalışılır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Sınav için ana cümle: Etik, kamu görevlisine 'ne yapabilirim?' sorusundan önce 'ne yapmalıyım?' sorusunu sorduran ilkeler bütünüdür."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik, ahlak ve hukuk ilişkisi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ahlak, belirli toplum ve dönemde kabul gören davranış kurallarını ifade eder. Etik ise bu davranış kurallarını daha genel ve ilkesel düzeyde inceler; hangi davranışın niçin doğru sayıldığını sorgular."
+        },
+        {
+          "type": "paragraph",
+          "content": "Hukuk, devlet tarafından yazılı kurallara bağlanmış ve yaptırımı belirlenmiş düzeni ifade eder. Her hukuka uygun davranış etik açıdan yeterli olmayabilir; her etik beklenti de mutlaka kanunda açıkça yazılmış olmayabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kavram",
+            "Kısa açıklama",
+            "Sınav ayrımı"
+          ],
+          "rows": [
+            [
+              "Etik",
+              "Davranışları iyi-kötü ve doğru-yanlış yönünden değerlendiren ilke alanı.",
+              "Daha genel, ilkesel ve rehber niteliktedir."
+            ],
+            [
+              "Ahlak",
+              "Toplum içinde kabul edilen davranış kalıpları ve kurallar.",
+              "Topluma, zamana ve çevreye göre değişebilir."
+            ],
+            [
+              "Hukuk",
+              "Yazılı kurallar ve devlet yaptırımıyla desteklenen düzen.",
+              "Yasal olan her şey etik bakımdan tartışmasız olmayabilir."
+            ],
+            [
+              "Mesleki etik",
+              "Bir mesleğin üyelerine yön veren özel davranış standartları.",
+              "Kamu yönetimi etiği bunun kamu hizmetindeki görünümüdür."
+            ]
+          ],
+          "caption": "Etik, ahlak ve hukuk birbirine yakın ama aynı olmayan kavramlardır."
+        },
+        {
+          "type": "subheading",
+          "content": "Temel etik kavramları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kavram",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Erdem",
+              "Kişinin dış baskı olmadan ölçülü, dengeli ve doğru davranış göstermesidir."
+            ],
+            [
+              "Vicdan",
+              "Kişinin kendi davranışını içsel olarak yargılamasını sağlayan ahlaki denetim gücüdür."
+            ],
+            [
+              "İyi",
+              "Tercih seçenekleri arasında ahlaken seçilmesi gereken davranışı ifade eder."
+            ],
+            [
+              "Norm",
+              "Davranışı değerlendirmede kullanılan ölçüt ve uyulması beklenen kuraldır."
+            ],
+            [
+              "Karakter",
+              "Kişinin davranış biçimini şekillendiren görece kalıcı kişisel yapıdır."
+            ],
+            [
+              "Değer",
+              "Kişinin ve kurumun önem verdiği ilke, düşünce ve önceliklerdir."
+            ]
+          ],
+          "caption": "Kaynaklarda geçen temel etik kavramları."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik kodlar ve etik iklim"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik kodlar, kurumun misyonuna ve hizmet anlayışına uygun davranış sınırlarını gösteren yazılı ilkelerdir. Çalışana yalnız yasakları değil, tereddüt halinde nasıl davranacağını da gösterir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik iklim, kurum içinde hangi davranışların kabul edilebilir sayıldığının günlük uygulamaya yansımasıdır. Yazılı kural bulunması tek başına yeterli değildir; kuralın kurum kültürüne yerleşmesi gerekir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Etik kod mecazı",
+            "Özgün açıklama"
+          ],
+          "rows": [
+            [
+              "Kural kitabı",
+              "Beklenen davranışı açıklar ve ortak standart kurar."
+            ],
+            [
+              "Yol gösterici levha",
+              "Kararsız kalan çalışana hangi kaynağa veya kişiye başvuracağını gösterir."
+            ],
+            [
+              "Ayna",
+              "Çalışanın davranışını kurumun değerleriyle karşılaştırmasına imkan verir."
+            ],
+            [
+              "Büyüteç",
+              "Söz ve eylemlerin etkisini daha dikkatli görmeye yarar."
+            ],
+            [
+              "Kalkan",
+              "Etik dışı talep karşısında çalışana dayanak sağlar."
+            ],
+            [
+              "Duman dedektörü",
+              "Zarar büyümeden risk sinyali verir."
+            ],
+            [
+              "Yangın alarmı",
+              "Açık etik ihlalinde bildirim ve müdahale ihtiyacını gösterir."
+            ],
+            [
+              "Sopa",
+              "Kurala uymama halinde yaptırım beklentisini hatırlatır."
+            ]
+          ],
+          "caption": "Etik kodların kurum içindeki işlevleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik ilkelerin geliştirilmesinde yaklaşımlar"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hakkaniyet yaklaşımı: Kararların objektif, tutarlı ve adil gerekçelere dayanmasını ister."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Faydacılık yaklaşımı: Karardan etkilenenler için en yüksek toplam yararı arar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İnsan hakları yaklaşımı: Temel hak ve özgürlükleri kararın sınırı kabul eder."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bireysellik yaklaşımı: Bireysel yararı dikkate alır; kamu hizmetinde bu yaklaşım kamu yararıyla dengelenmelidir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Etik sistemler ve kuramlar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sistem / kuram",
+            "Temel ölçüt",
+            "Ders notu"
+          ],
+          "rows": [
+            [
+              "Amaçlanan sonuç etiği",
+              "Davranışın doğurduğu sonuç.",
+              "Sonuç iyi ise davranış doğru sayılabilir; John Stuart Mill ile ilişkilendirilir."
+            ],
+            [
+              "Kural etiği",
+              "Yazılı veya genel kurala uygunluk.",
+              "'Kural ne diyor?' sorusunu öne çıkarır."
+            ],
+            [
+              "Toplumsal sözleşme etiği",
+              "Toplumun ortak norm ve kabulleri.",
+              "Rousseau çizgisiyle ilişkilendirilir; toplumsal onay önemlidir."
+            ],
+            [
+              "Kişisel etik",
+              "Vicdani kanaat.",
+              "Kişinin iç huzuru ve ahlaki sorumluluk duygusu belirleyicidir."
+            ],
+            [
+              "Sosyal yaşam etiği",
+              "İlişkilerde saygı ve kurala uygunluk.",
+              "Güç ve baskı yerine karşılıklı saygı esas alınır."
+            ],
+            [
+              "Sezgici yaklaşım",
+              "Doğrunun sezgiyle kavranması.",
+              "Bazı ahlaki doğruların doğrudan görülebileceğini savunur."
+            ],
+            [
+              "Teleolojik yaklaşım",
+              "Fayda ve sonuç hesabı.",
+              "En iyi sonuca götüren davranışı arar."
+            ],
+            [
+              "Deontolojik yaklaşım",
+              "Ödev, kural ve haklara bağlılık.",
+              "Çoğunluk yararı bile bazı hakları ihlal etmeyi haklı kılmaz."
+            ],
+            [
+              "Kazuistik yaklaşım",
+              "Somut olay üzerinden değerlendirme.",
+              "Soyut ilkenin gerçek olayda nasıl uygulanacağını inceler."
+            ]
+          ],
+          "caption": "Etik sistemler ve kuramlar kısa karşılaştırma."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik türleri ve felsefi anlayışlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik çalışmaları betimleyici, normatif ve meta etik olarak ayrılabilir. Betimleyici etik olanı inceler; normatif etik nasıl davranılması gerektiğini tartışır; meta etik ise etik yargıların anlamını ve dilini sorgular."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kaynakta agapizm, hedonizm, nihilizm, fatalizm, egoizm, liberteryanizm ve makyavelizm gibi felsefi anlayışlar da geçer. Bunlar sınavda genellikle kısa tanım ve ayırt edici fikir düzeyinde sorulur."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Anlayış",
+            "Ayırt edici fikir"
+          ],
+          "rows": [
+            [
+              "Agapizm",
+              "Sevgiyi ahlakın ana ilkesi sayar."
+            ],
+            [
+              "Hedonizm",
+              "Hazza yönelmeyi temel kabul eder."
+            ],
+            [
+              "Nihilizm",
+              "Yerleşik etik değerleri reddetme eğilimi taşır."
+            ],
+            [
+              "Fatalizm",
+              "İnsanın yazgıyı değiştiremeyeceği düşüncesine dayanır."
+            ],
+            [
+              "Egoizm",
+              "Bireysel çıkarı davranışın merkezi haline getirir."
+            ],
+            [
+              "Liberteryanizm",
+              "Bireysel özgürlük ve gönüllü işbirliğini vurgular."
+            ],
+            [
+              "Makyavelizm",
+              "Sonucu, sonuca ulaşma yönteminden üstün tutar."
+            ]
+          ],
+          "caption": "Çeşitli felsefi anlayışlara göre etik."
+        },
+        {
+          "type": "subheading",
+          "content": "Mesleki etik ilkeler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mesleki etik, iş hayatında bir meslek mensubunun hangi standartlarla davranacağını gösterir. Kamu görevlisi açısından mesleki etik; doğruluk, yasallık, yeterlik, güvenirlik ve mesleğe bağlılıkla birlikte düşünülür."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Doğruluk: Söz ve işlem güvenilir olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yasallık: İş ve işlemler hukuka uygun yürütülmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yeterlik: Görev için gerekli bilgi ve beceri sürekli geliştirilmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Güvenirlik: Meslek mensubu davranışlarıyla güven vermelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mesleğe bağlılık: Görev önemsenmeli ve hizmet ideali korunmalıdır."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": 125,
+      "topic_id": 125,
+      "current_content_version": 1
+    },
+    {
+      "name": "Kamu Yönetiminde Etik, Etik İkilemler ve Etik Karar Verme",
+      "slug": "kamu-yonetiminde-etik-etik-ikilemler-ve-etik-karar-verme",
+      "status": "active",
+      "summary": "Kamu hizmetinde etiğin önemi, etik ikilem türleri, etik dışı davranışlar ve etik karar verme aşamaları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Kamu Yönetimi Etiği"
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Yönetiminde Etiğin Önemi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu hizmeti, toplumun kaynaklarıyla yürütülen bir emanettir. Kamu görevlisi bu emaneti etkin, verimli, dürüst ve kamu yararına uygun biçimde kullanmakla yükümlüdür."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu yönetiminde etik ilkeler devlete güveni artırır, yönetimin meşruiyetini güçlendirir ve halkla kamu görevlileri arasındaki bağı sağlamlaştırır. Etik standartlar zayıfladığında yalnız tekil bir işlem değil, kamu hizmetinin itibarı zarar görür."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu görevlilerine iyi davranış konusunda rehberlik eder."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Devlet ve kamu görevlilerine duyulan güveni artırır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yönetsel davranış standartlarını yükseltir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Değer çatışmalarında karar verene yol gösterir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Demokrasi, hukuk devleti, sosyal doku ve ekonomik gelişmeyi destekler."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hizmet maliyetini düşürüp hizmet kalitesini yükseltmeye yardım eder."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kamu görevlisi yalnız gerçek yolsuzluktan değil, güveni zedeleyen yolsuzluk şüphesinden de kaçınmalıdır."
+        },
+        {
+          "type": "section_title",
+          "content": "Etik İkilemler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik ikilem, birden fazla değerin aynı anda korunamadığı durumdur. Kamu görevlisi bazen iki kötü seçenekten daha az sakıncalı olanı, bazen de iki iyi seçenekten birini seçmek zorunda kalabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İkilem türü",
+            "Açıklama",
+            "Kamu görevlisi açısından sonuç"
+          ],
+          "rows": [
+            [
+              "En az kötü seçeneği belirleme",
+              "Seçeneklerin hiçbiri tam tatmin edici değildir.",
+              "Zarar azaltma ve kamu yararı dengesi aranır."
+            ],
+            [
+              "İyiler arasında seçim",
+              "Birden fazla seçenek kendi başına makuldür.",
+              "Gerekçe açık, adil ve ölçülebilir olmalıdır."
+            ],
+            [
+              "Farklı gruplara farklı etki",
+              "Karar bazı gruplara yarar, bazılarına zarar doğurabilir.",
+              "Etkilenen taraflar ve toplam kamu yararı değerlendirilir."
+            ],
+            [
+              "Çıkar çatışması",
+              "Karar vereni veya yakınını etkileyen kişisel çıkar vardır.",
+              "Karar sürecinden çekilme veya durumu bildirme gerekir."
+            ]
+          ],
+          "caption": "Kamu görevlilerinin karşılaşabileceği etik ikilem türleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik dışı davranış ilkeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik dışı davranış, yalnız açık yolsuzluk biçiminde ortaya çıkmaz. Ayrımcılık, kayırma, yıldırma, ihmal, dedikodu, görevi kötüye kullanma ve kamu kaynağını kişisel amaçla kullanma da etik ihlal doğurabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Davranış",
+            "Özgün açıklama"
+          ],
+          "rows": [
+            [
+              "Ayrımcılık",
+              "Kişilere önyargı, kimlik veya kişisel özellik nedeniyle farklı muamele etmektir."
+            ],
+            [
+              "Kayırma",
+              "Akrabalık, hemşehrilik, siyasi yakınlık veya kişisel bağla ayrıcalık sağlamaktır."
+            ],
+            [
+              "Rüşvet",
+              "Maddi ya da başka bir çıkar karşılığında ayrıcalıklı işlem yapılmasıdır."
+            ],
+            [
+              "Yıldırma ve baskı",
+              "Ast veya hizmet alan üzerinde korkutma, tehdit veya kaba güç kurmaktır."
+            ],
+            [
+              "Sömürü / istismar",
+              "Kişi, yetki veya kaynakların adaletsiz biçimde çıkar için kullanılmasıdır."
+            ],
+            [
+              "İhmal",
+              "Kanun ve görevle verilen sorumluluğu yerine getirmemektir."
+            ],
+            [
+              "Yolsuzluk",
+              "Kamu otoritesinin rant, çıkar veya özel menfaat için kötüye kullanılmasıdır."
+            ],
+            [
+              "Zimmet",
+              "Kamusal para veya malı kişisel amaçla kullanmaktır."
+            ],
+            [
+              "Dogmatik davranış ve bağnazlık",
+              "Değişen gerçeklere rağmen tek doğruya kapalı kalmak ve hoşgörüsüz davranmaktır."
+            ]
+          ],
+          "caption": "Yönetimde etik dışı davranış örnekleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik dışı davranışların nedenleri"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bilgisizlik veya etik farkındalık eksikliği."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Denetim eksikliği ve hesap verme kültürünün zayıflığı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yetersiz eğitim ve kurumsal rehberlik eksikliği."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Disiplinsizlik, hırs, ideolojik körlük veya psikolojik nedenler."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik dışı davranışı sonradan haklı göstermeye çalışma yani ussallaştırma."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Davranışı etik açıdan yargılama soruları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Karmaşık durumlarda kamu görevlisi hızlı tepki vermek yerine kararını etik açıdan tartmalıdır. Basit kontrol soruları, görünüşte küçük olan bir davranışın güven ve adalet üzerindeki etkisini görmeyi sağlar."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bu davranış doğru mu?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bu karar adil mi?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kim kazanacak, kim zarar görecek?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Karar kamuoyuna açıklandığında savunulabilir mi?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Aileme veya meslektaşlarıma rahatça anlatabilir miyim?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Herkes böyle davransa kamu hizmeti ne hale gelir?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Etik Karar Verme Aşamaları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik karar verme, yalnız sezgiyle hareket etmek değildir. Durumu anlama, amaçları belirleme, gerçekleri toplama, seçenekleri geliştirme, sonuçları düşünme, karar verme ve kararı gözden geçirme adımlarından oluşur."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Aşama",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Dur ve düşün",
+              "Duygusal veya acele karar yerine sakin değerlendirme yapılır."
+            ],
+            [
+              "Amaçları tanımla",
+              "Ulaşılmak istenen kamu hizmeti sonucu netleştirilir."
+            ],
+            [
+              "Gerçekleri bil",
+              "Mevcut durum, hukuk, kaynak ve etkilenen taraflar görülür."
+            ],
+            [
+              "Seçenekleri geliştir",
+              "Tek çözüm varsayılmadan alternatifler üretilir."
+            ],
+            [
+              "Sonuçları göz önüne al",
+              "Her seçeneğin kamu yararı, haklar ve güven üzerindeki etkisi tartılır."
+            ],
+            [
+              "Seç ve karar ver",
+              "En uygun seçenek gerekçesiyle belirlenir."
+            ],
+            [
+              "Kararı gözden geçir",
+              "Sonuç izlenir; olumsuz etki varsa düzeltici önlem alınır."
+            ]
+          ],
+          "caption": "Etik karar verme aşamaları."
+        },
+        {
+          "type": "subheading",
+          "content": "Etiksel karar verme modelleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kaynakta Rest, Trevino, Ferrell-Gresham, Jones, Strong-Meyer, Harrington, Thorne, Robertson-Fadil ve bilgi teknolojisi odaklı modeller gibi farklı karar verme modelleri yer alır. Bu modellerin ortak yanı etik davranışın yalnız kişisel iyi niyete değil, sorun algısına, yargılamaya, niyete, örgütsel etkilere ve davranışa dönüşme gücüne bağlı olduğunu göstermeleridir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Model / yaklaşım",
+            "Ana fikir"
+          ],
+          "rows": [
+            [
+              "Rest modeli",
+              "Etik sorunu fark etme, ahlaki yargılama, etik niyet ve davranış aşamalarını vurgular."
+            ],
+            [
+              "Trevino modeli",
+              "Bilişsel ahlaki gelişim yanında bireysel ve durumsal belirleyicileri dikkate alır."
+            ],
+            [
+              "Ferrell-Gresham modeli",
+              "Bireysel faktörler, örgütsel faktörler ve önemli diğer kişilerin etkisini inceler."
+            ],
+            [
+              "Jones modeli",
+              "Etik sorunun yoğunluğu ve durumsal niteliği üzerinde durur."
+            ],
+            [
+              "Thorne modeli",
+              "Rest'in sürecini erdem etiğiyle ilişkilendirir; niyet ve karakterin önemini gösterir."
+            ],
+            [
+              "Kültür bazlı modeller",
+              "Kültürel değerlerin etik karar üzerindeki etkisini açıklar."
+            ]
+          ],
+          "caption": "Etik karar verme modelleri kısa özet."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik davranışın sonuçları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Etik davranışın olumlu sonucu",
+            "Etik dışı davranışın olumsuz sonucu"
+          ],
+          "rows": [
+            [
+              "Saygınlık ve güven kazanılır.",
+              "Saygınlık ve güven kaybedilir."
+            ],
+            [
+              "Kurumun iyi imajı güçlenir.",
+              "Yozlaşma kurumsallaşabilir."
+            ],
+            [
+              "Sorun çözümünde destek artar.",
+              "İş birliği ve kurum içi iletişim zayıflar."
+            ],
+            [
+              "Toplumsal kabul ve kamu hizmetine destek artar.",
+              "Çalışma arkadaşlarıyla ilişkiler bozulur."
+            ],
+            [
+              "Etik çöküşe karşı önleyici rol oluşur.",
+              "Mesleki ve örgütsel bağlılık zarar görür."
+            ]
+          ],
+          "caption": "Etik davranışın kurum ve toplum üzerindeki etkileri."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik eğitimin amacı"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik konularda duyarlılığı artırmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik ilkelere uygun karar vermeyi yaygınlaştırmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kişilerde etik davranma isteği geliştirmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik davranış ilkelerinin ne olduğunu öğretmek."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": 126,
+      "topic_id": 126,
+      "current_content_version": 1
+    },
+    {
+      "name": "Etik Mevzuatı, Kamu Görevlileri Etik Kurulu ve Etik Komisyonları",
+      "slug": "etik-mevzuati-kamu-gorevlileri-etik-kurulu-ve-etik-komisyonlari",
+      "status": "active",
+      "summary": "5176 sayılı Kanun, Yönetmelik kapsamı, Kamu Görevlileri Etik Kurulu ve kurum etik komisyonları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Mevzuat ve Örgütsel Yapı"
+        },
+        {
+          "type": "section_title",
+          "content": "Etik İlke ve Değerlere İlişkin Mevzuat"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkiye'de kamu görevlilerinin etik davranış standartlarını toplu biçimde düzenleyen temel metinler 5176 sayılı Kanun ve bu Kanuna dayanılarak çıkarılan Yönetmeliktir. Bu düzenlemeler kamu hizmetinde saydamlık, tarafsızlık, dürüstlük, hesap verebilirlik ve kamu yararını gözetme ilkelerini öne çıkarır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Yönetmelik, kamu görevlilerinin görevlerini yürütürken uyması gereken etik davranış ilkelerini ve etik ihlal iddialarında başvuru usulünü düzenler. Bu nedenle dersin mevzuat kısmı yalnız kavram değil, aynı zamanda kurum, kapsam, başvuru ve uygulama bilgisi içerir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kaynakta 5176 sayılı Kanun ve Yönetmelik tam metin halinde yer alır. Ders anlatımında madde metni kopyalanmadı; sınavda gerekli olan kapsam, görev, usul ve ilke bilgisi özgün şekilde açıklandı."
+        },
+        {
+          "type": "subheading",
+          "content": "Kapsam ve kapsam dışında kalanlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kanun ve Yönetmelik genel olarak kamu kurum ve kuruluşlarında çalışan personeli, yönetim ve denetim kurulu üyelerini, kurul ve üst kurul başkan ve üyelerini kapsar. Kamu tüzel kişiliğine sahip farklı adlardaki kurum ve kuruluşlar da bu çerçevede değerlendirilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kapsamda olanlar",
+            "Kapsam dışında bırakılanlar"
+          ],
+          "rows": [
+            [
+              "Genel bütçeli idarelerde çalışan kamu personeli.",
+              "Cumhurbaşkanı ve TBMM üyeleri."
+            ],
+            [
+              "Kamu iktisadi teşebbüsleri ve döner sermayeli kuruluş personeli.",
+              "Cumhurbaşkanı yardımcıları ve bakanlar / ilgili kaynakta bakanlar."
+            ],
+            [
+              "Mahalli idareler ve birliklerinde çalışanlar.",
+              "Türk Silahlı Kuvvetleri mensupları."
+            ],
+            [
+              "Kamu tüzel kişiliğine sahip kurul, üst kurul, kurum, fon, teşebbüs ve benzeri yapılarda görev yapanlar.",
+              "Yargı mensupları ve üniversite mensupları."
+            ]
+          ],
+          "caption": "5176 sayılı Kanun ve Yönetmelik kapsamı."
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Görevlileri Etik Kurulu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu Görevlileri Etik Kurulu, kamu görevlilerinin uyması gereken etik davranış ilkelerini belirlemek ve uygulamayı gözetmek üzere oluşturulmuş merkezi yapıdır. Kurulun varlık nedeni, etik ilkelerin yalnız yazılı kalmaması ve kamuda etik kültürünün geliştirilmesidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kurulun yapısı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurul toplam on bir üyeden oluşur ve üyeler belirli kamu tecrübesi bulunan kişiler arasından seçilir. Üyelerden biri başkan olarak görev yapar; kaynakta bakanlık, belediye, yüksek yargı, üst düzey kamu yönetimi, üniversite ve meslek kuruluşu tecrübesi gibi gruplar sayılır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurulun toplantı ve karar süreçleri mevzuatta ayrıntılı biçimde düzenlenmiştir. Sınav açısından kurulun on bir üyeden oluşması, etik ilkeleri belirlemesi, başvuru veya resen inceleme yapabilmesi ve etik kültürünü yerleştirme görevi özellikle önemlidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kurulun başlıca görevleri"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu görevlilerinin uyması gereken etik davranış ilkelerini belirlemek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik davranış ilkelerinin ihlal edildiği iddiası üzerine veya resen inceleme ve araştırma yapmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İnceleme sonucunu ilgili makamlara bildirmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamuda etik kültürünü yerleştirmek için çalışma yapmak, yaptırmak ve çalışmalara destek vermek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hediye alma yasağının kapsamını belirlemek ve uygulamayı izlemek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurumların uygulamada karşılaştığı etik sorunlar hakkında görüş bildirmek."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İnceleme ve bilgi isteme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurul, başvuru konusu olayları etik davranış ilkelerinin ihlal edilip edilmediği yönünden inceler. İnceleme ceza veya disiplin soruşturmasının yerine geçmez; ayrı hukuki süreçler genel hükümler uyarınca yürüyebilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bakanlıklar, kamu kurumları ve gerektiğinde özel kuruluşlar Kurulun istediği bilgi ve belgeleri vermekle yükümlüdür. Bu yetki, etik ihlal iddialarının somut veriyle incelenebilmesi için önemlidir."
+        },
+        {
+          "type": "section_title",
+          "content": "Etik Komisyonları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu kurum ve kuruluşlarında etik kültürünü yerleştirmek ve personelin karşılaştığı sorunlarda rehberlik etmek üzere etik komisyonları oluşturulur. Bu komisyonlar kurum içinden en az üç kişiden meydana gelir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik komisyonunun üyeleri, görev süresi ve diğer hususlar kurumun üst yöneticisi tarafından belirlenir. Üyelerin özgeçmiş ve iletişim bilgileri belirli süre içinde Kamu Görevlileri Etik Kuruluna bildirilir ve komisyon Kurul ile işbirliği içinde çalışır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Etik komisyonu işlevi",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Etik kültürünü geliştirme",
+              "Kurumda etik farkındalığı ve ortak davranış standartlarını güçlendirir."
+            ],
+            [
+              "Tavsiye ve yönlendirme",
+              "Personelin etik ikilem veya tereddüt yaşadığı konularda rehberlik eder."
+            ],
+            [
+              "Etik uygulamaları değerlendirme",
+              "Kurum içi uygulamaların etik ilkelere uygunluğunu izler."
+            ],
+            [
+              "Kurumsal etik ilkeleri hazırlama",
+              "Hizmetin niteliğine göre kurumun özel etik ilkelerini düzenleyip Kurul inceleme ve onayına sunabilir."
+            ]
+          ],
+          "caption": "Etik komisyonlarının temel görevleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Etik kültürün yerleştirilmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik kültür, yalnız ihlal olduğunda yaptırım uygulamakla kurulmaz. Eğitim, bilgilendirme, yayın, anket, bilimsel toplantı, kurum içi rehberlik ve yöneticilerin örnek davranışı etik kültürün yerleşmesini sağlar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Yönetmelikte etik ilkelerin temel, hazırlayıcı ve hizmet içi eğitim programlarında yer alması öngörülür. Bu hüküm, etik davranışın işe başladıktan sonra da sürekli öğrenilen ve izlenen bir mesleki sorumluluk olduğunu gösterir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kurul merkezi gözetim ve görüş bildirme rolündedir; etik komisyonu ise kurum içinde rehberlik ve kültür yerleştirme rolünü üstlenir."
+        }
+      ],
+      "id": 127,
+      "topic_id": 127,
+      "current_content_version": 1
+    },
+    {
+      "name": "Kamu Hizmeti Bilinci, Halka Hizmet ve Hizmet Standartları",
+      "slug": "kamu-hizmeti-bilinci-halka-hizmet-ve-hizmet-standartlari",
+      "status": "active",
+      "summary": "Görevin yerine getirilmesinde kamu hizmeti bilinci, halka hizmet, hizmet standartları, nezaket ve misyona bağlılık.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Görevin Yerine Getirilmesinde Uyulacak Esaslar"
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Hizmeti Bilinci"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisi görevini yaparken sürekli gelişim, katılımcılık, saydamlık, tarafsızlık, dürüstlük, kamu yararı, hesap verebilirlik, öngörülebilirlik, hizmette yerindenlik ve beyana güven ilkelerini esas alır. Bu ilkeler kamu hizmetinin yalnız sonuç değil, süreç bakımından da dürüst yürütülmesini sağlar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu hizmeti bilinci, görevin kişisel güç veya ayrıcalık alanı değil, toplum adına yürütülen sorumluluk olduğunu kabul eder. Bu bilinç olmadığında hizmet standartları keyfileşebilir, vatandaşın kuruma güveni azalabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Esas",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Sürekli gelişim",
+              "Hizmetin daha iyi yürütülmesi için yeniliğe ve iyileştirmeye açık olmak."
+            ],
+            [
+              "Katılımcılık",
+              "Hizmetten etkilenenlerin görüşünü dikkate almak."
+            ],
+            [
+              "Saydamlık",
+              "Karar ve işlemleri mümkün olduğunca açık ve izlenebilir yürütmek."
+            ],
+            [
+              "Tarafsızlık",
+              "Kişi, grup veya siyasi yakınlığa göre farklı davranmamak."
+            ],
+            [
+              "Kamu yararı",
+              "Kişisel veya zümresel çıkar yerine toplum yararını gözetmek."
+            ],
+            [
+              "Hesap verebilirlik",
+              "İşlem ve kararların gerekçesini açıklayabilmek."
+            ],
+            [
+              "Öngörülebilirlik",
+              "Süreçlerin kişiler için anlaşılır ve tahmin edilebilir olması."
+            ],
+            [
+              "Beyana güven",
+              "Vatandaşla ilişkide gereksiz şüphecilik yerine makul güven temeli kurmak."
+            ]
+          ],
+          "caption": "Görevin yerine getirilmesinde temel esaslar."
+        },
+        {
+          "type": "section_title",
+          "content": "Halka Hizmet Bilinci"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halka hizmet bilinci, kamu görevlisinin hizmeti kişi veya grubun çıkarı için değil, toplumun ihtiyacını karşılamak için yürüttüğünü gösterir. Kamu hizmeti vatandaşın günlük yaşamını kolaylaştırmalı ve hizmet kalitesini artırmalıdır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Halkın günlük yaşamını kolaylaştırmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İhtiyaçları etkin, hızlı ve verimli biçimde karşılamak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hizmet kalitesini yükseltmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Halkın memnuniyetini artırmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hizmetten yararlananların ihtiyacına ve hizmetin sonucuna odaklanmak."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu ilke yalnız iyi niyetli davranmayı değil, hizmet sürecinin ölçülmesini de gerektirir. Memnuniyet araştırmaları, iş süreçlerinin sadeleştirilmesi, iyi uygulama örneklerinin izlenmesi ve gereksiz kırtasiyeciliğin azaltılması halka hizmet bilincinin uygulama araçlarıdır."
+        },
+        {
+          "type": "section_title",
+          "content": "Hizmet Standartlarına Uyma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Vatandaş çoğu zaman hangi belgeyle nereye başvuracağını, işlemin ne kadar süreceğini ve hangi adımların izleneceğini bilmez. Hizmet standartları bu belirsizliği azaltır ve aracılık, kayırma veya iş takipçiliği gibi etik dışı zeminleri daraltır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu kurumları iş süreçlerini önceden belirlemeli, internet, afiş, levha, broşür, danışma birimi ve benzeri araçlarla halka duyurmalıdır. İş ve işlemler bu standartlara uygun yürütülmelidir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Standart alanı",
+            "Ne sağlar?"
+          ],
+          "rows": [
+            [
+              "Başvuru belgeleri",
+              "Vatandaş eksik veya gereksiz belgeyle uğraşmaz."
+            ],
+            [
+              "Başvuru yeri",
+              "Kişi doğru birime yönlendirilir."
+            ],
+            [
+              "İşlem süresi",
+              "Beklenti yönetilir ve keyfilik azalır."
+            ],
+            [
+              "Danışma hizmeti",
+              "Yazılı bilgiye rağmen tereddüt yaşayan kişiye doğru açıklama yapılır."
+            ],
+            [
+              "Süreç bilgisi",
+              "Bir işlem bittikten sonra sonraki adım hakkında bilgilendirme yapılır."
+            ]
+          ],
+          "caption": "Hizmet standartlarının etik değeri."
+        },
+        {
+          "type": "subheading",
+          "content": "Vatandaşa yol gösterme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisi, kendi yetki alanına giren konularda açıklayıcı bilgi vermeli; konu yetkisi dışındaysa vatandaşı ilgili birim veya yetkiliye yönlendirmelidir. Bu görev, hizmetin yalnız dosya sonuçlandırmak olmadığını, vatandaşı süreç boyunca aydınlatmayı da kapsadığını gösterir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Danışma birimlerinde iş süreçlerini bilen, sabırlı ve iletişimi güçlü personel görevlendirilmesi önemlidir. Yanlış yönlendirme veya ilgisizlik vatandaşta güvensizlik ve çaresizlik duygusu oluşturur."
+        },
+        {
+          "type": "section_title",
+          "content": "Nezaket ve Saygı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri üstlerine, astlarına, meslektaşlarına, diğer personele ve hizmetten yararlananlara karşı nazik ve saygılı davranmalıdır. Nezaket yalnız kişisel görgü değil, kamu hizmetinin güvenilirliğiyle ilgili etik bir yükümlülüktür."
+        },
+        {
+          "type": "paragraph",
+          "content": "Sert, küçümseyici, aşağılayıcı veya ilgisiz davranış, işlem doğru yapılsa bile kamu hizmetinin niteliğini zedeler. Kamu hizmetinden yararlanan kişinin bilgi eksikliği, yaşı, eğitim durumu veya telaşı kötü muamele nedeni olamaz."
+        },
+        {
+          "type": "section_title",
+          "content": "Amaç ve Misyona Bağlılık"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri çalıştıkları kurumun amaçlarına ve misyonuna uygun davranır. Kurum kaynakları ve yetkileri ülkenin çıkarları, toplumun refahı ve kurumun hizmet idealleri doğrultusunda kullanılmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Misyona bağlılık, kurumun amacı dışında kişisel konfor, makam imkanı veya yakın çevre menfaati için kaynak kullanmamayı gerektirir. Kamu görevlisi yetkiyi kurumun hizmet amacıyla sınırlı düşünmelidir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Bu konudaki ilkeler özellikle hizmet standardı, vatandaşın bilgilendirilmesi, nezaket ve kurum misyonuna uygun davranma sorularında birlikte gelir."
+        }
+      ],
+      "id": 128,
+      "topic_id": 128,
+      "current_content_version": 1
+    },
+    {
+      "name": "Dürüstlük, Tarafsızlık, Saygınlık, Güven ve Bildirim Yükümlülüğü",
+      "slug": "durustluk-tarafsizlik-sayginlik-guven-ve-bildirim-yukumlulugu",
+      "status": "active",
+      "summary": "Dürüstlük ve tarafsızlık, takdir yetkisi, hizmet kayırmacılığı, saygınlık-güven, yetkili makamlara bildirim ve kanunsuz emir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Güven Veren Kamu Görevlisi Davranışı"
+        },
+        {
+          "type": "section_title",
+          "content": "Dürüstlük ve Tarafsızlık"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri işlem ve eylemlerinde yasallık, adalet, eşitlik ve dürüstlük doğrultusunda hareket etmelidir. Hizmetten yararlandırmada dil, din, felsefi inanç, siyasi düşünce, ırk, cinsiyet ve benzeri nedenlerle ayrım yapılamaz."
+        },
+        {
+          "type": "paragraph",
+          "content": "Tarafsızlık, kamu görevlisinin kişisel yakınlık, siyasi tercih, toplumsal kimlik veya dış baskıyla karar vermemesidir. Dürüstlük ise verilen bilginin, yapılan işlemin ve kullanılan yetkinin güvenilir olmasını sağlar."
+        },
+        {
+          "type": "subheading",
+          "content": "Takdir yetkisinin kullanımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Takdir yetkisi, kamu görevlisine sınırsız serbestlik vermez. Bu yetki kamu yararı ve hizmet gerekleri doğrultusunda, keyfilikten uzak, tarafsız ve eşit biçimde kullanılmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Sorumluluktan kaçmak için takdir yetkisini kullanmamak da, kişisel çıkar sağlamak için kullanmak da etik dışıdır. Kamu görevlisi gerekçeli, ölçülü ve denetlenebilir karar vermelidir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Yanlış kullanım",
+            "Etik sorun"
+          ],
+          "rows": [
+            [
+              "Sorumluluktan kaçmak",
+              "Karar vermekten kaçınarak hizmetin aksamasına yol açar."
+            ],
+            [
+              "Yakınına avantaj sağlamak",
+              "Kamu yararı yerine kişisel bağları öne çıkarır."
+            ],
+            [
+              "Keyfi davranmak",
+              "Benzer durumdaki kişilere farklı ve gerekçesiz işlem yapılmasına neden olur."
+            ],
+            [
+              "Siyasi veya zümresel etkiyle davranmak",
+              "Tarafsız kamu hizmeti ilkesini zedeler."
+            ]
+          ],
+          "caption": "Takdir yetkisinde etik riskler."
+        },
+        {
+          "type": "subheading",
+          "content": "Hizmet kayırmacılığı ve bürokratik sabotaj"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hizmet kayırmacılığı, gerçek veya tüzel kişilere öncelikli, ayrıcalıklı, taraflı ya da eşitlik ilkesine aykırı muamele yapılmasıdır. Kamu görevlisi herhangi bir siyasi parti, kişi veya zümrenin yararını veya zararını hedef alan davranıştan kaçınmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bürokratik sabotaj, mevzuata uygun kamu politikalarını kişisel görüş nedeniyle engelleme veya geciktirme anlamına gelir. Kamu görevlisi, seçilmiş ve yetkili makamların hukuka uygun kararlarını kendi görüşüne uymasa da tarafsız biçimde uygulamakla yükümlüdür."
+        },
+        {
+          "type": "section_title",
+          "content": "Saygınlık ve Güven"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisi, kamu yönetimine güveni sağlayacak şekilde davranmalı ve görevin gerektirdiği itibara layık olduğunu göstermelidir. Güven duygusunu zedeleyen, şüphe doğuran veya adalet algısını bozan davranışlardan kaçınılmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Halka kötü davranmak, işi savsaklamak, çifte standart uygulamak, taraf tutmak veya hizmetten yararlananı aşağılamak saygınlık ve güven ilkesine aykırıdır. Yönetici ve denetleyiciler bakımından baskı, tehdit, keyfilik ve kanıtsız rapor düzenleme de ayrıca etik dışıdır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Davranış alanı",
+            "Etik beklenti"
+          ],
+          "rows": [
+            [
+              "Hizmetten yararlananlarla ilişki",
+              "Kötü muamele, savsaklama, çifte standart ve taraf tutmadan kaçınma."
+            ],
+            [
+              "Yönetici davranışı",
+              "Baskı, tehdit, hakaret ve keyfi uygulamadan uzak durma."
+            ],
+            [
+              "Denetim ve raporlama",
+              "Açık ve kesin kanıt olmadan kişiyi suçlayan rapor düzenlememe."
+            ],
+            [
+              "Menfaat talepleri",
+              "Mevzuata aykırı hizmet, imkan veya çıkar talep etmeme ve sunulanı kabul etmeme."
+            ]
+          ],
+          "caption": "Saygınlık ve güven ilkesinin uygulama alanları."
+        },
+        {
+          "type": "section_title",
+          "content": "Yetkili Makamlara Bildirim"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik dışı uygulamalar çoğu zaman kurum dışından kolayca görülemez. Bu nedenle kamu görevlileri yasadışı veya etik ilkelere aykırı bir işin talep edilmesi, görülmesi veya öğrenilmesi halinde durumu yetkili makamlara bildirmelidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bildirim yükümlülüğü, 'beni ilgilendirmez' anlayışını reddeder. Kurum amirleri de bildirimde bulunan kişinin kimliğini gizli tutmalı ve zarar görmemesi için gerekli önlemleri almalıdır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik dışı talep alınırsa bildirim yapılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hizmet sırasında etik dışı işlem görülürse bildirim yapılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yasadışı iş veya eylem öğrenilirse yetkili makama iletilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İhbar edenin kimliği korunur ve misillemeye uğramaması sağlanır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Yasa Dışı Nüfuz Kullanma ve Kanunsuz Emir"
+        },
+        {
+          "type": "paragraph",
+          "content": "Üst yöneticiler astlarından yasal veya etik olmayan talep ve emirlerde bulunamaz. Kamu görevlisi de sözlü talimat, rica veya baskı biçiminde gelen hukuka aykırı isteği yerine getirmemelidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kanunsuz emir konusu özellikle ast-üst ilişkisinde önemlidir. Görevli, emir verenin makamına değil, emrin hukuk ve etik ilkelerle uyumuna da bakmalıdır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Dürüstlük, tarafsızlık ve bildirim yükümlülüğü birlikte düşünüldüğünde kamu görevlisinin temel rolü şudur: Görevi kamu yararı için, açık gerekçeyle ve baskıya kapılmadan yürütmek."
+        }
+      ],
+      "id": 129,
+      "topic_id": 129,
+      "current_content_version": 1
+    },
+    {
+      "name": "Çıkar Çatışması, Görev ve Yetkilerin Menfaat İçin Kullanılmaması",
+      "slug": "cikar-catismasi-gorev-ve-yetkilerin-menfaat-icin-kullanilmamasi",
+      "status": "active",
+      "summary": "Çıkar çatışması, eski kamu görevlileri, ikinci iş, kayırmacılık, aracılık, bilgi açıklama ve seçimlerde kamu imkanları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Çıkar Çatışması ve Menfaat Yasakları"
+        },
+        {
+          "type": "section_title",
+          "content": "Çıkar Çatışmasından Kaçınma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Çıkar çatışması, kamu görevlisinin tarafsız ve objektif görev yapmasını etkileyen veya etkiliyormuş gibi görünen kişisel menfaat durumudur. Menfaat yalnız para değildir; yakınlara sağlanan avantaj, ilişki ağı, borç, yükümlülük veya gelecekte beklenen çıkar da bu kapsama girebilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Çıkar çatışmasında önemli nokta yalnız fiili etki değil, etkileme ihtimalidir. Dışarıdan bakan makul bir kişi kararın tarafsızlığından şüphe duyuyorsa kamu görevlisi durumu ciddiye almalıdır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Potansiyel veya gerçek çıkar çatışmasına karşı dikkatli olunmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çıkar çatışması fark edildiğinde üstlere bildirilmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Menfaat ilişkisi bulunan karar süreçlerinden uzak durulmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu yararı ile kişisel çıkar çakıştığında kamu yararı esas alınmalıdır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Çıkar çatışması gerçekleşmiş yolsuzluk olmak zorunda değildir; tarafsızlığı zedeleme ihtimali bile etik risk doğurur."
+        },
+        {
+          "type": "subheading",
+          "content": "Eski kamu görevlileriyle ilişkiler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Eski kamu görevlileri kamu hizmetlerinden ayrıcalıklı biçimde yararlandırılamaz ve onlara imtiyazlı muamele yapılamaz. Görevden ayrılmış olmak, eski kurum üzerinde nüfuz kullanma hakkı vermez."
+        },
+        {
+          "type": "paragraph",
+          "content": "İlgili kanunlardaki süreler saklı kalmak üzere, kamu görevinden ayrılan kişilere daha önce görev yaptıkları kurumla ilgili yüklenicilik, komisyonculuk, temsilcilik, bilirkişilik, aracılık ve benzeri işler verilemez. Kaynakta 2531 sayılı Kanundaki iki yıl görev alanı ve üç yıl yasak süresi özellikle vurgulanır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kural",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Ayrıcalıklı hizmet yasağı",
+              "Eski görevli sıraya, randevuya veya iş akışına ayrıcalıklı biçimde sokulamaz."
+            ],
+            [
+              "Eski kurumla iş yapma sınırlaması",
+              "Ayrıldıktan sonra belirli süre önceki görev alanıyla ilgili iş ve temsil ilişkisi kurulamaz."
+            ],
+            [
+              "Nüfuz riskinin önlenmesi",
+              "Eski statü kullanılarak kurum personeli üzerinde baskı veya kolaylık sağlanması engellenir."
+            ]
+          ],
+          "caption": "Eski kamu görevlileriyle ilişkiler."
+        },
+        {
+          "type": "subheading",
+          "content": "İkinci bir işte çalışma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisinin kamu görevi dışında gelir getirici bir işte çalışması performans, sadakat ve tarafsızlık bakımından çıkar çatışması doğurabilir. Devlet memurlarının tacir veya esnaf sayılmalarını gerektirecek faaliyetlerde bulunmaları, ticari işletmelerde görev almaları ve benzeri faaliyetleri mevzuatla sınırlandırılmıştır."
+        },
+        {
+          "type": "paragraph",
+          "content": "İkinci iş yasağı yalnız zaman yönetimi meselesi değildir. Kamu görevinde edinilen bilgi, ilişki ve itibarın özel kazanca dönüşmesi kamu hizmetine güveni zedeler."
+        },
+        {
+          "type": "section_title",
+          "content": "Görev ve Yetkilerin Menfaat Sağlamak Amacıyla Kullanılmaması"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisi görev, unvan ve yetkisini kendisi, yakınları veya üçüncü kişiler lehine menfaat sağlamak için kullanamaz. Aracılık, kayırmacılık, ayrımcılık ve görevle bağlantılı ürün satışı gibi davranışlar bu yasak kapsamında değerlendirilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Menfaat sağlama türü",
+            "Özgün açıklama"
+          ],
+          "rows": [
+            [
+              "Kendisine veya yakınına çıkar sağlama",
+              "Kamu kararını kendisi veya yakını lehine yönlendirmek."
+            ],
+            [
+              "Yapılan iş için özel ücret alma",
+              "Görev gereği yapılan hizmet karşılığında ayrıca para veya menfaat istemek."
+            ],
+            [
+              "Aracılık",
+              "Yetki veya nüfuz kullanarak belirli kişi ya da firmaya iş yönlendirmek."
+            ],
+            [
+              "Adam kayırmacılık",
+              "Akraba, eş-dost, hemşehri veya siyasi yakınlığa ayrıcalık tanımak."
+            ],
+            [
+              "Hizmet kayırmacılığı",
+              "Kamu hizmetinden yararlanmada belirli kişi veya gruba öncelik vermek."
+            ],
+            [
+              "Görev unvanıyla ticaret",
+              "Kamu makamını ürün satışı veya dağıtımı için kullanmak."
+            ],
+            [
+              "Bağış ve yardım baskısı",
+              "Kurum, vakıf, dernek veya spor kulübüne yardım sağlamak için yetkiyi kullanmak."
+            ],
+            [
+              "Bilgi açıklama",
+              "Görevde elde edilen resmi veya gizli bilgiyi menfaat için kullanmak veya yetkisiz kişiye açıklamak."
+            ],
+            [
+              "Seçimde kamu imkanı kullanma",
+              "Kurum aracı, personeli, bütçesi veya malzemesini seçim kampanyasına tahsis etmek."
+            ]
+          ],
+          "caption": "Görev ve yetkinin menfaat için kullanılma biçimleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Görev sırasında elde edilen bilgiler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisi, görevi sırasında öğrendiği resmi veya gizli bilgileri kendisi, yakınları veya üçüncü kişiler için ekonomik, siyasal ya da sosyal menfaat sağlamak amacıyla kullanamaz. Bu yasak görevden ayrıldıktan sonra da devam eder."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bilgiye erişim kamu görevinin gereğidir; bu erişim özel avantaj doğuracak şekilde kullanıldığında kamu hizmetinin tarafsızlığı ve güvenilirliği bozulur."
+        },
+        {
+          "type": "subheading",
+          "content": "Seçimlerde kamu imkanları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri seçim kampanyalarında görev yaptıkları kurumun kaynaklarını doğrudan veya dolaylı biçimde kullanamaz ve kullandıramaz. Araç, personel, bina, bütçe, iletişim kanalı veya kamu zamanı seçim amacıyla tahsis edilemez."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu yasak, kamu kurumunun tarafsızlığını korur. Kamu imkanının siyasi rekabette kullanılması hem eşitliği bozar hem de kamu hizmetine güveni zedeler."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Bu konunun merkezinde şu ölçüt var: Görevden doğan yetki, bilgi, zaman, kaynak veya unvan özel çıkar için kullanılıyorsa etik ilke ihlali riski vardır."
+        }
+      ],
+      "id": 130,
+      "topic_id": 130,
+      "current_content_version": 1
+    },
+    {
+      "name": "Hediye Alma Yasağı, Kamu Kaynakları, Saydamlık ve Hesap Verme",
+      "slug": "hediye-alma-yasagi-kamu-kaynaklari-saydamlik-ve-hesap-verme",
+      "status": "active",
+      "summary": "Hediye ve menfaat yasağı, alınabilir/alınamaz hediyeler, kamu kaynakları, savurganlık, beyan, saydamlık, hesap verme ve mal bildirimi.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Hediye, Kaynak ve Hesap Verebilirlik"
+        },
+        {
+          "type": "section_title",
+          "content": "Hediye Alma ve Menfaat Sağlama Yasağı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlisinin tarafsızlığını, performansını, kararını veya görevini etkileyen ya da etkileme ihtimali bulunan her türlü eşya ve menfaat hediye kapsamında değerlendirilir. Hediyenin ekonomik değeri olması şart değildir; sembolik görünen bir menfaat bile karar üzerinde baskı oluşturabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Temel ilke nettir: Kamu görevlisi görevle ilgili iş, hizmet veya menfaat ilişkisi olan kişilerden kendisi, yakınları veya üçüncü kişiler için hediye alamaz ve menfaat sağlayamaz. Kamu görevlisine hediye verilmemesi ve görev sebebiyle çıkar sağlanmaması esastır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Hediye konusunda pratik test: 'Bu makamda olmasaydım bu hediye bana verilir miydi?' Cevap hayırsa veya tereddüt varsa reddetmek gerekir."
+        },
+        {
+          "type": "subheading",
+          "content": "İyi niyetli hediye ve çıkar amaçlı hediye ayrımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bazı hediyeler sosyal nezaket veya memnuniyet göstergesi gibi sunulabilir. Ancak kamu görevlisi için belirleyici olan, hediyenin görevle bağlantısı ve tarafsızlığı etkileme ihtimalidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Çıkar sağlama amacıyla verilen hediyelerde beklenti çoğu zaman hemen söylenmez. Hediye, ileride kolaylık, ayrıcalık, tolerans veya hızlandırma talebi için zemin hazırlayabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Alınabilir sayılanlar",
+            "Alınamaz sayılanlar"
+          ],
+          "rows": [
+            [
+              "Kuruma katkı sağlayan, demirbaşa kaydedilen, kamu hizmetine tahsis edilen ve kamuoyuna açıklanan bağışlar.",
+              "Kurumla iş, hizmet veya çıkar ilişkisi bulunanlardan alınan karşılama, veda, kutlama hediyeleri."
+            ],
+            [
+              "Kitap, dergi, makale, kaset, takvim, CD ve benzeri nitelikte materyaller.",
+              "Burs, seyahat, ücretsiz konaklama, hediye çeki gibi menfaatler."
+            ],
+            [
+              "Halka açık yarışma, kampanya veya etkinliklerde kazanılan ödüller.",
+              "Piyasa fiyatına göre makul olmayan bedelle mal veya hizmet alım-satımı/kiralanması."
+            ],
+            [
+              "Herkese açık toplantı, panel, resepsiyon gibi etkinliklerde verilen hatıra niteliğindeki hediyeler.",
+              "Hizmetten yararlananların vereceği eşya, giysi, takı veya gıda türü hediyeler."
+            ],
+            [
+              "Herkese dağıtılan sembolik tanıtım ve reklam ürünleri.",
+              "Kurumla iş veya hizmet ilişkisi içinde olanlardan alınan borç ve krediler."
+            ],
+            [
+              "Finans kurumlarından piyasa koşullarına göre alınan krediler.",
+              "Belirli kamu görevlisinin kullanımına tahsis edilen değerli hediye veya imkanlar."
+            ]
+          ],
+          "caption": "Yönetmelikteki hediye ayrımı özgün ders notu olarak tabloya çevrildi."
+        },
+        {
+          "type": "subheading",
+          "content": "Kamu kaynaklarını kullanarak hediye verme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri kamu kaynaklarını kullanarak kişilere hediye veremez. Resmi gün, tören ve bayramlar dışındaki çelenk, çiçek, kutlama, duyuru ve anma ilanları görev ve hizmetle ilgisizse kamu bütçesinden karşılanamaz."
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Malları ve Kaynaklarının Kullanımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu bina ve taşıtları ile diğer kamu malları yalnız kamusal amaçlar ve hizmet gerekleri için kullanılabilir. Kamu görevlisi bu malları kullandırmamak, korumak ve hizmete hazır bulundurmakla yükümlüdür."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurum aracıyla özel eşya taşımak, kurum bilgisayarını veya yazıcısını özel işlerde kullanmak, personel zamanını kişisel işlere yönlendirmek kamu kaynağının amacı dışında kullanılmasıdır."
+        },
+        {
+          "type": "section_title",
+          "content": "Savurganlıktan Kaçınma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu kaynakları kullanılırken israf ve savurganlıktan kaçınılmalıdır. Mesai süresi, kamu malı, işgücü, bütçe ve imkanlar etkin, verimli ve tutumlu kullanılmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Lüks makam harcamaları, gereksiz yenilemeler, uzun özel telefon görüşmeleri veya mesai saatinde özel işler savurganlık ilkesine aykırı örneklerdir. Etik davranış, yalnız yolsuzluk yapmamak değil, kamu kaynağını ölçülü kullanmaktır."
+        },
+        {
+          "type": "section_title",
+          "content": "Bağlayıcı Açıklamalar ve Gerçek Dışı Beyan"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri yetkilerini aşarak kurumlarını bağlayıcı açıklama, vaat, taahhüt veya girişimde bulunamaz. Aldatıcı ve gerçek dışı beyan kamuoyunu yanıltır ve kuruma güveni zedeler."
+        },
+        {
+          "type": "section_title",
+          "content": "Bilgi Verme, Saydamlık ve Katılımcılık"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri halkın bilgi edinme hakkını kullanmasına yardımcı olmalıdır. İstenen bilgi ve belgeler, kanundaki istisnalar dışında usulüne uygun biçimde verilmelidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Üst yöneticiler ihale süreçleri, faaliyet ve denetim raporları gibi kamusal bilgileri ilgili mevzuatın izin verdiği ölçüde kamuoyuna sunar. Kamu hizmetiyle ilgili temel kararların hazırlanması ve uygulanması aşamalarında etkilenenlerin katkısı dikkate alınmalıdır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Uygulama değeri"
+          ],
+          "rows": [
+            [
+              "Bilgi verme",
+              "Vatandaşın hakkını kullanmasını kolaylaştırır."
+            ],
+            [
+              "Saydamlık",
+              "Karar ve işlemlerin güvenilirliğini artırır."
+            ],
+            [
+              "Katılımcılık",
+              "Karardan etkilenenlerin görüşünü sürece dahil eder."
+            ],
+            [
+              "Öngörülebilirlik",
+              "Kamu işlemlerinin keyfi görünmesini engeller."
+            ]
+          ],
+          "caption": "Saydam kamu yönetimi ilkeleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Yöneticilerin Hesap Verme Sorumluluğu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri sorumlulukları ve yükümlülükleri konusunda hesap verebilir olmalı, kamusal değerlendirme ve denetime hazır bulunmalıdır. Yöneticiler kurum amaçlarına aykırı işlem ve eylemleri önlemek için zamanında tedbir almalıdır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yolsuzluğu önlemek için yasal ve idari düzenlemeleri uygular."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Personeli etik ilkelere ilişkin eğitir ve bilgilendirir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Personelin mali ve diğer zorluklarına karşı dikkatli olur."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kişisel davranışlarıyla örnek olur."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik ilkelere uyulup uyulmadığını gözetir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Geliriyle bağdaşmayan yaşantı gibi risk işaretlerini izler."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Mal Bildiriminde Bulunma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu görevlileri kendileri, eşleri ve velayetleri altındaki çocuklarına ait taşınır ve taşınmazlar ile alacak ve borçlar hakkında yetkili makama mal bildiriminde bulunur. Bu yükümlülük, kamu görevlisinin mal varlığı ile görevi arasındaki şeffaflığı sağlamaya yöneliktir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu Görevlileri Etik Kurulu gerekli gördüğünde mal bildirimlerini inceleyebilir. Bankalar ve özel finans kurumları dahil ilgili kişi ve kuruluşlar istenen bilgileri en geç otuz gün içinde Kurula vermekle yükümlüdür."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Hediye, kamu kaynağı, saydamlık ve mal bildirimi konuları aynı hedefe hizmet eder: Kamu görevinin özel çıkara dönüşmesini önlemek."
+        }
+      ],
+      "id": 131,
+      "topic_id": 131,
+      "current_content_version": 1
+    },
+    {
+      "name": "Etik Başvuru Usulü, Beklenen Davranışlar ve Etik Sözleşmesi",
+      "slug": "etik-basvuru-usulu-beklenen-davranislar-ve-etik-sozlesmesi",
+      "status": "active",
+      "summary": "Etik ihlal başvurusu, başvuru biçimleri, kabul edilmeyen başvurular, kamu görevlisi/yönetici davranışları ve etik sözleşmesi.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Başvuru, Beklenen Davranış ve Sözleşme"
+        },
+        {
+          "type": "section_title",
+          "content": "Etik Davranış İlkelerine Aykırılık İddiasıyla Başvuru Hakkı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Etik ilkelere aykırılık iddiasıyla başvuru hakkı, medeni hakları kullanma ehliyetine sahip Türkiye Cumhuriyeti vatandaşları ve Türkiye'de oturan yabancı gerçek kişiler tarafından kullanılabilir. Başvuranın menfaatinin etkilenmesi şart değildir."
+        },
+        {
+          "type": "paragraph",
+          "content": "En az genel müdür, eşiti ve üstü kamu görevlileri hakkındaki başvurular Kamu Görevlileri Etik Kuruluna yöneltilir. Diğer kamu görevlileri hakkındaki başvurular ise ilgili kurumların yetkili disiplin kurulları tarafından etik ilkeler yönünden değerlendirilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Başvuru biçimleri"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yazılı dilekçe ile başvuru."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Elektronik posta yoluyla başvuru."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tutanağa geçirilen sözlü başvuru."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Başvuru usulü"
+        },
+        {
+          "type": "paragraph",
+          "content": "Başvuru gerçek kişiler tarafından yapılır; dilekçede ad, soyad, oturma yeri veya iş adresi ve imza bulunmalıdır. Etik ilkeye aykırı davranış iddiası kişi, zaman, yer, bilgi ve belge yönünden açık ve somut biçimde gösterilmelidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Başvurunun bilgisayar çıktısı veya daktilo ile yazılmış olması şart değildir; okunaklı ve anlaşılır olması yeterlidir. Posta yoluyla gönderilen dilekçelerde Kurul kayıtlarına geçtiği tarih başvuru tarihi kabul edilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Elektronik başvuru"
+        },
+        {
+          "type": "paragraph",
+          "content": "Elektronik posta başvurusunda başvuranın adı, soyadı, oturma yeri veya iş adresi belirtilmelidir. Türkiye'de oturan yabancı gerçek kişiler açısından pasaport numarası ve uyruğun gösterilmesi gerekir."
+        },
+        {
+          "type": "section_title",
+          "content": "Hangi Başvurular Kabul Edilmez?"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kabul edilmeme nedeni",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Kimlik ve imza eksikliği",
+              "İsim veya imza bulunmayan dilekçeler işleme konulmaz."
+            ],
+            [
+              "Elektronik başvuruda zorunlu unsur eksikliği",
+              "Ad, soyad, adres gibi bilgiler yoksa başvuru işleme alınmaz."
+            ],
+            [
+              "Gerçeğe aykırı beyan",
+              "Sonradan yanlış olduğu anlaşılan başvuru işlemden kaldırılır."
+            ],
+            [
+              "Karalama amacı",
+              "Kamu görevlisini açıkça karalama amacı taşıyan başvurular değerlendirilmez."
+            ],
+            [
+              "Yargı konusu olma",
+              "Yargıda incelenen veya karara bağlanan uyuşmazlıklar Kurulca incelenmez."
+            ],
+            [
+              "Tekrar başvuru",
+              "Daha önce incelenmiş konu yeni kanıt yoksa yeniden incelenmez."
+            ],
+            [
+              "Süre aşımı",
+              "Oluştuğu tarihi izleyen günden başlayarak iki yıl içinde yapılmayan başvurular incelenmez."
+            ]
+          ],
+          "caption": "Başvurunun kabul edilebilirlik koşulları."
+        },
+        {
+          "type": "section_title",
+          "content": "Başvuruların İncelenmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kaydedilen başvuru görev, konu ve kabul edilebilirlik yönünden incelenir. Kabul edilebilir bulunan başvuruda gerektiğinde savunma alınır, bilgi ve belgeler toplanır ve inceleme belirlenen süre içinde sonuçlandırılır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurul resen inceleme yetkisini de kullanabilir. Etik ilkelere aykırı davranışın çeşitli yollarla öğrenilmesi halinde başvuru beklenmeden inceleme yapılması mümkündür."
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Görevlilerinden Beklenen Başlıca Etik Davranışlar"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu yararı doğrultusunda halkın devlete ve kamu görevlilerine güvenini artırmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu kaynaklarını kullanırken yazılı kurallara ve etik değerlere uygun davranmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Meslektaşlara ve hizmetten yararlananlara saygılı, tarafsız ve adil davranmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Karar alma sürecinde ilgililerin görüşlerini dikkate almak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu görevini ve kaynaklarını kişisel çıkar için kullanmamak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Akraba, eş-dost ve yakınlara kamu hizmetlerinde ayrıcalık tanımamak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çıkar çatışması ihtimaline karşı dikkatli olmak ve bu durumlardan kaçınmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mal bildirimlerini zamanında, eksiksiz ve doğru yapmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu görevi dışında gelir getirici işte çalışmamak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Görevle bağlantılı kişilerden hediye, burs, seyahat, konaklama ve benzeri imkan almamak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik dışı davranışları uyarmak, sonuç alınamazsa yetkili mercilere bildirmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tereddüt halinde güvenilir kıdemli meslektaşa veya etik komisyonuna danışmak."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Yöneticilerinden Beklenen Etik Davranışlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Yönetici kamu görevlileri yalnız kendi davranışlarından değil, yönettikleri kurumda etik ortamın kurulmasından da sorumludur. Yöneticinin tutumu personel için fiili örnek oluşturur."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurumun amaçlarını, hedeflerini ve değerlerini personele açıkça bildirmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Olumlu ve güvenli çalışma ortamı oluşturmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurum faaliyetleriyle ilgili sorumluluğu kabul etmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Üst görevlere personel seçerken liyakat ve gelişim potansiyelini dikkate almak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tüm personele adil, tarafsız ve eşit davranmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sorunları ve anlaşmazlıkları adil ve hızlı çözmek."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kararlarında tutarlı, güvenilir, öngörülebilir ve nesnel olmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etik ilke ve değerler konusunda kişisel örnek olmak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Etkililik ve verimlilikte yüksek standartları sürdürmek."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Kamu Görevlileri Etik Sözleşmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kapsam içindeki kamu görevlileri Etik Sözleşme belgesini imzalamakla yükümlüdür; bu belge personelin özlük dosyasına konur. Sözleşme, kamu hizmetinin özel çıkarın üzerinde olduğu ve kamu görevlisinin halkın hizmetinde bulunduğu anlayışına dayanır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sözleşmede taahhüt edilen alan",
+            "Özgün açıklama"
+          ],
+          "rows": [
+            [
+              "Halka hizmet",
+              "Günlük yaşamı kolaylaştırmak, ihtiyaçları hızlı ve verimli karşılamak, hizmet kalitesini yükseltmek."
+            ],
+            [
+              "Temel ilkeler",
+              "İnsan hakları, saydamlık, katılımcılık, dürüstlük, hesap verebilirlik, kamu yararı ve hukukun üstünlüğü doğrultusunda görev yapmak."
+            ],
+            [
+              "Tarafsızlık",
+              "Dil, din, düşünce, ırk, yaş, engellilik, cinsiyet gibi nedenlerle ayrım yapmamak."
+            ],
+            [
+              "Hediye ve menfaatten kaçınma",
+              "Görevle ilişkili kişilerden maddi veya manevi çıkar sağlamamak."
+            ],
+            [
+              "Kamu malları",
+              "Kamu mallarını hizmet dışı amaçla kullanmamak ve israf etmemek."
+            ],
+            [
+              "Haklara saygı",
+              "Dilekçe, bilgi edinme, şikayet ve dava açma haklarına saygılı olmak."
+            ],
+            [
+              "Nezaket",
+              "Hizmetten yararlananlara, çalışma arkadaşlarına ve diğer muhataplara ilgili, ölçülü ve saygılı davranmak."
+            ]
+          ],
+          "caption": "Etik Sözleşmenin ana taahhütleri."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Bu son konu, dersin uygulama kapısıdır: etik ilke ihlal edildiğinde kim başvurabilir, nereye başvurulur, hangi başvuru işleme alınmaz ve kamu görevlisi günlük davranışta neyi taahhüt eder?"
+        }
+      ],
+      "id": 132,
+      "topic_id": 132,
+      "current_content_version": 1
+    }
+  ],
+  "subject_id": 28
+}

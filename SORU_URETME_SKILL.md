@@ -37,6 +37,38 @@ Kanun sorularinda kaynak adi kisaltilamaz. `6136 sayılı Kanun'a göre`, `2559 
 
 Kanun numarasi ile resmi ad mutlaka eslesmelidir. Numarasi veya resmi adi hatali yazilmis soru kalite hatasidir; emin olunmuyorsa konu/ders kaydindaki `code` ve resmi `name` birlikte kontrol edilir.
 
+## Ornek soru setlerini kullanma
+
+Kullanici veya ekip tarafindan verilen iyi soru setleri, yeni sorular icin stil ve kalite referansi olarak kullanilir; ancak sorular birebir kopyalanmaz.
+
+Ornek set kullanilirken:
+
+- Soru kokunun sinav dili, olcme hedefi ve zorluk seviyesi incelenir.
+- Dogru cevabin hangi mevzuat noktasini olctugu belirlenir.
+- Yanlis seceneklerin hangi yakin kavramlardan kuruldugu analiz edilir.
+- Yeni soruda ayni olcme mantigi kullanilabilir; fakat soru kokunda, secenek siralamasinda veya uygun olan yerlerde secenek ifadesinde guvenli farklilastirma yapilir.
+- Kanun metnindeki dogru bilgi, sure, makam, tanim ve kapsam degistirilemez.
+- Sadece farkli gorunsun diye kaynakta olmayan bilgi veya uydurma celistirici eklenmez.
+- Seçenek sirasi degistirilirse `correct_answer_text` yeni dogru harfe gore tekrar hesaplanir.
+
+5271 sayili Ceza Muhakemesi Kanunu icin `_local_dokuman_calismalari/Komiser Yardımcılığı Sınavı/soru_importlari/5271/5271_ornek_sorular_extracted.json` dosyasi sinav tipi ornek set olarak kabul edilir. Bu set, CMK sorularinda ozellikle soru kokunun pratik sinav dilini, sayi/sure/merci sorularini ve yakin kavramlardan kurulan celistiricileri modellemek icin kullanilir; birebir kopya kaynak olarak kullanilmaz.
+
+Ornek setlerden cikarilan sinav tarzi dersleri:
+
+- Soru kokleri gereksiz uzun olmak zorunda degildir; kisa, net ve secenekle cozulen kokler MEB tarzina daha yakindir.
+- Tanım sorularinda 5 secenek de ayni tanim ailesinden gelmelidir. Yanlis secenek, tamamen alakasiz bir kavram degil, yakin bir tanimin baska kavrama baglanmasi gibi sinavlik bir hata icermelidir.
+- Kapsam/istisna sorularinda tum secenekler ayni ust basliktan gelmelidir. `Hangisi ... değildir?` sorusunda dogru cevap kapsam disinda kalmali, digerleri gercekten ayni kapsama dahil olmalidir.
+- Bosluk doldurma sorularinda bosluk genellikle sayi, sure, merci, usul veya teknik terim olcmelidir. Secenekler ayni turde ve yakin degerlerden kurulmalidir.
+- Sayi/sure sorularinda secenekler `1, 3, 5, 7, 10` gibi yakin ve makul degerlerden secilmelidir; biri cok absurt, digeri bariz dogru olmamalidir.
+- Merci/yetki sorularinda seceneklerin tamami merci veya kurul/mahkeme/kurum turunde olmalidir. Dogru cevap bir mahkeme ise diger secenekler rastgele hak, sure veya ceza olamaz.
+- Usul/asama sorularinda celistiriciler ayni surecin baska asamalarindan secilmelidir; bu, dogru cevabi bilenle sadece tahmin eden kisiyi ayirir.
+- Oncul sorular 3 kisa ve birbirinden bagimsiz ifade uzerine kurulmalidir. Oncul secenekleri klasik `Yalnız I`, `I ve II`, `II ve III`, `I, II ve III` dengesini korumalidir.
+- Kisa dogrudan bilgi sorusu yasak degildir; fakat dogru cevap tek bakista parlamamali, secenekler ayni kavram evreninden gelmelidir.
+- Bir ornek sorudan yararlaniliyorsa ayni olcme hedefi korunabilir; soru kokunun kurulusu, secenek sirasi ve mumkunse yanlis seceneklerin ifadesi guvenli bicimde farklilastirilmelidir.
+- Ornek setlerde gorulen en onemli kalite dersi sudur: yanlis secenekler sadece "ayni kanundan" degil, sorulan hukmun ayni unsur ailesinden gelmelidir. Aksi halde dogru cevap, metni bilmeyen kisiye bile bariz gorunur.
+- Bir sucun unsurunu, tedbirin sartini, yetkinin merciini veya usulun asamasini soruyorsan seceneklerin tamami ayni turde olmalidir. Arac fiil sorusunda usul islemi, mahkeme islemi, tebligat, infaz veya baska hukuk dalindan rastgele secenek kullanma.
+- Kaynak metindeki uzun unsur listeleri gereksiz yere budanmaz. Kisaltilan ifade hukuki anlamı daraltiyor, belirsizlestiriyor veya dogru cevabi zayiflatiyorsa kisa yazmak kalite hatasidir.
+
 Soru kokleri coktan secmeli sinav formunda olmalidir; yazili cevap sorusu gibi bitmemelidir. `Hangi ceza öngörülür?`, `Ne yapılır?`, `Nasıl hareket edilir?` gibi acik uclu kokleri tek basina kullanma. Bunlari `aşağıdaki cezalardan hangisi öngörülür?`, `aşağıdaki işlemlerden hangisi yapılır?`, `aşağıdaki ifadelerden hangisi doğrudur?` gibi secenekli sinav kalibina cevir.
 
 Uygun soru kokleri:
@@ -155,6 +187,9 @@ Alan kurallari:
 - `bakımından` kelimesini otomatik dolgu kalibi gibi kullanma. Gerekli degilse daha dogal sinav dili kur: `... ile ilgili olarak`, `... kapsamında`, `... hakkında`, `... aşağıdakilerden hangisidir?`
 - Secenekli sorularda genellikle `aşağıdakilerden hangisi`, `aşağıdaki ifadelerden hangisi`, `aşağıdaki cezalardan hangisi`, `aşağıdaki sürelerden hangisi` gibi form kullan. Kısa sayi/sure sorularinda `kaç gün`, `kaç ay`, `ne kadar` gibi kokler kullanilabilir.
 - Olumsuz kok kullanildiginda `yanlıştır` veya `değildir` ifadesi acik ve gorunur olsun.
+- Soru kokunde noktalama isaretleri anlamin parcasidir. Kaynak adindan sonra genellikle virgul kullan: `5237 sayılı Türk Ceza Kanunu'na göre, ...`
+- Virgulsuz yazildiginda anlam kaymasi olusacak ara ifadeleri ayir. Ozellikle `... göre`, `... halinde`, `... bakımından`, `... kapsamında`, `... ile ilgili olarak` kaliplarindan sonra soru akisini sesli okuyarak kontrol et.
+- Soru kokunu fazla kisaltma. Kaynak metindeki "hangi cercevede", "hangi arac fiillerle", "hangi amacla", "hangi merci tarafindan" gibi olcum hedefi net degilse soru yeniden yazilir.
 - Oncul sorularda oncul sayisi genellikle 3 olsun; kaynak cok zenginse 4 olabilir.
 - Oncul ifadeler birbirinden bagimsiz ve test edilebilir olmali.
 - D/Y siralama sorularinda her onculun dogru/yanlis durumu kaynak metinden acikca dogrulanabilmeli.
@@ -171,6 +206,7 @@ Alan kurallari:
 - Şık uzunluklari makul olcude dengeli olmali; dogru cevap surekli en uzun veya en detayli şık olmamali.
 - Çeldiriciler kaynak metindeki yakin kavramlardan, benzer makam/sure/usul/kapsam ayrimlarindan uretilmeli.
 - Konu disi, cocukca, komik veya ilk bakista elenen şık yazma.
+- Şık metinlerinin sonuna nokta koyma. Secenekler genellikle tam cumle gibi degil, secenek ifadesi gibi biter. Yasal alinti veya zorunlu kisaltma disinda `.` `;` `:` ile biten secenek kalite hatasidir.
 - `Hepsi`, `Hiçbiri`, `Yukarıdakilerin tamamı`, `Yalnızca bunlar` gibi zayif toplu şıklar kullanma.
 - Şıklarda kaynakta olmayan nitelik uretme.
 - Bir şık sadece kelime oyunu ile yanlis olmamali; mevzuat bilgisini olcmeli.
@@ -179,6 +215,33 @@ Alan kurallari:
 - Dogru cevap resmi merci ise diger secenekler de merci olmalidir; dogru cevap bir izin/ruhsat/islem ise diger secenekler de ayni izin/ruhsat/islem evreninden kurulmalidir.
 - Dogru cevap bir tanimsa diger secenekler de ayni tanim ailesinden makul ama yanlis tanimlar olmalidir; alakasiz esya, meslek, kurum veya gunluk hayat nesnesi kullanma.
 - Dogru cevap bir listedeki unsur ise soru mumkunse `hangisi sayilmamistir`, `hangi set tamamen sayilanlardan olusur`, `hangisi birlikte verilmiştir` gibi sinav kalibina cevrilir; tek dogru uzun cumle, dort absurt secenek yapma.
+
+## Ayni hukum ailesi kuralı
+
+Bu kural, çeldirici kalitesinin en sert kapisidir. "Ayni mevzuat evreni" tek basina yeterli degildir; mumkun olan her soruda şıklar ayni hukum, ayni madde veya ayni unsur ailesinden gelmelidir.
+
+Soru olcum hedefini once etiketle:
+
+- `tanim`: Seceneklerin tamami yakin tanim veya tanim unsuru olur.
+- `unsur`: Seceneklerin tamami ayni suc/fiil/tedbir/kurumun unsur ailesinden olur.
+- `arac_fiil`: Seceneklerin tamami fiil, davranis veya arac niteliginde olur; usul islemi veya sonuc/amac secenegi rastgele karistirilmaz.
+- `amac_sonuc`: Seceneklerin tamami amac, sonuc veya hukuki netice turunde olur.
+- `merci_yetki`: Seceneklerin tamami makam, merci, kurul veya mahkeme turunde olur.
+- `sure_oran_sayi`: Seceneklerin tamami yakin ve makul sayisal deger olur.
+- `usul_asama`: Seceneklerin tamami ayni usulun farkli asama veya islemlerinden olur.
+- `yaptirim_tedbir`: Seceneklerin tamami ceza, tedbir, yaptirim veya hukuki sonuc turunde olur.
+
+Kalite hatasi ornekleri genellestirilmis olarak:
+
+- Bir sucun arac fiili sorulurken `kovusturma dosyasini mahkemeye gondermek`, `kanuni tebligat islemini tamamlamak`, `mahkumiyet hukumunu infaz etmek` gibi baska hukuk sureclerinden secenek yazmak.
+- Bir kapsam/istisna sorusunda ayni ust basliktan gelmeyen, ilk bakista alakasiz kurum veya eylem yazmak.
+- Dogru cevap kaynak metindeki ayrintili unsur iken diger dort secenegi tek kelimelik veya genel hayat bilgisi gibi yazmak.
+
+Eger 4 guclu ve ayni aileden çeldirici kurulamiyorsa:
+
+- Soru kokunu degistir.
+- Oncul soru veya `hangisi sayilmamistir` kalibina cevir.
+- Gerekirse o olcum hedefinden soru uretme. Zayif soru uretmek, eksik soru uretmekten kotudur.
 
 ## Çeldirici kalitesi
 
@@ -203,6 +266,8 @@ Kullanilmayacak çeldirici turleri:
 - Bariz sacma secenekler.
 - Ayni hukuk evrenine ait olmayan ve ilk bakista elenen secenekler.
 - Dogru cevabin yaninda konu disi kurumlar, okul/idare/medya/vergi gibi alakasiz alanlardan rastgele secenekler.
+- Sorulan unsur turu disindan gelen secenekler. Arac fiil sorusunda usul islemi, merci sorusunda yaptirim, sure sorusunda makam kullanmak kalite hatasidir.
+- Sadece dogru cevabi çevrelemek icin yazilmis, kaynak hukmun yakin kavramlariyla bag kurmayan yapay secenekler.
 - Dogru cevabi dil bilgisi veya uzunlukla belli eden secenekler.
 - Birden fazla dogru kabul edilebilecek muallak ifadeler.
 
@@ -239,9 +304,11 @@ Kullanilmayacak çeldirici turleri:
 3. Tanim, sure, merci, kapsam, istisna ve usul bilgisini onceliklendir.
 4. Once dogru cevabi belirle.
 5. Dogru cevabin hangi kategoriye ait oldugunu belirle: sure, merci, ceza, hak, yasak, kapsam, istisna, usul, tanim.
-6. Sonra ayni kategori ve mevzuat evreninden 4 guclu celistirici kur.
+6. Sonra ayni kategori, ayni hukum ailesi ve mumkunse ayni madde icinden 4 guclu celistirici kur.
 7. Soru kokunu yazili cevap gibi degil, coktan secmeli sinav formunda kur.
-8. JSON'a yazmadan once topic eslemesini kontrol et.
+8. Soru kokunu noktalama ve anlam kaymasi acisindan sesli okunur gibi kontrol et.
+9. Secenek sonlarindaki gereksiz noktalari temizle.
+10. JSON'a yazmadan once topic eslemesini kontrol et.
 
 ## Uretim versiyonu
 
@@ -260,6 +327,8 @@ Kullanilmayacak çeldirici turleri:
 - Her soruyu `yanlıştır` kalibina sokma.
 - Mevzuat sorusunu kaynak adini belirtmeden sorma.
 - Mevzuat sorusunu `Madde X'e göre` kalibiyla baslatma.
+- Secenek sonuna gereksiz nokta koyma.
+- Sorulan hukmun unsur ailesiyle ilgisiz secenek yazma.
 - 4 secenekli soru uretme.
 
 ## Son kontrol
@@ -281,6 +350,9 @@ JSON'u dondurmeden once su kontrolu yap:
 - Soru kokleri madde numarasiyla baslamaktan kaciniyor mu?
 - Dogru cevap dil, uzunluk veya asiri kesinlik nedeniyle belli oluyor mu?
 - Çeldiriciler ayni mevzuat evreninden mi?
+- Çeldiriciler ayni hukum/unsur ailesinden mi?
+- Soru kokundeki virgul ve noktalama anlam kaymasini engelliyor mu?
+- Secenekler gereksiz nokta, noktalı virgul veya iki nokta ile bitiyor mu?
 - Sorular arasinda kok ve dogru cevap harfi dagilimi dengeli mi?
 
 Yanitin yalnizca JSON olmalidir.

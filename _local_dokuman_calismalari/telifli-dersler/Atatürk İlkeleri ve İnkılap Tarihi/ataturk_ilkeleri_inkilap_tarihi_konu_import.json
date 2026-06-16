@@ -1,0 +1,2470 @@
+{
+  "subject": {
+    "code": null,
+    "name": "Atatürk İlkeleri ve İnkılap Tarihi",
+    "slug": "ataturk-ilkeleri-ve-inkilap-tarihi",
+    "status": "active",
+    "id": 32
+  },
+  "target_exam_id": 1,
+  "exam_note": "8. Dönem İlk Derece Amirlik Eğitimi kapsamına eklenecek Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı.",
+  "source_policy": {
+    "copyright": "Kaynak PDF metinleri kopyalanmadan, kapsam ve doğruluk için incelendi; anlatım özgünleştirildi.",
+    "coverage": "MEB, Atatürk Üniversitesi ve Aile/Sosyal Hizmetler kaynaklarındaki kronoloji, kavram ve ilke başlıkları tek ders anlatımında kapsandı.",
+    "source_files": [
+      {
+        "file_name": "MEB_Inkilap_Tarihi.pdf",
+        "sha256": "fb9529a8db09a928bd21b9d0d25d8f405489f0b085e5371805ad92eedeb21e70"
+      },
+      {
+        "file_name": "Ataturk_Universitesi_Inkilap_Tarihi.pdf",
+        "sha256": "3aacec399153868301fa7e65cad9b5868c156fb8bdf9a547469cd1f477411ded"
+      },
+      {
+        "file_name": "Aile_ve_Sosyal_Hizmetler_Bakanligi_Inkilap_Tarihi.pdf",
+        "sha256": "d02e5449c1748bb5ce8f46c6f925e9ec5a85059ff8751b9f13ae1bf8f2960044"
+      }
+    ]
+  },
+  "version": 1,
+  "topics": [
+    {
+      "name": "İnkılap Tarihine Giriş, Kavramlar ve Türk İnkılabının Özellikleri",
+      "slug": "inkilap-tarihine-giris-kavramlar-ve-turk-inkilabinin-ozellikleri",
+      "status": "active",
+      "summary": "Dersin amacını, temel kavramları ve Türk inkılabının ayırt edici yönlerini açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Amaç ve Kavramlar"
+        },
+        {
+          "type": "section_title",
+          "content": "Dersin Amacı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Atatürk İlkeleri ve İnkılap Tarihi dersi, yalnız geçmiş olayları sıralayan bir tarih dersi değildir. Osmanlı’dan Cumhuriyet’e geçişi, bağımsızlık mücadelesini ve çağdaşlaşma hedefini birlikte anlamayı amaçlar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu dersin temel hedefi, Türkiye Cumhuriyeti’nin hangi şartlarda kurulduğunu, millî egemenlik ve tam bağımsızlık düşüncesinin nasıl geliştiğini ve Atatürkçü düşünce sisteminin hangi ilkeler üzerine kurulduğunu öğretmektir."
+        },
+        {
+          "type": "subheading",
+          "content": "Temel Kavramlar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kavram",
+            "Anlamı",
+            "Ders İçindeki Yeri"
+          ],
+          "rows": [
+            [
+              "İnkılap",
+              "Köklü ve kapsamlı değişim",
+              "Türk toplumunun siyasi, hukuki ve sosyal dönüşümünü anlatır."
+            ],
+            [
+              "İhtilal",
+              "Mevcut siyasi düzeni zorla değiştirme hareketi",
+              "İnkılabın aksiyon ve kopuş yönünü açıklar."
+            ],
+            [
+              "Islahat/Reform",
+              "Mevcut düzen içinde iyileştirme",
+              "Osmanlı yenileşme çabalarını anlamada kullanılır."
+            ],
+            [
+              "Evrim/Tekamül",
+              "Yavaş ve aşamalı değişim",
+              "Toplumsal gelişmenin tedrici yönünü anlatır."
+            ],
+            [
+              "Çağdaşlaşma",
+              "Modern bilim, hukuk ve kurumlara yönelme",
+              "Türk inkılabının temel hedeflerinden biridir."
+            ],
+            [
+              "Darbe",
+              "Dar bir grubun iktidarı ele geçirmesi",
+              "İnkılaptan farklı olarak toplumsal dönüşüm hedefi sınırlıdır."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Türk İnkılabının Özellikleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Millî bağımsızlık mücadelesiyle başlamıştır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Egemenliği padişahtan millete geçirmiştir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Siyasi değişimle sınırlı kalmayıp hukuk, eğitim, kültür ve toplum hayatını dönüştürmüştür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Akıl, bilim ve çağdaş uygarlık hedefini esas almıştır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mazlum milletlere bağımsızlık mücadelesi bakımından örnek olmuştur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Atatürk’ün İnkılap Anlayışı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Atatürk’e göre inkılap, milleti geri bırakan kurumların yerine çağın gereklerine uygun kurumlar kurmak demektir. Bu anlayış yıkma fikrinden çok, bağımsız ve çağdaş bir devlet inşa etme hedefi taşır."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Kavram sorularında inkılap ile ıslahatı ayır: ıslahat mevcut yapıyı düzeltir, inkılap köklü dönüşüm yaratır."
+        }
+      ],
+      "id": 161,
+      "topic_id": 161,
+      "current_content_version": 1
+    },
+    {
+      "name": "Osmanlı Devletinin Çöküş Süreci ve Yenileşme Hareketleri",
+      "slug": "osmanli-devletinin-cokus-sureci-ve-yenilesme-hareketleri",
+      "status": "active",
+      "summary": "Osmanlı devlet-toplum yapısını, çöküş nedenlerini ve yenileşme dönemlerini özetler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Osmanlı’dan Cumhuriyet’e Arka Plan"
+        },
+        {
+          "type": "section_title",
+          "content": "Çöküş Sürecinin Genel Nedenleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Osmanlı Devleti’nin zayıflaması tek bir nedene bağlanamaz. Merkezi otoritenin bozulması, askeri sistemin gerilemesi, ekonomik kaynakların zayıflaması ve Avrupa’daki dönüşümlerin takip edilememesi süreci birlikte hazırlamıştır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Alan",
+            "Sorun"
+          ],
+          "rows": [
+            [
+              "Siyasi",
+              "Merkezi otoritenin zayıflaması ve eyalet yönetiminde bozulma"
+            ],
+            [
+              "Askeri",
+              "Yeniçeri Ocağı’nın bozulması ve teknik gerilik"
+            ],
+            [
+              "Ekonomik",
+              "Kapitülasyonlar, dış borçlar, üretim ve ticaret dengesinin bozulması"
+            ],
+            [
+              "Sosyal",
+              "Milliyetçilik akımı ve azınlık isyanları"
+            ],
+            [
+              "Eğitim",
+              "Medrese sisteminin çağın bilimsel gelişmelerine uyum sağlayamaması"
+            ],
+            [
+              "Dış politika",
+              "Avrupa devletlerinin Osmanlı üzerindeki çıkar çatışmaları"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Avrupa’daki Gelişmelerin Etkisi"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Coğrafi keşifler ticaret yollarını değiştirdi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Rönesans ve Reform akılcı düşünceyi güçlendirdi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sanayi İnkılabı üretim ve sömürge rekabetini artırdı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Fransız İhtilali milliyetçilik ve vatandaşlık düşüncesini yaydı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Şark Meselesi, Osmanlı topraklarının paylaşılması politikasına dönüştü."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Yenileşme Dönemleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Dönem",
+            "Öne Çıkan Yön"
+          ],
+          "rows": [
+            [
+              "Lale Devri",
+              "Batı’yı tanıma ve kültürel etkileşim arayışı belirginleşti."
+            ],
+            [
+              "III. Selim",
+              "Nizam-ı Cedit ile askeri ve idari yenileşme denendi."
+            ],
+            [
+              "II. Mahmut",
+              "Yeniçeri Ocağı kaldırıldı; merkeziyetçi ve modern kurumlar güçlendirildi."
+            ],
+            [
+              "Tanzimat",
+              "Can, mal, namus güvenliği ve kanun önünde eşitlik vurgulandı."
+            ],
+            [
+              "Islahat Fermanı",
+              "Gayrimüslimlerle ilgili eşitlik düzenlemeleri öne çıktı."
+            ],
+            [
+              "I. Meşrutiyet",
+              "Kanun-i Esasi ve meclisli yönetim denemesi başladı."
+            ],
+            [
+              "II. Meşrutiyet",
+              "Anayasal ve parlamenter düzen yeniden canlandırıldı."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Yenileşmenin Sınırları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Osmanlı yenileşme hareketleri önemli adımlar içerse de çoğu zaman devletin dağılmasını önleme kaygısıyla yürütüldü. Kurumlar arasında bütünlük sağlanamadığı için eski ve yeni yapılar uzun süre yan yana var oldu."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Osmanlı yenileşmesi Cumhuriyet inkılaplarının zeminini hazırlar; fakat Cumhuriyet dönemi dönüşümü daha köklü ve ulus egemenliğine dayalıdır."
+        }
+      ],
+      "id": 162,
+      "topic_id": 162,
+      "current_content_version": 1
+    },
+    {
+      "name": "Osmanlıyı Kurtarma Fikirleri, II. Meşrutiyet ve Mustafa Kemal’in Yetişmesi",
+      "slug": "osmanliyi-kurtarma-fikirleri-ii-mesrutiyet-ve-mustafa-kemalin-yetismesi",
+      "status": "active",
+      "summary": "Fikir akımlarını, II. Meşrutiyet’i, 31 Mart’ı ve Mustafa Kemal’in fikri-askeri gelişimini işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Fikir Akımları ve Mustafa Kemal"
+        },
+        {
+          "type": "section_title",
+          "content": "Osmanlıyı Kurtarma Fikirleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Fikir Akımı",
+            "Temel Düşünce",
+            "Zayıflama Nedeni"
+          ],
+          "rows": [
+            [
+              "Osmanlıcılık",
+              "Din ve millet farkı olmadan tüm Osmanlıları ortak vatandaşlıkta birleştirmek",
+              "Balkan milliyetçilikleri ve ayrılıkçı hareketler"
+            ],
+            [
+              "İslamcılık",
+              "Müslümanları halife etrafında toplamak",
+              "Arapların I. Dünya Savaşı’nda Osmanlı’ya karşı hareket etmesi"
+            ],
+            [
+              "Türkçülük",
+              "Türk millet bilinci etrafında dayanışma kurmak",
+              "İmparatorluk yapısında bütün unsurları tutmakta yetersiz kalması"
+            ],
+            [
+              "Batıcılık",
+              "Devletin Batı tarzı kurumlarla kurtulabileceğini savunmak",
+              "Kimi zaman yüzeysel taklitçilikle sınırlı kalması"
+            ],
+            [
+              "Adem-i merkeziyetçilik",
+              "Yerel yetkileri artırmak ve liberal yönetimi savunmak",
+              "Merkezi birliği zayıflatacağı endişesi"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "II. Meşrutiyet ve 31 Mart"
+        },
+        {
+          "type": "paragraph",
+          "content": "II. Meşrutiyet 1908’de ilan edildi ve padişahın yetkileri anayasal düzen içinde sınırlandırılmak istendi. Bu dönem çok partili hayat denemeleri ve daha canlı bir siyasi ortam doğurdu."
+        },
+        {
+          "type": "paragraph",
+          "content": "31 Mart Olayı, meşrutiyet düzenine karşı gelişen önemli bir ayaklanmadır. Hareket Ordusu’nun İstanbul’a gelmesiyle bastırılmış, II. Abdülhamit tahttan indirilmiştir."
+        },
+        {
+          "type": "subheading",
+          "content": "Mustafa Kemal’in Öğrenim Hayatı"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mahalle Mektebi ve Şemsi Efendi Mektebi ilk eğitim çevresini oluşturdu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Selanik Askeri Rüştiyesi askerlik yoluna girişinde etkili oldu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Manastır Askeri İdadisi fikir dünyasını genişletti."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İstanbul Harp Okulu ve Harp Akademisi kurmay subay kimliğini şekillendirdi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Fikri Dünyasına Etki Eden Kişiler ve Şehirler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Etki Alanı",
+            "Örnekler",
+            "Katkı"
+          ],
+          "rows": [
+            [
+              "Düşünür ve yazarlar",
+              "Namık Kemal, Ziya Gökalp, Tevfik Fikret, Mehmet Emin Yurdakul",
+              "Vatan, hürriyet, millet ve çağdaşlaşma fikirlerini besledi."
+            ],
+            [
+              "Avrupalı düşünürler",
+              "Montesquieu, Rousseau, Voltaire",
+              "Egemenlik, hukuk ve özgürlük düşüncesini güçlendirdi."
+            ],
+            [
+              "Şehirler",
+              "Selanik, Manastır, İstanbul, Şam, Sofya",
+              "Çok kültürlü çevre, siyasi tartışma ve diplomasi deneyimi sağladı."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Askerlik Hayatı ve İlk Başarılar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mustafa Kemal Şam, Manastır, Trablusgarp, Çanakkale, Kafkas ve Suriye cephelerinde görev aldı. Trablusgarp’ta Derne ve Tobruk başarıları; Çanakkale’de Anafartalar, Conkbayırı ve Arıburnu savunmaları liderlik yönünü öne çıkardı."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Vatan ve Hürriyet Cemiyeti’ni kurması siyasi bilinç ve örgütlenme deneyimini gösterir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İttihat ve Terakki içinde yer alması dönemin siyasi atmosferini yakından tanımasını sağladı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sofya ataşemiliterliği diplomasi ve Avrupa toplumunu gözlemleme imkânı verdi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Mustafa Kemal’in liderliği bir anda ortaya çıkmadı; eğitim, cephe tecrübesi, fikir çevresi ve şehir gözlemleri birlikte etkili oldu."
+        }
+      ],
+      "id": 163,
+      "topic_id": 163,
+      "current_content_version": 1
+    },
+    {
+      "name": "Trablusgarp, Balkan Savaşları ve I. Dünya Savaşı",
+      "slug": "trablusgarp-balkan-savaslari-ve-birinci-dunya-savasi",
+      "status": "active",
+      "summary": "1911-1918 savaşlarını, cepheleri, gizli antlaşmaları, Wilson İlkelerini ve savaşın sonuçlarını açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Savaşlar Dönemi"
+        },
+        {
+          "type": "section_title",
+          "content": "Trablusgarp Savaşı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Trablusgarp Savaşı, İtalya’nın sömürge arayışı ve Osmanlı’nın Kuzey Afrika’daki son toprağını koruyacak güçte olmaması sonucunda çıktı. Osmanlı doğrudan yardım gönderemediği için gönüllü subaylarla yerel direnişi destekledi."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mustafa Kemal Derne ve Tobruk çevresinde başarı kazandı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İtalya Osmanlı’yı barışa zorlamak için On İki Ada’yı işgal etti."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1912 Uşi Antlaşması ile Trablusgarp ve Bingazi İtalya’ya bırakıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Osmanlı Kuzey Afrika’daki son toprağını kaybetti."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Balkan Savaşları"
+        },
+        {
+          "type": "paragraph",
+          "content": "I. Balkan Savaşı’nda Osmanlı hazırlıksız yakalandı ve ordudaki siyasi çekişmeler yenilgiyi ağırlaştırdı. Londra Antlaşması ile Balkan topraklarının büyük bölümü kaybedildi."
+        },
+        {
+          "type": "paragraph",
+          "content": "II. Balkan Savaşı, Balkan devletlerinin Bulgaristan’ın fazla toprak almasına tepki göstermesiyle çıktı. Osmanlı bu fırsattan yararlanarak Edirne ve Kırklareli’ni geri aldı."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sonuç",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Balkanlarda Türkler azınlık oldu",
+              "Batı Trakya Türkleri sorunu doğdu."
+            ],
+            [
+              "Türk göçleri arttı",
+              "Anadolu’daki Türk nüfusu yükseldi."
+            ],
+            [
+              "Ege adaları sorunu çıktı",
+              "Ege egemenlik tartışmaları başladı."
+            ],
+            [
+              "Osmanlı’nın Balkan egemenliği sona erdi",
+              "İmparatorluğun Avrupa’daki varlığı büyük ölçüde çöktü."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "I. Dünya Savaşı’nın Nedenleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sömürgecilik ve hammadde-pazar rekabeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Almanya ve İtalya’nın geç sömürge yarışına katılması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Fransız İhtilali’nin milliyetçilik etkisi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Alsace-Lorraine çekişmesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Rusya’nın boğazlar ve sıcak denizler politikası"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Balkanlarda Slav-Germen rekabeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Avusturya-Macaristan veliahdının Saraybosna’da öldürülmesi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Osmanlı’nın Savaşa Girişi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Osmanlı Devleti siyasi yalnızlıktan kurtulmak, kaybettiği toprakları geri almak ve Almanya’nın kazanacağına duyulan inançla İttifak Devletleri yanında savaşa yöneldi. Yavuz ve Midilli gemilerinin Rus limanlarını bombalaması savaşa fiili girişin bahanesi oldu."
+        },
+        {
+          "type": "subheading",
+          "content": "Osmanlı Cepheleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Cephe Türü",
+            "Cepheler",
+            "Not"
+          ],
+          "rows": [
+            [
+              "Taarruz",
+              "Kafkas, Kanal",
+              "Almanya’nın yönlendirmesi ve stratejik hedefler etkili oldu."
+            ],
+            [
+              "Savunma",
+              "Çanakkale, Irak, Suriye-Filistin, Hicaz-Yemen",
+              "Çanakkale genel başarı; diğer cephelerde ağır kayıplar yaşandı."
+            ],
+            [
+              "Yardım",
+              "Galiçya, Romanya, Makedonya",
+              "Müttefiklere destek amacıyla sınır dışı cephelerde savaşıldı."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Çanakkale Cephesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Çanakkale Cephesi, İtilaf Devletleri’nin Boğazları geçerek Rusya’ya yardım ulaştırma ve Osmanlı’yı savaş dışı bırakma amacıyla açıldı. Türk direnişi cepheyi İtilaf Devletleri için başarısızlığa dönüştürdü."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Savaşın uzamasına neden oldu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bulgaristan İttifak Devletleri yanında savaşa katıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Rusya yardım alamayınca iç sorunları derinleşti."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mustafa Kemal’in askeri dehası geniş kitlelerce tanındı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sömürge halklarına bağımsızlık mücadelesi için örnek oldu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Gizli Antlaşmalar ve Wilson İlkeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İtilaf Devletleri savaş sırasında Osmanlı topraklarını paylaşmak için Boğazlar, Londra, Sykes-Picot, Petrograd, Saint Jean de Maurienne ve McMahon gibi düzenlemeler yaptı. Bolşevik İhtilali sonrasında bu gizli paylaşım planları açığa çıktı."
+        },
+        {
+          "type": "paragraph",
+          "content": "Wilson İlkeleri açık diplomasi, ulusların kendi geleceğini belirlemesi, savaş tazminatı alınmaması ve uluslararası barış örgütü kurulması gibi ilkeler getirdi. İtilaf Devletleri ise manda ve himaye kavramıyla sömürgeciliği yeni bir biçimde sürdürmeye çalıştı."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "I. Dünya Savaşı Osmanlı için askeri yenilgiyle bitti; fakat Millî Mücadele’nin siyasi ve psikolojik zeminini hazırladı."
+        }
+      ],
+      "id": 164,
+      "topic_id": 164,
+      "current_content_version": 1
+    },
+    {
+      "name": "Mondros Ateşkesi, İşgaller, Cemiyetler ve Kuvayımilliye",
+      "slug": "mondros-ateskesi-isgaller-cemiyetler-ve-kuvayimilliye",
+      "status": "active",
+      "summary": "Mondros hükümlerini, işgalleri, zararlı-yararlı cemiyetleri ve Kuvayımilliye hareketini işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Mondros Sonrası"
+        },
+        {
+          "type": "section_title",
+          "content": "Mondros Ateşkes Antlaşması"
+        },
+        {
+          "type": "paragraph",
+          "content": "30 Ekim 1918’de imzalanan Mondros Ateşkesi, Osmanlı Devleti’nin fiilen teslim belgesi niteliğindedir. Özellikle 7. madde, İtilaf Devletleri’ne güvenliklerini tehdit eden yerleri işgal etme imkânı verdiği için işgallere zemin hazırladı."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Madde Alanı",
+            "Örnek Hüküm",
+            "Sonuç"
+          ],
+          "rows": [
+            [
+              "Egemenlik",
+              "Boğazların açılması ve İtilaf denetimine bırakılması",
+              "Osmanlı’nın stratejik denetimi zayıfladı."
+            ],
+            [
+              "İşgal zemini",
+              "7. madde ile stratejik noktaların işgali",
+              "Anadolu işgallere açık hâle geldi."
+            ],
+            [
+              "Doğu illeri",
+              "24. madde ile altı ilde karışıklık bahanesi",
+              "Ermeni devleti planına zemin hazırlandı."
+            ],
+            [
+              "Askeri",
+              "Ordunun terhisi ve silahların teslimi",
+              "Savunma gücü kırıldı."
+            ],
+            [
+              "Ekonomik",
+              "Ulaşım, haberleşme, liman ve kaynakların denetimi",
+              "Ekonomik bağımsızlık ağır darbe aldı."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İşgaller ve İzmir’in İşgali"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mondros’tan sonra ilk işgal edilen yer Musul oldu. İstanbul fiilen işgal edildi; İngiltere, Fransa ve İtalya farklı bölgelerde kontrol kurdu. Paris Barış Konferansı sonrasında İzmir’in Yunanistan’a bırakılması Batı Anadolu direnişini hızlandırdı."
+        },
+        {
+          "type": "paragraph",
+          "content": "15 Mayıs 1919’da İzmir’in işgali, millî direnişi yaygınlaştıran kırılma noktalarından biridir. Hasan Tahsin’in ilk kurşunu sembolik olarak işgale karşı halk tepkisinin başlangıcı kabul edilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Zararlı Cemiyetler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Grup",
+            "Cemiyetler",
+            "Amaç"
+          ],
+          "rows": [
+            [
+              "Azınlık cemiyetleri",
+              "Mavri Mira, Etnik-i Eterya, Pontus Rum, Hınçak-Taşnak, Alyans İsrailit",
+              "Osmanlı topraklarında Rum, Ermeni veya başka etnik-siyasi hedefleri gerçekleştirmek"
+            ],
+            [
+              "Millî varlığa düşman cemiyetler",
+              "Teali İslam, İngiliz Muhipleri, Wilson Prensipleri, Kürt Teali, Hürriyet ve İtilaf",
+              "Milli Mücadele’ye karşı çıkmak veya manda/hilafet/saltanat merkezli çözümler savunmak"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Milli Cemiyetler"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Trakya-Paşaeli Müdafaa-i Hukuk Cemiyeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İzmir Müdafaa-i Hukuk ve Redd-i İlhak cemiyetleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kilikyalılar Cemiyeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Trabzon Muhafaza-i Hukuk Cemiyeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Doğu Anadolu Müdafaa-i Hukuk Cemiyeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli Kongre Cemiyeti"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Anadolu Kadınları Müdafaa-i Vatan Cemiyeti"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Milli cemiyetler başlangıçta bölgesel amaçlı kuruldu. Sivas Kongresi’nde Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti adı altında birleştirilerek ulusal direnişin örgütlü zemini oluşturuldu."
+        },
+        {
+          "type": "subheading",
+          "content": "Kuvayımilliye"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kuvayımilliye, işgallere karşı halkın kendi bölgesini savunmak için kurduğu yerel ve düzensiz direniş birlikleridir. İstanbul Hükümeti’nin etkisizliği, ordunun terhis edilmesi ve işgallerin yayılması bu birlikleri zorunlu kıldı."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Yararları",
+            "Sınırlılıkları"
+          ],
+          "rows": [
+            [
+              "Milli bilinci canlı tuttu.",
+              "Düzenli düşman ordusunu kesin olarak durduracak güçte değildi."
+            ],
+            [
+              "Düzenli ordunun kurulmasına zaman kazandırdı.",
+              "Askerlik tekniği ve disiplin yönünden yetersizlikler vardı."
+            ],
+            [
+              "İsyanların bastırılmasında rol oynadı.",
+              "Halktan zorla para ve malzeme toplanması sorun oldu."
+            ],
+            [
+              "Cepheye insan, silah ve cephane akışını kolaylaştırdı.",
+              "Yer yer TBMM otoritesiyle çatışma doğdu."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Amiral Bristol Raporu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Amiral Bristol Raporu, İzmir ve çevresinde Rumların çoğunlukta olduğu ve Türklerin katliam yaptığı iddialarını çürüten önemli bir belgedir. Rapor işgalin haksızlığını uluslararası kamuoyuna duyurması bakımından önem taşır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Mondros sonrası üç tepkiyi birlikte düşün: zararlı cemiyetler, milli cemiyetler ve Kuvayımilliye."
+        }
+      ],
+      "id": 165,
+      "topic_id": 165,
+      "current_content_version": 1
+    },
+    {
+      "name": "Milli Mücadele Hazırlık Dönemi: Samsun’dan Sivas’a",
+      "slug": "milli-mucadele-hazirlik-donemi-samsundan-sivasa",
+      "status": "active",
+      "summary": "Samsun, Havza, Amasya, Erzurum ve Sivas sürecini açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Hazırlık Dönemi"
+        },
+        {
+          "type": "section_title",
+          "content": "Mustafa Kemal’in Samsun’a Çıkışı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mustafa Kemal, Samsun çevresindeki karışıklıkları incelemek üzere 9. Ordu Müfettişi olarak görevlendirildi. 19 Mayıs 1919’da Samsun’a çıkması, Millî Mücadele’nin örgütlü başlangıcı kabul edilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Onun kurtuluş için düşündüğü temel çözüm, milli egemenliğe dayalı ve tam bağımsız yeni bir Türk devleti kurmaktı. İstanbul’da kalınarak etkili mücadele verilemeyeceği görüldüğü için Anadolu’ya geçiş stratejik önem taşıdı."
+        },
+        {
+          "type": "subheading",
+          "content": "Havza Genelgesi"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İşgaller mitinglerle protesto edilecekti."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İstanbul Hükümeti’ne ve büyük devlet temsilcilerine telgraflar çekilecekti."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Protestolarda Hristiyan halka zarar verilmeyecekti."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Halkın milli mücadele için bilinçlenmesi amaçlandı."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Amasya Genelgesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Amasya Genelgesi, Kurtuluş Savaşı’nın gerekçe, amaç ve yöntemini ortaya koydu. “Vatanın bütünlüğü, milletin bağımsızlığı tehlikededir” ifadesi gerekçeyi; “milletin bağımsızlığını yine milletin azim ve kararı kurtaracaktır” ifadesi yöntemi gösterir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Karar",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Vatan bütünlüğü tehlikededir",
+              "Mücadelenin gerekçesi açıklandı."
+            ],
+            [
+              "İstanbul Hükümeti görevini yapamamaktadır",
+              "Merkezi otoritenin yetersizliği ilan edildi."
+            ],
+            [
+              "Milletin azim ve kararı esastır",
+              "Milli egemenlik düşüncesi ilk kez güçlü biçimde ifade edildi."
+            ],
+            [
+              "Sivas’ta kongre toplanacaktır",
+              "Ulusal örgütlenme hedeflendi."
+            ],
+            [
+              "Askeri ve milli örgütler dağıtılmayacaktır",
+              "Direnişin sürekliliği korunmak istendi."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Erzurum Kongresi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Erzurum Kongresi toplanış amacı bakımından bölgesel, aldığı kararlar bakımından ulusaldır. Doğu Anadolu’da Ermeni devleti kurulmasını önleme amacıyla başlayan süreç, tüm vatanı ilgilendiren kararlar doğurdu."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli sınırlar içinde vatan bir bütündür, bölünemez."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Manda ve himaye kabul edilemez."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kuvayımilliye’yi etkin, milli iradeyi hakim kılmak esastır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Dış yardım bağımsızlığı zedelememek şartıyla alınabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mebusan Meclisi açılmalı ve hükümet denetlenmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Temsil Heyeti oluşturuldu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sivas Kongresi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sivas Kongresi tek ulusal kongredir. Erzurum kararları ulusallaştırıldı, manda ve himaye kesin olarak reddedildi ve bütün yararlı cemiyetler Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti adı altında birleştirildi."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İrade-i Milliye gazetesi çıkarıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Temsil Heyeti genişletildi ve bütün vatanı temsil eder hâle geldi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ali Fuat Paşa’nın Batı Anadolu Kuvayımilliye Komutanlığına atanmasıyla Temsil Heyeti yürütme yetkisi kullandı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Damat Ferit Hükümeti’nin istifası sağlandı."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Amasya “gerekçe-amaç-yöntem”, Erzurum “milli sınır ve manda reddi”, Sivas “ulusal birlik” anahtarıyla çalışılmalı."
+        }
+      ],
+      "id": 166,
+      "topic_id": 166,
+      "current_content_version": 1
+    },
+    {
+      "name": "Amasya Görüşmeleri, Misakımilli, TBMM ve Sevr",
+      "slug": "amasya-gorusmeleri-misakimilli-tbmm-ve-sevr",
+      "status": "active",
+      "summary": "Temsil Heyeti’nin Ankara’ya gelişi, son Osmanlı Meclisi, Misakımilli, TBMM ve Sevr sürecini işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Meclisleşme ve Milli Egemenlik"
+        },
+        {
+          "type": "section_title",
+          "content": "Amasya Görüşmeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sivas Kongresi sonrasında İstanbul Hükümeti Temsil Heyeti’ni muhatap almak zorunda kaldı. Amasya Görüşmeleri, Temsil Heyeti’nin siyasi varlığının İstanbul tarafından dolaylı olarak tanınması bakımından önemlidir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mebusan Meclisi’nin açılması kabul edildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Seçimlerin yapılması benimsendi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Temsil Heyeti’nin görüşlerinin dikkate alınması istendi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli kararların meclis denetiminde yürütülmesi hedeflendi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Temsil Heyeti’nin Ankara’ya Gelişi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Temsil Heyeti 27 Aralık 1919’da Ankara’ya geldi. Ankara’nın seçilmesinde güvenli konumu, Batı Cephesi’ne yakınlığı, ulaşım-haberleşme imkânları ve Anadolu’nun ortasında bulunması etkili oldu."
+        },
+        {
+          "type": "subheading",
+          "content": "Son Osmanlı Mebusan Meclisi ve Misakımilli"
+        },
+        {
+          "type": "paragraph",
+          "content": "Son Osmanlı Mebusan Meclisi 12 Ocak 1920’de açıldı. 28 Ocak 1920’de kabul edilen Misakımilli, Türk milletinin barış şartlarını ve milli sınır anlayışını ortaya koydu."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Misakımilli İlkesi",
+            "Anlamı"
+          ],
+          "rows": [
+            [
+              "Milli sınırlar",
+              "Mondros sırasında Türk çoğunluğunun yaşadığı yerlerin bütünlüğü savunuldu."
+            ],
+            [
+              "Kars, Ardahan, Batum",
+              "Gerekirse halk oylaması öngörüldü."
+            ],
+            [
+              "Batı Trakya",
+              "Halk oylaması istenildi."
+            ],
+            [
+              "Boğazlar",
+              "İstanbul ve Marmara güvenliği sağlanmak şartıyla dünya ticaretine açıklık düşünüldü."
+            ],
+            [
+              "Azınlıklar",
+              "Komşu ülkelerdeki Müslümanlara tanınan haklar kadar hak tanınması benimsendi."
+            ],
+            [
+              "Kapitülasyonlar",
+              "Siyasi, adli ve mali bağımsızlığı sınırlayan ayrıcalıklar reddedildi."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İstanbul’un İşgali ve TBMM’nin Açılması"
+        },
+        {
+          "type": "paragraph",
+          "content": "Misakımilli’nin kabulü İtilaf Devletleri’nin tepkisini çekti ve İstanbul 16 Mart 1920’de resmen işgal edildi. Bu gelişme, Ankara’da yeni bir meclis açılmasını zorunlu hâle getirdi."
+        },
+        {
+          "type": "paragraph",
+          "content": "23 Nisan 1920’de TBMM açıldı. Meclis yasama ve yürütme yetkilerini kendinde toplayarak olağanüstü şartlarda milli egemenlik esasına dayanan yeni bir siyasi merkez oluşturdu."
+        },
+        {
+          "type": "subheading",
+          "content": "I. TBMM’nin Özellikleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurucu meclistir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli egemenlik ilkesine dayanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Güçler birliği ilkesini benimsemiştir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Olağanüstü yetkilere sahiptir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Savaş meclisi niteliği taşır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İnkılapçı değil öncelikle kurtuluşçu bir meclistir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "TBMM’nin İlk Kanunları ve Otorite Kurması"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ağnam vergisinin artırılması ilk kanun olarak kabul edildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hıyanet-i Vataniye Kanunu çıkarıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İstiklal Mahkemeleri kuruldu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İstiklal Marşı kabul edildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başkomutanlık Kanunu çıkarıldı."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sevr Antlaşması"
+        },
+        {
+          "type": "paragraph",
+          "content": "10 Ağustos 1920’de imzalanan Sevr Antlaşması, Osmanlı topraklarını parçalayan ağır hükümler içeriyordu. Osmanlı Mebusan Meclisi kapalı olduğu için hukuken onaylanmadı; Türk milleti açısından uygulanabilirlik kazanmadı."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Sevr, yok edilmek istenen Osmanlı düzenini; Misakımilli ise kurulacak milli devletin hedef sınır ve bağımsızlık anlayışını temsil eder."
+        }
+      ],
+      "id": 167,
+      "topic_id": 167,
+      "current_content_version": 1
+    },
+    {
+      "name": "Kurtuluş Savaşı Cepheleri ve Askeri-Siyasi Sonuçları",
+      "slug": "kurtulus-savasi-cepheleri-ve-askeri-siyasi-sonuclari",
+      "status": "active",
+      "summary": "Doğu, Güney ve Batı cephelerini, İnönü, Sakarya, Büyük Taarruz ve antlaşmaları öğretir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Muharebeler Dönemi"
+        },
+        {
+          "type": "section_title",
+          "content": "Cephelerin Genel Çerçevesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurtuluş Savaşı cepheleri Doğu, Güney ve Batı cepheleri olarak ele alınır. Doğu’da Ermenilere, Güney’de Fransızlara ve Ermeni birliklerine, Batı’da ise Yunan ordusuna karşı mücadele edildi."
+        },
+        {
+          "type": "subheading",
+          "content": "Doğu Cephesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Doğu Cephesi’nde Kazım Karabekir Paşa komutasındaki birlikler Ermeni kuvvetlerine karşı başarı kazandı. Gümrü Antlaşması, TBMM’nin imzaladığı ilk antlaşma olması bakımından önemlidir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ermenistan TBMM’yi tanıyan ilk devletlerden biri oldu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Doğu sınırı konusunda ilk önemli adım atıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Doğudaki askeri güç Batı Cephesi’ne kaydırılabildi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Güney Cephesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Güney Cephesi’nde düzenli ordudan çok yerel direniş ve Kuvayımilliye etkili oldu. Antep, Maraş ve Urfa halkının direnişi, şehir savunmasının sembol örnekleridir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Maraş, Urfa ve Antep’te halk direnişi öne çıktı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Fransızlarla Ankara Antlaşması imzalanınca Güney Cephesi büyük ölçüde kapandı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hatay meselesi daha sonraki dış politika gündemi olarak kaldı."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Batı Cephesi ve Düzenli Ordu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Batı Cephesi, Kurtuluş Savaşı’nın belirleyici askeri alanıdır. Kuvayımilliye’nin düzenli orduya dönüştürülmesiyle Yunan ilerleyişine karşı merkezi komuta sağlandı."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Savaş",
+            "Sonuç ve Önemi"
+          ],
+          "rows": [
+            [
+              "I. İnönü",
+              "Düzenli ordunun ilk askeri başarısıdır; Londra Konferansı ve Moskova Antlaşması sürecini etkiledi."
+            ],
+            [
+              "II. İnönü",
+              "Yunan ilerleyişi yeniden durduruldu; milli moral güçlendi."
+            ],
+            [
+              "Kütahya-Eskişehir",
+              "Türk ordusu Sakarya’nın doğusuna çekildi; Başkomutanlık ve Tekalif-i Milliye süreci başladı."
+            ],
+            [
+              "Sakarya",
+              "Yunan taarruzu kırıldı; Mustafa Kemal’e gazilik ve mareşallik verildi."
+            ],
+            [
+              "Büyük Taarruz",
+              "Yunan ordusu kesin yenilgiye uğratıldı; askeri zafer diplomatik sürece taşındı."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Tekalif-i Milliye Emirleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kütahya-Eskişehir yenilgisi sonrasında ordunun ihtiyaçlarını karşılamak için Tekalif-i Milliye Emirleri yayımlandı. Halktan malzeme, taşıma ve üretim desteği alınarak topyekûn seferberlik sağlandı."
+        },
+        {
+          "type": "subheading",
+          "content": "Sakarya ve Büyük Taarruz"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sakarya Meydan Muharebesi savunma savaşından taarruz stratejisine geçişin kapısını açtı. Büyük Taarruz ve Başkomutan Meydan Muharebesi ise Anadolu’daki Yunan askeri varlığını sona erdirdi."
+        },
+        {
+          "type": "subheading",
+          "content": "Mudanya Ateşkesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "11 Ekim 1922’de imzalanan Mudanya Ateşkesi, askeri zaferin diplomatik sonucudur. Doğu Trakya savaş yapılmadan geri alınmış, İstanbul ve Boğazlar için de barış konferansı yolu açılmıştır."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Batı Cephesi sırası sınav klasiğidir: I. İnönü, II. İnönü, Kütahya-Eskişehir, Sakarya, Büyük Taarruz."
+        }
+      ],
+      "id": 168,
+      "topic_id": 168,
+      "current_content_version": 1
+    },
+    {
+      "name": "Lozan Barış Antlaşması ve Yeni Türk Devletinin Uluslararası Tanınması",
+      "slug": "lozan-baris-antlasmasi-ve-yeni-turk-devletinin-uluslararasi-taninmasi",
+      "status": "active",
+      "summary": "Lozan’ın temel hükümlerini ve yeni Türk devletinin tanınma sürecini açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Lozan ve Bağımsızlık"
+        },
+        {
+          "type": "section_title",
+          "content": "Lozan’a Giden Yol"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mudanya Ateşkesi sonrasında barış görüşmeleri için Lozan Konferansı toplandı. TBMM Hükümeti, Misakımilli hedefleri ve tam bağımsızlık ilkesi doğrultusunda masaya oturdu."
+        },
+        {
+          "type": "paragraph",
+          "content": "Saltanatın kaldırılması, İstanbul Hükümeti ile Ankara Hükümeti arasında temsil ikiliğini sona erdirdi. Böylece Lozan’da Türk milletini temsil eden tek siyasi otorite TBMM oldu."
+        },
+        {
+          "type": "subheading",
+          "content": "Lozan’ın Temel Hükümleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Konu",
+            "Hüküm ve Sonuç"
+          ],
+          "rows": [
+            [
+              "Sınırlar",
+              "Suriye sınırı Ankara Antlaşması esasına göre; Yunan sınırı Meriç nehri esas alınarak düzenlendi."
+            ],
+            [
+              "Musul",
+              "Çözüm Türkiye ile İngiltere arasında sonraya bırakıldı."
+            ],
+            [
+              "Boğazlar",
+              "Boğazlar Komisyonu ve askersiz bölge düzeni kabul edildi; tam egemenlik daha sonra Montrö ile güçlendi."
+            ],
+            [
+              "Kapitülasyonlar",
+              "Kesin olarak kaldırıldı."
+            ],
+            [
+              "Dış borçlar",
+              "Osmanlı’dan ayrılan devletler arasında paylaştırıldı."
+            ],
+            [
+              "Azınlıklar",
+              "Türkiye’deki gayrimüslimler azınlık kabul edildi; tümü Türk vatandaşı sayıldı."
+            ],
+            [
+              "Yabancı okullar",
+              "Türk hukuk ve eğitim düzenine bağlı olacakları kabul edildi."
+            ],
+            [
+              "Patrikhane",
+              "İstanbul’da kalmakla birlikte siyasi ayrıcalık tanınmadı."
+            ],
+            [
+              "Nüfus mübadelesi",
+              "İstanbul Rumları ve Batı Trakya Türkleri hariç Türk-Rum nüfus değişimi kabul edildi."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Lozan’ın Önemi"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yeni Türk devletinin bağımsızlığı uluslararası alanda tanındı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sevr geçersiz hâle geldi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kapitülasyonlar kaldırılarak ekonomik ve hukuki bağımsızlık sağlandı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Azınlıklar iç hukuk konusu hâline getirildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli Mücadele’nin diplomatik zaferi oldu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Lozan’da Çözülemeyen veya Sonraya Bırakılan Meseleler"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Musul meselesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Boğazların tam egemenlik sorunu"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hatay meselesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Nüfus mübadelesinin uygulama sorunları"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Dış borçların ödeme takvimi ve ayrıntıları"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Sevr-Lozan Karşılaştırması"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Başlık",
+            "Sevr",
+            "Lozan"
+          ],
+          "rows": [
+            [
+              "Siyasi anlam",
+              "Parçalanma ve bağımlılık",
+              "Bağımsızlık ve tanınma"
+            ],
+            [
+              "Kapitülasyonlar",
+              "Devam eder",
+              "Kaldırılır"
+            ],
+            [
+              "Azınlıklar",
+              "Dış müdahale zemini geniştir",
+              "Türk vatandaşlığı ve iç hukuk çerçevesi öne çıkar"
+            ],
+            [
+              "Toprak düzeni",
+              "Anadolu daraltılır",
+              "Milli devlet sınırları kabul edilir"
+            ],
+            [
+              "Hukuki meşruiyet",
+              "Onaylanmadı ve uygulanamadı",
+              "Uluslararası barış antlaşması olarak yürürlüğe girdi"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Lozan, yalnız savaş bitiren belge değil; yeni Türk devletinin tapu senedi olarak görülür."
+        }
+      ],
+      "id": 169,
+      "topic_id": 169,
+      "current_content_version": 1
+    },
+    {
+      "name": "Siyasi, Hukuki, Eğitim ve Toplumsal Alanda İnkılaplar",
+      "slug": "siyasi-hukuki-egitim-ve-toplumsal-alanda-inkilaplar",
+      "status": "active",
+      "summary": "Saltanat, Cumhuriyet, halifelik, hukuk, eğitim, kadın hakları ve toplumsal inkılapları anlatır.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Cumhuriyet İnkılapları"
+        },
+        {
+          "type": "section_title",
+          "content": "Siyasi Alanda İnkılaplar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İnkılap",
+            "Tarih",
+            "Önemi"
+          ],
+          "rows": [
+            [
+              "Saltanatın kaldırılması",
+              "1 Kasım 1922",
+              "Milli egemenlikle bağdaşmayan Osmanlı siyasi otoritesi sona erdi."
+            ],
+            [
+              "Cumhuriyetin ilanı",
+              "29 Ekim 1923",
+              "Devletin yönetim şekli açıkça belirlendi; hükümet bunalımı çözüldü."
+            ],
+            [
+              "Halifeliğin kaldırılması",
+              "3 Mart 1924",
+              "Laik devlet düzeninin önü açıldı; çift başlılık önlendi."
+            ],
+            [
+              "Çok partili hayat denemeleri",
+              "1924 ve 1930",
+              "Demokratik siyasal hayat için erken denemeler yapıldı."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "3 Mart 1924 Düzenlemeleri"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Halifelik kaldırıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tevhid-i Tedrisat Kanunu kabul edildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Şeriye ve Evkaf Vekaleti kaldırıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Erkan-ı Harbiye Vekaleti kaldırıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Osmanlı hanedanının yurt dışına çıkarılması kararlaştırıldı."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Çok Partili Hayata Geçiş Denemeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Terakkiperver Cumhuriyet Fırkası ve Serbest Cumhuriyet Fırkası, Cumhuriyet döneminin erken çok partili hayat denemeleridir. Ancak Şeyh Sait İsyanı, rejim karşıtı hareketler ve Menemen Olayı siyasi ortamın henüz hazır olmadığını gösterdi."
+        },
+        {
+          "type": "subheading",
+          "content": "Hukuk Alanında İnkılaplar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hukuk alanındaki inkılapların amacı, laik, çağdaş ve eşitlikçi bir hukuk düzeni kurmaktı. Şer’i ve örfi hukuk ayrımlarının yerine modern kanunlar alındı."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Türk Medeni Kanunu kabul edildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kadın-erkek eşitliği yönünde aile ve miras hukukunda önemli adımlar atıldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ceza, borçlar, ticaret ve usul kanunları çağdaş hukuk anlayışına göre yenilendi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mahkemelerin birliği ve laik hukuk sistemi güçlendirildi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Eğitim ve Kültür Alanında İnkılaplar"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tevhid-i Tedrisat ile eğitim-öğretim birliği sağlandı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Harf İnkılabı ile Latin esaslı Türk alfabesi kabul edildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Türk Dil Kurumu ve Türk Tarih Kurumu kuruldu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Üniversite reformuyla yükseköğretim modernleştirildi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Millet Mektepleri ile okuryazarlık artırılmaya çalışıldı."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Toplumsal Alanda İnkılaplar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Alan",
+            "Düzenleme"
+          ],
+          "rows": [
+            [
+              "Kılık kıyafet",
+              "Şapka Kanunu ve çağdaş kıyafet anlayışı"
+            ],
+            [
+              "Tekke-zaviye",
+              "Tekke, zaviye ve türbelerin kapatılması"
+            ],
+            [
+              "Takvim-saat-ölçü",
+              "Miladi takvim, uluslararası saat ve ölçü birimleri"
+            ],
+            [
+              "Soyadı",
+              "Soyadı Kanunu ve unvan-lakapların kaldırılması"
+            ],
+            [
+              "Kadın hakları",
+              "Belediye, muhtarlık ve milletvekili seçimlerinde siyasal haklar"
+            ]
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "İnkılapları ezberlemekten çok hedefe bağla: milli egemenlik, laiklik, hukuk birliği, çağdaşlaşma ve toplumsal eşitlik."
+        }
+      ],
+      "id": 170,
+      "topic_id": 170,
+      "current_content_version": 1
+    },
+    {
+      "name": "Atatürk Dönemi Türk Dış Politikası ve II. Dünya Savaşı’na Giden Süreç",
+      "slug": "ataturk-donemi-turk-dis-politikasi-ve-ikinci-dunya-savasina-giden-surec",
+      "status": "active",
+      "summary": "Atatürk dönemi dış politika ilkelerini, Musul, Boğazlar, Hatay ve bölgesel paktları işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Dış Politika"
+        },
+        {
+          "type": "section_title",
+          "content": "Dış Politikanın Temel İlkeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Atatürk dönemi dış politikası gerçekçi, barışçı ve milli çıkarları esas alan bir çizgi izledi. Temel hedef yeni devletin bağımsızlığını korumak ve uluslararası alanda saygın bir yer edinmekti."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tam bağımsızlık"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yurtta sulh, cihanda sulh"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Gerçekçilik ve denge politikası"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Uluslararası hukuka saygı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli çıkarları koruma"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Komşularla iyi ilişkiler"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Lozan Sonrası Başlıca Sorunlar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sorun",
+            "Gelişme"
+          ],
+          "rows": [
+            [
+              "Musul",
+              "Türkiye-İngiltere görüşmeleri sonuçsuz kaldı; Milletler Cemiyeti süreci sonunda Irak sınırı belirlendi."
+            ],
+            [
+              "Nüfus mübadelesi",
+              "İstanbul Rumları ve Batı Trakya Türkleri istisnası uygulamada tartışma doğurdu."
+            ],
+            [
+              "Yabancı okullar",
+              "Türkiye, eğitim ve hukuk egemenliğinden taviz vermedi."
+            ],
+            [
+              "Dış borçlar",
+              "Osmanlı borçlarının paylaştırılması ve ödeme usulleri düzenlendi."
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Bölgesel Barış Arayışları"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Balkan Antantı ile Balkan ülkeleri arasında güvenlik işbirliği kuruldu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sadabat Paktı ile Türkiye, İran, Irak ve Afganistan arasında bölgesel dostluk zemini oluştu."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milletler Cemiyeti üyeliği Türkiye’nin uluslararası sisteme katılımını güçlendirdi."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Montrö Boğazlar Sözleşmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "1936 Montrö Boğazlar Sözleşmesi ile Türkiye Boğazlar üzerindeki egemenliğini güçlendirdi. Boğazlar Komisyonu kaldırıldı ve Türkiye’ye Boğazlar bölgesini askerileştirme hakkı tanındı."
+        },
+        {
+          "type": "subheading",
+          "content": "Hatay Meselesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hatay meselesi, Atatürk dönemi dış politikasının barışçı fakat kararlı tutumuna örnektir. Diplomatik mücadele sonucunda Hatay önce ayrı bir devlet hâline gelmiş, ardından Türkiye’ye katılmıştır."
+        },
+        {
+          "type": "subheading",
+          "content": "II. Dünya Savaşı’na Giden Süreç"
+        },
+        {
+          "type": "paragraph",
+          "content": "I. Dünya Savaşı sonunda yapılan ağır antlaşmalar ve sınır düzenlemeleri yeni gerilimler doğurdu. Almanya’da Nazizm, İtalya’da Faşizm ve Japonya’nın yayılmacılığı II. Dünya Savaşı’na giden ortamı hazırladı."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milletler Cemiyeti barışı korumakta yetersiz kaldı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Versay düzeni Almanya’da revizyon isteğini artırdı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Silahlanma yarışı yeniden hızlandı."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Türkiye savaş öncesi dönemde denge ve güvenlik arayışını sürdürdü."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Atatürk dış politikasında temel çizgi maceracılık değil, bağımsızlığı koruyan barışçı gerçekçiliktir."
+        }
+      ],
+      "id": 171,
+      "topic_id": 171,
+      "current_content_version": 1
+    },
+    {
+      "name": "Atatürkçü Düşünce Sistemi, Temel ve Bütünleyici İlkeler",
+      "slug": "ataturkcu-dusunce-sistemi-temel-ve-butunleyici-ilkeler",
+      "status": "active",
+      "summary": "Altı temel ilkeyi ve bütünleyici ilkeleri sistemli biçimde açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Atatürk İlkeleri"
+        },
+        {
+          "type": "section_title",
+          "content": "Atatürkçü Düşünce Sistemi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Atatürkçü düşünce sistemi, Türk milletinin tam bağımsız, çağdaş, milli egemenliğe dayalı ve akıl-bilim rehberliğinde gelişmesini amaçlayan bütüncül bir yaklaşımdır. İlkeler birbirinden kopuk değil, birbirini tamamlayan bir sistemdir."
+        },
+        {
+          "type": "subheading",
+          "content": "Temel İlkeler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Özü",
+            "İlgili İnkılap/Alan"
+          ],
+          "rows": [
+            [
+              "Cumhuriyetçilik",
+              "Egemenliğin millete ait olması ve yönetimin seçim esasına dayanması",
+              "Saltanatın kaldırılması, Cumhuriyetin ilanı"
+            ],
+            [
+              "Milliyetçilik",
+              "Irkçılığa dayanmayan, ortak tarih ve kültür bilincine dayalı millet anlayışı",
+              "Misakımilli, Türk Tarih Kurumu, Türk Dil Kurumu"
+            ],
+            [
+              "Halkçılık",
+              "Kanun önünde eşitlik, ayrıcalıksız toplum ve sosyal dayanışma",
+              "Medeni Kanun, kadın hakları, unvanların kaldırılması"
+            ],
+            [
+              "Devletçilik",
+              "Ekonomide devletin yönlendirici ve gerektiğinde girişimci rol üstlenmesi",
+              "Sanayi planları, kamu yatırımları"
+            ],
+            [
+              "Laiklik",
+              "Din ve devlet işlerinin ayrılması; akıl ve bilimin esas alınması",
+              "Halifeliğin kaldırılması, Tevhid-i Tedrisat, hukuk inkılabı"
+            ],
+            [
+              "İnkılapçılık",
+              "Çağın gereklerine göre sürekli yenilenme",
+              "Harf, hukuk, eğitim ve toplumsal inkılaplar"
+            ]
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Cumhuriyetçilik"
+        },
+        {
+          "type": "paragraph",
+          "content": "Cumhuriyetçilik, milli egemenliğin devlet yönetiminde somutlaşmasıdır. Yönetme yetkisi hanedana veya sınıfa değil, millete aittir."
+        },
+        {
+          "type": "subheading",
+          "content": "Milliyetçilik"
+        },
+        {
+          "type": "paragraph",
+          "content": "Atatürk milliyetçiliği birleştirici ve kültürel temelli bir anlayıştır. Ortak vatan, ortak tarih, ortak ülkü ve ortak gelecek fikrine dayanır; ırkçılığı reddeder."
+        },
+        {
+          "type": "subheading",
+          "content": "Halkçılık ve Devletçilik"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkçılık, toplumda sınıf ayrıcalıklarını reddeder ve herkesin kanun önünde eşit olduğunu kabul eder. Devletçilik ise özellikle kalkınma ihtiyacının yoğun olduğu dönemde devletin ekonomide düzenleyici ve öncü rol üstlenmesini ifade eder."
+        },
+        {
+          "type": "subheading",
+          "content": "Laiklik ve İnkılapçılık"
+        },
+        {
+          "type": "paragraph",
+          "content": "Laiklik, devlet düzeninin dini kurallara değil akla, bilime ve hukuk kurallarına dayanmasıdır. İnkılapçılık ise yapılan yenilikleri korumakla birlikte çağın gereklerine göre sürekli gelişmeyi savunur."
+        },
+        {
+          "type": "subheading",
+          "content": "Bütünleyici İlkeler"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli egemenlik"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tam bağımsızlık"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli birlik ve beraberlik"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yurtta barış, dünyada barış"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Akılcılık ve bilimsellik"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çağdaşlaşma ve batılılaşma"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İnsan ve insanlık sevgisi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Milli kültürün geliştirilmesi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İlkelerin Birbirini Tamamlaması"
+        },
+        {
+          "type": "paragraph",
+          "content": "Cumhuriyetçilik milli egemenliği kurar; milliyetçilik ortak kimliği güçlendirir; halkçılık eşitliği sağlar; laiklik akılcı hukuk düzenini kurar; devletçilik kalkınma aracını sunar; inkılapçılık ise sistemin durağanlaşmasını önler."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Atatürk ilkeleri tek tek ezberlenecek başlıklar değil, Cumhuriyetin kuruluş mantığını açıklayan bağlantılı bir sistemdir."
+        }
+      ],
+      "id": 172,
+      "topic_id": 172,
+      "current_content_version": 1
+    }
+  ],
+  "subject_id": 32
+}

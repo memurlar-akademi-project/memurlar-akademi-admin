@@ -1,0 +1,2335 @@
+{
+  "subject": {
+    "code": null,
+    "name": "Türkçe Dil Bilgisi",
+    "slug": "turkce-dil-bilgisi",
+    "status": "active",
+    "id": 29
+  },
+  "target_exam_id": 1,
+  "exam_note": "8. Dönem İlk Derece Amirlik Eğitimi",
+  "source_policy": "Kaynak PDF/DOCX kapsam ve doğruluk için kullanıldı; metinler özgün ders anlatımı olarak yeniden yazıldı.",
+  "version": "v1-original-teaching",
+  "topics": [
+    {
+      "name": "Dil, Dünya Dilleri ve Türkçenin Ses Sistemi",
+      "slug": "dil-dunya-dilleri-ve-turkcenin-ses-sistemi",
+      "status": "active",
+      "summary": "Dil kavramı, dünya dillerinin sınıflandırılması, Türkçenin yeri, ses-harf-alfabe, ünlüler ve ünlü uyumları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Dil ve Türkçenin Temel Özellikleri"
+        },
+        {
+          "type": "section_title",
+          "content": "Dil ve Türkçenin Yeri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Dil, insanlar arasında anlaşmayı sağlayan canlı bir sistemdir. Türkçe, tarihî derinliği olan ve bugün geniş bir coğrafyada kullanılan köklü dillerden biridir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kaynakta Türkçenin çok eski dönemlerden beri kullanıldığı, devlet dili niteliği taşıyan önemli diller arasında yer aldığı ve 1928'de Latin harflerine geçildiği vurgulanır. Bu bilgiler dil tarihi sorularında kısa bilgi olarak karşımıza çıkabilir."
+        },
+        {
+          "type": "section_title",
+          "content": "Dünya Dillerinin Sınıflandırılması"
+        },
+        {
+          "type": "paragraph",
+          "content": "Dünya dilleri iki ana ölçüte göre sınıflandırılır: biçim yani yapı bakımından ve kaynak yani köken bakımından. Yapı sınıflandırması dilin kelime ve ek düzenine bakar; köken sınıflandırması ise dillerin tarihî akrabalığını esas alır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Biçim bakımından dil türü",
+            "Temel özellik",
+            "Örnek / not"
+          ],
+          "rows": [
+            [
+              "Tek heceli diller",
+              "Kelimeler çoğunlukla tek hecelidir; anlam vurgu ve tonla ayrılır.",
+              "Çince bu gruba örnek verilir."
+            ],
+            [
+              "Bitişken / eklemeli diller",
+              "Kök genellikle değişmez; yapım ve çekim ekleri köke eklenir.",
+              "Türkçe, Macarca ve Moğolca bu yapıya örnektir."
+            ],
+            [
+              "Bükümlü diller",
+              "Çekim veya türetme sırasında kök ya da gövde değişebilir.",
+              "Arapça kök bükümlü; İngilizce, Almanca, Fransızca gövde bükümlü örneklerdir."
+            ]
+          ],
+          "caption": "Dillerin yapı bakımından sınıflandırılması."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kaynak bakımından aile",
+            "Kısa bilgi"
+          ],
+          "rows": [
+            [
+              "Hint-Avrupa Dil Ailesi",
+              "Avrupa ve Asya kolları vardır; Germen, Roman, Slav, Hint ve İran dilleri bu aile içinde anılır."
+            ],
+            [
+              "Hami-Sami Dil Ailesi",
+              "Arapça, İbranice, Süryanice, Aramice gibi dilleri kapsar."
+            ],
+            [
+              "Bantu Dil Ailesi",
+              "Orta ve Güney Afrika dilleriyle ilişkilidir."
+            ],
+            [
+              "Çin-Tibet Dil Ailesi",
+              "Çince, Tibetçe ve çevre Asya dilleri bu ailede değerlendirilir."
+            ],
+            [
+              "Ural-Altay Dil Ailesi",
+              "Türkçe, Altay kolu içinde Moğolca, Mançu-Tunguzca, Japonca ve Korece ile birlikte anılır; yapı benzerliği özellikle eklemeli oluşta görülür."
+            ]
+          ],
+          "caption": "Dillerin köken bakımından sınıflandırılması."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Türkçe yapı bakımından eklemeli, kaynak bakımından geleneksel sınıflamada Ural-Altay ailesinin Altay kolu içinde gösterilir."
+        },
+        {
+          "type": "section_title",
+          "content": "Ses, Harf ve Alfabe"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ses, konuşma organlarıyla çıkarılan ve dili oluşturan en küçük işitsel birimdir. Harf ise bu sesin yazıdaki karşılığıdır; harflerin belirli sıraya göre dizilmiş bütününe alfabe denir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Türk alfabesi Latin harfleri temel alınarak kabul edilmiştir ve 29 harften oluşur. Bu harflerin 8'i ünlü, 21'i ünsüzdür."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Grup",
+            "Harfler"
+          ],
+          "rows": [
+            [
+              "Ünlüler",
+              "a, e, ı, i, o, ö, u, ü"
+            ],
+            [
+              "Ünsüzler",
+              "b, c, ç, d, f, g, ğ, h, j, k, l, m, n, p, r, s, ş, t, v, y, z"
+            ]
+          ],
+          "caption": "Türk alfabesinde ses grupları."
+        },
+        {
+          "type": "section_title",
+          "content": "Ünlüler ve Ünlülerin Sınıflandırılması"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ünlüler, ses yolunda belirgin bir engele çarpmadan çıkan seslerdir. Türkçede ünlüler dilin durumuna, dudakların biçimine ve ağzın açıklığına göre sınıflandırılır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "Alt grup",
+            "Ünlüler"
+          ],
+          "rows": [
+            [
+              "Dilin durumuna göre",
+              "Kalın",
+              "a, ı, o, u"
+            ],
+            [
+              "Dilin durumuna göre",
+              "İnce",
+              "e, i, ö, ü"
+            ],
+            [
+              "Dudakların durumuna göre",
+              "Düz",
+              "a, e, ı, i"
+            ],
+            [
+              "Dudakların durumuna göre",
+              "Yuvarlak",
+              "o, ö, u, ü"
+            ],
+            [
+              "Ağzın açıklığına göre",
+              "Geniş",
+              "a, e, o, ö"
+            ],
+            [
+              "Ağzın açıklığına göre",
+              "Dar",
+              "ı, i, u, ü"
+            ]
+          ],
+          "caption": "Ünlülerin sınıflandırılması."
+        },
+        {
+          "type": "section_title",
+          "content": "Büyük Ünlü Uyumu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Büyük ünlü uyumu, bir kelimedeki ünlülerin kalınlık-incelik bakımından uyum göstermesidir. İlk hecede kalın ünlü varsa sonraki hecelerde kalın; ince ünlü varsa sonraki hecelerde ince ünlü bulunur."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu kural Türkçe kelimeler için ayırt edici bir özelliktir; ancak her Türkçe kelime bu kurala uymaz. Alıntı kelimelerde, birleşik kelimelerde ve bazı eklerde büyük ünlü uyumu aranmaz veya bozulabilir."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Uyuma aykırı bazı Türkçe kelimeler: anne, elma, hangi, hani, inanmak, kardeş, şişman."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Alıntı kelimelerde uyum aranmaz: gazete, limon, model, tiyatro, ziyaret gibi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Birleşik kelimelerde uyum aranmaz: açıkgöz, bilgisayar, hanımeli gibi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "-gil, -ken, -leyin, -mtırak, -yor ve aitlik eki -ki büyük ünlü uyumunu bozabilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Küçük Ünlü Uyumu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Küçük ünlü uyumu, ünlülerin düzlük-yuvarlaklık bakımından düzenini gösterir. Bir kelimede ilk hecede düz ünlü varsa sonraki hecelerde düz ünlü beklenir; ilk hecede yuvarlak ünlü varsa sonraki hecede dar yuvarlak veya geniş düz ünlü bulunabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlk hecedeki ünlü",
+            "Sonraki hecede beklenen ünlüler",
+            "Örnek mantığı"
+          ],
+          "rows": [
+            [
+              "a",
+              "a veya ı",
+              "kalın ve düz düzen korunur."
+            ],
+            [
+              "e",
+              "e veya i",
+              "ince ve düz düzen korunur."
+            ],
+            [
+              "ı",
+              "ı veya a",
+              "düz ünlü çizgisi sürer."
+            ],
+            [
+              "i",
+              "i veya e",
+              "ince düz düzen sürer."
+            ],
+            [
+              "o",
+              "a veya u",
+              "yuvarlaktan sonra geniş düz ya da dar yuvarlak gelebilir."
+            ],
+            [
+              "ö",
+              "e veya ü",
+              "ince yuvarlak düzene uyar."
+            ],
+            [
+              "u",
+              "u veya a",
+              "kalın yuvarlak sonrası dar yuvarlak ya da geniş düz beklenir."
+            ],
+            [
+              "ü",
+              "ü veya e",
+              "ince yuvarlak sonrası uygun ünlüler gelir."
+            ]
+          ],
+          "caption": "Küçük ünlü uyumunun çalışma mantığı."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Küçük ünlü uyumuna aykırı Türkçe kelimeler olabilir: avuç, çamur, kabuk, kavun, yağmur gibi."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Alıntı kelimelerde küçük ünlü uyumu aranmaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Uyuma aykırı kelimeye gelen ek, genellikle kelimenin son ünlüsüne uyar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Aitlik eki -ki yalnız birkaç örnekte küçük ünlü uyumuna uyar: bugünkü, dünkü, öbürkü."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": 133,
+      "topic_id": 133,
+      "current_content_version": 1
+    },
+    {
+      "name": "Ünsüzler, Ses Olayları ve Sözcükte Yapı",
+      "slug": "unsuzler-ses-olaylari-ve-sozcukte-yapi",
+      "status": "active",
+      "summary": "Ünsüzlerin sınıflandırılması, yumuşama, sertleşme, n-m değişimi, ses olayları, kök-ek ilişkisi ve sözcük yapısı.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Ses Bilgisi ve Biçim Bilgisi"
+        },
+        {
+          "type": "section_title",
+          "content": "Ünsüzler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ünsüzler, ses yolunda bir engele çarparak çıkan seslerdir. Türkçede 21 ünsüz bulunur ve bu ünsüzler ses tellerinin titreşip titreşmemesine göre yumuşak ve sert olarak ayrılır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ünsüz türü",
+            "Harfler",
+            "Sınav değeri"
+          ],
+          "rows": [
+            [
+              "Sert ünsüzler",
+              "ç, f, h, k, p, s, ş, t",
+              "Sertleşme ve ek uyumu sorularında temel listedir."
+            ],
+            [
+              "Yumuşak ünsüzler",
+              "b, c, d, g, ğ, j, l, m, n, r, v, y, z",
+              "Yumuşama ve tonlulaşma konularında kullanılır."
+            ]
+          ],
+          "caption": "Ünsüzlerin temel sınıflandırılması."
+        },
+        {
+          "type": "section_title",
+          "content": "Ünsüzlerle İlgili Temel Kurallar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkçe kökenli kelimelerin sonunda genellikle b, c, d, g ünsüzleri bulunmaz. Anlam ayrımı nedeniyle ad, od, sac gibi sınırlı örnekler bu genel görünümün dışında kalabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Alıntı kelimelerde son ses çoğu zaman Türkçenin söyleyişine uydurulmuştur. Bu yüzden kitap, sebep, renk gibi kelimeler ünlüyle başlayan ek aldığında bazı durumlarda son ünsüz yumuşar."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kural",
+            "Açıklama",
+            "Örnek mantığı"
+          ],
+          "rows": [
+            [
+              "Ünsüz yumuşaması",
+              "Çok heceli kelime sonunda p, ç, t, k varsa ünlüyle başlayan ek gelince b, c, d, ğ olabilir.",
+              "ağaç-ağacı, kanat-kanadı, başak-başağı."
+            ],
+            [
+              "Yumuşamayan alıntılar",
+              "Bazı kelimelerde ünlüyle başlayan ek gelse de son ses korunur.",
+              "hukuk-hukuku, ahlak-ahlakı, cumhuriyet-cumhuriyete."
+            ],
+            [
+              "Ünsüz sertleşmesi",
+              "Sert ünsüzle biten kelimeye gelen ek sert ünsüzle başlar.",
+              "aç-tı, bak-tım, çiçek-ten."
+            ],
+            [
+              "n-b değişimi",
+              "Bazı kelimelerde b'den önceki n, m'ye dönüşmüştür.",
+              "saklambaç, ambar, çember gibi."
+            ],
+            [
+              "Tek heceli istisnalar",
+              "Tek hecelilerde yumuşama çoğu zaman olmaz; bazıları yumuşar.",
+              "ip-ipi korunur; kap-kabı yumuşar."
+            ]
+          ],
+          "caption": "Ünsüz olaylarının sınavlık özeti."
+        },
+        {
+          "type": "section_title",
+          "content": "Ünlülerle İlgili Ses Olayları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ses bilgisi soruları yalnız ünlü uyumunu değil, kelime kökünde ve eklenme sırasında görülen ses değişmelerini de kapsar. Ses olayı belirlenirken kelimenin kökü, aldığı ek ve ortaya çıkan değişme birlikte düşünülmelidir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ses olayı",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Ünlü türemesi",
+              "Sözcüğe ek veya söyleyiş etkisiyle yeni bir ünlü eklenmesi."
+            ],
+            [
+              "Ünlü düşmesi",
+              "Ek geldiğinde ya da kelime birleştiğinde bir ünlünün düşmesi."
+            ],
+            [
+              "Ünlü daralması",
+              "Geniş ünlünün belirli eklerle dar ünlüye dönüşmesi."
+            ],
+            [
+              "Ünlü değişimi",
+              "Kök veya gövdede ünlünün farklılaşması."
+            ],
+            [
+              "Ulama",
+              "Ünsüzle biten kelimenin ardından ünlüyle başlayan kelime geldiğinde söyleyişte bağlanması."
+            ],
+            [
+              "Kaynaştırma",
+              "İki ünlünün yan yana gelmesini önlemek için y, ş, s, n gibi seslerin kullanılması."
+            ]
+          ],
+          "caption": "Ünlülerle ilgili ses olayları."
+        },
+        {
+          "type": "section_title",
+          "content": "Sözcükte Yapı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sözcüklerin yapısını, kök-ek ilişkisini, türeme biçimlerini ve birleşme özelliklerini inceleyen alan biçim bilgisidir. Türkçe eklemeli bir dil olduğu için kök genellikle değişmeden kalır; anlam ve görev eklerle genişler."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sözcük yapısı",
+            "Açıklama",
+            "Örnek mantığı"
+          ],
+          "rows": [
+            [
+              "Basit sözcük",
+              "Yapım eki almamış, birleşme yoluyla oluşmamış sözcüktür.",
+              "Çekim eki alması yapısını değiştirmez."
+            ],
+            [
+              "Türemiş sözcük",
+              "Kök veya gövdeye yapım eki getirilerek oluşur.",
+              "Yeni kavram veya yeni sözcük türü ortaya çıkabilir."
+            ],
+            [
+              "Birleşik sözcük",
+              "İki veya daha fazla sözcüğün yeni kavramı karşılamasıyla oluşur.",
+              "Bitişik veya ayrı yazım kuralları ayrıca değerlendirilir."
+            ]
+          ],
+          "caption": "Türkçede yapısına göre sözcükler."
+        },
+        {
+          "type": "subheading",
+          "content": "Kök"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kök, bir sözcükte ekler çıkarıldığında kalan anlamlı en küçük birimdir. Türkçede ekler genel olarak kökten sonra gelir; bu nedenle kökü bulmak için kelimenin aldığı yapım ve çekim ekleri ayırt edilmelidir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kök türü",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Ad kökü",
+              "Varlık, durum, nitelik veya nicelik bildirir."
+            ],
+            [
+              "Fiil kökü",
+              "İş, oluş, hareket veya durum bildirir; -mak/-mek alabilir."
+            ],
+            [
+              "Yansıma kök",
+              "Doğal ses taklidinden doğan sözcüklerdir; genellikle ad soylu kabul edilir."
+            ],
+            [
+              "Ortak kök / kökteş",
+              "Hem ad hem fiil olarak kullanılabilen ve anlam ilişkisi bulunan köklerdir."
+            ]
+          ],
+          "caption": "Kök türleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Ekler ve kökte görülen değişmeler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkçede köke ek getirildiğinde kökün yapısı çoğu zaman değişmez; ancak bazı kelimelerde ses olayları görülür. Bu nedenle sözcük yapısı sorularında yalnız ekleri ayırmak değil, kökteki daralma, düşme, yumuşama veya değişmeyi de fark etmek gerekir."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ünlü değişimi: ben-bana, sen-sana gibi örneklerde kökteki ünlü değişir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ünlü daralması: ağla-ağlıyor, de-diyen gibi kullanımlarda geniş ünlü daralır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ünlü düşmesi: ayır-ayrıldı, sarı-sarardı gibi yapılarda ünlü kaybolabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ünsüz yumuşaması: çocuk-çocuğu, kap-kabı gibi örneklerde son ünsüz değişir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ünsüz düşmesi: küçük-küçücük, yüksek-yükseldi gibi örneklerde ses düşmesi görülebilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Sözcükte yapı sorularında en sağlam yol: kökü bul, yapım ekini ayır, çekim ekini karıştırma, varsa ses olayını ayrıca not et."
+        }
+      ],
+      "id": 134,
+      "topic_id": 134,
+      "current_content_version": 1
+    },
+    {
+      "name": "Sözcükte Anlam ve Sözcük Türleri",
+      "slug": "sozcukte-anlam-ve-sozcuk-turleri",
+      "status": "active",
+      "summary": "Gerçek, temel, yan, terim, mecaz anlam; ad, sıfat, zamir, zarf, fiil, fiilimsi, edat, bağlaç, ünlem ve ad tamlamaları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Sözcük Bilgisi"
+        },
+        {
+          "type": "section_title",
+          "content": "Sözcükte Anlam"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sözcükler tek başlarına bir anlam taşıyabilir; cümle içinde ise yeni anlam ilişkileri kazanabilir. Sözcükte anlam sorularında sözcüğün sözlük anlamı değil, cümlede hangi anlamla kullanıldığı belirlenir."
+        },
+        {
+          "type": "section_title",
+          "content": "Gerçek Anlam"
+        },
+        {
+          "type": "paragraph",
+          "content": "Gerçek anlam, bir sözcüğün zihinde uyandırdığı ilk ve temel anlam alanıdır. Gerçek anlam iki biçimde görülür: temel anlam ve yan anlam."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Anlam türü",
+            "Açıklama",
+            "Ayırt etme yolu"
+          ],
+          "rows": [
+            [
+              "Temel anlam",
+              "Sözcüğün akla ilk gelen, sözlükteki ana anlamıdır.",
+              "Cümledeki kullanım tek başına bilinen anlamla örtüşür."
+            ],
+            [
+              "Yan anlam",
+              "Temel anlamdan kopmadan, benzerlik veya işlev ilişkisiyle kazanılan yeni gerçek anlamdır.",
+              "Sözcük başka varlığa aktarılır ama gerçeklik bağı sürer."
+            ],
+            [
+              "Terim anlam",
+              "Bilim, sanat, spor veya meslek alanına özgü özel anlamdır.",
+              "Sözcük ait olduğu alan içinde özel anlam kazanır."
+            ],
+            [
+              "Mecaz anlam",
+              "Sözcüğün gerçek anlamından uzaklaşarak soyut veya aktarmalı anlam kazanmasıdır.",
+              "Temel anlam bağı zayıflar; anlatım çağrışım üzerinden kurulur."
+            ]
+          ],
+          "caption": "Sözcükte anlam türleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Temel, yan ve mecaz anlam ayrımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Temel anlamda sözcük kendi ilk anlamıyla kullanılır. Yan anlamda sözcük şekil veya işlev benzerliği nedeniyle başka bir varlığa ad olur; fakat gerçek anlam bağını tamamen kaybetmez."
+        },
+        {
+          "type": "paragraph",
+          "content": "Mecaz anlamda sözcük gerçek anlamından ayrılır ve duygu, yoğunluk, soyutlama ya da benzetme üzerinden yeni bir anlam kazanır. Sorularda en çok yan anlam ile mecaz anlam karıştırılır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Yan anlam gerçek anlam ailesindedir; mecaz anlam gerçek anlamdan uzaklaşır. Bu ayrım sözcükte anlam sorularının kilididir."
+        },
+        {
+          "type": "section_title",
+          "content": "Sözcük Türleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sözcükler cümlede üstlendikleri göreve göre türlere ayrılır. Aynı sözcük farklı cümlelerde farklı türde görev yapabileceği için tür belirlerken cümledeki kullanım esas alınmalıdır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sözcük türü",
+            "Temel işlev"
+          ],
+          "rows": [
+            [
+              "Ad / isim",
+              "Varlık ve kavramları karşılar."
+            ],
+            [
+              "Sıfat",
+              "Adı niteler veya belirtir."
+            ],
+            [
+              "Zamir",
+              "Adın yerini tutar."
+            ],
+            [
+              "Zarf",
+              "Fiili, fiilimsiyi, sıfatı veya başka bir zarfı durum, zaman, miktar, yön gibi anlamlarla tamamlar."
+            ],
+            [
+              "Fiil",
+              "İş, oluş, hareket veya durum bildirir."
+            ],
+            [
+              "Fiilimsi",
+              "Fiilden türeyip isim, sıfat veya zarf görevinde kullanılan yapılardır."
+            ],
+            [
+              "Edat",
+              "Tek başına sınırlı anlamlı olup söz grupları arasında anlam ilişkisi kurar."
+            ],
+            [
+              "Bağlaç",
+              "Sözcükleri, söz gruplarını veya cümleleri bağlar."
+            ],
+            [
+              "Ünlem",
+              "Duygu, seslenme, tepki veya çağrı bildirir."
+            ]
+          ],
+          "caption": "Sözcük türleri genel tablo."
+        },
+        {
+          "type": "section_title",
+          "content": "Adlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Adlar varlıkları, kavramları, durumları ve nitelikleri karşılayan sözcüklerdir. Adlar verilişlerine, sayılarına ve varlıkların niteliğine göre sınıflandırılır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ad sınıfı",
+            "Açıklama",
+            "Örnek mantığı"
+          ],
+          "rows": [
+            [
+              "Özel ad",
+              "Eşi benzeri olmayan tek varlığı karşılar.",
+              "Kişi, ülke, dil, kurum, eser adları."
+            ],
+            [
+              "Tür adı",
+              "Aynı türden varlıkların genel adıdır.",
+              "çiçek, deniz, kedi gibi."
+            ],
+            [
+              "Tekil ad",
+              "Tek varlığı karşılar.",
+              "defter, araba."
+            ],
+            [
+              "Çoğul ad",
+              "-lar/-ler ekiyle birden çok varlığı karşılar.",
+              "kalemler, denizler."
+            ],
+            [
+              "Topluluk adı",
+              "Çoğul eki almadan birden çok varlığı düşündürür.",
+              "sürü, orman, ekip."
+            ],
+            [
+              "Somut ad",
+              "Duyu organlarıyla algılanabilir.",
+              "masa, koku, rüzgar."
+            ],
+            [
+              "Soyut ad",
+              "Duyu organlarıyla algılanamaz.",
+              "hayal, korku, kin."
+            ]
+          ],
+          "caption": "Adların sınıflandırılması."
+        },
+        {
+          "type": "subheading",
+          "content": "Ad durum ekleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Durum",
+            "Ek / biçim",
+            "Soru veya işlev"
+          ],
+          "rows": [
+            [
+              "Yalın hal",
+              "Eksiz",
+              "Adın temel biçimi."
+            ],
+            [
+              "Belirtme hali",
+              "-ı/-i/-u/-ü",
+              "neyi, kimi sorularına cevap verir."
+            ],
+            [
+              "Yönelme hali",
+              "-a/-e",
+              "nereye, kime, neye soruları."
+            ],
+            [
+              "Bulunma hali",
+              "-da/-de/-ta/-te",
+              "nerede, kimde, neyde soruları."
+            ],
+            [
+              "Ayrılma hali",
+              "-dan/-den/-tan/-ten",
+              "nereden, kimden, neyden soruları."
+            ]
+          ],
+          "caption": "Ad durum ekleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Ad Tamlamaları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ad tamlaması, en az iki adın bir araya gelerek anlamca birbirini tamamlamasıdır. İlk unsur tamlayan, ikinci unsur tamlanan adını alır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Tamlama türü",
+            "Özellik"
+          ],
+          "rows": [
+            [
+              "Belirtili ad tamlaması",
+              "Tamlayan ilgi eki, tamlanan iyelik eki alır."
+            ],
+            [
+              "Belirtisiz ad tamlaması",
+              "Tamlayan ek almaz, tamlanan iyelik eki alır."
+            ],
+            [
+              "Takısız ad tamlaması",
+              "İki ad eksiz biçimde yan yana gelir; biri diğerinin niteliğini belirtir."
+            ],
+            [
+              "Zincirleme ad tamlaması",
+              "Birden fazla tamlama ilişkisi iç içe bulunur."
+            ]
+          ],
+          "caption": "Ad tamlamalarında temel ayrımlar."
+        },
+        {
+          "type": "subheading",
+          "content": "Sözcük türlerinde çalışma yöntemi"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sözcüğün tek başına anlamına değil, cümledeki görevine bak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adı niteleyen veya belirten sözcük sıfat olabilir; fiili etkileyen sözcük zarf olabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adın yerine geçen sözcük zamirdir; cümleleri bağlayan sözcük bağlaçtır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Fiilimsi, fiil anlamını korur ama çekimli fiil gibi yargı bildirmez."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Edatlar genellikle başka sözcükle birlikte anlam ilişkisi kurar."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": 135,
+      "topic_id": 135,
+      "current_content_version": 1
+    },
+    {
+      "name": "Cümlede Anlam ve Cümle Bilgisi",
+      "slug": "cumlede-anlam-ve-cumle-bilgisi",
+      "status": "active",
+      "summary": "Yakın/çelişen anlamlı cümleler, neden-sonuç, cümlenin ögeleri ve cümle çeşitleri.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Cümle Düzeyi"
+        },
+        {
+          "type": "section_title",
+          "content": "Cümlede Anlam"
+        },
+        {
+          "type": "paragraph",
+          "content": "Cümlenin ilettiği düşünce veya duyguyu doğru yorumlamak paragraf sorularının da temelidir. Cümlede anlam soruları, cümleler arasındaki ilişkiyi ve yargının yönünü fark etmeyi ister."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Cümle ilişkisi",
+            "Açıklama",
+            "Ayırt etme yolu"
+          ],
+          "rows": [
+            [
+              "Yakın anlamlı cümleler",
+              "Aynı veya çok benzer yargıyı farklı sözlerle anlatır.",
+              "Ana ileti değişmez, ifade biçimi değişir."
+            ],
+            [
+              "Anlamca çelişen cümleler",
+              "Savunulan düşünce bakımından birbirine ters düşer.",
+              "Birinin kabul ettiği yargıyı diğeri reddeder."
+            ],
+            [
+              "Neden-sonuç cümleleri",
+              "Bir eylem veya durumun gerekçesini ve sonucunu birlikte verir.",
+              "Yükleme 'niçin?' sorusu sorulduğunda gerekçe bulunur."
+            ],
+            [
+              "Amaç-sonuç cümleleri",
+              "Eylemin hangi amaçla yapıldığını gösterir.",
+              "Henüz gerçekleşmesi beklenen hedef vardır."
+            ],
+            [
+              "Koşul-sonuç cümleleri",
+              "Sonucun gerçekleşmesini bir şarta bağlar.",
+              "-sa/-se veya koşul anlamlı yapılar aranır."
+            ]
+          ],
+          "caption": "Cümlede anlam ilişkileri."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Neden-sonuçta gerekçe gerçekleşmiş duruma bağlanır; amaç-sonuçta hedeflenen bir sonuç için eylem yapılır."
+        },
+        {
+          "type": "section_title",
+          "content": "Cümle Bilgisi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Cümle, duygu, düşünce, istek, haber veya olayı yargı bildirerek anlatan sözcük ya da söz dizisidir. Cümledeki sözcükler ve söz grupları yargıyla ilişkilerine göre öge görevi üstlenir."
+        },
+        {
+          "type": "section_title",
+          "content": "Cümlenin Ögeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Cümlenin temel ögesi yüklemdir. Diğer ögeler yüklemin bildirdiği yargıyı yapan, etkileyen, tamamlayan veya sınırlandıran unsurlardır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Öge",
+            "Açıklama",
+            "Bulma sorusu"
+          ],
+          "rows": [
+            [
+              "Yüklem",
+              "Yargıyı bildiren çekimli fiil veya ek fiille yüklem olmuş isimdir.",
+              "Cümlenin temel yargısı nedir?"
+            ],
+            [
+              "Özne",
+              "Yüklemin bildirdiği işi yapan veya yargının konusu olan ögedir.",
+              "Kim, ne?"
+            ],
+            [
+              "Nesne",
+              "Öznenin yaptığı işten etkilenen ögedir; geçişli fiillerde bulunur.",
+              "Neyi, kimi, ne?"
+            ],
+            [
+              "Dolaylı tümleç",
+              "Yönelme, bulunma veya ayrılma anlamıyla yüklemi tamamlar.",
+              "Kime, kimde, kimden; nereye, nerede, nereden?"
+            ],
+            [
+              "Zarf tümleci",
+              "Zaman, durum, sebep, miktar, araç veya şart bildirir.",
+              "Nasıl, ne zaman, niçin, ne kadar?"
+            ],
+            [
+              "Edat tümleci",
+              "Edatla kurulan söz grubu üzerinden amaç, araç, birliktelik, karşılaştırma gibi anlamlar katar.",
+              "Ne ile, kiminle, ne için gibi ilişkiler."
+            ]
+          ],
+          "caption": "Cümlenin ögeleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Özne türleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Özne türü",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Açık özne",
+              "Cümlede söz olarak bulunan öznedir."
+            ],
+            [
+              "Gizli özne",
+              "Cümlede yazılı değildir; yüklemdeki kişi ekinden anlaşılır."
+            ],
+            [
+              "Sözde özne",
+              "Edilgen çatılı cümlede gerçekte işi yapan değil, işten etkilenen unsur özne gibi görünür."
+            ],
+            [
+              "Örtülü özne",
+              "Edilgen yapıda işi yapan unsur -ce, tarafından gibi yapılarla belirtilir."
+            ]
+          ],
+          "caption": "Özne türleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Cümle Çeşitleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Cümleler yüklemin türüne, yüklemin yerine ve anlamına göre sınıflandırılır. Sınıflandırma yapılırken cümlenin tamamı değil, ölçüte göre belirleyici unsur dikkate alınır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "Cümle türü",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Yüklemin türüne göre",
+              "Fiil cümlesi",
+              "Yüklem çekimli fiildir veya fiil grubudur."
+            ],
+            [
+              "Yüklemin türüne göre",
+              "İsim cümlesi",
+              "Yüklem ek fiille yüklem olmuş isim veya isim grubudur."
+            ],
+            [
+              "Yüklemin yerine göre",
+              "Kurallı cümle",
+              "Yüklem cümlenin sonundadır."
+            ],
+            [
+              "Yüklemin yerine göre",
+              "Devrik cümle",
+              "Yüklem sonda değildir."
+            ],
+            [
+              "Anlamına göre",
+              "Olumlu cümle",
+              "Yargının gerçekleştiğini veya var olduğunu bildirir."
+            ],
+            [
+              "Anlamına göre",
+              "Olumsuz cümle",
+              "-ma/-me, değil, yok gibi unsurlarla yargının gerçekleşmediğini bildirir."
+            ],
+            [
+              "Anlamına göre",
+              "Soru cümlesi",
+              "Bilgi alma veya soru anlamı taşıyan cümledir."
+            ]
+          ],
+          "caption": "Cümle çeşitleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Cümle çözümleme yöntemi"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Önce yüklemi bul; cümlenin yargısı burada toplanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yükleme kim/ne sorusuyla özneyi ara."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Fiil geçişli ise nesneyi belirle; belirtili ve belirtisiz nesneyi ayır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "-e, -de, -den ekli yer/yön ilişkilerini dolaylı tümleç olarak değerlendir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Zaman, durum, sebep, miktar ve şart bildiren sözleri zarf tümleci olarak ayır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sınıflandırma sorularında hangi ölçütün sorulduğunu kaçırma."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": 136,
+      "topic_id": 136,
+      "current_content_version": 1
+    },
+    {
+      "name": "Paragraf Bilgisi ve Anlama Dayalı Soru Çözümü",
+      "slug": "paragraf-bilgisi-ve-anlama-dayali-soru-cozumu",
+      "status": "active",
+      "summary": "Paragrafın yapısı, konu, ana düşünce, yardımcı düşünce, başlık ve paragraf sorularında yorum yöntemi.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Paragraf Bilgisi"
+        },
+        {
+          "type": "section_title",
+          "content": "Paragraf Nedir?"
+        },
+        {
+          "type": "paragraph",
+          "content": "Paragraf, bir düşünceyi veya durumu bütünlük içinde anlatmak için bir araya getirilen cümleler topluluğudur. İyi kurulmuş paragrafta cümleler aynı konu çevresinde birleşir ve ana düşünceyi destekler."
+        },
+        {
+          "type": "paragraph",
+          "content": "Paragraf soruları yalnız bilgi değil, dikkat ve yorum sorularıdır. Soruyu çözerken kendi düşüncemizi değil, paragrafta verilen bilgiyi esas almak gerekir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Paragraf sorusunda dış bilgi eklemek çoğu zaman hataya götürür. Cevap, metnin söylediğiyle sınırlı aranmalıdır."
+        },
+        {
+          "type": "section_title",
+          "content": "Paragrafta Konu"
+        },
+        {
+          "type": "paragraph",
+          "content": "Konu, paragrafta üzerinde durulan kişi, olay, durum veya düşüncedir. Konuyu bulmak için 'Parçada ne hakkında söz söyleniyor?' sorusu sorulur."
+        },
+        {
+          "type": "paragraph",
+          "content": "Konu genellikle kısa bir söz grubu olarak ifade edilir. Ana düşünce ise konu hakkında yazarın asıl yargısını cümle biçiminde verir."
+        },
+        {
+          "type": "section_title",
+          "content": "Paragrafta Ana Düşünce"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ana düşünce, yazarın okura asıl aktarmak istediği temel iletidir. Yardımcı düşünceler, örnekler ve açıklamalar bu ana düşünceyi güçlendirmek için kullanılır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Ana düşünceyi bulmak için parçayı bütün olarak okumak gerekir. Tek cümleye, örneğe veya dikkat çekici ayrıntıya takılmak ana düşünceyi kaçırmaya neden olabilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kavram",
+            "Açıklama",
+            "Soru kalıbı"
+          ],
+          "rows": [
+            [
+              "Konu",
+              "Parçanın ne hakkında olduğu.",
+              "Bu parçada ne üzerinde durulmaktadır?"
+            ],
+            [
+              "Ana düşünce",
+              "Yazarın konu hakkındaki temel yargısı.",
+              "Parçada asıl anlatılmak istenen nedir?"
+            ],
+            [
+              "Yardımcı düşünce",
+              "Ana düşünceyi destekleyen yan bilgi veya ayrıntı.",
+              "Parçadan hangisine ulaşılabilir?"
+            ],
+            [
+              "Başlık",
+              "Konu ve ana düşünceyi en kısa biçimde sezdiren ad.",
+              "Parçaya en uygun başlık hangisidir?"
+            ],
+            [
+              "Anahtar sözcük",
+              "Parçada sık veya belirleyici biçimde geçen kavram.",
+              "Parçanın odaklandığı kavram nedir?"
+            ]
+          ],
+          "caption": "Paragraf çözümünde temel kavramlar."
+        },
+        {
+          "type": "section_title",
+          "content": "Paragrafın Yapısal Özellikleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Paragraf kendi içinde dil, düşünce ve anlatım bakımından bağlı olmalıdır. Bir cümle paragrafın konusu ve düşünce akışıyla uyumsuzsa paragrafın bütünlüğünü bozar."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Cümleler aynı konu çevresinde birleşmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Her cümle ana düşünceyi açıklamalı, desteklemeli veya geliştirmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Paragrafta konu dışına çıkan cümle bulunmamalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Cümleler arasında anlam ve bağlaç ilişkisi kurulmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Giriş, gelişme ve sonuç akışı mantıklı ilerlemelidir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Paragraf Soru Tipleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Soru tipi",
+            "Çözüm yöntemi"
+          ],
+          "rows": [
+            [
+              "Konu soruları",
+              "Parçada en genel olarak ne anlatılıyor, onu bul."
+            ],
+            [
+              "Ana düşünce soruları",
+              "Yazarın asıl vermek istediği yargıyı cümle halinde belirle."
+            ],
+            [
+              "Yardımcı düşünce soruları",
+              "Metinde açıkça desteklenen yan bilgileri ara; metinde olmayanı ele."
+            ],
+            [
+              "Başlık soruları",
+              "Hem konuyu hem ana düşünceyi kapsayan en dengeli seçeneği seç."
+            ],
+            [
+              "Paragraf tamamlama",
+              "Önceki ve sonraki cümlelerin bağını, zamirleri, bağlaçları ve düşünce akışını izle."
+            ],
+            [
+              "Paragraf oluşturma",
+              "Giriş cümlesini, gelişme sırasını ve sonuç cümlesini belirle."
+            ],
+            [
+              "Düşünce akışını bozan cümle",
+              "Konu veya bakış açısı dışına çıkan cümleyi bul."
+            ],
+            [
+              "Anlatım biçimi / düşünceyi geliştirme",
+              "Açıklama, tartışma, örnekleme, karşılaştırma, tanımlama gibi işlevleri fark et."
+            ]
+          ],
+          "caption": "Paragraf soru tipleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Yorum Yaparken Dikkat Edilecekler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Paragraf sorusunda kişisel doğru-yanlış yargısı değil, parçanın iç tutarlılığı önemlidir. Parçada savunulan düşünce size yanlış gelse bile cevap metnin kabul ettiği çerçeveye göre aranır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Önce soru kökünü oku; ne istendiğini belirle."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Paragrafı önyargısız oku; dış bilgi ekleme."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Anahtar sözcükleri ve tekrar eden kavramları işaretle."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Olumsuz soru köklerine özellikle dikkat et."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Seçeneklerde metinde geçmeyen genellemeleri ele."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çok güçlü, aşırı veya mutlak ifadeleri metin desteklemiyorsa tercih etme."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Paragraf, cümlede anlam konusunun genişletilmiş halidir. Cümleyi doğru okuyan aday paragrafı da daha güvenli çözer."
+        }
+      ],
+      "id": 137,
+      "topic_id": 137,
+      "current_content_version": 1
+    },
+    {
+      "name": "Yazım Kuralları",
+      "slug": "yazim-kurallari",
+      "status": "active",
+      "summary": "Büyük harf kullanımı, birleşik kelimeler, deyim ve ikilemeler, da/de, ki, mı/mi, ile, pekiştirme ve kesme işareti ilişkili yazım kuralları.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Yazım Kuralları"
+        },
+        {
+          "type": "section_title",
+          "content": "Büyük Harflerin Kullanımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Yazım kuralları, yazılı anlatımda birlik ve açıklık sağlar. Büyük harf kullanımı özellikle özel adlar, kurum adları, tarihî olaylar, bayramlar, eser adları ve belirli tarih bildiren ay-gün adlarında karşımıza çıkar."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Büyük harfle yazılan alan",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Cümle başı",
+              "Tam yargı bildiren cümle büyük harfle başlar."
+            ],
+            [
+              "Özel adlar",
+              "Kişi, hayvan, millet, dil, devlet, din, mezhep, gezegen, yer ve eser adları büyük harfle başlar."
+            ],
+            [
+              "Unvan ve saygı sözleri",
+              "Kişi adından önce veya sonra kullanılan unvan ve saygı sözleri büyük harfle başlayabilir."
+            ],
+            [
+              "Kurum ve kuruluş adları",
+              "Her kelime büyük harfle başlar."
+            ],
+            [
+              "Kanun, tüzük, yönetmelik adları",
+              "Resmi düzenleme adlarının her kelimesi büyük yazılır."
+            ],
+            [
+              "Bayram ve özel gün adları",
+              "Milli ve dini bayram adları büyük harfle başlar."
+            ],
+            [
+              "Tarihî olay, çağ ve dönem adları",
+              "Kurtuluş Savaşı, İlk Çağ gibi adlar büyük yazılır."
+            ],
+            [
+              "Belirli tarih bildiren ay-gün adları",
+              "29 Ekim, 23 Nisan gibi kesin tarih belirten kullanımlar büyük yazılır."
+            ]
+          ],
+          "caption": "Büyük harf kullanımının ana alanları."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Akrabalık adları genellikle küçük yazılır; lakap veya unvan değeri kazandığında büyük yazılabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Doğu ve Batı yön bildirirse küçük, uygarlık veya düşünce alanı bildirirse büyük yazılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Para birimleri küçük harfle başlar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Özel ad yerine kullanılan 'o' zamiri küçük yazılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Eser adlarında ve, ile, ya, veya, ki, da/de ve soru eki küçük yazılır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Birleşik Kelimelerin Yazımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Birleşik kelimeler yeni bir kavramı karşılamak üzere bir araya gelen sözlerden oluşur. Bu kelimeler bazı durumlarda bitişik, bazı durumlarda ayrı yazılır; sınavda en çok bu ayrım sorulur."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Bitişik yazım eğilimi",
+            "Örnek mantığı"
+          ],
+          "rows": [
+            [
+              "Ses düşmesine uğrayan birleşikler",
+              "Birleşme sırasında ses kaybı varsa bitişik yazılır."
+            ],
+            [
+              "Yardımcı fiille ses olayı oluşturanlar",
+              "et-, ol- ile birleşirken ses düşmesi/türemesi varsa bitişik yazılır."
+            ],
+            [
+              "Yer adlarının kalıplaşmış biçimleri",
+              "Çanakkale, Gümüşhane gibi yer adları bitişik yazılır."
+            ],
+            [
+              "Ara yönler",
+              "kuzeybatı, güneydoğu gibi yön adları bitişik yazılır."
+            ],
+            [
+              "Gelenekleşmiş bazı yapılar",
+              "başbakan, aşevi, beyefendi, hiçbir, birçok gibi kalıplaşmış sözler bitişik yazılır."
+            ]
+          ],
+          "caption": "Bitişik yazılan birleşik kelimeler."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ayrı yazım eğilimi",
+            "Örnek mantığı"
+          ],
+          "rows": [
+            [
+              "Yol ve ulaşım sözleri",
+              "kara yolu, deniz yolu gibi kullanımlar ayrı yazılır."
+            ],
+            [
+              "Durum, olgu ve olay bildiren birleşikler",
+              "açık oturum, ana dili, baş ağrısı gibi sözler ayrı yazılır."
+            ],
+            [
+              "Bilim ve bilgi sözleriyle kurulanlar",
+              "dil bilimi, anlam bilimi gibi yapılar ayrı yazılır."
+            ],
+            [
+              "Yiyecek-içecek adları",
+              "su böreği, badem yağı gibi kullanımlar ayrı yazılır."
+            ],
+            [
+              "Zamanla ilgili birleşikler",
+              "gece yarısı, gün ortası gibi sözler ayrı yazılır."
+            ],
+            [
+              "Kişi adlarıyla kurulan yer adları",
+              "Yunus Emre Mahallesi gibi kişi adı korunur."
+            ]
+          ],
+          "caption": "Ayrı yazılan birleşik kelimeler."
+        },
+        {
+          "type": "section_title",
+          "content": "Deyimler ve İkilemeler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Deyimler genellikle ayrı yazılır. İkilemeler de ayrı yazılır; m ile yapılan ikilemeler ve durum/iyelik ekiyle kurulan ikilemeler de bu kurala dahildir."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Deyimler: göz atmak, kulak vermek, çam devirmek gibi ayrı yazılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İkilemeler: ağır ağır, çeşit çeşit, bata çıka gibi ayrı yazılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "m ile yapılan ikilemeler: çocuk mocuk, kitap mitap gibi ayrı yazılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ekli ikilemeler: baş başa, el ele, omuz omuza, daldan dala gibi ayrı yazılır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Bazı Ek ve Kelimelerin Yazımı"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Yazım konusu",
+            "Kural",
+            "Sınav uyarısı"
+          ],
+          "rows": [
+            [
+              "da/de bağlacı",
+              "Ayrı yazılır; dahi/bile anlamı katar.",
+              "Hiçbir zaman ta/te biçiminde yazılmaz, kesmeyle ayrılmaz."
+            ],
+            [
+              "-da/-de bulunma eki",
+              "Bitişik yazılır ve sertleşebilir.",
+              "Cümleden çıkarılınca anlam bozulur."
+            ],
+            [
+              "ki bağlacı",
+              "Ayrı yazılır.",
+              "demek ki, ne yazık ki; bazı kalıplaşmışlar bitişiktir."
+            ],
+            [
+              "-ki eki",
+              "Sıfat yapan veya ilgi zamiri olan -ki bitişik yazılır.",
+              "evdeki, seninki gibi."
+            ],
+            [
+              "mı/mi/mu/mü soru eki",
+              "Ayrı yazılır; sonraki kişi ekleri kendisine bitişir.",
+              "geliyor musun, o muydu gibi."
+            ],
+            [
+              "ile",
+              "Ayrı da yazılabilir, ekleşirse bitişir.",
+              "arkadaşıyla, çiçekle gibi."
+            ],
+            [
+              "-ken",
+              "Genellikle ince yazılır; istenirse iken biçiminde ayrı kullanılabilir.",
+              "okurken / okur iken."
+            ],
+            [
+              "Pekiştirmeli sıfatlar",
+              "Bitişik yazılır.",
+              "apaçık, dümdüz, büsbütün gibi."
+            ]
+          ],
+          "caption": "Ek ve bağlaç yazımında sık sorulan ayrımlar."
+        },
+        {
+          "type": "section_title",
+          "content": "Kesme İşaretiyle İlişkili Yazım"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kesme işareti özel adlara gelen bazı ekleri ayırmak için kullanılır; ancak her özel görünümlü söze gelen ek kesmeyle ayrılmaz. Kurum-kuruluş adlarına gelen ekler ve özel adlara getirilen yapım ekleri genellikle kesmeyle ayrılmaz."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kesme kullanılır",
+            "Kesme kullanılmaz"
+          ],
+          "rows": [
+            [
+              "Kişi adları, soyadları, takma adlara gelen çekim eklerinde.",
+              "Kurum, kuruluş, kurul ve iş yeri adlarına gelen eklerde."
+            ],
+            [
+              "Millet, devlet, din, mitoloji, coğrafi yer ve eser adlarına gelen çekim eklerinde.",
+              "Özel adlara gelen yapım ekleri, çokluk eki ve bunlardan sonra gelen eklerde."
+            ],
+            [
+              "Kısaltmalara getirilen eklerde.",
+              "Unvanlara gelen eklerde genellikle kullanılmaz."
+            ],
+            [
+              "Sayılara getirilen eklerde.",
+              "Akım, çağ ve dönem adlarına gelen eklerde kullanılmaz."
+            ],
+            [
+              "Harf veya ek adlarından sonra gelen eklerde.",
+              "Özel ad yerine kullanılan 'o' zamirinden sonra kullanılmaz."
+            ]
+          ],
+          "caption": "Kesme işareti yazımı."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Yazım sorularında önce kelimenin ek mi bağlaç mı olduğunu, sonra özel ad mı kurum adı mı olduğunu belirlemek gerekir."
+        }
+      ],
+      "id": 138,
+      "topic_id": 138,
+      "current_content_version": 1
+    },
+    {
+      "name": "Noktalama İşaretleri",
+      "slug": "noktalama-isaretleri",
+      "status": "active",
+      "summary": "Nokta, virgül, noktalı virgül, iki nokta, üç nokta, soru, ünlem, çizgiler, tırnak, ayraç, kesme ve diğer işaretlerin görevleri.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Noktalama"
+        },
+        {
+          "type": "section_title",
+          "content": "Noktalama İşaretlerinin İşlevi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Noktalama işaretleri, konuşmada ses ve duraklamayla verilen anlamı yazıda görünür kılar. Doğru noktalama okuma akışını düzenler, anlam karışıklığını önler ve cümlenin sınırlarını belirler."
+        },
+        {
+          "type": "section_title",
+          "content": "Temel İşaretler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İşaret",
+            "Başlıca kullanım alanı"
+          ],
+          "rows": [
+            [
+              "Nokta (.)",
+              "Tamamlanmış cümle sonunda, bazı kısaltmalarda, sıra sayılarında, tarih ve saat yazımında, büyük sayıların gruplandırılmasında kullanılır."
+            ],
+            [
+              "Virgül (,)",
+              "Eş görevli sözcükleri, sıralı cümleleri, ara sözleri, hitapları ve vurgulanması gereken ögeleri ayırır."
+            ],
+            [
+              "Noktalı virgül (;)",
+              "Virgülle ayrılmış tür veya takımları ve içinde virgül bulunan sıralı cümleleri ayırır."
+            ],
+            [
+              "İki nokta (:)",
+              "Açıklama, örnek veya konuşma bölümü gelecekse kullanılır."
+            ],
+            [
+              "Üç nokta (...)",
+              "Tamamlanmamış cümle, eksiltilmiş alıntı, okuyucuya bırakılan devam veya kesik cevaplarda kullanılır."
+            ],
+            [
+              "Soru işareti (?)",
+              "Soru anlamlı cümlelerde ve kesin olmayan yer/tarih gibi bilgilerde kullanılır."
+            ],
+            [
+              "Ünlem (!)",
+              "Sevinç, korku, şaşma, seslenme, uyarı, alay veya küçümseme anlamlarında kullanılır."
+            ]
+          ],
+          "caption": "Temel noktalama işaretleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Virgül kullanılmayan yerler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Virgül soruları çoğu zaman nereye konacağını değil, nereye konmayacağını ölçer. Bağlaç ve zarf-fiil kullanımında gereksiz virgül yaygın hatadır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Metin içinde ve, veya, yahut bağlaçlarından önce ve sonra virgül kullanılmaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tekrarlı bağlaçlardan önce ve sonra virgül kullanılmaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Şart ekinden sonra virgül kullanılmaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Zarf-fiil ekleriyle oluşmuş kelimelerden sonra genellikle virgül kullanılmaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Özne ile yüklem arasına gereksiz virgül konmaz; ancak anlam karışıklığını önleme gibi özel durumlar olabilir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Çizgiler ve Eğik Çizgiler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İşaret",
+            "Kullanım"
+          ],
+          "rows": [
+            [
+              "Kısa çizgi (-)",
+              "Satıra sığmayan kelimeyi bölmede, ara sözleri ayırmada, ekleri ve heceleri göstermede, arasında/ile anlamı kurmada kullanılır."
+            ],
+            [
+              "Uzun çizgi (—)",
+              "Satır başına alınan konuşmaları göstermek için kullanılır; konuşma çizgisi de denir."
+            ],
+            [
+              "Eğik çizgi (/)",
+              "Mısraları yan yana yazmada, tarihleri ayırmada, eklerin farklı biçimlerini göstermede kullanılır."
+            ],
+            [
+              "Ters eğik çizgi (\\)",
+              "Bilgisayar dizinlerinde veya teknik gösterimlerde kullanılır."
+            ]
+          ],
+          "caption": "Çizgi türleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Tırnak ve Ayraçlar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İşaret",
+            "Kullanım"
+          ],
+          "rows": [
+            [
+              "Tırnak işareti",
+              "Doğrudan aktarılan sözleri, özel vurgulanmak istenen ifadeleri, eser veya yazı adlarını gösterebilir."
+            ],
+            [
+              "Tek tırnak",
+              "Tırnak içindeki bir sözün içinde yeniden tırnağa alınması gereken bölümde kullanılır."
+            ],
+            [
+              "Yay ayraç",
+              "Cümle dışı açıklama, yazar/eser bilgisi, tiyatro hareketi, şüpheli bilgi veya madde işaretlerinde kullanılır."
+            ],
+            [
+              "Köşeli ayraç",
+              "Ayraç içinde ayraç gerektiğinde veya bibliyografik açıklamada kullanılır."
+            ],
+            [
+              "Denden işareti",
+              "Alt alta gelen aynı sözlerin tekrarını önlemek için kullanılır."
+            ]
+          ],
+          "caption": "Tırnak ve ayraç işaretleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Kesme İşareti"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kesme işareti noktalama konusunun içinde yer alsa da yazım kurallarıyla doğrudan ilişkilidir. Özel adlara, kısaltmalara, sayılara ve harflere getirilen bazı ekleri ayırır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Özel adlara gelen iyelik, durum ve bildirme eklerini ayırabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kısaltmalara gelen eklerde kullanılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sayılara gelen ekleri ayırır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bir harf veya ekten sonra gelen eki ayırır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurum ve kuruluş adlarına gelen eklerde kullanılmaz."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Özel adlara gelen yapım ve çoğul ekleri genellikle kesmeyle ayrılmaz."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Noktalama sorularında işaretin adını bilmek yetmez; cümlede hangi anlam ilişkisini gösterdiğini bulmak gerekir."
+        },
+        {
+          "type": "section_title",
+          "content": "Noktalama Kontrol Yöntemi"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Cümle tamamlanmış mı, devam mı ediyor? Nokta veya üç nokta buna göre düşünülür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sıralanan ögeler eş görevli mi? Virgül ihtimali burada aranır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Virgüllü grupları ayırmak mı gerekiyor? Noktalı virgül uygun olabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Açıklama veya örnek mi geliyor? İki nokta düşünülür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Soru anlamı tüm cümleye mi yayılıyor? Soru işareti genellikle en sona gelir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Doğrudan alıntı mı var? Tırnak işareti veya konuşma çizgisi değerlendirilir."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": 139,
+      "topic_id": 139,
+      "current_content_version": 1
+    },
+    {
+      "name": "Anlatım Bozuklukları",
+      "slug": "anlatim-bozukluklari",
+      "status": "active",
+      "summary": "Anlam ve yapı düzeyinde anlatım bozuklukları; sözcük karıştırma, gereksiz sözcük, mantık hatası, tamlama, öge ve ek-fiil eksiklikleri.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Anlatım Bozukluğu"
+        },
+        {
+          "type": "section_title",
+          "content": "Anlatım Bozukluğu Nedir?"
+        },
+        {
+          "type": "paragraph",
+          "content": "Anlatım bozukluğu, cümlenin anlamını, yapısını veya dil bilgisel düzenini aksatan yanlışlıktır. Bu yanlışlık bazen sözcük seçiminden, bazen ek kullanımından, bazen de cümlede eksik bırakılan ögeden doğar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Sınavlarda anlatım bozukluğu soruları iki ana düzeyde gelir: anlamla ilgili bozukluklar ve yapıyla ilgili bozukluklar. Önce anlamı, sonra dil bilgisi yapısını kontrol etmek en güvenli yöntemdir."
+        },
+        {
+          "type": "section_title",
+          "content": "Anlamla İlgili Anlatım Bozuklukları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Bozukluk türü",
+            "Açıklama",
+            "Kontrol sorusu"
+          ],
+          "rows": [
+            [
+              "Sözcüklerin karıştırılması",
+              "Sesçe yakın veya anlamca benzer görünen sözcük yanlış seçilir.",
+              "Bu sözcük gerçekten bu anlamı mı karşılıyor?"
+            ],
+            [
+              "Sözcüğün yanlış anlamda kullanılması",
+              "Cümlede anlatılmak istenene uygun olmayan sözcük seçilir.",
+              "Yerine daha doğru bir sözcük var mı?"
+            ],
+            [
+              "Anlamca çelişen sözler",
+              "Birbiriyle uyuşmayan ifadeler aynı cümlede kullanılır.",
+              "Cümle kendi içinde ters düşüyor mu?"
+            ],
+            [
+              "Gereksiz sözcük kullanımı",
+              "Cümleden çıkarıldığında anlam kaybı olmayan sözcük bulunur.",
+              "Bu sözcük anlamı daraltmadan çıkarılabilir mi?"
+            ],
+            [
+              "Sözcüğün yanlış yerde kullanılması",
+              "Sözcük doğru olsa da nitelediği unsur belirsiz veya yanlış olur.",
+              "Sözcük hangi ögeyi etkiliyor?"
+            ],
+            [
+              "Mantık ve sıralama hatası",
+              "Olay, zaman veya derece akışı mantıksız kurulur.",
+              "Sıra ve neden-sonuç ilişkisi doğru mu?"
+            ],
+            [
+              "Deyim ve atasözü yanlışı",
+              "Kalıplaşmış söz yanlış biçim veya anlamda kullanılır.",
+              "Deyimin yerleşik biçimi ve anlamı bu mu?"
+            ]
+          ],
+          "caption": "Anlam düzeyindeki anlatım bozuklukları."
+        },
+        {
+          "type": "section_title",
+          "content": "Yapıyla İlgili Anlatım Bozuklukları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Bozukluk türü",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Gereksiz ek kullanımı",
+              "Cümlede anlam veya görev gerektirmeyen ek kullanılır."
+            ],
+            [
+              "Tamlama yanlışlığı",
+              "Tamlayan-tamlanan ilişkisi veya ekleri hatalı kurulur."
+            ],
+            [
+              "Eklerin yanlış yerde kullanılması",
+              "Ek, bağlanması gereken sözcük yerine başka unsura bağlanır."
+            ],
+            [
+              "Noktalama yanlışlığı",
+              "İşaret eksikliği veya fazlalığı anlamı bozar."
+            ],
+            [
+              "Yüklem eksikliği",
+              "Birden çok yargı tek yüklemle karşılanamayacak halde bırakılır."
+            ],
+            [
+              "Özne eksikliği",
+              "İkinci yargının öznesi farklı olduğu halde belirtilmez."
+            ],
+            [
+              "Özne-yüklem uyumsuzluğu",
+              "Kişi, tekillik-çoğulluk veya anlam uyumu bozulur."
+            ],
+            [
+              "Nesne eksikliği",
+              "Yüklem nesne istediği halde uygun nesne verilmez."
+            ],
+            [
+              "Dolaylı tümleç eksikliği",
+              "Yönelme, bulunma veya ayrılma ilişkisi eksik kalır."
+            ],
+            [
+              "Zarf tümleci eksikliği",
+              "Yargının zaman, durum, sebep veya miktar tamamlayıcısı eksik bırakılır."
+            ],
+            [
+              "Ek-fiil eksikliği",
+              "İsim soylu yüklemler arasında ek-fiil ortaklığı yanlış kurulur."
+            ],
+            [
+              "Zamir belirsizliği",
+              "Zamirin kime veya neye gönderme yaptığı net değildir."
+            ]
+          ],
+          "caption": "Yapı düzeyindeki anlatım bozuklukları."
+        },
+        {
+          "type": "section_title",
+          "content": "Sözcük Karıştırmalarına Dikkat"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkçede bazı sözcükler ses bakımından birbirine yakın olduğu için yanlış kullanılabilir. Örneğin süre-süreç, özgü-özel, ayrım-ayrıntı, ayırmak-ayırt etmek, tahsis-tahsil gibi sözcük çiftlerinde anlam farkı korunmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu tür sorularda cümleye en uygun sözcüğü bulmak için sözcüğün sözlük anlamından çok cümlenin bağlamı değerlendirilir. Yanlış sözcük çoğu zaman cümlenin genel anlamını hafifçe kaydırır."
+        },
+        {
+          "type": "section_title",
+          "content": "Anlatım Bozukluğu Çözüm Yöntemi"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Cümlede anlatılmak istenen temel yargıyı belirle."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sözcüklerden biri yanlış anlamda mı kullanılmış, kontrol et."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Gereksiz tekrar veya aynı anlama gelen söz var mı, bak."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sıralama, mantık ve neden-sonuç ilişkisini incele."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tamlama ve ekleri kontrol et."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Birden fazla yüklem veya yargı varsa ortak ögeler gerçekten ortak kullanılabiliyor mu, denetle."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Özne-yüklem uyumu, nesne ve tümleç eksikliklerini ara."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Deyim varsa yerleşik biçimiyle kullanılıp kullanılmadığını kontrol et."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Anlatım bozukluğu sorularında cümleyi 'kulağa garip geliyor' diye değil, hangi kural bozulmuş diye incelemek gerekir."
+        },
+        {
+          "type": "section_title",
+          "content": "Anlam mı Yapı mı?"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlk belirti",
+            "Muhtemel bozukluk alanı"
+          ],
+          "rows": [
+            [
+              "Sözcük yanlış seçilmiş gibi duruyorsa",
+              "Anlam bozukluğu."
+            ],
+            [
+              "Cümlede gereksiz tekrar varsa",
+              "Anlam bozukluğu."
+            ],
+            [
+              "Ek, tamlama veya öge eksikliği hissediliyorsa",
+              "Yapı bozukluğu."
+            ],
+            [
+              "Birden fazla yargı ortak öge kullanıyorsa",
+              "Yapı bozukluğu; özellikle yüklem, özne, nesne veya tümleç eksikliği aranır."
+            ],
+            [
+              "Cümle mantıksız sıra kuruyorsa",
+              "Anlam ve mantık bozukluğu."
+            ],
+            [
+              "Noktalama değişince anlam değişiyorsa",
+              "Noktalama kaynaklı yapı/anlam bozukluğu."
+            ]
+          ],
+          "caption": "Anlatım bozukluğunu sınıflandırma."
+        }
+      ],
+      "id": 140,
+      "topic_id": 140,
+      "current_content_version": 1
+    }
+  ],
+  "subject_id": 29
+}

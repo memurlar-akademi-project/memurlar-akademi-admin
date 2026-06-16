@@ -1,0 +1,6093 @@
+{
+  "subject_id": 31,
+  "subject_name": "İdare Hukuku",
+  "q_version": 5,
+  "status": "active",
+  "approval_status": null,
+  "target_exam_id": 1,
+  "source_policy": "Konu anlatımı ve kapsam QA baz alınarak özgün soru diliyle üretildi; kaynak metinden birebir kopya yapılmadı.",
+  "distribution_note": "11 topic x 12 soru = 132 soru. Kavram, teşkilat, işlem, sözleşme, faaliyet, mallar, sorumluluk ve yargı konuları dengeli dağıtıldı.",
+  "questions": [
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Hukuki anlamda idare kavramı hangi iki yönüyle kullanılabilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdare hem kamu faaliyetini hem de bu faaliyeti yürüten örgütü ifade edebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Faaliyet ve teşkilat",
+          "is_correct": true,
+          "id": 73416
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece mahkeme kararı",
+          "is_correct": false,
+          "id": 73417
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız yasama işlemi",
+          "is_correct": false,
+          "id": 73418
+        },
+        {
+          "label": "D",
+          "option_text": "Özel şirket ve sendika",
+          "is_correct": false,
+          "id": 73419
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza ve disiplin",
+          "is_correct": false,
+          "id": 73420
+        }
+      ],
+      "id": 15379
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlevin temel amacı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdari işlev toplumun günlük ihtiyaçlarını kamu yararı doğrultusunda karşılar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel kazanç sağlamak",
+          "is_correct": false,
+          "id": 73421
+        },
+        {
+          "label": "B",
+          "option_text": "Yasama faaliyeti yürütmek",
+          "is_correct": false,
+          "id": 73422
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu yararını gerçekleştirmek",
+          "is_correct": true,
+          "id": 73423
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı kararı vermek",
+          "is_correct": false,
+          "id": 73424
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece ticari rekabet oluşturmak",
+          "is_correct": false,
+          "id": 73425
+        }
+      ],
+      "id": 15380
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdare hukukunun temel özelliklerinden biri hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdare hukuku kamu gücü, kamu yararı ve idarenin ayrıcalıklı yetkileriyle şekillenir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tamamen özel hukuk kurallarından oluşması",
+          "is_correct": false,
+          "id": 73426
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu gücü ayrıcalıkları ve kamu yararı ekseninde gelişmesi",
+          "is_correct": true,
+          "id": 73427
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız sözleşme serbestisine dayanması",
+          "is_correct": false,
+          "id": 73428
+        },
+        {
+          "label": "D",
+          "option_text": "Yargısal denetime kapalı olması",
+          "is_correct": false,
+          "id": 73429
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece ceza hukuku olması",
+          "is_correct": false,
+          "id": 73430
+        }
+      ],
+      "id": 15381
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi idare hukukunun yazılı kaynaklarından biridir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Anayasa, kanun, Cumhurbaşkanlığı kararnamesi ve yönetmelik gibi metinler yazılı kaynaklardır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece gelenek",
+          "is_correct": false,
+          "id": 73431
+        },
+        {
+          "label": "B",
+          "option_text": "Özel mektup",
+          "is_correct": false,
+          "id": 73432
+        },
+        {
+          "label": "C",
+          "option_text": "Gazete yorumu",
+          "is_correct": false,
+          "id": 73433
+        },
+        {
+          "label": "D",
+          "option_text": "Anayasa ve kanunlar",
+          "is_correct": true,
+          "id": 73434
+        },
+        {
+          "label": "E",
+          "option_text": "Kişisel kanaat",
+          "is_correct": false,
+          "id": 73435
+        }
+      ],
+      "id": 15382
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdarenin kanuniliği ilkesi neyi ifade eder?",
+      "correct_answer_text": "E",
+      "explanation_text": "İdare hukuka bağlıdır; yetki ve görevlerini hukuk kurallarından alır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdarenin hukuk dışı hareket edebilmesini",
+          "is_correct": false,
+          "id": 73436
+        },
+        {
+          "label": "B",
+          "option_text": "İdarenin sadece sözlü talimatla işlem yapmasını",
+          "is_correct": false,
+          "id": 73437
+        },
+        {
+          "label": "C",
+          "option_text": "İdarenin yargı denetimine kapalı olmasını",
+          "is_correct": false,
+          "id": 73438
+        },
+        {
+          "label": "D",
+          "option_text": "Kanunun yalnız vatandaşları bağlamasını",
+          "is_correct": false,
+          "id": 73439
+        },
+        {
+          "label": "E",
+          "option_text": "İdarenin kuruluş ve görevlerinin hukuka dayanmasını",
+          "is_correct": true,
+          "id": 73440
+        }
+      ],
+      "id": 15383
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İdare hukukunun “genç ve tedvin edilmemiş” olması ne anlama gelir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdare hukuku tek kod kanunda toplanmamış, dağınık mevzuat ve yargı kararlarıyla gelişmiştir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurallarının tek ve kapsamlı bir kanunda toplanmamış, içtihat ve mevzuatla gelişmiş olması",
+          "is_correct": true,
+          "id": 73441
+        },
+        {
+          "label": "B",
+          "option_text": "Hiç kaynağının bulunmaması",
+          "is_correct": false,
+          "id": 73442
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece ceza kanunundan ibaret olması",
+          "is_correct": false,
+          "id": 73443
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız örf kurallarına dayanması",
+          "is_correct": false,
+          "id": 73444
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı kararlarının önemsiz olması",
+          "is_correct": false,
+          "id": 73445
+        }
+      ],
+      "id": 15384
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu gücü ayrıcalığı aşağıdakilerden hangisinde görülür?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdare, bazı durumlarda kamu gücüne dayanarak tek taraflı hukuki sonuç doğurabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tarafların tamamen eşit olduğu kira ilişkisinde",
+          "is_correct": false,
+          "id": 73446
+        },
+        {
+          "label": "B",
+          "option_text": "Özel kişinin tek taraflı ceza vermesinde",
+          "is_correct": false,
+          "id": 73447
+        },
+        {
+          "label": "C",
+          "option_text": "İdarenin tek yanlı ve icrai işlem yapabilmesinde",
+          "is_correct": true,
+          "id": 73448
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşın idareye emir vermesinde",
+          "is_correct": false,
+          "id": 73449
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece ticari pazarlıkta",
+          "is_correct": false,
+          "id": 73450
+        }
+      ],
+      "id": 15385
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlev ile yargı işlevi arasındaki temel fark hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Yargı uyuşmazlık çözer; idare kamu hizmeti ve kamu düzeni gibi faaliyetleri yürütür.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdari işlev daima özel kazanç sağlar",
+          "is_correct": false,
+          "id": 73451
+        },
+        {
+          "label": "B",
+          "option_text": "Yargı işlevi kamu yararıyla hiç ilgili değildir",
+          "is_correct": false,
+          "id": 73452
+        },
+        {
+          "label": "C",
+          "option_text": "İdari işlev uyuşmazlığı kesin hükümle çözer",
+          "is_correct": false,
+          "id": 73453
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı işlevi uyuşmazlıkları hukuka göre çözer; idari işlev kamu hizmetini yürütür",
+          "is_correct": true,
+          "id": 73454
+        },
+        {
+          "label": "E",
+          "option_text": "İki işlev arasında hiçbir fark yoktur",
+          "is_correct": false,
+          "id": 73455
+        }
+      ],
+      "id": 15386
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi idari faaliyete örnektir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Ruhsat verme idarenin kamu gücüyle yaptığı idari faaliyete örnektir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kanun çıkarılması",
+          "is_correct": false,
+          "id": 73456
+        },
+        {
+          "label": "B",
+          "option_text": "Ruhsat verilmesi",
+          "is_correct": true,
+          "id": 73457
+        },
+        {
+          "label": "C",
+          "option_text": "Mahkeme hükmü kurulması",
+          "is_correct": false,
+          "id": 73458
+        },
+        {
+          "label": "D",
+          "option_text": "Anayasa değişikliği teklifi",
+          "is_correct": false,
+          "id": 73459
+        },
+        {
+          "label": "E",
+          "option_text": "Özel kişinin arkadaşına borç vermesi",
+          "is_correct": false,
+          "id": 73460
+        }
+      ],
+      "id": 15387
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İdare hukukunda içtihatların önemi neden fazladır?",
+      "correct_answer_text": "E",
+      "explanation_text": "İdare hukukunda Danıştay ve mahkeme içtihatları kavramların somutlaşmasında önemlidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kanunlar yasaklandığı için",
+          "is_correct": false,
+          "id": 73461
+        },
+        {
+          "label": "B",
+          "option_text": "Yargı organları idare yerine kanun yaptığı için",
+          "is_correct": false,
+          "id": 73462
+        },
+        {
+          "label": "C",
+          "option_text": "İdare hukuku hiç mevzuat içermediği için",
+          "is_correct": false,
+          "id": 73463
+        },
+        {
+          "label": "D",
+          "option_text": "Özel hukuk uygulanmadığı için",
+          "is_correct": false,
+          "id": 73464
+        },
+        {
+          "label": "E",
+          "option_text": "Kurallar dağınık olduğundan yargı kararları kavram ve ilkelerin gelişmesine katkı verdiği için",
+          "is_correct": true,
+          "id": 73465
+        }
+      ],
+      "id": 15388
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdarenin özel hukuk işlemleri için doğru ifade hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdare her zaman idari işlem yapmaz; bazı ilişkilerinde özel hukuk hükümlerine tabi olabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdare bazı işlemlerinde özel hukuk kişisi gibi hareket edebilir",
+          "is_correct": true,
+          "id": 73466
+        },
+        {
+          "label": "B",
+          "option_text": "İdarenin tüm işlemleri idari işlemdir",
+          "is_correct": false,
+          "id": 73467
+        },
+        {
+          "label": "C",
+          "option_text": "Özel hukuk işlemlerinde kamu yararı hiç aranmaz",
+          "is_correct": false,
+          "id": 73468
+        },
+        {
+          "label": "D",
+          "option_text": "İdare özel hukukta taraf olamaz",
+          "is_correct": false,
+          "id": 73469
+        },
+        {
+          "label": "E",
+          "option_text": "Her özel hukuk uyuşmazlığı Danıştayda görülür",
+          "is_correct": false,
+          "id": 73470
+        }
+      ],
+      "id": 15389
+    },
+    {
+      "topic_id": 150,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdare hukukunda kamu yararı kavramının işlevi nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdare kamu yararı amacıyla hareket eder; maksat unsuru bu nedenle önemlidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kişisel menfaati mutlaklaştırmak",
+          "is_correct": false,
+          "id": 73471
+        },
+        {
+          "label": "B",
+          "option_text": "Yargı denetimini kaldırmak",
+          "is_correct": false,
+          "id": 73472
+        },
+        {
+          "label": "C",
+          "option_text": "İdari faaliyetin amacını ve sınırını belirlemek",
+          "is_correct": true,
+          "id": 73473
+        },
+        {
+          "label": "D",
+          "option_text": "Hukuka aykırılığı meşrulaştırmak",
+          "is_correct": false,
+          "id": 73474
+        },
+        {
+          "label": "E",
+          "option_text": "Yetkisizliği önemsiz kılmak",
+          "is_correct": false,
+          "id": 73475
+        }
+      ],
+      "id": 15390
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Hukuk devleti ilkesi idare açısından neyi gerektirir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Hukuk devletinde idare hukuka bağlıdır ve yargısal denetime tabidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdarenin keyfi davranmasını",
+          "is_correct": false,
+          "id": 73476
+        },
+        {
+          "label": "B",
+          "option_text": "İdarenin işlem ve eylemlerinin hukukla bağlı ve yargı denetimine açık olmasını",
+          "is_correct": true,
+          "id": 73477
+        },
+        {
+          "label": "C",
+          "option_text": "Yargının kaldırılmasını",
+          "is_correct": false,
+          "id": 73478
+        },
+        {
+          "label": "D",
+          "option_text": "Kanunların idareyi bağlamamasını",
+          "is_correct": false,
+          "id": 73479
+        },
+        {
+          "label": "E",
+          "option_text": "Temel hakların yok sayılmasını",
+          "is_correct": false,
+          "id": 73480
+        }
+      ],
+      "id": 15391
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sosyal devlet ilkesi hangi idari faaliyetlerle daha çok ilişkilidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Sosyal devlet, sosyal riskleri azaltan ve kişilerin gelişimini destekleyen hizmetleri gerektirir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece kolluk cezalarıyla",
+          "is_correct": false,
+          "id": 73481
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız diplomatik protokolle",
+          "is_correct": false,
+          "id": 73482
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket kârıyla",
+          "is_correct": false,
+          "id": 73483
+        },
+        {
+          "label": "D",
+          "option_text": "Eğitim, sağlık, sosyal güvenlik ve sosyal yardım faaliyetleriyle",
+          "is_correct": true,
+          "id": 73484
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı kararlarının yazımıyla",
+          "is_correct": false,
+          "id": 73485
+        }
+      ],
+      "id": 15392
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Laiklik ilkesi idare bakımından hangi sonucu doğurur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Laiklik, idarenin din ve inanç alanında tarafsız davranmasını gerektirir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu hizmetlerinin dinî esaslara göre değil hukuk kurallarına ve tarafsızlığa göre yürütülmesi",
+          "is_correct": true,
+          "id": 73486
+        },
+        {
+          "label": "B",
+          "option_text": "İdarenin sadece bir inanca hizmet etmesi",
+          "is_correct": false,
+          "id": 73487
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı denetiminin kaldırılması",
+          "is_correct": false,
+          "id": 73488
+        },
+        {
+          "label": "D",
+          "option_text": "Sosyal hakların yok sayılması",
+          "is_correct": false,
+          "id": 73489
+        },
+        {
+          "label": "E",
+          "option_text": "Yerinden yönetimin sona ermesi",
+          "is_correct": false,
+          "id": 73490
+        }
+      ],
+      "id": 15393
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu tüzel kişiliği ne sağlar?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kamu tüzel kişileri hukuki kişiliğe sahiptir ve kanunla verilen kamu görevlerini yürütür.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece özel şirket statüsü",
+          "is_correct": false,
+          "id": 73491
+        },
+        {
+          "label": "B",
+          "option_text": "Ceza mahkemesi yetkisi",
+          "is_correct": false,
+          "id": 73492
+        },
+        {
+          "label": "C",
+          "option_text": "Hak ve borç sahibi olabilme, mal edinme ve kamu gücü kullanabilme kapasitesi",
+          "is_correct": true,
+          "id": 73493
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız oy kullanma hakkı",
+          "is_correct": false,
+          "id": 73494
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı kararlarını kaldırma yetkisi",
+          "is_correct": false,
+          "id": 73495
+        }
+      ],
+      "id": 15394
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdarenin bütünlüğü ilkesi hangi iki araçla sağlanır?",
+      "correct_answer_text": "E",
+      "explanation_text": "İdarenin bütünlüğü merkezi ve yerinden yönetim yapıları arasında hiyerarşi ve vesayetle sağlanır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tahkim ve arabuluculuk",
+          "is_correct": false,
+          "id": 73496
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece seçim",
+          "is_correct": false,
+          "id": 73497
+        },
+        {
+          "label": "C",
+          "option_text": "Özel hukuk ve ticaret",
+          "is_correct": false,
+          "id": 73498
+        },
+        {
+          "label": "D",
+          "option_text": "Ceza ve vergi",
+          "is_correct": false,
+          "id": 73499
+        },
+        {
+          "label": "E",
+          "option_text": "Hiyerarşi ve idari vesayet",
+          "is_correct": true,
+          "id": 73500
+        }
+      ],
+      "id": 15395
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hiyerarşi yetkisi hangi ilişki içinde görülür?",
+      "correct_answer_text": "B",
+      "explanation_text": "Hiyerarşi aynı tüzel kişilik içinde üstlerin astlar üzerindeki yetkisidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Farklı kamu tüzel kişileri arasında",
+          "is_correct": false,
+          "id": 73501
+        },
+        {
+          "label": "B",
+          "option_text": "Aynı kamu tüzel kişiliği içindeki ast-üst ilişkisinde",
+          "is_correct": true,
+          "id": 73502
+        },
+        {
+          "label": "C",
+          "option_text": "Özel kişiler arasında",
+          "is_correct": false,
+          "id": 73503
+        },
+        {
+          "label": "D",
+          "option_text": "Mahkemeler ile vatandaş arasında",
+          "is_correct": false,
+          "id": 73504
+        },
+        {
+          "label": "E",
+          "option_text": "Uluslararası örgütlerde zorunlu olarak",
+          "is_correct": false,
+          "id": 73505
+        }
+      ],
+      "id": 15396
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İdari vesayet yetkisi için doğru ifade hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Vesayet, ayrı kamu tüzel kişileri arasında kanuna dayalı sınırlı denetimdir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Aynı kurum içi ast-üst ilişkisidir",
+          "is_correct": false,
+          "id": 73506
+        },
+        {
+          "label": "B",
+          "option_text": "Genel ve sınırsızdır",
+          "is_correct": false,
+          "id": 73507
+        },
+        {
+          "label": "C",
+          "option_text": "Kanuna dayanmadan kullanılabilir",
+          "is_correct": false,
+          "id": 73508
+        },
+        {
+          "label": "D",
+          "option_text": "Merkezi idarenin yerinden yönetim kuruluşları üzerindeki sınırlı denetimidir",
+          "is_correct": true,
+          "id": 73509
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirketlerin idare üzerindeki yetkisidir",
+          "is_correct": false,
+          "id": 73510
+        }
+      ],
+      "id": 15397
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yetkide ve usulde paralellik ilkesi neyi ifade eder?",
+      "correct_answer_text": "A",
+      "explanation_text": "Bir idari işlemin geri alınması veya kaldırılmasında çoğu zaman aynı yetki ve usul mantığı aranır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bir işlemi yapmaya yetkili makamın kural olarak o işlemi kaldırma/değiştirme usulünde de yetkili olmasını",
+          "is_correct": true,
+          "id": 73511
+        },
+        {
+          "label": "B",
+          "option_text": "Her işlemin özel kişi tarafından yapılmasını",
+          "is_correct": false,
+          "id": 73512
+        },
+        {
+          "label": "C",
+          "option_text": "İdarenin işlem yapamamasını",
+          "is_correct": false,
+          "id": 73513
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı kararlarının idarece kaldırılmasını",
+          "is_correct": false,
+          "id": 73514
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece sözlü işlem yapılmasını",
+          "is_correct": false,
+          "id": 73515
+        }
+      ],
+      "id": 15398
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Eşitlik ilkesi kamu hizmetinde neyi gerektirir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdare benzer durumda olanlara eşit davranmalıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yakınlara öncelik vermeyi",
+          "is_correct": false,
+          "id": 73516
+        },
+        {
+          "label": "B",
+          "option_text": "Kişisel tercihe göre hizmet sunmayı",
+          "is_correct": false,
+          "id": 73517
+        },
+        {
+          "label": "C",
+          "option_text": "Benzer durumda olanlara benzer işlem yapılmasını",
+          "is_correct": true,
+          "id": 73518
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmeti yalnız kamu görevlilerine vermeyi",
+          "is_correct": false,
+          "id": 73519
+        },
+        {
+          "label": "E",
+          "option_text": "Ayrımcılığı olağan saymayı",
+          "is_correct": false,
+          "id": 73520
+        }
+      ],
+      "id": 15399
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ölçülülük ilkesi idari yaptırımlarda neyi sağlar?",
+      "correct_answer_text": "E",
+      "explanation_text": "Ölçülülük, idari müdahalenin amaç için gerekli ve dengeli olmasını arar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yaptırımın her zaman en ağır olmasını",
+          "is_correct": false,
+          "id": 73521
+        },
+        {
+          "label": "B",
+          "option_text": "Hukuka aykırı işlemin korunmasını",
+          "is_correct": false,
+          "id": 73522
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı denetiminin engellenmesini",
+          "is_correct": false,
+          "id": 73523
+        },
+        {
+          "label": "D",
+          "option_text": "Sebep unsurunun kaldırılmasını",
+          "is_correct": false,
+          "id": 73524
+        },
+        {
+          "label": "E",
+          "option_text": "Araç ile amaç arasında makul denge kurulmasını",
+          "is_correct": true,
+          "id": 73525
+        }
+      ],
+      "id": 15400
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Kamu tüzel kişiliği olmayan bir bakanlığın hukuki konumu nasıl açıklanır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Bakanlıklar ayrı kamu tüzel kişiliğine sahip değildir; devlet tüzel kişiliği içinde yer alır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ayrı kamu tüzel kişisidir",
+          "is_correct": false,
+          "id": 73526
+        },
+        {
+          "label": "B",
+          "option_text": "Devlet tüzel kişiliği içinde yer alan merkezi idare birimidir",
+          "is_correct": true,
+          "id": 73527
+        },
+        {
+          "label": "C",
+          "option_text": "Özel hukuk derneğidir",
+          "is_correct": false,
+          "id": 73528
+        },
+        {
+          "label": "D",
+          "option_text": "Mahalli idaredir",
+          "is_correct": false,
+          "id": 73529
+        },
+        {
+          "label": "E",
+          "option_text": "Bağımsız mahkemedir",
+          "is_correct": false,
+          "id": 73530
+        }
+      ],
+      "id": 15401
+    },
+    {
+      "topic_id": 151,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdarenin tarafsızlığı ilkesi hangi davranışı yasaklar?",
+      "correct_answer_text": "D",
+      "explanation_text": "Tarafsızlık, idarenin kamu hizmetini kişisel veya siyasi ayrımla yürütmemesini gerektirir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hukuka uygun işlem yapmayı",
+          "is_correct": false,
+          "id": 73531
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmet standardı belirlemeyi",
+          "is_correct": false,
+          "id": 73532
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu yararı gözetmeyi",
+          "is_correct": false,
+          "id": 73533
+        },
+        {
+          "label": "D",
+          "option_text": "Kişisel, siyasi veya ayrımcı saikle farklı işlem yapmayı",
+          "is_correct": true,
+          "id": 73534
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı denetimine açık olmayı",
+          "is_correct": false,
+          "id": 73535
+        }
+      ],
+      "id": 15402
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Merkezden yönetim neyi ifade eder?",
+      "correct_answer_text": "A",
+      "explanation_text": "Merkezden yönetimde hizmetler devlet tüzel kişiliği içinde merkez ve taşra eliyle yürütülür.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu hizmetlerinin devlet tüzel kişiliği içinde merkezden planlanıp yürütülmesini",
+          "is_correct": true,
+          "id": 73536
+        },
+        {
+          "label": "B",
+          "option_text": "Her hizmetin belediyece yürütülmesini",
+          "is_correct": false,
+          "id": 73537
+        },
+        {
+          "label": "C",
+          "option_text": "Tüm yetkilerin özel kişilere devrini",
+          "is_correct": false,
+          "id": 73538
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı faaliyetini",
+          "is_correct": false,
+          "id": 73539
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece köy idaresini",
+          "is_correct": false,
+          "id": 73540
+        }
+      ],
+      "id": 15403
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yetki genişliği Türkiye’de özellikle hangi makam bakımından önemlidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yetki genişliği, ilde valinin merkez adına bazı kararları alabilmesiyle ilişkilidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Muhtar",
+          "is_correct": false,
+          "id": 73541
+        },
+        {
+          "label": "B",
+          "option_text": "Belediye meclisi",
+          "is_correct": false,
+          "id": 73542
+        },
+        {
+          "label": "C",
+          "option_text": "Vali",
+          "is_correct": true,
+          "id": 73543
+        },
+        {
+          "label": "D",
+          "option_text": "Danıştay savcısı",
+          "is_correct": false,
+          "id": 73544
+        },
+        {
+          "label": "E",
+          "option_text": "Noter",
+          "is_correct": false,
+          "id": 73545
+        }
+      ],
+      "id": 15404
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yetki devri ile imza devri arasındaki temel fark nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Yetki devri karar yetkisinin devridir; imza devri işlemlerin imzalanmasına ilişkin teknik kolaylıktır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İkisi tamamen aynıdır",
+          "is_correct": false,
+          "id": 73546
+        },
+        {
+          "label": "B",
+          "option_text": "Yetki devrinde karar alma yetkisi devredilir; imza devrinde karar yetkisi devredilmeyip imzalama kolaylığı sağlanır",
+          "is_correct": true,
+          "id": 73547
+        },
+        {
+          "label": "C",
+          "option_text": "İmza devri yalnız mahkemede olur",
+          "is_correct": false,
+          "id": 73548
+        },
+        {
+          "label": "D",
+          "option_text": "Yetki devri hiçbir zaman yazılı olmaz",
+          "is_correct": false,
+          "id": 73549
+        },
+        {
+          "label": "E",
+          "option_text": "İmza devri sorumluluğu tamamen kaldırır",
+          "is_correct": false,
+          "id": 73550
+        }
+      ],
+      "id": 15405
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Yetki devrinin geçerli olabilmesi için genel olarak hangi şart aranır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Yetki kamu düzenindendir; devrin hukuka uygun olması için dayanak ve sınırlar belirli olmalıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sözlü alışkanlık yeterlidir",
+          "is_correct": false,
+          "id": 73551
+        },
+        {
+          "label": "B",
+          "option_text": "Her konuda sınırsız yapılabilir",
+          "is_correct": false,
+          "id": 73552
+        },
+        {
+          "label": "C",
+          "option_text": "Özel kişiye yapılması zorunludur",
+          "is_correct": false,
+          "id": 73553
+        },
+        {
+          "label": "D",
+          "option_text": "Kanuni dayanak ve açık belirleme gerekir",
+          "is_correct": true,
+          "id": 73554
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı kararıyla otomatik olur",
+          "is_correct": false,
+          "id": 73555
+        }
+      ],
+      "id": 15406
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İmza devrinde işlem kimin adına yapılmış sayılır?",
+      "correct_answer_text": "A",
+      "explanation_text": "İmza devrinde karar yetkisi asıl makamda kalır, işlem onun adına imzalanır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Asıl yetkili makam adına",
+          "is_correct": true,
+          "id": 73556
+        },
+        {
+          "label": "B",
+          "option_text": "İmzayı atan kişinin özel adına",
+          "is_correct": false,
+          "id": 73557
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaş adına",
+          "is_correct": false,
+          "id": 73558
+        },
+        {
+          "label": "D",
+          "option_text": "Mahkeme adına",
+          "is_correct": false,
+          "id": 73559
+        },
+        {
+          "label": "E",
+          "option_text": "Belediye adına zorunlu olarak",
+          "is_correct": false,
+          "id": 73560
+        }
+      ],
+      "id": 15407
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Merkezden yönetimin yararlarından biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Merkezden yönetim ülke çapında birlik ve standart sağlayabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yerel ihtiyaçlara her zaman hızlı uyum",
+          "is_correct": false,
+          "id": 73561
+        },
+        {
+          "label": "B",
+          "option_text": "Kırtasiyeciliği artırma",
+          "is_correct": false,
+          "id": 73562
+        },
+        {
+          "label": "C",
+          "option_text": "Ülke genelinde birlik ve koordinasyon sağlama",
+          "is_correct": true,
+          "id": 73563
+        },
+        {
+          "label": "D",
+          "option_text": "Özerkliği sınırsızlaştırma",
+          "is_correct": false,
+          "id": 73564
+        },
+        {
+          "label": "E",
+          "option_text": "Hizmeti tamamen özel kişiye bırakma",
+          "is_correct": false,
+          "id": 73565
+        }
+      ],
+      "id": 15408
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Merkezden yönetimin sakıncalarından biri hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Merkeziyetçilik, yerel farklılıkları dikkate almada yavaş kalabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ulusal bütünlük sağlaması",
+          "is_correct": false,
+          "id": 73566
+        },
+        {
+          "label": "B",
+          "option_text": "Koordinasyon kolaylığı",
+          "is_correct": false,
+          "id": 73567
+        },
+        {
+          "label": "C",
+          "option_text": "Kaynakların merkezi planlanması",
+          "is_correct": false,
+          "id": 73568
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu tüzel kişiliği içinde yürütülmesi",
+          "is_correct": false,
+          "id": 73569
+        },
+        {
+          "label": "E",
+          "option_text": "Yerel ihtiyaçlara geç veya yetersiz cevap verebilmesi",
+          "is_correct": true,
+          "id": 73570
+        }
+      ],
+      "id": 15409
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kanunsuz emir karşısında kamu görevlisinin temel yükümlülüğü nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kanunsuz emir hukuk devleti ve kamu görevlisinin sorumluluğu bakımından özel kurallara tabidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her emri koşulsuz uygulamak",
+          "is_correct": false,
+          "id": 73571
+        },
+        {
+          "label": "B",
+          "option_text": "Hukuka aykırılığı usulüne göre bildirmek ve açık suç oluşturan emri yerine getirmemek",
+          "is_correct": true,
+          "id": 73572
+        },
+        {
+          "label": "C",
+          "option_text": "Emri gizlice uygulamak",
+          "is_correct": false,
+          "id": 73573
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşa devretmek",
+          "is_correct": false,
+          "id": 73574
+        },
+        {
+          "label": "E",
+          "option_text": "Mahkeme kararı olmadan işlem yapmamak",
+          "is_correct": false,
+          "id": 73575
+        }
+      ],
+      "id": 15410
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Yetki devri yapılmışsa devredilen konuda kural olarak kim işlem yapar?",
+      "correct_answer_text": "D",
+      "explanation_text": "Yetki devrinde devredilen yetkiyi devralan makam kullanır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaş",
+          "is_correct": false,
+          "id": 73576
+        },
+        {
+          "label": "B",
+          "option_text": "Yargı organı",
+          "is_correct": false,
+          "id": 73577
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket",
+          "is_correct": false,
+          "id": 73578
+        },
+        {
+          "label": "D",
+          "option_text": "Yetki devredilen makam",
+          "is_correct": true,
+          "id": 73579
+        },
+        {
+          "label": "E",
+          "option_text": "Her memur rastgele",
+          "is_correct": false,
+          "id": 73580
+        }
+      ],
+      "id": 15411
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yetki genişliği yerinden yönetim midir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yetki genişliği ayrı tüzel kişilik yaratmaz; merkezi idare içinde taşra makamına karar yetkisi tanır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hayır, merkezi idarenin taşrada karar alma kolaylığıdır",
+          "is_correct": true,
+          "id": 73581
+        },
+        {
+          "label": "B",
+          "option_text": "Evet, ayrı kamu tüzel kişiliği doğurur",
+          "is_correct": false,
+          "id": 73582
+        },
+        {
+          "label": "C",
+          "option_text": "Evet, belediye özerkliğidir",
+          "is_correct": false,
+          "id": 73583
+        },
+        {
+          "label": "D",
+          "option_text": "Evet, meslek kuruluşudur",
+          "is_correct": false,
+          "id": 73584
+        },
+        {
+          "label": "E",
+          "option_text": "Hayır, yargı işlemidir",
+          "is_correct": false,
+          "id": 73585
+        }
+      ],
+      "id": 15412
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Bakanlıklar merkezden yönetim bakımından nasıl konumlanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bakanlıklar merkezi idarenin başkent teşkilatı içinde yer alır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahalli idaredir",
+          "is_correct": false,
+          "id": 73586
+        },
+        {
+          "label": "B",
+          "option_text": "Ayrı özel hukuk kişisidir",
+          "is_correct": false,
+          "id": 73587
+        },
+        {
+          "label": "C",
+          "option_text": "Devlet tüzel kişiliği içinde merkezi idare birimidir",
+          "is_correct": true,
+          "id": 73588
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı kuruluşudur",
+          "is_correct": false,
+          "id": 73589
+        },
+        {
+          "label": "E",
+          "option_text": "Köy tüzel kişiliğidir",
+          "is_correct": false,
+          "id": 73590
+        }
+      ],
+      "id": 15413
+    },
+    {
+      "topic_id": 152,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yetki kurallarının kamu düzeninden sayılması ne sonuç doğurur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Yetki idari işlemin temel unsurudur; yetkisizlik işlemi sakatlar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yetkisiz işlem her zaman önemsizdir",
+          "is_correct": false,
+          "id": 73591
+        },
+        {
+          "label": "B",
+          "option_text": "Yetki sözleşmeyle sınırsız değiştirilebilir",
+          "is_correct": false,
+          "id": 73592
+        },
+        {
+          "label": "C",
+          "option_text": "Yetki eksikliği hiç denetlenmez",
+          "is_correct": false,
+          "id": 73593
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaş yetkiyi devralır",
+          "is_correct": false,
+          "id": 73594
+        },
+        {
+          "label": "E",
+          "option_text": "Yetkisiz işlem hukuka aykırılık doğurur ve yargı tarafından dikkate alınabilir",
+          "is_correct": true,
+          "id": 73595
+        }
+      ],
+      "id": 15414
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Merkezi idare hangi iki ana teşkilattan oluşur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Merkezi idare başkentte ve taşrada örgütlenir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başkent ve taşra teşkilatı",
+          "is_correct": true,
+          "id": 73596
+        },
+        {
+          "label": "B",
+          "option_text": "Belediye ve köy",
+          "is_correct": false,
+          "id": 73597
+        },
+        {
+          "label": "C",
+          "option_text": "Üniversite ve meslek kuruluşu",
+          "is_correct": false,
+          "id": 73598
+        },
+        {
+          "label": "D",
+          "option_text": "Adli ve idari yargı",
+          "is_correct": false,
+          "id": 73599
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirket ve vakıf",
+          "is_correct": false,
+          "id": 73600
+        }
+      ],
+      "id": 15415
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Güncel sistemde yürütme yetkisi kime aittir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Cumhurbaşkanlığı hükümet sisteminde yürütme yetkisi Cumhurbaşkanına aittir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "TBMM Başkanlığına",
+          "is_correct": false,
+          "id": 73601
+        },
+        {
+          "label": "B",
+          "option_text": "Cumhurbaşkanına",
+          "is_correct": true,
+          "id": 73602
+        },
+        {
+          "label": "C",
+          "option_text": "Danıştaya",
+          "is_correct": false,
+          "id": 73603
+        },
+        {
+          "label": "D",
+          "option_text": "Sayıştaya",
+          "is_correct": false,
+          "id": 73604
+        },
+        {
+          "label": "E",
+          "option_text": "Valiler kuruluna",
+          "is_correct": false,
+          "id": 73605
+        }
+      ],
+      "id": 15416
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bakanlıkların tüzel kişiliği bakımından doğru ifade hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bakanlıklar devlet tüzel kişiliğinin parçasıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ayrı kamu tüzel kişiliğine sahiptir",
+          "is_correct": false,
+          "id": 73606
+        },
+        {
+          "label": "B",
+          "option_text": "Özel hukuk kişisidir",
+          "is_correct": false,
+          "id": 73607
+        },
+        {
+          "label": "C",
+          "option_text": "Devlet tüzel kişiliği içinde yer alır",
+          "is_correct": true,
+          "id": 73608
+        },
+        {
+          "label": "D",
+          "option_text": "Mahalli idaredir",
+          "is_correct": false,
+          "id": 73609
+        },
+        {
+          "label": "E",
+          "option_text": "Meslek kuruluşudur",
+          "is_correct": false,
+          "id": 73610
+        }
+      ],
+      "id": 15417
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Danıştayın başkent yardımcı kuruluşları içindeki önemi nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Danıştay hem yüksek idari yargı organı hem de bazı konularda danışma görevi olan kuruluştur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece belediye bütçesi yapar",
+          "is_correct": false,
+          "id": 73611
+        },
+        {
+          "label": "B",
+          "option_text": "Özel şirket denetler",
+          "is_correct": false,
+          "id": 73612
+        },
+        {
+          "label": "C",
+          "option_text": "Ceza mahkemesidir",
+          "is_correct": false,
+          "id": 73613
+        },
+        {
+          "label": "D",
+          "option_text": "Danışma ve idari yargı işlevleriyle idareye ilişkin görevleri bulunur",
+          "is_correct": true,
+          "id": 73614
+        },
+        {
+          "label": "E",
+          "option_text": "Vali atar",
+          "is_correct": false,
+          "id": 73615
+        }
+      ],
+      "id": 15418
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sayıştayın temel işlevi hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Sayıştay kamu kaynaklarının denetimiyle ilişkilidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kolluk faaliyeti yapmak",
+          "is_correct": false,
+          "id": 73616
+        },
+        {
+          "label": "B",
+          "option_text": "Ruhsat vermek",
+          "is_correct": false,
+          "id": 73617
+        },
+        {
+          "label": "C",
+          "option_text": "İlçe kurmak",
+          "is_correct": false,
+          "id": 73618
+        },
+        {
+          "label": "D",
+          "option_text": "Özel hukuk davası açmak",
+          "is_correct": false,
+          "id": 73619
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu idarelerinin mali denetimi ve hesap yargısı alanında görev yapmak",
+          "is_correct": true,
+          "id": 73620
+        }
+      ],
+      "id": 15419
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Taşra teşkilatında il genel idaresinin başı kimdir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Vali ilde devletin ve merkezi idarenin temsilcisidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vali",
+          "is_correct": true,
+          "id": 73621
+        },
+        {
+          "label": "B",
+          "option_text": "Kaymakam",
+          "is_correct": false,
+          "id": 73622
+        },
+        {
+          "label": "C",
+          "option_text": "Belediye başkanı",
+          "is_correct": false,
+          "id": 73623
+        },
+        {
+          "label": "D",
+          "option_text": "Muhtar",
+          "is_correct": false,
+          "id": 73624
+        },
+        {
+          "label": "E",
+          "option_text": "Rektör",
+          "is_correct": false,
+          "id": 73625
+        }
+      ],
+      "id": 15420
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İlçe idaresinin başı kimdir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kaymakam ilçede merkezi idarenin temsilcisidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vali",
+          "is_correct": false,
+          "id": 73626
+        },
+        {
+          "label": "B",
+          "option_text": "Kaymakam",
+          "is_correct": true,
+          "id": 73627
+        },
+        {
+          "label": "C",
+          "option_text": "Belediye meclisi",
+          "is_correct": false,
+          "id": 73628
+        },
+        {
+          "label": "D",
+          "option_text": "İl genel meclisi",
+          "is_correct": false,
+          "id": 73629
+        },
+        {
+          "label": "E",
+          "option_text": "Köy derneği",
+          "is_correct": false,
+          "id": 73630
+        }
+      ],
+      "id": 15421
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Valinin hukuki konumu için hangisi doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Vali merkezi idarenin taşra teşkilatında yer alır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahalli idare organıdır",
+          "is_correct": false,
+          "id": 73631
+        },
+        {
+          "label": "B",
+          "option_text": "Özel hukuk temsilcisidir",
+          "is_correct": false,
+          "id": 73632
+        },
+        {
+          "label": "C",
+          "option_text": "İlde devletin ve hükümetin temsilcisi olarak merkezi idare içinde yer alır",
+          "is_correct": true,
+          "id": 73633
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı organıdır",
+          "is_correct": false,
+          "id": 73634
+        },
+        {
+          "label": "E",
+          "option_text": "Üniversite organıdır",
+          "is_correct": false,
+          "id": 73635
+        }
+      ],
+      "id": 15422
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Bölge kuruluşları hangi ihtiyaçla kurulabilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bazı merkezi idare hizmetleri birden fazla ili kapsayan bölge teşkilatıyla yürütülür.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her köyün ayrı devlet olması için",
+          "is_correct": false,
+          "id": 73636
+        },
+        {
+          "label": "B",
+          "option_text": "Mahkemeleri kapatmak için",
+          "is_correct": false,
+          "id": 73637
+        },
+        {
+          "label": "C",
+          "option_text": "Belediye seçimini iptal için",
+          "is_correct": false,
+          "id": 73638
+        },
+        {
+          "label": "D",
+          "option_text": "Birden çok ili kapsayan hizmetlerin yürütülmesi için",
+          "is_correct": true,
+          "id": 73639
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirket kurmak için",
+          "is_correct": false,
+          "id": 73640
+        }
+      ],
+      "id": 15423
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Merkezi idare taşra teşkilatı içinde hiyerarşi nasıl işler?",
+      "correct_answer_text": "E",
+      "explanation_text": "Taşra teşkilatı merkezi idarenin hiyerarşik yapısı içinde yer alır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiç hiyerarşi yoktur",
+          "is_correct": false,
+          "id": 73641
+        },
+        {
+          "label": "B",
+          "option_text": "Vali belediye başkanının astıdır",
+          "is_correct": false,
+          "id": 73642
+        },
+        {
+          "label": "C",
+          "option_text": "Muhtar bakanın üstüdür",
+          "is_correct": false,
+          "id": 73643
+        },
+        {
+          "label": "D",
+          "option_text": "Özel kişiler amirdir",
+          "is_correct": false,
+          "id": 73644
+        },
+        {
+          "label": "E",
+          "option_text": "Merkezi idare görevlileri arasında ast-üst ilişkisi bulunur",
+          "is_correct": true,
+          "id": 73645
+        }
+      ],
+      "id": 15424
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Başkent teşkilatının temel işlevi nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Başkent teşkilatı ülke düzeyindeki hizmetleri planlar ve koordine eder.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ülke düzeyinde idari politika belirleme ve koordinasyon",
+          "is_correct": true,
+          "id": 73646
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız köy bütçesi yapmak",
+          "is_correct": false,
+          "id": 73647
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirketleri yönetmek",
+          "is_correct": false,
+          "id": 73648
+        },
+        {
+          "label": "D",
+          "option_text": "Mahalli seçimleri yapmak",
+          "is_correct": false,
+          "id": 73649
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza davası görmek",
+          "is_correct": false,
+          "id": 73650
+        }
+      ],
+      "id": 15425
+    },
+    {
+      "topic_id": 153,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Taşra teşkilatının varlık nedeni nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Taşra teşkilatı merkezi idare hizmetlerinin ülke geneline yayılmasını sağlar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her hizmeti merkez binasında yapmak",
+          "is_correct": false,
+          "id": 73651
+        },
+        {
+          "label": "B",
+          "option_text": "Merkezi hizmetleri ülke düzeyinde yerelde yürütmek",
+          "is_correct": true,
+          "id": 73652
+        },
+        {
+          "label": "C",
+          "option_text": "Yerinden yönetimi kaldırmak",
+          "is_correct": false,
+          "id": 73653
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı yetkisini devralmak",
+          "is_correct": false,
+          "id": 73654
+        },
+        {
+          "label": "E",
+          "option_text": "Özel hukuk sözleşmesi yapmak",
+          "is_correct": false,
+          "id": 73655
+        }
+      ],
+      "id": 15426
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Yerinden yönetim neyi ifade eder?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yerinden yönetimde ayrı kamu tüzel kişiliği ve idari-mali özerklik vardır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bazı kamu hizmetlerinin ayrı kamu tüzel kişileri eliyle yürütülmesini",
+          "is_correct": true,
+          "id": 73656
+        },
+        {
+          "label": "B",
+          "option_text": "Tüm hizmetlerin mahkemelerce yapılmasını",
+          "is_correct": false,
+          "id": 73657
+        },
+        {
+          "label": "C",
+          "option_text": "Devlet tüzel kişiliğinin kaldırılmasını",
+          "is_correct": false,
+          "id": 73658
+        },
+        {
+          "label": "D",
+          "option_text": "Özel kişilerin sınırsız yetkisini",
+          "is_correct": false,
+          "id": 73659
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı denetiminin yokluğunu",
+          "is_correct": false,
+          "id": 73660
+        }
+      ],
+      "id": 15427
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Anayasada mahalli idare olarak sayılanlar hangileridir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Mahalli idareler il özel idaresi, belediye ve köydür.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bakanlıklar, valilikler, kaymakamlıklar",
+          "is_correct": false,
+          "id": 73661
+        },
+        {
+          "label": "B",
+          "option_text": "Üniversiteler ve KİTler",
+          "is_correct": false,
+          "id": 73662
+        },
+        {
+          "label": "C",
+          "option_text": "İl özel idaresi, belediye ve köy",
+          "is_correct": true,
+          "id": 73663
+        },
+        {
+          "label": "D",
+          "option_text": "Danıştay ve Sayıştay",
+          "is_correct": false,
+          "id": 73664
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirketler",
+          "is_correct": false,
+          "id": 73665
+        }
+      ],
+      "id": 15428
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Mahalli idarelerin temel amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Mahalli idareler yerel halkın mahalli müşterek ihtiyaçlarını karşılar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ulusal savunmayı yürütmek",
+          "is_correct": false,
+          "id": 73666
+        },
+        {
+          "label": "B",
+          "option_text": "Yerel ortak ihtiyaçları karşılamak",
+          "is_correct": true,
+          "id": 73667
+        },
+        {
+          "label": "C",
+          "option_text": "Ceza yargılaması yapmak",
+          "is_correct": false,
+          "id": 73668
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun çıkarmak",
+          "is_correct": false,
+          "id": 73669
+        },
+        {
+          "label": "E",
+          "option_text": "Merkezi bakanlık olmak",
+          "is_correct": false,
+          "id": 73670
+        }
+      ],
+      "id": 15429
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Hizmet yerinden yönetim kuruluşlarına örnek hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Üniversiteler belirli bir hizmet alanında kamu tüzel kişiliğine sahip hizmet kuruluşlarıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Valilik",
+          "is_correct": false,
+          "id": 73671
+        },
+        {
+          "label": "B",
+          "option_text": "Kaymakamlık",
+          "is_correct": false,
+          "id": 73672
+        },
+        {
+          "label": "C",
+          "option_text": "Bakanlık",
+          "is_correct": false,
+          "id": 73673
+        },
+        {
+          "label": "D",
+          "option_text": "Üniversite",
+          "is_correct": true,
+          "id": 73674
+        },
+        {
+          "label": "E",
+          "option_text": "İlçe emniyet müdürlüğü",
+          "is_correct": false,
+          "id": 73675
+        }
+      ],
+      "id": 15430
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu kurumu niteliğindeki meslek kuruluşları için doğru ifade hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Barolar, tabip odaları gibi kuruluşlar kamu kurumu niteliğinde meslek kuruluşlarıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel şirketlerdir",
+          "is_correct": false,
+          "id": 73676
+        },
+        {
+          "label": "B",
+          "option_text": "Hiç kamu gücü kullanamazlar",
+          "is_correct": false,
+          "id": 73677
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı organıdırlar",
+          "is_correct": false,
+          "id": 73678
+        },
+        {
+          "label": "D",
+          "option_text": "Merkezi idarenin taşra birimidirler",
+          "is_correct": false,
+          "id": 73679
+        },
+        {
+          "label": "E",
+          "option_text": "Kanunla kurulan, meslek mensuplarını düzenleyen kamu tüzel kişileridir",
+          "is_correct": true,
+          "id": 73680
+        }
+      ],
+      "id": 15431
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Yerinden yönetimin yararlarından biri hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yerinden yönetim yerel/teknik ihtiyaçlara yakınlığı artırır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yerel veya teknik ihtiyaçlara daha uygun hizmet üretmek",
+          "is_correct": true,
+          "id": 73681
+        },
+        {
+          "label": "B",
+          "option_text": "Tüm kararları merkezde toplamak",
+          "is_correct": false,
+          "id": 73682
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmeti yavaşlatmak",
+          "is_correct": false,
+          "id": 73683
+        },
+        {
+          "label": "D",
+          "option_text": "Özerkliği kaldırmak",
+          "is_correct": false,
+          "id": 73684
+        },
+        {
+          "label": "E",
+          "option_text": "Hiyerarşik denetimi artırmak",
+          "is_correct": false,
+          "id": 73685
+        }
+      ],
+      "id": 15432
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yerinden yönetim kuruluşları üzerinde merkezi idarenin denetimi hangi araçla sağlanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Ayrı kamu tüzel kişileri üzerinde hiyerarşi değil, kanuna dayalı vesayet denetimi olur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiyerarşi",
+          "is_correct": false,
+          "id": 73686
+        },
+        {
+          "label": "B",
+          "option_text": "Özel hukuk emri",
+          "is_correct": false,
+          "id": 73687
+        },
+        {
+          "label": "C",
+          "option_text": "İdari vesayet",
+          "is_correct": true,
+          "id": 73688
+        },
+        {
+          "label": "D",
+          "option_text": "Ceza temyizi",
+          "is_correct": false,
+          "id": 73689
+        },
+        {
+          "label": "E",
+          "option_text": "Tahkim",
+          "is_correct": false,
+          "id": 73690
+        }
+      ],
+      "id": 15433
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İdari ve mali özerklik ne anlama gelir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Özerklik bağımsızlık değildir; idarenin bütünlüğü içinde belirli serbestliktir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kuruluşun hukuk dışı davranabilmesi",
+          "is_correct": false,
+          "id": 73691
+        },
+        {
+          "label": "B",
+          "option_text": "Kuruluşun karar organları ve bütçesiyle belirli serbestliğe sahip olması",
+          "is_correct": true,
+          "id": 73692
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı denetimine kapalı olması",
+          "is_correct": false,
+          "id": 73693
+        },
+        {
+          "label": "D",
+          "option_text": "Merkezi idareden tamamen kopması",
+          "is_correct": false,
+          "id": 73694
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirket haline gelmesi",
+          "is_correct": false,
+          "id": 73695
+        }
+      ],
+      "id": 15434
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Düzenleyici ve denetleyici kurumlar hangi kategoriye yakındır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bağımsız idari otoriteler belirli hizmet/alan düzenlemesi yapan kamu tüzel kişileridir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahalli idare",
+          "is_correct": false,
+          "id": 73696
+        },
+        {
+          "label": "B",
+          "option_text": "Taşra teşkilatı",
+          "is_correct": false,
+          "id": 73697
+        },
+        {
+          "label": "C",
+          "option_text": "Adli yargı",
+          "is_correct": false,
+          "id": 73698
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet yerinden yönetim kuruluşları",
+          "is_correct": true,
+          "id": 73699
+        },
+        {
+          "label": "E",
+          "option_text": "Özel aile işletmesi",
+          "is_correct": false,
+          "id": 73700
+        }
+      ],
+      "id": 15435
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Belediyenin organlarından biri hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Belediye başkanı belediyenin seçilmiş organlarındandır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bakan",
+          "is_correct": false,
+          "id": 73701
+        },
+        {
+          "label": "B",
+          "option_text": "Vali",
+          "is_correct": false,
+          "id": 73702
+        },
+        {
+          "label": "C",
+          "option_text": "Kaymakam",
+          "is_correct": false,
+          "id": 73703
+        },
+        {
+          "label": "D",
+          "option_text": "Danıştay üyesi",
+          "is_correct": false,
+          "id": 73704
+        },
+        {
+          "label": "E",
+          "option_text": "Belediye başkanı",
+          "is_correct": true,
+          "id": 73705
+        }
+      ],
+      "id": 15436
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yerinden yönetim ile yetki genişliği arasındaki fark nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Ayrı kamu tüzel kişiliği yerinden yönetimin ayırt edici unsurudur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yerinden yönetimde ayrı tüzel kişilik vardır; yetki genişliğinde merkezi idare içinde karar kolaylığı vardır",
+          "is_correct": true,
+          "id": 73706
+        },
+        {
+          "label": "B",
+          "option_text": "İkisi tamamen aynıdır",
+          "is_correct": false,
+          "id": 73707
+        },
+        {
+          "label": "C",
+          "option_text": "Yetki genişliği belediye özerkliğidir",
+          "is_correct": false,
+          "id": 73708
+        },
+        {
+          "label": "D",
+          "option_text": "Yerinden yönetim valiye aittir",
+          "is_correct": false,
+          "id": 73709
+        },
+        {
+          "label": "E",
+          "option_text": "Yetki genişliği özel şirkettir",
+          "is_correct": false,
+          "id": 73710
+        }
+      ],
+      "id": 15437
+    },
+    {
+      "topic_id": 154,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Mahalli idare organlarının seçimle işbaşına gelmesi hangi ilkeyle ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Mahalli idarelerin seçilmiş organları yerel demokrasi anlayışını yansıtır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yargısal fonksiyon",
+          "is_correct": false,
+          "id": 73711
+        },
+        {
+          "label": "B",
+          "option_text": "Merkezden yönetim",
+          "is_correct": false,
+          "id": 73712
+        },
+        {
+          "label": "C",
+          "option_text": "Yerel demokrasi ve özerklik",
+          "is_correct": true,
+          "id": 73713
+        },
+        {
+          "label": "D",
+          "option_text": "Özel hukuk sözleşmesi",
+          "is_correct": false,
+          "id": 73714
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza sorumluluğu",
+          "is_correct": false,
+          "id": 73715
+        }
+      ],
+      "id": 15438
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdari işlem nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdari işlem hukuki sonuç doğuran idari irade açıklamasıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdarenin hukuki sonuç doğurmaya yönelik irade açıklaması",
+          "is_correct": true,
+          "id": 73716
+        },
+        {
+          "label": "B",
+          "option_text": "İdarenin sadece fiili davranışı",
+          "is_correct": false,
+          "id": 73717
+        },
+        {
+          "label": "C",
+          "option_text": "Mahkeme hükmü",
+          "is_correct": false,
+          "id": 73718
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun teklifi",
+          "is_correct": false,
+          "id": 73719
+        },
+        {
+          "label": "E",
+          "option_text": "Özel kişinin hediyesi",
+          "is_correct": false,
+          "id": 73720
+        }
+      ],
+      "id": 15439
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdari eylem neye örnektir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdari eylem maddi dünyada ortaya çıkan fiili davranıştır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ruhsat kararı",
+          "is_correct": false,
+          "id": 73721
+        },
+        {
+          "label": "B",
+          "option_text": "Yol yapımı sırasında fiili çalışma",
+          "is_correct": true,
+          "id": 73722
+        },
+        {
+          "label": "C",
+          "option_text": "Atama kararı",
+          "is_correct": false,
+          "id": 73723
+        },
+        {
+          "label": "D",
+          "option_text": "Yönetmelik",
+          "is_correct": false,
+          "id": 73724
+        },
+        {
+          "label": "E",
+          "option_text": "Disiplin cezası",
+          "is_correct": false,
+          "id": 73725
+        }
+      ],
+      "id": 15440
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlemin unsurları hangileridir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdari işlem beş unsur bakımından hukuka uygun olmalıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özne, yüklem, tümleç",
+          "is_correct": false,
+          "id": 73726
+        },
+        {
+          "label": "B",
+          "option_text": "Alacak, borç, faiz",
+          "is_correct": false,
+          "id": 73727
+        },
+        {
+          "label": "C",
+          "option_text": "Yetki, şekil, sebep, konu, maksat",
+          "is_correct": true,
+          "id": 73728
+        },
+        {
+          "label": "D",
+          "option_text": "Dava, karar, temyiz",
+          "is_correct": false,
+          "id": 73729
+        },
+        {
+          "label": "E",
+          "option_text": "İhale, teklif, imza",
+          "is_correct": false,
+          "id": 73730
+        }
+      ],
+      "id": 15441
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yetki unsuru neyi ifade eder?",
+      "correct_answer_text": "D",
+      "explanation_text": "Yetki, işlemi hangi makamın yapabileceğini gösterir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşlemin yazı tipi",
+          "is_correct": false,
+          "id": 73731
+        },
+        {
+          "label": "B",
+          "option_text": "İşlemin maliyeti",
+          "is_correct": false,
+          "id": 73732
+        },
+        {
+          "label": "C",
+          "option_text": "İşlemin konusu",
+          "is_correct": false,
+          "id": 73733
+        },
+        {
+          "label": "D",
+          "option_text": "İşlemi yapmaya hukuken yetkili makamı",
+          "is_correct": true,
+          "id": 73734
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaşın tercihi",
+          "is_correct": false,
+          "id": 73735
+        }
+      ],
+      "id": 15442
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sebep unsuru nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Sebep, işlemin dayandığı olay ve hukuk kuralıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşlemi yapmaya götüren hukuki ve maddi neden",
+          "is_correct": true,
+          "id": 73736
+        },
+        {
+          "label": "B",
+          "option_text": "İşlemin doğurduğu sonuç",
+          "is_correct": false,
+          "id": 73737
+        },
+        {
+          "label": "C",
+          "option_text": "İşlemin amacı",
+          "is_correct": false,
+          "id": 73738
+        },
+        {
+          "label": "D",
+          "option_text": "İmza yeri",
+          "is_correct": false,
+          "id": 73739
+        },
+        {
+          "label": "E",
+          "option_text": "Dosya numarası",
+          "is_correct": false,
+          "id": 73740
+        }
+      ],
+      "id": 15443
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Maksat unsurunda temel ölçüt nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdari işlemin amacı kamu yararı olmalıdır; aksi maksat sakatlığı doğurabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kişisel çıkar",
+          "is_correct": false,
+          "id": 73741
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu yararı",
+          "is_correct": true,
+          "id": 73742
+        },
+        {
+          "label": "C",
+          "option_text": "Özel kazanç",
+          "is_correct": false,
+          "id": 73743
+        },
+        {
+          "label": "D",
+          "option_text": "Siyasi intikam",
+          "is_correct": false,
+          "id": 73744
+        },
+        {
+          "label": "E",
+          "option_text": "Yakınlara fayda",
+          "is_correct": false,
+          "id": 73745
+        }
+      ],
+      "id": 15444
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Düzenleyici işleme örnek hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yönetmelik genel, soyut ve sürekli kurallar koyan düzenleyici işlemdir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Atama",
+          "is_correct": false,
+          "id": 73746
+        },
+        {
+          "label": "B",
+          "option_text": "Ruhsat",
+          "is_correct": false,
+          "id": 73747
+        },
+        {
+          "label": "C",
+          "option_text": "Yönetmelik",
+          "is_correct": true,
+          "id": 73748
+        },
+        {
+          "label": "D",
+          "option_text": "Bireysel ceza",
+          "is_correct": false,
+          "id": 73749
+        },
+        {
+          "label": "E",
+          "option_text": "Kamulaştırma kararı",
+          "is_correct": false,
+          "id": 73750
+        }
+      ],
+      "id": 15445
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Birel işlem hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Belirli kişi veya duruma yönelik işlem birel işlemdir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yönetmelik",
+          "is_correct": false,
+          "id": 73751
+        },
+        {
+          "label": "B",
+          "option_text": "Genelge niteliğinde kural",
+          "is_correct": false,
+          "id": 73752
+        },
+        {
+          "label": "C",
+          "option_text": "Tüzük",
+          "is_correct": false,
+          "id": 73753
+        },
+        {
+          "label": "D",
+          "option_text": "Bir kişinin atanması",
+          "is_correct": true,
+          "id": 73754
+        },
+        {
+          "label": "E",
+          "option_text": "İmar yönetmeliği",
+          "is_correct": false,
+          "id": 73755
+        }
+      ],
+      "id": 15446
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlemin icrailik özelliği ne anlama gelir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İcrai işlem, ilgilinin hukuki durumunu etkileyen sonuç doğurur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiç sonuç doğurmaması",
+          "is_correct": false,
+          "id": 73756
+        },
+        {
+          "label": "B",
+          "option_text": "Mutlaka mahkeme onayı gerekmesi",
+          "is_correct": false,
+          "id": 73757
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece özel hukuk olması",
+          "is_correct": false,
+          "id": 73758
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşın emri olması",
+          "is_correct": false,
+          "id": 73759
+        },
+        {
+          "label": "E",
+          "option_text": "Hukuki sonucu doğrudan meydana getirebilmesi",
+          "is_correct": true,
+          "id": 73760
+        }
+      ],
+      "id": 15447
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Yokluk yaptırımı hangi durumda gündeme gelebilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yokluk çok ağır sakatlıklarda istisnai olarak kabul edilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Çok ağır ve açık yetki/konu sakatlıklarında işlemin hukuk aleminde doğmamış sayılması",
+          "is_correct": true,
+          "id": 73761
+        },
+        {
+          "label": "B",
+          "option_text": "Her küçük yazım hatasında",
+          "is_correct": false,
+          "id": 73762
+        },
+        {
+          "label": "C",
+          "option_text": "Süre hatasının tamamında",
+          "is_correct": false,
+          "id": 73763
+        },
+        {
+          "label": "D",
+          "option_text": "Her iptal davasında otomatik",
+          "is_correct": false,
+          "id": 73764
+        },
+        {
+          "label": "E",
+          "option_text": "Özel hukuk sözleşmesinde daima",
+          "is_correct": false,
+          "id": 73765
+        }
+      ],
+      "id": 15448
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlemin geri alınması neyi ifade eder?",
+      "correct_answer_text": "B",
+      "explanation_text": "Geri alma hukuka aykırı işlemi kural olarak geçmişe etkili kaldırır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşlemin ileriye etkili kaldırılması",
+          "is_correct": false,
+          "id": 73766
+        },
+        {
+          "label": "B",
+          "option_text": "Hukuka aykırı işlemin geçmişe etkili olarak ortadan kaldırılması",
+          "is_correct": true,
+          "id": 73767
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı kararının değiştirilmesi",
+          "is_correct": false,
+          "id": 73768
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun çıkarılması",
+          "is_correct": false,
+          "id": 73769
+        },
+        {
+          "label": "E",
+          "option_text": "Özel kişinin başvurusu",
+          "is_correct": false,
+          "id": 73770
+        }
+      ],
+      "id": 15449
+    },
+    {
+      "topic_id": 155,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlemin kaldırılması ne sonuç doğurur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kaldırma kural olarak ileriye etkili sona erdirmedir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Geçmişe daima etki eder",
+          "is_correct": false,
+          "id": 73771
+        },
+        {
+          "label": "B",
+          "option_text": "İşlemi hiç doğmamış sayar",
+          "is_correct": false,
+          "id": 73772
+        },
+        {
+          "label": "C",
+          "option_text": "İleriye etkili olarak sona erdirir",
+          "is_correct": true,
+          "id": 73773
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı kararını bozar",
+          "is_correct": false,
+          "id": 73774
+        },
+        {
+          "label": "E",
+          "option_text": "Sebep unsurunu değiştirir",
+          "is_correct": false,
+          "id": 73775
+        }
+      ],
+      "id": 15450
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdarenin yaptığı her sözleşme idari sözleşme midir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdare hem idari sözleşme hem özel hukuk sözleşmesi yapabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Evet, her zaman",
+          "is_correct": false,
+          "id": 73776
+        },
+        {
+          "label": "B",
+          "option_text": "Hayır, bazıları özel hukuk sözleşmesidir",
+          "is_correct": true,
+          "id": 73777
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece noter onaylıysa",
+          "is_correct": false,
+          "id": 73778
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız belediye yaparsa",
+          "is_correct": false,
+          "id": 73779
+        },
+        {
+          "label": "E",
+          "option_text": "Hiçbiri sözleşme değildir",
+          "is_correct": false,
+          "id": 73780
+        }
+      ],
+      "id": 15451
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari sözleşmenin ölçütlerinden biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdari sözleşmede kamu hizmeti ve idareye özgü üstün yetkiler belirleyicidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tarafların ikisinin de özel kişi olması",
+          "is_correct": false,
+          "id": 73781
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece düşük bedelli olması",
+          "is_correct": false,
+          "id": 73782
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetiyle bağlantı ve idareye üstün yetkiler tanıması",
+          "is_correct": true,
+          "id": 73783
+        },
+        {
+          "label": "D",
+          "option_text": "Hiç yazılı olmaması",
+          "is_correct": false,
+          "id": 73784
+        },
+        {
+          "label": "E",
+          "option_text": "Mahkeme kararı olması",
+          "is_correct": false,
+          "id": 73785
+        }
+      ],
+      "id": 15452
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu ihalesinin temel amacı nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İhale kuralları kamu kaynaklarının saydam ve rekabetçi kullanılmasını hedefler.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu alımlarında rekabet, saydamlık ve ihtiyaçların uygun şekilde karşılanması",
+          "is_correct": true,
+          "id": 73786
+        },
+        {
+          "label": "B",
+          "option_text": "Tek kişiye ayrıcalık vermek",
+          "is_correct": false,
+          "id": 73787
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmeti gizlemek",
+          "is_correct": false,
+          "id": 73788
+        },
+        {
+          "label": "D",
+          "option_text": "Yargılamayı durdurmak",
+          "is_correct": false,
+          "id": 73789
+        },
+        {
+          "label": "E",
+          "option_text": "Özel borcu silmek",
+          "is_correct": false,
+          "id": 73790
+        }
+      ],
+      "id": 15453
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İhale sürecinde eşit muamele ilkesi neyi gerektirir?",
+      "correct_answer_text": "D",
+      "explanation_text": "İstekliler arasında ayrım yapılamaz; kurallar objektif uygulanır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tanıdıklara avantaj",
+          "is_correct": false,
+          "id": 73791
+        },
+        {
+          "label": "B",
+          "option_text": "Şartları sonradan kişiye göre değiştirme",
+          "is_correct": false,
+          "id": 73792
+        },
+        {
+          "label": "C",
+          "option_text": "Gizli ihale",
+          "is_correct": false,
+          "id": 73793
+        },
+        {
+          "label": "D",
+          "option_text": "İsteklilere objektif ve aynı koşullarda davranma",
+          "is_correct": true,
+          "id": 73794
+        },
+        {
+          "label": "E",
+          "option_text": "Teklifleri saklama",
+          "is_correct": false,
+          "id": 73795
+        }
+      ],
+      "id": 15454
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İmtiyaz sözleşmesi genel olarak hangi alanla ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İmtiyaz kamu hizmetinin özel kişi eliyle gördürülmesinin klasik yollarındandır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel kişinin aile ilişkisi",
+          "is_correct": false,
+          "id": 73796
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu hizmetinin özel kişi eliyle, idarenin denetimi altında yürütülmesi",
+          "is_correct": true,
+          "id": 73797
+        },
+        {
+          "label": "C",
+          "option_text": "Ceza mahkemesi kararı",
+          "is_correct": false,
+          "id": 73798
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşlık işlemi",
+          "is_correct": false,
+          "id": 73799
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece kira sözleşmesi",
+          "is_correct": false,
+          "id": 73800
+        }
+      ],
+      "id": 15455
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İdari sözleşmelerde idarenin tek taraflı değişiklik yetkisi neye dayanır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kamu hizmetinin sürekliliği ve değişebilirliği idareye bazı üstün yetkiler tanıyabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel kazanca",
+          "is_correct": false,
+          "id": 73801
+        },
+        {
+          "label": "B",
+          "option_text": "Tarafların tamamen eşit olmasına",
+          "is_correct": false,
+          "id": 73802
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı kararına gerek olmamasına",
+          "is_correct": false,
+          "id": 73803
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşmenin hiç bağlayıcı olmamasına",
+          "is_correct": false,
+          "id": 73804
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu hizmetinin değişen ihtiyaçlara uyarlanması gereğine",
+          "is_correct": true,
+          "id": 73805
+        }
+      ],
+      "id": 15456
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu ihalesinde saydamlık ilkesi neyi sağlar?",
+      "correct_answer_text": "A",
+      "explanation_text": "Saydamlık kamu kaynaklarının denetlenebilir kullanılmasını sağlar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sürecin denetlenebilir ve açık kurallara bağlı yürütülmesini",
+          "is_correct": true,
+          "id": 73806
+        },
+        {
+          "label": "B",
+          "option_text": "Tekliflerin gizlice değiştirilmesini",
+          "is_correct": false,
+          "id": 73807
+        },
+        {
+          "label": "C",
+          "option_text": "Rekabetin kaldırılmasını",
+          "is_correct": false,
+          "id": 73808
+        },
+        {
+          "label": "D",
+          "option_text": "Yakınlara öncelik verilmesini",
+          "is_correct": false,
+          "id": 73809
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu zararını artırmayı",
+          "is_correct": false,
+          "id": 73810
+        }
+      ],
+      "id": 15457
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Sözleşme serbestisinin idari sözleşmelerde sınırlı olmasının nedeni nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İdari sözleşmede kamu yararı özel hukuk sözleşmelerine göre daha belirleyicidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaşın hiç hakkı olmaması",
+          "is_correct": false,
+          "id": 73811
+        },
+        {
+          "label": "B",
+          "option_text": "Sözleşmenin daima sözlü olması",
+          "is_correct": false,
+          "id": 73812
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu yararı ve kamu hizmeti gerekleri",
+          "is_correct": true,
+          "id": 73813
+        },
+        {
+          "label": "D",
+          "option_text": "Özel şirketlerin üstünlüğü",
+          "is_correct": false,
+          "id": 73814
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı denetiminin yokluğu",
+          "is_correct": false,
+          "id": 73815
+        }
+      ],
+      "id": 15458
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdarenin özel hukuk sözleşmelerinden doğan uyuşmazlıklar kural olarak nerede görülür?",
+      "correct_answer_text": "D",
+      "explanation_text": "Özel hukuk sözleşmelerinden doğan uyuşmazlıklar kural olarak adli yargıya gider.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her zaman Danıştayda",
+          "is_correct": false,
+          "id": 73816
+        },
+        {
+          "label": "B",
+          "option_text": "Anayasa Mahkemesinde",
+          "is_correct": false,
+          "id": 73817
+        },
+        {
+          "label": "C",
+          "option_text": "Ceza mahkemesinde",
+          "is_correct": false,
+          "id": 73818
+        },
+        {
+          "label": "D",
+          "option_text": "Adli yargıda",
+          "is_correct": true,
+          "id": 73819
+        },
+        {
+          "label": "E",
+          "option_text": "Sayıştayda",
+          "is_correct": false,
+          "id": 73820
+        }
+      ],
+      "id": 15459
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Bir sözleşmede taraflardan birinin idare olması tek başına ne sonuç doğurur?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdare taraf olsa bile sözleşmenin konusu ve rejimi ayrıca değerlendirilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sözleşmeyi otomatik idari sözleşme yapar",
+          "is_correct": false,
+          "id": 73821
+        },
+        {
+          "label": "B",
+          "option_text": "İdari sözleşme sayılması için tek başına yeterli değildir",
+          "is_correct": true,
+          "id": 73822
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı yolunu kapatır",
+          "is_correct": false,
+          "id": 73823
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşmeyi yok hükmünde yapar",
+          "is_correct": false,
+          "id": 73824
+        },
+        {
+          "label": "E",
+          "option_text": "İhaleyi gereksiz kılar",
+          "is_correct": false,
+          "id": 73825
+        }
+      ],
+      "id": 15460
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Pazarlık usulü gibi ihale usullerinde temel sınır nedir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İhale usulleri kanundaki koşullara bağlıdır; keyfi seçilemez.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her zaman keyfi uygulanması",
+          "is_correct": false,
+          "id": 73826
+        },
+        {
+          "label": "B",
+          "option_text": "Kanunsuz kullanılması",
+          "is_correct": false,
+          "id": 73827
+        },
+        {
+          "label": "C",
+          "option_text": "Rekabetin tamamen yasaklanması",
+          "is_correct": false,
+          "id": 73828
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece özel kişiye bırakılması",
+          "is_correct": false,
+          "id": 73829
+        },
+        {
+          "label": "E",
+          "option_text": "Kanunda öngörülen şartlarla kullanılabilmesi",
+          "is_correct": true,
+          "id": 73830
+        }
+      ],
+      "id": 15461
+    },
+    {
+      "topic_id": 156,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu ihalesinde rekabet ilkesi hangi sonucu hedefler?",
+      "correct_answer_text": "A",
+      "explanation_text": "Rekabet kamu kaynağının verimli kullanılmasına hizmet eder.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "En uygun şartlarla kamu ihtiyacının karşılanmasını",
+          "is_correct": true,
+          "id": 73831
+        },
+        {
+          "label": "B",
+          "option_text": "Tek teklif zorunluluğunu",
+          "is_correct": false,
+          "id": 73832
+        },
+        {
+          "label": "C",
+          "option_text": "Gizli ayrıcalığı",
+          "is_correct": false,
+          "id": 73833
+        },
+        {
+          "label": "D",
+          "option_text": "Denetimsiz harcamayı",
+          "is_correct": false,
+          "id": 73834
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı yolunu kapatmayı",
+          "is_correct": false,
+          "id": 73835
+        }
+      ],
+      "id": 15462
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu hizmeti nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kamu hizmeti ortak ve sürekli ihtiyaçların idare veya denetimi altında karşılanmasıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Toplumun ortak ve sürekli ihtiyaçlarını karşılayan idari faaliyet",
+          "is_correct": true,
+          "id": 73836
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız özel şirket faaliyeti",
+          "is_correct": false,
+          "id": 73837
+        },
+        {
+          "label": "C",
+          "option_text": "Mahkeme hükmü",
+          "is_correct": false,
+          "id": 73838
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun çıkarma",
+          "is_correct": false,
+          "id": 73839
+        },
+        {
+          "label": "E",
+          "option_text": "Kişisel hobi",
+          "is_correct": false,
+          "id": 73840
+        }
+      ],
+      "id": 15463
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu hizmetinin sürekliliği ilkesi neyi gerektirir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Süreklilik kamu hizmetinin aksatılmadan yürütülmesini ifade eder.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hizmetin keyfi durdurulmasını",
+          "is_correct": false,
+          "id": 73841
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmetin düzenli ve kesintisiz yürütülmesini",
+          "is_correct": true,
+          "id": 73842
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece seçimde verilmesini",
+          "is_correct": false,
+          "id": 73843
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmetin gizlenmesini",
+          "is_correct": false,
+          "id": 73844
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaşın dışlanmasını",
+          "is_correct": false,
+          "id": 73845
+        }
+      ],
+      "id": 15464
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu hizmetinde değişebilirlik ilkesi ne anlama gelir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kamu hizmeti toplum ihtiyaçlarına göre değiştirilebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hizmetin hiç değişmemesi",
+          "is_correct": false,
+          "id": 73846
+        },
+        {
+          "label": "B",
+          "option_text": "Kazanılmış hakla her usulün sabitlenmesi",
+          "is_correct": false,
+          "id": 73847
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmetin kamu ihtiyaçlarına göre uyarlanabilmesi",
+          "is_correct": true,
+          "id": 73848
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmetin özel çıkara bağlanması",
+          "is_correct": false,
+          "id": 73849
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı denetiminin kalkması",
+          "is_correct": false,
+          "id": 73850
+        }
+      ],
+      "id": 15465
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kolluk faaliyetinin temel amacı nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kolluk kamu düzenini sağlama ve koruma faaliyetidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu hizmetini özelleştirmek",
+          "is_correct": false,
+          "id": 73851
+        },
+        {
+          "label": "B",
+          "option_text": "Sözleşme yapmak",
+          "is_correct": false,
+          "id": 73852
+        },
+        {
+          "label": "C",
+          "option_text": "Mal edinmek",
+          "is_correct": false,
+          "id": 73853
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu düzenini korumak",
+          "is_correct": true,
+          "id": 73854
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı kararı vermek",
+          "is_correct": false,
+          "id": 73855
+        }
+      ],
+      "id": 15466
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu düzeninin klasik unsurları hangileridir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Klasik kamu düzeni güvenlik, dirlik-esenlik ve genel sağlıktan oluşur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Gelir, gider, bütçe",
+          "is_correct": false,
+          "id": 73856
+        },
+        {
+          "label": "B",
+          "option_text": "Yetki, şekil, sebep",
+          "is_correct": false,
+          "id": 73857
+        },
+        {
+          "label": "C",
+          "option_text": "İhale, teklif, sözleşme",
+          "is_correct": false,
+          "id": 73858
+        },
+        {
+          "label": "D",
+          "option_text": "Özne, yüklem, nesne",
+          "is_correct": false,
+          "id": 73859
+        },
+        {
+          "label": "E",
+          "option_text": "Güvenlik, dirlik-esenlik ve sağlık",
+          "is_correct": true,
+          "id": 73860
+        }
+      ],
+      "id": 15467
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari kolluk ile adli kolluk arasındaki temel fark nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdari kolluk suç ve tehlike öncesi kamu düzenini korumaya yönelir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdari kolluk önleyici, adli kolluk suç sonrası bastırıcı/araştırıcı niteliktedir",
+          "is_correct": true,
+          "id": 73861
+        },
+        {
+          "label": "B",
+          "option_text": "İkisi tamamen aynıdır",
+          "is_correct": false,
+          "id": 73862
+        },
+        {
+          "label": "C",
+          "option_text": "Adli kolluk belediyedir",
+          "is_correct": false,
+          "id": 73863
+        },
+        {
+          "label": "D",
+          "option_text": "İdari kolluk mahkemedir",
+          "is_correct": false,
+          "id": 73864
+        },
+        {
+          "label": "E",
+          "option_text": "Adli kolluk kamu hizmeti değildir",
+          "is_correct": false,
+          "id": 73865
+        }
+      ],
+      "id": 15468
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Kolluk yetkilerinde ölçülülük neden önemlidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kolluk müdahaleleri haklara dokunabilir; bu yüzden ölçülülük aranır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kolluk sınırsız olduğu için",
+          "is_correct": false,
+          "id": 73866
+        },
+        {
+          "label": "B",
+          "option_text": "Hak ve özgürlüklere müdahalenin gerekli ve dengeli olmasını sağlamak için",
+          "is_correct": true,
+          "id": 73867
+        },
+        {
+          "label": "C",
+          "option_text": "Kolluk işlemleri denetlenmediği için",
+          "is_correct": false,
+          "id": 73868
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu düzeni önemsiz olduğu için",
+          "is_correct": false,
+          "id": 73869
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı yokluğu nedeniyle",
+          "is_correct": false,
+          "id": 73870
+        }
+      ],
+      "id": 15469
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Eğitim ve sağlık hangi idari faaliyet türüne örnektir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Eğitim ve sağlık tipik kamu hizmeti alanlarıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kolluk cezası",
+          "is_correct": false,
+          "id": 73871
+        },
+        {
+          "label": "B",
+          "option_text": "Kamulaştırma",
+          "is_correct": false,
+          "id": 73872
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmeti",
+          "is_correct": true,
+          "id": 73873
+        },
+        {
+          "label": "D",
+          "option_text": "Yargılama",
+          "is_correct": false,
+          "id": 73874
+        },
+        {
+          "label": "E",
+          "option_text": "İhale usulü",
+          "is_correct": false,
+          "id": 73875
+        }
+      ],
+      "id": 15470
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ruhsat verme çoğu durumda hangi kolluk tekniğidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Ruhsat, faaliyetin kamu düzenine uygunluğunu önceden denetleme aracıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sonradan suç soruşturması",
+          "is_correct": false,
+          "id": 73876
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu malı edinme",
+          "is_correct": false,
+          "id": 73877
+        },
+        {
+          "label": "C",
+          "option_text": "Sözleşme feshi",
+          "is_correct": false,
+          "id": 73878
+        },
+        {
+          "label": "D",
+          "option_text": "Önleyici izin/denetim aracı",
+          "is_correct": true,
+          "id": 73879
+        },
+        {
+          "label": "E",
+          "option_text": "Tam yargı davası",
+          "is_correct": false,
+          "id": 73880
+        }
+      ],
+      "id": 15471
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Genel kolluk ile özel kolluk ayrımı için doğru ifade hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Özel kolluk trafik, imar, çevre gibi belirli alanlarda özel düzenlemelere dayanabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel kolluk hiçbir kanuna dayanmaz",
+          "is_correct": false,
+          "id": 73881
+        },
+        {
+          "label": "B",
+          "option_text": "Genel kolluk yalnız sözleşmedir",
+          "is_correct": false,
+          "id": 73882
+        },
+        {
+          "label": "C",
+          "option_text": "İkisi tamamen aynıdır",
+          "is_correct": false,
+          "id": 73883
+        },
+        {
+          "label": "D",
+          "option_text": "Genel kolluk sadece özel kişilerce yapılır",
+          "is_correct": false,
+          "id": 73884
+        },
+        {
+          "label": "E",
+          "option_text": "Özel kolluk belirli alanlarda özel kurallarla yürütülen kolluktur",
+          "is_correct": true,
+          "id": 73885
+        }
+      ],
+      "id": 15472
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu hizmetinin eşitlik ilkesi neyi gerektirir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Eşitlik, kamu hizmetinden yararlanmada ayrımcılığı önler.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Benzer durumda olanların hizmetten eşit yararlanmasını",
+          "is_correct": true,
+          "id": 73886
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmetin sadece tanıdıklara verilmesini",
+          "is_correct": false,
+          "id": 73887
+        },
+        {
+          "label": "C",
+          "option_text": "Ücretin keyfi belirlenmesini",
+          "is_correct": false,
+          "id": 73888
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmetin gizli yürütülmesini",
+          "is_correct": false,
+          "id": 73889
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaşın dışlanmasını",
+          "is_correct": false,
+          "id": 73890
+        }
+      ],
+      "id": 15473
+    },
+    {
+      "topic_id": 157,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu hizmetinin görülme usullerinden biri hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kamu hizmeti idarece doğrudan veya çeşitli usullerle gördürülebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahkeme hükmü",
+          "is_correct": false,
+          "id": 73891
+        },
+        {
+          "label": "B",
+          "option_text": "Emanet veya imtiyaz gibi usuller",
+          "is_correct": true,
+          "id": 73892
+        },
+        {
+          "label": "C",
+          "option_text": "Kanun çıkarma",
+          "is_correct": false,
+          "id": 73893
+        },
+        {
+          "label": "D",
+          "option_text": "Ceza verme zorunluluğu",
+          "is_correct": false,
+          "id": 73894
+        },
+        {
+          "label": "E",
+          "option_text": "Özel mektup",
+          "is_correct": false,
+          "id": 73895
+        }
+      ],
+      "id": 15474
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdarenin malları temel olarak nasıl ayrılır?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdarenin malları kamu malları ve özel mallar olarak ikiye ayrılır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu malları ve özel mallar",
+          "is_correct": true,
+          "id": 73896
+        },
+        {
+          "label": "B",
+          "option_text": "Ceza malları ve dava malları",
+          "is_correct": false,
+          "id": 73897
+        },
+        {
+          "label": "C",
+          "option_text": "Yasama malları ve yargı malları",
+          "is_correct": false,
+          "id": 73898
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece taşınmazlar",
+          "is_correct": false,
+          "id": 73899
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece taşınırlar",
+          "is_correct": false,
+          "id": 73900
+        }
+      ],
+      "id": 15475
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu malı hangi özelliği taşır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kamu malları kamu yararına özgülenmiş mallardır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece özel kazanca ayrılmıştır",
+          "is_correct": false,
+          "id": 73901
+        },
+        {
+          "label": "B",
+          "option_text": "Her zaman satılabilir özel maldır",
+          "is_correct": false,
+          "id": 73902
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetine veya kamunun doğrudan yararlanmasına özgülenmiştir",
+          "is_correct": true,
+          "id": 73903
+        },
+        {
+          "label": "D",
+          "option_text": "Hiç korunmaz",
+          "is_correct": false,
+          "id": 73904
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız personel kullanır",
+          "is_correct": false,
+          "id": 73905
+        }
+      ],
+      "id": 15476
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu mallarının haczedilememesi hangi gerekçeye dayanır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kamu malları kamu hizmeti için korunduğundan özel hukuk cebri icrasına kapalıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel kişiye ait olmalarına",
+          "is_correct": false,
+          "id": 73906
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu hizmetinin sürekliliği ve kamu yararına",
+          "is_correct": true,
+          "id": 73907
+        },
+        {
+          "label": "C",
+          "option_text": "Hiç değer taşımamalarına",
+          "is_correct": false,
+          "id": 73908
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşme olmamasına",
+          "is_correct": false,
+          "id": 73909
+        },
+        {
+          "label": "E",
+          "option_text": "Mahkeme kararıyla yasaklanmasına",
+          "is_correct": false,
+          "id": 73910
+        }
+      ],
+      "id": 15477
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Yol, meydan ve park gibi mallardan yararlanma türü genellikle hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Herkesin olağan biçimde kullanabildiği mallarda genel yararlanma vardır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel yararlanma",
+          "is_correct": false,
+          "id": 73911
+        },
+        {
+          "label": "B",
+          "option_text": "Sözleşmesiz devir",
+          "is_correct": false,
+          "id": 73912
+        },
+        {
+          "label": "C",
+          "option_text": "Yargısal yararlanma",
+          "is_correct": false,
+          "id": 73913
+        },
+        {
+          "label": "D",
+          "option_text": "Genel yararlanma",
+          "is_correct": true,
+          "id": 73914
+        },
+        {
+          "label": "E",
+          "option_text": "Gizli yararlanma",
+          "is_correct": false,
+          "id": 73915
+        }
+      ],
+      "id": 15478
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Özel yararlanma ne zaman söz konusu olur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kamu malından özel yararlanma genellikle izin veya sözleşmeye bağlıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Herkesin yoldan geçmesinde",
+          "is_correct": false,
+          "id": 73916
+        },
+        {
+          "label": "B",
+          "option_text": "Parkta yürümekte",
+          "is_correct": false,
+          "id": 73917
+        },
+        {
+          "label": "C",
+          "option_text": "Meydanı olağan kullanmakta",
+          "is_correct": false,
+          "id": 73918
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu malının hiç kullanılmamasında",
+          "is_correct": false,
+          "id": 73919
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu malının belirli kişiye özel izinle kullandırılmasında",
+          "is_correct": true,
+          "id": 73920
+        }
+      ],
+      "id": 15479
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamulaştırma nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kamulaştırma kamu yararı amacıyla özel mülkiyete kanuni usulle müdahaledir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özel mülkiyetteki taşınmazın kamu yararı için bedeli ödenerek idarece edinilmesi",
+          "is_correct": true,
+          "id": 73921
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu malının özel kişiye bağışı",
+          "is_correct": false,
+          "id": 73922
+        },
+        {
+          "label": "C",
+          "option_text": "Mahkeme kararının kaldırılması",
+          "is_correct": false,
+          "id": 73923
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşmenin feshi",
+          "is_correct": false,
+          "id": 73924
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza verilmesi",
+          "is_correct": false,
+          "id": 73925
+        }
+      ],
+      "id": 15480
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Kamulaştırmanın temel şartlarından biri hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kamulaştırma kamu yararı kararı ve gerçek karşılığın ödenmesi gibi güvencelere bağlıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bedelsiz el koyma",
+          "is_correct": false,
+          "id": 73926
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu yararı ve bedel ödenmesi",
+          "is_correct": true,
+          "id": 73927
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece sözlü karar",
+          "is_correct": false,
+          "id": 73928
+        },
+        {
+          "label": "D",
+          "option_text": "Özel kişinin izni olmadan her malı alma",
+          "is_correct": false,
+          "id": 73929
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı denetimine kapalı olma",
+          "is_correct": false,
+          "id": 73930
+        }
+      ],
+      "id": 15481
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İstimval hangi durumla ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İstimval olağanüstü dönemlerde ihtiyaç duyulan mallara/hizmetlere ilişkin kamu gücü yoludur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Normal ticari kira",
+          "is_correct": false,
+          "id": 73931
+        },
+        {
+          "label": "B",
+          "option_text": "Günlük ruhsat",
+          "is_correct": false,
+          "id": 73932
+        },
+        {
+          "label": "C",
+          "option_text": "Olağanüstü hallerde taşınır mal veya hizmetlerden yararlanma",
+          "is_correct": true,
+          "id": 73933
+        },
+        {
+          "label": "D",
+          "option_text": "İmar planı",
+          "is_correct": false,
+          "id": 73934
+        },
+        {
+          "label": "E",
+          "option_text": "Disiplin cezası",
+          "is_correct": false,
+          "id": 73935
+        }
+      ],
+      "id": 15482
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdarenin özel malları hakkında genel olarak hangi hukuk rejimi daha baskındır?",
+      "correct_answer_text": "D",
+      "explanation_text": "İdarenin özel malları kamu mallarına göre özel hukuk rejimine daha yakındır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ceza hukuku",
+          "is_correct": false,
+          "id": 73936
+        },
+        {
+          "label": "B",
+          "option_text": "Seçim hukuku",
+          "is_correct": false,
+          "id": 73937
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı hukuku",
+          "is_correct": false,
+          "id": 73938
+        },
+        {
+          "label": "D",
+          "option_text": "Özel hukuk rejimi",
+          "is_correct": true,
+          "id": 73939
+        },
+        {
+          "label": "E",
+          "option_text": "Uluslararası ceza",
+          "is_correct": false,
+          "id": 73940
+        }
+      ],
+      "id": 15483
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Tahsis işlemi kamu malları bakımından ne anlama gelir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Tahsis, malı kamu malı rejimine sokan temel bağlantıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Malın yok edilmesi",
+          "is_correct": false,
+          "id": 73941
+        },
+        {
+          "label": "B",
+          "option_text": "Özel kişiye mülkiyet devri",
+          "is_correct": false,
+          "id": 73942
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı kararı",
+          "is_correct": false,
+          "id": 73943
+        },
+        {
+          "label": "D",
+          "option_text": "Malın gizlenmesi",
+          "is_correct": false,
+          "id": 73944
+        },
+        {
+          "label": "E",
+          "option_text": "Bir malın kamu hizmetine veya kamunun yararlanmasına ayrılması",
+          "is_correct": true,
+          "id": 73945
+        }
+      ],
+      "id": 15484
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Kamu mallarının zamanaşımıyla kazanılamaması hangi korumayla ilgilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kamu malları kamu yararı nedeniyle özel hukuk kazanma yollarına karşı korunur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu malı rejiminin özel koruması",
+          "is_correct": true,
+          "id": 73946
+        },
+        {
+          "label": "B",
+          "option_text": "Özel mülkiyetin sınırsızlığı",
+          "is_correct": false,
+          "id": 73947
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı yokluğu",
+          "is_correct": false,
+          "id": 73948
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşme serbestisi",
+          "is_correct": false,
+          "id": 73949
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza sorumluluğu",
+          "is_correct": false,
+          "id": 73950
+        }
+      ],
+      "id": 15485
+    },
+    {
+      "topic_id": 158,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Geçici işgal veya ruhsatla kamu malı kullanımı hangi yararlanma türüne örnektir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Belirli kişiye özel kullanım izni özel yararlanmadır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Genel yararlanma",
+          "is_correct": false,
+          "id": 73951
+        },
+        {
+          "label": "B",
+          "option_text": "Özel yararlanma",
+          "is_correct": true,
+          "id": 73952
+        },
+        {
+          "label": "C",
+          "option_text": "Yargılama",
+          "is_correct": false,
+          "id": 73953
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun yapma",
+          "is_correct": false,
+          "id": 73954
+        },
+        {
+          "label": "E",
+          "option_text": "Disiplin soruşturması",
+          "is_correct": false,
+          "id": 73955
+        }
+      ],
+      "id": 15486
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdarenin sorumluluğunun temel dayanağı hangi ilkeyle ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdarenin verdiği zararı gidermesi hukuk devleti ve yargısal denetimin sonucudur.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hukuk devleti",
+          "is_correct": true,
+          "id": 73956
+        },
+        {
+          "label": "B",
+          "option_text": "Özel kazanç",
+          "is_correct": false,
+          "id": 73957
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı yokluğu",
+          "is_correct": false,
+          "id": 73958
+        },
+        {
+          "label": "D",
+          "option_text": "Sınırsız takdir",
+          "is_correct": false,
+          "id": 73959
+        },
+        {
+          "label": "E",
+          "option_text": "Sözleşmesizlik",
+          "is_correct": false,
+          "id": 73960
+        }
+      ],
+      "id": 15487
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hizmet kusuru hangi durumda doğabilir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Hizmet kusuru idari hizmetin kuruluş veya işleyişindeki aksaklıktan doğar.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hizmetin kusursuz ve zamanında işlemesinde",
+          "is_correct": false,
+          "id": 73961
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaşın hiç zararı olmamasında",
+          "is_correct": false,
+          "id": 73962
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmetin hiç işlememesi, geç işlemesi veya kötü işlemesinde",
+          "is_correct": true,
+          "id": 73963
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı kararında",
+          "is_correct": false,
+          "id": 73964
+        },
+        {
+          "label": "E",
+          "option_text": "Kanun çıkarılmasında",
+          "is_correct": false,
+          "id": 73965
+        }
+      ],
+      "id": 15488
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kusursuz sorumluluk neyi ifade eder?",
+      "correct_answer_text": "B",
+      "explanation_text": "Risk veya fedakarlığın denkleştirilmesi gibi hallerde kusursuz sorumluluk kabul edilebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdarenin hiçbir zaman sorumlu olmamasını",
+          "is_correct": false,
+          "id": 73966
+        },
+        {
+          "label": "B",
+          "option_text": "Kusur aranmadan bazı zararların idarece karşılanmasını",
+          "is_correct": true,
+          "id": 73967
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece memurun şahsi sorumluluğunu",
+          "is_correct": false,
+          "id": 73968
+        },
+        {
+          "label": "D",
+          "option_text": "Özel şirket sorumluluğunu",
+          "is_correct": false,
+          "id": 73969
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza mahkumiyetini",
+          "is_correct": false,
+          "id": 73970
+        }
+      ],
+      "id": 15489
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Sosyal risk ilkesi hangi zararlarla ilişkilidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Sosyal risk, toplumsal nitelikli bazı zararların toplumca paylaşılması düşüncesine dayanır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece sözleşme bedeliyle",
+          "is_correct": false,
+          "id": 73971
+        },
+        {
+          "label": "B",
+          "option_text": "Personel maaşıyla",
+          "is_correct": false,
+          "id": 73972
+        },
+        {
+          "label": "C",
+          "option_text": "Özel kira borcuyla",
+          "is_correct": false,
+          "id": 73973
+        },
+        {
+          "label": "D",
+          "option_text": "Toplumsal olay ve terör gibi idareye doğrudan kusur yüklenemeyen zararlarla",
+          "is_correct": true,
+          "id": 73974
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı harcıyla",
+          "is_correct": false,
+          "id": 73975
+        }
+      ],
+      "id": 15490
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu görevlisinin kişisel kusuru ile hizmet kusuru ayrımı neden önemlidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Zararın hizmetten mi kişisel davranıştan mı doğduğu sorumluluğun yönünü etkiler.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiç sonuç doğurmadığı için",
+          "is_correct": false,
+          "id": 73976
+        },
+        {
+          "label": "B",
+          "option_text": "Yargıyı kapattığı için",
+          "is_correct": false,
+          "id": 73977
+        },
+        {
+          "label": "C",
+          "option_text": "Memurun haklarını kaldırdığı için",
+          "is_correct": false,
+          "id": 73978
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece seçimle ilgili olduğu için",
+          "is_correct": false,
+          "id": 73979
+        },
+        {
+          "label": "E",
+          "option_text": "Sorumluluğun idareye mi görevliye mi yöneltileceğini etkilediği için",
+          "is_correct": true,
+          "id": 73980
+        }
+      ],
+      "id": 15491
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Memurluğa girişte temel anayasal ilke hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kamu hizmetine girme hakkı eşitlik ve liyakat ilkeleriyle ilişkilidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Liyakat ve eşitlik",
+          "is_correct": true,
+          "id": 73981
+        },
+        {
+          "label": "B",
+          "option_text": "Soy bağı",
+          "is_correct": false,
+          "id": 73982
+        },
+        {
+          "label": "C",
+          "option_text": "Kişisel yakınlık",
+          "is_correct": false,
+          "id": 73983
+        },
+        {
+          "label": "D",
+          "option_text": "Sınırsız takdir",
+          "is_correct": false,
+          "id": 73984
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirket tercihi",
+          "is_correct": false,
+          "id": 73985
+        }
+      ],
+      "id": 15492
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Disiplin cezalarında kanunilik neyi gerektirir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Disiplin yaptırımları hukuki dayanak ve usule bağlıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ceza ve fiilin keyfi belirlenmesini",
+          "is_correct": false,
+          "id": 73986
+        },
+        {
+          "label": "B",
+          "option_text": "Disiplin yaptırımının hukuki dayanağa bağlı olmasını",
+          "is_correct": true,
+          "id": 73987
+        },
+        {
+          "label": "C",
+          "option_text": "Sözlü söylentiyle ceza verilmesini",
+          "is_correct": false,
+          "id": 73988
+        },
+        {
+          "label": "D",
+          "option_text": "Savunma hakkının kaldırılmasını",
+          "is_correct": false,
+          "id": 73989
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı yolunun yasaklanmasını",
+          "is_correct": false,
+          "id": 73990
+        }
+      ],
+      "id": 15493
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Savunma hakkı disiplin sürecinde neden önemlidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Savunma hakkı adil ve hukuka uygun disiplin sürecinin temel güvencesidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Cezayı ağırlaştırmak için",
+          "is_correct": false,
+          "id": 73991
+        },
+        {
+          "label": "B",
+          "option_text": "Soruşturmayı gizlemek için",
+          "is_correct": false,
+          "id": 73992
+        },
+        {
+          "label": "C",
+          "option_text": "İlgilinin isnada karşı kendini açıklayabilmesi için",
+          "is_correct": true,
+          "id": 73993
+        },
+        {
+          "label": "D",
+          "option_text": "Yargıyı gereksiz kılmak için",
+          "is_correct": false,
+          "id": 73994
+        },
+        {
+          "label": "E",
+          "option_text": "İdarenin keyfi davranması için",
+          "is_correct": false,
+          "id": 73995
+        }
+      ],
+      "id": 15494
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Görev kusuru kavramı hangi durumla ilgilidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Görevle bağlantılı kusurlarda idarenin sorumluluğu ve rücu ilişkisi gündeme gelebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Memurun tamamen özel hayatındaki eylemi",
+          "is_correct": false,
+          "id": 73996
+        },
+        {
+          "label": "B",
+          "option_text": "Yargı kararı",
+          "is_correct": false,
+          "id": 73997
+        },
+        {
+          "label": "C",
+          "option_text": "Kanun yapma",
+          "is_correct": false,
+          "id": 73998
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu görevinin yürütülmesi sırasında hizmetle bağlantılı kusur",
+          "is_correct": true,
+          "id": 73999
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirket sözleşmesi",
+          "is_correct": false,
+          "id": 74000
+        }
+      ],
+      "id": 15495
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdarenin tazmin sorumluluğu için genel olarak hangi unsurlar aranır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Tazmin sorumluluğunda zarar ile idari faaliyet arasında uygun nedensellik gerekir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece başvuru dilekçesi",
+          "is_correct": false,
+          "id": 74001
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız memur maaşı",
+          "is_correct": false,
+          "id": 74002
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece kanun metni",
+          "is_correct": false,
+          "id": 74003
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece yargı kararı",
+          "is_correct": false,
+          "id": 74004
+        },
+        {
+          "label": "E",
+          "option_text": "Zarar, idari davranış ve uygun illiyet bağı",
+          "is_correct": true,
+          "id": 74005
+        }
+      ],
+      "id": 15496
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu görevlileriyle ilgili temel statü düzeni hangi hukuk alanına girer?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kamu personel rejimi idare hukukunun temel konularındandır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdare hukuku",
+          "is_correct": true,
+          "id": 74006
+        },
+        {
+          "label": "B",
+          "option_text": "Deniz ticareti",
+          "is_correct": false,
+          "id": 74007
+        },
+        {
+          "label": "C",
+          "option_text": "Miras hukuku",
+          "is_correct": false,
+          "id": 74008
+        },
+        {
+          "label": "D",
+          "option_text": "Aile hukuku",
+          "is_correct": false,
+          "id": 74009
+        },
+        {
+          "label": "E",
+          "option_text": "Spor hukuku",
+          "is_correct": false,
+          "id": 74010
+        }
+      ],
+      "id": 15497
+    },
+    {
+      "topic_id": 159,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Rücu neyi ifade eder?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdare bazı hallerde ödediği tazminat için kusurlu personele dönebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaşın dava açamamasını",
+          "is_correct": false,
+          "id": 74011
+        },
+        {
+          "label": "B",
+          "option_text": "İdarenin ödediği tazminatı şartları varsa kusurlu personele yöneltmesini",
+          "is_correct": true,
+          "id": 74012
+        },
+        {
+          "label": "C",
+          "option_text": "Mahkeme kararının yokluğunu",
+          "is_correct": false,
+          "id": 74013
+        },
+        {
+          "label": "D",
+          "option_text": "Memurun otomatik terfisini",
+          "is_correct": false,
+          "id": 74014
+        },
+        {
+          "label": "E",
+          "option_text": "Sözleşmenin kurulmasını",
+          "is_correct": false,
+          "id": 74015
+        }
+      ],
+      "id": 15498
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdari yargının görevi genel olarak nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdari yargı idari işlem ve eylemlerden kaynaklanan kamu hukuku uyuşmazlıklarını çözer.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdarenin kamu hukuku işlem ve eylemlerinden doğan uyuşmazlıkları çözmek",
+          "is_correct": true,
+          "id": 74016
+        },
+        {
+          "label": "B",
+          "option_text": "Ceza kanunu yapmak",
+          "is_correct": false,
+          "id": 74017
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket kurmak",
+          "is_correct": false,
+          "id": 74018
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun çıkarmak",
+          "is_correct": false,
+          "id": 74019
+        },
+        {
+          "label": "E",
+          "option_text": "Seçim kampanyası yürütmek",
+          "is_correct": false,
+          "id": 74020
+        }
+      ],
+      "id": 15499
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İptal davasının amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İptal davası idari işlemin hukuka uygunluğunu denetler ve iptalini hedefler.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tazminat almak",
+          "is_correct": false,
+          "id": 74021
+        },
+        {
+          "label": "B",
+          "option_text": "Hukuka aykırı idari işlemin ortadan kaldırılması",
+          "is_correct": true,
+          "id": 74022
+        },
+        {
+          "label": "C",
+          "option_text": "Ceza mahkumiyeti kurmak",
+          "is_correct": false,
+          "id": 74023
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşme yapmak",
+          "is_correct": false,
+          "id": 74024
+        },
+        {
+          "label": "E",
+          "option_text": "Kanun çıkarmak",
+          "is_correct": false,
+          "id": 74025
+        }
+      ],
+      "id": 15500
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Tam yargı davası neyi amaçlar?",
+      "correct_answer_text": "C",
+      "explanation_text": "Tam yargı davası tazminat ve kişisel hakkın yerine getirilmesi gibi sonuçlar doğurabilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdari işlemin soyut denetimini",
+          "is_correct": false,
+          "id": 74026
+        },
+        {
+          "label": "B",
+          "option_text": "Yönetmelik çıkarmayı",
+          "is_correct": false,
+          "id": 74027
+        },
+        {
+          "label": "C",
+          "option_text": "İdari eylem veya işlemden doğan zararın giderilmesini",
+          "is_correct": true,
+          "id": 74028
+        },
+        {
+          "label": "D",
+          "option_text": "Ceza vermeyi",
+          "is_correct": false,
+          "id": 74029
+        },
+        {
+          "label": "E",
+          "option_text": "Seçim iptalini",
+          "is_correct": false,
+          "id": 74030
+        }
+      ],
+      "id": 15501
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İptal davasında hukuka aykırılık hangi unsurlar üzerinden incelenir?",
+      "correct_answer_text": "D",
+      "explanation_text": "İptal davasında idari işlemin beş unsuru denetlenir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Özne, yüklem, tümleç",
+          "is_correct": false,
+          "id": 74031
+        },
+        {
+          "label": "B",
+          "option_text": "Gelir, gider, bütçe",
+          "is_correct": false,
+          "id": 74032
+        },
+        {
+          "label": "C",
+          "option_text": "Alacak, borç, faiz",
+          "is_correct": false,
+          "id": 74033
+        },
+        {
+          "label": "D",
+          "option_text": "Yetki, şekil, sebep, konu, maksat",
+          "is_correct": true,
+          "id": 74034
+        },
+        {
+          "label": "E",
+          "option_text": "Teklif, ihale, sözleşme",
+          "is_correct": false,
+          "id": 74035
+        }
+      ],
+      "id": 15502
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yürütmenin durdurulması için genel olarak hangi şartlar aranır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Yürütmenin durdurulması istisnai bir korumadır; iki şart birlikte aranır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece başvuru yapılması",
+          "is_correct": false,
+          "id": 74036
+        },
+        {
+          "label": "B",
+          "option_text": "Her işlemde otomatik verilmesi",
+          "is_correct": false,
+          "id": 74037
+        },
+        {
+          "label": "C",
+          "option_text": "İdarenin istemesi",
+          "is_correct": false,
+          "id": 74038
+        },
+        {
+          "label": "D",
+          "option_text": "Mahkeme harcı yatırılmaması",
+          "is_correct": false,
+          "id": 74039
+        },
+        {
+          "label": "E",
+          "option_text": "Açık hukuka aykırılık ve telafisi güç/imkansız zarar şartları",
+          "is_correct": true,
+          "id": 74040
+        }
+      ],
+      "id": 15503
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İdari yargı yerlerinden biri hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İdare mahkemeleri genel görevli idari yargı yerleridir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdare mahkemesi",
+          "is_correct": true,
+          "id": 74041
+        },
+        {
+          "label": "B",
+          "option_text": "Sulh ceza hakimliği",
+          "is_correct": false,
+          "id": 74042
+        },
+        {
+          "label": "C",
+          "option_text": "Aile mahkemesi",
+          "is_correct": false,
+          "id": 74043
+        },
+        {
+          "label": "D",
+          "option_text": "Ticaret mahkemesi",
+          "is_correct": false,
+          "id": 74044
+        },
+        {
+          "label": "E",
+          "option_text": "İş mahkemesi",
+          "is_correct": false,
+          "id": 74045
+        }
+      ],
+      "id": 15504
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Vergi uyuşmazlıklarında görevli özel idari yargı yeri hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Vergi mahkemeleri vergi uyuşmazlıklarında görevli idari yargı yerleridir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdare mahkemesi her durumda",
+          "is_correct": false,
+          "id": 74046
+        },
+        {
+          "label": "B",
+          "option_text": "Vergi mahkemesi",
+          "is_correct": true,
+          "id": 74047
+        },
+        {
+          "label": "C",
+          "option_text": "Ceza mahkemesi",
+          "is_correct": false,
+          "id": 74048
+        },
+        {
+          "label": "D",
+          "option_text": "Aile mahkemesi",
+          "is_correct": false,
+          "id": 74049
+        },
+        {
+          "label": "E",
+          "option_text": "Noter",
+          "is_correct": false,
+          "id": 74050
+        }
+      ],
+      "id": 15505
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Danıştayın yargısal rolü hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Danıştay idari yargı düzeninin yüksek mahkemesidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İlk derece ve temyiz/kanun yolu görevleri olan yüksek idari yargı organı",
+          "is_correct": false,
+          "id": 74051
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece belediye organı",
+          "is_correct": false,
+          "id": 74052
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket mahkemesi",
+          "is_correct": true,
+          "id": 74053
+        },
+        {
+          "label": "D",
+          "option_text": "Ceza savcılığı",
+          "is_correct": false,
+          "id": 74054
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız mali denetim kurumu",
+          "is_correct": false,
+          "id": 74055
+        }
+      ],
+      "id": 15506
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İdari yargıda süre kuralları neden önemlidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "İdari davalarda süreler dava açma hakkı bakımından kritik kabul şartıdır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Süre yoktur",
+          "is_correct": false,
+          "id": 74056
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece tavsiye niteliğindedir",
+          "is_correct": false,
+          "id": 74057
+        },
+        {
+          "label": "C",
+          "option_text": "İdare isterse uygulanır",
+          "is_correct": false,
+          "id": 74058
+        },
+        {
+          "label": "D",
+          "option_text": "Dava süresi kaçırılırsa dava süre aşımından reddedilebilir",
+          "is_correct": true,
+          "id": 74059
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece ceza davasında vardır",
+          "is_correct": false,
+          "id": 74060
+        }
+      ],
+      "id": 15507
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari başvuru ile dava açma ilişkisi bakımından doğru ifade hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İdari başvuru yolları usul ve süreler bakımından dikkatle değerlendirilmelidir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her başvuru dava açmayı sonsuza kadar erteler",
+          "is_correct": false,
+          "id": 74061
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuru yolları hiçbir zaman süreyi etkilemez",
+          "is_correct": false,
+          "id": 74062
+        },
+        {
+          "label": "C",
+          "option_text": "Dava açma yasağı doğurur",
+          "is_correct": false,
+          "id": 74063
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece sözlü yapılır",
+          "is_correct": false,
+          "id": 74064
+        },
+        {
+          "label": "E",
+          "option_text": "Bazı başvurular dava süresi ve dava şartları bakımından önem taşıyabilir",
+          "is_correct": true,
+          "id": 74065
+        }
+      ],
+      "id": 15508
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İptal kararı idari işlem üzerinde ne sonuç doğurur?",
+      "correct_answer_text": "A",
+      "explanation_text": "İptal kararı dava konusu idari işlemi ortadan kaldırır.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşlemi hukuka aykırılık nedeniyle ortadan kaldırır",
+          "is_correct": true,
+          "id": 74066
+        },
+        {
+          "label": "B",
+          "option_text": "İşlemi güçlendirir",
+          "is_correct": false,
+          "id": 74067
+        },
+        {
+          "label": "C",
+          "option_text": "Tazminatı daima reddeder",
+          "is_correct": false,
+          "id": 74068
+        },
+        {
+          "label": "D",
+          "option_text": "Kanun çıkarır",
+          "is_correct": false,
+          "id": 74069
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza verir",
+          "is_correct": false,
+          "id": 74070
+        }
+      ],
+      "id": 15509
+    },
+    {
+      "topic_id": 160,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari yargının özel hukuk uyuşmazlıklarına bakmamasının nedeni nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdari yargı idari nitelikteki uyuşmazlıklarla görevlidir; özel hukuk ilişkileri adli yargıya gidebilir.",
+      "explanation_basis": "İdare Hukuku konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İdari yargının hiç mahkeme olmaması",
+          "is_correct": false,
+          "id": 74071
+        },
+        {
+          "label": "B",
+          "option_text": "Görevin kamu hukuku/idari uyuşmazlıklarla sınırlı olması",
+          "is_correct": true,
+          "id": 74072
+        },
+        {
+          "label": "C",
+          "option_text": "Özel hukukta hak olmaması",
+          "is_correct": false,
+          "id": 74073
+        },
+        {
+          "label": "D",
+          "option_text": "Adli yargının bulunmaması",
+          "is_correct": false,
+          "id": 74074
+        },
+        {
+          "label": "E",
+          "option_text": "Her uyuşmazlığın Danıştaya gitmesi",
+          "is_correct": false,
+          "id": 74075
+        }
+      ],
+      "id": 15510
+    }
+  ],
+  "import_result": {
+    "imported_at": "2026-06-08T19:29:52",
+    "created_count": 132,
+    "duplicate_count": 0,
+    "db_status": "active",
+    "db_approval_status": null,
+    "approval_flow": "v5_review_pending",
+    "db_q_version": 5
+  }
+}

@@ -1,0 +1,1383 @@
+{
+  "subject_id": 27,
+  "subject": {
+    "id": 27,
+    "code": null,
+    "name": "Halkla İlişkiler",
+    "slug": "halkla-iliskiler",
+    "status": "active"
+  },
+  "target_exam_id": 1,
+  "exam_note": "8. Dönem İlk Derece Amirlik Eğitimi",
+  "source_policy": "Kaynak PDF kapsam ve doğruluk için kullanıldı; metinler özgün ders anlatımı olarak yeniden yazıldı.",
+  "version": "v3-original-teaching",
+  "topics": [
+    {
+      "id": 119,
+      "topic_id": 119,
+      "name": "Halkla İlişkilere Giriş ve Halkla İlişkilerde Sorunlar",
+      "slug": "halkla-iliskilere-giris-ve-halkla-iliskilerde-sorunlar",
+      "status": "active",
+      "summary": "Halkla ilişkiler kavramına giriş, tanım güçlükleri, reklam ve propaganda ile karıştırılan yönler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Halkla İlişkilere Giriş"
+        },
+        {
+          "type": "section_title",
+          "content": "I) Giriş"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler, bir kurumun çevresiyle kurduğu bağı planlı, sürekli ve karşılıklı iletişim üzerinden yönetmesidir. Bu alan yalnızca duyuru yapmakla sınırlı değildir; kurumun anlaşılması, güven kazanması ve kamuoyuyla sağlıklı ilişki kurması için çalışır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kamu kurumlarında halkla ilişkiler ayrıca hizmetin anlatılması, yurttaş beklentilerinin izlenmesi ve kurum davranışının toplumda nasıl karşılandığının görülmesi bakımından önemlidir. Bu nedenle konu hem iletişim hem yönetim alanıyla bağlantılıdır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Sınav açısından ilk ayrım şudur: Halkla ilişkiler tek yönlü tanıtım değil, kurum ile kamuları arasında yönetilen ilişki sürecidir."
+        },
+        {
+          "type": "section_title",
+          "content": "II) Halkla İlişkilerde Sorunlar"
+        },
+        {
+          "type": "subheading",
+          "content": "Tanımlamadan kaynaklanan sorunlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler kavramının üzerinde herkesin anlaştığı tek ve kısa bir tanımı yoktur. Bunun nedeni alanın yönetim, iletişim, sosyoloji, psikoloji, medya ve kamu yönetimi gibi farklı disiplinlerle temas etmesidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Tanım güçlüğü uygulamada da karışıklık doğurur. Bazı kişiler halkla ilişkileri basın bülteni hazırlamak, bazıları imaj çalışması yapmak, bazıları ise yalnızca kriz döneminde devreye giren bir faaliyet gibi görebilir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sorun türü",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Belirsiz tanımlar",
+              "Kavramın sınırını çizmez; halkla ilişkilerin hangi işi üstlendiği netleşmez."
+            ],
+            [
+              "Yetersiz tanımlar",
+              "Alanı yalnızca duyuru, tören, basınla temas veya nezaket ilişkisi gibi dar bir işe indirger."
+            ],
+            [
+              "Kuruluşu öne alan tanımlar",
+              "Kurumun ne söylemek istediğine odaklanır; kamuların beklenti ve tepkisini geri plana iter."
+            ],
+            [
+              "Olumlu imajı öne alan tanımlar",
+              "Halkla ilişkileri sadece iyi görünme çabasına dönüştürür; davranış, sorumluluk ve güven boyutunu zayıflatır."
+            ],
+            [
+              "Reklam/propagandaya indirgeme",
+              "Halkla ilişkileri ücretli tanıtım veya yönlendirici ikna faaliyeti gibi gösterir."
+            ]
+          ],
+          "caption": "Tanım sorunu farklı indirgemelerle ortaya çıkabilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Reklamla karıştırılma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Reklam, belirli bir ürün, hizmet, kurum veya fikrin ücretli mecralarda tanıtılmasıdır. Mesajın yeri, zamanı ve biçimi büyük ölçüde reklam verence belirlenir; amaç çoğu zaman dikkat çekmek ve talep oluşturmaktır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler ise yalnızca görünürlük satın almaz. Kurumun kamularla ilişkisini araştırır, açıklar, dinler, değerlendirir ve bu ilişkiyi uzun vadede güven temelinde güçlendirmeye çalışır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "Reklam",
+            "Halkla ilişkiler"
+          ],
+          "rows": [
+            [
+              "Mecra kullanımı",
+              "Genellikle ücretli alan veya zaman satın alır.",
+              "Ücretli mecra kullanabilir; fakat basın, etkinlik, iç iletişim ve doğrudan temas gibi farklı yolları da kapsar."
+            ],
+            [
+              "Mesaj yönü",
+              "Çoğunlukla kurumdan hedef kitleye akar.",
+              "Kurumdan kamulara ve kamulardan kuruma geri bildirim döngüsü kurar."
+            ],
+            [
+              "Temel hedef",
+              "Tanıtım, satış, bilinirlik veya tercih oluşturma.",
+              "Anlama, güven, uyum, meşruiyet ve ilişki kalitesi geliştirme."
+            ]
+          ],
+          "caption": "Reklam ile halkla ilişkiler arasındaki temel ayrım."
+        },
+        {
+          "type": "subheading",
+          "content": "Propagandayla karıştırılma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Propaganda, belirli bir düşünceyi, tutumu veya davranışı benimsetmek için yoğun ve çoğu zaman tek yönlü ikna teknikleri kullanır. Seçici bilgi verme, duygusal vurgu ve karşı görüşü zayıflatma eğilimi propaganda içinde görülebilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkilerde ikna unsuru bulunabilir; ancak ideal halkla ilişkiler doğru bilgiye, açıklığa, geri bildirime ve karşılıklı faydaya dayanır. Bu nedenle propaganda ile aynı şey sayılması alanın etik ve yönetim boyutunu gözden kaçırır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ölçüt",
+            "Propaganda",
+            "Halkla ilişkiler"
+          ],
+          "rows": [
+            [
+              "Bilgi anlayışı",
+              "Mesajı amaca göre seçer ve yönlendirebilir.",
+              "Doğru, anlaşılır ve denetlenebilir bilgi vermeyi esas alır."
+            ],
+            [
+              "İletişim biçimi",
+              "Tek yönlü baskın ikna eğilimi taşır.",
+              "Dinleme ve geri bildirim kanallarını sürecin parçası yapar."
+            ],
+            [
+              "Etik zemin",
+              "Amaç çoğu zaman yöntemin önüne geçer.",
+              "Güven, dürüstlük ve kurumsal sorumlulukla birlikte yürür."
+            ]
+          ],
+          "caption": "Propaganda ayrımı özellikle tanım sorularında kritik olabilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Krizle sınırlı görülme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler kriz anlarında görünür hale gelir; çünkü kurumun açıklama yapması, güven kaybını yönetmesi ve kamuoyunu bilgilendirmesi gerekir. Fakat alan yalnızca kriz ortaya çıktığında çalışan bir acil durum faaliyeti değildir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Sağlıklı halkla ilişkiler krizden önce başlar. Kurum kamularını tanır, riskleri izler, iletişim kanallarını açık tutar ve güven birikimi oluşturursa kriz döneminde daha inandırıcı davranabilir."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tanım sorunu halkla ilişkilerin kapsamını daraltır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Reklam ve propaganda ayrımı etik, yöntem ve süreklilik bakımından yapılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kriz iletişimi halkla ilişkilerin parçasıdır; fakat alanın tamamı değildir."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "topic_id": 120,
+      "name": "Kapsayıcı Yaklaşım ve Halkla İlişkilerin Anlamı",
+      "slug": "kapsayici-yaklasim-ve-halkla-iliskilerin-anlami",
+      "status": "active",
+      "summary": "Halkla ilişkilerde kapsayıcı yaklaşım, seçilmiş tanımlar ve kavramın üç temel anlamı.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Kapsayıcı Yaklaşım"
+        },
+        {
+          "type": "section_title",
+          "content": "III) Halkla İlişkilerde Kapsayıcı Yaklaşım"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kapsayıcı yaklaşım, halkla ilişkileri tek bir araca veya tek bir amaca indirgemeden ele alır. Bu bakışta halkla ilişkiler; araştırma, bilgi verme, ikna, uyum sağlama, yönetimi bilgilendirme ve ilişki geliştirme işlevlerinin birlikte yürütüldüğü bir süreçtir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu nedenle halkla ilişkiler hem kurumun kendisini anlatmasını hem de çevresini anlamasını gerektirir. Kurum yalnızca konuşan taraf değildir; kamuların beklentisini, eleştirisini ve desteğini de izleyen taraftır."
+        },
+        {
+          "type": "subheading",
+          "content": "Seçilmiş tanımların ortak noktası"
+        },
+        {
+          "type": "paragraph",
+          "content": "Farklı tanımlar değişik yönleri vurgulasa da bazı ortak unsurlar öne çıkar. Halkla ilişkiler planlıdır, süreklidir, kurum ile kamular arasındaki ilişkiye yönelir ve yönetim kararlarıyla bağlantılıdır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bilgi verme: Kurumun amaçlarını, hizmetlerini, kararlarını ve uygulamalarını anlaşılır biçimde açıklar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İkna etme: Kamuların kurumu anlaması ve makul gerekçelerle olumlu tutum geliştirmesi için çalışır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bütünleştirme: Kurumun amaçları ile kamuların beklentileri arasında uyum arar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Geri bildirim: Kamuoyundan gelen işaretleri kuruma taşır ve yönetimin karar ortamını zenginleştirir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Public Relations News yaklaşımı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu yaklaşım halkla ilişkileri, kurumun kamularıyla karşılıklı anlayış kurmasına yardım eden bir yönetim işlevi olarak görür. Vurgu yalnızca mesaj üretmekte değil, kurum davranışının kamu beklentileriyle uyumlu hale gelmesindedir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Buradaki önemli nokta sürekliliktir. Halkla ilişkiler tek kampanya, tek basın açıklaması veya tek etkinlik değil; kurumun çevresiyle düzenli temas kurma biçimidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Robinson'un işlevleri"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İşlev",
+            "Özgün ders anlatımı"
+          ],
+          "rows": [
+            [
+              "Araştırma ve çözümleme",
+              "Kamuların tutumları, beklentileri, bilgi düzeyi ve sorun alanları izlenir."
+            ],
+            [
+              "Politika ve uygulama önerisi",
+              "Elde edilen bilgiler yönetime taşınır; kurumun davranışı iletişim kadar önemsenir."
+            ],
+            [
+              "İletişim programı",
+              "Kimlere, hangi mesajla, hangi araçla ve hangi zamanlamayla ulaşılacağı planlanır."
+            ],
+            [
+              "Değerlendirme",
+              "Faaliyetin bilinirlik, tutum, davranış veya ilişki kalitesi üzerindeki etkisi ölçülür."
+            ]
+          ],
+          "caption": "Robinson çizgisinde halkla ilişkiler işlevleri."
+        },
+        {
+          "type": "subheading",
+          "content": "Etkileşim ve halk/kamu kavramı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkilerde 'halk' tek ve homojen bir kitle değildir. Kurumdan etkilenen, kurumu etkileyen veya kurumla belirli bir çıkar, hizmet, sorun ya da beklenti bağı bulunan farklı kamu grupları vardır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bir kamu kurumu için vatandaşlar, çalışanlar, basın, diğer kurumlar, meslek örgütleri ve hizmetten doğrudan etkilenen gruplar ayrı kamu örnekleri olabilir. Her grubun bilgi ihtiyacı ve kurumdan beklentisi aynı değildir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kavram",
+            "Ders notu karşılığı"
+          ],
+          "rows": [
+            [
+              "Etkileşim",
+              "İletişimin tek yönlü olmaması; kurum ve kamuların birbirini etkilemesi."
+            ],
+            [
+              "Kamu/Halk",
+              "Kurumla ilişkisi olan, kurumdan etkilenen veya kurumu etkileyebilen kişi ve gruplar."
+            ],
+            [
+              "Uzmanlık",
+              "Halkla ilişkilerin rastgele nezaket işi değil, bilgi, planlama ve yöntem gerektiren mesleki alan olması."
+            ],
+            [
+              "Yönetim işlevi",
+              "Halkla ilişkilerin yalnız uygulama değil, yönetim kararlarına veri sağlayan bir görev olması."
+            ]
+          ],
+          "caption": "Kapsayıcı yaklaşımın ana kavramları."
+        },
+        {
+          "type": "section_title",
+          "content": "IV) Halkla İlişkilerin Anlamı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkilerin anlamı üç düzeyde düşünülebilir. İlk düzey kurum ile kamuları arasındaki fiili ilişkilerdir; yani kurumun çevresiyle kurduğu gerçek bağ ve temas biçimi."
+        },
+        {
+          "type": "paragraph",
+          "content": "İkinci düzey bu ilişkinin niteliğidir. İlişki güvene, açıklığa ve karşılıklı anlayışa dayanabileceği gibi güvensizlik, kopukluk veya yanlış anlamalarla da şekillenebilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Üçüncü düzey ise olumlu ilişki geliştirmek için kullanılan yöntem ve araçlardır. Araştırma, planlama, basınla ilişkiler, kurum içi iletişim, etkinlik, yayın ve değerlendirme çalışmaları bu düzeyde yer alır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Halkla ilişkiler hem bir ilişki durumu hem de bu ilişkiyi iyileştirmek için kullanılan profesyonel yöntemler bütünüdür."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kapsayıcı yaklaşım bilgi verme, ikna ve bütünleştirmeyi birlikte düşünür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu kavramı tek kitle değil, kurumla ilişkili farklı gruplar anlamına gelir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Halkla ilişkiler yönetim işlevi olarak karar alma sürecine veri sağlar."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "topic_id": 121,
+      "name": "Halkla İlişkilerin İlkeleri ve Yapılanışı",
+      "slug": "halkla-iliskilerin-ilkeleri-ve-yapilanisi",
+      "status": "active",
+      "summary": "Dürüstlük, inandırıcılık, tekrarlama ve bütçe ilkeleri ile halkla ilişkiler biriminin örgütlenmesi.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İlkeler ve Kurumsal Yapı"
+        },
+        {
+          "type": "section_title",
+          "content": "V) Halkla İlişkilerin İlkeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkilerde başarı yalnızca iyi hazırlanmış mesaja bağlı değildir. Kurumun gerçek davranışı, bilgi verme biçimi, sürekliliği ve bu iş için ayırdığı kaynaklar birlikte sonuç doğurur."
+        },
+        {
+          "type": "subheading",
+          "content": "Dürüstlük"
+        },
+        {
+          "type": "paragraph",
+          "content": "Dürüstlük halkla ilişkilerin güven temelidir. Kurum gerçek dışı bilgi verdiğinde kısa vadede dikkat çekse bile uzun vadede inandırıcılığını kaybeder."
+        },
+        {
+          "type": "paragraph",
+          "content": "Dürüstlük, her bilgiyi kontrolsüz biçimde paylaşmak anlamına gelmez. Esas olan verilen bilginin doğru, yanıltıcı olmayan ve kamu yararını gözetecek açıklıkta olmasıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "İnandırıcılık"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnandırıcılık, mesajın hedef kamu tarafından güvenilir bulunmasıdır. Mesajın içeriği, mesajı veren kişi veya kurumun itibarı, kullanılan kanal ve geçmiş deneyimler bu algıyı etkiler."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bir kurumun söylediği ile yaptığı birbirini desteklemiyorsa iletişim zayıflar. Bu yüzden halkla ilişkiler yalnızca söz üretmez; kurum davranışıyla iletişim arasında tutarlılık arar."
+        },
+        {
+          "type": "subheading",
+          "content": "Tekrarlama"
+        },
+        {
+          "type": "paragraph",
+          "content": "Tekrarlama, temel mesajın farklı zamanlarda ve uygun kanallarla yeniden hatırlatılmasıdır. İnsanların bir bilgiyi fark etmesi, anlaması ve benimsemesi çoğu zaman tek temasla gerçekleşmez."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu ilke mekanik tekrar değildir. Aynı ana fikir, kamu grubuna ve bağlama uygun biçimde yeniden düzenlenir; aksi halde iletişim gürültüye dönüşür."
+        },
+        {
+          "type": "subheading",
+          "content": "Bütçe"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler planlı kaynak gerektirir. İnsan gücü, zaman, araştırma maliyeti, yayın, etkinlik, medya takibi ve değerlendirme çalışmaları bütçe düşünülmeden sürdürülemez."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bütçe ilkesi, halkla ilişkilerin rastlantısal ve yalnız ihtiyaç çıktığında yapılan bir iş olmadığını gösterir. Kurum bu faaliyeti yönetim planının parçası olarak desteklemelidir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "İlke",
+            "Ne sağlar?",
+            "Dikkat edilmezse ne olur?"
+          ],
+          "rows": [
+            [
+              "Dürüstlük",
+              "Güven ve etik zemin oluşturur.",
+              "Kurumun açıklamaları kuşkuyla karşılanır."
+            ],
+            [
+              "İnandırıcılık",
+              "Mesajın kabul edilme ihtimalini artırır.",
+              "Doğru bilgi bile etkisiz kalabilir."
+            ],
+            [
+              "Tekrarlama",
+              "Bilinirlik ve hatırlanmayı güçlendirir.",
+              "Mesaj kamuya ulaşmadan kaybolabilir."
+            ],
+            [
+              "Bütçe",
+              "Faaliyetin planlı yürütülmesini sağlar.",
+              "Çalışmalar kesintili ve ölçülemez hale gelir."
+            ]
+          ],
+          "caption": "Halkla ilişkiler ilkelerinin çalışma değeri."
+        },
+        {
+          "type": "section_title",
+          "content": "VI) Halkla İlişkilerin Yapılanışı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler faaliyeti kurum içinde rastgele kişilere bırakıldığında süreklilik ve standart kaybolur. Bu nedenle kurumun büyüklüğüne, görev alanına ve kamu temasının yoğunluğuna göre bir yapılanma gerekir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Yapılanma bazen ayrı halkla ilişkiler birimi, bazen basın ve halkla ilişkiler bürosu, bazen de danışmanlık hizmeti şeklinde olabilir. Önemli olan görev, yetki, sorumluluk ve yönetimle bağlantının açık kurulmasıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "Birim ve örgütlenme"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurumun kamu gruplarını tanıyacak ve iletişim kayıtlarını tutacak bir yapı kurulur."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Basın, yayın, etkinlik, iç iletişim ve değerlendirme gibi işler görev paylaşımına bağlanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Birim, kurumun üst yönetimine yakın çalışır; çünkü iletişim sorunları çoğu zaman yönetim kararı gerektirir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurum dışından danışmanlık alınabilir; fakat kurumsal sorumluluk tamamen dışarıya devredilemez."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Danışma ve yürütme rolleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler birimi danışma rolünde yönetime çevreden gelen tepkileri, riskleri ve beklentileri aktarır. Bu rol karar alıcıların kamu etkisini görmesini sağlar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Yürütme rolünde ise planlanan iletişim faaliyetleri uygulanır. Basın açıklaması hazırlama, toplantı düzenleme, yayın hazırlama, kurum içi duyuru yapma ve geri bildirim toplama bu kapsamdadır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Rol",
+            "Temel soru",
+            "Örnek görev"
+          ],
+          "rows": [
+            [
+              "Danışma",
+              "Yönetim neyi bilmeli?",
+              "Kamuoyu eğilimi, şikayetler, riskler ve iletişim fırsatlarını raporlamak."
+            ],
+            [
+              "Yürütme",
+              "Plan nasıl uygulanacak?",
+              "Mesaj, kanal, etkinlik, yayın ve basın temasını organize etmek."
+            ],
+            [
+              "Koordinasyon",
+              "Kimlerle birlikte çalışılacak?",
+              "Hukuk, insan kaynakları, teknik birimler ve üst yönetimle uyum sağlamak."
+            ]
+          ],
+          "caption": "Halkla ilişkiler yapılanmasında rol ayrımı."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Halkla ilişkiler birimi yalnızca duyuru servisi gibi çalışırsa yönetim işlevi zayıflar. Birimin değer üretmesi için dinleme, analiz ve öneri görevleri de bulunmalıdır."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İlkeler güvenilirlik ve süreklilik sağlar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yapılanış, halkla ilişkilerin kurum içinde kimin sorumluluğunda olduğunu netleştirir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Danışma ve yürütme rolleri birlikte düşünülmelidir."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "topic_id": 122,
+      "name": "Halkla İlişkiler Süreci: Bilgi Toplama ve Planlama",
+      "slug": "halkla-iliskiler-sureci-bilgi-toplama-ve-planlama",
+      "status": "active",
+      "summary": "Halkla ilişkiler sürecinin araştırma ve planlama aşamaları; bilgi kaynakları ve araştırma türleri.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Halkla İlişkiler Süreci"
+        },
+        {
+          "type": "section_title",
+          "content": "VII) Halkla İlişkiler Sürecinin Aşamaları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler süreci birbirini izleyen ve birbirini besleyen aşamalardan oluşur. Genel akış bilgi toplama, planlama, uygulama ve değerlendirme olarak düşünülebilir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Süreç mantığı şudur: Önce durum anlaşılır, sonra hedef ve yol belirlenir, ardından iletişim uygulanır ve sonuç ölçülür."
+        },
+        {
+          "type": "subheading",
+          "content": "Bilgi toplama ve araştırma"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bilgi toplama aşaması, kurumun kendisi ve kamuları hakkında sağlam veri elde etme aşamasıdır. Sorun, beklenti, algı, iletişim engeli ve fırsatlar araştırılmadan yapılan faaliyetler rastlantısal kalır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Araştırma yalnız büyük anketlerden ibaret değildir. Kurumun mevcut kayıtları, basın görünürlüğü, vatandaş başvuruları, çalışan geri bildirimleri ve bilimsel yöntemlerle elde edilen veriler birlikte kullanılabilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Var olan bilgilerden yararlanma"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Geçmiş raporlar, faaliyet kayıtları ve önceki kampanya sonuçları incelenir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurumun başvuru, şikayet, talep ve teşekkür kayıtları sınıflandırılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Daha önce yapılmış kamuoyu araştırmaları, akademik çalışmalar veya resmi istatistikler kontrol edilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bu bilgiler yeni araştırmanın nereden başlaması gerektiğini gösterir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Basını izleme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Basını izleme, kurumun medyada nasıl yer aldığını ve hangi konularla ilişkilendirildiğini görmeye yarar. Haberler, köşe yazıları, programlar ve dijital yayınlar kurum algısına dair erken işaretler verebilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu çalışma yalnız haber kupürü toplamak değildir. Haber tonu, tekrar eden eleştiriler, yanlış bilgiler, öne çıkan aktörler ve kamu ilgisinin yönü değerlendirilmelidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kuruluş kaynakları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurum içindeki birimler halkla ilişkiler için önemli bilgi kaynağıdır. Personel, hizmet sunum noktaları, çağrı merkezleri, yazışmalar ve saha gözlemleri kamuların gerçek deneyimini anlamaya yardım eder."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurum kaynakları kullanılırken yalnız olumlu veriler seçilmemelidir. Halkla ilişkiler güvenilir olmak istiyorsa aksayan hizmet, yanlış anlaşılma ve memnuniyetsizlik alanlarını da görünür kılmalıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "Bilimsel yöntemler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bilimsel yöntem, halkla ilişkiler kararlarını kişisel sezgiye bırakmamayı sağlar. Anket, görüşme, odak grup, içerik analizi ve gözlem gibi teknikler uygun örneklem ve açık amaçla kullanılır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Araştırma türü",
+            "Amaç",
+            "Örnek kullanım"
+          ],
+          "rows": [
+            [
+              "Anlamaya yönelik araştırma",
+              "Bir konuya ilişkin algı, beklenti ve anlam dünyasını kavramak.",
+              "Vatandaşların bir hizmeti neden karmaşık bulduğunu görüşmelerle incelemek."
+            ],
+            [
+              "Betimleyici araştırma",
+              "Mevcut durumu sayısal veya sistemli biçimde ortaya koymak.",
+              "Belirli bir hizmetten memnuniyet oranını anketle ölçmek."
+            ],
+            [
+              "Açıklayıcı araştırma",
+              "Bir sonucun nedenlerini ve değişkenler arasındaki ilişkiyi anlamak.",
+              "Bilgilendirme kampanyasının başvuru hatalarını azaltıp azaltmadığını araştırmak."
+            ]
+          ],
+          "caption": "Halkla ilişkilerde araştırma türleri."
+        },
+        {
+          "type": "section_title",
+          "content": "Planlama"
+        },
+        {
+          "type": "paragraph",
+          "content": "Planlama aşaması, araştırmada görülen ihtiyaçlara göre amaç, hedef kamu, mesaj, araç, zamanlama, sorumluluk ve kaynakların belirlenmesidir. Plan yoksa iletişim çalışması dağınık ve ölçülmesi zor hale gelir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler planı yalnız yapılacak işler listesi değildir. Plan aynı zamanda neden o işlerin yapılacağını, hangi sonuçların beklendiğini ve başarının nasıl ölçüleceğini açıklar."
+        },
+        {
+          "type": "subheading",
+          "content": "Zaman ölçeğine göre planlar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Plan türü",
+            "Kapsam",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Uzun süreli plan",
+              "Kurumun genel ilişki ve itibar hedefleri.",
+              "Güven, tanınırlık, hizmet anlayışı ve kamu desteği gibi geniş hedefleri kapsar."
+            ],
+            [
+              "Orta süreli plan",
+              "Belirli dönem veya program hedefleri.",
+              "Yıllık iletişim programı, kurum projesi veya hizmet değişikliği için kullanılabilir."
+            ],
+            [
+              "Kısa süreli plan",
+              "Yakın zamanlı faaliyetler.",
+              "Toplantı, duyuru, kampanya, ziyaret veya açıklama gibi somut işleri düzenler."
+            ]
+          ],
+          "caption": "Planlar zaman ufkuna göre ayrılabilir."
+        },
+        {
+          "type": "subheading",
+          "content": "Amaca göre planlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Önleyici planlar, sorun büyümeden önce bilgi eksikliğini, yanlış algıyı veya iletişim boşluğunu azaltmaya yönelir. Onarıcı planlar ise ortaya çıkmış güven kaybı, tepki veya yanlış anlaşılma sonrası ilişkiyi düzeltmeye çalışır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Plan türü",
+            "Ne zaman kullanılır?",
+            "Örnek"
+          ],
+          "rows": [
+            [
+              "Önleyici",
+              "Risk henüz krize dönüşmeden önce.",
+              "Yeni uygulama başlamadan önce vatandaşa süreç anlatımı yapmak."
+            ],
+            [
+              "Onarıcı",
+              "Sorun yaşandıktan ve olumsuz algı doğduktan sonra.",
+              "Hizmet aksaması sonrası açıklama, telafi ve takip iletişimi yürütmek."
+            ]
+          ],
+          "caption": "Önleyici ve onarıcı plan ayrımı."
+        },
+        {
+          "type": "subheading",
+          "content": "Program planlamada sorulacak noktalar"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sorun veya fırsat nedir?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hangi kamu grupları etkilenmektedir?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Amaç bilgi vermek, tutum değiştirmek, katılım sağlamak veya güven onarmak mıdır?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ana mesaj ne olacak ve hangi kanallarla iletilecek?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kim sorumlu olacak, hangi bütçe ve takvim kullanılacak?"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başarı hangi göstergelerle değerlendirilecek?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "topic_id": 123,
+      "name": "Halkla İlişkiler Süreci: Uygulama ve Değerlendirme",
+      "slug": "halkla-iliskiler-sureci-uygulama-ve-degerlendirme",
+      "status": "active",
+      "summary": "İletişim modelinin unsurları, uygulama aşaması ve halkla ilişkiler çalışmalarının değerlendirilmesi.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Uygulama, İletişim ve Değerlendirme"
+        },
+        {
+          "type": "section_title",
+          "content": "Uygulama ve İletişim"
+        },
+        {
+          "type": "paragraph",
+          "content": "Uygulama aşaması, planlanan halkla ilişkiler faaliyetlerinin gerçek hayata geçirildiği aşamadır. Bu aşamada mesajın hazırlanması, uygun kanalın seçilmesi, zamanlamanın yapılması ve sorumluların koordinasyonu önem kazanır."
+        },
+        {
+          "type": "paragraph",
+          "content": "İletişim yalnız mesaj göndermek değildir. Alıcının kim olduğu, mesajı hangi koşullarda aldığı, hangi deneyimlere sahip olduğu ve nasıl geri bildirim verdiği sürecin sonucunu belirler."
+        },
+        {
+          "type": "subheading",
+          "content": "İletişim modelinin unsurları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Unsur",
+            "Ders notu açıklaması",
+            "Halkla ilişkilerde dikkat noktası"
+          ],
+          "rows": [
+            [
+              "Gönderici",
+              "Mesajı başlatan kişi, birim veya kurumdur.",
+              "Göndericinin güvenilirliği mesajın etkisini doğrudan etkiler."
+            ],
+            [
+              "Mesaj",
+              "Aktarılmak istenen bilgi, duygu, çağrı veya açıklamadır.",
+              "Açık, doğru, hedef kamuya uygun ve tutarlı olmalıdır."
+            ],
+            [
+              "Kanal",
+              "Mesajın taşındığı yol veya araçtır.",
+              "Basın, toplantı, sosyal medya, broşür, iç duyuru gibi araçlar hedefe göre seçilir."
+            ],
+            [
+              "Alıcı",
+              "Mesajın ulaşması istenen kamu grubudur.",
+              "Tek bir kitle varsayılmamalı; bilgi düzeyi ve beklenti farklılıkları görülmelidir."
+            ],
+            [
+              "Ortak deneyim alanı",
+              "Gönderici ve alıcının ortak anlam kurabildiği bilgi ve deneyim zemini.",
+              "Teknik dil azaltılır; kamunun anlayacağı örnekler ve ifadeler kullanılır."
+            ],
+            [
+              "Geribildirim",
+              "Alıcının mesajdan sonra verdiği tepki ve dönüşlerdir.",
+              "Soru, şikayet, katılım, medya yansıması ve davranış değişikliği izlenir."
+            ]
+          ],
+          "caption": "Halkla ilişkiler iletişim modeli."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kaynakta yer alan iletişim şeması burada tabloyla yeniden kuruldu: gönderici mesajı kanal üzerinden alıcıya iletir; ortak deneyim alanı anlamayı kolaylaştırır, geribildirim ise süreci tek yönlü olmaktan çıkarır."
+        },
+        {
+          "type": "subheading",
+          "content": "Ortak deneyim alanı neden önemlidir?"
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurumun kullandığı dil ile kamunun anladığı dil birbirinden kopuksa mesaj doğru gönderilse bile istenen etki doğmaz. Ortak deneyim alanı, tarafların aynı kavramı benzer biçimde anlayabilmesini ifade eder."
+        },
+        {
+          "type": "paragraph",
+          "content": "Örneğin teknik bir idari işlem, vatandaş için karmaşık olabilir. Halkla ilişkiler bu işlemi yalnız mevzuat diliyle değil, vatandaşın ihtiyacına göre anlaşılır adımlarla anlatmalıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "Uygulama sırasında koordinasyon"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mesaj içerikleri kurumun politika ve uygulamalarıyla uyumlu tutulur."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Basın, iç iletişim, sosyal medya, yüz yüze temas ve yayın araçları birbirini destekler."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Uygulama takvimi kamu grubunun bilgi ihtiyacına göre ayarlanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sorulara ve tepkilere cevap verecek sorumlular önceden belirlenir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "section_title",
+          "content": "Değerlendirme"
+        },
+        {
+          "type": "paragraph",
+          "content": "Değerlendirme, halkla ilişkiler çalışmasının beklenen sonuca ulaşıp ulaşmadığını anlamaya yarar. Bu aşama yapılmazsa faaliyet yalnız yapılmış sayılır; ne kadar işe yaradığı bilinmez."
+        },
+        {
+          "type": "paragraph",
+          "content": "Değerlendirme yalnız etkinliğe kaç kişinin katıldığına bakmak değildir. Hedef kamuya ulaşılıp ulaşılmadığı, mesajın anlaşılıp anlaşılmadığı, tutum veya davranışta değişim olup olmadığı da incelenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Dinleyici nitelik ve niceliği"
+        },
+        {
+          "type": "paragraph",
+          "content": "Nicelik, kaç kişiye ulaşıldığını gösterir; örneğin katılımcı sayısı, erişim sayısı veya dağıtılan yayın miktarı. Nitelik ise ulaşılan kişilerin doğru hedef kamu olup olmadığını gösterir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Yüksek erişim her zaman başarı değildir. Yanlış kamu grubuna ulaşılmışsa veya hedeflenen kişiler mesajı anlamamışsa sayı tek başına yeterli gösterge sayılmaz."
+        },
+        {
+          "type": "subheading",
+          "content": "Tepki ve iletişim etkisi"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Değerlendirme boyutu",
+            "Ne ölçülür?",
+            "Örnek gösterge"
+          ],
+          "rows": [
+            [
+              "Tepki",
+              "Kamunun çalışma sonrası verdiği doğrudan veya dolaylı karşılık.",
+              "Soru sayısı, başvuru şekli, yorumlar, şikayetlerde değişim."
+            ],
+            [
+              "İletişim etkisi",
+              "Mesajın bilgi, tutum veya davranış üzerindeki sonucu.",
+              "Bilgi düzeyindeki artış, yanlış başvuruların azalması, güven algısı."
+            ],
+            [
+              "Etki süresi",
+              "Sonucun geçici mi kalıcı mı olduğu.",
+              "Kampanya bittikten sonra davranışın sürüp sürmediği."
+            ],
+            [
+              "Hedef uyumu",
+              "Başta konan amaçla sonucun örtüşmesi.",
+              "Planlanan kamu grubunda beklenen tutum değişiminin görülmesi."
+            ]
+          ],
+          "caption": "Değerlendirmede kullanılabilecek boyutlar."
+        },
+        {
+          "type": "subheading",
+          "content": "Değerlendirme yöntemleri"
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Basın ve dijital medya yansımaları analiz edilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Anket, görüşme veya kısa geri bildirim formları uygulanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başvuru, şikayet ve hizmet kullanım verileri önceki dönemle karşılaştırılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurum içi ekiplerden uygulama sonrası rapor alınır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Amaç, hedef kamu ve sonuç göstergeleri birlikte yorumlanır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Değerlendirme aşaması yeni bilgi toplama aşamasını besler. Bu yüzden halkla ilişkiler süreci doğrusal olduğu kadar döngüseldir."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Uygulamada mesaj, kanal ve hedef kamu uyumu aranır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Geribildirim halkla ilişkileri tek yönlü duyurudan ayırır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Değerlendirme, sonraki planlama için veri üretir."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "topic_id": 124,
+      "name": "Halkla İlişkilerde Kullanılan Araçlar ve Çalışanlar",
+      "slug": "halkla-iliskilerde-kullanilan-araclar-ve-calisanlar",
+      "status": "active",
+      "summary": "Yazılı, görsel-işitsel, sosyal-kültürel ve eğitim araçları ile çalışanların halkla ilişkilerdeki rolü.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Araçlar ve Kurum İçi İlişkiler"
+        },
+        {
+          "type": "section_title",
+          "content": "VIII) Halkla İlişkilerde Kullanılan Araçlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Halkla ilişkiler araçları, kurumun kamularıyla temas kurmak için kullandığı yöntem ve mecralardır. Araç seçimi hedef kamuya, mesajın niteliğine, zamanlamaya, bütçeye ve beklenen etkiye göre yapılmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Aynı araç her durumda aynı sonucu vermez. Örneğin teknik bilgi için kılavuz yararlı olabilirken, farkındalık oluşturmak için afiş, kısa video, sergi veya sosyal etkinlik daha etkili olabilir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Kaynakta yer alan araç şeması burada tabloya dönüştürüldü. Amaç şemadaki tüm araç ailelerini koruyup UI’da okunur hale getirmektir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Araç ailesi",
+            "Araçlar",
+            "Ders notu açıklaması"
+          ],
+          "rows": [
+            [
+              "Yazılı ve basılı araçlar",
+              "Gazete, dergi, broşür, el kitabı/kılavuz, bülten, yıllık, mektup, afiş/poster, pankart, el ilanı, yönlendirici ve yol göstericiler",
+              "Kalıcı bilgi verme, ayrıntı aktarma, başvuru adımlarını açıklama ve kurumsal görünürlüğü destekleme amacıyla kullanılır."
+            ],
+            [
+              "Yayım ve görsel-işitsel araçlar",
+              "Radyo, televizyon, video içerikler, sergiler",
+              "Geniş kitlelere ulaşma, görsel anlatım kurma ve dikkat çekme gücü yüksektir."
+            ],
+            [
+              "Sosyal ve kültürel araçlar",
+              "Yarışmalar, geziler, sponsorluklar, törenler, toplantılar ve benzer etkinlikler",
+              "Kurum ile kamu arasında yüz yüze temas, katılım ve deneyim oluşturur."
+            ],
+            [
+              "Eğitim araçları",
+              "Seminer, hizmet içi eğitim, bilgilendirme toplantısı, uygulamalı anlatım ve rehberlik çalışmaları",
+              "Hem çalışanların hem dış kamuların doğru bilgi ve davranış geliştirmesine yardım eder."
+            ]
+          ],
+          "caption": "Halkla ilişkiler araçlarının genel sınıflandırması."
+        },
+        {
+          "type": "subheading",
+          "content": "Yazılı ve basılı araçlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Gazete ve dergi gibi süreli yayınlar kurum haberlerini, duyurularını ve açıklamalarını geniş çevrelere taşıyabilir. Broşür, el ilanı ve afiş daha kısa ve doğrudan mesajlar için kullanılır."
+        },
+        {
+          "type": "paragraph",
+          "content": "El kitabı ve kılavuzlar, işlem adımlarını veya kurum hizmetlerini ayrıntılı biçimde anlatmak için uygundur. Bülten ve yıllıklar ise kurumun belirli dönemlerde yaptığı çalışmaları derli toplu göstermeye yarar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Mektup, pankart, poster, yönlendirici levha ve yol göstericiler daha hedefli temas kurar. Özellikle kamu hizmetlerinde doğru yönlendirme, halkla ilişkilerin pratik ve hizmet kalitesini etkileyen yönüdür."
+        },
+        {
+          "type": "subheading",
+          "content": "Yayım ve görsel-işitsel araçlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Radyo ve televizyon geniş kitlelere ulaşma imkanı verir. Ses ve görüntünün birlikte kullanılması, karmaşık bilgilerin daha kolay anlatılmasına yardımcı olabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Sergiler kurumun çalışmalarını, hizmetlerini veya belirli bir konudaki mesajını somut materyallerle gösterir. Bu araç, özellikle görerek öğrenmenin ve doğrudan temasın önemli olduğu durumlarda değerlidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Sosyal ve kültürel araçlar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Yarışmalar, geziler ve sponsorluklar kurumun kamu gruplarıyla daha canlı bir bağ kurmasını sağlar. Bu tür araçlar yalnız bilgi aktarmakla kalmaz, katılım ve deneyim de üretir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Sponsorlukta kurum, toplumsal, kültürel, sportif veya eğitsel bir faaliyeti destekleyerek kamu yararına katkı sunar. Bu katkı samimi ve kurum kimliğiyle uyumlu olursa olumlu ilişkiyi güçlendirir."
+        },
+        {
+          "type": "subheading",
+          "content": "Eğitim çalışmaları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Eğitim, halkla ilişkilerde hem iç hem dış kamu için kullanılabilir. Çalışanlara verilen eğitim kurumun hizmet dilini ve vatandaşla temasını iyileştirirken, dış kamulara verilen eğitim hizmetten doğru yararlanmayı kolaylaştırır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Eğitim araçları özellikle yanlış başvuru, eksik bilgi, yeni sistem kullanımı veya davranış değişikliği gerektiren konularda etkili olur. Bu nedenle eğitim halkla ilişkiler içinde yalnız yan faaliyet değil, önemli bir iletişim aracıdır."
+        },
+        {
+          "type": "section_title",
+          "content": "IX) Çalışanlar ve Halkla İlişkiler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Çalışanlar kurumun dış kamu tarafından en sık görülen yüzüdür. Vatandaşla konuşan, hizmet sunan, yönlendiren veya sorun çözen personelin davranışı kurum imajını doğrudan etkiler."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu nedenle halkla ilişkiler yalnız özel bir birimin görevi gibi düşünülmemelidir. Birim süreci planlar ve koordine eder; fakat kurumla temas eden her çalışan halkla ilişkiler sonucuna katkıda bulunur."
+        },
+        {
+          "type": "subheading",
+          "content": "İç kamu ve kurum içi ilişkiler"
+        },
+        {
+          "type": "paragraph",
+          "content": "Çalışanlar kurumun iç kamusudur. İç kamu yeterince bilgilendirilmezse, kurumun dışarıya vermek istediği mesajla çalışanların uygulamadaki davranışı arasında kopukluk oluşabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kurum içi ilişkilerde açık bilgi akışı, adil iletişim, görevlerin anlaşılması ve çalışanların sürece katılması önemlidir. Kendi içinde tutarlı olmayan kurumların dış kamuya güven veren bir görüntü üretmesi zorlaşır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Çalışan boyutu",
+            "Halkla ilişkiler etkisi"
+          ],
+          "rows": [
+            [
+              "Bilgi düzeyi",
+              "Çalışan doğru bilgiye sahipse vatandaşı doğru yönlendirir."
+            ],
+            [
+              "Tutum ve davranış",
+              "Nezaket, açıklık ve çözüm odaklılık kurum algısını güçlendirir."
+            ],
+            [
+              "İç iletişim",
+              "Kurum içi kopukluk dış iletişimde çelişki üretir."
+            ],
+            [
+              "Katılım",
+              "Çalışanın süreci sahiplenmesi hizmet kalitesini ve güveni artırır."
+            ]
+          ],
+          "caption": "Çalışanların halkla ilişkilerdeki rolü."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Kaynak metnin son kısmı çalışanlar ve kurum içi tutarlılık vurgusuyla biter. PDF/OCR metni son sayfada kesildiği için eksik cümle insan kontrolü notuna alındı; ancak konu bütünlüğü kurum içi ilişki çerçevesinde tamamlandı."
+        },
+        {
+          "type": "list",
+          "style": "ordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Araç seçimi hedef kamu ve mesaj amacına göre yapılır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tablodaki yazılı, görsel-işitsel, sosyal-kültürel ve eğitim araçları kaynak şemasının tüm ana ailelerini kapsar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çalışanlar hem iç kamu hem de dış kamu temasındaki kurum yüzüdür."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

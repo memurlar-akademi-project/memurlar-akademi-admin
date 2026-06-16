@@ -1,0 +1,214 @@
+{
+  "course": "Türkçe Dil Bilgisi",
+  "version": "v1-original-teaching",
+  "source_files": [
+    {
+      "file": "Türkçe Dil Bilgisi.docx",
+      "pages": 22,
+      "words": 6707,
+      "role": "primary",
+      "note": "Dil bilgisi kuralları, dünya dilleri, ses bilgisi, yazım, noktalama ve cümle bilgisi ana kaynak olarak kullanıldı."
+    },
+    {
+      "file": "Türkçe Dil Bilgisi.pdf",
+      "pages": 10,
+      "role": "coverage_control",
+      "note": "Sözcükte anlam, cümlede anlam, paragraf, noktalama, anlatım bozukluğu, ses bilgisi, sözcükte yapı/türleri ve cümle bilgisi başlıkları kapsam kontrolü için kullanıldı."
+    }
+  ],
+  "topic_count": 8,
+  "coverage": [
+    {
+      "topic_name": "Dil, Dünya Dilleri ve Türkçenin Ses Sistemi",
+      "source_pages": "DOCX 213-218",
+      "covered_headings": [
+        "Giriş",
+        "Dünya dilleri",
+        "Biçim bakımından diller",
+        "Kaynak bakımından diller",
+        "Türkçede sesler",
+        "Ünlüler",
+        "Büyük ünlü uyumu",
+        "Küçük ünlü uyumu"
+      ],
+      "tables": 5,
+      "figures_or_diagrams": 1,
+      "omissions": [],
+      "topic_id": 133
+    },
+    {
+      "topic_name": "Ünsüzler, Ses Olayları ve Sözcükte Yapı",
+      "source_pages": "DOCX 218; PDF 7-8. bölüm",
+      "covered_headings": [
+        "Ünsüzler",
+        "Ünsüz yumuşaması",
+        "Ünsüz sertleşmesi",
+        "n-b değişimi",
+        "Ünlülerle ilgili ses olayları",
+        "Sözcükte yapı",
+        "Kök",
+        "Basit/türemiş/birleşik sözcük"
+      ],
+      "tables": 5,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 134
+    },
+    {
+      "topic_name": "Sözcükte Anlam ve Sözcük Türleri",
+      "source_pages": "PDF 1. ve 9. bölüm",
+      "covered_headings": [
+        "Sözcükte anlam",
+        "Gerçek anlam",
+        "Temel anlam",
+        "Yan anlam",
+        "Terim anlam",
+        "Mecaz anlam",
+        "Sözcük türleri",
+        "Adlar",
+        "Ad durum ekleri",
+        "Ad tamlamaları"
+      ],
+      "tables": 5,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 135
+    },
+    {
+      "topic_name": "Cümlede Anlam ve Cümle Bilgisi",
+      "source_pages": "DOCX 231-234; PDF 2. ve 10. bölüm",
+      "covered_headings": [
+        "Cümlede anlam",
+        "Yakın anlamlı cümleler",
+        "Anlamca çelişen cümleler",
+        "Neden-sonuç",
+        "Cümle bilgisi",
+        "Cümlenin ögeleri",
+        "Cümle çeşitleri"
+      ],
+      "tables": 4,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 136
+    },
+    {
+      "topic_name": "Paragraf Bilgisi ve Anlama Dayalı Soru Çözümü",
+      "source_pages": "PDF 3. bölüm",
+      "covered_headings": [
+        "Paragraf",
+        "Paragrafta konu",
+        "Paragrafta ana düşünce",
+        "Yardımcı düşünce",
+        "Başlık",
+        "Paragraf soru tipleri"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 137
+    },
+    {
+      "topic_name": "Yazım Kuralları",
+      "source_pages": "DOCX 219-224; PDF 4. bölüm",
+      "covered_headings": [
+        "Yazım kuralları",
+        "Büyük harf kullanımı",
+        "Birleşik kelimeler",
+        "Deyimler",
+        "İkilemeler",
+        "da/de",
+        "ki",
+        "mı/mi",
+        "ile",
+        "pekiştirme",
+        "kesme işareti"
+      ],
+      "tables": 6,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 138
+    },
+    {
+      "topic_name": "Noktalama İşaretleri",
+      "source_pages": "DOCX 224-231; PDF 5. bölüm",
+      "covered_headings": [
+        "Noktalama işaretleri",
+        "Nokta",
+        "Virgül",
+        "Noktalı virgül",
+        "İki nokta",
+        "Üç nokta",
+        "Soru işareti",
+        "Ünlem",
+        "Kısa çizgi",
+        "Uzun çizgi",
+        "Eğik çizgi",
+        "Tırnak",
+        "Ayraç",
+        "Kesme",
+        "Denden"
+      ],
+      "tables": 4,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 139
+    },
+    {
+      "topic_name": "Anlatım Bozuklukları",
+      "source_pages": "PDF 6. bölüm",
+      "covered_headings": [
+        "Anlatım bozukluğu",
+        "Anlam ile ilgili anlatım bozuklukları",
+        "Yapı ile ilgili anlatım bozuklukları",
+        "Sözcük karıştırılması",
+        "Gereksiz sözcük",
+        "Mantık ve sıralama hataları",
+        "Tamlama yanlışlıkları",
+        "Öge eksiklikleri",
+        "Zamir belirsizliği"
+      ],
+      "tables": 4,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 140
+    }
+  ],
+  "global_omissions": [],
+  "copyright_review": {
+    "long_verbatim_passages_found": false,
+    "source_like_paragraphs_rewritten": true,
+    "pdf_paragraph_structure_preserved": false,
+    "tables_rewritten_in_original_words": true,
+    "consecutive_source_sentences_detected": false,
+    "max_paragraph_style": "Kural anlatımı özgünleştirildi; kaynak örnekleri birebir taşınmadı, tablolar ve sınav ayrımları ders notu diliyle yeniden kuruldu."
+  },
+  "needs_human_review": [
+    "DOCX metninde bazı Türkçe karakterler text extraction sırasında bozuk göründü; anlatımda standart Türkçe yazım kullanıldı."
+  ],
+  "subject_id": 29,
+  "topic_ids": [
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140
+  ],
+  "validation_expectations": {
+    "topics_length": 8,
+    "statuses_all_active": true,
+    "target_exam_id": 1,
+    "expected_topic_ids": [
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140
+    ]
+  }
+}

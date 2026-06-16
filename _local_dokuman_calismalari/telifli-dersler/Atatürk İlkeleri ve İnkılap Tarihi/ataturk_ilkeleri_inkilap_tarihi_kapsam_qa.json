@@ -1,0 +1,114 @@
+{
+  "course": "Atatürk İlkeleri ve İnkılap Tarihi",
+  "target_exam_id": 1,
+  "topic_count": 12,
+  "coverage_matrix": [
+    {
+      "source_area": "Amaç, inkılap kavramları, Türk inkılabının özellikleri",
+      "covered_in": [
+        "İnkılap Tarihine Giriş, Kavramlar ve Türk İnkılabının Özellikleri"
+      ]
+    },
+    {
+      "source_area": "Osmanlı çöküş süreci, yenileşme, Tanzimat, Meşrutiyet",
+      "covered_in": [
+        "Osmanlı Devletinin Çöküş Süreci ve Yenileşme Hareketleri"
+      ]
+    },
+    {
+      "source_area": "Fikir akımları, II. Meşrutiyet, 31 Mart, Mustafa Kemal’in hayatı",
+      "covered_in": [
+        "Osmanlıyı Kurtarma Fikirleri, II. Meşrutiyet ve Mustafa Kemal’in Yetişmesi"
+      ]
+    },
+    {
+      "source_area": "Trablusgarp, Balkan, I. Dünya Savaşı, cepheler, gizli antlaşmalar, Wilson",
+      "covered_in": [
+        "Trablusgarp, Balkan Savaşları ve I. Dünya Savaşı"
+      ]
+    },
+    {
+      "source_area": "Mondros, işgaller, cemiyetler, Kuvayımilliye, Amiral Bristol",
+      "covered_in": [
+        "Mondros Ateşkesi, İşgaller, Cemiyetler ve Kuvayımilliye"
+      ]
+    },
+    {
+      "source_area": "Samsun, Havza, Amasya, Erzurum, Sivas",
+      "covered_in": [
+        "Milli Mücadele Hazırlık Dönemi: Samsun’dan Sivas’a"
+      ]
+    },
+    {
+      "source_area": "Amasya Görüşmeleri, Misakımilli, TBMM, Sevr",
+      "covered_in": [
+        "Amasya Görüşmeleri, Misakımilli, TBMM ve Sevr"
+      ]
+    },
+    {
+      "source_area": "Kurtuluş Savaşı cepheleri, İnönüler, Sakarya, Büyük Taarruz, Mudanya",
+      "covered_in": [
+        "Kurtuluş Savaşı Cepheleri ve Askeri-Siyasi Sonuçları"
+      ]
+    },
+    {
+      "source_area": "Lozan hükümleri ve önemi",
+      "covered_in": [
+        "Lozan Barış Antlaşması ve Yeni Türk Devletinin Uluslararası Tanınması"
+      ]
+    },
+    {
+      "source_area": "Siyasi, hukuki, eğitim, kültür ve toplumsal inkılaplar",
+      "covered_in": [
+        "Siyasi, Hukuki, Eğitim ve Toplumsal Alanda İnkılaplar"
+      ]
+    },
+    {
+      "source_area": "Atatürk dönemi dış politika, Montrö, Hatay, II. Dünya Savaşı öncesi",
+      "covered_in": [
+        "Atatürk Dönemi Türk Dış Politikası ve II. Dünya Savaşı’na Giden Süreç"
+      ]
+    },
+    {
+      "source_area": "Atatürkçü düşünce sistemi, temel ve bütünleyici ilkeler",
+      "covered_in": [
+        "Atatürkçü Düşünce Sistemi, Temel ve Bütünleyici İlkeler"
+      ]
+    }
+  ],
+  "copyright_review": {
+    "long_source_like_paragraphs": "Kaynak metinler birebir aktarılmadı; kısa ve özgün ders anlatımı kuruldu.",
+    "tables_and_diagrams": "Kronoloji ve karşılaştırmalar özgün tablo yapılarıyla yeniden üretildi.",
+    "human_review_notes": [
+      "Tarih ve antlaşma bilgileri kaynak kapsamına göre işlendi; sınav müfredatı özel vurgu istiyorsa JSON üzerinden revize edilebilir."
+    ]
+  },
+  "validation_expectations": {
+    "topics_length": 12,
+    "status": "active",
+    "max_paragraph_chars": 620,
+    "required_block_types": [
+      "section_heading",
+      "section_title",
+      "paragraph",
+      "list",
+      "table",
+      "callout"
+    ]
+  },
+  "subject_id": 32,
+  "topic_ids": [
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172
+  ]
+}

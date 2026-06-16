@@ -20,6 +20,7 @@ import {
   ReceiptText,
   ScrollText,
   ShieldUser,
+  Sparkles,
   Waypoints,
 } from "lucide-react";
 
@@ -51,6 +52,7 @@ const navigation = [
       { href: "/sorular", label: "Sorular", icon: ScrollText },
       { href: "/sorular/onayla", label: "Soru Onayla", icon: BadgeCheck },
       { href: "/sorular/kalite", label: "Soru Kalite", icon: Gauge },
+      { href: "/sorular/agent-uret", label: "Agent Soru Üret", icon: Sparkles },
       { href: "/sorular/import", label: "Soru Import", icon: FileUp },
       { href: "/sorular/dogru-yanlis", label: "D/Y Soruları", icon: ListChecks },
       { href: "/sorular/dogru-yanlis-import", label: "D/Y Import", icon: ListChecks },

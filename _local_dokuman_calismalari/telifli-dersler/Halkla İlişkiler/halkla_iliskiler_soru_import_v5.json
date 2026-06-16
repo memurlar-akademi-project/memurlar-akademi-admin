@@ -1,0 +1,2898 @@
+{
+  "subject_id": 27,
+  "subject_name": "Halkla İlişkiler",
+  "q_version": 5,
+  "status": "active",
+  "approval_status": null,
+  "questions": [
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler kavramı ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Halkla ilişkiler, kurum ile kamuları arasında planlı, sürekli ve karşılıklı iletişim kurulmasına dayanır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnızca kurumun reklam kampanyalarını yürütmesini ifade eder",
+          "is_correct": false,
+          "id": 71696
+        },
+        {
+          "label": "B",
+          "option_text": "Tek seferlik duyuru faaliyetlerinden oluşur",
+          "is_correct": false,
+          "id": 71697
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum ile kamuları arasında planlı ve sürekli iletişimi esas alır",
+          "is_correct": true,
+          "id": 71698
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece kriz dönemlerinde kullanılan savunma yöntemidir",
+          "is_correct": false,
+          "id": 71699
+        },
+        {
+          "label": "E",
+          "option_text": "Kurumun iç işleyişinden bağımsız bir tanıtım faaliyetidir",
+          "is_correct": false,
+          "id": 71700
+        }
+      ],
+      "id": 15035
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkiler tanımlarında görülen farklılığın nedenlerinden biri değildir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Halkla ilişkilerde hedef kitle ve mesaj her kurumda aynı değildir; tanım çeşitliliği alanın çok boyutlu yapısından doğar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Alanın yönetimle ilişkili olması",
+          "is_correct": false,
+          "id": 71701
+        },
+        {
+          "label": "B",
+          "option_text": "Alanın iletişim boyutunun bulunması",
+          "is_correct": false,
+          "id": 71702
+        },
+        {
+          "label": "C",
+          "option_text": "Toplum ve kamuoyu kavramlarıyla bağlantılı olması",
+          "is_correct": false,
+          "id": 71703
+        },
+        {
+          "label": "D",
+          "option_text": "Uygulama alanlarının farklı kurumlarda değişebilmesi",
+          "is_correct": false,
+          "id": 71704
+        },
+        {
+          "label": "E",
+          "option_text": "Her kurumda aynı hedef kitle ve aynı mesajın bulunması",
+          "is_correct": true,
+          "id": 71705
+        }
+      ],
+      "id": 15036
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerin kamu kurumları açısından temel işlevi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kamu kurumlarında halkla ilişkiler hizmetlerin anlatılması, beklentilerin izlenmesi ve kurum davranışının açıklanmasıyla ilgilidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu hizmetlerini yalnızca ticari kazanca dönüştürmek",
+          "is_correct": false,
+          "id": 71706
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmetleri anlatmak ve yurttaş beklentilerini izlemek",
+          "is_correct": true,
+          "id": 71707
+        },
+        {
+          "label": "C",
+          "option_text": "Kurumu yurttaşlardan tamamen bağımsız hâle getirmek",
+          "is_correct": false,
+          "id": 71708
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece kurum içi personel işlemlerini yürütmek",
+          "is_correct": false,
+          "id": 71709
+        },
+        {
+          "label": "E",
+          "option_text": "Tüm iletişim kanallarını tek yönlü propaganda aracına çevirmek",
+          "is_correct": false,
+          "id": 71710
+        }
+      ],
+      "id": 15037
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdaki ifadelerden hangisi halkla ilişkilerde “tanım sorunu” ile en yakından ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Tanım sorunu, alanın çok boyutlu yapısı nedeniyle herkesin üzerinde uzlaştığı tek ve kısa bir tanımın güç olmasından kaynaklanır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Halkla ilişkilerin tek bir kısa tanımla bütün yönleriyle açıklanmasının güç olması",
+          "is_correct": true,
+          "id": 71711
+        },
+        {
+          "label": "B",
+          "option_text": "Halkla ilişkilerin yalnızca basın bülteni hazırlamaktan ibaret olması",
+          "is_correct": false,
+          "id": 71712
+        },
+        {
+          "label": "C",
+          "option_text": "Halkla ilişkilerin reklama tamamen eşit kabul edilmesi",
+          "is_correct": false,
+          "id": 71713
+        },
+        {
+          "label": "D",
+          "option_text": "Halkla ilişkilerde kamuoyu kavramının hiç kullanılmaması",
+          "is_correct": false,
+          "id": 71714
+        },
+        {
+          "label": "E",
+          "option_text": "Halkla ilişkilerin kurum dışı çevreyle bağlantı kurmaması",
+          "is_correct": false,
+          "id": 71715
+        }
+      ],
+      "id": 15038
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler ile reklam arasındaki temel ayrım aşağıdakilerden hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Reklam tanıtım ve satış etkisine daha yakınken halkla ilişkiler güven, anlayış ve ilişki yönetimi kurmaya yönelir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Reklam karşılıklı anlayışı, halkla ilişkiler yalnız satış fiyatını hedefler",
+          "is_correct": false,
+          "id": 71716
+        },
+        {
+          "label": "B",
+          "option_text": "Halkla ilişkiler yalnız ücretli medya alanı satın alır",
+          "is_correct": false,
+          "id": 71717
+        },
+        {
+          "label": "C",
+          "option_text": "Reklam kurum içi davranışa, halkla ilişkiler sadece ürün ambalajına odaklanır",
+          "is_correct": false,
+          "id": 71718
+        },
+        {
+          "label": "D",
+          "option_text": "Reklam daha çok tanıtım ve satış etkisine, halkla ilişkiler güven ve ilişki yönetimine yönelir",
+          "is_correct": true,
+          "id": 71719
+        },
+        {
+          "label": "E",
+          "option_text": "İki kavram arasında amaç, yöntem ve hedef bakımından hiçbir fark yoktur",
+          "is_correct": false,
+          "id": 71720
+        }
+      ],
+      "id": 15039
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler ile propaganda karşılaştırıldığında aşağıdakilerden hangisi halkla ilişkiler için daha uygundur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Halkla ilişkiler karşılıklı anlayış ve güvene dayanır; propaganda ise çoğu zaman tek yönlü etkileme mantığıyla çalışır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tek yönlü etkileme ve karşı görüşü bastırma",
+          "is_correct": false,
+          "id": 71721
+        },
+        {
+          "label": "B",
+          "option_text": "Karşılıklı anlayış ve güven oluşturma",
+          "is_correct": true,
+          "id": 71722
+        },
+        {
+          "label": "C",
+          "option_text": "Bilgiyi yalnızca ikna amacıyla seçerek kullanma",
+          "is_correct": false,
+          "id": 71723
+        },
+        {
+          "label": "D",
+          "option_text": "Kısa vadeli duygusal yönlendirmeyi esas alma",
+          "is_correct": false,
+          "id": 71724
+        },
+        {
+          "label": "E",
+          "option_text": "Kaynağın doğruluğundan çok etkinin önemsenmesi",
+          "is_correct": false,
+          "id": 71725
+        }
+      ],
+      "id": 15040
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "I. Planlılık\nII. Süreklilik\nIII. Karşılıklı iletişim\nYukarıdakilerden hangileri halkla ilişkiler anlayışının temel unsurları arasında yer alır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Halkla ilişkiler planlı, sürekli ve karşılıklı iletişime dayalı bir ilişki yönetimidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false,
+          "id": 71726
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız II",
+          "is_correct": false,
+          "id": 71727
+        },
+        {
+          "label": "C",
+          "option_text": "I ve II",
+          "is_correct": false,
+          "id": 71728
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false,
+          "id": 71729
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true,
+          "id": 71730
+        }
+      ],
+      "id": 15041
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde “kamu” kavramı aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "D",
+      "explanation_text": "Halkla ilişkilerde kamu, kurumun faaliyetlerinden etkilenen veya kurumu etkileyen hedef grupları anlatır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnızca kurumun üst yöneticilerini",
+          "is_correct": false,
+          "id": 71731
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece kurumun hukuki dosyalarını",
+          "is_correct": false,
+          "id": 71732
+        },
+        {
+          "label": "C",
+          "option_text": "Kurumla hiçbir ilişkisi olmayan soyut bir topluluğu",
+          "is_correct": false,
+          "id": 71733
+        },
+        {
+          "label": "D",
+          "option_text": "Kurumun faaliyetlerinden etkilenen veya kurumu etkileyen grupları",
+          "is_correct": true,
+          "id": 71734
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnızca reklam ajanslarını",
+          "is_correct": false,
+          "id": 71735
+        }
+      ],
+      "id": 15042
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkilerin tek yönlü tanıtım olarak görülmesinin sakıncasıdır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Halkla ilişkiler tek yönlü tanıtıma indirgenirse geri bildirim ve çevre beklentileri ihmal edilir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurumun çevresinden gelen beklenti ve geri bildirimi ihmal etmesi",
+          "is_correct": true,
+          "id": 71736
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumun daha planlı araştırma yapmasını sağlaması",
+          "is_correct": false,
+          "id": 71737
+        },
+        {
+          "label": "C",
+          "option_text": "Hedef kitle analizini güçlendirmesi",
+          "is_correct": false,
+          "id": 71738
+        },
+        {
+          "label": "D",
+          "option_text": "Kurum davranışını iletişimle uyumlu hâle getirmesi",
+          "is_correct": false,
+          "id": 71739
+        },
+        {
+          "label": "E",
+          "option_text": "Karşılıklı güveni artırması",
+          "is_correct": false,
+          "id": 71740
+        }
+      ],
+      "id": 15043
+    },
+    {
+      "topic_id": 119,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde kurum davranışı ile verilen mesaj arasındaki ilişki için aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Halkla ilişkilerde güven, mesajın kurumun gerçek davranışıyla desteklenmesine bağlıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesaj güçlü ise kurum davranışının hiçbir önemi yoktur",
+          "is_correct": false,
+          "id": 71741
+        },
+        {
+          "label": "B",
+          "option_text": "Kurum davranışı yalnız muhasebe birimini ilgilendirir",
+          "is_correct": false,
+          "id": 71742
+        },
+        {
+          "label": "C",
+          "option_text": "Mesajın güvenilirliği kurumun gerçek davranışıyla desteklenmelidir",
+          "is_correct": true,
+          "id": 71743
+        },
+        {
+          "label": "D",
+          "option_text": "Halkla ilişkiler yalnız slogan üretimi olduğu için davranıştan bağımsızdır",
+          "is_correct": false,
+          "id": 71744
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum davranışı gizli tutulduğunda halkla ilişkiler her zaman güçlenir",
+          "is_correct": false,
+          "id": 71745
+        }
+      ],
+      "id": 15044
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde kapsayıcı yaklaşım aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kapsayıcı yaklaşım halkla ilişkileri tek araç veya tek amaçla sınırlamaz; yönetim, iletişim ve çevre ilişkileriyle birlikte ele alır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Alanı yalnız basın açıklamasına indirgemeyi",
+          "is_correct": false,
+          "id": 71746
+        },
+        {
+          "label": "B",
+          "option_text": "Halkla ilişkileri yönetim, iletişim ve çevre ilişkileriyle birlikte değerlendirmeyi",
+          "is_correct": true,
+          "id": 71747
+        },
+        {
+          "label": "C",
+          "option_text": "Halkla ilişkileri sadece reklam bütçesi üzerinden açıklamayı",
+          "is_correct": false,
+          "id": 71748
+        },
+        {
+          "label": "D",
+          "option_text": "Kurum dışı çevreyi tamamen devre dışı bırakmayı",
+          "is_correct": false,
+          "id": 71749
+        },
+        {
+          "label": "E",
+          "option_text": "Planlama yerine anlık tepki vermeyi",
+          "is_correct": false,
+          "id": 71750
+        }
+      ],
+      "id": 15045
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi farklı halkla ilişkiler tanımlarının ortak noktalarından biridir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Farklı tanımlar değişse de halkla ilişkilerin planlı ve sürekli yürütülmesi ortak unsurlardandır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tamamen rastlantısal yürütülmesi",
+          "is_correct": false,
+          "id": 71751
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız kriz dönemlerinde uygulanması",
+          "is_correct": false,
+          "id": 71752
+        },
+        {
+          "label": "C",
+          "option_text": "Planlı ve sürekli olması",
+          "is_correct": true,
+          "id": 71753
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitleye ihtiyaç duymaması",
+          "is_correct": false,
+          "id": 71754
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum davranışından bağımsız olması",
+          "is_correct": false,
+          "id": 71755
+        }
+      ],
+      "id": 15046
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde kurumun çevresini anlaması neden önemlidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kurum çevresini anlamadan beklenti, algı ve sorunları doğru belirleyemez.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesajların tamamen gizli kalması için",
+          "is_correct": false,
+          "id": 71756
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumun tüm geri bildirimleri yok sayması için",
+          "is_correct": false,
+          "id": 71757
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece kurum içi hiyerarşiyi artırmak için",
+          "is_correct": false,
+          "id": 71758
+        },
+        {
+          "label": "D",
+          "option_text": "Beklenti, algı ve sorunları doğru belirleyebilmek için",
+          "is_correct": true,
+          "id": 71759
+        },
+        {
+          "label": "E",
+          "option_text": "Bütün kamulara aynı mesajı zorunlu olarak göndermek için",
+          "is_correct": false,
+          "id": 71760
+        }
+      ],
+      "id": 15047
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdaki yaklaşımlardan hangisi halkla ilişkilerde karşılıklı anlayış hedefiyle bağdaşmaz?",
+      "correct_answer_text": "A",
+      "explanation_text": "Karşılıklı anlayış, hedef kitlenin tepkilerini dikkate almayan tek yönlü dayatma anlayışıyla bağdaşmaz.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hedef kitlenin tepkilerini dikkate almadan sadece kurum mesajını dayatmak",
+          "is_correct": true,
+          "id": 71761
+        },
+        {
+          "label": "B",
+          "option_text": "Hedef kitle beklentilerini araştırmak",
+          "is_correct": false,
+          "id": 71762
+        },
+        {
+          "label": "C",
+          "option_text": "Kurumun davranışı ile mesajı arasında uyum kurmak",
+          "is_correct": false,
+          "id": 71763
+        },
+        {
+          "label": "D",
+          "option_text": "Geri bildirimleri değerlendirmek",
+          "is_correct": false,
+          "id": 71764
+        },
+        {
+          "label": "E",
+          "option_text": "Uzun vadeli güven ilişkisi kurmak",
+          "is_correct": false,
+          "id": 71765
+        }
+      ],
+      "id": 15048
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "I. Kurumu anlatma\nII. Çevreyi anlama\nIII. Geri bildirimi değerlendirme\nKapsayıcı halkla ilişkiler anlayışında yukarıdakilerden hangileri birlikte düşünülmelidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kapsayıcı yaklaşımda kurum kendini anlatır, çevresini anlar ve geri bildirimi değerlendirir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false,
+          "id": 71766
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız III",
+          "is_correct": false,
+          "id": 71767
+        },
+        {
+          "label": "C",
+          "option_text": "I ve II",
+          "is_correct": false,
+          "id": 71768
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false,
+          "id": 71769
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true,
+          "id": 71770
+        }
+      ],
+      "id": 15049
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde “anlam” boyutu aşağıdakilerden hangisiyle en iyi açıklanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Halkla ilişkilerin anlamı, kurum ile kamular arasında ortak anlayış ve güven zemini oluşturma çabasıyla ilgilidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece kurum logosunun tasarlanmasıyla",
+          "is_correct": false,
+          "id": 71771
+        },
+        {
+          "label": "B",
+          "option_text": "Kamuoyunun kurumdan tamamen bağımsız görülmesiyle",
+          "is_correct": false,
+          "id": 71772
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum ile kamu arasında ortak anlayış ve güven zemini kurulmasıyla",
+          "is_correct": true,
+          "id": 71773
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnızca ücretli reklam metinleriyle",
+          "is_correct": false,
+          "id": 71774
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece kurum içi arşiv düzeniyle",
+          "is_correct": false,
+          "id": 71775
+        }
+      ],
+      "id": 15050
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkilerin yalnız “tanıtım” olarak görülmesine karşı kapsayıcı yaklaşımın vurgusudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kapsayıcı yaklaşım halkla ilişkileri araştırma, planlama, uygulama ve değerlendirme süreçleriyle bütün olarak ele alır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tanıtım dışındaki tüm iletişimi gereksiz saymak",
+          "is_correct": false,
+          "id": 71776
+        },
+        {
+          "label": "B",
+          "option_text": "Araştırma, planlama, uygulama ve değerlendirmeyi birlikte ele almak",
+          "is_correct": true,
+          "id": 71777
+        },
+        {
+          "label": "C",
+          "option_text": "Kurumun çevre beklentilerini yok saymak",
+          "is_correct": false,
+          "id": 71778
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece afiş ve broşür hazırlamak",
+          "is_correct": false,
+          "id": 71779
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum davranışını iletişimden ayırmak",
+          "is_correct": false,
+          "id": 71780
+        }
+      ],
+      "id": 15051
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde farklı tanımların ortak yönlerini ölçen bir soruda aşağıdakilerden hangisi doğru bir seçenek olur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Tanımların ortak yönlerinden biri, kurum ile kamuları arasında iletişim kurulmasıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Halkla ilişkiler plansız bir duyuru faaliyetidir",
+          "is_correct": false,
+          "id": 71781
+        },
+        {
+          "label": "B",
+          "option_text": "Halkla ilişkiler yalnız ürün satışını hedefler",
+          "is_correct": false,
+          "id": 71782
+        },
+        {
+          "label": "C",
+          "option_text": "Halkla ilişkiler hedef kitle olmadan yürütülür",
+          "is_correct": false,
+          "id": 71783
+        },
+        {
+          "label": "D",
+          "option_text": "Halkla ilişkiler kurum ile kamuları arasında iletişim kurar",
+          "is_correct": true,
+          "id": 71784
+        },
+        {
+          "label": "E",
+          "option_text": "Halkla ilişkiler yalnız gizli propaganda faaliyetidir",
+          "is_correct": false,
+          "id": 71785
+        }
+      ],
+      "id": 15052
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkilerde hedef kitleyi doğru tanımanın sonucudur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Hedef kitle doğru tanındığında mesaj ve araç seçimi daha isabetli yapılır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesaj ve araç seçiminde daha isabetli karar verilmesi",
+          "is_correct": true,
+          "id": 71786
+        },
+        {
+          "label": "B",
+          "option_text": "Tüm iletişimin aynı kalıba zorlanması",
+          "is_correct": false,
+          "id": 71787
+        },
+        {
+          "label": "C",
+          "option_text": "Geri bildirimin gereksiz hâle gelmesi",
+          "is_correct": false,
+          "id": 71788
+        },
+        {
+          "label": "D",
+          "option_text": "Planlama aşamasının ortadan kalkması",
+          "is_correct": false,
+          "id": 71789
+        },
+        {
+          "label": "E",
+          "option_text": "Kurumun çevresiyle bağını kesmesi",
+          "is_correct": false,
+          "id": 71790
+        }
+      ],
+      "id": 15053
+    },
+    {
+      "topic_id": 120,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Kapsayıcı yaklaşımda halkla ilişkiler aşağıdaki alanlardan hangisine indirgenemez?",
+      "correct_answer_text": "E",
+      "explanation_text": "Halkla ilişkiler yalnız broşür hazırlama işi değildir; çok boyutlu ve planlı ilişki yönetimidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yönetimle bağlantılı ilişki kurma faaliyetine",
+          "is_correct": false,
+          "id": 71791
+        },
+        {
+          "label": "B",
+          "option_text": "Kurum çevresini anlama sürecine",
+          "is_correct": false,
+          "id": 71792
+        },
+        {
+          "label": "C",
+          "option_text": "Planlı iletişim yönetimine",
+          "is_correct": false,
+          "id": 71793
+        },
+        {
+          "label": "D",
+          "option_text": "Geri bildirimleri değerlendirme faaliyetlerine",
+          "is_correct": false,
+          "id": 71794
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnızca bir broşür hazırlama işine",
+          "is_correct": true,
+          "id": 71795
+        }
+      ],
+      "id": 15054
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde dürüstlük ilkesinin temel anlamı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Dürüstlük, verilen bilginin doğru ve yanıltıcı olmayan biçimde sunulmasını gerektirir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurum yararına olan her bilginin abartılarak verilmesi",
+          "is_correct": false,
+          "id": 71796
+        },
+        {
+          "label": "B",
+          "option_text": "Verilen bilginin doğru, yanıltıcı olmayan ve güvene uygun olması",
+          "is_correct": true,
+          "id": 71797
+        },
+        {
+          "label": "C",
+          "option_text": "Her bilginin hiçbir değerlendirme yapılmadan açıklanması",
+          "is_correct": false,
+          "id": 71798
+        },
+        {
+          "label": "D",
+          "option_text": "Krizlerde gerçek dışı mesajlara başvurulması",
+          "is_correct": false,
+          "id": 71799
+        },
+        {
+          "label": "E",
+          "option_text": "Hedef kitlenin yalnız duygusal olarak etkilenmesi",
+          "is_correct": false,
+          "id": 71800
+        }
+      ],
+      "id": 15055
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkiler ilkeleri arasında güvenilirliği en doğrudan destekler?",
+      "correct_answer_text": "C",
+      "explanation_text": "İnandırıcılık, mesajın hedef kamu tarafından güvenilir bulunmasını sağlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bilgiyi sürekli saklamak",
+          "is_correct": false,
+          "id": 71801
+        },
+        {
+          "label": "B",
+          "option_text": "Çelişkili mesajlar vermek",
+          "is_correct": false,
+          "id": 71802
+        },
+        {
+          "label": "C",
+          "option_text": "İnandırıcılık",
+          "is_correct": true,
+          "id": 71803
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitleyi devre dışı bırakmak",
+          "is_correct": false,
+          "id": 71804
+        },
+        {
+          "label": "E",
+          "option_text": "Planlamadan kaçınmak",
+          "is_correct": false,
+          "id": 71805
+        }
+      ],
+      "id": 15056
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde süreklilik ilkesi aşağıdakilerden hangisini gerektirir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Süreklilik, halkla ilişkilerin tek seferlik değil devam eden bir ilişki yönetimi olarak yürütülmesini ifade eder.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İletişimin yalnız bir defalık kampanya olarak değil, devam eden ilişki olarak yürütülmesini",
+          "is_correct": true,
+          "id": 71806
+        },
+        {
+          "label": "B",
+          "option_text": "Kriz sona erince kurumun tüm iletişimi kesmesini",
+          "is_correct": false,
+          "id": 71807
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnızca yılda bir basın açıklaması yapılmasını",
+          "is_correct": false,
+          "id": 71808
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitlenin değişen beklentilerinin izlenmemesini",
+          "is_correct": false,
+          "id": 71809
+        },
+        {
+          "label": "E",
+          "option_text": "Planların uygulanmadan arşive kaldırılmasını",
+          "is_correct": false,
+          "id": 71810
+        }
+      ],
+      "id": 15057
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "I. Dürüstlük\nII. İnandırıcılık\nIII. Tutarlılık\nYukarıdakilerden hangileri halkla ilişkilerde güven oluşumuna katkı sağlar?",
+      "correct_answer_text": "E",
+      "explanation_text": "Dürüstlük, inandırıcılık ve tutarlılık halkla ilişkilerde güveni destekleyen ilkelerdir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false,
+          "id": 71811
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız II",
+          "is_correct": false,
+          "id": 71812
+        },
+        {
+          "label": "C",
+          "option_text": "I ve II",
+          "is_correct": false,
+          "id": 71813
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false,
+          "id": 71814
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true,
+          "id": 71815
+        }
+      ],
+      "id": 15058
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler biriminin kurum içindeki yapılanışı ile ilgili aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Halkla ilişkiler birimi kurumun yönetim süreçleriyle bağlantılı çalışmalı ve karar alma süreçlerine iletişim verisi sağlayabilmelidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurum yönetiminden tamamen kopuk olmalıdır",
+          "is_correct": false,
+          "id": 71816
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız teknik arşiv işleriyle sınırlı kalmalıdır",
+          "is_correct": false,
+          "id": 71817
+        },
+        {
+          "label": "C",
+          "option_text": "Karar süreçlerine hiçbir bilgi sağlamamalıdır",
+          "is_correct": false,
+          "id": 71818
+        },
+        {
+          "label": "D",
+          "option_text": "Kurumun yönetim süreçleriyle bağlantılı çalışmalıdır",
+          "is_correct": true,
+          "id": 71819
+        },
+        {
+          "label": "E",
+          "option_text": "Hedef kitle analizini dış birimlere yasaklamalıdır",
+          "is_correct": false,
+          "id": 71820
+        }
+      ],
+      "id": 15059
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkilerde tutarlılık ilkesine aykırıdır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Tutarlılık, kurumun mesajları ve davranışları arasında çelişki olmamasını gerektirir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurumun farklı zamanlarda aynı konuda çelişkili mesajlar vermesi",
+          "is_correct": true,
+          "id": 71821
+        },
+        {
+          "label": "B",
+          "option_text": "Kurum davranışı ile mesaj arasında uyum kurulması",
+          "is_correct": false,
+          "id": 71822
+        },
+        {
+          "label": "C",
+          "option_text": "Bilginin doğrulanarak paylaşılması",
+          "is_correct": false,
+          "id": 71823
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitlenin beklentilerinin izlenmesi",
+          "is_correct": false,
+          "id": 71824
+        },
+        {
+          "label": "E",
+          "option_text": "Kurumun iletişim dilini planlı biçimde sürdürmesi",
+          "is_correct": false,
+          "id": 71825
+        }
+      ],
+      "id": 15060
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde açıklık ilkesinin doğru yorumu aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Açıklık, paylaşılabilir bilgilerin anlaşılır ve erişilebilir biçimde sunulmasıdır; sınırsız bilgi açıklama anlamına gelmez.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her gizli bilginin sınırsız biçimde paylaşılması",
+          "is_correct": false,
+          "id": 71826
+        },
+        {
+          "label": "B",
+          "option_text": "Bilginin tamamen saklanması",
+          "is_correct": false,
+          "id": 71827
+        },
+        {
+          "label": "C",
+          "option_text": "Kurumun paylaşılabilir bilgileri anlaşılır ve erişilebilir biçimde sunması",
+          "is_correct": true,
+          "id": 71828
+        },
+        {
+          "label": "D",
+          "option_text": "Yanıltıcı bilgilerin kriz yönetimi için kullanılabilmesi",
+          "is_correct": false,
+          "id": 71829
+        },
+        {
+          "label": "E",
+          "option_text": "Hedef kitlenin soru sormasının engellenmesi",
+          "is_correct": false,
+          "id": 71830
+        }
+      ],
+      "id": 15061
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler yapılanmasında iç iletişimin önemi aşağıdakilerden hangisiyle açıklanır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Çalışanlar kurumun mesajını ve davranışını dış çevreye taşıdığı için iç iletişim halkla ilişkiler açısından önemlidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dış kamuların tamamen gereksiz olmasıyla",
+          "is_correct": false,
+          "id": 71831
+        },
+        {
+          "label": "B",
+          "option_text": "Çalışanların kurum mesajını ve davranışını taşıyan önemli bir grup olmasıyla",
+          "is_correct": true,
+          "id": 71832
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum çalışanlarının halkla ilişkilerden etkilenmemesiyle",
+          "is_correct": false,
+          "id": 71833
+        },
+        {
+          "label": "D",
+          "option_text": "İç iletişimin yalnız bordro işlemlerinden oluşmasıyla",
+          "is_correct": false,
+          "id": 71834
+        },
+        {
+          "label": "E",
+          "option_text": "Dış iletişimin iç iletişime hiçbir şekilde bağlı olmamasıyla",
+          "is_correct": false,
+          "id": 71835
+        }
+      ],
+      "id": 15062
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi halkla ilişkilerde sorumluluk anlayışıyla bağdaşır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Halkla ilişkilerde sorumluluk, kurum davranışının toplumsal etkilerini dikkate almayı gerektirir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurumun sadece kendi çıkarını gözetmesi",
+          "is_correct": false,
+          "id": 71836
+        },
+        {
+          "label": "B",
+          "option_text": "Hedef kitleye bilgi vermekten kaçınması",
+          "is_correct": false,
+          "id": 71837
+        },
+        {
+          "label": "C",
+          "option_text": "Yanlış bilgiyi fark ettiği hâlde düzeltmemesi",
+          "is_correct": false,
+          "id": 71838
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu yararını iletişim sürecinden dışlaması",
+          "is_correct": false,
+          "id": 71839
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum davranışının toplumsal etkilerini dikkate alması",
+          "is_correct": true,
+          "id": 71840
+        }
+      ],
+      "id": 15063
+    },
+    {
+      "topic_id": 121,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde “iyi mesaj” tek başına neden yeterli değildir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Mesajın etkili olabilmesi kurumun gerçek davranışı, güvenilirliği ve tutarlılığıyla desteklenmesine bağlıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesajların hiçbir zaman hedef kitleye ulaşmaması nedeniyle",
+          "is_correct": false,
+          "id": 71841
+        },
+        {
+          "label": "B",
+          "option_text": "Kamuoyunun kurum davranışını hiç önemsememesi nedeniyle",
+          "is_correct": false,
+          "id": 71842
+        },
+        {
+          "label": "C",
+          "option_text": "Halkla ilişkilerde planlamanın gereksiz olması nedeniyle",
+          "is_correct": false,
+          "id": 71843
+        },
+        {
+          "label": "D",
+          "option_text": "Mesajın kurumun gerçek davranışı ve güvenilirliğiyle desteklenmesi gerektiği için",
+          "is_correct": true,
+          "id": 71844
+        },
+        {
+          "label": "E",
+          "option_text": "İletişim araçlarının her durumda aynı sonucu vermesi nedeniyle",
+          "is_correct": false,
+          "id": 71845
+        }
+      ],
+      "id": 15064
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler sürecinin genel akışı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Konu anlatımında süreç bilgi toplama, planlama, uygulama ve değerlendirme aşamalarıyla açıklanır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bilgi toplama, planlama, uygulama, değerlendirme",
+          "is_correct": true,
+          "id": 71846
+        },
+        {
+          "label": "B",
+          "option_text": "Uygulama, değerlendirme, bilgi toplama, planlama",
+          "is_correct": false,
+          "id": 71847
+        },
+        {
+          "label": "C",
+          "option_text": "Planlama, değerlendirme, uygulama, bilgi toplama",
+          "is_correct": false,
+          "id": 71848
+        },
+        {
+          "label": "D",
+          "option_text": "Değerlendirme, uygulama, planlama, bilgi toplama",
+          "is_correct": false,
+          "id": 71849
+        },
+        {
+          "label": "E",
+          "option_text": "Bilgi toplama, uygulama, değerlendirme, planlama",
+          "is_correct": false,
+          "id": 71850
+        }
+      ],
+      "id": 15065
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Bilgi toplama aşamasının temel amacı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bilgi toplama aşaması, kurum ve kamuları hakkında sağlam veri elde etmeyi amaçlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Plan yapılmadan doğrudan kampanya başlatmak",
+          "is_correct": false,
+          "id": 71851
+        },
+        {
+          "label": "B",
+          "option_text": "Hedef kitleyi tamamen varsayımlarla belirlemek",
+          "is_correct": false,
+          "id": 71852
+        },
+        {
+          "label": "C",
+          "option_text": "Kurumun durumu, kamuları, sorunları ve beklentileri hakkında veri elde etmek",
+          "is_correct": true,
+          "id": 71853
+        },
+        {
+          "label": "D",
+          "option_text": "Değerlendirme sonuçlarını yok saymak",
+          "is_correct": false,
+          "id": 71854
+        },
+        {
+          "label": "E",
+          "option_text": "İletişim araçlarını rastgele seçmek",
+          "is_correct": false,
+          "id": 71855
+        }
+      ],
+      "id": 15066
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi bilgi toplama kaynaklarından biri olabilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kurum kayıtları, vatandaş başvuruları, basın görünürlüğü ve benzeri kaynaklar bilgi toplamada kullanılabilir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnızca tahminler",
+          "is_correct": false,
+          "id": 71856
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece söylentiler",
+          "is_correct": false,
+          "id": 71857
+        },
+        {
+          "label": "C",
+          "option_text": "Hiçbir kayıt tutmamak",
+          "is_correct": false,
+          "id": 71858
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaş başvuruları ve kurum kayıtları",
+          "is_correct": true,
+          "id": 71859
+        },
+        {
+          "label": "E",
+          "option_text": "Planlama ekibini devre dışı bırakmak",
+          "is_correct": false,
+          "id": 71860
+        }
+      ],
+      "id": 15067
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde planlama aşaması aşağıdakilerden hangisini kapsar?",
+      "correct_answer_text": "B",
+      "explanation_text": "Planlama aşamasında hedefler, hedef kitle, mesaj, araçlar, zamanlama ve kaynaklar belirlenir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece sonuçları raporlamayı",
+          "is_correct": false,
+          "id": 71861
+        },
+        {
+          "label": "B",
+          "option_text": "Hedef, hedef kitle, mesaj, araç, zaman ve kaynakları belirlemeyi",
+          "is_correct": true,
+          "id": 71862
+        },
+        {
+          "label": "C",
+          "option_text": "Geri bildirimi yok saymayı",
+          "is_correct": false,
+          "id": 71863
+        },
+        {
+          "label": "D",
+          "option_text": "Kampanyayı amaçsız başlatmayı",
+          "is_correct": false,
+          "id": 71864
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız kurum dışı söylentileri takip etmeyi",
+          "is_correct": false,
+          "id": 71865
+        }
+      ],
+      "id": 15068
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "I. Sorunun tanımlanması\nII. Hedef kitlenin belirlenmesi\nIII. Mesaj ve araç seçimi\nYukarıdakilerden hangileri planlama mantığı içinde değerlendirilir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Planlamada sorun tanımlanır, hedef kitle belirlenir, mesaj ve araç seçimi yapılır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false,
+          "id": 71866
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız II",
+          "is_correct": false,
+          "id": 71867
+        },
+        {
+          "label": "C",
+          "option_text": "I ve II",
+          "is_correct": false,
+          "id": 71868
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false,
+          "id": 71869
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true,
+          "id": 71870
+        }
+      ],
+      "id": 15069
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler planında hedefin açık belirlenmemesi aşağıdakilerden hangisine yol açar?",
+      "correct_answer_text": "A",
+      "explanation_text": "Hedef açık değilse uygulamanın başarısı ve değerlendirme ölçütleri belirsizleşir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Uygulama ve değerlendirme ölçütlerinin belirsizleşmesine",
+          "is_correct": true,
+          "id": 71871
+        },
+        {
+          "label": "B",
+          "option_text": "Sonuçların daha kolay ölçülmesine",
+          "is_correct": false,
+          "id": 71872
+        },
+        {
+          "label": "C",
+          "option_text": "Araç seçiminin otomatik olarak doğru yapılmasına",
+          "is_correct": false,
+          "id": 71873
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitlenin kendiliğinden netleşmesine",
+          "is_correct": false,
+          "id": 71874
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum davranışının her zaman tutarlı olmasına",
+          "is_correct": false,
+          "id": 71875
+        }
+      ],
+      "id": 15070
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Hedef kitle analizi ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Hedef kitle analizi tüm kamulara aynı mesajı zorunlu kılmaz; farklı gruplara uygun mesaj ve araç seçimini sağlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hedef kitlenin beklentilerini anlamaya yardım eder",
+          "is_correct": false,
+          "id": 71876
+        },
+        {
+          "label": "B",
+          "option_text": "Mesajın dilini belirlemede etkili olur",
+          "is_correct": false,
+          "id": 71877
+        },
+        {
+          "label": "C",
+          "option_text": "Her durumda tüm kamulara aynı mesajın verilmesini zorunlu kılar",
+          "is_correct": true,
+          "id": 71878
+        },
+        {
+          "label": "D",
+          "option_text": "Araç seçimini etkiler",
+          "is_correct": false,
+          "id": 71879
+        },
+        {
+          "label": "E",
+          "option_text": "Sorunun doğru tanımlanmasına katkı sağlar",
+          "is_correct": false,
+          "id": 71880
+        }
+      ],
+      "id": 15071
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi planlı halkla ilişkiler çalışmasının avantajıdır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Planlama, halkla ilişkiler faaliyetinin amaç, araç ve zaman bakımından yönetilebilir olmasını sağlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kaynak kullanımını tamamen rastgele hâle getirmesi",
+          "is_correct": false,
+          "id": 71881
+        },
+        {
+          "label": "B",
+          "option_text": "Krizleri her zaman yok etmesi",
+          "is_correct": false,
+          "id": 71882
+        },
+        {
+          "label": "C",
+          "option_text": "Geri bildirimi önemsizleştirmesi",
+          "is_correct": false,
+          "id": 71883
+        },
+        {
+          "label": "D",
+          "option_text": "Faaliyetin amaç, araç ve zaman bakımından yönetilebilir olmasını sağlaması",
+          "is_correct": true,
+          "id": 71884
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum çevresini analiz etmeyi engellemesi",
+          "is_correct": false,
+          "id": 71885
+        }
+      ],
+      "id": 15072
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Bilgi toplama yapılmadan planlama yapılmasının en önemli riski aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Araştırma yapılmadan planlama yanlış varsayımlar üzerine kurulabilir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurumun daha çok veri elde etmesi",
+          "is_correct": false,
+          "id": 71886
+        },
+        {
+          "label": "B",
+          "option_text": "Yanlış varsayımlar üzerine karar alınması",
+          "is_correct": true,
+          "id": 71887
+        },
+        {
+          "label": "C",
+          "option_text": "Hedef kitlenin daha iyi anlaşılması",
+          "is_correct": false,
+          "id": 71888
+        },
+        {
+          "label": "D",
+          "option_text": "Değerlendirmenin daha nesnel yapılması",
+          "is_correct": false,
+          "id": 71889
+        },
+        {
+          "label": "E",
+          "option_text": "Kamuoyu beklentilerinin daha doğru ölçülmesi",
+          "is_correct": false,
+          "id": 71890
+        }
+      ],
+      "id": 15073
+    },
+    {
+      "topic_id": 122,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler sürecinde araştırma sonuçları hangi aşamayı doğrudan besler?",
+      "correct_answer_text": "E",
+      "explanation_text": "Araştırma ve bilgi toplama sonuçları planlama aşamasını doğrudan besler.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız değerlendirmeyi",
+          "is_correct": false,
+          "id": 71891
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız uygulama sırasında araç dağıtımını",
+          "is_correct": false,
+          "id": 71892
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece medya satın almasını",
+          "is_correct": false,
+          "id": 71893
+        },
+        {
+          "label": "D",
+          "option_text": "Kurum dışı söylenti üretimini",
+          "is_correct": false,
+          "id": 71894
+        },
+        {
+          "label": "E",
+          "option_text": "Planlama aşamasını",
+          "is_correct": true,
+          "id": 71895
+        }
+      ],
+      "id": 15074
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler sürecinde uygulama aşaması aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "C",
+      "explanation_text": "Uygulama aşaması, planlanan halkla ilişkiler faaliyetlerinin hayata geçirilmesidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız sonuç raporlarının arşivlenmesini",
+          "is_correct": false,
+          "id": 71896
+        },
+        {
+          "label": "B",
+          "option_text": "Sorun tanımının hiç yapılmamasını",
+          "is_correct": false,
+          "id": 71897
+        },
+        {
+          "label": "C",
+          "option_text": "Planlanan faaliyetlerin gerçek hayata geçirilmesini",
+          "is_correct": true,
+          "id": 71898
+        },
+        {
+          "label": "D",
+          "option_text": "Bilgi toplama aşamasının tamamen yok sayılmasını",
+          "is_correct": false,
+          "id": 71899
+        },
+        {
+          "label": "E",
+          "option_text": "Hedef kitlenin belirlenmeden iletişimin kesilmesini",
+          "is_correct": false,
+          "id": 71900
+        }
+      ],
+      "id": 15075
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "İletişim modelinde mesajı hedef kitleye ileten unsur aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İletişim modelinde mesaj, kanal aracılığıyla alıcıya iletilir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Alıcı",
+          "is_correct": false,
+          "id": 71901
+        },
+        {
+          "label": "B",
+          "option_text": "Kanal",
+          "is_correct": true,
+          "id": 71902
+        },
+        {
+          "label": "C",
+          "option_text": "Geri bildirim",
+          "is_correct": false,
+          "id": 71903
+        },
+        {
+          "label": "D",
+          "option_text": "Gürültü",
+          "is_correct": false,
+          "id": 71904
+        },
+        {
+          "label": "E",
+          "option_text": "Ortak deneyim alanı",
+          "is_correct": false,
+          "id": 71905
+        }
+      ],
+      "id": 15076
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi iletişim sürecinde “gürültü” kavramına örnektir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Gürültü, mesajın doğru anlaşılmasını engelleyen teknik, fiziksel veya anlamsal unsurlardır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesajın hedefe uygun hazırlanması",
+          "is_correct": false,
+          "id": 71906
+        },
+        {
+          "label": "B",
+          "option_text": "Alıcının mesajı doğru anlaması",
+          "is_correct": false,
+          "id": 71907
+        },
+        {
+          "label": "C",
+          "option_text": "Kanalın sorunsuz işlemesi",
+          "is_correct": false,
+          "id": 71908
+        },
+        {
+          "label": "D",
+          "option_text": "Mesajın anlaşılmasını bozan teknik veya anlamsal engel",
+          "is_correct": true,
+          "id": 71909
+        },
+        {
+          "label": "E",
+          "option_text": "Geri bildirimin değerlendirilmesi",
+          "is_correct": false,
+          "id": 71910
+        }
+      ],
+      "id": 15077
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Ortak deneyim alanının iletişimdeki önemi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Ortak deneyim alanı, kaynak ve alıcının mesajı benzer anlam çerçevesinde yorumlamasını kolaylaştırır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kaynak ile alıcının mesajı benzer anlam çerçevesinde değerlendirmesini kolaylaştırması",
+          "is_correct": true,
+          "id": 71911
+        },
+        {
+          "label": "B",
+          "option_text": "Mesajın her zaman gizli kalmasını sağlaması",
+          "is_correct": false,
+          "id": 71912
+        },
+        {
+          "label": "C",
+          "option_text": "Geri bildirimi ortadan kaldırması",
+          "is_correct": false,
+          "id": 71913
+        },
+        {
+          "label": "D",
+          "option_text": "Kanal seçimini gereksiz hâle getirmesi",
+          "is_correct": false,
+          "id": 71914
+        },
+        {
+          "label": "E",
+          "option_text": "Alıcının kim olduğunun önemini yok etmesi",
+          "is_correct": false,
+          "id": 71915
+        }
+      ],
+      "id": 15078
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde değerlendirme aşamasının temel amacı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Değerlendirme aşaması, uygulamanın hedeflere ulaşıp ulaşmadığını ölçmeyi amaçlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Planlamayı gereksiz kılmak",
+          "is_correct": false,
+          "id": 71916
+        },
+        {
+          "label": "B",
+          "option_text": "Faaliyetin yalnız görsel tasarımını seçmek",
+          "is_correct": false,
+          "id": 71917
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum kayıtlarını silmek",
+          "is_correct": false,
+          "id": 71918
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitleyi yok saymak",
+          "is_correct": false,
+          "id": 71919
+        },
+        {
+          "label": "E",
+          "option_text": "Uygulamanın hedeflere ne ölçüde ulaştığını ölçmek",
+          "is_correct": true,
+          "id": 71920
+        }
+      ],
+      "id": 15079
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "I. Kaynak\nII. Mesaj\nIII. Alıcı\nYukarıdakilerden hangileri temel iletişim modelinin unsurlarındandır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kaynak, mesaj ve alıcı temel iletişim modelinin ana unsurlarıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false,
+          "id": 71921
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız II",
+          "is_correct": false,
+          "id": 71922
+        },
+        {
+          "label": "C",
+          "option_text": "I ve II",
+          "is_correct": false,
+          "id": 71923
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false,
+          "id": 71924
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true,
+          "id": 71925
+        }
+      ],
+      "id": 15080
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde geri bildirim aşağıdakilerden hangisini sağlar?",
+      "correct_answer_text": "C",
+      "explanation_text": "Geri bildirim, alıcının tepkisinin kurum tarafından anlaşılmasını sağlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesajın hiçbir zaman değişmemesini",
+          "is_correct": false,
+          "id": 71926
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumun çevre tepkilerini görmezden gelmesini",
+          "is_correct": false,
+          "id": 71927
+        },
+        {
+          "label": "C",
+          "option_text": "Alıcının tepkisinin kurum tarafından anlaşılmasını",
+          "is_correct": true,
+          "id": 71928
+        },
+        {
+          "label": "D",
+          "option_text": "Kanal seçiminin önemsizleşmesini",
+          "is_correct": false,
+          "id": 71929
+        },
+        {
+          "label": "E",
+          "option_text": "Değerlendirme aşamasının iptal edilmesini",
+          "is_correct": false,
+          "id": 71930
+        }
+      ],
+      "id": 15081
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi uygulama aşamasında dikkat edilmesi gereken unsurlardan biri değildir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Uygulamada hedef kitle tepkileri yok sayılamaz; mesaj, kanal ve zamanlama hedefle uyumlu olmalıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesajın hedef kitleye uygunluğu",
+          "is_correct": false,
+          "id": 71931
+        },
+        {
+          "label": "B",
+          "option_text": "Hedef kitle tepkilerinin tamamen yok sayılması",
+          "is_correct": true,
+          "id": 71932
+        },
+        {
+          "label": "C",
+          "option_text": "Kanal seçiminin amaca uygunluğu",
+          "is_correct": false,
+          "id": 71933
+        },
+        {
+          "label": "D",
+          "option_text": "Zamanlamanın planla uyumu",
+          "is_correct": false,
+          "id": 71934
+        },
+        {
+          "label": "E",
+          "option_text": "Faaliyetlerin kurum davranışıyla tutarlılığı",
+          "is_correct": false,
+          "id": 71935
+        }
+      ],
+      "id": 15082
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Değerlendirme yapılmayan bir halkla ilişkiler çalışmasında aşağıdaki sorunlardan hangisi ortaya çıkar?",
+      "correct_answer_text": "D",
+      "explanation_text": "Değerlendirme yapılmazsa faaliyetin etkisi, eksikleri ve öğrenilen dersler belirlenemez.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hedeflerin daha kesin ölçülmesi",
+          "is_correct": false,
+          "id": 71936
+        },
+        {
+          "label": "B",
+          "option_text": "Geri bildirimin daha güçlü yorumlanması",
+          "is_correct": false,
+          "id": 71937
+        },
+        {
+          "label": "C",
+          "option_text": "Başarı düzeyinin nesnel biçimde anlaşılması",
+          "is_correct": false,
+          "id": 71938
+        },
+        {
+          "label": "D",
+          "option_text": "Faaliyetin etkisinin ve eksiklerinin belirlenememesi",
+          "is_correct": true,
+          "id": 71939
+        },
+        {
+          "label": "E",
+          "option_text": "Sonraki planlamanın daha sağlam veriye dayanması",
+          "is_correct": false,
+          "id": 71940
+        }
+      ],
+      "id": 15083
+    },
+    {
+      "topic_id": 123,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "İletişim yalnızca mesaj göndermek olarak görüldüğünde aşağıdakilerden hangisi ihmal edilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İletişim yalnız mesaj gönderme değildir; alıcının koşulları, anlamlandırması ve geri bildirimi de önemlidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Alıcının koşulları, anlamlandırması ve geri bildirimi",
+          "is_correct": true,
+          "id": 71941
+        },
+        {
+          "label": "B",
+          "option_text": "Mesajın varlığı",
+          "is_correct": false,
+          "id": 71942
+        },
+        {
+          "label": "C",
+          "option_text": "Kaynak unsurunun bulunması",
+          "is_correct": false,
+          "id": 71943
+        },
+        {
+          "label": "D",
+          "option_text": "Kanal kullanımının mümkün olması",
+          "is_correct": false,
+          "id": 71944
+        },
+        {
+          "label": "E",
+          "option_text": "İletişim sürecinin teknik tarafı",
+          "is_correct": false,
+          "id": 71945
+        }
+      ],
+      "id": 15084
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler araçlarının seçiminde aşağıdakilerden hangisi öncelikle dikkate alınmalıdır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Araç seçimi hedef kitle, amaç, mesaj ve iletişim koşullarına göre yapılmalıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Araçların her durumda aynı sonucu vermesi",
+          "is_correct": false,
+          "id": 71946
+        },
+        {
+          "label": "B",
+          "option_text": "Hedef kitle, amaç, mesaj ve koşullar",
+          "is_correct": true,
+          "id": 71947
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece en pahalı aracın kullanılması",
+          "is_correct": false,
+          "id": 71948
+        },
+        {
+          "label": "D",
+          "option_text": "Kurumun tüm kamulara tek araçla ulaşması",
+          "is_correct": false,
+          "id": 71949
+        },
+        {
+          "label": "E",
+          "option_text": "Araştırma sonuçlarının yok sayılması",
+          "is_correct": false,
+          "id": 71950
+        }
+      ],
+      "id": 15085
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi yazılı ve basılı halkla ilişkiler araçlarına örnektir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Broşür ve bülten yazılı-basılı halkla ilişkiler araçları arasındadır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Radyo programı",
+          "is_correct": false,
+          "id": 71951
+        },
+        {
+          "label": "B",
+          "option_text": "Televizyon röportajı",
+          "is_correct": false,
+          "id": 71952
+        },
+        {
+          "label": "C",
+          "option_text": "Broşür ve bülten",
+          "is_correct": true,
+          "id": 71953
+        },
+        {
+          "label": "D",
+          "option_text": "Yüz yüze toplantı",
+          "is_correct": false,
+          "id": 71954
+        },
+        {
+          "label": "E",
+          "option_text": "Sosyal medya canlı yayını",
+          "is_correct": false,
+          "id": 71955
+        }
+      ],
+      "id": 15086
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi görsel-işitsel araçlara daha uygun bir örnektir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Tanıtım filmi görsel-işitsel halkla ilişkiler araçlarına örnektir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dilekçe formu",
+          "is_correct": false,
+          "id": 71956
+        },
+        {
+          "label": "B",
+          "option_text": "Basılı el kitabı",
+          "is_correct": false,
+          "id": 71957
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum içi yazışma",
+          "is_correct": false,
+          "id": 71958
+        },
+        {
+          "label": "D",
+          "option_text": "Tanıtım filmi",
+          "is_correct": true,
+          "id": 71959
+        },
+        {
+          "label": "E",
+          "option_text": "Gazete ilanı",
+          "is_correct": false,
+          "id": 71960
+        }
+      ],
+      "id": 15087
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde yüz yüze iletişimin avantajı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yüz yüze iletişim doğrudan etkileşim ve anında geri bildirim imkânı sağlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Anında geri bildirim ve doğrudan etkileşim sağlaması",
+          "is_correct": true,
+          "id": 71961
+        },
+        {
+          "label": "B",
+          "option_text": "Tüm hedef kitlelere aynı anda sınırsız ulaşması",
+          "is_correct": false,
+          "id": 71962
+        },
+        {
+          "label": "C",
+          "option_text": "Her zaman en düşük maliyetli araç olması",
+          "is_correct": false,
+          "id": 71963
+        },
+        {
+          "label": "D",
+          "option_text": "Mesajın hiç değişmeden arşivlenmesini sağlaması",
+          "is_correct": false,
+          "id": 71964
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum davranışını gereksiz kılması",
+          "is_correct": false,
+          "id": 71965
+        }
+      ],
+      "id": 15088
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdakilerden hangisi dijital araçların halkla ilişkiler açısından sağladığı imkânlardan biridir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Dijital araçlar hızlı yayılım ve etkileşim imkânı sağlayabilir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Geri bildirimi tamamen ortadan kaldırması",
+          "is_correct": false,
+          "id": 71966
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece kurum içi kullanıma izin vermesi",
+          "is_correct": false,
+          "id": 71967
+        },
+        {
+          "label": "C",
+          "option_text": "Kamuoyuna ulaşmayı imkânsız kılması",
+          "is_correct": false,
+          "id": 71968
+        },
+        {
+          "label": "D",
+          "option_text": "Tüm mesajların basılı olmasını zorunlu kılması",
+          "is_correct": false,
+          "id": 71969
+        },
+        {
+          "label": "E",
+          "option_text": "Hızlı yayılım ve etkileşim imkânı sağlaması",
+          "is_correct": true,
+          "id": 71970
+        }
+      ],
+      "id": 15089
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "I. Gazete ve dergi\nII. Broşür ve afiş\nIII. Toplantı ve seminer\nYukarıdakilerden hangileri halkla ilişkiler araçları arasında değerlendirilebilir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Gazete, dergi, broşür, afiş, toplantı ve seminer halkla ilişkilerde kullanılabilecek araçlardır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız I",
+          "is_correct": false,
+          "id": 71971
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız II",
+          "is_correct": false,
+          "id": 71972
+        },
+        {
+          "label": "C",
+          "option_text": "I ve II",
+          "is_correct": false,
+          "id": 71973
+        },
+        {
+          "label": "D",
+          "option_text": "II ve III",
+          "is_correct": false,
+          "id": 71974
+        },
+        {
+          "label": "E",
+          "option_text": "I, II ve III",
+          "is_correct": true,
+          "id": 71975
+        }
+      ],
+      "id": 15090
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkilerde kurum çalışanlarının önemi aşağıdakilerden hangisiyle açıklanır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Çalışanlar kurumun mesajını ve davranışını temsil ettikleri için halkla ilişkiler açısından önemlidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Çalışanların kurum imajıyla hiçbir ilgisinin bulunmamasıyla",
+          "is_correct": false,
+          "id": 71976
+        },
+        {
+          "label": "B",
+          "option_text": "Çalışanların kurumun mesajını ve davranışını dış çevreye taşımasıyla",
+          "is_correct": true,
+          "id": 71977
+        },
+        {
+          "label": "C",
+          "option_text": "Çalışanların sadece teknik ekipman sayılmasıyla",
+          "is_correct": false,
+          "id": 71978
+        },
+        {
+          "label": "D",
+          "option_text": "İç iletişimin hedef kitleyle bağ kurmamasıyla",
+          "is_correct": false,
+          "id": 71979
+        },
+        {
+          "label": "E",
+          "option_text": "Dış iletişimin çalışan davranışından bağımsız olmasıyla",
+          "is_correct": false,
+          "id": 71980
+        }
+      ],
+      "id": 15091
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Aşağıdaki durumlardan hangisinde teknik ayrıntılı bilgi için yazılı araç kullanımı daha uygun olabilir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Teknik ayrıntılı bilgide kılavuz, broşür veya bilgilendirici metin gibi yazılı araçlar kalıcı açıklama sağlar.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiçbir kayıt bırakılmaması istendiğinde",
+          "is_correct": false,
+          "id": 71981
+        },
+        {
+          "label": "B",
+          "option_text": "Mesajın tamamen sözlü kalması gerektiğinde",
+          "is_correct": false,
+          "id": 71982
+        },
+        {
+          "label": "C",
+          "option_text": "Kılavuz veya bilgilendirici metinle kalıcı açıklama yapılması gerektiğinde",
+          "is_correct": true,
+          "id": 71983
+        },
+        {
+          "label": "D",
+          "option_text": "Hedef kitlenin tüm sorularının görmezden gelinmesi gerektiğinde",
+          "is_correct": false,
+          "id": 71984
+        },
+        {
+          "label": "E",
+          "option_text": "Anlık ve plansız tepki dışında amaç olmadığında",
+          "is_correct": false,
+          "id": 71985
+        }
+      ],
+      "id": 15092
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler araçlarıyla ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Araç seçimi yapılırken amaç, mesaj, hedef kitle ve koşullar dikkate alınmalıdır.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Araç seçimi hedef kitleye göre değişebilir",
+          "is_correct": false,
+          "id": 71986
+        },
+        {
+          "label": "B",
+          "option_text": "Aynı araç her durumda aynı sonucu vermeyebilir",
+          "is_correct": false,
+          "id": 71987
+        },
+        {
+          "label": "C",
+          "option_text": "Yazılı, görsel-işitsel ve yüz yüze araçlar kullanılabilir",
+          "is_correct": false,
+          "id": 71988
+        },
+        {
+          "label": "D",
+          "option_text": "Araç seçimi yapılırken amaç ve mesaj dikkate alınmaz",
+          "is_correct": true,
+          "id": 71989
+        },
+        {
+          "label": "E",
+          "option_text": "Dijital araçlar etkileşim imkânı sağlayabilir",
+          "is_correct": false,
+          "id": 71990
+        }
+      ],
+      "id": 15093
+    },
+    {
+      "topic_id": 124,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "is_free": false,
+      "is_past_exam_question": false,
+      "question_text": "Halkla ilişkiler çalışanından beklenen temel nitelik aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Halkla ilişkiler çalışanı kurum ile kamu arasında doğru, planlı ve etik iletişim kurabilmelidir.",
+      "explanation_basis": "Halkla İlişkiler konu anlatımı v5",
+      "explanation_relevant_provision": "Konu anlatımı içeriği",
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurum ile kamu arasında doğru, planlı ve etik iletişim kurabilmesi",
+          "is_correct": true,
+          "id": 71991
+        },
+        {
+          "label": "B",
+          "option_text": "Bilgiyi her durumda saklaması",
+          "is_correct": false,
+          "id": 71992
+        },
+        {
+          "label": "C",
+          "option_text": "Kamuoyu tepkilerini gereksiz görmesi",
+          "is_correct": false,
+          "id": 71993
+        },
+        {
+          "label": "D",
+          "option_text": "Tüm hedef kitlelere aynı kalıp mesajı dayatması",
+          "is_correct": false,
+          "id": 71994
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece teknik tasarım yapıp ilişki yönetimini dışlaması",
+          "is_correct": false,
+          "id": 71995
+        }
+      ],
+      "id": 15094
+    }
+  ],
+  "import_result": {
+    "imported_at": "2026-06-08T18:25:07",
+    "created_count": 60,
+    "duplicate_count": 0,
+    "db_status": "active",
+    "db_approval_status": null,
+    "db_q_version": 5,
+    "approval_flow": "v5_review_pending"
+  }
+}

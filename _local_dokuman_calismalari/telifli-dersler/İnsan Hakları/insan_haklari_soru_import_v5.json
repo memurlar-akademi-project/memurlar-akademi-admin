@@ -1,0 +1,4989 @@
+{
+  "subject_id": 30,
+  "subject_name": "İnsan Hakları",
+  "q_version": 5,
+  "status": "active",
+  "approval_status": null,
+  "target_exam_id": 1,
+  "source_policy": "Konu anlatımı ve kapsam QA baz alınarak özgün soru diliyle üretildi; kaynak metinden birebir kopya yapılmadı.",
+  "distribution_note": "9 topic x 12 soru = 108 soru. Kavram, tarihsel belge, hak kuşakları, ulusal/uluslararası koruma ve başvuru yolları dengeli dağıtıldı.",
+  "questions": [
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan hakları kavramının en geniş öznesi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İnsan hakları, vatandaşlık veya statüden önce insan olma niteliğine bağlı hakları ifade eder.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız vatandaşlar",
+          "is_correct": false,
+          "id": 72876
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız kamu görevlileri",
+          "is_correct": false,
+          "id": 72877
+        },
+        {
+          "label": "C",
+          "option_text": "İnsan olma niteliğine sahip herkes",
+          "is_correct": true,
+          "id": 72878
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece seçmenler",
+          "is_correct": false,
+          "id": 72879
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız belirli meslek grupları",
+          "is_correct": false,
+          "id": 72880
+        }
+      ],
+      "id": 15271
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Temel hak ve hürriyetler”, “kamu hakları” ve “kişi hakları” gibi ifadeler insan hakları terminolojisinde nasıl değerlendirilmelidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Bu terimler haklar alanında kullanılır; insan hakları ise en geniş ve kapsayıcı çerçeveyi kurar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İnsan haklarından tamamen ilgisiz kavramlardır",
+          "is_correct": false,
+          "id": 72881
+        },
+        {
+          "label": "B",
+          "option_text": "Yakın alanları anlatan, kapsamı bağlama göre değişebilen terimlerdir",
+          "is_correct": true,
+          "id": 72882
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece özel hukuk borçlarını ifade eder",
+          "is_correct": false,
+          "id": 72883
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız seçim haklarını anlatır",
+          "is_correct": false,
+          "id": 72884
+        },
+        {
+          "label": "E",
+          "option_text": "Devletin kişilere verdiği ayrıcalıkları gösterir",
+          "is_correct": false,
+          "id": 72885
+        }
+      ],
+      "id": 15272
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hak ile özgürlük arasındaki ilişki için aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Hak, hukuk düzenince korunabilen yetki alanıdır; özgürlük ise kişinin tercihleriyle davranabilme serbestisidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hak yalnız ahlaki temennidir, özgürlük daima yasaktır",
+          "is_correct": false,
+          "id": 72886
+        },
+        {
+          "label": "B",
+          "option_text": "Özgürlük hukukça tanındığında hak niteliği güçlenir",
+          "is_correct": false,
+          "id": 72887
+        },
+        {
+          "label": "C",
+          "option_text": "Hak ve özgürlük hiçbir metinde birlikte kullanılmaz",
+          "is_correct": false,
+          "id": 72888
+        },
+        {
+          "label": "D",
+          "option_text": "Özgürlük kişinin davranabilme serbestisini, hak ise korunması istenebilen yetki alanını anlatır",
+          "is_correct": true,
+          "id": 72889
+        },
+        {
+          "label": "E",
+          "option_text": "Hak sadece kamu görevlilerine tanınır",
+          "is_correct": false,
+          "id": 72890
+        }
+      ],
+      "id": 15273
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ödev kavramı insan hakları bakımından neden önemlidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Haklar sınırsız değildir; kişinin hakkını kullanırken başkalarının haklarına ve meşru sınırlara saygı göstermesi gerekir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hakların başkalarının hakları ve demokratik toplum düzeniyle sınırlanabileceğini gösterir",
+          "is_correct": true,
+          "id": 72891
+        },
+        {
+          "label": "B",
+          "option_text": "Bütün hakların devletçe kaldırılabileceğini kanıtlar",
+          "is_correct": false,
+          "id": 72892
+        },
+        {
+          "label": "C",
+          "option_text": "Özgürlüklerin yalnız yöneticilere ait olduğunu gösterir",
+          "is_correct": false,
+          "id": 72893
+        },
+        {
+          "label": "D",
+          "option_text": "İnsan haklarının hukuki değer taşımadığını anlatır",
+          "is_correct": false,
+          "id": 72894
+        },
+        {
+          "label": "E",
+          "option_text": "Hakların yalnız ekonomik olması gerektiğini belirtir",
+          "is_correct": false,
+          "id": 72895
+        }
+      ],
+      "id": 15274
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan haklarının “evrensel” olması ne anlama gelir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Evrensellik, hakların ırk, dil, din, cinsiyet veya vatandaşlık ayrımı olmadan herkes için geçerli kabul edilmesidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız bir ülkenin vatandaşlarına tanınması",
+          "is_correct": false,
+          "id": 72896
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece yazılı anayasalarda bulunması",
+          "is_correct": false,
+          "id": 72897
+        },
+        {
+          "label": "C",
+          "option_text": "Devletlerin isteğine göre bazı insanlara verilmesi",
+          "is_correct": false,
+          "id": 72898
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız aynı dili konuşanlara uygulanması",
+          "is_correct": false,
+          "id": 72899
+        },
+        {
+          "label": "E",
+          "option_text": "İnsan olma niteliği nedeniyle herkes için geçerli kabul edilmesi",
+          "is_correct": true,
+          "id": 72900
+        }
+      ],
+      "id": 15275
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İnsan haklarının “devredilmez” niteliği aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "C",
+      "explanation_text": "Devredilmezlik, insan onuruna bağlı temel hakların kişiden tamamen koparılamayacağını anlatır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kişinin haklarını idareye satabilmesini",
+          "is_correct": false,
+          "id": 72901
+        },
+        {
+          "label": "B",
+          "option_text": "Hakların yalnız seçim dönemlerinde kullanılmasını",
+          "is_correct": false,
+          "id": 72902
+        },
+        {
+          "label": "C",
+          "option_text": "İnsan onuruna bağlı temel haklardan kişinin bütünüyle vazgeçmiş sayılamamasını",
+          "is_correct": true,
+          "id": 72903
+        },
+        {
+          "label": "D",
+          "option_text": "Hakların sadece mahkeme kararıyla doğmasını",
+          "is_correct": false,
+          "id": 72904
+        },
+        {
+          "label": "E",
+          "option_text": "Hakların kamu görevlilerinin takdirine bağlı olmasını",
+          "is_correct": false,
+          "id": 72905
+        }
+      ],
+      "id": 15276
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İnsan haklarının “doğuştan” niteliği hangi düşünceyle en yakından ilişkilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Doğuştanlık, temel hakların insan kişiliğine bağlı olduğu düşüncesine dayanır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Pozitif hukukun hakları hiç tanımaması",
+          "is_correct": false,
+          "id": 72906
+        },
+        {
+          "label": "B",
+          "option_text": "Hakların insan olma niteliğinden kaynaklandığı anlayışı",
+          "is_correct": true,
+          "id": 72907
+        },
+        {
+          "label": "C",
+          "option_text": "Hakların yalnız ücret karşılığı kazanılması",
+          "is_correct": false,
+          "id": 72908
+        },
+        {
+          "label": "D",
+          "option_text": "Hakların sadece vatandaşlık işlemiyle doğması",
+          "is_correct": false,
+          "id": 72909
+        },
+        {
+          "label": "E",
+          "option_text": "Hakların yalnız kurum içi yönetmelikle verilmesi",
+          "is_correct": false,
+          "id": 72910
+        }
+      ],
+      "id": 15277
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Pozitif hukuk ile doğal hak anlayışı arasındaki fark için hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Doğal hak anlayışı hakların kaynağını insan doğasında görür; pozitif hukuk bu hakların yazılı düzenlemelerle tanınması ve korunmasıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Doğal hak sadece yazılı kanunda doğar",
+          "is_correct": false,
+          "id": 72911
+        },
+        {
+          "label": "B",
+          "option_text": "Pozitif hukuk ahlaki veya hukuki norm içermez",
+          "is_correct": false,
+          "id": 72912
+        },
+        {
+          "label": "C",
+          "option_text": "İki yaklaşım tamamen aynı şeyi anlatır",
+          "is_correct": false,
+          "id": 72913
+        },
+        {
+          "label": "D",
+          "option_text": "Doğal hak, hakların insan doğasından geldiğini; pozitif hukuk ise yazılı hukukça tanınıp korunmasını vurgular",
+          "is_correct": true,
+          "id": 72914
+        },
+        {
+          "label": "E",
+          "option_text": "Pozitif hukuk yalnız uluslararası örgütlerden oluşur",
+          "is_correct": false,
+          "id": 72915
+        }
+      ],
+      "id": 15278
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "“Hiç kimse işkenceye uğratılamaz.” ifadesi insan haklarının hangi yönünü gösterir?",
+      "correct_answer_text": "A",
+      "explanation_text": "“Hiç kimse” ifadesi kapsayıcıdır; işkence yasağı ise devlete mutlak nitelikte bir yasak yükler.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Herkesi kapsayan ve devlete yasak koyan niteliğini",
+          "is_correct": true,
+          "id": 72916
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız vatandaşlara ayrıcalık tanıdığını",
+          "is_correct": false,
+          "id": 72917
+        },
+        {
+          "label": "C",
+          "option_text": "Hakların sadece ekonomik olduğunu",
+          "is_correct": false,
+          "id": 72918
+        },
+        {
+          "label": "D",
+          "option_text": "Ödevlerin hakları tamamen ortadan kaldırdığını",
+          "is_correct": false,
+          "id": 72919
+        },
+        {
+          "label": "E",
+          "option_text": "Hakların sadece mahalli idarelerde geçerli olduğunu",
+          "is_correct": false,
+          "id": 72920
+        }
+      ],
+      "id": 15279
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İnsan onuru kavramı insan haklarının hangi işlevini açıklar?",
+      "correct_answer_text": "E",
+      "explanation_text": "İnsan onuru, insan haklarının merkezindeki değerdir; kişi sırf insan olduğu için korunmalıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hakların yalnız seçimlerle sınırlı olmasını",
+          "is_correct": false,
+          "id": 72921
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu gücünün sınırsız olmasını",
+          "is_correct": false,
+          "id": 72922
+        },
+        {
+          "label": "C",
+          "option_text": "Kişinin araç değil değer sahibi varlık olarak korunmasını",
+          "is_correct": false,
+          "id": 72923
+        },
+        {
+          "label": "D",
+          "option_text": "Hakların yalnız ekonomik faydaya bağlanmasını",
+          "is_correct": false,
+          "id": 72924
+        },
+        {
+          "label": "E",
+          "option_text": "Kişinin sırf insan olduğu için saygı ve korumaya layık görülmesini",
+          "is_correct": true,
+          "id": 72925
+        }
+      ],
+      "id": 15280
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi insan haklarının niteliklerinden biri değildir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İnsan hakları vatandaşlıkla sınırlı değildir; herkes için geçerli kabul edilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Evrensellik",
+          "is_correct": false,
+          "id": 72926
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız vatandaşlığa bağlılık",
+          "is_correct": true,
+          "id": 72927
+        },
+        {
+          "label": "C",
+          "option_text": "Devredilmezlik",
+          "is_correct": false,
+          "id": 72928
+        },
+        {
+          "label": "D",
+          "option_text": "Vazgeçilmezlik",
+          "is_correct": false,
+          "id": 72929
+        },
+        {
+          "label": "E",
+          "option_text": "İnsan onuruna dayanma",
+          "is_correct": false,
+          "id": 72930
+        }
+      ],
+      "id": 15281
+    },
+    {
+      "topic_id": 141,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hakların sınırlanması bakımından en doğru ifade hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Hakların sınırlanması keyfi olamaz; meşru amaç, ölçülülük ve demokratik toplum gerekleri önemlidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Haklar her durumda tamamen sınırsızdır",
+          "is_correct": false,
+          "id": 72931
+        },
+        {
+          "label": "B",
+          "option_text": "Devlet hakları hiçbir ölçüt olmadan kaldırabilir",
+          "is_correct": false,
+          "id": 72932
+        },
+        {
+          "label": "C",
+          "option_text": "Sınırlama yalnız idarenin sözlü emriyle yapılır",
+          "is_correct": false,
+          "id": 72933
+        },
+        {
+          "label": "D",
+          "option_text": "Sınırlama meşru amaç, ölçülülük ve demokratik toplum düzeniyle bağdaşmalıdır",
+          "is_correct": true,
+          "id": 72934
+        },
+        {
+          "label": "E",
+          "option_text": "Hak kullanımı başkalarının haklarıyla hiç ilişkili değildir",
+          "is_correct": false,
+          "id": 72935
+        }
+      ],
+      "id": 15282
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Modern insan hakları düşüncesinin gelişiminde aşağıdakilerden hangisi etkili olmuştur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Modern insan hakları düşüncesi, birey, akıl, özgürlük ve iktidarın sınırlandırılması fikirleriyle güçlenmiştir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Rönesans, Reform ve Aydınlanma düşüncesi",
+          "is_correct": true,
+          "id": 72936
+        },
+        {
+          "label": "B",
+          "option_text": "Feodal ayrıcalıkların sınırsızlaşması",
+          "is_correct": false,
+          "id": 72937
+        },
+        {
+          "label": "C",
+          "option_text": "Mutlak iktidarın sorgulanamaz kabul edilmesi",
+          "is_correct": false,
+          "id": 72938
+        },
+        {
+          "label": "D",
+          "option_text": "Bireyin siyasal alandan tamamen dışlanması",
+          "is_correct": false,
+          "id": 72939
+        },
+        {
+          "label": "E",
+          "option_text": "Hakların yalnız saray çevresine tanınması",
+          "is_correct": false,
+          "id": 72940
+        }
+      ],
+      "id": 15283
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sosyal sözleşme düşüncesinin insan hakları açısından önemi nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Sosyal sözleşme düşüncesi, siyasal iktidarın hakları korumak için kurulduğu fikrini besler.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Devletin sınırsız ve doğuştan üstün olduğunu savunması",
+          "is_correct": false,
+          "id": 72941
+        },
+        {
+          "label": "B",
+          "option_text": "Hakları yalnız geleneklere bırakması",
+          "is_correct": false,
+          "id": 72942
+        },
+        {
+          "label": "C",
+          "option_text": "İktidarın meşruiyetini bireylerin ortak iradesi ve hakları koruma göreviyle açıklaması",
+          "is_correct": true,
+          "id": 72943
+        },
+        {
+          "label": "D",
+          "option_text": "Kişilerin haklarından bütünüyle vazgeçmesini zorunlu kılması",
+          "is_correct": false,
+          "id": 72944
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı denetimini gereksiz görmesi",
+          "is_correct": false,
+          "id": 72945
+        }
+      ],
+      "id": 15284
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Magna Carta’nın insan hakları tarihi açısından önemi en çok hangi noktayla ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Magna Carta, kral iktidarının sınırlanması fikri bakımından tarihsel bir eşik sayılır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Evrensel sosyal hakları ayrıntılı düzenlemesi",
+          "is_correct": false,
+          "id": 72946
+        },
+        {
+          "label": "B",
+          "option_text": "Kralın yetkilerinin hukukla sınırlandırılabileceğini göstermesi",
+          "is_correct": true,
+          "id": 72947
+        },
+        {
+          "label": "C",
+          "option_text": "AİHM’yi kurması",
+          "is_correct": false,
+          "id": 72948
+        },
+        {
+          "label": "D",
+          "option_text": "Birleşmiş Milletler Şartı olması",
+          "is_correct": false,
+          "id": 72949
+        },
+        {
+          "label": "E",
+          "option_text": "Kadınlara seçme hakkı tanıması",
+          "is_correct": false,
+          "id": 72950
+        }
+      ],
+      "id": 15285
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Habeas Corpus anlayışı en çok hangi hakkın güvencesiyle ilişkilidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Habeas Corpus, kişinin hukuka aykırı biçimde tutulmasına karşı yargı önüne çıkarılmasını amaçlayan güvenceyle ilişkilidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mülkiyetin vergilendirilmesi",
+          "is_correct": false,
+          "id": 72951
+        },
+        {
+          "label": "B",
+          "option_text": "Sendika kurma hakkı",
+          "is_correct": false,
+          "id": 72952
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal güvenlik hakkı",
+          "is_correct": false,
+          "id": 72953
+        },
+        {
+          "label": "D",
+          "option_text": "Kişi özgürlüğü ve keyfi tutmaya karşı yargısal güvence",
+          "is_correct": true,
+          "id": 72954
+        },
+        {
+          "label": "E",
+          "option_text": "Çevre hakkı",
+          "is_correct": false,
+          "id": 72955
+        }
+      ],
+      "id": 15286
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Amerikan Bağımsızlık Bildirisi ve Fransız İnsan ve Yurttaş Hakları Bildirisi’nin ortak yönü hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Bu belgeler modern hak düşüncesinin siyasal metinlere yansımasında önemlidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Doğal hak, özgürlük ve iktidarın sınırlandırılması fikrini güçlendirmeleri",
+          "is_correct": true,
+          "id": 72956
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız monarşik ayrıcalıkları savunmaları",
+          "is_correct": false,
+          "id": 72957
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece sosyal güvenlik hakkını düzenlemeleri",
+          "is_correct": false,
+          "id": 72958
+        },
+        {
+          "label": "D",
+          "option_text": "AİHM bireysel başvurusunu başlatmaları",
+          "is_correct": false,
+          "id": 72959
+        },
+        {
+          "label": "E",
+          "option_text": "BM komitelerini kurmaları",
+          "is_correct": false,
+          "id": 72960
+        }
+      ],
+      "id": 15287
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Montesquieu’nün insan hakları bakımından öne çıkan katkısı hangi kavramla ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kuvvetler ayrılığı, iktidarın tek elde yoğunlaşmasını önleyerek hakların korunmasına hizmet eder.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sosyal devlet",
+          "is_correct": false,
+          "id": 72961
+        },
+        {
+          "label": "B",
+          "option_text": "Mülkiyetin kaldırılması",
+          "is_correct": false,
+          "id": 72962
+        },
+        {
+          "label": "C",
+          "option_text": "Kuvvetler ayrılığı",
+          "is_correct": true,
+          "id": 72963
+        },
+        {
+          "label": "D",
+          "option_text": "Toplu şikayet",
+          "is_correct": false,
+          "id": 72964
+        },
+        {
+          "label": "E",
+          "option_text": "Evrensel periyodik inceleme",
+          "is_correct": false,
+          "id": 72965
+        }
+      ],
+      "id": 15288
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Locke’un doğal hak anlayışında devletin temel amacı nasıl görülür?",
+      "correct_answer_text": "E",
+      "explanation_text": "Locke, devleti doğal hakları korumakla meşrulaştıran düşünürlerdendir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bireyin haklarını ortadan kaldırmak",
+          "is_correct": false,
+          "id": 72966
+        },
+        {
+          "label": "B",
+          "option_text": "Mutlak monarşiyi güçlendirmek",
+          "is_correct": false,
+          "id": 72967
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız vergi toplamak",
+          "is_correct": false,
+          "id": 72968
+        },
+        {
+          "label": "D",
+          "option_text": "Kişilerin siyasal katılımını yasaklamak",
+          "is_correct": false,
+          "id": 72969
+        },
+        {
+          "label": "E",
+          "option_text": "Yaşam, özgürlük ve mülkiyet gibi doğal hakları korumak",
+          "is_correct": true,
+          "id": 72970
+        }
+      ],
+      "id": 15289
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aydınlanma düşüncesinin siyasal iktidar anlayışına etkisi hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Aydınlanma, aklı ve bireyi merkeze alarak siyasal iktidarın sınırlandırılması fikrini güçlendirmiştir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İktidarın ilahi ve sınırsız sayılması",
+          "is_correct": false,
+          "id": 72971
+        },
+        {
+          "label": "B",
+          "option_text": "İktidarın akıl, hukuk ve birey haklarıyla sınırlandırılabilir görülmesi",
+          "is_correct": true,
+          "id": 72972
+        },
+        {
+          "label": "C",
+          "option_text": "Bireyin hiç önem taşımaması",
+          "is_correct": false,
+          "id": 72973
+        },
+        {
+          "label": "D",
+          "option_text": "Hakların yalnız gelenekle belirlenmesi",
+          "is_correct": false,
+          "id": 72974
+        },
+        {
+          "label": "E",
+          "option_text": "Yargının tamamen kaldırılması",
+          "is_correct": false,
+          "id": 72975
+        }
+      ],
+      "id": 15290
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Tarihsel hak belgelerinin ilk örnekleri çoğu zaman hangi ihtiyaca dayanmıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Erken belgeler genellikle iktidarın keyfi kullanımını sınırlama ihtiyacından doğmuştur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Uluslararası mahkeme kurma",
+          "is_correct": false,
+          "id": 72976
+        },
+        {
+          "label": "B",
+          "option_text": "Sosyal medya hakkı tanıma",
+          "is_correct": false,
+          "id": 72977
+        },
+        {
+          "label": "C",
+          "option_text": "Çevre hakkını düzenleme",
+          "is_correct": false,
+          "id": 72978
+        },
+        {
+          "label": "D",
+          "option_text": "Siyasal iktidarı ve özellikle kralın yetkilerini sınırlama",
+          "is_correct": true,
+          "id": 72979
+        },
+        {
+          "label": "E",
+          "option_text": "Bütün ekonomik hakları güvenceye alma",
+          "is_correct": false,
+          "id": 72980
+        }
+      ],
+      "id": 15291
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Rousseau’nun genel irade düşüncesi hangi tartışmayla daha çok ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Rousseau, egemenliğin kaynağını halk iradesiyle açıklayan sosyal sözleşme çizgisinde yer alır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Egemenliğin kaynağı ve halk iradesi",
+          "is_correct": true,
+          "id": 72981
+        },
+        {
+          "label": "B",
+          "option_text": "İşkenceyi önleme komitesi",
+          "is_correct": false,
+          "id": 72982
+        },
+        {
+          "label": "C",
+          "option_text": "Avrupa Sosyal Şartı raporlaması",
+          "is_correct": false,
+          "id": 72983
+        },
+        {
+          "label": "D",
+          "option_text": "Bireysel başvuru süresi",
+          "is_correct": false,
+          "id": 72984
+        },
+        {
+          "label": "E",
+          "option_text": "Kişisel verilerin korunması",
+          "is_correct": false,
+          "id": 72985
+        }
+      ],
+      "id": 15292
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Voltaire’in insan hakları düşüncesinde öne çıkan yönü hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Voltaire, hoşgörü ve ifade özgürlüğü tartışmalarıyla ilişkilendirilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Zorunlu çalışmayı savunması",
+          "is_correct": false,
+          "id": 72986
+        },
+        {
+          "label": "B",
+          "option_text": "Basın ve düşünce özgürlüğüne karşı çıkması",
+          "is_correct": false,
+          "id": 72987
+        },
+        {
+          "label": "C",
+          "option_text": "Hoşgörü ve ifade özgürlüğünü savunması",
+          "is_correct": true,
+          "id": 72988
+        },
+        {
+          "label": "D",
+          "option_text": "Mutlak sansürü desteklemesi",
+          "is_correct": false,
+          "id": 72989
+        },
+        {
+          "label": "E",
+          "option_text": "Ulusal mahkemeleri kaldırması",
+          "is_correct": false,
+          "id": 72990
+        }
+      ],
+      "id": 15293
+    },
+    {
+      "topic_id": 142,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Tarihsel belgelerden sınavda çıkarılacak temel sonuç hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İnsan hakları tarihi, iktidarın sınırlandırılması ve bireyin korunması fikrinin kurumsallaşmasını gösterir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hakların yalnız modern çağda hiçbir kökü olmadığı",
+          "is_correct": false,
+          "id": 72991
+        },
+        {
+          "label": "B",
+          "option_text": "İktidarın sınırsızlaşmasının hakları güçlendirdiği",
+          "is_correct": false,
+          "id": 72992
+        },
+        {
+          "label": "C",
+          "option_text": "Hakların yalnız idarenin lütfu olduğu",
+          "is_correct": false,
+          "id": 72993
+        },
+        {
+          "label": "D",
+          "option_text": "Uluslararası belgelerin iç hukukla ilgisiz olduğu",
+          "is_correct": false,
+          "id": 72994
+        },
+        {
+          "label": "E",
+          "option_text": "Hak belgelerinin iktidarı sınırlama ve bireyi koruma çizgisinde geliştiği",
+          "is_correct": true,
+          "id": 72995
+        }
+      ],
+      "id": 15294
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Jellinek’in negatif statü hakları neyi ifade eder?",
+      "correct_answer_text": "B",
+      "explanation_text": "Negatif statü haklarında devletin temel yükümlülüğü müdahale etmemektir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Devletten sosyal hizmet istemeyi",
+          "is_correct": false,
+          "id": 72996
+        },
+        {
+          "label": "B",
+          "option_text": "Devletin kişinin özgürlük alanına karışmamasını",
+          "is_correct": true,
+          "id": 72997
+        },
+        {
+          "label": "C",
+          "option_text": "Kişinin yönetime katılmasını",
+          "is_correct": false,
+          "id": 72998
+        },
+        {
+          "label": "D",
+          "option_text": "Uluslararası mahkemeye başvurmayı",
+          "is_correct": false,
+          "id": 72999
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece vergi ödevini",
+          "is_correct": false,
+          "id": 73000
+        }
+      ],
+      "id": 15295
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Pozitif statü hakları hangi hak grubuyla yakından ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Pozitif statü hakları devletten edim, hizmet veya destek isteme boyutunu içerir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kişi özgürlükleri",
+          "is_correct": false,
+          "id": 73001
+        },
+        {
+          "label": "B",
+          "option_text": "Siyasal haklar",
+          "is_correct": false,
+          "id": 73002
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal ve ekonomik isteme hakları",
+          "is_correct": true,
+          "id": 73003
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız dokunulmaz haklar",
+          "is_correct": false,
+          "id": 73004
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız usul hakları",
+          "is_correct": false,
+          "id": 73005
+        }
+      ],
+      "id": 15296
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aktif statü hakları aşağıdakilerden hangisini kapsar?",
+      "correct_answer_text": "A",
+      "explanation_text": "Aktif statü hakları bireyin siyasal karar süreçlerine katılmasını sağlar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Seçme, seçilme ve yönetime katılma hakları",
+          "is_correct": true,
+          "id": 73006
+        },
+        {
+          "label": "B",
+          "option_text": "Kişi dokunulmazlığının ihlali",
+          "is_correct": false,
+          "id": 73007
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal güvenlik ödeneği",
+          "is_correct": false,
+          "id": 73008
+        },
+        {
+          "label": "D",
+          "option_text": "Konut yardımı",
+          "is_correct": false,
+          "id": 73009
+        },
+        {
+          "label": "E",
+          "option_text": "Çevre temizliği",
+          "is_correct": false,
+          "id": 73010
+        }
+      ],
+      "id": 15297
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Birinci kuşak haklar genel olarak hangi haklardan oluşur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Birinci kuşak haklar klasik kişi özgürlükleri ve siyasal katılım haklarıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece çevre ve barış hakları",
+          "is_correct": false,
+          "id": 73011
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız çalışma hakkı",
+          "is_correct": false,
+          "id": 73012
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece tüketici hakları",
+          "is_correct": false,
+          "id": 73013
+        },
+        {
+          "label": "D",
+          "option_text": "Kişi hakları ve siyasal haklar",
+          "is_correct": true,
+          "id": 73014
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız dijital haklar",
+          "is_correct": false,
+          "id": 73015
+        }
+      ],
+      "id": 15298
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İkinci kuşak hakların ortaya çıkışında hangi ihtiyaç belirleyicidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İkinci kuşak haklar sosyal devlet ve ekonomik-sosyal hak talepleriyle gelişmiştir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mutlak monarşiyi güçlendirme",
+          "is_correct": false,
+          "id": 73016
+        },
+        {
+          "label": "B",
+          "option_text": "Keyfi tutmayı artırma",
+          "is_correct": false,
+          "id": 73017
+        },
+        {
+          "label": "C",
+          "option_text": "Siyasal katılımı kaldırma",
+          "is_correct": false,
+          "id": 73018
+        },
+        {
+          "label": "D",
+          "option_text": "Basın özgürlüğünü sınırlama",
+          "is_correct": false,
+          "id": 73019
+        },
+        {
+          "label": "E",
+          "option_text": "Sosyal adalet ve ekonomik güvence ihtiyacı",
+          "is_correct": true,
+          "id": 73020
+        }
+      ],
+      "id": 15299
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Üçüncü kuşak haklara örnek hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Üçüncü kuşak haklar dayanışma haklarıdır; çevre, barış ve gelişme hakkı bu gruptadır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Konut dokunulmazlığı",
+          "is_correct": false,
+          "id": 73021
+        },
+        {
+          "label": "B",
+          "option_text": "Barış, çevre ve gelişme hakkı",
+          "is_correct": true,
+          "id": 73022
+        },
+        {
+          "label": "C",
+          "option_text": "Seçme hakkı",
+          "is_correct": false,
+          "id": 73023
+        },
+        {
+          "label": "D",
+          "option_text": "Dilekçe hakkı",
+          "is_correct": false,
+          "id": 73024
+        },
+        {
+          "label": "E",
+          "option_text": "Kişi özgürlüğü",
+          "is_correct": false,
+          "id": 73025
+        }
+      ],
+      "id": 15300
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Dördüncü kuşak haklar daha çok hangi gelişmelerle ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Dördüncü kuşak haklar yeni teknolojik ve bilimsel gelişmelerin doğurduğu risklerle ilişkilendirilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Feodal ayrıcalıklar",
+          "is_correct": false,
+          "id": 73026
+        },
+        {
+          "label": "B",
+          "option_text": "Klasik dilekçe hakkı",
+          "is_correct": false,
+          "id": 73027
+        },
+        {
+          "label": "C",
+          "option_text": "Bilim, teknoloji, biyoteknoloji ve dijital alan riskleri",
+          "is_correct": true,
+          "id": 73028
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece toprak mülkiyeti",
+          "is_correct": false,
+          "id": 73029
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece lonca düzeni",
+          "is_correct": false,
+          "id": 73030
+        }
+      ],
+      "id": 15301
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bir hakkın kuşağını bilmek neden önemlidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Sınıflandırma, hakkın niteliğini ve devletin karışmama, sağlama ya da koruma görevini anlamaya yarar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Devletin hak karşısındaki yükümlülüğünü anlamayı kolaylaştırır",
+          "is_correct": true,
+          "id": 73031
+        },
+        {
+          "label": "B",
+          "option_text": "Hakkın tamamen önemsiz olduğunu gösterir",
+          "is_correct": false,
+          "id": 73032
+        },
+        {
+          "label": "C",
+          "option_text": "Hakların kullanılmasını engeller",
+          "is_correct": false,
+          "id": 73033
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız tarih ezberi sağlar",
+          "is_correct": false,
+          "id": 73034
+        },
+        {
+          "label": "E",
+          "option_text": "Ulusal başvuruları kapatır",
+          "is_correct": false,
+          "id": 73035
+        }
+      ],
+      "id": 15302
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi birinci kuşak haklara örnektir?",
+      "correct_answer_text": "D",
+      "explanation_text": "İfade özgürlüğü klasik kişi ve siyasal haklar alanındadır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sosyal güvenlik hakkı",
+          "is_correct": false,
+          "id": 73036
+        },
+        {
+          "label": "B",
+          "option_text": "Sağlık hakkı",
+          "is_correct": false,
+          "id": 73037
+        },
+        {
+          "label": "C",
+          "option_text": "Çevre hakkı",
+          "is_correct": false,
+          "id": 73038
+        },
+        {
+          "label": "D",
+          "option_text": "İfade özgürlüğü",
+          "is_correct": true,
+          "id": 73039
+        },
+        {
+          "label": "E",
+          "option_text": "Gelişme hakkı",
+          "is_correct": false,
+          "id": 73040
+        }
+      ],
+      "id": 15303
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi ikinci kuşak haklara örnektir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Çalışma ve sosyal güvenlik hakları sosyal-ekonomik haklar içinde değerlendirilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yaşam hakkı",
+          "is_correct": false,
+          "id": 73041
+        },
+        {
+          "label": "B",
+          "option_text": "Seçme hakkı",
+          "is_correct": false,
+          "id": 73042
+        },
+        {
+          "label": "C",
+          "option_text": "Kişi özgürlüğü",
+          "is_correct": false,
+          "id": 73043
+        },
+        {
+          "label": "D",
+          "option_text": "Toplantı özgürlüğü",
+          "is_correct": false,
+          "id": 73044
+        },
+        {
+          "label": "E",
+          "option_text": "Çalışma ve sosyal güvenlik hakkı",
+          "is_correct": true,
+          "id": 73045
+        }
+      ],
+      "id": 15304
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Negatif ve pozitif statü ayrımı bakımından doğru ifade hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Negatif statü özgürlük alanına karışmama, pozitif statü ise devletten olumlu edim bekleme yönünü ifade eder.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Negatif statü devletten hizmet istemedir",
+          "is_correct": false,
+          "id": 73046
+        },
+        {
+          "label": "B",
+          "option_text": "Negatif statü müdahale etmeme, pozitif statü edim sağlama yükümlülüğünü vurgular",
+          "is_correct": true,
+          "id": 73047
+        },
+        {
+          "label": "C",
+          "option_text": "Pozitif statü yalnız oy kullanmadır",
+          "is_correct": false,
+          "id": 73048
+        },
+        {
+          "label": "D",
+          "option_text": "İki statü arasında hiçbir fark yoktur",
+          "is_correct": false,
+          "id": 73049
+        },
+        {
+          "label": "E",
+          "option_text": "Aktif statü sosyal yardım hakkıdır",
+          "is_correct": false,
+          "id": 73050
+        }
+      ],
+      "id": 15305
+    },
+    {
+      "topic_id": 143,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Hak kuşakları sınıflandırması aşağıdakilerden hangisini gösterir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Hak kuşakları, insan haklarının tarihsel gelişim ve kapsam genişlemesini anlamaya yarar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hakların değer sırasını kesin olarak",
+          "is_correct": false,
+          "id": 73051
+        },
+        {
+          "label": "B",
+          "option_text": "Bazı hakların hukuk dışı olduğunu",
+          "is_correct": false,
+          "id": 73052
+        },
+        {
+          "label": "C",
+          "option_text": "Hakların tarihsel gelişim ve nitelik farklarını",
+          "is_correct": true,
+          "id": 73053
+        },
+        {
+          "label": "D",
+          "option_text": "Devletin tüm hakları kaldırabileceğini",
+          "is_correct": false,
+          "id": 73054
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız vatandaşlık işlemlerini",
+          "is_correct": false,
+          "id": 73055
+        }
+      ],
+      "id": 15306
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan haklarının ilk koruma alanı genellikle neresidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Hak ihlallerinde öncelikle devletin iç hukuk yolları ve ulusal mekanizmaları işletilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İç hukuk",
+          "is_correct": true,
+          "id": 73056
+        },
+        {
+          "label": "B",
+          "option_text": "Sosyal medya",
+          "is_correct": false,
+          "id": 73057
+        },
+        {
+          "label": "C",
+          "option_text": "Yabancı basın",
+          "is_correct": false,
+          "id": 73058
+        },
+        {
+          "label": "D",
+          "option_text": "Özel şirket sözleşmeleri",
+          "is_correct": false,
+          "id": 73059
+        },
+        {
+          "label": "E",
+          "option_text": "Sportif federasyonlar",
+          "is_correct": false,
+          "id": 73060
+        }
+      ],
+      "id": 15307
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "1982 Anayasası’nın 2. maddesinde Türkiye Cumhuriyeti hangi nitelikle insan haklarıyla ilişkilendirilir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Anayasa’nın 2. maddesi insan haklarına saygılı, demokratik, laik ve sosyal hukuk devleti vurgusu yapar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece merkezi devlet",
+          "is_correct": false,
+          "id": 73061
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız ekonomik devlet",
+          "is_correct": false,
+          "id": 73062
+        },
+        {
+          "label": "C",
+          "option_text": "İnsan haklarına saygılı hukuk devleti",
+          "is_correct": true,
+          "id": 73063
+        },
+        {
+          "label": "D",
+          "option_text": "Mutlak monarşi",
+          "is_correct": false,
+          "id": 73064
+        },
+        {
+          "label": "E",
+          "option_text": "Yargısız idare",
+          "is_correct": false,
+          "id": 73065
+        }
+      ],
+      "id": 15308
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Anayasa’nın 5. maddesi devlete hangi yönde görev yükler?",
+      "correct_answer_text": "B",
+      "explanation_text": "Devlet, kişinin maddi ve manevi varlığını geliştirmesinin önündeki engelleri kaldırmakla görevlidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hakları tamamen kaldırma",
+          "is_correct": false,
+          "id": 73066
+        },
+        {
+          "label": "B",
+          "option_text": "Kişinin temel hak ve hürriyetlerini sınırlayan engelleri kaldırma",
+          "is_correct": true,
+          "id": 73067
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı yollarını kapatma",
+          "is_correct": false,
+          "id": 73068
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece güvenlik hizmeti verme",
+          "is_correct": false,
+          "id": 73069
+        },
+        {
+          "label": "E",
+          "option_text": "Seçimleri erteleme",
+          "is_correct": false,
+          "id": 73070
+        }
+      ],
+      "id": 15309
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ulusal koruma araçlarından biri aşağıdakilerden hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "İç hukukta mahkemeler, anayasal güvenceler, ombudsman ve bireysel başvuru gibi yollar vardır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız uluslararası basın açıklaması",
+          "is_correct": false,
+          "id": 73071
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece özel tahkim",
+          "is_correct": false,
+          "id": 73072
+        },
+        {
+          "label": "C",
+          "option_text": "Anayasa dışı kurul",
+          "is_correct": false,
+          "id": 73073
+        },
+        {
+          "label": "D",
+          "option_text": "Yargı denetimi ve bireysel başvuru",
+          "is_correct": true,
+          "id": 73074
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece siyasi parti kararı",
+          "is_correct": false,
+          "id": 73075
+        }
+      ],
+      "id": 15310
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Yatay ilişkilerde insan haklarının korunması neyi ifade eder?",
+      "correct_answer_text": "E",
+      "explanation_text": "Yatay ilişkilerde devlet, bireylerin birbirine karşı hak ihlallerini önleme ve giderme görevi taşır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece devletin kendi işleminden doğan ihlali",
+          "is_correct": false,
+          "id": 73076
+        },
+        {
+          "label": "B",
+          "option_text": "Bireyin uluslararası mahkemeye doğrudan gitmesini",
+          "is_correct": false,
+          "id": 73077
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu görevlisinin emekliliğini",
+          "is_correct": false,
+          "id": 73078
+        },
+        {
+          "label": "D",
+          "option_text": "Hakların hiçbir özel kişiye uygulanmamasını",
+          "is_correct": false,
+          "id": 73079
+        },
+        {
+          "label": "E",
+          "option_text": "Bireylerin birbirine karşı ihlallerinde devletin koruma mekanizmalarını işletmesini",
+          "is_correct": true,
+          "id": 73080
+        }
+      ],
+      "id": 15311
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türkiye’de anayasal gelişim bakımından temel hakların güvenceye alınması en çok hangi alanla ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Temel hakların ulusal korunması anayasal güvenceler ve hukuk devleti mekanizmalarıyla sağlanır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece bütçe tekniği",
+          "is_correct": false,
+          "id": 73081
+        },
+        {
+          "label": "B",
+          "option_text": "Anayasa, yargı denetimi ve hukuk devleti",
+          "is_correct": true,
+          "id": 73082
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket yönetimi",
+          "is_correct": false,
+          "id": 73083
+        },
+        {
+          "label": "D",
+          "option_text": "Spor kuralları",
+          "is_correct": false,
+          "id": 73084
+        },
+        {
+          "label": "E",
+          "option_text": "Ticari reklam",
+          "is_correct": false,
+          "id": 73085
+        }
+      ],
+      "id": 15312
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kuvvetler ayrılığı insan haklarını nasıl destekler?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kuvvetler ayrılığı, kamu gücünün denetlenmesini sağlayarak hakların korunmasına katkı verir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İktidarın tek elde yoğunlaşmasını önleyerek denetim sağlar",
+          "is_correct": true,
+          "id": 73086
+        },
+        {
+          "label": "B",
+          "option_text": "Hakların tamamını idareye devreder",
+          "is_correct": false,
+          "id": 73087
+        },
+        {
+          "label": "C",
+          "option_text": "Yargıyı işlevsiz bırakır",
+          "is_correct": false,
+          "id": 73088
+        },
+        {
+          "label": "D",
+          "option_text": "Seçimleri gereksiz kılar",
+          "is_correct": false,
+          "id": 73089
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu gücünü sınırsızlaştırır",
+          "is_correct": false,
+          "id": 73090
+        }
+      ],
+      "id": 15313
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Anayasa Mahkemesine bireysel başvuru hangi mantığa dayanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bireysel başvuru, temel hak ihlali iddiaları için iç hukukta anayasal bir denetim yoludur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her idari işlemin doğrudan AİHM’e taşınmasına",
+          "is_correct": false,
+          "id": 73091
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız vergi uyuşmazlıklarının çözümüne",
+          "is_correct": false,
+          "id": 73092
+        },
+        {
+          "label": "C",
+          "option_text": "Temel hak ihlali iddialarının iç hukukta anayasal düzeyde incelenmesine",
+          "is_correct": true,
+          "id": 73093
+        },
+        {
+          "label": "D",
+          "option_text": "Özel hukuk sözleşmelerinin onayına",
+          "is_correct": false,
+          "id": 73094
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu görevlilerinin terfisine",
+          "is_correct": false,
+          "id": 73095
+        }
+      ],
+      "id": 15314
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Ulusal koruma yetersiz kaldığında uluslararası korumanın devreye girmesi hangi ilkeyle uyumludur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Uluslararası koruma genellikle iç hukuk yollarının tüketilmesinden sonra tamamlayıcı olarak devreye girer.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İlk başvuru daima dış hukukadır",
+          "is_correct": false,
+          "id": 73096
+        },
+        {
+          "label": "B",
+          "option_text": "İç hukuk yolları önemsizdir",
+          "is_correct": false,
+          "id": 73097
+        },
+        {
+          "label": "C",
+          "option_text": "Devletlerin iç hukuku yok sayılır",
+          "is_correct": false,
+          "id": 73098
+        },
+        {
+          "label": "D",
+          "option_text": "İkincillik/tamamlayıcılık mantığı",
+          "is_correct": true,
+          "id": 73099
+        },
+        {
+          "label": "E",
+          "option_text": "Hakların sadece siyasal olması",
+          "is_correct": false,
+          "id": 73100
+        }
+      ],
+      "id": 15315
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu Denetçiliği Kurumu insan hakları bakımından hangi tür başvuru yoluna örnektir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Ombudsmanlık, idarenin işleyişine ilişkin şikayetleri yargı dışı denetleyen mekanizmadır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ceza mahkemesi",
+          "is_correct": false,
+          "id": 73101
+        },
+        {
+          "label": "B",
+          "option_text": "Yargı dışı denetim ve ombudsmanlık",
+          "is_correct": true,
+          "id": 73102
+        },
+        {
+          "label": "C",
+          "option_text": "Uluslararası mahkeme",
+          "is_correct": false,
+          "id": 73103
+        },
+        {
+          "label": "D",
+          "option_text": "Anayasa değişikliği",
+          "is_correct": false,
+          "id": 73104
+        },
+        {
+          "label": "E",
+          "option_text": "Özel tahkim",
+          "is_correct": false,
+          "id": 73105
+        }
+      ],
+      "id": 15316
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Ulusal başvuru yollarının işletilmesi neden önemlidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "İç hukuk yolları hem hak ihlalini yerinde gidermek hem de uluslararası başvurular için ön şart olabilmek bakımından önemlidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İhlalin öncelikle iç hukukta giderilmesini sağlar",
+          "is_correct": true,
+          "id": 73106
+        },
+        {
+          "label": "B",
+          "option_text": "Bütün hakları ortadan kaldırır",
+          "is_correct": false,
+          "id": 73107
+        },
+        {
+          "label": "C",
+          "option_text": "Uluslararası sözleşmeleri geçersiz kılar",
+          "is_correct": false,
+          "id": 73108
+        },
+        {
+          "label": "D",
+          "option_text": "Başvuruyu imkansızlaştırır",
+          "is_correct": false,
+          "id": 73109
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece siyasi sonuç doğurur",
+          "is_correct": false,
+          "id": 73110
+        }
+      ],
+      "id": 15317
+    },
+    {
+      "topic_id": 144,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Devletin insan hakları karşısındaki yükümlülükleri bakımından en doğru ifade hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Devlet hem müdahale etmeme hem koruma hem de bazı alanlarda gerekli tedbirleri alma yükümlülüğü taşır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece ihlal etmeme yükümlülüğü vardır",
+          "is_correct": false,
+          "id": 73111
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece tazminat ödeme yükümlülüğü vardır",
+          "is_correct": false,
+          "id": 73112
+        },
+        {
+          "label": "C",
+          "option_text": "Özel kişilerin ihlallerinden hiç sorumlu değildir",
+          "is_correct": false,
+          "id": 73113
+        },
+        {
+          "label": "D",
+          "option_text": "Hakları yalnız seçimlerde tanır",
+          "is_correct": false,
+          "id": 73114
+        },
+        {
+          "label": "E",
+          "option_text": "Saygı gösterme, koruma ve yerine getirme yükümlülükleri birlikte düşünülebilir",
+          "is_correct": true,
+          "id": 73115
+        }
+      ],
+      "id": 15318
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan haklarının uluslararasılaşmasında hangi olaylar dönüm noktası sayılır?",
+      "correct_answer_text": "B",
+      "explanation_text": "İkinci Dünya Savaşı sonrası insan haklarının uluslararası düzeyde korunması fikri güçlenmiştir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Birinci belediye seçimleri",
+          "is_correct": false,
+          "id": 73116
+        },
+        {
+          "label": "B",
+          "option_text": "İkinci Dünya Savaşı sonrası ağır ihlaller ve BM’nin kurulması",
+          "is_correct": true,
+          "id": 73117
+        },
+        {
+          "label": "C",
+          "option_text": "Matbaanın icadı tek başına",
+          "is_correct": false,
+          "id": 73118
+        },
+        {
+          "label": "D",
+          "option_text": "Sanayi fuarları",
+          "is_correct": false,
+          "id": 73119
+        },
+        {
+          "label": "E",
+          "option_text": "Yerel yönetmelikler",
+          "is_correct": false,
+          "id": 73120
+        }
+      ],
+      "id": 15319
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Birleşmiş Milletler Şartı insan hakları açısından neden önemlidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "BM Şartı, insan hakları ve temel özgürlüklerin uluslararası alanda önem kazanmasında temel belgedir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İnsan haklarını uluslararası hukuk gündemine taşıyan temel metinlerden biridir",
+          "is_correct": true,
+          "id": 73121
+        },
+        {
+          "label": "B",
+          "option_text": "AİHM’yi kurmuştur",
+          "is_correct": false,
+          "id": 73122
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece ticaret tarifelerini düzenler",
+          "is_correct": false,
+          "id": 73123
+        },
+        {
+          "label": "D",
+          "option_text": "Avrupa Sosyal Şartı’dır",
+          "is_correct": false,
+          "id": 73124
+        },
+        {
+          "label": "E",
+          "option_text": "Ulusal mahkemeleri kaldırmıştır",
+          "is_correct": false,
+          "id": 73125
+        }
+      ],
+      "id": 15320
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan Hakları Evrensel Bildirgesi hangi tarihte kabul edilmiştir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İnsan Hakları Evrensel Bildirgesi 10 Aralık 1948’de kabul edilmiştir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1945",
+          "is_correct": false,
+          "id": 73126
+        },
+        {
+          "label": "B",
+          "option_text": "1950",
+          "is_correct": false,
+          "id": 73127
+        },
+        {
+          "label": "C",
+          "option_text": "10 Aralık 1948",
+          "is_correct": true,
+          "id": 73128
+        },
+        {
+          "label": "D",
+          "option_text": "1966",
+          "is_correct": false,
+          "id": 73129
+        },
+        {
+          "label": "E",
+          "option_text": "1982",
+          "is_correct": false,
+          "id": 73130
+        }
+      ],
+      "id": 15321
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Evrensel Bildirge’nin hukuki niteliği için doğru ifade hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bildirge bağlayıcı sözleşme değildir; ancak sonraki sözleşme ve anayasalara yön veren temel metindir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Doğrudan mahkeme kararıdır",
+          "is_correct": false,
+          "id": 73131
+        },
+        {
+          "label": "B",
+          "option_text": "AİHS protokolüdür",
+          "is_correct": false,
+          "id": 73132
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız ulusal kanundur",
+          "is_correct": false,
+          "id": 73133
+        },
+        {
+          "label": "D",
+          "option_text": "Sözleşme gibi doğrudan bağlayıcı olmamakla birlikte güçlü referans metindir",
+          "is_correct": true,
+          "id": 73134
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece ekonomik rapordur",
+          "is_correct": false,
+          "id": 73135
+        }
+      ],
+      "id": 15322
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Evrensel Bildirge’nin başlangıç fikri hangi değeri merkeze alır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Bildirge insan onuru, eşitlik, özgürlük, adalet ve barış değerlerini merkeze alır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Devletin sınırsızlığı",
+          "is_correct": false,
+          "id": 73136
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece ekonomik kalkınma",
+          "is_correct": false,
+          "id": 73137
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum içi disiplin",
+          "is_correct": false,
+          "id": 73138
+        },
+        {
+          "label": "D",
+          "option_text": "Seçim barajı",
+          "is_correct": false,
+          "id": 73139
+        },
+        {
+          "label": "E",
+          "option_text": "İnsan onuru, eşitlik ve devredilmez haklar",
+          "is_correct": true,
+          "id": 73140
+        }
+      ],
+      "id": 15323
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "BM Genel Kurulu’nun insan hakları bakımından rolü nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Genel Kurul, insan hakları standartlarının gelişmesinde karar ve bildirgelerle etkili olur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bağlayıcı mahkeme kararı vermek",
+          "is_correct": false,
+          "id": 73141
+        },
+        {
+          "label": "B",
+          "option_text": "Standart oluşturma, bildirge ve kararlar yoluyla siyasal-hukuki yönlendirme yapmak",
+          "is_correct": true,
+          "id": 73142
+        },
+        {
+          "label": "C",
+          "option_text": "AİHM kararlarını infaz etmek",
+          "is_correct": false,
+          "id": 73143
+        },
+        {
+          "label": "D",
+          "option_text": "Ulusal mahkeme gibi ceza vermek",
+          "is_correct": false,
+          "id": 73144
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece spor etkinliği düzenlemek",
+          "is_correct": false,
+          "id": 73145
+        }
+      ],
+      "id": 15324
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "BM Güvenlik Konseyi insan haklarıyla hangi durumda ilişkilendirilebilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Güvenlik Konseyi barış ve güvenlik bağlamında ağır insan hakları krizleriyle ilgilenebilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Barış ve güvenliği tehdit eden ağır ihlal durumlarında",
+          "is_correct": true,
+          "id": 73146
+        },
+        {
+          "label": "B",
+          "option_text": "Her bireysel başvuruyu inceleyerek",
+          "is_correct": false,
+          "id": 73147
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal hak raporlarını karara bağlayarak",
+          "is_correct": false,
+          "id": 73148
+        },
+        {
+          "label": "D",
+          "option_text": "AİHS başvurularını kabul ederek",
+          "is_correct": false,
+          "id": 73149
+        },
+        {
+          "label": "E",
+          "option_text": "Yerel mahkeme kararlarını temyiz ederek",
+          "is_correct": false,
+          "id": 73150
+        }
+      ],
+      "id": 15325
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bildirge’deki hak kataloğu genel olarak hangi alanları içerir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Evrensel Bildirge geniş bir hak kataloğu sunar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız vergi hakları",
+          "is_correct": false,
+          "id": 73151
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece spor hakları",
+          "is_correct": false,
+          "id": 73152
+        },
+        {
+          "label": "C",
+          "option_text": "Kişi, siyasal, ekonomik, sosyal ve kültürel haklar",
+          "is_correct": true,
+          "id": 73153
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız çevre hakları",
+          "is_correct": false,
+          "id": 73154
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece kurum içi haklar",
+          "is_correct": false,
+          "id": 73155
+        }
+      ],
+      "id": 15326
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "10 Aralık tarihinin insan hakları bakımından önemi nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "10 Aralık, Bildirge’nin kabul edilmesi nedeniyle İnsan Hakları Günü olarak bilinir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "AİHM’nin kapanış günü",
+          "is_correct": false,
+          "id": 73156
+        },
+        {
+          "label": "B",
+          "option_text": "Türkiye’nin ilk anayasası",
+          "is_correct": false,
+          "id": 73157
+        },
+        {
+          "label": "C",
+          "option_text": "Avrupa Konseyi kuruluşu",
+          "is_correct": false,
+          "id": 73158
+        },
+        {
+          "label": "D",
+          "option_text": "İnsan Hakları Evrensel Bildirgesi’nin kabul günü",
+          "is_correct": true,
+          "id": 73159
+        },
+        {
+          "label": "E",
+          "option_text": "CPT rapor günü",
+          "is_correct": false,
+          "id": 73160
+        }
+      ],
+      "id": 15327
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "BM sisteminde bireyin uluslararası koruma düzeninde hak öznesi haline gelmesi neyi gösterir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İkinci Dünya Savaşı sonrası insan hakları devletlerin yalnız iç meselesi olmaktan çıkmıştır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İnsan haklarının yalnız iç iş sayılmadığını",
+          "is_correct": false,
+          "id": 73161
+        },
+        {
+          "label": "B",
+          "option_text": "Devletin hiç yükümlülüğü olmadığını",
+          "is_correct": false,
+          "id": 73162
+        },
+        {
+          "label": "C",
+          "option_text": "Hakların sadece vatandaşlıkla sınırlı olduğunu",
+          "is_correct": false,
+          "id": 73163
+        },
+        {
+          "label": "D",
+          "option_text": "Mahkemelerin gereksiz olduğunu",
+          "is_correct": false,
+          "id": 73164
+        },
+        {
+          "label": "E",
+          "option_text": "Uluslararası korumanın geliştiğini",
+          "is_correct": true,
+          "id": 73165
+        }
+      ],
+      "id": 15328
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Evrensel Bildirge ile sonraki BM sözleşmeleri arasındaki ilişki için hangisi doğrudur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Bildirge, sonraki insan hakları sözleşmelerinin gelişiminde ortak dil ve referans sağlamıştır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bildirge birçok bağlayıcı sözleşmeye fikir ve içerik bakımından temel oluşturmuştur",
+          "is_correct": true,
+          "id": 73166
+        },
+        {
+          "label": "B",
+          "option_text": "Bildirge sözleşmeleri yürürlükten kaldırmıştır",
+          "is_correct": false,
+          "id": 73167
+        },
+        {
+          "label": "C",
+          "option_text": "Sözleşmeler sadece bildirgeyi yasaklamıştır",
+          "is_correct": false,
+          "id": 73168
+        },
+        {
+          "label": "D",
+          "option_text": "Bildirge yalnız Avrupa Konseyi metnidir",
+          "is_correct": false,
+          "id": 73169
+        },
+        {
+          "label": "E",
+          "option_text": "Aralarında hiçbir ilişki yoktur",
+          "is_correct": false,
+          "id": 73170
+        }
+      ],
+      "id": 15329
+    },
+    {
+      "topic_id": 145,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "BM sisteminin insan hakları alanındaki temel amacı hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "BM sistemi insan haklarının uluslararası düzeyde tanınması ve korunmasını hedefler.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hakları yalnız devletlerin lütfuna bırakmak",
+          "is_correct": false,
+          "id": 73171
+        },
+        {
+          "label": "B",
+          "option_text": "Uluslararası işbirliğiyle insan onurunu ve temel özgürlükleri korumak",
+          "is_correct": true,
+          "id": 73172
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız ekonomik yaptırım uygulamak",
+          "is_correct": false,
+          "id": 73173
+        },
+        {
+          "label": "D",
+          "option_text": "Ulusal anayasaları kaldırmak",
+          "is_correct": false,
+          "id": 73174
+        },
+        {
+          "label": "E",
+          "option_text": "Bireysel hakları reddetmek",
+          "is_correct": false,
+          "id": 73175
+        }
+      ],
+      "id": 15330
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "BM insan hakları koruma sisteminde iki ana hat hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "BM sisteminde genel Şart mekanizmaları ile taraf olunan sözleşmelerin kurduğu komiteler birlikte yer alır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "BM Şartı temelli mekanizmalar ve sözleşme/komite temelli mekanizmalar",
+          "is_correct": true,
+          "id": 73176
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız AİHM ve AYM",
+          "is_correct": false,
+          "id": 73177
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece ulusal mahkemeler",
+          "is_correct": false,
+          "id": 73178
+        },
+        {
+          "label": "D",
+          "option_text": "Belediye ve valilikler",
+          "is_correct": false,
+          "id": 73179
+        },
+        {
+          "label": "E",
+          "option_text": "Özel şirket kurulları",
+          "is_correct": false,
+          "id": 73180
+        }
+      ],
+      "id": 15331
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "BM İnsan Hakları Yüksek Komiserliği hangi işlevi görür?",
+      "correct_answer_text": "B",
+      "explanation_text": "Yüksek Komiserlik bir mahkeme değil, BM insan hakları çalışmalarını destekleyen ve koordine eden yapıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahkeme gibi kesin hüküm kurar",
+          "is_correct": false,
+          "id": 73181
+        },
+        {
+          "label": "B",
+          "option_text": "İzleme, koordinasyon, teknik destek ve gündem oluşturma işlevi görür",
+          "is_correct": true,
+          "id": 73182
+        },
+        {
+          "label": "C",
+          "option_text": "AİHM kararlarını verir",
+          "is_correct": false,
+          "id": 73183
+        },
+        {
+          "label": "D",
+          "option_text": "Ulusal yasaları yürürlükten kaldırır",
+          "is_correct": false,
+          "id": 73184
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza mahkemesi olarak çalışır",
+          "is_correct": false,
+          "id": 73185
+        }
+      ],
+      "id": 15332
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sözleşme komiteleri hangi devletleri denetler?",
+      "correct_answer_text": "D",
+      "explanation_text": "Komite denetimi, ilgili sözleşmeye taraf olma ve tanınan usullerle ilişkilidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiçbir devleti",
+          "is_correct": false,
+          "id": 73186
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece Avrupa Konseyi üyelerini",
+          "is_correct": false,
+          "id": 73187
+        },
+        {
+          "label": "C",
+          "option_text": "Tüm devletleri taraflık aranmadan",
+          "is_correct": false,
+          "id": 73188
+        },
+        {
+          "label": "D",
+          "option_text": "İlgili sözleşmeye taraf olan devletleri",
+          "is_correct": true,
+          "id": 73189
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız yerel yönetimleri",
+          "is_correct": false,
+          "id": 73190
+        }
+      ],
+      "id": 15333
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Devlet raporu usulünün amacı nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Raporlama, devletin yükümlülüklerini uygulama düzeyini izlemeye yarar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahkeme kararı vermek",
+          "is_correct": false,
+          "id": 73191
+        },
+        {
+          "label": "B",
+          "option_text": "Bireyleri cezalandırmak",
+          "is_correct": false,
+          "id": 73192
+        },
+        {
+          "label": "C",
+          "option_text": "Taraf devletin sözleşme yükümlülüklerini nasıl yerine getirdiğini izlemek",
+          "is_correct": true,
+          "id": 73193
+        },
+        {
+          "label": "D",
+          "option_text": "Seçim sonuçlarını açıklamak",
+          "is_correct": false,
+          "id": 73194
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece bütçe yapmak",
+          "is_correct": false,
+          "id": 73195
+        }
+      ],
+      "id": 15334
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Bireysel başvuru/iletişim usulü hangi koşula bağlı olabilir?",
+      "correct_answer_text": "E",
+      "explanation_text": "BM komite bireysel başvuruları, çoğu zaman devletin ilgili protokol/usulü kabul etmesine bağlıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvuranın spor kulübü üyeliğine",
+          "is_correct": false,
+          "id": 73196
+        },
+        {
+          "label": "B",
+          "option_text": "Her durumda otomatik işlemeye",
+          "is_correct": false,
+          "id": 73197
+        },
+        {
+          "label": "C",
+          "option_text": "Sözleşmenin tamamen kaldırılmasına",
+          "is_correct": false,
+          "id": 73198
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece basın açıklamasına",
+          "is_correct": false,
+          "id": 73199
+        },
+        {
+          "label": "E",
+          "option_text": "Devletin ilgili usulü tanımasına ve kabul şartlarına",
+          "is_correct": true,
+          "id": 73200
+        }
+      ],
+      "id": 15335
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Irk ayrımcılığının önlenmesi hangi BM sözleşme alanıyla ilgilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "BM sisteminde ayrımcılık yasağına ilişkin özel sözleşme ve komiteler bulunur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her türlü ırk ayrımcılığının ortadan kaldırılması",
+          "is_correct": true,
+          "id": 73201
+        },
+        {
+          "label": "B",
+          "option_text": "Deniz hukuku",
+          "is_correct": false,
+          "id": 73202
+        },
+        {
+          "label": "C",
+          "option_text": "Posta hizmetleri",
+          "is_correct": false,
+          "id": 73203
+        },
+        {
+          "label": "D",
+          "option_text": "Spor müsabakaları",
+          "is_correct": false,
+          "id": 73204
+        },
+        {
+          "label": "E",
+          "option_text": "Gümrük tarifeleri",
+          "is_correct": false,
+          "id": 73205
+        }
+      ],
+      "id": 15336
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "CEDAW hangi alanla ilişkilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "CEDAW kadınlara karşı ayrımcılığın ortadan kaldırılması sözleşmesidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Çocuk hakları",
+          "is_correct": false,
+          "id": 73206
+        },
+        {
+          "label": "B",
+          "option_text": "Kadınlara karşı ayrımcılığın kaldırılması",
+          "is_correct": true,
+          "id": 73207
+        },
+        {
+          "label": "C",
+          "option_text": "İşkenceyi önleme Avrupa sistemi",
+          "is_correct": false,
+          "id": 73208
+        },
+        {
+          "label": "D",
+          "option_text": "Mülteci statüsü dışı ticaret",
+          "is_correct": false,
+          "id": 73209
+        },
+        {
+          "label": "E",
+          "option_text": "Avrupa Sosyal Şartı",
+          "is_correct": false,
+          "id": 73210
+        }
+      ],
+      "id": 15337
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Çocuk Hakları Sözleşmesi hangi gruba yönelik özel koruma sağlar?",
+      "correct_answer_text": "C",
+      "explanation_text": "Çocuk Hakları Sözleşmesi çocukların haklarını özel olarak güvence altına alır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız kamu görevlilerine",
+          "is_correct": false,
+          "id": 73211
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece seçmenlere",
+          "is_correct": false,
+          "id": 73212
+        },
+        {
+          "label": "C",
+          "option_text": "Çocuklara",
+          "is_correct": true,
+          "id": 73213
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece şirketlere",
+          "is_correct": false,
+          "id": 73214
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız emeklilere",
+          "is_correct": false,
+          "id": 73215
+        }
+      ],
+      "id": 15338
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İşkenceye Karşı BM Sözleşmesi hangi yasakla ilgilidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "BM sisteminde işkenceye karşı özel sözleşme ve denetim mekanizması vardır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sosyal güvenlik",
+          "is_correct": false,
+          "id": 73216
+        },
+        {
+          "label": "B",
+          "option_text": "Seçme hakkı",
+          "is_correct": false,
+          "id": 73217
+        },
+        {
+          "label": "C",
+          "option_text": "Çevre hakkı",
+          "is_correct": false,
+          "id": 73218
+        },
+        {
+          "label": "D",
+          "option_text": "İşkence ve kötü muamele yasağı",
+          "is_correct": true,
+          "id": 73219
+        },
+        {
+          "label": "E",
+          "option_text": "Konut edinme kredisi",
+          "is_correct": false,
+          "id": 73220
+        }
+      ],
+      "id": 15339
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Evrensel Periyodik İnceleme hangi sistem içinde değerlendirilir?",
+      "correct_answer_text": "B",
+      "explanation_text": "UPR, BM İnsan Hakları Konseyi bünyesinde devletlerin insan hakları durumunun periyodik gözden geçirilmesidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "AİHM yargısal sistemi",
+          "is_correct": false,
+          "id": 73221
+        },
+        {
+          "label": "B",
+          "option_text": "BM İnsan Hakları Konseyi çerçevesindeki genel izleme mekanizması",
+          "is_correct": true,
+          "id": 73222
+        },
+        {
+          "label": "C",
+          "option_text": "Avrupa Sosyal Haklar Komitesi",
+          "is_correct": false,
+          "id": 73223
+        },
+        {
+          "label": "D",
+          "option_text": "CPT ziyaret sistemi",
+          "is_correct": false,
+          "id": 73224
+        },
+        {
+          "label": "E",
+          "option_text": "Ulusal disiplin kurulu",
+          "is_correct": false,
+          "id": 73225
+        }
+      ],
+      "id": 15340
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Özel raportörler hangi işleve sahiptir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Özel raportörler tematik veya ülke bazlı insan hakları izlemesi yapar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ulusal mahkeme kararı vermek",
+          "is_correct": false,
+          "id": 73226
+        },
+        {
+          "label": "B",
+          "option_text": "AİHS protokolü yazmak",
+          "is_correct": false,
+          "id": 73227
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece bütçe denetlemek",
+          "is_correct": false,
+          "id": 73228
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşlık belgesi düzenlemek",
+          "is_correct": false,
+          "id": 73229
+        },
+        {
+          "label": "E",
+          "option_text": "Belirli ülke veya temalarda izleme, raporlama ve tavsiye geliştirmek",
+          "is_correct": true,
+          "id": 73230
+        }
+      ],
+      "id": 15341
+    },
+    {
+      "topic_id": 146,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "BM komitelerinin kararları genel olarak nasıl görülmelidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Komiteler mahkeme gibi çalışmasa da sözleşme yükümlülükleri bakımından önemli denetim ve yorum işlevi görür.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her durumda ceza mahkemesi hükmü",
+          "is_correct": false,
+          "id": 73231
+        },
+        {
+          "label": "B",
+          "option_text": "Ulusal kanun metni",
+          "is_correct": false,
+          "id": 73232
+        },
+        {
+          "label": "C",
+          "option_text": "Sözleşme yükümlülüklerinin yorumlanması ve izlenmesi bakımından önemli görüş/tespitler",
+          "is_correct": true,
+          "id": 73233
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece siyasi parti kararı",
+          "is_correct": false,
+          "id": 73234
+        },
+        {
+          "label": "E",
+          "option_text": "Belediye düzenlemesi",
+          "is_correct": false,
+          "id": 73235
+        }
+      ],
+      "id": 15342
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Avrupa Konseyi’nin temel amacı hangi üçlüyle ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Avrupa Konseyi Avrupa düzeyinde insan hakları, demokrasi ve hukuk devleti standartlarını geliştirmeyi amaçlar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İnsan hakları, demokrasi ve hukuk devleti",
+          "is_correct": true,
+          "id": 73236
+        },
+        {
+          "label": "B",
+          "option_text": "Gümrük, ticaret ve spor",
+          "is_correct": false,
+          "id": 73237
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece savunma sanayii",
+          "is_correct": false,
+          "id": 73238
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız para politikası",
+          "is_correct": false,
+          "id": 73239
+        },
+        {
+          "label": "E",
+          "option_text": "Petrol ve maden yönetimi",
+          "is_correct": false,
+          "id": 73240
+        }
+      ],
+      "id": 15343
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türkiye Avrupa Konseyi’ne hangi yıl üye olmuştur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Türkiye 1949 yılında Avrupa Konseyi üyesi olmuştur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 73241
+        },
+        {
+          "label": "B",
+          "option_text": "1945",
+          "is_correct": false,
+          "id": 73242
+        },
+        {
+          "label": "C",
+          "option_text": "1949",
+          "is_correct": true,
+          "id": 73243
+        },
+        {
+          "label": "D",
+          "option_text": "1954",
+          "is_correct": false,
+          "id": 73244
+        },
+        {
+          "label": "E",
+          "option_text": "1987",
+          "is_correct": false,
+          "id": 73245
+        }
+      ],
+      "id": 15344
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Avrupa İnsan Hakları Sözleşmesi hangi örgüt sistemi içinde yer alır?",
+      "correct_answer_text": "B",
+      "explanation_text": "AİHS, Avrupa Konseyi sisteminin temel insan hakları sözleşmesidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Birleşmiş Milletler",
+          "is_correct": false,
+          "id": 73246
+        },
+        {
+          "label": "B",
+          "option_text": "Avrupa Konseyi",
+          "is_correct": true,
+          "id": 73247
+        },
+        {
+          "label": "C",
+          "option_text": "Avrupa Birliği zorunlu kurumu",
+          "is_correct": false,
+          "id": 73248
+        },
+        {
+          "label": "D",
+          "option_text": "NATO",
+          "is_correct": false,
+          "id": 73249
+        },
+        {
+          "label": "E",
+          "option_text": "AGİT dışında özel şirket",
+          "is_correct": false,
+          "id": 73250
+        }
+      ],
+      "id": 15345
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "AİHS’nin diğer birçok insan hakları belgesinden ayrılan yönü nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "AİHS, bireysel başvuruya dayanan AİHM denetimiyle güçlü bir yargısal sistem kurar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiç hak içermemesi",
+          "is_correct": false,
+          "id": 73251
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece tavsiye kararı olması",
+          "is_correct": false,
+          "id": 73252
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız sosyal hakları düzenlemesi",
+          "is_correct": false,
+          "id": 73253
+        },
+        {
+          "label": "D",
+          "option_text": "Etkili yargısal denetim mekanizması ve AİHM başvurusu",
+          "is_correct": true,
+          "id": 73254
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece ulusal kanun olması",
+          "is_correct": false,
+          "id": 73255
+        }
+      ],
+      "id": 15346
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "AİHS ne zaman imzalanmış ve ne zaman yürürlüğe girmiştir?",
+      "correct_answer_text": "A",
+      "explanation_text": "AİHS 1950’de imzalanmış, 1953’te yürürlüğe girmiştir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1950’de imzalanmış, 1953’te yürürlüğe girmiştir",
+          "is_correct": true,
+          "id": 73256
+        },
+        {
+          "label": "B",
+          "option_text": "1948’de kabul edilmiş, 1949’da yürürlüğe girmiştir",
+          "is_correct": false,
+          "id": 73257
+        },
+        {
+          "label": "C",
+          "option_text": "1966’da imzalanmış, 1976’da yürürlüğe girmiştir",
+          "is_correct": false,
+          "id": 73258
+        },
+        {
+          "label": "D",
+          "option_text": "1982’de kabul edilmiştir",
+          "is_correct": false,
+          "id": 73259
+        },
+        {
+          "label": "E",
+          "option_text": "2001’de yürürlüğe girmiştir",
+          "is_correct": false,
+          "id": 73260
+        }
+      ],
+      "id": 15347
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türkiye AİHS’yi hangi yıl onaylamıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Türkiye AİHS’yi 1954 yılında onaylamıştır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1948",
+          "is_correct": false,
+          "id": 73261
+        },
+        {
+          "label": "B",
+          "option_text": "1950",
+          "is_correct": false,
+          "id": 73262
+        },
+        {
+          "label": "C",
+          "option_text": "1953",
+          "is_correct": false,
+          "id": 73263
+        },
+        {
+          "label": "D",
+          "option_text": "1987",
+          "is_correct": false,
+          "id": 73264
+        },
+        {
+          "label": "E",
+          "option_text": "1954",
+          "is_correct": true,
+          "id": 73265
+        }
+      ],
+      "id": 15348
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "AİHM’e bireysel başvuruda temel kabul şartlarından biri hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "AİHM ikincil niteliktedir; kural olarak önce etkili iç hukuk yolları tüketilmelidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İç hukuk yollarını hiç kullanmamak",
+          "is_correct": false,
+          "id": 73266
+        },
+        {
+          "label": "B",
+          "option_text": "İç hukuk yollarının tüketilmesi",
+          "is_correct": true,
+          "id": 73267
+        },
+        {
+          "label": "C",
+          "option_text": "Başvurunun sadece sözlü yapılması",
+          "is_correct": false,
+          "id": 73268
+        },
+        {
+          "label": "D",
+          "option_text": "Başvurunun mutlaka şirket tarafından yapılması",
+          "is_correct": false,
+          "id": 73269
+        },
+        {
+          "label": "E",
+          "option_text": "Başvurunun sınırsız süre içinde yapılması",
+          "is_correct": false,
+          "id": 73270
+        }
+      ],
+      "id": 15349
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "AİHS’de güvence altına alınan haklardan biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yaşam hakkı AİHS’de güvence altına alınan temel haklardandır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece ücretsiz tatil hakkı",
+          "is_correct": false,
+          "id": 73271
+        },
+        {
+          "label": "B",
+          "option_text": "Sınırsız ayrıcalık hakkı",
+          "is_correct": false,
+          "id": 73272
+        },
+        {
+          "label": "C",
+          "option_text": "Yaşam hakkı",
+          "is_correct": true,
+          "id": 73273
+        },
+        {
+          "label": "D",
+          "option_text": "Her durumda vergi muafiyeti",
+          "is_correct": false,
+          "id": 73274
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu görevine otomatik atanma",
+          "is_correct": false,
+          "id": 73275
+        }
+      ],
+      "id": 15350
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "AİHM kararlarının infazını izleyen organ hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "AİHM kararlarının yerine getirilmesini Avrupa Konseyi Bakanlar Komitesi izler.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "BM Genel Kurulu",
+          "is_correct": false,
+          "id": 73276
+        },
+        {
+          "label": "B",
+          "option_text": "Avrupa Parlamentosu",
+          "is_correct": false,
+          "id": 73277
+        },
+        {
+          "label": "C",
+          "option_text": "Ulusal belediye meclisi",
+          "is_correct": false,
+          "id": 73278
+        },
+        {
+          "label": "D",
+          "option_text": "Avrupa Konseyi Bakanlar Komitesi",
+          "is_correct": true,
+          "id": 73279
+        },
+        {
+          "label": "E",
+          "option_text": "Özel tahkim kurulu",
+          "is_correct": false,
+          "id": 73280
+        }
+      ],
+      "id": 15351
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "AİHM bireysel başvurusu hangi devlete karşı yapılır?",
+      "correct_answer_text": "A",
+      "explanation_text": "AİHM başvurusu, Sözleşme kapsamındaki hak ihlalinden sorumlu olduğu iddia edilen taraf devlete yöneltilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sözleşmeye taraf ve ihlalden sorumlu olduğu ileri sürülen devlete karşı",
+          "is_correct": true,
+          "id": 73281
+        },
+        {
+          "label": "B",
+          "option_text": "Herhangi bir özel kişiye doğrudan",
+          "is_correct": false,
+          "id": 73282
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız belediye çalışanına",
+          "is_correct": false,
+          "id": 73283
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece Avrupa Birliği’ne",
+          "is_correct": false,
+          "id": 73284
+        },
+        {
+          "label": "E",
+          "option_text": "Mahkeme kalemine karşı",
+          "is_correct": false,
+          "id": 73285
+        }
+      ],
+      "id": 15352
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "AİHM’in dördüncü derece mahkemesi olmaması ne anlama gelir?",
+      "correct_answer_text": "E",
+      "explanation_text": "AİHM ulusal mahkemelerin yerine geçen genel temyiz mercii değildir; Sözleşme ihlali denetimi yapar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ulusal mahkeme kararlarını her yönüyle yeniden yargılar",
+          "is_correct": false,
+          "id": 73286
+        },
+        {
+          "label": "B",
+          "option_text": "Delilleri her davada baştan toplar",
+          "is_correct": false,
+          "id": 73287
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece ceza miktarını belirler",
+          "is_correct": false,
+          "id": 73288
+        },
+        {
+          "label": "D",
+          "option_text": "Ulusal hukuku tamamen kaldırır",
+          "is_correct": false,
+          "id": 73289
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece Sözleşme kapsamındaki hak ihlali iddialarını inceler",
+          "is_correct": true,
+          "id": 73290
+        }
+      ],
+      "id": 15353
+    },
+    {
+      "topic_id": 147,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "AİHS’de işkence yasağının niteliği için doğru ifade hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İşkence yasağı AİHS sisteminde mutlak nitelikte kabul edilen temel yasaklardandır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kolayca askıya alınabilir",
+          "is_correct": false,
+          "id": 73291
+        },
+        {
+          "label": "B",
+          "option_text": "Mutlak nitelikte temel yasaklardan biridir",
+          "is_correct": true,
+          "id": 73292
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız vatandaşlara uygulanır",
+          "is_correct": false,
+          "id": 73293
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece sosyal hak sayılır",
+          "is_correct": false,
+          "id": 73294
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız savaşta geçerlidir",
+          "is_correct": false,
+          "id": 73295
+        }
+      ],
+      "id": 15354
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Avrupa Sosyal Şartı hangi hak alanında AİHS’yi tamamlar?",
+      "correct_answer_text": "C",
+      "explanation_text": "Avrupa Sosyal Şartı çalışma, sosyal güvenlik, sağlık ve aile gibi sosyal-ekonomik hakları güvence altına alır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece ceza muhakemesi",
+          "is_correct": false,
+          "id": 73296
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız seçim hukuku",
+          "is_correct": false,
+          "id": 73297
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal ve ekonomik haklar",
+          "is_correct": true,
+          "id": 73298
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece ifade özgürlüğü",
+          "is_correct": false,
+          "id": 73299
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız kişi özgürlüğü",
+          "is_correct": false,
+          "id": 73300
+        }
+      ],
+      "id": 15355
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Avrupa Sosyal Haklar Komitesi’nin temel görevi nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Komite, Şart yükümlülüklerinin uygulanmasını devlet raporları ve bazı usullerle izler.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Avrupa Sosyal Şartı’nın uygulanmasını raporlar ve sonuçlarla izlemek",
+          "is_correct": true,
+          "id": 73301
+        },
+        {
+          "label": "B",
+          "option_text": "AİHM kararı vermek",
+          "is_correct": false,
+          "id": 73302
+        },
+        {
+          "label": "C",
+          "option_text": "BM Şartı’nı değiştirmek",
+          "is_correct": false,
+          "id": 73303
+        },
+        {
+          "label": "D",
+          "option_text": "Ulusal mahkeme olmak",
+          "is_correct": false,
+          "id": 73304
+        },
+        {
+          "label": "E",
+          "option_text": "Ceza soruşturması yürütmek",
+          "is_correct": false,
+          "id": 73305
+        }
+      ],
+      "id": 15356
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Toplu şikayet usulü için doğru ifade hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Toplu şikayet, bazı kuruluşların Şart’a aykırılık iddiasını ileri sürebildiği özel bir usuldür.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her bireyin tek başına yaptığı bireysel başvurudur",
+          "is_correct": false,
+          "id": 73306
+        },
+        {
+          "label": "B",
+          "option_text": "AİHM başvurusu ile aynıdır",
+          "is_correct": false,
+          "id": 73307
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece ceza mahkemesine yapılır",
+          "is_correct": false,
+          "id": 73308
+        },
+        {
+          "label": "D",
+          "option_text": "Yetkili kuruluşlara tanınan, bireysel başvuru olmayan bir usuldür",
+          "is_correct": true,
+          "id": 73309
+        },
+        {
+          "label": "E",
+          "option_text": "Ulusal dilekçe hakkıdır",
+          "is_correct": false,
+          "id": 73310
+        }
+      ],
+      "id": 15357
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "CPT hangi alanla ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "CPT, işkence ve insanlık dışı/kötü muamelenin önlenmesine yönelik ziyaret mekanizmasıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sosyal güvenlik primi",
+          "is_correct": false,
+          "id": 73311
+        },
+        {
+          "label": "B",
+          "option_text": "İşkence ve kötü muamelenin önlenmesi",
+          "is_correct": true,
+          "id": 73312
+        },
+        {
+          "label": "C",
+          "option_text": "Seçim sonuçları",
+          "is_correct": false,
+          "id": 73313
+        },
+        {
+          "label": "D",
+          "option_text": "Çocuk yardımı",
+          "is_correct": false,
+          "id": 73314
+        },
+        {
+          "label": "E",
+          "option_text": "Ticari marka",
+          "is_correct": false,
+          "id": 73315
+        }
+      ],
+      "id": 15358
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "CPT’nin çalışma yöntemlerinden biri hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "CPT, cezaevi, karakol gibi alıkonulma yerlerini ziyaret ederek önleyici denetim yapar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece bireysel tazminat kararı vermek",
+          "is_correct": false,
+          "id": 73316
+        },
+        {
+          "label": "B",
+          "option_text": "Ulusal mahkemeleri kapatmak",
+          "is_correct": false,
+          "id": 73317
+        },
+        {
+          "label": "C",
+          "option_text": "Siyasi parti kurmak",
+          "is_correct": false,
+          "id": 73318
+        },
+        {
+          "label": "D",
+          "option_text": "Sosyal medya denetimi yapmak",
+          "is_correct": false,
+          "id": 73319
+        },
+        {
+          "label": "E",
+          "option_text": "Alıkonulma yerlerine ziyaret yaparak rapor hazırlamak",
+          "is_correct": true,
+          "id": 73320
+        }
+      ],
+      "id": 15359
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "CPT ile AİHM arasındaki temel fark hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "CPT önleyici mekanizma, AİHM ise bireysel başvuru üzerinden yargısal denetim organıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "CPT önleyici ziyaret mekanizmasıdır; AİHM yargısal ihlal denetimi yapar",
+          "is_correct": true,
+          "id": 73321
+        },
+        {
+          "label": "B",
+          "option_text": "İkisi de aynı mahkemedir",
+          "is_correct": false,
+          "id": 73322
+        },
+        {
+          "label": "C",
+          "option_text": "CPT yalnız sosyal haklara bakar",
+          "is_correct": false,
+          "id": 73323
+        },
+        {
+          "label": "D",
+          "option_text": "AİHM cezaevi ziyareti yapan idari komitedir",
+          "is_correct": false,
+          "id": 73324
+        },
+        {
+          "label": "E",
+          "option_text": "CPT bireysel tazminat mahkemesidir",
+          "is_correct": false,
+          "id": 73325
+        }
+      ],
+      "id": 15360
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ulusal azınlıkların korunmasına ilişkin Avrupa Konseyi metinleri hangi alanla ilgilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Avrupa Konseyi sisteminde azınlık haklarına ilişkin ayrı koruma araçları da bulunur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vergi tahsilatı",
+          "is_correct": false,
+          "id": 73326
+        },
+        {
+          "label": "B",
+          "option_text": "Spor lisansı",
+          "is_correct": false,
+          "id": 73327
+        },
+        {
+          "label": "C",
+          "option_text": "Azınlık hakları ve kimliğin korunması",
+          "is_correct": true,
+          "id": 73328
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız deniz ticareti",
+          "is_correct": false,
+          "id": 73329
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu ihalesi",
+          "is_correct": false,
+          "id": 73330
+        }
+      ],
+      "id": 15361
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bölgesel koruma mekanizmalarının ortak özelliği nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bölgesel sistemler, belirli bölge içinde insan hakları standartları ve denetim yolları oluşturur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece tek ülkenin iç genelgesi olmaları",
+          "is_correct": false,
+          "id": 73331
+        },
+        {
+          "label": "B",
+          "option_text": "Ulusal mahkemeleri tamamen kaldırmaları",
+          "is_correct": false,
+          "id": 73332
+        },
+        {
+          "label": "C",
+          "option_text": "Hakları yalnız şirketlere tanımaları",
+          "is_correct": false,
+          "id": 73333
+        },
+        {
+          "label": "D",
+          "option_text": "Belirli coğrafi/örgütsel sistem içinde hak standartları ve denetim geliştirmeleri",
+          "is_correct": true,
+          "id": 73334
+        },
+        {
+          "label": "E",
+          "option_text": "Yargı yolunu yasaklamaları",
+          "is_correct": false,
+          "id": 73335
+        }
+      ],
+      "id": 15362
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Amerikan ve Afrika insan hakları sistemleri hangi başlık altında değerlendirilebilir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Avrupa dışındaki Amerikan ve Afrika sistemleri bölgesel insan hakları korumasına örnektir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ulusal dilekçe yolları",
+          "is_correct": false,
+          "id": 73336
+        },
+        {
+          "label": "B",
+          "option_text": "Özel hukuk sözleşmeleri",
+          "is_correct": false,
+          "id": 73337
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum içi disiplin",
+          "is_correct": false,
+          "id": 73338
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece Avrupa Birliği hukuku",
+          "is_correct": false,
+          "id": 73339
+        },
+        {
+          "label": "E",
+          "option_text": "Diğer bölgesel koruma mekanizmaları",
+          "is_correct": true,
+          "id": 73340
+        }
+      ],
+      "id": 15363
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Avrupa Sosyal Şartı’nda çalışma hakkı, sağlık ve sosyal güvenlik gibi haklar hangi kuşakla daha çok ilişkilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Sosyal ve ekonomik haklar ikinci kuşak haklar içinde değerlendirilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Birinci kuşak",
+          "is_correct": false,
+          "id": 73341
+        },
+        {
+          "label": "B",
+          "option_text": "İkinci kuşak",
+          "is_correct": true,
+          "id": 73342
+        },
+        {
+          "label": "C",
+          "option_text": "Üçüncü kuşak",
+          "is_correct": false,
+          "id": 73343
+        },
+        {
+          "label": "D",
+          "option_text": "Dördüncü kuşak",
+          "is_correct": false,
+          "id": 73344
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece aktif statü hakları",
+          "is_correct": false,
+          "id": 73345
+        }
+      ],
+      "id": 15364
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "CPT raporlarının mantığı bakımından doğru ifade hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "CPT önleyici karakter taşır; alıkonulma koşullarını denetleyerek kötü muamele riskini azaltmaya çalışır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Amaç ihlal oluşmadan riskleri azaltacak önleyici denetim yapmaktır",
+          "is_correct": true,
+          "id": 73346
+        },
+        {
+          "label": "B",
+          "option_text": "Amaç her başvuruda tazminat hükmetmektir",
+          "is_correct": false,
+          "id": 73347
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece seçimleri denetler",
+          "is_correct": false,
+          "id": 73348
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız sosyal yardımı belirler",
+          "is_correct": false,
+          "id": 73349
+        },
+        {
+          "label": "E",
+          "option_text": "AİHS’yi yürürlükten kaldırır",
+          "is_correct": false,
+          "id": 73350
+        }
+      ],
+      "id": 15365
+    },
+    {
+      "topic_id": 148,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Avrupa Sosyal Şartı ile AİHS arasındaki ilişki için hangisi doğrudur?",
+      "correct_answer_text": "C",
+      "explanation_text": "Avrupa Sosyal Şartı, AİHS’nin klasik hak ağırlıklı yapısını sosyal-ekonomik haklarla tamamlar.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "AİHS’yi tamamen kaldırır",
+          "is_correct": false,
+          "id": 73351
+        },
+        {
+          "label": "B",
+          "option_text": "Aynı hak kataloğunu hiç değiştirmeden tekrarlar",
+          "is_correct": false,
+          "id": 73352
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal-ekonomik haklar bakımından AİHS sistemini tamamlar",
+          "is_correct": true,
+          "id": 73353
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece ceza yargılamasını düzenler",
+          "is_correct": false,
+          "id": 73354
+        },
+        {
+          "label": "E",
+          "option_text": "BM komite sistemidir",
+          "is_correct": false,
+          "id": 73355
+        }
+      ],
+      "id": 15366
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan hakları ihlalinde başvuru yolları belirlenirken ilk bakılacak nokta hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Doğru başvuru yolu ihlalin kimden kaynaklandığına ve hangi hakkın etkilendiğine göre belirlenir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İhlalin kaynağı ve hakkın türü",
+          "is_correct": true,
+          "id": 73356
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuranın sevdiği kurum",
+          "is_correct": false,
+          "id": 73357
+        },
+        {
+          "label": "C",
+          "option_text": "Sosyal medya yorumu",
+          "is_correct": false,
+          "id": 73358
+        },
+        {
+          "label": "D",
+          "option_text": "Gazete başlığı",
+          "is_correct": false,
+          "id": 73359
+        },
+        {
+          "label": "E",
+          "option_text": "Rastgele seçilen mahkeme",
+          "is_correct": false,
+          "id": 73360
+        }
+      ],
+      "id": 15367
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Genel ilke olarak uluslararası başvurudan önce ne yapılmalıdır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Uluslararası koruma ikincil niteliktedir; önce iç hukukta etkili yollar tüketilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiçbir işlem yapılmamalıdır",
+          "is_correct": false,
+          "id": 73361
+        },
+        {
+          "label": "B",
+          "option_text": "Doğrudan sosyal medya paylaşımı yapılmalıdır",
+          "is_correct": false,
+          "id": 73362
+        },
+        {
+          "label": "C",
+          "option_text": "Etkili ve kullanılabilir iç hukuk yolları işletilmelidir",
+          "is_correct": true,
+          "id": 73363
+        },
+        {
+          "label": "D",
+          "option_text": "Mahkeme kararları yok sayılmalıdır",
+          "is_correct": false,
+          "id": 73364
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece basın toplantısı düzenlenmelidir",
+          "is_correct": false,
+          "id": 73365
+        }
+      ],
+      "id": 15368
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İdari işlemden kaynaklanan hak ihlalinde genel olarak hangi yol gündeme gelebilir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İdari işlem veya eylemler için idari başvuru ve idari yargı yolları önemlidir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Cezaevi ziyareti",
+          "is_correct": false,
+          "id": 73366
+        },
+        {
+          "label": "B",
+          "option_text": "İdari başvuru ve idari yargı",
+          "is_correct": true,
+          "id": 73367
+        },
+        {
+          "label": "C",
+          "option_text": "AİHM’e ilk elden başvuru",
+          "is_correct": false,
+          "id": 73368
+        },
+        {
+          "label": "D",
+          "option_text": "Özel spor tahkimi",
+          "is_correct": false,
+          "id": 73369
+        },
+        {
+          "label": "E",
+          "option_text": "Noter onayıyla kesin çözüm",
+          "is_correct": false,
+          "id": 73370
+        }
+      ],
+      "id": 15369
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hak ihlali aynı zamanda suç oluşturuyorsa hangi başvuru yolu gündeme gelir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Suç oluşturan eylemlerde savcılık ve ceza yargısı yolu gündeme gelebilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Avrupa Sosyal Haklar Komitesi",
+          "is_correct": false,
+          "id": 73371
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece belediye",
+          "is_correct": false,
+          "id": 73372
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket temsilcisi",
+          "is_correct": false,
+          "id": 73373
+        },
+        {
+          "label": "D",
+          "option_text": "Savcılığa suç duyurusu/ceza soruşturması",
+          "is_correct": true,
+          "id": 73374
+        },
+        {
+          "label": "E",
+          "option_text": "Spor federasyonu",
+          "is_correct": false,
+          "id": 73375
+        }
+      ],
+      "id": 15370
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Anayasa Mahkemesine bireysel başvuru için genel olarak hangi şart aranır?",
+      "correct_answer_text": "E",
+      "explanation_text": "AYM bireysel başvurusu temel hak ihlali iddiaları için iç hukukta ikincil bir yoldur.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvurunun her zaman sözlü olması",
+          "is_correct": false,
+          "id": 73376
+        },
+        {
+          "label": "B",
+          "option_text": "Hiçbir iç yolun kullanılmaması",
+          "is_correct": false,
+          "id": 73377
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece kamu görevlisi olunması",
+          "is_correct": false,
+          "id": 73378
+        },
+        {
+          "label": "D",
+          "option_text": "Başvurunun sınırsız süreye tabi olması",
+          "is_correct": false,
+          "id": 73379
+        },
+        {
+          "label": "E",
+          "option_text": "Temel hak ihlali iddiası ve olağan kanun yollarının tüketilmesi",
+          "is_correct": true,
+          "id": 73380
+        }
+      ],
+      "id": 15371
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "AİHM başvurusunda ikincillik ilkesi neyi anlatır?",
+      "correct_answer_text": "A",
+      "explanation_text": "AİHM, ulusal makamların ihlali giderme fırsatı bulmasından sonra devreye giren ikincil koruma organıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Öncelikle ulusal makamların ihlali giderme fırsatına sahip olması gerektiğini",
+          "is_correct": true,
+          "id": 73381
+        },
+        {
+          "label": "B",
+          "option_text": "AİHM’in ilk derece mahkemesi olduğunu",
+          "is_correct": false,
+          "id": 73382
+        },
+        {
+          "label": "C",
+          "option_text": "İç hukuk yollarının yasak olduğunu",
+          "is_correct": false,
+          "id": 73383
+        },
+        {
+          "label": "D",
+          "option_text": "Her başvurunun otomatik kabul edileceğini",
+          "is_correct": false,
+          "id": 73384
+        },
+        {
+          "label": "E",
+          "option_text": "AİHM’in sadece sosyal haklara bakacağını",
+          "is_correct": false,
+          "id": 73385
+        }
+      ],
+      "id": 15372
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Yargı dışı başvuru yollarına örnek hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Ombudsmanlık, idari şikayet birimleri ve kurullar yargı dışı başvuru yollarına örnek olabilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "AİHM kararı",
+          "is_correct": false,
+          "id": 73386
+        },
+        {
+          "label": "B",
+          "option_text": "Ceza mahkumiyeti",
+          "is_correct": false,
+          "id": 73387
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu Denetçiliği Kurumu veya ilgili idari şikayet birimleri",
+          "is_correct": true,
+          "id": 73388
+        },
+        {
+          "label": "D",
+          "option_text": "Temyiz mahkemesi",
+          "is_correct": false,
+          "id": 73389
+        },
+        {
+          "label": "E",
+          "option_text": "Anayasa değişikliği",
+          "is_correct": false,
+          "id": 73390
+        }
+      ],
+      "id": 15373
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hasta hakları ihlalinde ilk aşamada hangi yol pratik çözüm sağlayabilir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Bazı alanlarda kurum içi veya idari başvuru yolları hızlı çözüm sağlayabilir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "AİHM’e doğrudan başvuru",
+          "is_correct": false,
+          "id": 73391
+        },
+        {
+          "label": "B",
+          "option_text": "Hasta hakları birimi veya ilgili idari başvuru",
+          "is_correct": true,
+          "id": 73392
+        },
+        {
+          "label": "C",
+          "option_text": "Avrupa Sosyal Haklar Komitesi bireysel başvurusu",
+          "is_correct": false,
+          "id": 73393
+        },
+        {
+          "label": "D",
+          "option_text": "CPT’ye tazminat başvurusu",
+          "is_correct": false,
+          "id": 73394
+        },
+        {
+          "label": "E",
+          "option_text": "BM Güvenlik Konseyi kararı",
+          "is_correct": false,
+          "id": 73395
+        }
+      ],
+      "id": 15374
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Başvuru yolunun “etkili” olması ne demektir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Etkili başvuru yolu, ihlali önleme veya giderme kapasitesine sahip olmalıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece kağıt üzerinde bulunması",
+          "is_correct": false,
+          "id": 73396
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuranı oyalaması",
+          "is_correct": false,
+          "id": 73397
+        },
+        {
+          "label": "C",
+          "option_text": "Her durumda reddedilmesi",
+          "is_correct": false,
+          "id": 73398
+        },
+        {
+          "label": "D",
+          "option_text": "İhlali giderebilecek gerçek ve ulaşılabilir bir imkan sunması",
+          "is_correct": true,
+          "id": 73399
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız siyasi sonuç doğurması",
+          "is_correct": false,
+          "id": 73400
+        }
+      ],
+      "id": 15375
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aynı olayda birden fazla başvuru yolunun bulunması halinde doğru yaklaşım hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Başvuru stratejisinde süre, yetki, hakkın niteliği ve giderim imkanı birlikte ele alınmalıdır.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Rastgele bir yol seçip diğerlerini unutmak",
+          "is_correct": false,
+          "id": 73401
+        },
+        {
+          "label": "B",
+          "option_text": "Hiçbir başvuru yapmamak",
+          "is_correct": false,
+          "id": 73402
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece basına açıklama yapmak",
+          "is_correct": false,
+          "id": 73403
+        },
+        {
+          "label": "D",
+          "option_text": "Süreleri ve yetkili mercileri önemsememek",
+          "is_correct": false,
+          "id": 73404
+        },
+        {
+          "label": "E",
+          "option_text": "Hakkın türü, süreler ve etkili giderim imkanı birlikte değerlendirilmelidir",
+          "is_correct": true,
+          "id": 73405
+        }
+      ],
+      "id": 15376
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bireysel başvurularda süre kurallarının önemi nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Başvuru yollarında süreler kabul edilebilirlik bakımından kritik önemdedir.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Süre kaçırılırsa başvuru kabul edilemeyebilir",
+          "is_correct": true,
+          "id": 73406
+        },
+        {
+          "label": "B",
+          "option_text": "Süreler yalnız tavsiye niteliğindedir",
+          "is_correct": false,
+          "id": 73407
+        },
+        {
+          "label": "C",
+          "option_text": "Süreler sadece mahkemeye aittir, başvurana uygulanmaz",
+          "is_correct": false,
+          "id": 73408
+        },
+        {
+          "label": "D",
+          "option_text": "Süre kuralı hak ihlallerinde hiç yoktur",
+          "is_correct": false,
+          "id": 73409
+        },
+        {
+          "label": "E",
+          "option_text": "Süreler yalnız sosyal medya için geçerlidir",
+          "is_correct": false,
+          "id": 73410
+        }
+      ],
+      "id": 15377
+    },
+    {
+      "topic_id": 149,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "İnsan hakları ihlalinde doğru başvuru mantığı için en uygun ifade hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Doğru başvuru mantığı basamaklıdır: iç hukukta etkili yollar, ardından şartları varsa anayasal veya uluslararası başvuru.",
+      "explanation_basis": "İnsan Hakları konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her olayda doğrudan uluslararası mahkemeye gidilir",
+          "is_correct": false,
+          "id": 73411
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuru yolu rastgele seçilir",
+          "is_correct": false,
+          "id": 73412
+        },
+        {
+          "label": "C",
+          "option_text": "Önce iç hukukta etkili yollar değerlendirilir, sonra şartları varsa üst/uluslararası mekanizmalar düşünülür",
+          "is_correct": true,
+          "id": 73413
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız dilekçe yazmak yeterlidir",
+          "is_correct": false,
+          "id": 73414
+        },
+        {
+          "label": "E",
+          "option_text": "Mahkeme kararları beklenmez",
+          "is_correct": false,
+          "id": 73415
+        }
+      ],
+      "id": 15378
+    }
+  ],
+  "import_result": {
+    "imported_at": "2026-06-08T19:01:53",
+    "created_count": 108,
+    "duplicate_count": 0,
+    "db_status": "active",
+    "db_approval_status": null,
+    "approval_flow": "v5_review_pending",
+    "db_q_version": 5
+  }
+}

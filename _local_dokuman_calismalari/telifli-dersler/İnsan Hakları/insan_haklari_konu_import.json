@@ -1,0 +1,2196 @@
+{
+  "subject": {
+    "code": null,
+    "name": "İnsan Hakları",
+    "slug": "insan-haklari",
+    "status": "active",
+    "id": 30
+  },
+  "target_exam_id": 1,
+  "exam_note": "8. Dönem İlk Derece Amirlik Eğitimi kapsamına eklenecek İnsan Hakları konu anlatımı.",
+  "source_policy": {
+    "copyright": "Kaynak PDF metinleri kopyalanmadan, kapsam ve doğruluk için incelendi; anlatım özgünleştirildi.",
+    "coverage": "MEB, Adalet Bakanlığı ve Aile/Çalışma/Sosyal Hizmetler kaynaklarındaki ana başlıklar tek ders anlatımında kapsandı.",
+    "source_files": [
+      {
+        "file_name": "MEB_Insan_Haklari.pdf",
+        "sha256": "95ae18ca4a08fe9fd5ee7bb0b56b056ac0a1e08d6535adf75d631b96b80a64fb"
+      },
+      {
+        "file_name": "Adalet_Bakanligi_Insan_Haklari.pdf",
+        "sha256": "5895a472bc581af02f6f34584e1d3d4c9501899754dad7c36d79a23d06dd3a3b"
+      },
+      {
+        "file_name": "Aile_ve_Sosyal_Hizmetler_Bakanligi_Insan_Haklari.pdf",
+        "sha256": "8493ca1b2c33fea6324dc0e1df7211aff6f0489600f2fce955153c6e33872f94"
+      }
+    ]
+  },
+  "version": 1,
+  "topics": [
+    {
+      "name": "İnsan Hakları Terminolojisi, Kavramı ve Nitelikleri",
+      "slug": "insan-haklari-terminolojisi-kavrami-ve-nitelikleri",
+      "status": "active",
+      "summary": "İnsan hakları kavramını, hak-özgürlük-ödev ilişkisini ve temel nitelikleri açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: İnsan Hakları Kavramı"
+        },
+        {
+          "type": "section_title",
+          "content": "Terminoloji"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan hakları, yalnızca vatandaşlara veya belirli bir gruba tanınan ayrıcalıklar değildir. Din, dil, cinsiyet, yaş, köken, inanç ya da sosyal durum fark etmeksizin insan olma niteliğine bağlı hakları anlatır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Hukuk metinlerinde aynı alana yakın anlamlarla “temel hak ve hürriyetler”, “kamu hakları”, “vatandaş hakları” veya “kişi hakları” denebilir. Ancak insan hakları ifadesi en geniş çerçeveyi kurar; çünkü öznesi devletin vatandaşı değil, doğrudan insandır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Sınav mantığı: “Herkes” ve “hiç kimse” gibi ifadeler insan haklarının kapsayıcı niteliğini gösterir."
+        },
+        {
+          "type": "subheading",
+          "content": "Hak, Özgürlük ve Ödev"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hak, kişiye hukuk düzeni tarafından tanınan ve korunması istenebilen yetki alanıdır. Özgürlük ise kişinin kendi tercihleriyle davranabilme serbestisini ifade eder."
+        },
+        {
+          "type": "paragraph",
+          "content": "Özgürlükler hukuk tarafından tanındığında hak niteliği güçlenir. Bu yüzden birçok metinde “hak ve özgürlük” birlikte kullanılır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Ödev, hakların sınırsız olmadığını hatırlatan karşı kavramdır. Kişi kendi hakkını kullanırken başkalarının hakkına, demokratik toplum düzenine, kamu düzenine ve genel yarara zarar veremez."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kavram",
+            "Odak Noktası",
+            "Ders Notu"
+          ],
+          "rows": [
+            [
+              "Hak",
+              "Hukuken korunabilen yetki",
+              "İstenebilir ve korunabilir."
+            ],
+            [
+              "Özgürlük",
+              "Serbest davranabilme alanı",
+              "Hukuk öncesi serbestlik düşüncesiyle bağlantılıdır."
+            ],
+            [
+              "Ödev",
+              "Hak kullanımının sorumluluk yönü",
+              "Hakları kullanılamaz hâle getirecek şekilde genişletilmemelidir."
+            ]
+          ],
+          "caption": "Hak-özgürlük-ödev ilişkisi"
+        },
+        {
+          "type": "subheading",
+          "content": "İnsan Haklarının Temel Nitelikleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan hakları zaman içinde farklı belgelerde düzenlenmiştir. Buna rağmen modern insan hakları anlayışında bazı ortak nitelikler öne çıkar."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Nitelik",
+            "Anlamı",
+            "Örnek Çıkarım"
+          ],
+          "rows": [
+            [
+              "Evrensellik",
+              "Hakların bütün insanlara ait olması",
+              "Bir hak yalnızca belirli ülke insanları için düşünülmez."
+            ],
+            [
+              "Bireysellik",
+              "Hak öznesinin onurlu ve özgür birey olması",
+              "Kişi devlet karşısında korunması gereken bir özne kabul edilir."
+            ],
+            [
+              "Dokunulmazlık",
+              "Hakların keyfî biçimde ihlal edilememesi",
+              "Devlet müdahalesi ancak hukuka uygun olursa meşru olabilir."
+            ],
+            [
+              "Devredilmezlik",
+              "Hakların kişiliğe bağlı olması",
+              "Kişi temel haklarından bütünüyle vazgeçmiş sayılamaz."
+            ],
+            [
+              "Vazgeçilmezlik",
+              "Hakların pazarlık konusu yapılamaması",
+              "Kamu hukukunda temel haklardan feragat sınırsız kabul edilmez."
+            ],
+            [
+              "Üstünlük",
+              "Hukuk düzeninin insan haklarıyla uyumlu olması",
+              "Anayasa yargısı ve denetim mekanizmaları bu amaca hizmet eder."
+            ]
+          ],
+          "caption": "İnsan haklarının ayırt edici nitelikleri"
+        },
+        {
+          "type": "subheading",
+          "content": "Doğal Hukuk ve Pozitif Hukuk Bağlantısı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Doğal hukuk yaklaşımı, insanın haklara devlet verdiği için değil insan olduğu için sahip olduğunu savunur. Bu anlayışa göre devlet hakların kaynağı değil, onları tanıması ve koruması gereken güçtür."
+        },
+        {
+          "type": "paragraph",
+          "content": "Pozitif hukuk yaklaşımı ise hakların yazılı kurallara, anayasalara, sözleşmelere ve mahkeme kararlarına bağlanmasını öne çıkarır. Günümüz sisteminde iki yaklaşım birlikte görülür: haklar insan onuruna dayanır, güvence ise hukuk metinleriyle sağlanır."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "İnsan haklarının yalnızca “metinde yazılı olan” haklardan ibaret görülmemesi, yeni hak kuşaklarının doğmasını da açıklar."
+        },
+        {
+          "type": "subheading",
+          "content": "Devlet ve Birey İlişkisi"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan hakları düşüncesinin merkezinde siyasal iktidarı sınırlama fikri vardır. Devlet kamu gücünü kullanır; insan hakları bu gücün kişi onurunu ezmesini önleyen sınır çizgisidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu nedenle insan hakları hem yatay ilişkilerde bireyi diğer kişilere karşı korur hem de dikey ilişkide bireyi devlete karşı güvence altına alır."
+        }
+      ],
+      "id": 141,
+      "topic_id": 141,
+      "current_content_version": 1
+    },
+    {
+      "name": "Düşünsel Temeller ve Tarihsel İnsan Hakları Belgeleri",
+      "slug": "dusunsel-temeller-ve-tarihsel-insan-haklari-belgeleri",
+      "status": "active",
+      "summary": "Aydınlanma, sosyal sözleşme, kuvvetler ayrılığı ve İngiltere-Amerika-Fransa belgelerini işler.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Düşünsel ve Tarihsel Arka Plan"
+        },
+        {
+          "type": "section_title",
+          "content": "Modern İnsan Hakları Düşüncesinin Kaynakları"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan onurunu koruma fikrinin izleri çok eskiye götürülebilir; ancak insan haklarının sistemli bir siyasal doktrin hâline gelişi modern devletin doğuşuyla hızlanmıştır. Rönesans, Reform ve Aydınlanma düşüncesi bu dönüşümün zeminini hazırlamıştır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Aydınlanma, aklı ve bireyin karar verme gücünü merkeze alır. Siyasal iktidarın ilahi veya sınırsız bir güç değil, insanlar tarafından kurulmuş ve sınırlandırılabilir bir yapı olduğu düşüncesi bu ortamda güçlenmiştir."
+        },
+        {
+          "type": "subheading",
+          "content": "Sosyal Sözleşme ve Doğal Haklar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Sosyal sözleşme düşüncesi, devletin kaynağını bireylerin ortak iradesiyle açıklar. Böylece iktidar meşruiyetini sınırsız güçten değil, hakları koruma görevinden alır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Düşünür",
+            "Temel Katkı",
+            "İnsan Hakları Açısından Önemi"
+          ],
+          "rows": [
+            [
+              "Thomas Hobbes",
+              "Güvenlik ihtiyacını ve güçlü devlet fikrini vurgular.",
+              "Doğa durumunda bile yaşam hakkı fikrini görünür kılar."
+            ],
+            [
+              "John Locke",
+              "Yaşam, özgürlük ve mülkiyeti doğal haklar olarak ele alır.",
+              "Devlet hakları korumazsa direnme hakkı gündeme gelir."
+            ],
+            [
+              "Montesquieu",
+              "Kuvvetler ayrılığını savunur.",
+              "İktidarın iktidarla sınırlandırılması hak güvencesine dönüşür."
+            ],
+            [
+              "J. J. Rousseau",
+              "Genel irade ve halk egemenliği kavramlarını öne çıkarır.",
+              "Egemenliğin kaynağını halka bağlar."
+            ],
+            [
+              "Thomas Paine",
+              "İnsan haklarını doğal hak temeliyle savunur.",
+              "Amerikan anayasal düşüncesine katkı yapar."
+            ],
+            [
+              "Voltaire",
+              "Düşünce ve ifade özgürlüğü tartışmalarını besler.",
+              "Hoşgörü ve özgür tartışma kültürünü güçlendirir."
+            ]
+          ],
+          "caption": "İnsan hakları düşüncesinde başlıca katkılar"
+        },
+        {
+          "type": "subheading",
+          "content": "İngiltere’de Hak Belgeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "İngiltere örneğinde hak belgeleri çoğu zaman kralın yetkilerini sınırlama ihtiyacından doğmuştur. Bu belgeler başlangıçta geniş ve evrensel bir hak kataloğu olmaktan çok, somut siyasal güç dengelerini düzenlemiştir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1215 Magna Carta: Keyfî iktidarın sınırlandırılması fikrinin erken örneklerinden biridir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1628 Petition of Right: Vergi ve kişi özgürlüğü konularında kralın keyfîliğine karşı çıkmıştır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1679 Habeas Corpus Act: Kişi özgürlüğü ve keyfî tutuklamaya karşı güvence bakımından önemlidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1689 Bill of Rights: Parlamento üstünlüğü ve kral yetkilerinin sınırlanması yönünde etkili olmuştur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Amerika’da Hak Belgeleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "Amerikan belgelerinde doğal hak ve temsil fikri belirgindir. Kolonilerin İngiltere’ye karşı mücadelesi, vergi ve temsil ilişkisini hak söylemiyle birleştirmiştir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1765 Haklar Bildirisi: Temsil olmadan vergi olmaz anlayışıyla bağlantılıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1776 Virginia Haklar Bildirisi: Doğuştan özgürlük ve eşitlik vurgusuyla öne çıkar."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1776 Amerikan Bağımsızlık Bildirisi: Yaşam, özgürlük ve mutluluğu arama düşüncesini siyasal bağımsızlıkla ilişkilendirir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "1787 ABD Anayasası ve 1791 ek maddeleri: Hakların anayasal güvenceye bağlanması bakımından önem taşır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Fransa’da 1789 Bildirisi"
+        },
+        {
+          "type": "paragraph",
+          "content": "1789 İnsan ve Yurttaş Hakları Bildirisi, modern insan hakları dilinin en etkili metinlerinden biridir. Bildiri, insanların haklar bakımından özgür ve eşit doğduğu düşüncesini açık biçimde ifade eder."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bildiriye göre siyasal toplumun amacı doğal hakları korumaktır. Özgürlük, mülkiyet, güvenlik ve baskıya karşı direnme çekirdek haklar arasında sayılır."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "1789 Bildirisi’nde yasa, genel iradenin ifadesi olarak görülür; hakların sınırı keyfî emirle değil kanunla belirlenir."
+        },
+        {
+          "type": "subheading",
+          "content": "Karşılaştırmalı Bakış"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Ülke Geleneği",
+            "Belirgin Özellik",
+            "Ders İçin Anahtar"
+          ],
+          "rows": [
+            [
+              "İngiltere",
+              "Somut siyasal mücadeleler ve kral yetkisinin sınırlandırılması",
+              "Keyfî tutuklama ve vergilendirme sınırları"
+            ],
+            [
+              "Amerika",
+              "Doğal haklar, temsil ve bağımsızlık",
+              "Yaşam, özgürlük, mülkiyet/mutluluk"
+            ],
+            [
+              "Fransa",
+              "Evrensel hak dili ve ulus egemenliği",
+              "Özgürlük, eşitlik, yasa, direnme hakkı"
+            ]
+          ],
+          "caption": "Tarihsel belgelerin genel yönü"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu belgeler tek başına bugünkü kapsayıcı insan hakları sistemini kurmamıştır. Yine de devletin sınırlanması, bireyin korunması ve hakların yazılı güvenceye alınması fikrinin gelişmesinde temel aşamaları oluşturmuştur."
+        }
+      ],
+      "id": 142,
+      "topic_id": 142,
+      "current_content_version": 1
+    },
+    {
+      "name": "İnsan Haklarının Sınıflandırılması ve Hak Kuşakları",
+      "slug": "insan-haklarinin-siniflandirilmasi-ve-hak-kusaklari",
+      "status": "active",
+      "summary": "Jellinek sınıflandırması ile birinci, ikinci, üçüncü ve dördüncü kuşak hakları açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Hakların Sınıflandırılması"
+        },
+        {
+          "type": "section_title",
+          "content": "Neden Sınıflandırma Yapılır?"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan hakları tek bir liste hâlinde öğrenilebilir; fakat sınav ve uygulama bakımından hakların türünü bilmek önemlidir. Sınıflandırma, devletin hak karşısındaki yükümlülüğünü anlamayı kolaylaştırır."
+        },
+        {
+          "type": "subheading",
+          "content": "Jellinek’in Statü Sınıflandırması"
+        },
+        {
+          "type": "paragraph",
+          "content": "Jellinek’in yaklaşımı, kişi ile devlet arasındaki ilişkiye odaklanır. Devlet bazen karışmamak, bazen hizmet sunmak, bazen de katılım kanallarını açık tutmak zorundadır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Statü",
+            "Diğer Adı",
+            "Devletin Rolü",
+            "Örnek Haklar"
+          ],
+          "rows": [
+            [
+              "Negatif statü",
+              "Koruyucu haklar",
+              "Kişinin alanına keyfî biçimde girmemek",
+              "Kişi güvenliği, din ve vicdan özgürlüğü, düşünce özgürlüğü"
+            ],
+            [
+              "Pozitif statü",
+              "İsteme hakları",
+              "Kişinin yararlanması için hizmet veya imkân sağlamak",
+              "Eğitim, sağlık, sosyal güvenlik, çalışma hakkı"
+            ],
+            [
+              "Aktif statü",
+              "Katılma hakları",
+              "Siyasal sürece katılımı güvencelemek",
+              "Seçme-seçilme, parti kurma, toplantı ve dernek hakları"
+            ]
+          ],
+          "caption": "Jellinek sınıflandırması"
+        },
+        {
+          "type": "subheading",
+          "content": "Birinci Kuşak Haklar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Birinci kuşak haklar, klasik kişi hakları ve siyasal haklar olarak bilinir. Bu hakların ortaya çıkışında burjuvazinin aristokrasi, monarşi ve ayrıcalıklı yapılara karşı verdiği mücadele belirleyici olmuştur."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu kuşakta devletin temel yükümlülüğü, kişinin özgürlük alanına keyfî biçimde müdahale etmemektir. Bu yüzden negatif statü haklarıyla yakın ilişkilidir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yaşam hakkı ve kişi güvenliği"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Düşünce, din ve vicdan özgürlüğü"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İfade ve basın özgürlüğü"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Toplantı ve dernek kurma özgürlüğü"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Suç ve cezaların kanuniliği"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Masumiyet karinesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mülkiyet hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Siyasal katılma hakları"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "İkinci Kuşak Haklar"
+        },
+        {
+          "type": "paragraph",
+          "content": "İkinci kuşak haklar, Sanayi Devrimi sonrasında ortaya çıkan sosyal eşitsizliklere cevap olarak gelişmiştir. Yalnızca özgürlük tanımak yetmez; kişinin o özgürlüğü kullanabileceği sosyal şartların da oluşturulması gerekir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu haklar pozitif statü haklarıyla bağlantılıdır. Devletin eğitim, sağlık, sosyal güvenlik, çalışma hayatı ve korunmaya muhtaç gruplar alanında aktif rol üstlenmesini gerektirir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çalışma hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adil ücret ve uygun çalışma koşulları"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sendikal haklar"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sosyal güvenlik hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sağlık hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Eğitim hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ailenin, çocukların ve gençlerin korunması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kültürel yaşama katılma"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Üçüncü Kuşak Haklar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Üçüncü kuşak haklar dayanışma hakları olarak da adlandırılır. Bu haklar yalnız bireyin devletten talebini değil, toplumların ve uluslararası topluluğun ortak sorumluluğunu öne çıkarır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Barış hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çevre hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Gelişme hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İnsanlığın ortak mirasından yararlanma hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Halkların kendi kaderini tayin hakkı"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Dördüncü Kuşak Haklar"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bilim ve teknoloji alanındaki gelişmeler yeni etik sorunlar doğurmuştur. Genetik müdahaleler, biyoteknoloji, kişisel veriler, dijital izleme ve insan bedenine ilişkin tartışmalar dördüncü kuşak haklar bağlamında ele alınır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu kuşakta amaç, teknolojik ilerlemenin insan onurunu ve kişiliğini zedelememesidir. Bu nedenle insan kopyalama, genetik veriler, ceninin korunması ve kişisel verilerin işlenmesi gibi alanlar hukuki güvencelerle bağlantılı hâle gelir."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Kuşak ayrımı, hakların birbirinden kopuk olduğu anlamına gelmez. İnsan hakları bölünmez ve birbirini tamamlayan bir bütündür."
+        },
+        {
+          "type": "subheading",
+          "content": "Kuşaklar Arasında Bağlantı"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Kuşak",
+            "Tarihsel İtki",
+            "Hak Mantığı"
+          ],
+          "rows": [
+            [
+              "Birinci",
+              "Mutlak iktidarın ve ayrıcalıkların sınırlandırılması",
+              "Devlet karışmasın, kişi korunsun."
+            ],
+            [
+              "İkinci",
+              "Sanayi toplumunda sosyal eşitsizlik",
+              "Devlet imkân sağlasın."
+            ],
+            [
+              "Üçüncü",
+              "Savaş, çevre, kalkınma ve küresel sorunlar",
+              "Toplumlar birlikte sorumluluk alsın."
+            ],
+            [
+              "Dördüncü",
+              "Bilim, teknoloji ve biyopolitik riskler",
+              "İnsan onuru yeni risklere karşı korunsun."
+            ]
+          ]
+        }
+      ],
+      "id": 143,
+      "topic_id": 143,
+      "current_content_version": 1
+    },
+    {
+      "name": "İnsan Haklarının Ulusal Korunması ve Türkiye’de Gelişimi",
+      "slug": "insan-haklarinin-ulusal-korunmasi-ve-turkiyede-gelisimi",
+      "status": "active",
+      "summary": "Ulusal koruma araçlarını ve Türkiye’de anayasal gelişim çizgisini öğretir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Ulusal Koruma ve Türkiye"
+        },
+        {
+          "type": "section_title",
+          "content": "Ulusal Korumanın Anlamı"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan haklarının ilk koruma alanı iç hukuktur. Devlet, hem bireylerin birbirine karşı hak ihlallerini önlemek hem de kendi organlarının hak ihlal etmesini engellemek zorundadır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Yatay ilişkilerde kolluk, savcılık ve mahkemeler devreye girer. Devletten kaynaklanan ihlallerde ise anayasa, kuvvetler ayrılığı, yargı denetimi, seçimler ve başvuru mekanizmaları özel önem kazanır."
+        },
+        {
+          "type": "subheading",
+          "content": "1982 Anayasası’nda Devletin Rolü"
+        },
+        {
+          "type": "paragraph",
+          "content": "1982 Anayasası’nın 2. maddesi Türkiye Cumhuriyeti’ni insan haklarına saygılı, demokratik, laik ve sosyal hukuk devleti olarak niteler. Bu ifade, devletin yalnız düzen sağlayan değil haklara saygı duyması gereken bir yapı olduğunu gösterir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Anayasa’nın 5. maddesi devlete, kişinin temel hak ve hürriyetlerini sınırlayan siyasal, ekonomik ve sosyal engelleri kaldırma görevi yükler. Böylece insanın maddi ve manevi varlığını geliştirebileceği şartların hazırlanması anayasal görev hâline gelir."
+        },
+        {
+          "type": "subheading",
+          "content": "Ulusal Koruma Araçları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Araç",
+            "İşlevi",
+            "Hak Korumasındaki Rolü"
+          ],
+          "rows": [
+            [
+              "Katı anayasa",
+              "Anayasa değişikliğini zorlaştırır",
+              "Temel hak güvencelerini gündelik siyasal çoğunluğa karşı korur."
+            ],
+            [
+              "Kuvvetler ayrılığı",
+              "Yasama, yürütme ve yargıyı ayırır",
+              "Gücün tek elde toplanmasını önler."
+            ],
+            [
+              "Yargı denetimi",
+              "İşlem ve eylemleri hukuka bağlar",
+              "İhlalin giderilmesini sağlar."
+            ],
+            [
+              "Anayasa yargısı",
+              "Kanunların anayasaya uygunluğunu denetler",
+              "Haklara aykırı kanunların uygulanmasını engeller."
+            ],
+            [
+              "Seçimler",
+              "Siyasal sorumluluğu sağlar",
+              "Yönetilenlerin yönetenleri değiştirebilmesini mümkün kılar."
+            ],
+            [
+              "İdari başvuru yolları",
+              "Yargı öncesi çözüm arar",
+              "Hızlı ve daha az masraflı düzeltme imkânı verir."
+            ]
+          ],
+          "caption": "Ulusal koruma araçları"
+        },
+        {
+          "type": "subheading",
+          "content": "Türkiye’de Tarihsel Gelişim"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkiye’de insan hakları gelişimi Avrupa’daki sınıf mücadelelerinden farklı bir çizgi izlemiştir. Batılılaşma çabaları, anayasal gelişmeler, uluslararası etki ve iç siyasal dönüşümler bu süreçte belirleyici olmuştur."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Dönem/Belge",
+            "Temel Özellik",
+            "İnsan Hakları Açısından Önemi"
+          ],
+          "rows": [
+            [
+              "1839 Tanzimat Fermanı",
+              "Can, mal, ırz güvenliği; vergi ve askerlikte adalet",
+              "Hak güvencesi yönünde ilk önemli belge kabul edilir."
+            ],
+            [
+              "1856 Islahat Fermanı",
+              "Müslümanlar ve gayrimüslimler arasında eşitlik vurgusu",
+              "Eşitlik fikrini güçlendirmiştir."
+            ],
+            [
+              "1876 Kanun-i Esasi",
+              "İlk anayasa ve meşruti monarşi",
+              "Haklar anayasal metne girmiştir."
+            ],
+            [
+              "1908 sonrası değişiklikler",
+              "Anayasanın yeniden işler hâle gelmesi",
+              "Sansür yasağı, haberleşme gizliliği, dernek ve toplantı hakları öne çıkar."
+            ],
+            [
+              "1921 Anayasası",
+              "Egemenlik kayıtsız şartsız milletindir",
+              "Hak kataloğu zayıf, egemenlik vurgusu güçlüdür."
+            ],
+            [
+              "1924 Anayasası",
+              "Türklerin Hukuku Ammesi",
+              "Klasik haklar sayılmış, sosyal haklar sınırlı kalmıştır."
+            ],
+            [
+              "1961 Anayasası",
+              "İnsan haklarına dayanan devlet",
+              "Sosyal haklar ve Anayasa Mahkemesi ile güvence güçlenmiştir."
+            ],
+            [
+              "1971 değişiklikleri",
+              "Genel sınırlama nedenleri",
+              "Özgürlük alanı daraltılmıştır."
+            ],
+            [
+              "1982 Anayasası",
+              "İnsan haklarına saygılı devlet",
+              "Başlangıçta genel sınırlama anlayışı güçlüdür."
+            ],
+            [
+              "2001 değişiklikleri",
+              "Öze dokunma yasağı, demokratik toplum, laik Cumhuriyet, ölçülülük",
+              "Sınırlamanın sınırları yeniden kurulmuştur."
+            ],
+            [
+              "2004 m.90 değişikliği",
+              "Temel haklara ilişkin milletlerarası antlaşmalara öncelik",
+              "Kanun-antlaşma çatışmasında insan hakları sözleşmesi esas alınır."
+            ]
+          ],
+          "caption": "Türkiye’de insan hakları gelişimi"
+        },
+        {
+          "type": "subheading",
+          "content": "İl ve İlçe İnsan Hakları Kurulları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Türkiye’de idari düzeyde insan hakları başvurularını almak ve hak bilincini artırmak için il ve ilçe insan hakları kurulları oluşturulmuştur. Bu kurullar yargı yerine geçmez; ancak idari inceleme, yönlendirme ve farkındalık bakımından başvuru zincirinin parçasıdır."
+        },
+        {
+          "type": "subheading",
+          "content": "Anayasa Mahkemesine Bireysel Başvuru"
+        },
+        {
+          "type": "paragraph",
+          "content": "2010 anayasa değişikliğiyle Anayasa Mahkemesine bireysel başvuru yolu kabul edilmiştir. Bu yol, kamu gücü tarafından ihlal edildiği ileri sürülen ve Anayasa ile Avrupa İnsan Hakları Sözleşmesi’nin ortak koruma alanında bulunan haklar için kullanılabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bireysel başvuruda olağan kanun yollarının tüketilmiş olması gerekir. Bu mekanizma, AİHM’e gitmeden önce iç hukukta etkili bir giderim yolu oluşturma amacına hizmet eder."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Ulusal korumada temel sıra: önce iç hukukta etkili başvuru yolları, sonra koşulları varsa uluslararası başvuru yolları."
+        }
+      ],
+      "id": 144,
+      "topic_id": 144,
+      "current_content_version": 1
+    },
+    {
+      "name": "Birleşmiş Milletler Sistemi ve Evrensel İnsan Hakları Bildirgesi",
+      "slug": "birlesmis-milletler-sistemi-ve-evrensel-insan-haklari-bildirgesi",
+      "status": "active",
+      "summary": "BM sistemi, Evrensel Bildirge ve Bildirgenin hak kataloğunu açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: BM Sistemi ve Evrensel Bildirge"
+        },
+        {
+          "type": "section_title",
+          "content": "İnsan Haklarının Uluslararasılaşması"
+        },
+        {
+          "type": "paragraph",
+          "content": "İkinci Dünya Savaşı öncesinde insan hakları büyük ölçüde devletlerin iç işi olarak görülüyordu. Savaşın yol açtığı ağır ihlaller, insan haklarının uluslararası alanda tanınması ve korunması gerektiği fikrini güçlendirdi."
+        },
+        {
+          "type": "paragraph",
+          "content": "1945’te Birleşmiş Milletler Şartı’nın kabulü, insan haklarının uluslararası hukuk gündemine yerleşmesinde dönüm noktasıdır. Birey artık yalnız devletin konusu değil, uluslararası koruma düzeninin de hak öznesi hâline gelmiştir."
+        },
+        {
+          "type": "subheading",
+          "content": "Birleşmiş Milletlerin Yapısı"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Organ",
+            "Temel İşlev"
+          ],
+          "rows": [
+            [
+              "Genel Kurul",
+              "Tüm üye devletlerin temsil edildiği ana görüşme ve karar organıdır."
+            ],
+            [
+              "Güvenlik Konseyi",
+              "Uluslararası barış ve güvenlik konularında başlıca sorumluluğu taşır."
+            ],
+            [
+              "Ekonomik ve Sosyal Konsey",
+              "Ekonomik, sosyal, kültürel alanlarda çalışmalar yürütür; insan hakları organlarıyla bağlantılıdır."
+            ],
+            [
+              "Vesayet Konseyi",
+              "Vesayet rejimi altındaki bölgelerle ilgili tarihsel işleve sahiptir."
+            ],
+            [
+              "Uluslararası Adalet Divanı",
+              "BM’nin yargı organıdır; devletler arası uyuşmazlıklara bakar."
+            ],
+            [
+              "Genel Sekreterlik",
+              "BM çalışmalarının yürütülmesini ve eşgüdümünü sağlar."
+            ]
+          ],
+          "caption": "BM’nin temel organları"
+        },
+        {
+          "type": "subheading",
+          "content": "İnsan Hakları Evrensel Bildirgesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "10 Aralık 1948’de kabul edilen İnsan Hakları Evrensel Bildirgesi, insan hakları hukukunun ortak dili sayılır. Bildirge bir sözleşme gibi doğrudan bağlayıcı değildir; fakat anayasalara ve sonraki uluslararası sözleşmelere güçlü biçimde yön vermiştir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bildirge, insan onurunu, eşitliği ve devredilmez hakları özgürlük, adalet ve barışın temeli olarak görür. Bu yönüyle yalnız hukuki değil, ahlaki ve siyasal bir referans metindir."
+        },
+        {
+          "type": "subheading",
+          "content": "Bildirgedeki Hak Grupları"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Madde Aralığı",
+            "Hak Grubu",
+            "Örnekler"
+          ],
+          "rows": [
+            [
+              "1-2",
+              "Eşitlik ve ayrımcılık yasağı",
+              "Özgür ve eşit doğma, ayrım gözetilmeksizin haklardan yararlanma"
+            ],
+            [
+              "3-21",
+              "Kişisel ve siyasal haklar",
+              "Yaşam, güvenlik, işkence yasağı, adil yargılanma, ifade, din, toplantı, siyasal katılım"
+            ],
+            [
+              "22-27",
+              "Ekonomik, sosyal ve kültürel haklar",
+              "Sosyal güvenlik, çalışma, sendika, dinlenme, sağlık, eğitim, kültürel yaşama katılma"
+            ],
+            [
+              "28-30",
+              "Düzen, ödev ve kötüye kullanma yasağı",
+              "Hakların uygulanacağı düzen, topluma karşı ödev, özgürlüğü yok etme yasağı"
+            ]
+          ],
+          "caption": "Evrensel Bildirge’nin yapısı"
+        },
+        {
+          "type": "subheading",
+          "content": "Kişisel ve Siyasal Haklar"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yaşam, özgürlük ve kişi güvenliği hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kölelik ve işkence yasağı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Hukuk önünde tanınma ve eşitlik"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Keyfî tutuklama ve sürgün yasağı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adil ve açık yargılanma hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Masumiyet karinesi ve kanunsuz ceza olmaz ilkesi"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Özel hayat, konut ve haberleşme dokunulmazlığı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Seyahat, sığınma ve vatandaşlık hakları"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Evlenme ve aile kurma hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mülkiyet hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Düşünce, vicdan, din, ifade, toplantı ve dernek özgürlükleri"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Yönetime katılma ve kamu hizmetlerine girme hakkı"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Ekonomik, Sosyal ve Kültürel Haklar"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sosyal güvenlik hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çalışma, işini seçme ve işsizlikten korunma hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Eşit işe eşit ücret ve adil ücret"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sendika kurma ve sendikaya katılma"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Dinlenme, boş zaman ve ücretli tatil"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sağlık ve uygun yaşam standardı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Eğitim hakkı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kültürel yaşama, bilim ve sanata katılma"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Bildirgenin Niteliği"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bildirge tek başına mahkeme önünde doğrudan uygulanacak bir sözleşme sistemi kurmaz. Denetim organı veya zorlayıcı yaptırım mekanizması içermemesi bu niteliğin sonucudur."
+        },
+        {
+          "type": "paragraph",
+          "content": "Buna rağmen Bildirge, insan hakları alanında ulusal ve uluslararası metinlerin hazırlanmasına kaynaklık etmiştir. Bu nedenle sınavlarda “bağlayıcı olmayan fakat etkisi çok güçlü temel belge” olarak düşünülmelidir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "10 Aralık, Evrensel Bildirge’nin kabul tarihi olduğu için Dünya İnsan Hakları Günü olarak anılır."
+        }
+      ],
+      "id": 145,
+      "topic_id": 145,
+      "current_content_version": 1
+    },
+    {
+      "name": "BM İnsan Hakları Sözleşmeleri ve Denetim Mekanizmaları",
+      "slug": "bm-insan-haklari-sozlesmeleri-ve-denetim-mekanizmalari",
+      "status": "active",
+      "summary": "BM sözleşmeleri, komiteleri, şart temelli ve sözleşme temelli denetimi açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: BM Denetim Sistemi"
+        },
+        {
+          "type": "section_title",
+          "content": "İki Ana Koruma Hattı"
+        },
+        {
+          "type": "paragraph",
+          "content": "BM sisteminde insan haklarının korunması iki ana hatta yürür. Birincisi BM Şartı’na dayanan genel mekanizmalardır; ikincisi taraf olunan insan hakları sözleşmelerinin kurduğu komite sistemleridir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mekanizma",
+            "Dayanak",
+            "Nasıl İşler?"
+          ],
+          "rows": [
+            [
+              "Şart temelli mekanizmalar",
+              "BM Şartı ve BM organlarının yetkileri",
+              "Ülke veya konu incelemeleri, raportörler, çalışma grupları ve kamuoyu baskısı oluşturur."
+            ],
+            [
+              "Sözleşme temelli mekanizmalar",
+              "Taraf olunan insan hakları sözleşmeleri",
+              "Devlet raporları ve kabul edilmişse bireysel/diğer başvurular komitelerce incelenir."
+            ]
+          ],
+          "caption": "BM koruma mekanizmaları"
+        },
+        {
+          "type": "subheading",
+          "content": "BM İnsan Hakları Yüksek Komiserliği"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan Hakları Yüksek Komiserliği, BM insan hakları çalışmalarında eşgüdüm sağlayan önemli yapıdır. Komitelerin, raportörlerin ve insan hakları programlarının teknik ve idari işleyişine destek verir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu yapı doğrudan mahkeme gibi karar veren bir organ değildir. Daha çok izleme, raporlama, kapasite geliştirme ve uluslararası gündem oluşturma işlevi görür."
+        },
+        {
+          "type": "subheading",
+          "content": "Temel BM Sözleşmeleri ve Komiteler"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sözleşme",
+            "Denetim Organı",
+            "Ana Konu"
+          ],
+          "rows": [
+            [
+              "Medeni ve Siyasi Haklara Dair Uluslararası Sözleşme",
+              "İnsan Hakları Komitesi",
+              "Klasik haklar, siyasal haklar, adil yargılanma, ifade, özgürlük"
+            ],
+            [
+              "Ekonomik, Sosyal ve Kültürel Haklara Dair Uluslararası Sözleşme",
+              "Ekonomik, Sosyal ve Kültürel Haklar Komitesi",
+              "Çalışma, sağlık, eğitim, sosyal güvenlik, kültürel haklar"
+            ],
+            [
+              "Irk Ayrımcılığının Ortadan Kaldırılması Sözleşmesi",
+              "Irk Ayrımcılığının Ortadan Kaldırılması Komitesi",
+              "Irk, renk, soy, ulusal veya etnik kökene dayalı ayrımcılık"
+            ],
+            [
+              "Kadınlara Karşı Ayrımcılığın Kaldırılması Sözleşmesi",
+              "CEDAW Komitesi",
+              "Kadın-erkek eşitliği ve ayrımcılığın kaldırılması"
+            ],
+            [
+              "İşkenceye Karşı Sözleşme",
+              "İşkenceye Karşı Komite",
+              "İşkence ve insanlık dışı muamelenin önlenmesi"
+            ],
+            [
+              "Çocuk Hakları Sözleşmesi",
+              "Çocuk Hakları Komitesi",
+              "Çocukların korunması ve gelişimi"
+            ],
+            [
+              "Göçmen İşçiler Sözleşmesi",
+              "Göçmen İşçiler Komitesi",
+              "Göçmen işçiler ve aile üyelerinin hakları"
+            ],
+            [
+              "Engelli Kişilerin Hakları Sözleşmesi",
+              "Engelli Hakları Komitesi",
+              "Engelli kişilerin eşit ve tam katılımı"
+            ],
+            [
+              "Zorla Kaybedilmeye Karşı Sözleşme",
+              "Zorla Kaybedilmeler Komitesi",
+              "Kişilerin zorla kaybedilmesinin önlenmesi"
+            ]
+          ],
+          "caption": "BM’nin dokuz temel insan hakları sözleşmesi"
+        },
+        {
+          "type": "subheading",
+          "content": "İkiz Sözleşmeler"
+        },
+        {
+          "type": "paragraph",
+          "content": "1966 tarihli Medeni ve Siyasi Haklar Sözleşmesi ile Ekonomik, Sosyal ve Kültürel Haklar Sözleşmesi, Evrensel Bildirge’deki hakları bağlayıcı sözleşme zeminine taşıdığı için “ikiz sözleşmeler” olarak anılır."
+        },
+        {
+          "type": "paragraph",
+          "content": "İlk sözleşme daha çok birinci kuşak hakları; ikinci sözleşme ise ikinci kuşak hakları ayrıntılandırır. Her iki sözleşme de insan haklarının yalnız iyi niyet bildirimi değil, taraf devlet yükümlülüğü olarak düşünülmesini sağlar."
+        },
+        {
+          "type": "subheading",
+          "content": "Diğer BM Kuruluşları ve Dolaylı Koruma"
+        },
+        {
+          "type": "paragraph",
+          "content": "BM sistemi içinde bazı örgütler insan haklarını doğrudan mahkeme gibi korumaz; fakat çalışma alanları gereği hakların uygulanmasına katkı verir. Mülteciler, çalışma hayatı, eğitim, çocuk, sağlık ve gıda alanları buna örnektir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "UNHCR: Mültecilerle ilgili koruma ve destek faaliyetleri yürütür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "ILO: Çalışma standartları ve sendikal haklar alanında önemlidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "UNESCO: Eğitim, bilim ve kültür haklarıyla bağlantılıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "UNICEF: Çocukların korunması ve gelişimine odaklanır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "WHO: Sağlık hakkıyla ilişkili küresel çalışmalar yürütür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "FAO: Gıda ve beslenme güvenliği alanında dolaylı insan hakları etkisi doğurur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Konu ve Ülke Raportörleri"
+        },
+        {
+          "type": "paragraph",
+          "content": "BM sisteminde bazı ihlal alanları konu bazında izlenir. Keyfî tutuklama, zorla kaybetme, ifade özgürlüğü, işkence, yoksulluk, eğitim hakkı, göçmen hakları, kadın ve çocuklara yönelik ihlaller bu yöntemle ele alınabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Ülke yöntemlerinde ise belirli bir ülkedeki insan hakları durumu incelenir. Raporlar hukuki yaptırımdan çok uluslararası görünürlük, diplomatik baskı ve reform çağrısı üretir."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "BM komiteleri mahkeme değildir; fakat rapor, karar ve görüşleri devletlerin insan hakları performansını izlemek için kritik kabul edilir."
+        }
+      ],
+      "id": 146,
+      "topic_id": 146,
+      "current_content_version": 1
+    },
+    {
+      "name": "Avrupa Konseyi, AİHS ve Avrupa İnsan Hakları Mahkemesi",
+      "slug": "avrupa-konseyi-aihs-ve-avrupa-insan-haklari-mahkemesi",
+      "status": "active",
+      "summary": "Avrupa Konseyi yapısını, AİHS haklarını ve AİHM işleyişini öğretir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Avrupa Konseyi ve AİHM"
+        },
+        {
+          "type": "section_title",
+          "content": "Avrupa Konseyi Sistemi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Avrupa Konseyi, Avrupa düzeyinde insan hakları, demokrasi ve hukuk devleti standartlarını geliştirmek amacıyla kurulmuş hükümetler arası bir örgüttür. Türkiye 1949 yılında Konsey’e üye olmuştur."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Organ",
+            "İşlev"
+          ],
+          "rows": [
+            [
+              "Bakanlar Komitesi",
+              "Üye devletlerin dışişleri bakanları düzeyinde karar organıdır."
+            ],
+            [
+              "Parlamenter Meclis",
+              "Ulusal parlamentolardan gelen üyelerle görüşme ve denetim işlevi görür."
+            ],
+            [
+              "Yerel ve Bölgesel Yönetimler Kongresi",
+              "Yerel demokrasi ve bölgesel yönetim alanına odaklanır."
+            ],
+            [
+              "Genel Sekreterlik",
+              "Konsey çalışmalarının idari yürütümünü sağlar."
+            ],
+            [
+              "İnsan Hakları Komiseri",
+              "İnsan hakları bilinci, tavsiye ve izleme alanında çalışır."
+            ]
+          ],
+          "caption": "Avrupa Konseyi organları"
+        },
+        {
+          "type": "subheading",
+          "content": "Avrupa İnsan Hakları Sözleşmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Avrupa İnsan Hakları Sözleşmesi, Avrupa Konseyine üye devletlerin yetki alanındaki kişilere belirli temel hak ve özgürlükleri tanımasını öngörür. Sözleşme 1950’de imzalanmış, 1953’te yürürlüğe girmiş; Türkiye tarafından 1954’te onaylanmıştır."
+        },
+        {
+          "type": "paragraph",
+          "content": "AİHS’yi diğer birçok belgeden ayıran yön, etkili bir yargısal denetim mekanizmasına sahip olmasıdır. Birey, belirli şartlarla devleti Avrupa İnsan Hakları Mahkemesi önüne götürebilir."
+        },
+        {
+          "type": "subheading",
+          "content": "AİHS ve Ek Protokollerde Güvence Altındaki Haklar"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "No",
+            "Hak"
+          ],
+          "rows": [
+            [
+              "1",
+              "Yaşam hakkı"
+            ],
+            [
+              "2",
+              "İşkence yasağı"
+            ],
+            [
+              "3",
+              "Kölelik ve zorla çalıştırma yasağı"
+            ],
+            [
+              "4",
+              "Özgürlük ve güvenlik hakkı"
+            ],
+            [
+              "5",
+              "Adil yargılanma hakkı"
+            ],
+            [
+              "6",
+              "Cezaların kanuniliği"
+            ],
+            [
+              "7",
+              "Özel hayata ve aile hayatına saygı"
+            ],
+            [
+              "8",
+              "Düşünce, vicdan ve din özgürlüğü"
+            ],
+            [
+              "9",
+              "İfade özgürlüğü"
+            ],
+            [
+              "10",
+              "Toplantı ve dernek kurma özgürlüğü"
+            ],
+            [
+              "11",
+              "Evlenme hakkı"
+            ],
+            [
+              "12",
+              "Etkili başvuru hakkı"
+            ],
+            [
+              "13",
+              "Ayrımcılık yasağı"
+            ],
+            [
+              "14",
+              "Mülkiyetin korunması"
+            ],
+            [
+              "15",
+              "Eğitim hakkı"
+            ],
+            [
+              "16",
+              "Serbest seçim hakkı"
+            ],
+            [
+              "17",
+              "Borçtan dolayı hapis yasağı"
+            ],
+            [
+              "18",
+              "Serbest dolaşım özgürlüğü"
+            ],
+            [
+              "19",
+              "Vatandaşın sınır dışı edilmesi yasağı"
+            ],
+            [
+              "20",
+              "Yabancıların topluca sınır dışı edilmesi yasağı"
+            ],
+            [
+              "21",
+              "Ölüm cezasının kaldırılması"
+            ],
+            [
+              "22",
+              "Ceza davalarında iki dereceli yargılanma"
+            ],
+            [
+              "23",
+              "Haksız mahkûmiyet nedeniyle tazminat"
+            ],
+            [
+              "24",
+              "Aynı suçtan yeniden yargılanmama ve cezalandırılmama"
+            ],
+            [
+              "25",
+              "Eşler arasında eşitlik"
+            ],
+            [
+              "26",
+              "Genel ayrımcılık yasağı"
+            ]
+          ],
+          "caption": "AİHS sistemi içindeki başlıca haklar"
+        },
+        {
+          "type": "subheading",
+          "content": "Mahkemenin Yapısı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Avrupa İnsan Hakları Mahkemesi Strasbourg’da görev yapar. Sözleşmeye taraf devlet sayısı kadar yargıçtan oluşur; yargıçlar devlet temsilcisi olarak değil bağımsız yargıç olarak görev yapar."
+        },
+        {
+          "type": "paragraph",
+          "content": "11. Protokol sonrasında Komisyon ve eski Divan sistemi yerine sürekli çalışan Mahkeme yapısı kurulmuştur. Böylece bireysel başvuru daha doğrudan bir yargısal süreç hâline gelmiştir."
+        },
+        {
+          "type": "subheading",
+          "content": "Başvuru Türleri ve İnceleme Düzeni"
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Devlet başvurusu: Bir taraf devletin başka bir taraf devlet aleyhine başvurmasıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Bireysel başvuru: Gerçek kişi, hükümet dışı kuruluş veya kişi gruplarının mağduriyet iddiasıyla başvurmasıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Tek yargıç: Açıkça kabul edilemez başvuruları ayıklayabilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Komite: Yerleşik içtihatla çözülebilecek dosyalarda karar verebilir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Daire: Kabul edilebilirlik ve esas incelemesini yürütür."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Büyük Daire: Önemli yorum sorunları veya istisnai gönderme taleplerinde devreye girer."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Kabul Edilebilirlik Mantığı"
+        },
+        {
+          "type": "paragraph",
+          "content": "AİHM’e gidilebilmesi için iç hukukta etkili başvuru yollarının tüketilmiş olması gerekir. Mahkeme, ulusal makamların yerine geçen ilk derece mahkemesi değildir; Sözleşme kapsamındaki ihlali denetleyen uluslararası yargı organıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Başvurucunun kimliği belli olmalı, konu Sözleşme veya ek protokollerle güvenceye alınmış bir hakla bağlantılı olmalı, başvuru açıkça dayanaktan yoksun veya hakkın kötüye kullanılması niteliğinde olmamalıdır."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Kaynak notlarında AİHM başvuru süresi “nihai karardan itibaren 6 ay” olarak işlenmiştir. Güncel mevzuat ve uygulama açısından süre bilgisi ayrıca kontrol edilmelidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Kararlar ve İnfaz"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mahkeme ihlal bulursa, gerektiğinde başvurucu lehine adil tatmine hükmedebilir. Dostane çözüm yoluyla sonuçlanan dosyalar da Mahkeme kararıyla kayıttan düşebilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kesinleşen kararların uygulanmasını Avrupa Konseyi Bakanlar Komitesi izler. Bu yönüyle AİHM kararları yalnız bireysel tazminat değil, mevzuat ve uygulama değişikliği etkisi de doğurabilir."
+        }
+      ],
+      "id": 147,
+      "topic_id": 147,
+      "current_content_version": 1
+    },
+    {
+      "name": "Avrupa Sosyal Şartı, CPT ve Diğer Bölgesel Koruma Mekanizmaları",
+      "slug": "avrupa-sosyal-sarti-cpt-ve-diger-bolgesel-koruma-mekanizmalari",
+      "status": "active",
+      "summary": "AİHS dışındaki Avrupa Konseyi belgelerini ve bölgesel sistemleri açıklar.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: AİHS Dışındaki Koruma Mekanizmaları"
+        },
+        {
+          "type": "section_title",
+          "content": "Avrupa Sosyal Şartı"
+        },
+        {
+          "type": "paragraph",
+          "content": "Avrupa Sosyal Şartı, Avrupa İnsan Hakları Sözleşmesi’nin sosyal ve ekonomik haklar alanındaki tamamlayıcısıdır. Kişisel ve siyasal hakların yanında çalışma, sosyal güvenlik, sağlık, aile ve korunmaya muhtaç gruplar gibi alanları güvence altına alır."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adil, güvenli ve sağlıklı çalışma koşulları"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Adil ücret ve toplu pazarlık"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Örgütlenme ve sendikal haklar"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Çocukların, gençlerin ve çalışan kadınların korunması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Mesleğe yöneltme ve mesleki eğitim"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Sağlık, sosyal güvenlik ve sosyal yardım"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Engellilerin toplumsal yaşama katılımı"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Ailenin sosyal, hukuki ve ekonomik korunması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Göçmen çalışanların ve ailelerinin korunması"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Konut hakkı ve yaşlıların sosyal korunması"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Avrupa Sosyal Haklar Komitesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Avrupa Sosyal Şartı’nın uygulanmasını Avrupa Sosyal Haklar Komitesi izler. Komite devlet raporlarını değerlendirir ve Şart’a uygunluk konusunda sonuçlar yayımlar."
+        },
+        {
+          "type": "paragraph",
+          "content": "Toplu şikâyet yöntemi, bazı yetkili kuruluşlara başvuru imkânı verir; bireysel şikâyet yolu değildir. Bu yöntemde iddia, bir devletin mevzuat veya uygulamasının Şart yükümlülüklerine aykırı olduğu yönündedir."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Türkiye kaynaklarda Avrupa Sosyal Şartı’na ve Gözden Geçirilmiş Avrupa Sosyal Şartı’na taraf olarak anlatılır; toplu şikâyet protokolü bakımından ayrıca taraflık durumu kontrol edilmelidir."
+        },
+        {
+          "type": "subheading",
+          "content": "İşkenceyi Önleme Avrupa Sözleşmesi ve CPT"
+        },
+        {
+          "type": "paragraph",
+          "content": "İşkence ve insanlık dışı ya da aşağılayıcı muameleyle mücadelede Avrupa Konseyi sistemi içinde CPT önemli rol oynar. CPT bir mahkeme değildir; özgürlüğünden yoksun bırakılan kişilerin bulunduğu yerleri ziyaret eden önleyici denetim organıdır."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "CPT Denetimi",
+            "Açıklama"
+          ],
+          "rows": [
+            [
+              "Ziyaret alanı",
+              "Cezaevleri, nezarethaneler, yabancıların tutulduğu merkezler, psikiyatri hastaneleri ve benzeri kapalı kurumlar."
+            ],
+            [
+              "Amaç",
+              "İşkence ve kötü muamele riskini ortaya çıkmadan önce azaltmak."
+            ],
+            [
+              "Yöntem",
+              "Ziyaret, görüşme, bulgu toplama, rapor ve tavsiye."
+            ],
+            [
+              "Devletle ilişki",
+              "Rapor ilgili devlete gönderilir; işbirliği beklenir."
+            ],
+            [
+              "Kamu açıklaması",
+              "İşbirliği yoksa veya tavsiyeler dikkate alınmazsa istisnai olarak gündeme gelebilir."
+            ]
+          ],
+          "caption": "CPT’nin çalışma mantığı"
+        },
+        {
+          "type": "subheading",
+          "content": "Ulusal Azınlıkları Koruma Çerçeve Sözleşmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Ulusal Azınlıkları Koruma Çerçeve Sözleşmesi, azınlıkların etnik, kültürel, dilsel ve dinsel kimliklerini koruyabilmeleri için uygun koşullar oluşturmayı amaçlar. Sözleşme, ulusal azınlık kavramına tek ve zorunlu bir tanım getirmez."
+        },
+        {
+          "type": "paragraph",
+          "content": "Denetim, raporlama ve danışma komitesi görüşleri üzerinden yürür. Kaynaklarda Türkiye’nin bu sözleşmeye taraf olmadığı bilgisi özellikle vurgulanır."
+        },
+        {
+          "type": "subheading",
+          "content": "Diğer Bölgesel ve Kurumsal Sistemler"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan hakları yalnız BM ve Avrupa Konseyi üzerinden korunmaz. Bölgesel örgütler ve uluslararası işbirliği yapıları da kendi standartlarını üretir."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Sistem/Örgüt",
+            "İnsan Haklarıyla İlişkisi"
+          ],
+          "rows": [
+            [
+              "Amerikan Devletler Örgütü",
+              "Amerika kıtasında bölgesel insan hakları koruması geliştirir."
+            ],
+            [
+              "Afrika Birliği",
+              "Afrika insan hakları sisteminin kurumsal çerçevesini oluşturur."
+            ],
+            [
+              "AGİT",
+              "Güvenlik, demokrasi, seçim ve insan hakları standartları üretir."
+            ],
+            [
+              "Avrupa Birliği",
+              "Temel haklar, veri koruma, ayrımcılık yasağı ve hukuk devleti alanlarında standart geliştirir."
+            ],
+            [
+              "Uluslararası Çalışma Örgütü",
+              "Çalışma hayatı ve sosyal hakların uluslararası düzeyde gelişmesini sağlar."
+            ]
+          ],
+          "caption": "AİHS dışındaki kurumsal çerçeve"
+        },
+        {
+          "type": "subheading",
+          "content": "Kişisel Veriler ve Yeni Koruma Alanları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Teknolojik gelişmeler kişisel verilerin korunmasını insan hakları gündeminin önemli parçası hâline getirmiştir. Kişisel veriler, özel hayatın korunması ve insan onuru ile doğrudan bağlantılıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu nedenle modern hak koruması yalnız klasik özgürlüklerle sınırlı değildir. Veri işleme, biyoteknoloji, dijital gözetim ve yapay zekâ gibi alanlarda da hak temelli değerlendirme yapılması gerekir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "AİHS merkezde dursa da sınav kapsamı sosyal şart, CPT, azınlık sözleşmesi ve diğer bölgesel sistemleri birlikte düşünmeyi gerektirir."
+        }
+      ],
+      "id": 148,
+      "topic_id": 148,
+      "current_content_version": 1
+    },
+    {
+      "name": "İnsan Hakları İhlallerinde Başvuru Yolları ve Uygulama Mantığı",
+      "slug": "insan-haklari-ihlallerinde-basvuru-yollari-ve-uygulama-mantigi",
+      "status": "active",
+      "summary": "İhlal halinde idari, yargısal, anayasal ve uluslararası başvuru sırasını öğretir.",
+      "content_blocks": [
+        {
+          "type": "section_heading",
+          "content": "BÖLÜM: Başvuru Yolları"
+        },
+        {
+          "type": "section_title",
+          "content": "Başvuru Mantığı"
+        },
+        {
+          "type": "paragraph",
+          "content": "İnsan hakları ihlalinde doğru yol, ihlalin kaynağına ve hakkın türüne göre belirlenir. Her durumda temel ilke, önce iç hukukta etkili ve kullanılabilir yolların işletilmesidir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Başvuru yolları yalnız mahkemeden ibaret değildir. İdari başvurular, kurullar, disiplin yolları, savcılık, adli ve idari yargı, Anayasa Mahkemesi ve şartları varsa AİHM başvurusu bir bütün içinde düşünülür."
+        },
+        {
+          "type": "subheading",
+          "content": "Yargı Dışı Başvuru Yolları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Bazı ihlallerde önce ilgili kurum içinde başvuru yapmak hızlı çözüm sağlayabilir. Örneğin sağlık hizmetinde hasta hakları birimi, kurum yönetimi veya bakanlık birimleri devreye girebilir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İlgili kurum veya idareye dilekçe verme"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kurum içi kurul veya başvuru birimlerine müracaat"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İl ve ilçe insan hakları kurullarına başvuru"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Denetim, teftiş veya üst idari makamlara başvuru"
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Kamu denetçiliği ve benzeri idari-denetim yollarını değerlendirme"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Yargısal Başvuru Yolları"
+        },
+        {
+          "type": "paragraph",
+          "content": "Hak ihlali suç oluşturuyorsa savcılığa başvuru gündeme gelir. İdari işlem veya eylemden kaynaklanan ihlallerde idari yargı, özel hukuk veya ceza uyuşmazlıklarında adli yargı yolu kullanılabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kişinin avukat tutma imkânı yoksa baroların adli yardım sisteminden yararlanması mümkündür. Böylece hak arama özgürlüğünün ekonomik imkânsızlık nedeniyle kullanılamaz hâle gelmesi önlenmeye çalışılır."
+        },
+        {
+          "type": "subheading",
+          "content": "Kanun Yolları ve İç Hukukun Tüketilmesi"
+        },
+        {
+          "type": "paragraph",
+          "content": "Mahkeme kararına karşı itiraz, istinaf veya temyiz gibi olağan kanun yolları varsa bunların süresinde kullanılması gerekir. İç hukuk tüketilmeden uluslararası başvuru yapılması çoğu zaman kabul edilemezlik sonucunu doğurur."
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "content": "Başvuru zincirinde süreler hayati önemdedir. Ders içeriği kavramsal çerçeveyi verir; somut olayda güncel süre ve usul ayrıca kontrol edilmelidir."
+        },
+        {
+          "type": "subheading",
+          "content": "Anayasa Mahkemesine Bireysel Başvuru"
+        },
+        {
+          "type": "paragraph",
+          "content": "Anayasa Mahkemesine bireysel başvuru, kamu gücü tarafından ihlal edildiği ileri sürülen temel haklar için iç hukukta özel bir denetim yoludur. Başvuru konusu hak, Anayasa ve AİHS ortak koruma alanında bulunmalıdır."
+        },
+        {
+          "type": "paragraph",
+          "content": "Bu yol olağan kanun yolu değildir; mahkemelerin her türlü maddi veya hukuki değerlendirmesini yeniden inceleyen bir üst derece mahkemesi gibi kullanılmaz. Temel hak ihlali iddiasına odaklanır."
+        },
+        {
+          "type": "subheading",
+          "content": "AİHM’e Başvuru"
+        },
+        {
+          "type": "paragraph",
+          "content": "AİHM başvurusu, Sözleşme veya ek protokollerle güvence altına alınan bir hakkın taraf devlet tarafından ihlal edildiği iddiasına dayanır. Başvurucu gerçek kişi, hükümet dışı kuruluş veya kişi grubu olabilir."
+        },
+        {
+          "type": "list",
+          "style": "unordered",
+          "items": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "İç hukuk yolları tüketilmiş olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başvuru belirlenen süre içinde yapılmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başvurucunun kimliği belli olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Aynı konu daha önce AİHM tarafından incelenmiş olmamalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başvuru başka bir uluslararası çözüm merciine aynı şekilde sunulmamış olmalıdır."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Konu AİHS veya ek protokoller kapsamına girmelidir."
+                }
+              ]
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "content": "Başvuru açıkça dayanaktan yoksun veya kötüye kullanım niteliğinde olmamalıdır."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "content": "Başvuru Akış Diyagramı"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Aşama",
+            "Soru",
+            "Olası Yol"
+          ],
+          "rows": [
+            [
+              "1",
+              "İhlal hangi kurum veya kişi eyleminden doğdu?",
+              "İdari başvuru, savcılık, adli/idari yargı değerlendirilir."
+            ],
+            [
+              "2",
+              "Etkili kurum içi veya idari yol var mı?",
+              "Dilekçe, kurul, üst makam veya denetim yolu kullanılır."
+            ],
+            [
+              "3",
+              "Yargısal çözüm gerekiyor mu?",
+              "Yetkili mahkemede dava veya şikâyet yolu işletilir."
+            ],
+            [
+              "4",
+              "Olağan kanun yolları tamamlandı mı?",
+              "İtiraz, istinaf, temyiz gibi yollar süresinde kullanılır."
+            ],
+            [
+              "5",
+              "Temel hak ihlali devam ediyor mu?",
+              "Koşulları varsa Anayasa Mahkemesine bireysel başvuru yapılır."
+            ],
+            [
+              "6",
+              "İç hukukta giderim sağlanamadı mı?",
+              "Koşulları varsa AİHM başvurusu değerlendirilir."
+            ]
+          ],
+          "caption": "İnsan hakları ihlalinde genel başvuru akışı"
+        },
+        {
+          "type": "subheading",
+          "content": "AİHM Kararlarının Sonucu"
+        },
+        {
+          "type": "paragraph",
+          "content": "AİHM ihlal kararı verdiğinde devletin karara uyma yükümlülüğü doğar. Karar bireysel giderim, adil tazminat veya daha genel nitelikte mevzuat ve uygulama değişikliği ihtiyacı doğurabilir."
+        },
+        {
+          "type": "paragraph",
+          "content": "Kararların uygulanmasını Avrupa Konseyi Bakanlar Komitesi izler. Bu izleme, Avrupa insan hakları sisteminin yalnız karar veren değil, kararın sonuçlarını takip eden bir yapıya sahip olduğunu gösterir."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "content": "Başvuru yollarını ezberlerken sırayı unutma: idari/yargısal iç yollar, olağan kanun yolları, anayasal bireysel başvuru, ardından şartları varsa AİHM."
+        }
+      ],
+      "id": 149,
+      "topic_id": 149,
+      "current_content_version": 1
+    }
+  ],
+  "subject_id": 30
+}

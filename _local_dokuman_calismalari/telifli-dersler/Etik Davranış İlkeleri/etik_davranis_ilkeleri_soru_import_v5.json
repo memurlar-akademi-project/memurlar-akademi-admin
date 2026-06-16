@@ -1,0 +1,3700 @@
+{
+  "subject_id": 28,
+  "subject_name": "Etik Davranış İlkeleri",
+  "q_version": 5,
+  "status": "active",
+  "approval_status": null,
+  "target_exam_id": 1,
+  "source_policy": "Konu anlatımı ve kapsam QA baz alınarak özgün soru diliyle üretildi; kaynak metinden birebir kopya yapılmadı.",
+  "questions": [
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Etik kavramı kamu görevlisi açısından en doğru biçimde nasıl açıklanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Etik, kamu görevlisinin yetkisini nasıl kullanması gerektiğini; dürüstlük, kamu yararı ve güven ölçütleriyle değerlendirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız özel hayatta geçerli gelenek kurallarıdır",
+          "is_correct": false,
+          "id": 71996
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece kanunda yazan yaptırımlı kuralların toplamıdır",
+          "is_correct": false,
+          "id": 71997
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetinde doğru davranışı ve kamu yararını gösteren ilkeler bütünüdür",
+          "is_correct": true,
+          "id": 71998
+        },
+        {
+          "label": "D",
+          "option_text": "Kurum içi hiyerarşiyi hızlandıran teknik talimatlardır",
+          "is_correct": false,
+          "id": 71999
+        },
+        {
+          "label": "E",
+          "option_text": "Kişisel beğeniye göre değişen nezaket alışkanlıklarıdır",
+          "is_correct": false,
+          "id": 72000
+        }
+      ],
+      "id": 15095
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ahlak ile etik arasındaki ilişki için aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Ahlak daha çok toplumda kabul gören davranış kurallarını anlatır; etik ise davranışın niçin doğru ya da yanlış sayıldığını sorgular.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ahlak yalnız yazılı hukuk kurallarını ifade eder",
+          "is_correct": false,
+          "id": 72001
+        },
+        {
+          "label": "B",
+          "option_text": "Ahlak toplumdaki davranış kurallarını, etik ise bu kuralların ilkesel değerlendirmesini ifade eder",
+          "is_correct": true,
+          "id": 72002
+        },
+        {
+          "label": "C",
+          "option_text": "Etik sadece ceza yaptırımı bulunan kurallardan oluşur",
+          "is_correct": false,
+          "id": 72003
+        },
+        {
+          "label": "D",
+          "option_text": "Etik ve ahlak kamu yönetiminde tamamen ilgisiz alanlardır",
+          "is_correct": false,
+          "id": 72004
+        },
+        {
+          "label": "E",
+          "option_text": "Ahlak evrensel, etik ise yalnız yerel geleneklerden ibarettir",
+          "is_correct": false,
+          "id": 72005
+        }
+      ],
+      "id": 15096
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hukuka uygun bir davranışın her zaman etik açıdan yeterli sayılmamasının temel nedeni aşağıdakilerden hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Hukuk çoğu zaman asgari sınırı belirler; etik ise güveni zedelememe, dürüstlük ve kamu yararına uygunluk gibi daha geniş bir değerlendirme ister.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Etik kuralların kamu görevlileri için hiçbir anlam taşımaması",
+          "is_correct": false,
+          "id": 72006
+        },
+        {
+          "label": "B",
+          "option_text": "Hukuk kurallarının daima kişisel kanaate göre uygulanması",
+          "is_correct": false,
+          "id": 72007
+        },
+        {
+          "label": "C",
+          "option_text": "Etik ilkelerin yalnız dini kurallardan oluşması",
+          "is_correct": false,
+          "id": 72008
+        },
+        {
+          "label": "D",
+          "option_text": "Hukukun asgari yazılı düzeni kurması, etik beklentinin ise güven ve kamu yararı yönünden daha geniş olabilmesi",
+          "is_correct": true,
+          "id": 72009
+        },
+        {
+          "label": "E",
+          "option_text": "Hukuka uygun davranışların kamu hizmetinde yasaklanmış olması",
+          "is_correct": false,
+          "id": 72010
+        }
+      ],
+      "id": 15097
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "“Kamu görevlisi ne yapabilirim?” sorusundan önce “ne yapmalıyım?” sorusunu sormalıdır. Bu ifade en çok hangi kavramı açıklar?",
+      "correct_answer_text": "A",
+      "explanation_text": "Etik sorumluluk, yalnız yetkinin varlığına değil, yetkinin doğru ve kamu yararına uygun kullanılıp kullanılmadığına bakar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Etik sorumluluk",
+          "is_correct": true,
+          "id": 72011
+        },
+        {
+          "label": "B",
+          "option_text": "Şekli yetki",
+          "is_correct": false,
+          "id": 72012
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmet kayırmacılığı",
+          "is_correct": false,
+          "id": 72013
+        },
+        {
+          "label": "D",
+          "option_text": "Resmi yazışma usulü",
+          "is_correct": false,
+          "id": 72014
+        },
+        {
+          "label": "E",
+          "option_text": "Bütçe tekniği",
+          "is_correct": false,
+          "id": 72015
+        }
+      ],
+      "id": 15098
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik kodların kamu kurumlarındaki temel işlevi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Etik kodlar, çalışanların hangi davranışın uygun görüldüğünü önceden bilmesini ve ortak standart oluşmasını sağlar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlilerinin bütün takdir yetkilerini ortadan kaldırmak",
+          "is_correct": false,
+          "id": 72016
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız disiplin cezalarının miktarını belirlemek",
+          "is_correct": false,
+          "id": 72017
+        },
+        {
+          "label": "C",
+          "option_text": "Kurum hizmetlerini vatandaş yerine personel çıkarına göre düzenlemek",
+          "is_correct": false,
+          "id": 72018
+        },
+        {
+          "label": "D",
+          "option_text": "Hukuk kurallarını tamamen gereksiz hale getirmek",
+          "is_correct": false,
+          "id": 72019
+        },
+        {
+          "label": "E",
+          "option_text": "Beklenen davranış standartlarını görünür ve ortak hale getirmek",
+          "is_correct": true,
+          "id": 72020
+        }
+      ],
+      "id": 15099
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik iklim kavramı aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "B",
+      "explanation_text": "Etik iklim, kurumda hangi davranışların desteklendiği, tolere edildiği veya reddedildiğine ilişkin ortak havayı anlatır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurum binasının fiziksel çalışma koşullarını",
+          "is_correct": false,
+          "id": 72021
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumda doğru davranışa ilişkin ortak algı ve uygulama atmosferini",
+          "is_correct": true,
+          "id": 72022
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece personelin yıllık izin düzenini",
+          "is_correct": false,
+          "id": 72023
+        },
+        {
+          "label": "D",
+          "option_text": "Kurumun coğrafi konumunu",
+          "is_correct": false,
+          "id": 72024
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız yöneticilerin özel yaşam tercihlerini",
+          "is_correct": false,
+          "id": 72025
+        }
+      ],
+      "id": 15100
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Erdem etiği yaklaşımı açısından kamu görevlisinde öncelikle aranacak özellik aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Erdem etiği, tekil davranıştan çok kişinin karakterinde yerleşmiş iyi niteliklere vurgu yapar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece sonucun faydalı görünmesine odaklanması",
+          "is_correct": false,
+          "id": 72026
+        },
+        {
+          "label": "B",
+          "option_text": "Emri sorgulamadan yerine getirmesi",
+          "is_correct": false,
+          "id": 72027
+        },
+        {
+          "label": "C",
+          "option_text": "Dürüstlük, adalet ve sorumluluk gibi karakter niteliklerini içselleştirmesi",
+          "is_correct": true,
+          "id": 72028
+        },
+        {
+          "label": "D",
+          "option_text": "Her durumda kişisel kazancı öncelemesi",
+          "is_correct": false,
+          "id": 72029
+        },
+        {
+          "label": "E",
+          "option_text": "Kuralları yalnız denetim varsa uygulaması",
+          "is_correct": false,
+          "id": 72030
+        }
+      ],
+      "id": 15101
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik ilkelerin geliştirilmesinde yalnız sonuçlara bakmak hangi riski doğurabilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Sonuç odaklı yaklaşım yararlı olsa da araçların etik olup olmadığını ihmal ederse yanlış davranışları haklı gösterebilir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu yararının hiçbir zaman dikkate alınmaması",
+          "is_correct": false,
+          "id": 72031
+        },
+        {
+          "label": "B",
+          "option_text": "Davranışın etkilerinin ölçülemez hale gelmesi",
+          "is_correct": false,
+          "id": 72032
+        },
+        {
+          "label": "C",
+          "option_text": "Kuralların yazılı hale getirilmesi",
+          "is_correct": false,
+          "id": 72033
+        },
+        {
+          "label": "D",
+          "option_text": "Haksız veya dürüst olmayan bir yöntemin faydalı sonuç gerekçesiyle meşrulaştırılması",
+          "is_correct": true,
+          "id": 72034
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaş beklentilerinin tamamen yok sayılması",
+          "is_correct": false,
+          "id": 72035
+        }
+      ],
+      "id": 15102
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Mesleki etik ilkelerinin ortak amacı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Mesleki etik, mesleğin toplumdaki güvenini ve hizmetin dürüst biçimde yürütülmesini korur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mesleğin güvenilirliğini ve hizmet kalitesini korumak",
+          "is_correct": true,
+          "id": 72036
+        },
+        {
+          "label": "B",
+          "option_text": "Meslek mensuplarına sınırsız kişisel ayrıcalık tanımak",
+          "is_correct": false,
+          "id": 72037
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmet alan kişilerin bilgi edinmesini engellemek",
+          "is_correct": false,
+          "id": 72038
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu kaynaklarını özel amaçla kullanmayı kolaylaştırmak",
+          "is_correct": false,
+          "id": 72039
+        },
+        {
+          "label": "E",
+          "option_text": "Bütün meslek kurallarını kişisel kanaate bırakmak",
+          "is_correct": false,
+          "id": 72040
+        }
+      ],
+      "id": 15103
+    },
+    {
+      "topic_id": 125,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bir davranışın etik açıdan değerlendirilmesinde aşağıdakilerden hangisi tek başına yeterli değildir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Etik değerlendirme yalnız görevliyi rahatlatan sonuca değil; hak, güven, kamu yararı ve dürüstlük ölçütlerine birlikte bakar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Davranışın kamu yararına etkisi",
+          "is_correct": false,
+          "id": 72041
+        },
+        {
+          "label": "B",
+          "option_text": "Davranışın dürüstlükle ilişkisi",
+          "is_correct": false,
+          "id": 72042
+        },
+        {
+          "label": "C",
+          "option_text": "Davranışın başkalarının hakkına etkisi",
+          "is_correct": false,
+          "id": 72043
+        },
+        {
+          "label": "D",
+          "option_text": "Davranışın güven duygusuna etkisi",
+          "is_correct": false,
+          "id": 72044
+        },
+        {
+          "label": "E",
+          "option_text": "Davranışın yalnız kamu görevlisine kolaylık sağlaması",
+          "is_correct": true,
+          "id": 72045
+        }
+      ],
+      "id": 15104
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu yönetiminde etik ilkelerin temel önemi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Etik ilkeler, kamu gücünün dürüst ve kamu yararına kullanıldığı algısını güçlendirerek güven ve meşruiyeti artırır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu hizmetini yalnız personelin özel tercihine bırakması",
+          "is_correct": false,
+          "id": 72046
+        },
+        {
+          "label": "B",
+          "option_text": "Devlete güveni ve yönetimin meşruiyetini güçlendirmesi",
+          "is_correct": true,
+          "id": 72047
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaş başvurularını tamamen azaltması",
+          "is_correct": false,
+          "id": 72048
+        },
+        {
+          "label": "D",
+          "option_text": "Hiyerarşik denetimi ortadan kaldırması",
+          "is_correct": false,
+          "id": 72049
+        },
+        {
+          "label": "E",
+          "option_text": "Bütün kamu hizmetlerini gizli hale getirmesi",
+          "is_correct": false,
+          "id": 72050
+        }
+      ],
+      "id": 15105
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik ikilem hangi durumda ortaya çıkar?",
+      "correct_answer_text": "D",
+      "explanation_text": "Etik ikilem, doğru kabul edilen değerlerin çatışması veya aynı anda korunamaması halinde ortaya çıkar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisinin hiçbir değer çatışması yaşamadan işlem yapmasında",
+          "is_correct": false,
+          "id": 72051
+        },
+        {
+          "label": "B",
+          "option_text": "Kanunda açıkça yasaklanan bir fiilin yapılmasında",
+          "is_correct": false,
+          "id": 72052
+        },
+        {
+          "label": "C",
+          "option_text": "Kişisel çıkarın kamu yararına tercih edilmesinde",
+          "is_correct": false,
+          "id": 72053
+        },
+        {
+          "label": "D",
+          "option_text": "Birden fazla değerin aynı anda tam olarak korunamadığı karar durumunda",
+          "is_correct": true,
+          "id": 72054
+        },
+        {
+          "label": "E",
+          "option_text": "Başvurunun usulüne uygun alınmasında",
+          "is_correct": false,
+          "id": 72055
+        }
+      ],
+      "id": 15106
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bir kamu görevlisi etik karar verirken aşağıdakilerden hangisini öncelikle yapmalıdır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Etik karar verme, sorunu ve etkilenen tarafları doğru tanımlamayla başlar; aksi halde çözüm de yanlış kurulur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Olaydaki değer çatışmasını, ilgilileri ve kamu yararını belirlemek",
+          "is_correct": true,
+          "id": 72056
+        },
+        {
+          "label": "B",
+          "option_text": "Kararı yalnız en yakın çalışma arkadaşına bırakmak",
+          "is_correct": false,
+          "id": 72057
+        },
+        {
+          "label": "C",
+          "option_text": "Sonucu gizlemek için belge düzenlemek",
+          "is_correct": false,
+          "id": 72058
+        },
+        {
+          "label": "D",
+          "option_text": "Kişisel menfaat sağlayan seçeneği tercih etmek",
+          "is_correct": false,
+          "id": 72059
+        },
+        {
+          "label": "E",
+          "option_text": "Başvuruyu görmezden gelmek",
+          "is_correct": false,
+          "id": 72060
+        }
+      ],
+      "id": 15107
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik dışı davranışların ussallaştırılmasına aşağıdakilerden hangisi örnektir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yanlış davranışı normalleştiren gerekçeler etik dışı davranışın ussallaştırılmasıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Çıkar çatışmasını amire bildirmek",
+          "is_correct": false,
+          "id": 72061
+        },
+        {
+          "label": "B",
+          "option_text": "Hediye teklifini görev bağlantısı nedeniyle reddetmek",
+          "is_correct": false,
+          "id": 72062
+        },
+        {
+          "label": "C",
+          "option_text": "“Herkes böyle yapıyor” diyerek yanlış davranışı olağan göstermeye çalışmak",
+          "is_correct": true,
+          "id": 72063
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşa hizmet standardını açıklamak",
+          "is_correct": false,
+          "id": 72064
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu kaynağını amacına uygun kullanmak",
+          "is_correct": false,
+          "id": 72065
+        }
+      ],
+      "id": 15108
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "“Yalnız gerçek yolsuzluktan değil, yolsuzluk şüphesinden de kaçınma” ilkesi en çok hangi etik anlayışla ilgilidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kamu görevlisi sadece fiilen çıkar sağlamaktan değil, tarafsızlık konusunda makul şüphe doğuran durumlardan da kaçınmalıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kişisel sırların sınırsız açıklanması",
+          "is_correct": false,
+          "id": 72066
+        },
+        {
+          "label": "B",
+          "option_text": "Şekli işlemlerin yavaşlatılması",
+          "is_correct": false,
+          "id": 72067
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetinde yalnız sonucun önemsenmesi",
+          "is_correct": false,
+          "id": 72068
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmetten yararlanmada ayrım yapılması",
+          "is_correct": false,
+          "id": 72069
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu güvenini koruma ve görünür tarafsızlık",
+          "is_correct": true,
+          "id": 72070
+        }
+      ],
+      "id": 15109
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi kamu yönetiminde etik dışı davranışların kurum üzerindeki etkilerinden biridir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Etik dışı davranış tek işlemle sınırlı kalmaz; kamu hizmetinin adil ve güvenilir olduğu algısını zedeler.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kuruma duyulan güvenin artması",
+          "is_correct": false,
+          "id": 72071
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmetin adil yürütüldüğüne ilişkin inancın zayıflaması",
+          "is_correct": true,
+          "id": 72072
+        },
+        {
+          "label": "C",
+          "option_text": "Saydamlığın kendiliğinden güçlenmesi",
+          "is_correct": false,
+          "id": 72073
+        },
+        {
+          "label": "D",
+          "option_text": "Hesap verebilirliğin gereksiz hale gelmesi",
+          "is_correct": false,
+          "id": 72074
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaş memnuniyetinin kesin olarak yükselmesi",
+          "is_correct": false,
+          "id": 72075
+        }
+      ],
+      "id": 15110
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik karar verme sürecinde alternatiflerin değerlendirilmesi neden önemlidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Alternatifleri değerlendirmek, kararın farklı değerler ve ilgililer üzerindeki etkisini görmeyi sağlar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her seçeneğin hak, kamu yararı ve güven üzerindeki sonucunu görmeyi sağladığı için",
+          "is_correct": true,
+          "id": 72076
+        },
+        {
+          "label": "B",
+          "option_text": "Kuralları uygulamadan işlem yapmayı sağladığı için",
+          "is_correct": false,
+          "id": 72077
+        },
+        {
+          "label": "C",
+          "option_text": "Sorumluluğu tamamen vatandaşa yüklediği için",
+          "is_correct": false,
+          "id": 72078
+        },
+        {
+          "label": "D",
+          "option_text": "Yanlış davranışı belge dışı bırakmayı kolaylaştırdığı için",
+          "is_correct": false,
+          "id": 72079
+        },
+        {
+          "label": "E",
+          "option_text": "Kişisel kazancı garanti ettiği için",
+          "is_correct": false,
+          "id": 72080
+        }
+      ],
+      "id": 15111
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Etik eğitimin kamu kurumlarındaki temel amacı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Etik eğitim, personelin riskli durumları fark etmesini ve ortak ilkeleri uygulamasını sağlar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Personeli yalnız sınav tekniğine hazırlamak",
+          "is_correct": false,
+          "id": 72081
+        },
+        {
+          "label": "B",
+          "option_text": "Etik kuralları gizli tutmak",
+          "is_correct": false,
+          "id": 72082
+        },
+        {
+          "label": "C",
+          "option_text": "Etik farkındalığı artırmak ve ortak davranış standardı oluşturmak",
+          "is_correct": true,
+          "id": 72083
+        },
+        {
+          "label": "D",
+          "option_text": "Disiplin kurullarını işlevsiz bırakmak",
+          "is_correct": false,
+          "id": 72084
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaş başvurularını engellemek",
+          "is_correct": false,
+          "id": 72085
+        }
+      ],
+      "id": 15112
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Bir kamu görevlisi iki yasal seçenek arasında kalmış, birinde hizmet hızlı ama eşitlik şüphesi doğuyor, diğerinde daha yavaş ama herkese aynı usul uygulanıyor. Etik açıdan ilk kontrol noktası hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Etik ikilemlerde hız tek başına ölçüt değildir; eşitlik, güven ve kamu yararı birlikte değerlendirilir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hangi seçeneğin görevliye daha az iş çıkaracağı",
+          "is_correct": false,
+          "id": 72086
+        },
+        {
+          "label": "B",
+          "option_text": "Hangi seçenekte başvurunun daha kolay gizleneceği",
+          "is_correct": false,
+          "id": 72087
+        },
+        {
+          "label": "C",
+          "option_text": "Hangi seçeneğin yakın çevreye avantaj sağlayacağı",
+          "is_correct": false,
+          "id": 72088
+        },
+        {
+          "label": "D",
+          "option_text": "Hangi seçeneğin kamu yararı, eşitlik ve güven ilkeleriyle daha uyumlu olduğu",
+          "is_correct": true,
+          "id": 72089
+        },
+        {
+          "label": "E",
+          "option_text": "Hangi seçeneğin kişisel takdiri denetimsiz bırakacağı",
+          "is_correct": false,
+          "id": 72090
+        }
+      ],
+      "id": 15113
+    },
+    {
+      "topic_id": 126,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu görevlisinin “Ben sadece emir aldım” diyerek açık etik sorumluluğu yok sayması hangi sorunla ilişkilidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Etik sorumluluk, görevlinin karar ve uygulamalarında doğru davranışı değerlendirmesini gerektirir; emir almak her durumda etik muhakemeyi ortadan kaldırmaz.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hizmet standardına uyma",
+          "is_correct": false,
+          "id": 72091
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaşa yol gösterme",
+          "is_correct": false,
+          "id": 72092
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmeti bilinci",
+          "is_correct": false,
+          "id": 72093
+        },
+        {
+          "label": "D",
+          "option_text": "Saydamlık ve katılımcılık",
+          "is_correct": false,
+          "id": 72094
+        },
+        {
+          "label": "E",
+          "option_text": "Sorumluluktan kaçma ve etik muhakemeyi devre dışı bırakma",
+          "is_correct": true,
+          "id": 72095
+        }
+      ],
+      "id": 15114
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türkiye’de kamu görevlilerinin etik davranış standartları bakımından temel düzenlemelerden biri aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "5176 sayılı Kanun ve Yönetmelik, kamu görevlileri etik davranış ilkeleri ve başvuru düzeninin ana dayanaklarıdır.",
+      "explanation_basis": "5176 sayılı Kanun ve Kamu Görevlileri Etik Davranış İlkeleri Yönetmeliği",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "5176 sayılı Kanun ve buna dayanılarak çıkarılan Yönetmelik",
+          "is_correct": true,
+          "id": 72096
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız özel hukuk sözleşmeleri",
+          "is_correct": false,
+          "id": 72097
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece kurum içi yemek listeleri",
+          "is_correct": false,
+          "id": 72098
+        },
+        {
+          "label": "D",
+          "option_text": "Belediye imar planları",
+          "is_correct": false,
+          "id": 72099
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu ihalelerinde teknik şartname ekleri",
+          "is_correct": false,
+          "id": 72100
+        }
+      ],
+      "id": 15115
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu Görevlileri Etik Kurulunun varlık nedeni aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kurul, etik kültürün yerleşmesi ve kapsamındaki başvuruların değerlendirilmesi için oluşturulmuştur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bütün disiplin cezalarını mahkeme yerine vermek",
+          "is_correct": false,
+          "id": 72101
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu kurumlarının bütçe tekliflerini hazırlamak",
+          "is_correct": false,
+          "id": 72102
+        },
+        {
+          "label": "C",
+          "option_text": "Etik kültürünü geliştirmek ve belirli üst düzey görevliler hakkındaki etik başvuruları değerlendirmek",
+          "is_correct": true,
+          "id": 72103
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşların tüm özel hukuk uyuşmazlıklarını çözmek",
+          "is_correct": false,
+          "id": 72104
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu personelinin izin planını yapmak",
+          "is_correct": false,
+          "id": 72105
+        }
+      ],
+      "id": 15116
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik komisyonlarının kurum içindeki rolü en doğru biçimde nasıl açıklanır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Etik komisyonları kurum içinde etik kültürün yerleşmesine ve farkındalığa destek veren yapılardır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yargı organı gibi ceza mahkumiyeti vermek",
+          "is_correct": false,
+          "id": 72106
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumun tüm mali harcamalarını tek başına yapmak",
+          "is_correct": false,
+          "id": 72107
+        },
+        {
+          "label": "C",
+          "option_text": "Personelin özel hayatını sürekli denetlemek",
+          "is_correct": false,
+          "id": 72108
+        },
+        {
+          "label": "D",
+          "option_text": "Etik kültürü desteklemek, eğitim ve farkındalık çalışmalarına katkı sağlamak",
+          "is_correct": true,
+          "id": 72109
+        },
+        {
+          "label": "E",
+          "option_text": "Kanunları yürürlükten kaldırmak",
+          "is_correct": false,
+          "id": 72110
+        }
+      ],
+      "id": 15117
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Etik mevzuatının kapsamı değerlendirilirken aşağıdaki gruplardan hangisi genel olarak kapsam dışında tutulur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Etik mevzuatında bazı görev grupları özel statüleri nedeniyle kapsam dışında bırakılmıştır; sınavda bu ayrım önemlidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu kurumlarında çalışan personel",
+          "is_correct": false,
+          "id": 72111
+        },
+        {
+          "label": "B",
+          "option_text": "Cumhurbaşkanı, TBMM üyeleri, Bakanlar Kurulu üyeleri, Türk Silahlı Kuvvetleri ve yargı mensupları ile üniversiteler gibi özel kapsam dışı sayılanlar",
+          "is_correct": true,
+          "id": 72112
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu tüzel kişiliği bulunan kurum personeli",
+          "is_correct": false,
+          "id": 72113
+        },
+        {
+          "label": "D",
+          "option_text": "Yönetim ve denetim kurulu üyeleri",
+          "is_correct": false,
+          "id": 72114
+        },
+        {
+          "label": "E",
+          "option_text": "Üst kurul başkan ve üyeleri",
+          "is_correct": false,
+          "id": 72115
+        }
+      ],
+      "id": 15118
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yönetmeliğin etik ilkeler bakımından temel işlevi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yönetmelik, etik davranış ilkelerini ve etik ihlal iddialarının nasıl ele alınacağını düzenler.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlilerinin görev sırasında uyması gereken davranış ilkelerini ve başvuru usulünü düzenlemek",
+          "is_correct": true,
+          "id": 72116
+        },
+        {
+          "label": "B",
+          "option_text": "Bütün kamu görevlilerinin maaşını belirlemek",
+          "is_correct": false,
+          "id": 72117
+        },
+        {
+          "label": "C",
+          "option_text": "Yargı kararlarını değiştirmek",
+          "is_correct": false,
+          "id": 72118
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu hizmetlerini tamamen sözlü kurallara bağlamak",
+          "is_correct": false,
+          "id": 72119
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece özel sektör çalışanlarını denetlemek",
+          "is_correct": false,
+          "id": 72120
+        }
+      ],
+      "id": 15119
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Etik kültürün yerleştirilmesi aşağıdakilerden hangisiyle daha çok sağlanır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Etik kültür yalnız metin yayımlamakla değil; eğitim, rehberlik ve tutarlı uygulamayla yerleşir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kuralların personelden gizlenmesiyle",
+          "is_correct": false,
+          "id": 72121
+        },
+        {
+          "label": "B",
+          "option_text": "Yanlış davranışların görmezden gelinmesiyle",
+          "is_correct": false,
+          "id": 72122
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaşla iletişimin kesilmesiyle",
+          "is_correct": false,
+          "id": 72123
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu kaynaklarının kişisel amaçla kullanılmasıyla",
+          "is_correct": false,
+          "id": 72124
+        },
+        {
+          "label": "E",
+          "option_text": "Eğitim, rehberlik, iyi örneklerin desteklenmesi ve kurumsal farkındalıkla",
+          "is_correct": true,
+          "id": 72125
+        }
+      ],
+      "id": 15120
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "En az genel müdür ve eşiti düzeyindeki kamu görevlileri hakkındaki etik başvurular genel olarak nereye yöneltilir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Üst düzey görevliler hakkındaki etik başvurular Kurulun görev alanıyla ilişkilidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mahalle muhtarlığına",
+          "is_correct": false,
+          "id": 72126
+        },
+        {
+          "label": "B",
+          "option_text": "Herhangi bir özel derneğe",
+          "is_correct": false,
+          "id": 72127
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu Görevlileri Etik Kuruluna",
+          "is_correct": true,
+          "id": 72128
+        },
+        {
+          "label": "D",
+          "option_text": "Noter odasına",
+          "is_correct": false,
+          "id": 72129
+        },
+        {
+          "label": "E",
+          "option_text": "Tapu müdürlüğüne",
+          "is_correct": false,
+          "id": 72130
+        }
+      ],
+      "id": 15121
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Diğer kamu görevlileri hakkındaki etik başvuruların değerlendirilmesinde genel yetkili yapı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kurulun görev alanı dışında kalan kamu görevlileri için başvurular ilgili kurumların yetkili disiplin kurullarınca değerlendirilir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu Görevlileri Etik Kurulu her durumda tek yetkilidir",
+          "is_correct": false,
+          "id": 72131
+        },
+        {
+          "label": "B",
+          "option_text": "İlgili kurumların yetkili disiplin kurulları",
+          "is_correct": true,
+          "id": 72132
+        },
+        {
+          "label": "C",
+          "option_text": "Özel şirket yönetim kurulları",
+          "is_correct": false,
+          "id": 72133
+        },
+        {
+          "label": "D",
+          "option_text": "Sendika temsilcileri tek başına",
+          "is_correct": false,
+          "id": 72134
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaş jürileri",
+          "is_correct": false,
+          "id": 72135
+        }
+      ],
+      "id": 15122
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Etik düzenlemelerde “kapsam” bilgisinin sınav açısından önemi nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kapsam bilgisi, düzenlemenin kimlere uygulanacağını ve başvurunun hangi mercide değerlendirileceğini anlamayı sağlar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Etik ilkelerin hiç uygulanmayacağını göstermesi",
+          "is_correct": false,
+          "id": 72136
+        },
+        {
+          "label": "B",
+          "option_text": "Tüm görevlilerin aynı başvuru merciine tabi olduğunu kanıtlaması",
+          "is_correct": false,
+          "id": 72137
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetinde davranış ilkelerinin gereksiz olduğunu göstermesi",
+          "is_correct": false,
+          "id": 72138
+        },
+        {
+          "label": "D",
+          "option_text": "Hangi personelin hangi etik denetim ve başvuru usulüne tabi olduğunu belirlemesi",
+          "is_correct": true,
+          "id": 72139
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece maaş artışını belirlemesi",
+          "is_correct": false,
+          "id": 72140
+        }
+      ],
+      "id": 15123
+    },
+    {
+      "topic_id": 127,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "5176 sayılı Kanun ve Yönetmelik dersinde en çok hangi bilgi türü sınavlık kabul edilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Bu mevzuat başlığı, özellikle kapsam, yetkili merci, etik ilkeler ve başvuru usulü üzerinden ölçülür.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kapsam, kurul/komisyon görevleri, başvuru usulü ve etik ilkeler",
+          "is_correct": true,
+          "id": 72141
+        },
+        {
+          "label": "B",
+          "option_text": "Kurum binalarının mimari planı",
+          "is_correct": false,
+          "id": 72142
+        },
+        {
+          "label": "C",
+          "option_text": "Personelin öğle arası alışkanlıkları",
+          "is_correct": false,
+          "id": 72143
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız özel hukuk dava dilekçeleri",
+          "is_correct": false,
+          "id": 72144
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu araçlarının marka listesi",
+          "is_correct": false,
+          "id": 72145
+        }
+      ],
+      "id": 15124
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu hizmeti bilinci aşağıdakilerden hangisini gerektirir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kamu hizmeti bilinci, görevin toplum adına yürütülen bir sorumluluk olduğunu kabul etmeyi gerektirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Görevin kişisel güç alanı gibi görülmesini",
+          "is_correct": false,
+          "id": 72146
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmetin yalnız belirli kişilere sunulmasını",
+          "is_correct": false,
+          "id": 72147
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaşın bilgi istemesinin engellenmesini",
+          "is_correct": false,
+          "id": 72148
+        },
+        {
+          "label": "D",
+          "option_text": "Görevin kamu yararı, dürüstlük, tarafsızlık ve hesap verebilirlik içinde yürütülmesini",
+          "is_correct": true,
+          "id": 72149
+        },
+        {
+          "label": "E",
+          "option_text": "Hizmet standartlarının belirsiz bırakılmasını",
+          "is_correct": false,
+          "id": 72150
+        }
+      ],
+      "id": 15125
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Halka hizmet bilinci açısından doğru davranış aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Halka hizmet bilinci, kamu hizmetinin vatandaşın yaşamını kolaylaştıracak ve hak kullanımını destekleyecek biçimde yürütülmesidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaşa başvurusu hakkında yol göstermemek",
+          "is_correct": false,
+          "id": 72151
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmeti vatandaşın ihtiyacını karşılayacak, saygılı ve kolaylaştırıcı biçimde sunmak",
+          "is_correct": true,
+          "id": 72152
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmeti yalnız tanıdıklara hızlandırmak",
+          "is_correct": false,
+          "id": 72153
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşın hakkını kullanmasını zorlaştırmak",
+          "is_correct": false,
+          "id": 72154
+        },
+        {
+          "label": "E",
+          "option_text": "İşlemi kişisel kanaate göre gizlemek",
+          "is_correct": false,
+          "id": 72155
+        }
+      ],
+      "id": 15126
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hizmet standartlarına uyma ilkesinin temel amacı nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Hizmet standartları, hizmetin nasıl ve ne sürede sunulacağını belirginleştirerek öngörülebilirlik sağlar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaşın hizmetin süresi, usulü ve gerekleri hakkında öngörülebilir bilgiye sahip olmasını sağlamak",
+          "is_correct": true,
+          "id": 72156
+        },
+        {
+          "label": "B",
+          "option_text": "Her işlemde farklı ve belirsiz uygulama yapmak",
+          "is_correct": false,
+          "id": 72157
+        },
+        {
+          "label": "C",
+          "option_text": "Başvuruları mümkün olduğunca sözlü ve kayıtsız yürütmek",
+          "is_correct": false,
+          "id": 72158
+        },
+        {
+          "label": "D",
+          "option_text": "Personelin keyfi davranmasını kolaylaştırmak",
+          "is_correct": false,
+          "id": 72159
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu hizmetini yalnız yöneticilere sunmak",
+          "is_correct": false,
+          "id": 72160
+        }
+      ],
+      "id": 15127
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Vatandaşa yol gösterme yükümlülüğü aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kamu görevlisi, vatandaşın hakkını kullanabilmesi için gerekli açıklama ve yönlendirmeyi yapmalıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yanlış başvuruları cezalandırmadan saklamak",
+          "is_correct": false,
+          "id": 72161
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuruyu hiçbir açıklama yapmadan reddetmek",
+          "is_correct": false,
+          "id": 72162
+        },
+        {
+          "label": "C",
+          "option_text": "Kişinin işlemi doğru yapabilmesi için gerekli bilgi ve yönlendirmeyi sağlamak",
+          "is_correct": true,
+          "id": 72163
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşı başka kuruma göndermeden oyalamak",
+          "is_correct": false,
+          "id": 72164
+        },
+        {
+          "label": "E",
+          "option_text": "Hizmeti tanıdıklara ayırmak",
+          "is_correct": false,
+          "id": 72165
+        }
+      ],
+      "id": 15128
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Nezaket ve saygı ilkesine aykırı davranış aşağıdakilerden hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Nezaket ve saygı, kamu görevlisinin hizmet alan kişilere insan onuruna uygun ve ölçülü davranmasını gerektirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaşı dinlemek",
+          "is_correct": false,
+          "id": 72166
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuru hakkında anlaşılır bilgi vermek",
+          "is_correct": false,
+          "id": 72167
+        },
+        {
+          "label": "C",
+          "option_text": "Yoğunluk olsa bile ölçülü dil kullanmak",
+          "is_correct": false,
+          "id": 72168
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmetten yararlananlara eşit davranmak",
+          "is_correct": false,
+          "id": 72169
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaşı azarlamak ve başvurusunu küçümsemek",
+          "is_correct": true,
+          "id": 72170
+        }
+      ],
+      "id": 15129
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Amaç ve misyona bağlılık ilkesi kamu görevlisi açısından ne anlama gelir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Amaç ve misyona bağlılık, görevlinin kurumun kamu hizmeti amacına uygun davranmasını gerektirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurum görevini kişisel çevreye çıkar sağlamak için kullanmak",
+          "is_correct": false,
+          "id": 72171
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumun hedeflerini personelden gizlemek",
+          "is_correct": false,
+          "id": 72172
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmeti kamu yararı yerine grup çıkarına yöneltmek",
+          "is_correct": false,
+          "id": 72173
+        },
+        {
+          "label": "D",
+          "option_text": "Kurumun varlık sebebi ve kamu hizmeti hedefleri doğrultusunda hareket etmek",
+          "is_correct": true,
+          "id": 72174
+        },
+        {
+          "label": "E",
+          "option_text": "Başvuruları keyfi biçimde geciktirmek",
+          "is_correct": false,
+          "id": 72175
+        }
+      ],
+      "id": 15130
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sürekli gelişim ilkesi aşağıdakilerden hangisiyle daha çok ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kamu hizmeti bilinci, hizmetin kalitesini artırma ve daha iyi uygulama arayışını içerir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mevcut hatalı uygulamaları hiç değiştirmemek",
+          "is_correct": false,
+          "id": 72176
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmet kalitesini ve iş süreçlerini iyileştirmeye açık olmak",
+          "is_correct": true,
+          "id": 72177
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaş taleplerini dikkate almamak",
+          "is_correct": false,
+          "id": 72178
+        },
+        {
+          "label": "D",
+          "option_text": "Bilgi edinme hakkını sınırlamak",
+          "is_correct": false,
+          "id": 72179
+        },
+        {
+          "label": "E",
+          "option_text": "Hizmeti yalnız geçmiş alışkanlıklarla yürütmek",
+          "is_correct": false,
+          "id": 72180
+        }
+      ],
+      "id": 15131
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Beyana güven ilkesi hangi durumda önem kazanır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Beyana güven, idarenin vatandaşla ilişkide gereksiz engel üretmemesi ve işlem süreçlerini kolaylaştırmasıyla ilgilidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kişinin beyanının esas alınabildiği işlemlerde gereksiz şüphecilik ve zorluk çıkarılmaması gerektiğinde",
+          "is_correct": true,
+          "id": 72181
+        },
+        {
+          "label": "B",
+          "option_text": "Her beyanın mutlaka sahte sayılması gerektiğinde",
+          "is_correct": false,
+          "id": 72182
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu görevlisinin hiçbir belge istememesi gerektiğinde",
+          "is_correct": false,
+          "id": 72183
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaşın kimliğinin tamamen yok sayılmasında",
+          "is_correct": false,
+          "id": 72184
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu hizmetinin gizli yürütülmesinde",
+          "is_correct": false,
+          "id": 72185
+        }
+      ],
+      "id": 15132
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu hizmeti bilinci zayıfladığında aşağıdaki sonuçlardan hangisi ortaya çıkabilir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kamu hizmeti bilinci olmadığında görev kişisel güç alanına dönüşebilir ve güven zedelenir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamuya güvenin kendiliğinden artması",
+          "is_correct": false,
+          "id": 72186
+        },
+        {
+          "label": "B",
+          "option_text": "Hizmet standartlarının güçlenmesi",
+          "is_correct": false,
+          "id": 72187
+        },
+        {
+          "label": "C",
+          "option_text": "Keyfilik, ayrımcılık ve güven kaybı riski",
+          "is_correct": true,
+          "id": 72188
+        },
+        {
+          "label": "D",
+          "option_text": "Saydamlığın zorunlu hale gelmesi",
+          "is_correct": false,
+          "id": 72189
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaş memnuniyetinin kesinleşmesi",
+          "is_correct": false,
+          "id": 72190
+        }
+      ],
+      "id": 15133
+    },
+    {
+      "topic_id": 128,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hizmette yerindenlik ilkesi genel olarak neyi destekler?",
+      "correct_answer_text": "E",
+      "explanation_text": "Hizmette yerindenlik, hizmetin ihtiyaca yakın ve etkili biçimde yürütülmesini destekleyen bir anlayıştır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her kararın vatandaştan en uzak noktada alınmasını",
+          "is_correct": false,
+          "id": 72191
+        },
+        {
+          "label": "B",
+          "option_text": "Yerel ihtiyaçların görmezden gelinmesini",
+          "is_correct": false,
+          "id": 72192
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmetin tek bir kişiye göre düzenlenmesini",
+          "is_correct": false,
+          "id": 72193
+        },
+        {
+          "label": "D",
+          "option_text": "Vatandaş başvurularının kayda alınmamasını",
+          "is_correct": false,
+          "id": 72194
+        },
+        {
+          "label": "E",
+          "option_text": "Hizmetin ihtiyaca en uygun ve erişilebilir düzeyde sunulmasını",
+          "is_correct": true,
+          "id": 72195
+        }
+      ],
+      "id": 15134
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Dürüstlük ve tarafsızlık ilkesine uygun davranış aşağıdakilerden hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Dürüstlük ve tarafsızlık, kamu hizmetinde ayrım yapmadan adil ve güvenilir davranmayı gerektirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşlem ve eylemlerde adalet, eşitlik ve yasallık doğrultusunda hareket etmek",
+          "is_correct": true,
+          "id": 72196
+        },
+        {
+          "label": "B",
+          "option_text": "Siyasi düşünceye göre hizmet önceliği vermek",
+          "is_correct": false,
+          "id": 72197
+        },
+        {
+          "label": "C",
+          "option_text": "Yakınlara ayrıcalık tanımak",
+          "is_correct": false,
+          "id": 72198
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmeti kişisel sempatiye göre sunmak",
+          "is_correct": false,
+          "id": 72199
+        },
+        {
+          "label": "E",
+          "option_text": "Bilgiyi kasıtlı olarak eksik vermek",
+          "is_correct": false,
+          "id": 72200
+        }
+      ],
+      "id": 15135
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Takdir yetkisiyle ilgili aşağıdakilerden hangisi doğrudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Takdir yetkisi keyfilik değildir; kamu yararı, eşitlik ve gerekçe ile sınırlıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisine sınırsız serbestlik verir",
+          "is_correct": false,
+          "id": 72201
+        },
+        {
+          "label": "B",
+          "option_text": "Kişisel yakınlığa göre kullanılabilir",
+          "is_correct": false,
+          "id": 72202
+        },
+        {
+          "label": "C",
+          "option_text": "Denetlenebilirlik gerektirmez",
+          "is_correct": false,
+          "id": 72203
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu yararı ve hizmet gerekleri doğrultusunda, ölçülü ve gerekçeli kullanılmalıdır",
+          "is_correct": true,
+          "id": 72204
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız sorumluluktan kaçmak için kullanılmaz",
+          "is_correct": false,
+          "id": 72205
+        }
+      ],
+      "id": 15136
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hizmet kayırmacılığına aşağıdakilerden hangisi örnek olur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Hizmet kayırmacılığı, kamu hizmetinin yakınlık veya çıkar ilişkisiyle adil olmayan biçimde sunulmasıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvuruları geliş sırasına ve mevzuata göre değerlendirmek",
+          "is_correct": false,
+          "id": 72206
+        },
+        {
+          "label": "B",
+          "option_text": "Tanıdık bir kişinin işlemini haklı neden olmadan öne almak",
+          "is_correct": true,
+          "id": 72207
+        },
+        {
+          "label": "C",
+          "option_text": "Eksik belgeyi vatandaşa bildirmek",
+          "is_correct": false,
+          "id": 72208
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet standardını açıklamak",
+          "is_correct": false,
+          "id": 72209
+        },
+        {
+          "label": "E",
+          "option_text": "Aynı durumdaki kişilere aynı usulü uygulamak",
+          "is_correct": false,
+          "id": 72210
+        }
+      ],
+      "id": 15137
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Bürokratik sabotaj kavramı aşağıdaki davranışlardan hangisiyle en yakından ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bürokratik sabotaj, hizmetin amaç dışı biçimde yavaşlatılması veya engellenmesiyle etik soruna dönüşür.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hizmeti standart süresinde bitirmek",
+          "is_correct": false,
+          "id": 72211
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaşa doğru bilgi vermek",
+          "is_correct": false,
+          "id": 72212
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetini kişisel veya kurumsal dirençle kasıtlı biçimde aksatmak",
+          "is_correct": true,
+          "id": 72213
+        },
+        {
+          "label": "D",
+          "option_text": "Başvuruyu kayıt altına almak",
+          "is_correct": false,
+          "id": 72214
+        },
+        {
+          "label": "E",
+          "option_text": "Yetkili makama bildirim yapmak",
+          "is_correct": false,
+          "id": 72215
+        }
+      ],
+      "id": 15138
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Saygınlık ve güven ilkesine aykırı davranış hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kamu görevlisi yalnız fiili ihlalden değil, görevin saygınlığını ve güveni zedeleyen izlenimlerden de kaçınmalıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevinin itibarını koruyacak biçimde davranmak",
+          "is_correct": false,
+          "id": 72216
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaşa doğru ve ölçülü bilgi vermek",
+          "is_correct": false,
+          "id": 72217
+        },
+        {
+          "label": "C",
+          "option_text": "Görevle özel çıkar arasına mesafe koymak",
+          "is_correct": false,
+          "id": 72218
+        },
+        {
+          "label": "D",
+          "option_text": "Davranışlarında güven duygusunu gözetmek",
+          "is_correct": false,
+          "id": 72219
+        },
+        {
+          "label": "E",
+          "option_text": "Görevi kullanarak çevreye ayrıcalık izlenimi vermek",
+          "is_correct": true,
+          "id": 72220
+        }
+      ],
+      "id": 15139
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Yetkili makamlara bildirim yükümlülüğü hangi durumda gündeme gelir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kamu görevlisi, hukuka veya etik ilkelere aykırı durumları yetkili makamlara bildirme sorumluluğu taşır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisi kişisel hediye almak istediğinde",
+          "is_correct": false,
+          "id": 72221
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaşın başvurusu usulüne uygun olduğunda",
+          "is_correct": false,
+          "id": 72222
+        },
+        {
+          "label": "C",
+          "option_text": "Yasa dışı veya etik dışı bir durum öğrenildiğinde",
+          "is_correct": true,
+          "id": 72223
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet standardı açıklandığında",
+          "is_correct": false,
+          "id": 72224
+        },
+        {
+          "label": "E",
+          "option_text": "Kurumun misyonu paylaşıldığında",
+          "is_correct": false,
+          "id": 72225
+        }
+      ],
+      "id": 15140
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Kanunsuz emir karşısında kamu görevlisinin etik ve hukuki sorumluluğu bakımından en doğru yaklaşım hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kamu görevlisinin sorumluluğu yalnız emir almakla bitmez; hukuka aykırılık karşısında usule uygun davranması gerekir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Açıkça hukuka aykırı emri sorgulamak ve mevzuattaki usule göre hareket etmek",
+          "is_correct": true,
+          "id": 72226
+        },
+        {
+          "label": "B",
+          "option_text": "Emri veren üst olduğu için her durumda uygulamak",
+          "is_correct": false,
+          "id": 72227
+        },
+        {
+          "label": "C",
+          "option_text": "Emri kayıtsız biçimde gizlemek",
+          "is_correct": false,
+          "id": 72228
+        },
+        {
+          "label": "D",
+          "option_text": "Sorumluluğun tamamını vatandaşa yüklemek",
+          "is_correct": false,
+          "id": 72229
+        },
+        {
+          "label": "E",
+          "option_text": "Emri kişisel çıkar için genişletmek",
+          "is_correct": false,
+          "id": 72230
+        }
+      ],
+      "id": 15141
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ayrımcılık yasağı hangi ilkeyle doğrudan ilişkilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Dil, din, siyasi düşünce, cinsiyet gibi nedenlerle ayrım yapmamak tarafsızlık ve eşitlik ilkesinin gereğidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Savurganlık",
+          "is_correct": false,
+          "id": 72231
+        },
+        {
+          "label": "B",
+          "option_text": "Tarafsızlık ve eşitlik",
+          "is_correct": true,
+          "id": 72232
+        },
+        {
+          "label": "C",
+          "option_text": "Hediye kabulü",
+          "is_correct": false,
+          "id": 72233
+        },
+        {
+          "label": "D",
+          "option_text": "Mal bildirimi",
+          "is_correct": false,
+          "id": 72234
+        },
+        {
+          "label": "E",
+          "option_text": "Eski görevli ilişkileri",
+          "is_correct": false,
+          "id": 72235
+        }
+      ],
+      "id": 15142
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu görevlisinin kurumuna güveni artıran davranışı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Güven, kamu görevlisinin tutarlı, tarafsız ve açıklanabilir davranmasıyla oluşur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşlemleri kişiye göre değiştirmek",
+          "is_correct": false,
+          "id": 72236
+        },
+        {
+          "label": "B",
+          "option_text": "Bilgiyi gereksiz yere saklamak",
+          "is_correct": false,
+          "id": 72237
+        },
+        {
+          "label": "C",
+          "option_text": "Görevle bağlantılı çıkar ilişkisi kurmak",
+          "is_correct": false,
+          "id": 72238
+        },
+        {
+          "label": "D",
+          "option_text": "Tutarlı, açık, tarafsız ve hesap verebilir davranmak",
+          "is_correct": true,
+          "id": 72239
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaş başvurusunu cevapsız bırakmak",
+          "is_correct": false,
+          "id": 72240
+        }
+      ],
+      "id": 15143
+    },
+    {
+      "topic_id": 129,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Dürüstlük ilkesinin özü aşağıdakilerden hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Dürüstlük, bilgi ve davranışta doğruluk ile kamu yetkisinin güvenilir kullanımını ifade eder.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Her durumda kurum menfaatini hukuk üstünde görmek",
+          "is_correct": false,
+          "id": 72241
+        },
+        {
+          "label": "B",
+          "option_text": "Kişisel çıkarı kamu yararıyla eş tutmak",
+          "is_correct": false,
+          "id": 72242
+        },
+        {
+          "label": "C",
+          "option_text": "Yanlış bilgiyi işlem hızlandırmak için kullanmak",
+          "is_correct": false,
+          "id": 72243
+        },
+        {
+          "label": "D",
+          "option_text": "Yakın çevreye kolaylık sağlamak",
+          "is_correct": false,
+          "id": 72244
+        },
+        {
+          "label": "E",
+          "option_text": "Doğru bilgi vermek, güvenilir davranmak ve yetkiyi amacı dışında kullanmamak",
+          "is_correct": true,
+          "id": 72245
+        }
+      ],
+      "id": 15144
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Çıkar çatışması aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Çıkar çatışması fiili yolsuzluk olmasa bile tarafsızlığı etkileyen veya öyle görünen menfaat durumudur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisinin mesai saatine uyması",
+          "is_correct": false,
+          "id": 72246
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaşa hizmet standardı açıklaması",
+          "is_correct": false,
+          "id": 72247
+        },
+        {
+          "label": "C",
+          "option_text": "Kişisel menfaatin tarafsız görev yapmayı etkilemesi veya etkiliyor görünmesi",
+          "is_correct": true,
+          "id": 72248
+        },
+        {
+          "label": "D",
+          "option_text": "Başvurunun kayıt altına alınması",
+          "is_correct": false,
+          "id": 72249
+        },
+        {
+          "label": "E",
+          "option_text": "Hizmetin kamu yararına yürütülmesi",
+          "is_correct": false,
+          "id": 72250
+        }
+      ],
+      "id": 15145
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Çıkar çatışmasında “görünüş” neden önemlidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Etik açısından yalnız fiili etki değil, tarafsızlık şüphesi doğuran görünüm de önemlidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız gerçek para transferleri etik sorun sayıldığı için",
+          "is_correct": false,
+          "id": 72251
+        },
+        {
+          "label": "B",
+          "option_text": "Makul bir kişinin tarafsızlıktan şüphe duyması kamu güvenini zedeleyebileceği için",
+          "is_correct": true,
+          "id": 72252
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu görevlisinin hiçbir bildirim yükümlülüğü olmadığı için",
+          "is_correct": false,
+          "id": 72253
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet standartları uygulanmadığı için",
+          "is_correct": false,
+          "id": 72254
+        },
+        {
+          "label": "E",
+          "option_text": "Her yakınlık otomatik olarak ödüllendirildiği için",
+          "is_correct": false,
+          "id": 72255
+        }
+      ],
+      "id": 15146
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Çıkar çatışması riski doğduğunda kamu görevlisinin uygun davranışı hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Çıkar çatışması yönetilmelidir; bildirim ve işlemden çekilme gibi yollar tarafsızlığı korur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Durumu bildirmek, gerekirse işlemden çekilmek veya yönlendirme istemek",
+          "is_correct": true,
+          "id": 72256
+        },
+        {
+          "label": "B",
+          "option_text": "Menfaati gizleyip işleme devam etmek",
+          "is_correct": false,
+          "id": 72257
+        },
+        {
+          "label": "C",
+          "option_text": "Kararı yakın lehine hızlandırmak",
+          "is_correct": false,
+          "id": 72258
+        },
+        {
+          "label": "D",
+          "option_text": "Başvuruyu kayıtsız bırakmak",
+          "is_correct": false,
+          "id": 72259
+        },
+        {
+          "label": "E",
+          "option_text": "Hediye kabul ederek tarafsızlığı sürdürdüğünü söylemek",
+          "is_correct": false,
+          "id": 72260
+        }
+      ],
+      "id": 15147
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Eski kamu görevlileriyle ilişkiler bakımından etik risk hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Görevden ayrılmış olmak eski kurum üzerinde nüfuz veya ayrıcalık hakkı vermez.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Eski görevlinin genel bilgi alma hakkını kullanması",
+          "is_correct": false,
+          "id": 72261
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumun hizmet standardını öğrenmesi",
+          "is_correct": false,
+          "id": 72262
+        },
+        {
+          "label": "C",
+          "option_text": "Mevzuata uygun başvuru yapması",
+          "is_correct": false,
+          "id": 72263
+        },
+        {
+          "label": "D",
+          "option_text": "Eski görev veya ilişkilerini kullanarak ayrıcalıklı muamele talep etmesi",
+          "is_correct": true,
+          "id": 72264
+        },
+        {
+          "label": "E",
+          "option_text": "Herkesle aynı sıraya tabi olması",
+          "is_correct": false,
+          "id": 72265
+        }
+      ],
+      "id": 15148
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Görev ve yetkilerin menfaat sağlamak amacıyla kullanılmaması ilkesi aşağıdakilerden hangisini yasaklar?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kamu yetkisi kişisel veya üçüncü kişi menfaati için kullanılamaz.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Vatandaşa doğru bilgi vermeyi",
+          "is_correct": false,
+          "id": 72266
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuruyu mevzuata göre sonuçlandırmayı",
+          "is_correct": false,
+          "id": 72267
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu yararına karar almayı",
+          "is_correct": false,
+          "id": 72268
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet standardına uymayı",
+          "is_correct": false,
+          "id": 72269
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu yetkisini kendisi, yakınları veya üçüncü kişiler lehine çıkar aracı yapmayı",
+          "is_correct": true,
+          "id": 72270
+        }
+      ],
+      "id": 15149
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu görevinden elde edilen gizli veya ayrıcalıklı bilgilerin kullanımıyla ilgili doğru ifade hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Görev nedeniyle edinilen bilgilerin amacı dışında açıklanması veya menfaat için kullanılması etik ihlaldir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Görevli bu bilgileri kişisel kazanç için kullanabilir",
+          "is_correct": false,
+          "id": 72271
+        },
+        {
+          "label": "B",
+          "option_text": "Bu bilgiler yetkisiz açıklanamaz ve menfaat sağlamak için kullanılamaz",
+          "is_correct": true,
+          "id": 72272
+        },
+        {
+          "label": "C",
+          "option_text": "Bilgiler sosyal çevreyle serbestçe paylaşılır",
+          "is_correct": false,
+          "id": 72273
+        },
+        {
+          "label": "D",
+          "option_text": "Gizli bilgi yalnız yazılı değilse kullanılabilir",
+          "is_correct": false,
+          "id": 72274
+        },
+        {
+          "label": "E",
+          "option_text": "Görevden ayrılınca tüm bilgiler serbest hale gelir",
+          "is_correct": false,
+          "id": 72275
+        }
+      ],
+      "id": 15150
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İkinci işte çalışma etik açıdan hangi durumda sorun doğurur?",
+      "correct_answer_text": "C",
+      "explanation_text": "İkinci iş, kamu görevinin tarafsızlığını ve hizmet gereklerini etkiliyorsa etik risk doğurur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mevzuata uygun ve görevle çatışmayan faaliyet olduğunda",
+          "is_correct": false,
+          "id": 72276
+        },
+        {
+          "label": "B",
+          "option_text": "Kurumdan izin gerekmeyen, bağlantısız hobi faaliyeti olduğunda",
+          "is_correct": false,
+          "id": 72277
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu görevinin tarafsızlığı, zamanı veya çıkar çatışması bakımından risk oluşturduğunda",
+          "is_correct": true,
+          "id": 72278
+        },
+        {
+          "label": "D",
+          "option_text": "Görevlinin mesleki gelişimine katkı sağladığında",
+          "is_correct": false,
+          "id": 72279
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu hizmetini aksatmadığında",
+          "is_correct": false,
+          "id": 72280
+        }
+      ],
+      "id": 15151
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi çıkar çatışmasına örnek olabilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Yakın akrabanın işlemi, tarafsızlık algısını etkileyebileceği için çıkar çatışması riski doğurur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Görevlinin yakın akrabasının başvurusunu değerlendirme konumunda olması",
+          "is_correct": true,
+          "id": 72281
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuruyu başka yetkili birime yönlendirmesi",
+          "is_correct": false,
+          "id": 72282
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmet süresini vatandaşla paylaşması",
+          "is_correct": false,
+          "id": 72283
+        },
+        {
+          "label": "D",
+          "option_text": "Eksik belgeyi bildirmesi",
+          "is_correct": false,
+          "id": 72284
+        },
+        {
+          "label": "E",
+          "option_text": "Standart formu teslim alması",
+          "is_correct": false,
+          "id": 72285
+        }
+      ],
+      "id": 15152
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Seçim dönemlerinde kamu imkânlarının kullanımı bakımından etik ilke nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kamu imkânları siyasi veya kişisel menfaat için değil, kamu hizmeti amacıyla kullanılmalıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu araçları her aday için keyfi kullanılabilir",
+          "is_correct": false,
+          "id": 72286
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu kaynakları görevlinin siyasi tercihine göre tahsis edilir",
+          "is_correct": false,
+          "id": 72287
+        },
+        {
+          "label": "C",
+          "option_text": "Hizmetler seçim propagandasına dönüştürülür",
+          "is_correct": false,
+          "id": 72288
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu kaynakları tarafsızlık ve kamu hizmeti amacı dışında kullanılmamalıdır",
+          "is_correct": true,
+          "id": 72289
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu personeli her durumda kampanya personeli gibi çalıştırılır",
+          "is_correct": false,
+          "id": 72290
+        }
+      ],
+      "id": 15153
+    },
+    {
+      "topic_id": 130,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Çıkar çatışması ile yolsuzluk arasındaki ilişki için hangisi doğrudur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Çıkar çatışması tamamlanmış ihlal olmak zorunda değildir; zamanında yönetilmezse yolsuzluk riskine dönüşebilir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Çıkar çatışması her zaman tamamlanmış yolsuzluktur",
+          "is_correct": false,
+          "id": 72291
+        },
+        {
+          "label": "B",
+          "option_text": "Yolsuzluk varsa çıkar çatışması hiç yoktur",
+          "is_correct": false,
+          "id": 72292
+        },
+        {
+          "label": "C",
+          "option_text": "Çıkar çatışması yalnız parasal hediye alınca oluşur",
+          "is_correct": false,
+          "id": 72293
+        },
+        {
+          "label": "D",
+          "option_text": "Çıkar çatışması kamu hizmetinde dikkate alınmaz",
+          "is_correct": false,
+          "id": 72294
+        },
+        {
+          "label": "E",
+          "option_text": "Çıkar çatışması yolsuzluğa dönüşmeden önce yönetilmesi gereken etik risktir",
+          "is_correct": true,
+          "id": 72295
+        }
+      ],
+      "id": 15154
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Hediye alma yasağının temel amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Hediye yasağı, görevle bağlantılı menfaatlerin karar ve tarafsızlık üzerinde etki oluşturmasını önlemeyi amaçlar.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisinin nezaket göstermesini engellemek",
+          "is_correct": false,
+          "id": 72296
+        },
+        {
+          "label": "B",
+          "option_text": "Tarafsızlığı, güveni ve karar bağımsızlığını korumak",
+          "is_correct": true,
+          "id": 72297
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaşın bilgi edinme hakkını kaldırmak",
+          "is_correct": false,
+          "id": 72298
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet standartlarını gizlemek",
+          "is_correct": false,
+          "id": 72299
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu kaynaklarının kullanımını belirsizleştirmek",
+          "is_correct": false,
+          "id": 72300
+        }
+      ],
+      "id": 15155
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Bu makamda olmasaydım bu hediye bana verilir miydi?” sorusu en çok hangi etik değerlendirme için kullanılır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Hediyenin görev nedeniyle verilip verilmediğini anlamak, tarafsızlık riskini değerlendirmede pratik bir ölçüttür.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hizmette yerindenlik",
+          "is_correct": false,
+          "id": 72301
+        },
+        {
+          "label": "B",
+          "option_text": "Mal bildiriminin şekli",
+          "is_correct": false,
+          "id": 72302
+        },
+        {
+          "label": "C",
+          "option_text": "Hediyenin görevle bağlantılı menfaat riski taşıyıp taşımadığı",
+          "is_correct": true,
+          "id": 72303
+        },
+        {
+          "label": "D",
+          "option_text": "Başvuru dilekçesinin imzası",
+          "is_correct": false,
+          "id": 72304
+        },
+        {
+          "label": "E",
+          "option_text": "Kurum misyonunun yazımı",
+          "is_correct": false,
+          "id": 72305
+        }
+      ],
+      "id": 15156
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi alınamayan hediye niteliğine daha yakındır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Görevle ilişkisi bulunan kişinin sunduğu değerli menfaat tarafsızlığı etkileyebileceği için yasak kapsamındadır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Herkese açık bir toplantıda dağıtılan düşük değerli tanıtım broşürü",
+          "is_correct": false,
+          "id": 72306
+        },
+        {
+          "label": "B",
+          "option_text": "Kurum adına kabul edilen ve kayda alınan protokol hediyesi",
+          "is_correct": false,
+          "id": 72307
+        },
+        {
+          "label": "C",
+          "option_text": "Görevle bağlantısız kitap değişimi",
+          "is_correct": false,
+          "id": 72308
+        },
+        {
+          "label": "D",
+          "option_text": "İşlemi bulunan kişinin görevliye pahalı tatil teklif etmesi",
+          "is_correct": true,
+          "id": 72309
+        },
+        {
+          "label": "E",
+          "option_text": "Resmi toplantıda sunulan ikram",
+          "is_correct": false,
+          "id": 72310
+        }
+      ],
+      "id": 15157
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi alınabilir hediye değerlendirmesine daha uygun olabilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Alınabilir hediyelerde görevliyi kişisel olarak borçlandırmama, kurum adına kabul ve kayıt gibi unsurlar önemlidir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurumlar arası nezaket kapsamında kurum adına kabul edilip kayda alınan sembolik nitelikteki hediye",
+          "is_correct": true,
+          "id": 72311
+        },
+        {
+          "label": "B",
+          "option_text": "İhale isteklisinin görevlinin ailesine sağladığı tatil",
+          "is_correct": false,
+          "id": 72312
+        },
+        {
+          "label": "C",
+          "option_text": "Denetlenen şirketin verdiği para",
+          "is_correct": false,
+          "id": 72313
+        },
+        {
+          "label": "D",
+          "option_text": "İşlemi hızlandırmak isteyen kişinin sunduğu elektronik eşya",
+          "is_correct": false,
+          "id": 72314
+        },
+        {
+          "label": "E",
+          "option_text": "Görevlinin kararını etkilemek amacıyla verilen menfaat",
+          "is_correct": false,
+          "id": 72315
+        }
+      ],
+      "id": 15158
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu malları ve kaynaklarının kullanımında temel ilke hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kamu kaynakları kamu hizmeti için vardır; özel amaçla veya savurganca kullanılamaz.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Personelin özel işlerinde serbestçe kullanılması",
+          "is_correct": false,
+          "id": 72316
+        },
+        {
+          "label": "B",
+          "option_text": "Yakın çevreye tahsis edilmesi",
+          "is_correct": false,
+          "id": 72317
+        },
+        {
+          "label": "C",
+          "option_text": "Siyasi propaganda için kullanılması",
+          "is_correct": false,
+          "id": 72318
+        },
+        {
+          "label": "D",
+          "option_text": "Kayıt dışı harcanması",
+          "is_correct": false,
+          "id": 72319
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu hizmeti amacı, etkinlik, verimlilik ve tasarruf ilkelerine uygun kullanılması",
+          "is_correct": true,
+          "id": 72320
+        }
+      ],
+      "id": 15159
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Savurganlıktan kaçınma ilkesi neyi gerektirir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Savurganlıktan kaçınma, kamu kaynaklarının ölçülü ve amacına uygun kullanılmasını gerektirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu kaynaklarını gösteriş için harcamayı",
+          "is_correct": false,
+          "id": 72321
+        },
+        {
+          "label": "B",
+          "option_text": "Her harcamayı gereksiz yere artırmayı",
+          "is_correct": false,
+          "id": 72322
+        },
+        {
+          "label": "C",
+          "option_text": "Kaynakları ihtiyaç, ölçülülük ve kamu yararı doğrultusunda kullanmayı",
+          "is_correct": true,
+          "id": 72323
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu malını kişisel eşya gibi görmeyi",
+          "is_correct": false,
+          "id": 72324
+        },
+        {
+          "label": "E",
+          "option_text": "Hesap vermekten kaçmayı",
+          "is_correct": false,
+          "id": 72325
+        }
+      ],
+      "id": 15160
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bağlayıcı açıklamalar ve gerçek dışı beyanla ilgili doğru ifade hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Kamu görevlisinin açıklamaları yetki ve doğruluk sınırına uygun olmalıdır; aksi güveni zedeler.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisi her konuda kurum adına sınırsız açıklama yapabilir",
+          "is_correct": false,
+          "id": 72326
+        },
+        {
+          "label": "B",
+          "option_text": "Yetkili olunmadan kurumu bağlayıcı açıklama yapılmamalı, gerçek dışı beyan verilmemelidir",
+          "is_correct": true,
+          "id": 72327
+        },
+        {
+          "label": "C",
+          "option_text": "Gerçek dışı beyan güveni artırır",
+          "is_correct": false,
+          "id": 72328
+        },
+        {
+          "label": "D",
+          "option_text": "Açıklamanın doğruluğu kamu hizmetinde önemli değildir",
+          "is_correct": false,
+          "id": 72329
+        },
+        {
+          "label": "E",
+          "option_text": "Vatandaşın yanlış bilgilendirilmesi etik sorun oluşturmaz",
+          "is_correct": false,
+          "id": 72330
+        }
+      ],
+      "id": 15161
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Saydamlık ve katılımcılık ilkesi aşağıdakilerden hangisini destekler?",
+      "correct_answer_text": "A",
+      "explanation_text": "Saydamlık ve katılımcılık, kamu yönetiminde bilgiye erişimi ve güveni güçlendirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu işlemleri hakkında ilgililerin bilgi alabilmesini ve karar süreçlerinde uygun katılımı",
+          "is_correct": true,
+          "id": 72331
+        },
+        {
+          "label": "B",
+          "option_text": "Tüm işlemlerin gerekçesiz gizlenmesini",
+          "is_correct": false,
+          "id": 72332
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaşın başvuru hakkının ortadan kaldırılmasını",
+          "is_correct": false,
+          "id": 72333
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu harcamalarının kayıtsız yapılmasını",
+          "is_correct": false,
+          "id": 72334
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu görevlisinin hesap vermemesini",
+          "is_correct": false,
+          "id": 72335
+        }
+      ],
+      "id": 15162
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Yöneticilerin hesap verme sorumluluğu aşağıdakilerden hangisini kapsar?",
+      "correct_answer_text": "D",
+      "explanation_text": "Yönetici, hem kendi kararları hem de sorumluluk alanındaki etik iklim ve kaynak kullanımı için hesap verebilir olmalıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kurum kaynaklarını açıklamasız kullanma hakkını",
+          "is_correct": false,
+          "id": 72336
+        },
+        {
+          "label": "B",
+          "option_text": "Personel davranışlarını hiç izlememeyi",
+          "is_correct": false,
+          "id": 72337
+        },
+        {
+          "label": "C",
+          "option_text": "Yanlış uygulamaları gizlemeyi",
+          "is_correct": false,
+          "id": 72338
+        },
+        {
+          "label": "D",
+          "option_text": "Yetki alanındaki karar, kaynak kullanımı ve etik kültür bakımından açıklanabilir olmayı",
+          "is_correct": true,
+          "id": 72339
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece başarıları sahiplenip hataları alt personele bırakmayı",
+          "is_correct": false,
+          "id": 72340
+        }
+      ],
+      "id": 15163
+    },
+    {
+      "topic_id": 131,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Mal bildirimi yükümlülüğünün etik açıdan amacı nedir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Mal bildirimi, kamu görevlisinin malvarlığındaki olağan dışı değişikliklerin denetlenebilmesini destekler.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu görevlisinin tüm özel hayatını gereksizce teşhir etmek",
+          "is_correct": false,
+          "id": 72341
+        },
+        {
+          "label": "B",
+          "option_text": "Vatandaş başvurularını azaltmak",
+          "is_correct": false,
+          "id": 72342
+        },
+        {
+          "label": "C",
+          "option_text": "Kamu hizmetini yavaşlatmak",
+          "is_correct": false,
+          "id": 72343
+        },
+        {
+          "label": "D",
+          "option_text": "Hediye yasağını kaldırmak",
+          "is_correct": false,
+          "id": 72344
+        },
+        {
+          "label": "E",
+          "option_text": "Haksız mal edinimi ve çıkar ilişkileri bakımından saydamlık ve denetlenebilirlik sağlamak",
+          "is_correct": true,
+          "id": 72345
+        }
+      ],
+      "id": 15164
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik ilkelere aykırılık iddiasıyla başvuru hakkı genel olarak kimler tarafından kullanılabilir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Başvuru hakkı, belirli ehliyete sahip gerçek kişiler tarafından kullanılabilir; konu somut biçimde ortaya konmalıdır.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız kamu görevlisinin amiri",
+          "is_correct": false,
+          "id": 72346
+        },
+        {
+          "label": "B",
+          "option_text": "Medeni hakları kullanma ehliyetine sahip Türkiye Cumhuriyeti vatandaşları ve Türkiye’de oturan yabancı gerçek kişiler",
+          "is_correct": true,
+          "id": 72347
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece tüzel kişiler",
+          "is_correct": false,
+          "id": 72348
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız siyasi parti temsilcileri",
+          "is_correct": false,
+          "id": 72349
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece kamu görevlisinin yakın akrabaları",
+          "is_correct": false,
+          "id": 72350
+        }
+      ],
+      "id": 15165
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Etik başvuruda dilekçede bulunması gereken temel unsurlardan biri aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Başvurunun değerlendirilebilmesi için kimlik ve iletişim bilgileri ile imza gibi temel unsurlar gerekir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvuranın siyasi görüşü",
+          "is_correct": false,
+          "id": 72351
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuranın banka hesap dökümü",
+          "is_correct": false,
+          "id": 72352
+        },
+        {
+          "label": "C",
+          "option_text": "Ad, soyad, adres ve imza",
+          "is_correct": true,
+          "id": 72353
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu görevlisinin tüm özel hayat bilgileri",
+          "is_correct": false,
+          "id": 72354
+        },
+        {
+          "label": "E",
+          "option_text": "Kurumun yıllık bütçesi",
+          "is_correct": false,
+          "id": 72355
+        }
+      ],
+      "id": 15166
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik başvurunun somutluk şartı ne anlama gelir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Etik başvuruda iddianın soyut şikayet olarak kalmaması, somut olay ve bilgilerle açıklanması gerekir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvurunun yalnız söylentiye dayanmasının yeterli olması",
+          "is_correct": false,
+          "id": 72356
+        },
+        {
+          "label": "B",
+          "option_text": "Kişi, zaman ve yer belirtilmeden yapılabilmesi",
+          "is_correct": false,
+          "id": 72357
+        },
+        {
+          "label": "C",
+          "option_text": "Başvurunun imzasız olmasının zorunlu olması",
+          "is_correct": false,
+          "id": 72358
+        },
+        {
+          "label": "D",
+          "option_text": "İddianın kişi, zaman, yer, bilgi ve belge yönünden açıkça gösterilmesi",
+          "is_correct": true,
+          "id": 72359
+        },
+        {
+          "label": "E",
+          "option_text": "Başvurunun sadece sözlü yapılması",
+          "is_correct": false,
+          "id": 72360
+        }
+      ],
+      "id": 15167
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Aşağıdakilerden hangisi kabul edilmeyen başvurulara örnek olabilir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Soyut, imzasız veya yeterli bilgi içermeyen başvurular usul yönünden kabul edilmeyebilir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Somut bilgi içermeyen, kişi ve olay belirtmeyen genel şikayet",
+          "is_correct": true,
+          "id": 72361
+        },
+        {
+          "label": "B",
+          "option_text": "Ad, adres ve imza bulunan somut dilekçe",
+          "is_correct": false,
+          "id": 72362
+        },
+        {
+          "label": "C",
+          "option_text": "Elektronik ortamda usulüne uygun yapılan başvuru",
+          "is_correct": false,
+          "id": 72363
+        },
+        {
+          "label": "D",
+          "option_text": "Yetkili merciye yöneltilmiş açık iddia",
+          "is_correct": false,
+          "id": 72364
+        },
+        {
+          "label": "E",
+          "option_text": "Bilgi ve belge içeren başvuru",
+          "is_correct": false,
+          "id": 72365
+        }
+      ],
+      "id": 15168
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Resen inceleme yetkisi aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "E",
+      "explanation_text": "Resen inceleme, yetkili yapının belirli hallerde kendiliğinden inceleme başlatabilmesini ifade eder.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvuru olmadan hiçbir işlem yapılamamasını",
+          "is_correct": false,
+          "id": 72366
+        },
+        {
+          "label": "B",
+          "option_text": "Her dedikodunun ceza kararına dönüşmesini",
+          "is_correct": false,
+          "id": 72367
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaş başvurusunun mahkemeye gönderilmesini",
+          "is_correct": false,
+          "id": 72368
+        },
+        {
+          "label": "D",
+          "option_text": "Kurumların bütün işlemlerini otomatik iptal etmeyi",
+          "is_correct": false,
+          "id": 72369
+        },
+        {
+          "label": "E",
+          "option_text": "Yetkili merciin bazı durumlarda başvuru beklemeden etik ihlal iddiasını inceleyebilmesini",
+          "is_correct": true,
+          "id": 72370
+        }
+      ],
+      "id": 15169
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kamu görevlilerinden beklenen etik davranışların ortak amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Beklenen davranışlar, kamu hizmetinin güvenilir ve kamu yararına uygun yürütülmesini hedefler.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kamu hizmetini kişisel çıkara bağlamak",
+          "is_correct": false,
+          "id": 72371
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu hizmetinde güven, tarafsızlık, dürüstlük ve kamu yararını korumak",
+          "is_correct": true,
+          "id": 72372
+        },
+        {
+          "label": "C",
+          "option_text": "Vatandaşın bilgi edinmesini önlemek",
+          "is_correct": false,
+          "id": 72373
+        },
+        {
+          "label": "D",
+          "option_text": "Başvuru yollarını kapatmak",
+          "is_correct": false,
+          "id": 72374
+        },
+        {
+          "label": "E",
+          "option_text": "Kamu kaynaklarını serbestçe dağıtmak",
+          "is_correct": false,
+          "id": 72375
+        }
+      ],
+      "id": 15170
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu yöneticilerinden beklenen etik davranış aşağıdakilerden hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yöneticiler yalnız kendi davranışlarından değil, kurumda etik kültürün yerleşmesinden de sorumludur.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Etik ihlalleri görmezden gelmek",
+          "is_correct": false,
+          "id": 72376
+        },
+        {
+          "label": "B",
+          "option_text": "Personelden farklı kurallara tabi olduğunu düşünmek",
+          "is_correct": false,
+          "id": 72377
+        },
+        {
+          "label": "C",
+          "option_text": "Örnek olmak, etik kültürü desteklemek ve hesap verebilir davranmak",
+          "is_correct": true,
+          "id": 72378
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu kaynaklarını denetimsiz bırakmak",
+          "is_correct": false,
+          "id": 72379
+        },
+        {
+          "label": "E",
+          "option_text": "Şikayetleri kayda almamak",
+          "is_correct": false,
+          "id": 72380
+        }
+      ],
+      "id": 15171
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kamu Görevlileri Etik Sözleşmesinin işlevi nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Etik sözleşmesi, kamu görevlisinin etik ilkelere uygun davranma taahhüdünü kurumsal olarak pekiştirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Etik kuralları tamamen kaldırmak",
+          "is_correct": false,
+          "id": 72381
+        },
+        {
+          "label": "B",
+          "option_text": "Kamu görevlisini sadece özel sektöre bağlamak",
+          "is_correct": false,
+          "id": 72382
+        },
+        {
+          "label": "C",
+          "option_text": "Başvuru hakkını ortadan kaldırmak",
+          "is_correct": false,
+          "id": 72383
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu görevlisinin etik davranış ilkelerine bağlılık taahhüdünü görünür hale getirmek",
+          "is_correct": true,
+          "id": 72384
+        },
+        {
+          "label": "E",
+          "option_text": "Disiplin kurullarını kapatmak",
+          "is_correct": false,
+          "id": 72385
+        }
+      ],
+      "id": 15172
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Etik başvuruda menfaatin etkilenmesi şartı bakımından doğru ifade hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Etik başvuru sistemi, kamu hizmetinde etik davranışı korumaya yöneliktir; kişisel menfaat şartı her durumda belirleyici değildir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Başvuru hakkı için her durumda başvuranın kişisel menfaatinin doğrudan etkilenmesi aranmaz",
+          "is_correct": true,
+          "id": 72386
+        },
+        {
+          "label": "B",
+          "option_text": "Başvuru yalnız maddi zarara uğrayan kişi tarafından yapılabilir",
+          "is_correct": false,
+          "id": 72387
+        },
+        {
+          "label": "C",
+          "option_text": "Başvuru sadece kamu görevlisinin amiri tarafından yapılabilir",
+          "is_correct": false,
+          "id": 72388
+        },
+        {
+          "label": "D",
+          "option_text": "Etik ihlal iddiasında başvuru hakkı yoktur",
+          "is_correct": false,
+          "id": 72389
+        },
+        {
+          "label": "E",
+          "option_text": "Başvuru için mutlaka ceza mahkemesi kararı gerekir",
+          "is_correct": false,
+          "id": 72390
+        }
+      ],
+      "id": 15173
+    },
+    {
+      "topic_id": 132,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Etik başvuru usulünün doğru işlemesi kamu yönetiminde neyi güçlendirir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Başvuru usulü, etik ihlal iddialarının belirli kurallarla ele alınmasını sağlayarak hesap verebilirliği güçlendirir.",
+      "explanation_basis": "Etik Davranış İlkeleri konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Keyfiliği",
+          "is_correct": false,
+          "id": 72391
+        },
+        {
+          "label": "B",
+          "option_text": "Gizliliği ve denetimsizliği",
+          "is_correct": false,
+          "id": 72392
+        },
+        {
+          "label": "C",
+          "option_text": "Kişisel çıkar ilişkilerini",
+          "is_correct": false,
+          "id": 72393
+        },
+        {
+          "label": "D",
+          "option_text": "Hizmet kayırmacılığını",
+          "is_correct": false,
+          "id": 72394
+        },
+        {
+          "label": "E",
+          "option_text": "Hesap verebilirlik, güven ve etik denetim kültürünü",
+          "is_correct": true,
+          "id": 72395
+        }
+      ],
+      "id": 15174
+    }
+  ],
+  "import_result": {
+    "imported_at": "2026-06-08T18:40:42",
+    "created_count": 80,
+    "duplicate_count": 0,
+    "db_status": "active",
+    "db_approval_status": null,
+    "approval_flow": "v5_review_pending",
+    "db_q_version": 5
+  }
+}

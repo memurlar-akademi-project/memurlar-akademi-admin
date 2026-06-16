@@ -1,0 +1,207 @@
+{
+  "course": "Etik Davranış İlkeleri",
+  "version": "v1-original-teaching",
+  "source_files": [
+    {
+      "file": "Etik Davranış İlkeleri.pdf",
+      "pages": 25,
+      "role": "primary",
+      "note": "Görevde yükselme ders notu; kamu yönetimi etiği, mevzuat, ilkeler ve başvuru usulü ana omurga olarak kullanıldı."
+    },
+    {
+      "file": "Etik_Davranis_İlkeleri.pdf",
+      "pages": 91,
+      "role": "coverage_control",
+      "note": "Genel etik kavramları, etik sistemleri/kuramları, 5176 Kanun ve Yönetmelik tam metni kapsam kontrolü için kullanıldı."
+    }
+  ],
+  "topic_count": 8,
+  "coverage": [
+    {
+      "topic_name": "Etik Kavramı, Etik-Ahlak İlişkisi ve Temel Yaklaşımlar",
+      "source_pages": "91 sayfalık kaynak: 2-22",
+      "covered_headings": [
+        "Etik davranış",
+        "Etik-ahlaq/hukuk ilişkisi",
+        "Erdem, vicdan, iyi, norm, karakter, değer",
+        "Etik kodlar",
+        "Etik iklim",
+        "Toplumsal etkenler",
+        "Etik ilkelerin geliştirilmesinde yaklaşımlar",
+        "Etik sistemler",
+        "Mesleki etik ilkeler",
+        "Etik kuramları",
+        "Felsefi anlayışlar",
+        "Etik türleri"
+      ],
+      "tables": 6,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 125
+    },
+    {
+      "topic_name": "Kamu Yönetiminde Etik, Etik İkilemler ve Etik Karar Verme",
+      "source_pages": "25 sayfalık kaynak: 163-165; 91 sayfalık kaynak: 23-41",
+      "covered_headings": [
+        "Kamu yönetiminde etiğin önemi",
+        "Yönetim etiğine ilişkin ilke ve değerler",
+        "Etik ikilemler",
+        "Etik olmayan davranış ilkeleri",
+        "Etik dışı davranışların nedenleri",
+        "Davranışın etik açıdan yargılanması",
+        "Etik dışı davranışların ussallaştırılması",
+        "Etik karar verme aşamaları",
+        "Etiksel karar verme modelleri",
+        "Etik eğitimin amaçları"
+      ],
+      "tables": 5,
+      "figures_or_diagrams": 1,
+      "omissions": [],
+      "topic_id": 126
+    },
+    {
+      "topic_name": "Etik Mevzuatı, Kamu Görevlileri Etik Kurulu ve Etik Komisyonları",
+      "source_pages": "25 sayfalık kaynak: 165-166; 91 sayfalık kaynak: 42-54, 69-73",
+      "covered_headings": [
+        "Etik ilke ve değerlere ilişkin mevzuat",
+        "5176 sayılı Kanun",
+        "Yönetmelik amaç/kapsam/dayanak/tanımlar",
+        "Kamu Görevlileri Etik Kurulu",
+        "Kurul görevleri",
+        "Etik komisyonları",
+        "Etik kültürün yerleştirilmesi"
+      ],
+      "tables": 3,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 127
+    },
+    {
+      "topic_name": "Kamu Hizmeti Bilinci, Halka Hizmet ve Hizmet Standartları",
+      "source_pages": "25 sayfalık kaynak: 167-170; 91 sayfalık kaynak: 55-56, 59",
+      "covered_headings": [
+        "Görevin yerine getirilmesinde kamu hizmeti bilinci",
+        "Halka hizmet bilinci",
+        "Hizmet standartlarına uyma",
+        "Vatandaşa yol gösterme",
+        "Nezaket ve saygı",
+        "Amaç ve misyona bağlılık"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 128
+    },
+    {
+      "topic_name": "Dürüstlük, Tarafsızlık, Saygınlık, Güven ve Bildirim Yükümlülüğü",
+      "source_pages": "25 sayfalık kaynak: 170-172, 179; 91 sayfalık kaynak: 57-59",
+      "covered_headings": [
+        "Dürüstlük ve tarafsızlık",
+        "Takdir yetkisi",
+        "Hizmet kayırmacılığı",
+        "Bürokratik sabotaj",
+        "Saygınlık ve güven",
+        "Yetkili makamlara bildirim",
+        "Yasa dışı nüfuz kullanma / kanunsuz emir"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 129
+    },
+    {
+      "topic_name": "Çıkar Çatışması, Görev ve Yetkilerin Menfaat İçin Kullanılmaması",
+      "source_pages": "25 sayfalık kaynak: 172-176; 91 sayfalık kaynak: 60-61, 68",
+      "covered_headings": [
+        "Çıkar çatışmasından kaçınma",
+        "Eski kamu görevlileriyle ilişkiler",
+        "Kamu görevlisinin ayrıldıktan sonra kurumla iş yapması",
+        "İkinci işte çalışma",
+        "Görev ve yetkilerin menfaat sağlamak amacıyla kullanılmaması",
+        "Bilgilerin açıklanması",
+        "Seçimlerde kamu imkanları"
+      ],
+      "tables": 3,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 130
+    },
+    {
+      "topic_name": "Hediye Alma Yasağı, Kamu Kaynakları, Saydamlık ve Hesap Verme",
+      "source_pages": "25 sayfalık kaynak: 176-182; 91 sayfalık kaynak: 62-68",
+      "covered_headings": [
+        "Hediye alma yasağı",
+        "Alınabilir hediyeler",
+        "Alınamayan hediyeler",
+        "Kamu kaynaklarını kullanarak hediye verme",
+        "Kamu malları ve kaynakları",
+        "Savurganlıktan kaçınma",
+        "Bağlayıcı açıklamalar ve gerçek dışı beyan",
+        "Bilgi verme, saydamlık ve katılımcılık",
+        "Yöneticilerin hesap verme sorumluluğu",
+        "Mal bildirimi"
+      ],
+      "tables": 4,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 131
+    },
+    {
+      "topic_name": "Etik Başvuru Usulü, Beklenen Davranışlar ve Etik Sözleşmesi",
+      "source_pages": "25 sayfalık kaynak: 182-185; 91 sayfalık kaynak: 74-85",
+      "covered_headings": [
+        "Başvuru hakkı",
+        "Başvuru biçimleri",
+        "Başvuru usulü",
+        "Elektronik başvuru",
+        "Kabul edilmeyen başvurular",
+        "Resen inceleme",
+        "Kamu görevlilerinden beklenen etik davranışlar",
+        "Kamu yöneticilerinden beklenen etik davranışlar",
+        "Kamu Görevlileri Etik Sözleşmesi"
+      ],
+      "tables": 2,
+      "figures_or_diagrams": 0,
+      "omissions": [],
+      "topic_id": 132
+    }
+  ],
+  "global_omissions": [],
+  "copyright_review": {
+    "long_verbatim_passages_found": false,
+    "source_like_paragraphs_rewritten": true,
+    "pdf_paragraph_structure_preserved": false,
+    "tables_rewritten_in_original_words": true,
+    "consecutive_source_sentences_detected": false,
+    "max_paragraph_style": "Genellikle 2-4 cümlelik özgün ders anlatımı; kanun/yönetmelik maddeleri tam metin olarak kopyalanmadı, ders notu diliyle açıklandı."
+  },
+  "needs_human_review": [
+    "25 sayfalık kaynak ile 91 sayfalık kaynakta bazı eski kurum adları/geçiş terminolojisi farklı görünüyor; anlatımda sınav notu kapsamı korunarak güncel adlandırma genelleştirildi."
+  ],
+  "subject_id": 28,
+  "topic_ids": [
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132
+  ],
+  "validation_expectations": {
+    "topics_length": 8,
+    "statuses_all_active": true,
+    "target_exam_id": 1,
+    "expected_topic_ids": [
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132
+    ]
+  }
+}

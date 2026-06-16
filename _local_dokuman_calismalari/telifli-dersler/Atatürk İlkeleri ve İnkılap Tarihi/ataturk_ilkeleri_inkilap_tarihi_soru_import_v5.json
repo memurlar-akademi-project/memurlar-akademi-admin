@@ -1,0 +1,6645 @@
+{
+  "subject_id": 32,
+  "subject_name": "Atatürk İlkeleri ve İnkılap Tarihi",
+  "q_version": 5,
+  "status": "active",
+  "approval_status": null,
+  "target_exam_id": 1,
+  "source_policy": "Konu anlatımı ve kapsam QA baz alınarak özgün soru diliyle üretildi; kaynak metinden birebir kopya yapılmadı.",
+  "distribution_note": "12 topic x 12 soru = 144 soru. Kronoloji, antlaşmalar, cepheler, inkılaplar, dış politika ve Atatürk ilkeleri dengeli dağıtıldı.",
+  "questions": [
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Atatürk İlkeleri ve İnkılap Tarihi dersinin temel amacı aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Ders, olayları ezberletmekten çok Cumhuriyetin kuruluş şartlarını, milli egemenliği ve çağdaşlaşma anlayışını kavratır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız savaş tarihini kronolojik ezberletmek",
+          "is_correct": false,
+          "id": 74076
+        },
+        {
+          "label": "B",
+          "option_text": "Osmanlı’dan Cumhuriyet’e geçişi, bağımsızlık mücadelesini ve çağdaşlaşma hedefini birlikte kavratmak",
+          "is_correct": true,
+          "id": 74077
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece hanedan tarihini anlatmak",
+          "is_correct": false,
+          "id": 74078
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız dış politika antlaşmalarını öğretmek",
+          "is_correct": false,
+          "id": 74079
+        },
+        {
+          "label": "E",
+          "option_text": "Cumhuriyet sonrası gelişmeleri dışlamak",
+          "is_correct": false,
+          "id": 74080
+        }
+      ],
+      "id": 15511
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İnkılap kavramı aşağıdakilerden hangisini ifade eder?",
+      "correct_answer_text": "C",
+      "explanation_text": "İnkılap, siyasal ve toplumsal yapıda köklü dönüşümü ifade eder.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Küçük ve geçici idari düzenleme",
+          "is_correct": false,
+          "id": 74081
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece eski düzenin aynen korunması",
+          "is_correct": false,
+          "id": 74082
+        },
+        {
+          "label": "C",
+          "option_text": "Toplum ve devlet hayatında köklü değişim",
+          "is_correct": true,
+          "id": 74083
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız askeri taktik",
+          "is_correct": false,
+          "id": 74084
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece kişisel tercih değişikliği",
+          "is_correct": false,
+          "id": 74085
+        }
+      ],
+      "id": 15512
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Islahat ile inkılap arasındaki temel fark nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Islahat daha çok düzeni iyileştirme, inkılap ise daha derin ve yapısal değişim anlamı taşır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Islahat mevcut düzeni düzeltmeye, inkılap köklü değişime yönelir",
+          "is_correct": true,
+          "id": 74086
+        },
+        {
+          "label": "B",
+          "option_text": "İkisi tamamen aynıdır",
+          "is_correct": false,
+          "id": 74087
+        },
+        {
+          "label": "C",
+          "option_text": "İnkılap yalnız ekonomik, ıslahat yalnız askeri alandadır",
+          "is_correct": false,
+          "id": 74088
+        },
+        {
+          "label": "D",
+          "option_text": "Islahat daima rejim değiştirir",
+          "is_correct": false,
+          "id": 74089
+        },
+        {
+          "label": "E",
+          "option_text": "İnkılap hiçbir yenilik içermez",
+          "is_correct": false,
+          "id": 74090
+        }
+      ],
+      "id": 15513
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türk inkılabının temel hedeflerinden biri hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Türk inkılabı tam bağımsızlık, milli egemenlik ve çağdaşlaşma hedefleriyle yürütülmüştür.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Saltanat düzenini güçlendirmek",
+          "is_correct": false,
+          "id": 74091
+        },
+        {
+          "label": "B",
+          "option_text": "Mandater yönetimi kabul etmek",
+          "is_correct": false,
+          "id": 74092
+        },
+        {
+          "label": "C",
+          "option_text": "Sömürge düzenine uyum sağlamak",
+          "is_correct": false,
+          "id": 74093
+        },
+        {
+          "label": "D",
+          "option_text": "Tam bağımsız ve çağdaş bir devlet kurmak",
+          "is_correct": true,
+          "id": 74094
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonları genişletmek",
+          "is_correct": false,
+          "id": 74095
+        }
+      ],
+      "id": 15514
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türk inkılabının milli egemenlik anlayışıyla ilişkisi hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Milli egemenlik, egemenliğin padişah veya sınıfa değil millete ait olmasıdır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Egemenliği hanedana bırakır",
+          "is_correct": false,
+          "id": 74096
+        },
+        {
+          "label": "B",
+          "option_text": "Yönetme yetkisinin millete ait olduğunu kabul eder",
+          "is_correct": true,
+          "id": 74097
+        },
+        {
+          "label": "C",
+          "option_text": "Yabancı devletlerin denetimini savunur",
+          "is_correct": false,
+          "id": 74098
+        },
+        {
+          "label": "D",
+          "option_text": "Meclis iradesini yok sayar",
+          "is_correct": false,
+          "id": 74099
+        },
+        {
+          "label": "E",
+          "option_text": "Hukuk devletiyle ilgisizdir",
+          "is_correct": false,
+          "id": 74100
+        }
+      ],
+      "id": 15515
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Türk inkılabının laiklik ve çağdaşlaşma yönü hangi sonuçla daha çok ilişkilidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Laiklik ve çağdaşlaşma, hukuk ve eğitim başta olmak üzere modern kurumların kurulmasını gerektirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Şeri hukuk düzeninin aynen sürdürülmesi",
+          "is_correct": false,
+          "id": 74101
+        },
+        {
+          "label": "B",
+          "option_text": "Eğitimin parçalı kalması",
+          "is_correct": false,
+          "id": 74102
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyonların devamı",
+          "is_correct": false,
+          "id": 74103
+        },
+        {
+          "label": "D",
+          "option_text": "Siyasi iktidarın dine dayalı olması",
+          "is_correct": false,
+          "id": 74104
+        },
+        {
+          "label": "E",
+          "option_text": "Hukuk ve eğitim alanında akıl-bilim esaslı kurumlaşma",
+          "is_correct": true,
+          "id": 74105
+        }
+      ],
+      "id": 15516
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Devrim kavramı ile inkılap kavramı arasındaki yakınlık hangi noktadadır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Her iki kavram da köklü dönüşümü anlatır; ders bağlamında inkılap kavramı sık kullanılır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İkisinin de hiç değişim içermemesi",
+          "is_correct": false,
+          "id": 74106
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız dış politika olayı olmaları",
+          "is_correct": false,
+          "id": 74107
+        },
+        {
+          "label": "C",
+          "option_text": "Köklü dönüşüm fikrini taşımaları",
+          "is_correct": true,
+          "id": 74108
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece askeri yenilgi anlamına gelmeleri",
+          "is_correct": false,
+          "id": 74109
+        },
+        {
+          "label": "E",
+          "option_text": "Yerel yönetim terimi olmaları",
+          "is_correct": false,
+          "id": 74110
+        }
+      ],
+      "id": 15517
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türk inkılabının halka dayalı niteliği hangi ilkeyle doğrudan ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Halka dayalı yönetim anlayışı milli egemenlik ilkesinin sonucudur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Milli egemenlik",
+          "is_correct": true,
+          "id": 74111
+        },
+        {
+          "label": "B",
+          "option_text": "Sömürgecilik",
+          "is_correct": false,
+          "id": 74112
+        },
+        {
+          "label": "C",
+          "option_text": "Mutlak monarşi",
+          "is_correct": false,
+          "id": 74113
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74114
+        },
+        {
+          "label": "E",
+          "option_text": "Mandacılık",
+          "is_correct": false,
+          "id": 74115
+        }
+      ],
+      "id": 15518
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Tam bağımsızlık düşüncesi aşağıdakilerden hangisini reddeder?",
+      "correct_answer_text": "D",
+      "explanation_text": "Tam bağımsızlık, yabancı devlet denetimi anlamına gelen manda ve himayeyi reddeder.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ulusal egemenliği",
+          "is_correct": false,
+          "id": 74116
+        },
+        {
+          "label": "B",
+          "option_text": "Çağdaşlaşmayı",
+          "is_correct": false,
+          "id": 74117
+        },
+        {
+          "label": "C",
+          "option_text": "Meclis yönetimini",
+          "is_correct": false,
+          "id": 74118
+        },
+        {
+          "label": "D",
+          "option_text": "Manda ve himayeyi",
+          "is_correct": true,
+          "id": 74119
+        },
+        {
+          "label": "E",
+          "option_text": "Milli mücadeleyi",
+          "is_correct": false,
+          "id": 74120
+        }
+      ],
+      "id": 15519
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Türk inkılabının “bütüncül” karakteri neyi gösterir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Türk inkılabı sadece rejim değişikliği değil, birçok alanda kapsamlı dönüşümdür.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız askeri başarıyla sınırlı olduğunu",
+          "is_correct": false,
+          "id": 74121
+        },
+        {
+          "label": "B",
+          "option_text": "Siyasi, hukuki, eğitim, kültür ve toplum alanlarını birlikte dönüştürdüğünü",
+          "is_correct": true,
+          "id": 74122
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece dış politikayla ilgili olduğunu",
+          "is_correct": false,
+          "id": 74123
+        },
+        {
+          "label": "D",
+          "option_text": "Ekonomik ve sosyal alanları dışladığını",
+          "is_correct": false,
+          "id": 74124
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız eski düzeni koruduğunu",
+          "is_correct": false,
+          "id": 74125
+        }
+      ],
+      "id": 15520
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Atatürkçü düşüncede akıl ve bilim vurgusu hangi amaçla ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Akıl ve bilim rehberliği çağdaşlaşma hedefinin temelidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Geleneksel kurumları sorgusuz sürdürmek",
+          "is_correct": false,
+          "id": 74126
+        },
+        {
+          "label": "B",
+          "option_text": "Yabancı denetimi kabul etmek",
+          "is_correct": false,
+          "id": 74127
+        },
+        {
+          "label": "C",
+          "option_text": "Çağdaş uygarlık düzeyine ulaşmak",
+          "is_correct": true,
+          "id": 74128
+        },
+        {
+          "label": "D",
+          "option_text": "Saltanatı güçlendirmek",
+          "is_correct": false,
+          "id": 74129
+        },
+        {
+          "label": "E",
+          "option_text": "Siyasi katılımı sınırlamak",
+          "is_correct": false,
+          "id": 74130
+        }
+      ],
+      "id": 15521
+    },
+    {
+      "topic_id": 161,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Türk inkılabının anti-emperyalist niteliği hangi olayla en açık biçimde görülür?",
+      "correct_answer_text": "E",
+      "explanation_text": "Milli Mücadele, işgalci güçlere ve bağımlılık ilişkilerine karşı yürütülmüştür.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tanzimat Fermanı",
+          "is_correct": false,
+          "id": 74131
+        },
+        {
+          "label": "B",
+          "option_text": "II. Meşrutiyet",
+          "is_correct": false,
+          "id": 74132
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyonların kabulü",
+          "is_correct": false,
+          "id": 74133
+        },
+        {
+          "label": "D",
+          "option_text": "Düyun-u Umumiye",
+          "is_correct": false,
+          "id": 74134
+        },
+        {
+          "label": "E",
+          "option_text": "Milli Mücadele’nin işgallere karşı yürütülmesi",
+          "is_correct": true,
+          "id": 74135
+        }
+      ],
+      "id": 15522
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Osmanlı Devleti’nin zayıflaması için doğru ifade hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Osmanlı çöküş süreci çok nedenlidir; iç ve dış faktörler birlikte etkilidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tek nedene değil, askeri, ekonomik, siyasi ve dış gelişmelerin birleşimine dayanır",
+          "is_correct": true,
+          "id": 74136
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız bir savaşla açıklanır",
+          "is_correct": false,
+          "id": 74137
+        },
+        {
+          "label": "C",
+          "option_text": "Hiç Avrupa gelişmeleriyle ilişkili değildir",
+          "is_correct": false,
+          "id": 74138
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece nüfus artışından doğmuştur",
+          "is_correct": false,
+          "id": 74139
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız alfabe değişikliğinden kaynaklanmıştır",
+          "is_correct": false,
+          "id": 74140
+        }
+      ],
+      "id": 15523
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Coğrafi keşiflerin Osmanlı ekonomisine etkisi hangi yöndedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Yeni ticaret yolları Akdeniz merkezli ticareti zayıflatmış, Osmanlı ekonomisini etkilemiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Akdeniz ticaretinin önemini artırmıştır",
+          "is_correct": false,
+          "id": 74141
+        },
+        {
+          "label": "B",
+          "option_text": "Ticaret yollarının değişmesiyle Osmanlı gelirlerini olumsuz etkilemiştir",
+          "is_correct": true,
+          "id": 74142
+        },
+        {
+          "label": "C",
+          "option_text": "Osmanlıyı sanayileştirmiştir",
+          "is_correct": false,
+          "id": 74143
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonları kaldırmıştır",
+          "is_correct": false,
+          "id": 74144
+        },
+        {
+          "label": "E",
+          "option_text": "Tımar sistemini güçlendirmiştir",
+          "is_correct": false,
+          "id": 74145
+        }
+      ],
+      "id": 15524
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sanayi İnkılabı Osmanlı Devleti’ni nasıl etkilemiştir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Sanayi üretimi Osmanlı geleneksel üretimini rekabet baskısıyla zayıflatmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Osmanlı yerli üretimini rekabette güçlendirmiştir",
+          "is_correct": false,
+          "id": 74146
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyonları ortadan kaldırmıştır",
+          "is_correct": false,
+          "id": 74147
+        },
+        {
+          "label": "C",
+          "option_text": "Avrupa sanayi malları karşısında yerli üretimi zor durumda bırakmıştır",
+          "is_correct": true,
+          "id": 74148
+        },
+        {
+          "label": "D",
+          "option_text": "Tımar sistemini düzeltmiştir",
+          "is_correct": false,
+          "id": 74149
+        },
+        {
+          "label": "E",
+          "option_text": "Merkezi otoriteyi otomatik güçlendirmiştir",
+          "is_correct": false,
+          "id": 74150
+        }
+      ],
+      "id": 15525
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Tanzimat Fermanı hangi yıl ilan edilmiştir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Tanzimat Fermanı 1839’da ilan edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1808",
+          "is_correct": false,
+          "id": 74151
+        },
+        {
+          "label": "B",
+          "option_text": "1826",
+          "is_correct": false,
+          "id": 74152
+        },
+        {
+          "label": "C",
+          "option_text": "1836",
+          "is_correct": false,
+          "id": 74153
+        },
+        {
+          "label": "D",
+          "option_text": "1839",
+          "is_correct": true,
+          "id": 74154
+        },
+        {
+          "label": "E",
+          "option_text": "1876",
+          "is_correct": false,
+          "id": 74155
+        }
+      ],
+      "id": 15526
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Islahat Fermanı’nın temel amacı hangi alanda yoğunlaşmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "1856 Islahat Fermanı özellikle gayrimüslimlerin statüsü ve Avrupa devletlerinin baskısıyla ilişkilidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Gayrimüslimlere haklar tanıma ve Avrupa baskısını azaltma",
+          "is_correct": true,
+          "id": 74156
+        },
+        {
+          "label": "B",
+          "option_text": "Saltanatı kaldırma",
+          "is_correct": false,
+          "id": 74157
+        },
+        {
+          "label": "C",
+          "option_text": "Cumhuriyeti ilan etme",
+          "is_correct": false,
+          "id": 74158
+        },
+        {
+          "label": "D",
+          "option_text": "TBMM’yi açma",
+          "is_correct": false,
+          "id": 74159
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ı imzalama",
+          "is_correct": false,
+          "id": 74160
+        }
+      ],
+      "id": 15527
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "I. Meşrutiyet’in ilanıyla hangi gelişme yaşanmıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "1876 I. Meşrutiyet, Kanun-i Esasi ve Meclis-i Mebusan ile anayasal düzen denemesidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Cumhuriyet ilan edilmiştir",
+          "is_correct": false,
+          "id": 74161
+        },
+        {
+          "label": "B",
+          "option_text": "Saltanat kaldırılmıştır",
+          "is_correct": false,
+          "id": 74162
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM açılmıştır",
+          "is_correct": false,
+          "id": 74163
+        },
+        {
+          "label": "D",
+          "option_text": "Halifelik kaldırılmıştır",
+          "is_correct": false,
+          "id": 74164
+        },
+        {
+          "label": "E",
+          "option_text": "Kanun-i Esasi yürürlüğe girmiş ve meclisli anayasal düzen başlamıştır",
+          "is_correct": true,
+          "id": 74165
+        }
+      ],
+      "id": 15528
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Sened-i İttifak’ın önemi aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Sened-i İttifak, Osmanlı’da merkezi otoritenin bazı güçlerle uzlaşmasını ve sınır fikrini gösterir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Cumhuriyetin ilk anayasası olması",
+          "is_correct": false,
+          "id": 74166
+        },
+        {
+          "label": "B",
+          "option_text": "Padişah otoritesinin ayanlar karşısında sınırlanabileceğini göstermesi",
+          "is_correct": true,
+          "id": 74167
+        },
+        {
+          "label": "C",
+          "option_text": "AİHM başvurusunu başlatması",
+          "is_correct": false,
+          "id": 74168
+        },
+        {
+          "label": "D",
+          "option_text": "Saltanatı kaldırması",
+          "is_correct": false,
+          "id": 74169
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ın eki olması",
+          "is_correct": false,
+          "id": 74170
+        }
+      ],
+      "id": 15529
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yeniçeri Ocağı’nın kaldırılması hangi olayla bilinir?",
+      "correct_answer_text": "C",
+      "explanation_text": "1826’da Yeniçeri Ocağı’nın kaldırılması Vaka-i Hayriye olarak adlandırılır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "31 Mart Olayı",
+          "is_correct": false,
+          "id": 74171
+        },
+        {
+          "label": "B",
+          "option_text": "Babıali Baskını",
+          "is_correct": false,
+          "id": 74172
+        },
+        {
+          "label": "C",
+          "option_text": "Vaka-i Hayriye",
+          "is_correct": true,
+          "id": 74173
+        },
+        {
+          "label": "D",
+          "option_text": "Trablusgarp Savaşı",
+          "is_correct": false,
+          "id": 74174
+        },
+        {
+          "label": "E",
+          "option_text": "Mudanya Ateşkesi",
+          "is_correct": false,
+          "id": 74175
+        }
+      ],
+      "id": 15530
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Meşrutiyet yönetimi hangi düşünceyi güçlendirmiştir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Meşrutiyet, anayasa ve meclis fikrini Osmanlı siyasal hayatına taşımıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mutlak padişah yetkisinin sınırsızlığını",
+          "is_correct": false,
+          "id": 74176
+        },
+        {
+          "label": "B",
+          "option_text": "Yabancı mandasını",
+          "is_correct": false,
+          "id": 74177
+        },
+        {
+          "label": "C",
+          "option_text": "Sömürge yönetimini",
+          "is_correct": false,
+          "id": 74178
+        },
+        {
+          "label": "D",
+          "option_text": "Anayasal yönetim ve temsil fikrini",
+          "is_correct": true,
+          "id": 74179
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonların genişlemesini",
+          "is_correct": false,
+          "id": 74180
+        }
+      ],
+      "id": 15531
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Düyun-u Umumiye İdaresi Osmanlı için neyi gösterir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Düyun-u Umumiye, Osmanlı borçlarının yabancı denetimine geçmesiyle mali bağımsızlık sorununu gösterir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mali bağımsızlığın zayıfladığını",
+          "is_correct": true,
+          "id": 74181
+        },
+        {
+          "label": "B",
+          "option_text": "Askeri zaferlerin arttığını",
+          "is_correct": false,
+          "id": 74182
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyonların kaldırıldığını",
+          "is_correct": false,
+          "id": 74183
+        },
+        {
+          "label": "D",
+          "option_text": "Cumhuriyetin kurulduğunu",
+          "is_correct": false,
+          "id": 74184
+        },
+        {
+          "label": "E",
+          "option_text": "Milli egemenliğin yerleştiğini",
+          "is_correct": false,
+          "id": 74185
+        }
+      ],
+      "id": 15532
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Osmanlı yenileşme hareketlerinin genel sorunu hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Yenileşmeler çoğunlukla devleti kurtarma amacı taşımış, toplumsal ve kurumsal dönüşüm sınırlı kalmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiç yenilik yapılmaması",
+          "is_correct": false,
+          "id": 74186
+        },
+        {
+          "label": "B",
+          "option_text": "Tamamen halk egemenliğine dayanması",
+          "is_correct": false,
+          "id": 74187
+        },
+        {
+          "label": "C",
+          "option_text": "Çoğu zaman devleti kurtarma amacıyla sınırlı ve yukarıdan yapılması",
+          "is_correct": true,
+          "id": 74188
+        },
+        {
+          "label": "D",
+          "option_text": "Sömürgeciliği sona erdirmesi",
+          "is_correct": false,
+          "id": 74189
+        },
+        {
+          "label": "E",
+          "option_text": "Cumhuriyeti doğrudan ilan etmesi",
+          "is_correct": false,
+          "id": 74190
+        }
+      ],
+      "id": 15533
+    },
+    {
+      "topic_id": 162,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "II. Mahmut dönemi yenilikleri hangi alanda önemlidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "II. Mahmut dönemi merkezileşme ve modern kurumlaşma bakımından önemlidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yalnız dış politika antlaşmaları",
+          "is_correct": false,
+          "id": 74191
+        },
+        {
+          "label": "B",
+          "option_text": "Sadece harf değişimi",
+          "is_correct": false,
+          "id": 74192
+        },
+        {
+          "label": "C",
+          "option_text": "Lozan görüşmeleri",
+          "is_correct": false,
+          "id": 74193
+        },
+        {
+          "label": "D",
+          "option_text": "TBMM’nin açılması",
+          "is_correct": false,
+          "id": 74194
+        },
+        {
+          "label": "E",
+          "option_text": "Merkezi idare ve askeri yapılanmanın modernleştirilmesi",
+          "is_correct": true,
+          "id": 74195
+        }
+      ],
+      "id": 15534
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Osmanlıcılık fikrinin temel amacı nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Osmanlıcılık, farklı unsurları Osmanlı kimliği altında tutmayı amaçlamıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tüm Osmanlı unsurlarını ortak vatandaşlık bağıyla bir arada tutmak",
+          "is_correct": true,
+          "id": 74196
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız Türk unsurunu öne çıkarmak",
+          "is_correct": false,
+          "id": 74197
+        },
+        {
+          "label": "C",
+          "option_text": "Halifeliği kaldırmak",
+          "is_correct": false,
+          "id": 74198
+        },
+        {
+          "label": "D",
+          "option_text": "Cumhuriyeti ilan etmek",
+          "is_correct": false,
+          "id": 74199
+        },
+        {
+          "label": "E",
+          "option_text": "Manda yönetimini savunmak",
+          "is_correct": false,
+          "id": 74200
+        }
+      ],
+      "id": 15535
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İslamcılık fikri hangi düşünceye dayanır?",
+      "correct_answer_text": "C",
+      "explanation_text": "İslamcılık, Müslüman toplulukları din bağıyla bir arada tutma arayışıdır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Batıcılığın tamamen reddine değil yalnız ekonomik reformlara",
+          "is_correct": false,
+          "id": 74201
+        },
+        {
+          "label": "B",
+          "option_text": "Türklerin ayrı devlet kurmasına",
+          "is_correct": false,
+          "id": 74202
+        },
+        {
+          "label": "C",
+          "option_text": "Müslüman unsurları halifelik ve din bağı etrafında birleştirmeye",
+          "is_correct": true,
+          "id": 74203
+        },
+        {
+          "label": "D",
+          "option_text": "Avrupa mandasına",
+          "is_correct": false,
+          "id": 74204
+        },
+        {
+          "label": "E",
+          "option_text": "Yerel özerkliklerin kaldırılmasına",
+          "is_correct": false,
+          "id": 74205
+        }
+      ],
+      "id": 15536
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türkçülük fikrinin güçlenmesinde hangi gelişme etkili olmuştur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Osmanlıcılık ve İslamcılığın başarısızlığı, özellikle Balkan kayıpları Türkçülüğü güçlendirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Azınlık milliyetçilikleri ve Balkan kayıpları",
+          "is_correct": false,
+          "id": 74206
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyonların artması",
+          "is_correct": true,
+          "id": 74207
+        },
+        {
+          "label": "C",
+          "option_text": "Düyun-u Umumiye’nin kurulması",
+          "is_correct": false,
+          "id": 74208
+        },
+        {
+          "label": "D",
+          "option_text": "Monarşinin güçlenmesi",
+          "is_correct": false,
+          "id": 74209
+        },
+        {
+          "label": "E",
+          "option_text": "AİHM’in kurulması",
+          "is_correct": false,
+          "id": 74210
+        }
+      ],
+      "id": 15537
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "II. Meşrutiyet hangi yıl ilan edilmiştir?",
+      "correct_answer_text": "D",
+      "explanation_text": "II. Meşrutiyet 1908’de ilan edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1839",
+          "is_correct": false,
+          "id": 74211
+        },
+        {
+          "label": "B",
+          "option_text": "1856",
+          "is_correct": false,
+          "id": 74212
+        },
+        {
+          "label": "C",
+          "option_text": "1876",
+          "is_correct": false,
+          "id": 74213
+        },
+        {
+          "label": "D",
+          "option_text": "1908",
+          "is_correct": true,
+          "id": 74214
+        },
+        {
+          "label": "E",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 74215
+        }
+      ],
+      "id": 15538
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "31 Mart Olayı hangi düzene karşı gelişmiştir?",
+      "correct_answer_text": "A",
+      "explanation_text": "31 Mart Olayı meşrutiyet düzenine karşı gerici bir ayaklanmadır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "II. Meşrutiyet düzenine",
+          "is_correct": true,
+          "id": 74216
+        },
+        {
+          "label": "B",
+          "option_text": "Cumhuriyet yönetimine",
+          "is_correct": false,
+          "id": 74217
+        },
+        {
+          "label": "C",
+          "option_text": "Lozan Barışı’na",
+          "is_correct": false,
+          "id": 74218
+        },
+        {
+          "label": "D",
+          "option_text": "TBMM’nin açılışına",
+          "is_correct": false,
+          "id": 74219
+        },
+        {
+          "label": "E",
+          "option_text": "Saltanatın kaldırılmasına",
+          "is_correct": false,
+          "id": 74220
+        }
+      ],
+      "id": 15539
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "31 Mart Olayı’nı bastıran kuvvet hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Hareket Ordusu İstanbul’a gelerek 31 Mart Olayı’nı bastırmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kuvayımilliye",
+          "is_correct": false,
+          "id": 74221
+        },
+        {
+          "label": "B",
+          "option_text": "TBMM ordusu",
+          "is_correct": false,
+          "id": 74222
+        },
+        {
+          "label": "C",
+          "option_text": "Hareket Ordusu",
+          "is_correct": true,
+          "id": 74223
+        },
+        {
+          "label": "D",
+          "option_text": "Doğu Ordusu",
+          "is_correct": false,
+          "id": 74224
+        },
+        {
+          "label": "E",
+          "option_text": "Akıncı birlikleri",
+          "is_correct": false,
+          "id": 74225
+        }
+      ],
+      "id": 15540
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "II. Abdülhamit’in tahttan indirilmesi hangi olay sonrasında gerçekleşmiştir?",
+      "correct_answer_text": "E",
+      "explanation_text": "31 Mart Olayı bastırıldıktan sonra II. Abdülhamit tahttan indirilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Trablusgarp Savaşı",
+          "is_correct": false,
+          "id": 74226
+        },
+        {
+          "label": "B",
+          "option_text": "I. Dünya Savaşı",
+          "is_correct": false,
+          "id": 74227
+        },
+        {
+          "label": "C",
+          "option_text": "Mondros Ateşkesi",
+          "is_correct": false,
+          "id": 74228
+        },
+        {
+          "label": "D",
+          "option_text": "Sakarya Savaşı",
+          "is_correct": false,
+          "id": 74229
+        },
+        {
+          "label": "E",
+          "option_text": "31 Mart Olayı",
+          "is_correct": true,
+          "id": 74230
+        }
+      ],
+      "id": 15541
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Mustafa Kemal’in eğitim hayatında Manastır Askeri İdadisi’nin önemi nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Manastır, Mustafa Kemal’in düşünsel gelişiminde önemli duraklardan biridir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiçbir etkisi yoktur",
+          "is_correct": false,
+          "id": 74231
+        },
+        {
+          "label": "B",
+          "option_text": "Fikir dünyasının gelişmesinde ve tarih-bilinç ilgisinin artmasında etkili olmuştur",
+          "is_correct": true,
+          "id": 74232
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece denizcilik eğitimi vermiştir",
+          "is_correct": false,
+          "id": 74233
+        },
+        {
+          "label": "D",
+          "option_text": "Cumhuriyetin ilan edildiği yerdir",
+          "is_correct": false,
+          "id": 74234
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’nin açıldığı okuldur",
+          "is_correct": false,
+          "id": 74235
+        }
+      ],
+      "id": 15542
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Mustafa Kemal’in ilk askeri başarısı hangi savaşla ilişkilendirilir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Trablusgarp’ta gönüllü subay olarak yerel direnişi örgütlemesi ilk askeri başarılarındandır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Balkan Savaşı",
+          "is_correct": false,
+          "id": 74236
+        },
+        {
+          "label": "B",
+          "option_text": "Sakarya",
+          "is_correct": false,
+          "id": 74237
+        },
+        {
+          "label": "C",
+          "option_text": "Büyük Taarruz",
+          "is_correct": false,
+          "id": 74238
+        },
+        {
+          "label": "D",
+          "option_text": "Trablusgarp",
+          "is_correct": true,
+          "id": 74239
+        },
+        {
+          "label": "E",
+          "option_text": "Kurtuluş Savaşı Doğu Cephesi",
+          "is_correct": false,
+          "id": 74240
+        }
+      ],
+      "id": 15543
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Batıcılık fikri Osmanlıyı kurtarma düşünceleri içinde neyi savunur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Batıcılık, devletin Batı tarzı kurum ve düşüncelerle modernleşmesini savunur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Batı tarzı kurum ve tekniklerle modernleşmeyi",
+          "is_correct": true,
+          "id": 74241
+        },
+        {
+          "label": "B",
+          "option_text": "Halifelik etrafında birleşmeyi",
+          "is_correct": false,
+          "id": 74242
+        },
+        {
+          "label": "C",
+          "option_text": "Yalnız Türk unsuruna dayanmayı",
+          "is_correct": false,
+          "id": 74243
+        },
+        {
+          "label": "D",
+          "option_text": "Tüm yenilikleri reddetmeyi",
+          "is_correct": false,
+          "id": 74244
+        },
+        {
+          "label": "E",
+          "option_text": "Manda yönetimini zorunlu görmeyi",
+          "is_correct": false,
+          "id": 74245
+        }
+      ],
+      "id": 15544
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Osmanlıyı kurtarma fikirlerinin ortak özelliği nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Bu fikir akımları farklı yöntemlerle Osmanlı Devleti’ni dağılmaktan kurtarmayı amaçlamıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hepsinin Cumhuriyeti ilan etmiş olması",
+          "is_correct": false,
+          "id": 74246
+        },
+        {
+          "label": "B",
+          "option_text": "Hepsinin işgalleri başlatması",
+          "is_correct": false,
+          "id": 74247
+        },
+        {
+          "label": "C",
+          "option_text": "Devletin dağılmasını önleme amacı taşıması",
+          "is_correct": true,
+          "id": 74248
+        },
+        {
+          "label": "D",
+          "option_text": "Hepsinin aynı yöntemleri savunması",
+          "is_correct": false,
+          "id": 74249
+        },
+        {
+          "label": "E",
+          "option_text": "Hepsinin başarıyla sonuçlanması",
+          "is_correct": false,
+          "id": 74250
+        }
+      ],
+      "id": 15545
+    },
+    {
+      "topic_id": 163,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Mustafa Kemal’in farklı şehir ve okullarda eğitim görmesi hangi sonucu desteklemiştir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Farklı çevreler Mustafa Kemal’in askeri, siyasi ve düşünsel birikimini geliştirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Siyasi düşüncelerden tamamen uzak kalmasını",
+          "is_correct": false,
+          "id": 74251
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız yerel sorunlarla ilgilenmesini",
+          "is_correct": false,
+          "id": 74252
+        },
+        {
+          "label": "C",
+          "option_text": "Askerlikten ayrılmasını",
+          "is_correct": false,
+          "id": 74253
+        },
+        {
+          "label": "D",
+          "option_text": "Fikir çeşitliliğine kapalı kalmasını",
+          "is_correct": false,
+          "id": 74254
+        },
+        {
+          "label": "E",
+          "option_text": "Geniş gözlem gücü ve çok yönlü düşünsel birikim kazanmasını",
+          "is_correct": true,
+          "id": 74255
+        }
+      ],
+      "id": 15546
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Trablusgarp Savaşı hangi devlete karşı yapılmıştır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Trablusgarp Savaşı İtalya’nın Osmanlı toprağı Trablusgarp’a saldırmasıyla çıkmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yunanistan",
+          "is_correct": false,
+          "id": 74256
+        },
+        {
+          "label": "B",
+          "option_text": "İtalya",
+          "is_correct": true,
+          "id": 74257
+        },
+        {
+          "label": "C",
+          "option_text": "Bulgaristan",
+          "is_correct": false,
+          "id": 74258
+        },
+        {
+          "label": "D",
+          "option_text": "Fransa",
+          "is_correct": false,
+          "id": 74259
+        },
+        {
+          "label": "E",
+          "option_text": "Rusya",
+          "is_correct": false,
+          "id": 74260
+        }
+      ],
+      "id": 15547
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Trablusgarp Savaşı sonunda imzalanan antlaşma hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Trablusgarp Savaşı Uşi Antlaşması ile sona ermiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Londra",
+          "is_correct": false,
+          "id": 74261
+        },
+        {
+          "label": "B",
+          "option_text": "Bükreş",
+          "is_correct": false,
+          "id": 74262
+        },
+        {
+          "label": "C",
+          "option_text": "Uşi",
+          "is_correct": true,
+          "id": 74263
+        },
+        {
+          "label": "D",
+          "option_text": "Mondros",
+          "is_correct": false,
+          "id": 74264
+        },
+        {
+          "label": "E",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74265
+        }
+      ],
+      "id": 15548
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "I. Balkan Savaşı’nın Osmanlı açısından sonucu hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "I. Balkan Savaşı Osmanlı için ağır toprak kayıplarıyla sonuçlanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Balkan topraklarının büyük bölümünün kaybedilmesi",
+          "is_correct": true,
+          "id": 74266
+        },
+        {
+          "label": "B",
+          "option_text": "Edirne’nin hemen geri alınması",
+          "is_correct": false,
+          "id": 74267
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyonların kaldırılması",
+          "is_correct": false,
+          "id": 74268
+        },
+        {
+          "label": "D",
+          "option_text": "Cumhuriyetin ilanı",
+          "is_correct": false,
+          "id": 74269
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74270
+        }
+      ],
+      "id": 15549
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "II. Balkan Savaşı’nda Osmanlı hangi yerleri geri almıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Bulgaristan’a karşı oluşan durumdan yararlanan Osmanlı Edirne ve Kırklareli’ni geri almıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Selanik ve Manastır",
+          "is_correct": false,
+          "id": 74271
+        },
+        {
+          "label": "B",
+          "option_text": "Trablusgarp ve Bingazi",
+          "is_correct": false,
+          "id": 74272
+        },
+        {
+          "label": "C",
+          "option_text": "Musul ve Kerkük",
+          "is_correct": false,
+          "id": 74273
+        },
+        {
+          "label": "D",
+          "option_text": "Edirne ve Kırklareli",
+          "is_correct": true,
+          "id": 74274
+        },
+        {
+          "label": "E",
+          "option_text": "Kars ve Ardahan",
+          "is_correct": false,
+          "id": 74275
+        }
+      ],
+      "id": 15550
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "I. Dünya Savaşı’nda Osmanlı Devleti hangi blokta yer almıştır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Osmanlı Devleti I. Dünya Savaşı’nda Almanya’nın yanında İttifak Devletleri içinde yer almıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İtilaf Devletleri",
+          "is_correct": false,
+          "id": 74276
+        },
+        {
+          "label": "B",
+          "option_text": "İttifak Devletleri",
+          "is_correct": true,
+          "id": 74277
+        },
+        {
+          "label": "C",
+          "option_text": "Bağlantısızlar",
+          "is_correct": false,
+          "id": 74278
+        },
+        {
+          "label": "D",
+          "option_text": "Milletler Cemiyeti",
+          "is_correct": false,
+          "id": 74279
+        },
+        {
+          "label": "E",
+          "option_text": "Avrupa Konseyi",
+          "is_correct": false,
+          "id": 74280
+        }
+      ],
+      "id": 15551
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Çanakkale Cephesi’nin sonuçlarından biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Çanakkale zaferi Mustafa Kemal’in askeri dehasını ortaya koymuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İstanbul’un hemen işgal edilmesi",
+          "is_correct": false,
+          "id": 74281
+        },
+        {
+          "label": "B",
+          "option_text": "Rusya’ya yardım yolunun açılması",
+          "is_correct": false,
+          "id": 74282
+        },
+        {
+          "label": "C",
+          "option_text": "Mustafa Kemal’in askeri liderliğinin öne çıkması",
+          "is_correct": true,
+          "id": 74283
+        },
+        {
+          "label": "D",
+          "option_text": "Osmanlı’nın savaştan çekilmesi",
+          "is_correct": false,
+          "id": 74284
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74285
+        }
+      ],
+      "id": 15552
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kanal Cephesi hangi devlete karşı açılmıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kanal Cephesi İngiltere’nin Süveyş üzerindeki hakimiyetini zorlamak amacıyla açılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İtalya",
+          "is_correct": false,
+          "id": 74286
+        },
+        {
+          "label": "B",
+          "option_text": "Bulgaristan",
+          "is_correct": false,
+          "id": 74287
+        },
+        {
+          "label": "C",
+          "option_text": "Yunanistan",
+          "is_correct": false,
+          "id": 74288
+        },
+        {
+          "label": "D",
+          "option_text": "Rusya",
+          "is_correct": false,
+          "id": 74289
+        },
+        {
+          "label": "E",
+          "option_text": "İngiltere",
+          "is_correct": true,
+          "id": 74290
+        }
+      ],
+      "id": 15553
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kafkas Cephesi’nde Osmanlı açısından ağır sonuç doğuran harekat hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Sarıkamış Harekatı ağır kayıplara yol açmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sarıkamış Harekatı",
+          "is_correct": true,
+          "id": 74291
+        },
+        {
+          "label": "B",
+          "option_text": "Büyük Taarruz",
+          "is_correct": false,
+          "id": 74292
+        },
+        {
+          "label": "C",
+          "option_text": "I. İnönü",
+          "is_correct": false,
+          "id": 74293
+        },
+        {
+          "label": "D",
+          "option_text": "Sakarya",
+          "is_correct": false,
+          "id": 74294
+        },
+        {
+          "label": "E",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74295
+        }
+      ],
+      "id": 15554
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Gizli antlaşmaların Milli Mücadele açısından önemi nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Gizli antlaşmalar, savaş sonrası Osmanlı topraklarının paylaşılmasının planlandığını gösterir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Osmanlıyı güçlendirmiştir",
+          "is_correct": false,
+          "id": 74296
+        },
+        {
+          "label": "B",
+          "option_text": "İşgalleri engellemiştir",
+          "is_correct": false,
+          "id": 74297
+        },
+        {
+          "label": "C",
+          "option_text": "Tam bağımsızlığı sağlamıştır",
+          "is_correct": false,
+          "id": 74298
+        },
+        {
+          "label": "D",
+          "option_text": "İtilaf Devletlerinin Osmanlı topraklarını paylaşma planlarını göstermiştir",
+          "is_correct": true,
+          "id": 74299
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’yi açmıştır",
+          "is_correct": false,
+          "id": 74300
+        }
+      ],
+      "id": 15555
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Wilson İlkeleri Osmanlı aydınlarında hangi beklentiyi doğurmuştur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Wilson İlkeleri self-determinasyon ve açık diplomasi gibi ilkelerle umut doğurmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kayıtsız şartsız teslim",
+          "is_correct": false,
+          "id": 74301
+        },
+        {
+          "label": "B",
+          "option_text": "Adil barış ve self-determinasyon umudu",
+          "is_correct": true,
+          "id": 74302
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanatın güçlenmesi",
+          "is_correct": false,
+          "id": 74303
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonların artması",
+          "is_correct": false,
+          "id": 74304
+        },
+        {
+          "label": "E",
+          "option_text": "Balkanların geri alınması",
+          "is_correct": false,
+          "id": 74305
+        }
+      ],
+      "id": 15556
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Balkan Savaşlarının Mustafa Kemal açısından önemi nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Balkan Savaşları Mustafa Kemal’in imparatorluğun çözülüşünü ve ordunun sorunlarını görmesi bakımından önemlidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Hiç görev almamıştır",
+          "is_correct": false,
+          "id": 74306
+        },
+        {
+          "label": "B",
+          "option_text": "Cumhurbaşkanı olmuştur",
+          "is_correct": false,
+          "id": 74307
+        },
+        {
+          "label": "C",
+          "option_text": "Osmanlı’nın askeri-siyasi sorunlarını yakından görmüştür",
+          "is_correct": true,
+          "id": 74308
+        },
+        {
+          "label": "D",
+          "option_text": "Lozan’ı imzalamıştır",
+          "is_correct": false,
+          "id": 74309
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’yi açmıştır",
+          "is_correct": false,
+          "id": 74310
+        }
+      ],
+      "id": 15557
+    },
+    {
+      "topic_id": 164,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "I. Dünya Savaşı sonunda Osmanlı için imzalanan ateşkes hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Osmanlı Devleti I. Dünya Savaşı sonunda Mondros Ateşkes Antlaşması’nı imzalamıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74311
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan",
+          "is_correct": false,
+          "id": 74312
+        },
+        {
+          "label": "C",
+          "option_text": "Gümrü",
+          "is_correct": false,
+          "id": 74313
+        },
+        {
+          "label": "D",
+          "option_text": "Ankara",
+          "is_correct": false,
+          "id": 74314
+        },
+        {
+          "label": "E",
+          "option_text": "Mondros",
+          "is_correct": true,
+          "id": 74315
+        }
+      ],
+      "id": 15558
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Mondros Ateşkesi hangi tarihte imzalanmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Mondros Ateşkesi 30 Ekim 1918’de imzalanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "30 Ekim 1918",
+          "is_correct": true,
+          "id": 74316
+        },
+        {
+          "label": "B",
+          "option_text": "19 Mayıs 1919",
+          "is_correct": false,
+          "id": 74317
+        },
+        {
+          "label": "C",
+          "option_text": "23 Nisan 1920",
+          "is_correct": false,
+          "id": 74318
+        },
+        {
+          "label": "D",
+          "option_text": "10 Ağustos 1920",
+          "is_correct": false,
+          "id": 74319
+        },
+        {
+          "label": "E",
+          "option_text": "24 Temmuz 1923",
+          "is_correct": false,
+          "id": 74320
+        }
+      ],
+      "id": 15559
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Mondros’un 7. maddesinin önemi nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "7. madde işgallere hukuki kılıf olarak kullanılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Osmanlıya tam bağımsızlık vermesi",
+          "is_correct": false,
+          "id": 74321
+        },
+        {
+          "label": "B",
+          "option_text": "İtilaf Devletlerine güvenlik gerekçesiyle işgal imkanı tanıması",
+          "is_correct": true,
+          "id": 74322
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM’yi tanıması",
+          "is_correct": false,
+          "id": 74323
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonları kaldırması",
+          "is_correct": false,
+          "id": 74324
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ın temelini oluşturması",
+          "is_correct": false,
+          "id": 74325
+        }
+      ],
+      "id": 15560
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Mondros’tan sonra ilk işgal edilen yer neresidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Mondros sonrası ilk işgal Musul’da gerçekleşmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İzmir",
+          "is_correct": false,
+          "id": 74326
+        },
+        {
+          "label": "B",
+          "option_text": "İstanbul",
+          "is_correct": false,
+          "id": 74327
+        },
+        {
+          "label": "C",
+          "option_text": "Musul",
+          "is_correct": true,
+          "id": 74328
+        },
+        {
+          "label": "D",
+          "option_text": "Ankara",
+          "is_correct": false,
+          "id": 74329
+        },
+        {
+          "label": "E",
+          "option_text": "Erzurum",
+          "is_correct": false,
+          "id": 74330
+        }
+      ],
+      "id": 15561
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İzmir’in işgali hangi tarihte gerçekleşmiştir?",
+      "correct_answer_text": "D",
+      "explanation_text": "İzmir 15 Mayıs 1919’da Yunanistan tarafından işgal edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "30 Ekim 1918",
+          "is_correct": false,
+          "id": 74331
+        },
+        {
+          "label": "B",
+          "option_text": "19 Mayıs 1919",
+          "is_correct": false,
+          "id": 74332
+        },
+        {
+          "label": "C",
+          "option_text": "23 Nisan 1920",
+          "is_correct": false,
+          "id": 74333
+        },
+        {
+          "label": "D",
+          "option_text": "15 Mayıs 1919",
+          "is_correct": true,
+          "id": 74334
+        },
+        {
+          "label": "E",
+          "option_text": "10 Ağustos 1920",
+          "is_correct": false,
+          "id": 74335
+        }
+      ],
+      "id": 15562
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Hasan Tahsin hangi olayla sembolleşmiştir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Hasan Tahsin İzmir işgaline karşı direnişin sembollerindendir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İzmir’in işgaline karşı ilk kurşun",
+          "is_correct": true,
+          "id": 74336
+        },
+        {
+          "label": "B",
+          "option_text": "TBMM’nin açılışı",
+          "is_correct": false,
+          "id": 74337
+        },
+        {
+          "label": "C",
+          "option_text": "Lozan görüşmeleri",
+          "is_correct": false,
+          "id": 74338
+        },
+        {
+          "label": "D",
+          "option_text": "Sivas Kongresi başkanlığı",
+          "is_correct": false,
+          "id": 74339
+        },
+        {
+          "label": "E",
+          "option_text": "Amasya Görüşmeleri",
+          "is_correct": false,
+          "id": 74340
+        }
+      ],
+      "id": 15563
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Yararlı cemiyetlerin ortak amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Yararlı cemiyetler işgallere karşı direniş amacıyla kurulmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Manda yönetimini savunmak",
+          "is_correct": false,
+          "id": 74341
+        },
+        {
+          "label": "B",
+          "option_text": "Bölgesel veya ulusal direnişi örgütleyerek vatanı savunmak",
+          "is_correct": true,
+          "id": 74342
+        },
+        {
+          "label": "C",
+          "option_text": "İşgalleri kolaylaştırmak",
+          "is_correct": false,
+          "id": 74343
+        },
+        {
+          "label": "D",
+          "option_text": "Saltanatı kaldırmak",
+          "is_correct": false,
+          "id": 74344
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonları genişletmek",
+          "is_correct": false,
+          "id": 74345
+        }
+      ],
+      "id": 15564
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Zararlı cemiyetlerin Milli Mücadele açısından ortak yönü nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Zararlı cemiyetler milli direnişe karşı veya ayrılıkçı çizgide hareket etmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tam bağımsızlığı savunmaları",
+          "is_correct": false,
+          "id": 74346
+        },
+        {
+          "label": "B",
+          "option_text": "Kuvayımilliye’ye katılmaları",
+          "is_correct": false,
+          "id": 74347
+        },
+        {
+          "label": "C",
+          "option_text": "Milli birliği zayıflatan veya işgalleri destekleyen tutumlar almaları",
+          "is_correct": true,
+          "id": 74348
+        },
+        {
+          "label": "D",
+          "option_text": "Misakımilli’yi kabul etmeleri",
+          "is_correct": false,
+          "id": 74349
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM ordusuna dönüşmeleri",
+          "is_correct": false,
+          "id": 74350
+        }
+      ],
+      "id": 15565
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kuvayımilliye nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Kuvayımilliye, işgallere karşı halkın yerel direniş örgütlenmesidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Düzenli ordunun yerine geçen yabancı birlik",
+          "is_correct": false,
+          "id": 74351
+        },
+        {
+          "label": "B",
+          "option_text": "İtilaf kuvvetleri",
+          "is_correct": false,
+          "id": 74352
+        },
+        {
+          "label": "C",
+          "option_text": "Osmanlı saray muhafızı",
+          "is_correct": false,
+          "id": 74353
+        },
+        {
+          "label": "D",
+          "option_text": "İşgallere karşı yerel direniş güçleri",
+          "is_correct": true,
+          "id": 74354
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan heyeti",
+          "is_correct": false,
+          "id": 74355
+        }
+      ],
+      "id": 15566
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kuvayımilliye’nin ortaya çıkmasında temel neden hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "İşgaller karşısında yerel direniş ihtiyacı Kuvayımilliye’yi doğurmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Düzenli ordunun işgalleri hemen durduramaması ve merkezi otoritenin yetersiz kalması",
+          "is_correct": false,
+          "id": 74356
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74357
+        },
+        {
+          "label": "C",
+          "option_text": "Cumhuriyetin ilanı",
+          "is_correct": false,
+          "id": 74358
+        },
+        {
+          "label": "D",
+          "option_text": "Halifeliğin kaldırılması",
+          "is_correct": false,
+          "id": 74359
+        },
+        {
+          "label": "E",
+          "option_text": "Montrö’nün imzalanması",
+          "is_correct": true,
+          "id": 74360
+        }
+      ],
+      "id": 15567
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Amiral Bristol Raporu’nun önemi nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Amiral Bristol Raporu, İzmir işgalindeki Yunan tezlerini çürüten önemli dış kaynaktır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İzmir işgalinde Yunan iddialarının haksızlığını ortaya koyan yabancı rapor olması",
+          "is_correct": true,
+          "id": 74361
+        },
+        {
+          "label": "B",
+          "option_text": "Sevr’i onaylaması",
+          "is_correct": false,
+          "id": 74362
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM’yi kapatması",
+          "is_correct": false,
+          "id": 74363
+        },
+        {
+          "label": "D",
+          "option_text": "Mondros’u imzalaması",
+          "is_correct": false,
+          "id": 74364
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ı yürürlüğe koyması",
+          "is_correct": false,
+          "id": 74365
+        }
+      ],
+      "id": 15568
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Paris Barış Konferansı’nın Batı Anadolu açısından sonucu nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Paris Barış Konferansı İzmir’in Yunanistan’a verilmesi sürecinde etkili olmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İzmir’in Türklere bırakılması",
+          "is_correct": false,
+          "id": 74366
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyonların kaldırılması",
+          "is_correct": false,
+          "id": 74367
+        },
+        {
+          "label": "C",
+          "option_text": "İzmir’in Yunanistan’a bırakılması kararının çıkması",
+          "is_correct": true,
+          "id": 74368
+        },
+        {
+          "label": "D",
+          "option_text": "TBMM’nin tanınması",
+          "is_correct": false,
+          "id": 74369
+        },
+        {
+          "label": "E",
+          "option_text": "Hatay’ın katılması",
+          "is_correct": false,
+          "id": 74370
+        }
+      ],
+      "id": 15569
+    },
+    {
+      "topic_id": 165,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Mondros sonrası işgallerin Milli Mücadele’ye etkisi nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "İşgaller halkta direniş fikrinin güçlenmesine yol açmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Direnişi zayıflatmadan işgalleri onaylatmıştır",
+          "is_correct": false,
+          "id": 74371
+        },
+        {
+          "label": "B",
+          "option_text": "Milli direnişin örgütlenmesini hızlandırmıştır",
+          "is_correct": true,
+          "id": 74372
+        },
+        {
+          "label": "C",
+          "option_text": "Cumhuriyeti ilan etmiştir",
+          "is_correct": false,
+          "id": 74373
+        },
+        {
+          "label": "D",
+          "option_text": "Lozan’ı imzalamıştır",
+          "is_correct": false,
+          "id": 74374
+        },
+        {
+          "label": "E",
+          "option_text": "II. Meşrutiyet’i başlatmıştır",
+          "is_correct": false,
+          "id": 74375
+        }
+      ],
+      "id": 15570
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Mustafa Kemal’in Samsun’a çıkışı hangi tarihtedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "19 Mayıs 1919 Milli Mücadele’nin örgütlü başlangıcı kabul edilir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "19 Mayıs 1919",
+          "is_correct": true,
+          "id": 74376
+        },
+        {
+          "label": "B",
+          "option_text": "15 Mayıs 1919",
+          "is_correct": false,
+          "id": 74377
+        },
+        {
+          "label": "C",
+          "option_text": "22 Haziran 1919",
+          "is_correct": false,
+          "id": 74378
+        },
+        {
+          "label": "D",
+          "option_text": "23 Temmuz 1919",
+          "is_correct": false,
+          "id": 74379
+        },
+        {
+          "label": "E",
+          "option_text": "4 Eylül 1919",
+          "is_correct": false,
+          "id": 74380
+        }
+      ],
+      "id": 15571
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Havza Genelgesi’nin amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Havza Genelgesi işgallere karşı ulusal tepki oluşturmayı hedeflemiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İşgalleri desteklemek",
+          "is_correct": false,
+          "id": 74381
+        },
+        {
+          "label": "B",
+          "option_text": "İşgallere karşı protesto ve mitinglerle halk tepkisini örgütlemek",
+          "is_correct": true,
+          "id": 74382
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanatı kaldırmak",
+          "is_correct": false,
+          "id": 74383
+        },
+        {
+          "label": "D",
+          "option_text": "Lozan’ı imzalamak",
+          "is_correct": false,
+          "id": 74384
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’yi açmak",
+          "is_correct": false,
+          "id": 74385
+        }
+      ],
+      "id": 15572
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Amasya Genelgesi’nin en önemli yargılarından biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Amasya Genelgesi milli egemenlik ve milli irade düşüncesini açıkça ortaya koymuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Manda kabul edilmelidir",
+          "is_correct": false,
+          "id": 74386
+        },
+        {
+          "label": "B",
+          "option_text": "İstanbul Hükümeti yeterlidir",
+          "is_correct": false,
+          "id": 74387
+        },
+        {
+          "label": "C",
+          "option_text": "Milletin bağımsızlığını yine milletin azim ve kararı kurtaracaktır",
+          "is_correct": true,
+          "id": 74388
+        },
+        {
+          "label": "D",
+          "option_text": "İşgaller geçicidir",
+          "is_correct": false,
+          "id": 74389
+        },
+        {
+          "label": "E",
+          "option_text": "Sevr uygulanmalıdır",
+          "is_correct": false,
+          "id": 74390
+        }
+      ],
+      "id": 15573
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Amasya Genelgesi’nin Milli Mücadele’deki önemi nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Amasya Genelgesi kurtuluşun nedenini, hedefini ve yöntemini ortaya koymuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İlk askeri zafer olması",
+          "is_correct": false,
+          "id": 74391
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74392
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM’nin açılması",
+          "is_correct": false,
+          "id": 74393
+        },
+        {
+          "label": "D",
+          "option_text": "Milli Mücadele’nin gerekçe, amaç ve yöntemini açıklaması",
+          "is_correct": true,
+          "id": 74394
+        },
+        {
+          "label": "E",
+          "option_text": "Saltanatın kaldırılması",
+          "is_correct": false,
+          "id": 74395
+        }
+      ],
+      "id": 15574
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Erzurum Kongresi hangi bölgeyi savunma amacıyla toplanmıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Erzurum Kongresi doğu illerinin savunması amacıyla toplanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Batı Anadolu",
+          "is_correct": false,
+          "id": 74396
+        },
+        {
+          "label": "B",
+          "option_text": "Trakya",
+          "is_correct": false,
+          "id": 74397
+        },
+        {
+          "label": "C",
+          "option_text": "Çukurova",
+          "is_correct": false,
+          "id": 74398
+        },
+        {
+          "label": "D",
+          "option_text": "İstanbul",
+          "is_correct": false,
+          "id": 74399
+        },
+        {
+          "label": "E",
+          "option_text": "Doğu Anadolu",
+          "is_correct": true,
+          "id": 74400
+        }
+      ],
+      "id": 15575
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Erzurum Kongresi’nde alınan “manda ve himaye kabul edilemez” kararı hangi anlayışı gösterir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Manda ve himayenin reddi tam bağımsızlık fikrinin sonucudur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tam bağımsızlık",
+          "is_correct": true,
+          "id": 74401
+        },
+        {
+          "label": "B",
+          "option_text": "Federal yönetim",
+          "is_correct": false,
+          "id": 74402
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanatçılık",
+          "is_correct": false,
+          "id": 74403
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74404
+        },
+        {
+          "label": "E",
+          "option_text": "Sömürgecilik",
+          "is_correct": false,
+          "id": 74405
+        }
+      ],
+      "id": 15576
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sivas Kongresi’nin Erzurum Kongresi’nden farkı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Sivas Kongresi ulusal düzeyde kararlar almış ve cemiyetleri Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti adıyla birleştirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Daha dar bölgesel olması",
+          "is_correct": false,
+          "id": 74406
+        },
+        {
+          "label": "B",
+          "option_text": "Ulusal nitelikte olması ve cemiyetleri birleştirmesi",
+          "is_correct": true,
+          "id": 74407
+        },
+        {
+          "label": "C",
+          "option_text": "Manda kabul etmesi",
+          "is_correct": false,
+          "id": 74408
+        },
+        {
+          "label": "D",
+          "option_text": "İşgalleri onaylaması",
+          "is_correct": false,
+          "id": 74409
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’yi kapatması",
+          "is_correct": false,
+          "id": 74410
+        }
+      ],
+      "id": 15577
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Temsil Heyeti’nin yetkisinin tüm yurdu kapsaması hangi kongreyle gerçekleşmiştir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Sivas Kongresi ile Temsil Heyeti tüm yurdu temsil eder hale gelmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Amasya Genelgesi",
+          "is_correct": false,
+          "id": 74411
+        },
+        {
+          "label": "B",
+          "option_text": "Erzurum Kongresi",
+          "is_correct": false,
+          "id": 74412
+        },
+        {
+          "label": "C",
+          "option_text": "Sivas Kongresi",
+          "is_correct": true,
+          "id": 74413
+        },
+        {
+          "label": "D",
+          "option_text": "Amasya Görüşmeleri",
+          "is_correct": false,
+          "id": 74414
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan",
+          "is_correct": false,
+          "id": 74415
+        }
+      ],
+      "id": 15578
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Milli Mücadele hazırlık döneminde sıralama hangisidir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Hazırlık döneminin temel kronolojisi Samsun, Havza, Amasya, Erzurum, Sivas şeklindedir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sivas, Samsun, Amasya, Havza",
+          "is_correct": false,
+          "id": 74416
+        },
+        {
+          "label": "B",
+          "option_text": "Erzurum, Lozan, Samsun, Sivas",
+          "is_correct": false,
+          "id": 74417
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM, Mondros, Havza, Amasya",
+          "is_correct": false,
+          "id": 74418
+        },
+        {
+          "label": "D",
+          "option_text": "Samsun, Havza, Amasya, Erzurum, Sivas",
+          "is_correct": true,
+          "id": 74419
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan, Sivas, Erzurum, Samsun",
+          "is_correct": false,
+          "id": 74420
+        }
+      ],
+      "id": 15579
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Erzurum Kongresi kararlarında vatanın bütünlüğü nasıl vurgulanmıştır?",
+      "correct_answer_text": "E",
+      "explanation_text": "Bu karar ulusal bütünlük düşüncesini güçlendirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bölgesel parçalanma kabul edilmiştir",
+          "is_correct": false,
+          "id": 74421
+        },
+        {
+          "label": "B",
+          "option_text": "Manda istenmiştir",
+          "is_correct": false,
+          "id": 74422
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanat kaldırılmıştır",
+          "is_correct": false,
+          "id": 74423
+        },
+        {
+          "label": "D",
+          "option_text": "İzmir Yunanistan’a bırakılmıştır",
+          "is_correct": false,
+          "id": 74424
+        },
+        {
+          "label": "E",
+          "option_text": "Milli sınırlar içinde vatan bir bütündür, parçalanamaz denmiştir",
+          "is_correct": true,
+          "id": 74425
+        }
+      ],
+      "id": 15580
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Amasya Genelgesi’nde İstanbul Hükümeti hakkında hangi tespit yapılmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Amasya Genelgesi İstanbul Hükümeti’nin aciz kaldığını belirterek milli örgütlenmeyi gerekçelendirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Görevini yerine getiremediği",
+          "is_correct": true,
+          "id": 74426
+        },
+        {
+          "label": "B",
+          "option_text": "Tam bağımsızlığı sağladığı",
+          "is_correct": false,
+          "id": 74427
+        },
+        {
+          "label": "C",
+          "option_text": "İşgalleri durdurduğu",
+          "is_correct": false,
+          "id": 74428
+        },
+        {
+          "label": "D",
+          "option_text": "TBMM’yi kurduğu",
+          "is_correct": false,
+          "id": 74429
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ı imzaladığı",
+          "is_correct": false,
+          "id": 74430
+        }
+      ],
+      "id": 15581
+    },
+    {
+      "topic_id": 166,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kongrelerde ulusal irade vurgusunun sonucu nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Ulusal irade vurgusu TBMM’nin açılmasına giden siyasi zemini hazırlamıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Saltanatın mutlaklaşması",
+          "is_correct": false,
+          "id": 74431
+        },
+        {
+          "label": "B",
+          "option_text": "Meclisleşme ve TBMM’ye giden yolun açılması",
+          "is_correct": true,
+          "id": 74432
+        },
+        {
+          "label": "C",
+          "option_text": "İşgallerin onaylanması",
+          "is_correct": false,
+          "id": 74433
+        },
+        {
+          "label": "D",
+          "option_text": "Manda kabulü",
+          "is_correct": false,
+          "id": 74434
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonların genişlemesi",
+          "is_correct": false,
+          "id": 74435
+        }
+      ],
+      "id": 15582
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Amasya Görüşmeleri’nin önemi nedir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Amasya Görüşmeleri Temsil Heyeti’nin siyasi varlığının İstanbulca kabulü bakımından önemlidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İstanbul Hükümeti’nin Temsil Heyeti’ni dolaylı olarak tanıması",
+          "is_correct": true,
+          "id": 74436
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74437
+        },
+        {
+          "label": "C",
+          "option_text": "İzmir’in işgali",
+          "is_correct": false,
+          "id": 74438
+        },
+        {
+          "label": "D",
+          "option_text": "Sevr’in kabulü",
+          "is_correct": false,
+          "id": 74439
+        },
+        {
+          "label": "E",
+          "option_text": "Cumhuriyetin ilanı",
+          "is_correct": false,
+          "id": 74440
+        }
+      ],
+      "id": 15583
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Temsil Heyeti Ankara’ya hangi tarihte gelmiştir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Temsil Heyeti 27 Aralık 1919’da Ankara’ya gelmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "19 Mayıs 1919",
+          "is_correct": false,
+          "id": 74441
+        },
+        {
+          "label": "B",
+          "option_text": "27 Aralık 1919",
+          "is_correct": true,
+          "id": 74442
+        },
+        {
+          "label": "C",
+          "option_text": "23 Nisan 1920",
+          "is_correct": false,
+          "id": 74443
+        },
+        {
+          "label": "D",
+          "option_text": "10 Ağustos 1920",
+          "is_correct": false,
+          "id": 74444
+        },
+        {
+          "label": "E",
+          "option_text": "24 Temmuz 1923",
+          "is_correct": false,
+          "id": 74445
+        }
+      ],
+      "id": 15584
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ankara’nın merkez seçilmesinde hangisi etkili değildir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Ankara İstanbul’un tam denetiminde değildi; güvenli ve stratejik konumu önemlidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Batı Cephesi’ne yakınlığı",
+          "is_correct": false,
+          "id": 74446
+        },
+        {
+          "label": "B",
+          "option_text": "Ulaşım ve haberleşme imkanları",
+          "is_correct": false,
+          "id": 74447
+        },
+        {
+          "label": "C",
+          "option_text": "İstanbul Hükümeti’nin tam denetiminde olması",
+          "is_correct": true,
+          "id": 74448
+        },
+        {
+          "label": "D",
+          "option_text": "Güvenli konumu",
+          "is_correct": false,
+          "id": 74449
+        },
+        {
+          "label": "E",
+          "option_text": "Anadolu’nun ortasında bulunması",
+          "is_correct": false,
+          "id": 74450
+        }
+      ],
+      "id": 15585
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Misakımilli nerede kabul edilmiştir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Misakımilli Son Osmanlı Mebusan Meclisi’nde kabul edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Erzurum Kongresi",
+          "is_correct": false,
+          "id": 74451
+        },
+        {
+          "label": "B",
+          "option_text": "Sivas Kongresi",
+          "is_correct": false,
+          "id": 74452
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM",
+          "is_correct": false,
+          "id": 74453
+        },
+        {
+          "label": "D",
+          "option_text": "Son Osmanlı Mebusan Meclisi",
+          "is_correct": true,
+          "id": 74454
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan Konferansı",
+          "is_correct": false,
+          "id": 74455
+        }
+      ],
+      "id": 15586
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Misakımilli’nin temel anlamı nedir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Misakımilli milli sınırlar ve bağımsızlık ilkesini ifade eder.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Manda yönetimi",
+          "is_correct": false,
+          "id": 74456
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyonların genişletilmesi",
+          "is_correct": false,
+          "id": 74457
+        },
+        {
+          "label": "C",
+          "option_text": "Sevr’in kabulü",
+          "is_correct": false,
+          "id": 74458
+        },
+        {
+          "label": "D",
+          "option_text": "Saltanatın güçlendirilmesi",
+          "is_correct": false,
+          "id": 74459
+        },
+        {
+          "label": "E",
+          "option_text": "Milli sınırlar ve bağımsızlık hedeflerinin ilanı",
+          "is_correct": true,
+          "id": 74460
+        }
+      ],
+      "id": 15587
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İstanbul’un resmen işgali hangi gelişmeyi hızlandırmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "İstanbul’un işgali Ankara’da yeni meclisin açılmasını hızlandırmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "TBMM’nin açılmasını",
+          "is_correct": true,
+          "id": 74461
+        },
+        {
+          "label": "B",
+          "option_text": "Sevr’in kabulünü",
+          "is_correct": false,
+          "id": 74462
+        },
+        {
+          "label": "C",
+          "option_text": "Lozan’ın imzalanmasını",
+          "is_correct": false,
+          "id": 74463
+        },
+        {
+          "label": "D",
+          "option_text": "Hatay’ın katılmasını",
+          "is_correct": false,
+          "id": 74464
+        },
+        {
+          "label": "E",
+          "option_text": "Çok partili hayatı",
+          "is_correct": false,
+          "id": 74465
+        }
+      ],
+      "id": 15588
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "TBMM hangi tarihte açılmıştır?",
+      "correct_answer_text": "B",
+      "explanation_text": "TBMM 23 Nisan 1920’de açılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "19 Mayıs 1919",
+          "is_correct": false,
+          "id": 74466
+        },
+        {
+          "label": "B",
+          "option_text": "23 Nisan 1920",
+          "is_correct": true,
+          "id": 74467
+        },
+        {
+          "label": "C",
+          "option_text": "10 Ağustos 1920",
+          "is_correct": false,
+          "id": 74468
+        },
+        {
+          "label": "D",
+          "option_text": "1 Kasım 1922",
+          "is_correct": false,
+          "id": 74469
+        },
+        {
+          "label": "E",
+          "option_text": "29 Ekim 1923",
+          "is_correct": false,
+          "id": 74470
+        }
+      ],
+      "id": 15589
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "İlk TBMM’nin temel niteliği hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "İlk TBMM savaş koşullarında milli egemenliği temsil eden olağanüstü yetkili meclisti.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sadece danışma meclisi olması",
+          "is_correct": false,
+          "id": 74471
+        },
+        {
+          "label": "B",
+          "option_text": "Saltanatı güçlendirmesi",
+          "is_correct": false,
+          "id": 74472
+        },
+        {
+          "label": "C",
+          "option_text": "Milli egemenliği temsil eden olağanüstü yetkili meclis olması",
+          "is_correct": true,
+          "id": 74473
+        },
+        {
+          "label": "D",
+          "option_text": "Sevr’i uygulaması",
+          "is_correct": false,
+          "id": 74474
+        },
+        {
+          "label": "E",
+          "option_text": "İstanbul Hükümeti’ne bağlı olması",
+          "is_correct": false,
+          "id": 74475
+        }
+      ],
+      "id": 15590
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sevr Antlaşması’nın Türk milleti açısından niteliği nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Sevr, Osmanlı’yı paylaşmayı hedefleyen ve Türk milleti tarafından kabul edilmeyen ağır bir antlaşmadır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Bağımsızlığı güçlendiren antlaşma",
+          "is_correct": false,
+          "id": 74476
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan’ın aynısı",
+          "is_correct": false,
+          "id": 74477
+        },
+        {
+          "label": "C",
+          "option_text": "TBMM’nin ilk antlaşması",
+          "is_correct": false,
+          "id": 74478
+        },
+        {
+          "label": "D",
+          "option_text": "Osmanlı Devleti’ni fiilen parçalayan ağır antlaşma",
+          "is_correct": true,
+          "id": 74479
+        },
+        {
+          "label": "E",
+          "option_text": "Milli egemenliği tanıyan belge",
+          "is_correct": false,
+          "id": 74480
+        }
+      ],
+      "id": 15591
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Sevr’in yürürlüğe girmemesinde temel etken nedir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Sevr fiilen uygulanamamış, Milli Mücadele’nin zaferiyle Lozan’a gidilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İtilafların vazgeçmesi",
+          "is_correct": false,
+          "id": 74481
+        },
+        {
+          "label": "B",
+          "option_text": "Padişahın reddi",
+          "is_correct": false,
+          "id": 74482
+        },
+        {
+          "label": "C",
+          "option_text": "Düyun-u Umumiye",
+          "is_correct": false,
+          "id": 74483
+        },
+        {
+          "label": "D",
+          "option_text": "II. Meşrutiyet",
+          "is_correct": false,
+          "id": 74484
+        },
+        {
+          "label": "E",
+          "option_text": "Milli Mücadele’nin başarıya ulaşması",
+          "is_correct": true,
+          "id": 74485
+        }
+      ],
+      "id": 15592
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "TBMM’nin açılması hangi ilkenin kurumsallaşmasıdır?",
+      "correct_answer_text": "A",
+      "explanation_text": "TBMM’nin açılması egemenliğin millete ait olduğu anlayışının kurumlaşmasıdır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Milli egemenlik",
+          "is_correct": true,
+          "id": 74486
+        },
+        {
+          "label": "B",
+          "option_text": "Manda",
+          "is_correct": false,
+          "id": 74487
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanat",
+          "is_correct": false,
+          "id": 74488
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74489
+        },
+        {
+          "label": "E",
+          "option_text": "Düyun-u Umumiye",
+          "is_correct": false,
+          "id": 74490
+        }
+      ],
+      "id": 15593
+    },
+    {
+      "topic_id": 167,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Misakımilli kararları hangi süreci etkilemiştir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Misakımilli, Milli Mücadele’nin siyasi hedeflerini ve Lozan’daki talepleri belirlemiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Osmanlı çöküşünü durdurmadan işgalleri onaylamıştır",
+          "is_correct": false,
+          "id": 74491
+        },
+        {
+          "label": "B",
+          "option_text": "Milli Mücadele ve Lozan’daki bağımsızlık hedeflerini",
+          "is_correct": true,
+          "id": 74492
+        },
+        {
+          "label": "C",
+          "option_text": "Trablusgarp Savaşı’nı",
+          "is_correct": false,
+          "id": 74493
+        },
+        {
+          "label": "D",
+          "option_text": "31 Mart Olayı’nı",
+          "is_correct": false,
+          "id": 74494
+        },
+        {
+          "label": "E",
+          "option_text": "II. Meşrutiyet’i",
+          "is_correct": false,
+          "id": 74495
+        }
+      ],
+      "id": 15594
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kurtuluş Savaşı cepheleri genel olarak nasıl ayrılır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Kurtuluş Savaşı Doğu, Güney ve Batı cepheleriyle ele alınır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Doğu, Güney ve Batı cepheleri",
+          "is_correct": true,
+          "id": 74496
+        },
+        {
+          "label": "B",
+          "option_text": "Kuzey, deniz ve hava cepheleri",
+          "is_correct": false,
+          "id": 74497
+        },
+        {
+          "label": "C",
+          "option_text": "Sadece Batı Cephesi",
+          "is_correct": false,
+          "id": 74498
+        },
+        {
+          "label": "D",
+          "option_text": "Yalnız Trablusgarp",
+          "is_correct": false,
+          "id": 74499
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece Balkan cephesi",
+          "is_correct": false,
+          "id": 74500
+        }
+      ],
+      "id": 15595
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Doğu Cephesi’nde TBMM adına mücadele eden komutan kimdir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Doğu Cephesi’nde Kazım Karabekir Paşa Ermeni kuvvetlerine karşı başarı kazanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İsmet Paşa",
+          "is_correct": false,
+          "id": 74501
+        },
+        {
+          "label": "B",
+          "option_text": "Kazım Karabekir Paşa",
+          "is_correct": true,
+          "id": 74502
+        },
+        {
+          "label": "C",
+          "option_text": "Fevzi Çakmak",
+          "is_correct": false,
+          "id": 74503
+        },
+        {
+          "label": "D",
+          "option_text": "Ali Fuat Paşa",
+          "is_correct": false,
+          "id": 74504
+        },
+        {
+          "label": "E",
+          "option_text": "Refet Bele",
+          "is_correct": false,
+          "id": 74505
+        }
+      ],
+      "id": 15596
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "TBMM’nin imzaladığı ilk antlaşma hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Gümrü Antlaşması TBMM’nin imzaladığı ilk antlaşmadır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Lozan",
+          "is_correct": false,
+          "id": 74506
+        },
+        {
+          "label": "B",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74507
+        },
+        {
+          "label": "C",
+          "option_text": "Gümrü",
+          "is_correct": true,
+          "id": 74508
+        },
+        {
+          "label": "D",
+          "option_text": "Ankara",
+          "is_correct": false,
+          "id": 74509
+        },
+        {
+          "label": "E",
+          "option_text": "Kars",
+          "is_correct": false,
+          "id": 74510
+        }
+      ],
+      "id": 15597
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Güney Cephesi’nde mücadele ağırlıklı olarak kime karşı yürütülmüştür?",
+      "correct_answer_text": "D",
+      "explanation_text": "Güney Cephesi’nde Fransızlara ve Ermeni birliklerine karşı yerel direniş etkili olmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yunan ordusu",
+          "is_correct": false,
+          "id": 74511
+        },
+        {
+          "label": "B",
+          "option_text": "İtalya",
+          "is_correct": false,
+          "id": 74512
+        },
+        {
+          "label": "C",
+          "option_text": "Rusya",
+          "is_correct": false,
+          "id": 74513
+        },
+        {
+          "label": "D",
+          "option_text": "Fransızlar ve Ermeni birlikleri",
+          "is_correct": true,
+          "id": 74514
+        },
+        {
+          "label": "E",
+          "option_text": "İngiliz donanması",
+          "is_correct": false,
+          "id": 74515
+        }
+      ],
+      "id": 15598
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Ankara Antlaşması hangi cephedeki mücadeleyi büyük ölçüde sona erdirmiştir?",
+      "correct_answer_text": "E",
+      "explanation_text": "1921 Ankara Antlaşması Fransa ile yapılarak Güney Cephesi’nde önemli sonuç doğurmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Doğu",
+          "is_correct": false,
+          "id": 74516
+        },
+        {
+          "label": "B",
+          "option_text": "Batı",
+          "is_correct": false,
+          "id": 74517
+        },
+        {
+          "label": "C",
+          "option_text": "Trakya",
+          "is_correct": false,
+          "id": 74518
+        },
+        {
+          "label": "D",
+          "option_text": "Kafkas",
+          "is_correct": false,
+          "id": 74519
+        },
+        {
+          "label": "E",
+          "option_text": "Güney",
+          "is_correct": true,
+          "id": 74520
+        }
+      ],
+      "id": 15599
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "I. İnönü Savaşı’nın siyasi sonucu hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "I. İnönü zaferi TBMM’nin diplomatik muhatap olarak görülmesini sağlamıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Londra Konferansı’na TBMM’nin çağrılması",
+          "is_correct": true,
+          "id": 74521
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74522
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanatın kaldırılması",
+          "is_correct": false,
+          "id": 74523
+        },
+        {
+          "label": "D",
+          "option_text": "Hatay’ın katılması",
+          "is_correct": false,
+          "id": 74524
+        },
+        {
+          "label": "E",
+          "option_text": "Montrö’nün yapılması",
+          "is_correct": false,
+          "id": 74525
+        }
+      ],
+      "id": 15600
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Sakarya Savaşı’nın sonucu aşağıdakilerden hangisidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Sakarya Savaşı savunmadan taarruza geçişin dönüm noktalarındandır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "TBMM’nin dağılması",
+          "is_correct": false,
+          "id": 74526
+        },
+        {
+          "label": "B",
+          "option_text": "Yunan ilerleyişinin durması ve taarruz üstünlüğünün Türk tarafına geçiş sürecinin başlaması",
+          "is_correct": true,
+          "id": 74527
+        },
+        {
+          "label": "C",
+          "option_text": "Sevr’in uygulanması",
+          "is_correct": false,
+          "id": 74528
+        },
+        {
+          "label": "D",
+          "option_text": "İzmir’in işgali",
+          "is_correct": false,
+          "id": 74529
+        },
+        {
+          "label": "E",
+          "option_text": "Trablusgarp’ın kaybı",
+          "is_correct": false,
+          "id": 74530
+        }
+      ],
+      "id": 15601
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Başkomutanlık Meydan Muharebesi hangi harekatın parçasıdır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Başkomutanlık Meydan Muharebesi Büyük Taarruz sürecindedir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "I. İnönü",
+          "is_correct": false,
+          "id": 74531
+        },
+        {
+          "label": "B",
+          "option_text": "Sakarya",
+          "is_correct": false,
+          "id": 74532
+        },
+        {
+          "label": "C",
+          "option_text": "Büyük Taarruz",
+          "is_correct": true,
+          "id": 74533
+        },
+        {
+          "label": "D",
+          "option_text": "Gümrü",
+          "is_correct": false,
+          "id": 74534
+        },
+        {
+          "label": "E",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74535
+        }
+      ],
+      "id": 15602
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Mudanya Ateşkesi’nin en önemli sonucu nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Mudanya Ateşkesi silahlı mücadeleden diplomatik barış sürecine geçiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "I. Dünya Savaşı’nı başlatması",
+          "is_correct": false,
+          "id": 74536
+        },
+        {
+          "label": "B",
+          "option_text": "Sevr’i kabul etmesi",
+          "is_correct": false,
+          "id": 74537
+        },
+        {
+          "label": "C",
+          "option_text": "İzmir’in işgalini başlatması",
+          "is_correct": false,
+          "id": 74538
+        },
+        {
+          "label": "D",
+          "option_text": "Kurtuluş Savaşı’nın askeri safhasını sona erdirip barış görüşmelerine yol açması",
+          "is_correct": true,
+          "id": 74539
+        },
+        {
+          "label": "E",
+          "option_text": "Cumhuriyeti ilan etmesi",
+          "is_correct": false,
+          "id": 74540
+        }
+      ],
+      "id": 15603
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Büyük Taarruz’un nihai sonucu hangisidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Büyük Taarruz ve takip harekatı Yunan ordusunun Anadolu’dan çıkarılmasıyla sonuçlanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Doğu Cephesi’nin açılması",
+          "is_correct": false,
+          "id": 74541
+        },
+        {
+          "label": "B",
+          "option_text": "Mondros’un imzalanması",
+          "is_correct": false,
+          "id": 74542
+        },
+        {
+          "label": "C",
+          "option_text": "I. Meşrutiyet",
+          "is_correct": false,
+          "id": 74543
+        },
+        {
+          "label": "D",
+          "option_text": "31 Mart Olayı",
+          "is_correct": false,
+          "id": 74544
+        },
+        {
+          "label": "E",
+          "option_text": "Yunan ordusunun Anadolu’dan çıkarılması",
+          "is_correct": true,
+          "id": 74545
+        }
+      ],
+      "id": 15604
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Batı Cephesi’nin temel rakibi hangi devlettir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Batı Cephesi’nde temel mücadele Yunan ordusuna karşı verilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yunanistan",
+          "is_correct": true,
+          "id": 74546
+        },
+        {
+          "label": "B",
+          "option_text": "Ermenistan",
+          "is_correct": false,
+          "id": 74547
+        },
+        {
+          "label": "C",
+          "option_text": "İtalya",
+          "is_correct": false,
+          "id": 74548
+        },
+        {
+          "label": "D",
+          "option_text": "Bulgaristan",
+          "is_correct": false,
+          "id": 74549
+        },
+        {
+          "label": "E",
+          "option_text": "Rusya",
+          "is_correct": false,
+          "id": 74550
+        }
+      ],
+      "id": 15605
+    },
+    {
+      "topic_id": 168,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Kurtuluş Savaşı askeri başarıları hangi diplomatik sürecin yolunu açmıştır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Askeri zaferler Mudanya ve ardından Lozan sürecini mümkün kılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tanzimat",
+          "is_correct": false,
+          "id": 74551
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan Barış Konferansı",
+          "is_correct": true,
+          "id": 74552
+        },
+        {
+          "label": "C",
+          "option_text": "31 Mart",
+          "is_correct": false,
+          "id": 74553
+        },
+        {
+          "label": "D",
+          "option_text": "Trablusgarp",
+          "is_correct": false,
+          "id": 74554
+        },
+        {
+          "label": "E",
+          "option_text": "II. Meşrutiyet",
+          "is_correct": false,
+          "id": 74555
+        }
+      ],
+      "id": 15606
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Lozan Barış Antlaşması hangi tarihte imzalanmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Lozan Barış Antlaşması 24 Temmuz 1923’te imzalanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "24 Temmuz 1923",
+          "is_correct": true,
+          "id": 74556
+        },
+        {
+          "label": "B",
+          "option_text": "23 Nisan 1920",
+          "is_correct": false,
+          "id": 74557
+        },
+        {
+          "label": "C",
+          "option_text": "29 Ekim 1923",
+          "is_correct": false,
+          "id": 74558
+        },
+        {
+          "label": "D",
+          "option_text": "30 Ekim 1918",
+          "is_correct": false,
+          "id": 74559
+        },
+        {
+          "label": "E",
+          "option_text": "10 Ağustos 1920",
+          "is_correct": false,
+          "id": 74560
+        }
+      ],
+      "id": 15607
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Lozan’a giderken saltanatın kaldırılmasının temel amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Saltanatın kaldırılması Ankara ve İstanbul hükümetleri arasındaki temsil sorununu çözmüştür.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "TBMM’yi kapatmak",
+          "is_correct": false,
+          "id": 74561
+        },
+        {
+          "label": "B",
+          "option_text": "Temsil ikiliğini sona erdirmek",
+          "is_correct": true,
+          "id": 74562
+        },
+        {
+          "label": "C",
+          "option_text": "Sevr’i uygulamak",
+          "is_correct": false,
+          "id": 74563
+        },
+        {
+          "label": "D",
+          "option_text": "Manda kabul etmek",
+          "is_correct": false,
+          "id": 74564
+        },
+        {
+          "label": "E",
+          "option_text": "İzmir’i bırakmak",
+          "is_correct": false,
+          "id": 74565
+        }
+      ],
+      "id": 15608
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Lozan’ın temel önemi nedir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Lozan, yeni Türk devletinin bağımsızlığını ve uluslararası tanınmasını sağlayan barış antlaşmasıdır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Osmanlı’nın teslim belgesi olması",
+          "is_correct": false,
+          "id": 74566
+        },
+        {
+          "label": "B",
+          "option_text": "İşgalleri başlatması",
+          "is_correct": false,
+          "id": 74567
+        },
+        {
+          "label": "C",
+          "option_text": "Yeni Türk devletinin uluslararası tanınmasını sağlaması",
+          "is_correct": true,
+          "id": 74568
+        },
+        {
+          "label": "D",
+          "option_text": "Manda yönetimini kabul etmesi",
+          "is_correct": false,
+          "id": 74569
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonları genişletmesi",
+          "is_correct": false,
+          "id": 74570
+        }
+      ],
+      "id": 15609
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Lozan’da kapitülasyonlar için hangi karar alınmıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Lozan’da kapitülasyonlar kaldırılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Genişletilmiştir",
+          "is_correct": false,
+          "id": 74571
+        },
+        {
+          "label": "B",
+          "option_text": "Yalnız ekonomik alanda sürmüştür",
+          "is_correct": false,
+          "id": 74572
+        },
+        {
+          "label": "C",
+          "option_text": "50 yıl uzatılmıştır",
+          "is_correct": false,
+          "id": 74573
+        },
+        {
+          "label": "D",
+          "option_text": "Tamamen kaldırılmıştır",
+          "is_correct": true,
+          "id": 74574
+        },
+        {
+          "label": "E",
+          "option_text": "Yabancı mahkemelere devredilmiştir",
+          "is_correct": false,
+          "id": 74575
+        }
+      ],
+      "id": 15610
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Lozan’da Boğazlar konusu nasıl düzenlenmiştir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Lozan’da Boğazlar için Türkiye’nin egemenliğini sınırlayan bir düzenleme yapılmış, bu konu Montrö’de değişmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Tamamen Yunanistan’a bırakılmıştır",
+          "is_correct": false,
+          "id": 74576
+        },
+        {
+          "label": "B",
+          "option_text": "Hiç görüşülmemiştir",
+          "is_correct": false,
+          "id": 74577
+        },
+        {
+          "label": "C",
+          "option_text": "Sevr aynen kabul edilmiştir",
+          "is_correct": false,
+          "id": 74578
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonlara bağlanmıştır",
+          "is_correct": false,
+          "id": 74579
+        },
+        {
+          "label": "E",
+          "option_text": "Boğazlar Komisyonu ve askerden arındırma gibi sınırlamalarla düzenlenmiştir",
+          "is_correct": true,
+          "id": 74580
+        }
+      ],
+      "id": 15611
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Lozan’da çözülemeyip sonraya bırakılan önemli sorun hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Musul sorunu Lozan’da çözülememiş, sonraki süreçte ele alınmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Musul sorunu",
+          "is_correct": true,
+          "id": 74581
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyonlar",
+          "is_correct": false,
+          "id": 74582
+        },
+        {
+          "label": "C",
+          "option_text": "Düyun-u Umumiye’nin tamamı",
+          "is_correct": false,
+          "id": 74583
+        },
+        {
+          "label": "D",
+          "option_text": "Azınlıkların tamamı",
+          "is_correct": false,
+          "id": 74584
+        },
+        {
+          "label": "E",
+          "option_text": "Savaş tutsakları",
+          "is_correct": false,
+          "id": 74585
+        }
+      ],
+      "id": 15612
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Lozan’da azınlık anlayışı hangi ölçüte dayandırılmıştır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Lozan’da azınlık statüsü büyük ölçüde gayrimüslimlik/din esasına göre düzenlenmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Etnik köken",
+          "is_correct": false,
+          "id": 74586
+        },
+        {
+          "label": "B",
+          "option_text": "Din esasına",
+          "is_correct": true,
+          "id": 74587
+        },
+        {
+          "label": "C",
+          "option_text": "Dil farklılığına",
+          "is_correct": false,
+          "id": 74588
+        },
+        {
+          "label": "D",
+          "option_text": "Meslek grubuna",
+          "is_correct": false,
+          "id": 74589
+        },
+        {
+          "label": "E",
+          "option_text": "Sınıf farkına",
+          "is_correct": false,
+          "id": 74590
+        }
+      ],
+      "id": 15613
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Nüfus mübadelesi genel olarak hangi devletle yapılmıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Lozan sürecinde Türkiye ile Yunanistan arasında nüfus mübadelesi konusu düzenlenmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İtalya",
+          "is_correct": false,
+          "id": 74591
+        },
+        {
+          "label": "B",
+          "option_text": "Fransa",
+          "is_correct": false,
+          "id": 74592
+        },
+        {
+          "label": "C",
+          "option_text": "Yunanistan",
+          "is_correct": true,
+          "id": 74593
+        },
+        {
+          "label": "D",
+          "option_text": "Bulgaristan",
+          "is_correct": false,
+          "id": 74594
+        },
+        {
+          "label": "E",
+          "option_text": "Rusya",
+          "is_correct": false,
+          "id": 74595
+        }
+      ],
+      "id": 15614
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Lozan hangi antlaşmanın yerine geçmiştir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Lozan, uygulanamayan Sevr’in yerine bağımsızlık temelli barış antlaşması olarak kabul edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Mondros",
+          "is_correct": false,
+          "id": 74596
+        },
+        {
+          "label": "B",
+          "option_text": "Uşi",
+          "is_correct": false,
+          "id": 74597
+        },
+        {
+          "label": "C",
+          "option_text": "Bükreş",
+          "is_correct": false,
+          "id": 74598
+        },
+        {
+          "label": "D",
+          "option_text": "Sevr",
+          "is_correct": true,
+          "id": 74599
+        },
+        {
+          "label": "E",
+          "option_text": "Berlin",
+          "is_correct": false,
+          "id": 74600
+        }
+      ],
+      "id": 15615
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Lozan’ın tam bağımsızlıkla ilişkisi hangi hükümde en açık görülür?",
+      "correct_answer_text": "E",
+      "explanation_text": "Kapitülasyonların kaldırılması ekonomik ve hukuki bağımsızlık bakımından kritik önemdedir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Boğazların tamamen yabancıya bırakılması",
+          "is_correct": false,
+          "id": 74601
+        },
+        {
+          "label": "B",
+          "option_text": "Manda kabulü",
+          "is_correct": false,
+          "id": 74602
+        },
+        {
+          "label": "C",
+          "option_text": "Azınlıklara siyasi özerklik",
+          "is_correct": false,
+          "id": 74603
+        },
+        {
+          "label": "D",
+          "option_text": "Sevr sınırları",
+          "is_correct": false,
+          "id": 74604
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonların kaldırılması",
+          "is_correct": true,
+          "id": 74605
+        }
+      ],
+      "id": 15616
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Lozan görüşmelerinde Türk heyetinin başında kim bulunmuştur?",
+      "correct_answer_text": "A",
+      "explanation_text": "Lozan’da Türk heyetinin başında İsmet İnönü bulunmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İsmet İnönü",
+          "is_correct": true,
+          "id": 74606
+        },
+        {
+          "label": "B",
+          "option_text": "Kazım Karabekir",
+          "is_correct": false,
+          "id": 74607
+        },
+        {
+          "label": "C",
+          "option_text": "Rauf Orbay",
+          "is_correct": false,
+          "id": 74608
+        },
+        {
+          "label": "D",
+          "option_text": "Fevzi Çakmak",
+          "is_correct": false,
+          "id": 74609
+        },
+        {
+          "label": "E",
+          "option_text": "Ali Fuat Cebesoy",
+          "is_correct": false,
+          "id": 74610
+        }
+      ],
+      "id": 15617
+    },
+    {
+      "topic_id": 169,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Lozan’ın Cumhuriyetin ilanına etkisi nasıl açıklanır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Lozan sonrası bağımsızlığın tanınması Cumhuriyetin ilanına giden siyasi zemini güçlendirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Cumhuriyeti engellemiştir",
+          "is_correct": false,
+          "id": 74611
+        },
+        {
+          "label": "B",
+          "option_text": "Bağımsız devletin tanınmasıyla yeni rejimin kurulması için uygun zemin sağlamıştır",
+          "is_correct": true,
+          "id": 74612
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanatı güçlendirmiştir",
+          "is_correct": false,
+          "id": 74613
+        },
+        {
+          "label": "D",
+          "option_text": "Sevr’i yürürlüğe koymuştur",
+          "is_correct": false,
+          "id": 74614
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’yi kapatmıştır",
+          "is_correct": false,
+          "id": 74615
+        }
+      ],
+      "id": 15618
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Saltanat hangi tarihte kaldırılmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Saltanat 1 Kasım 1922’de kaldırılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1 Kasım 1922",
+          "is_correct": true,
+          "id": 74616
+        },
+        {
+          "label": "B",
+          "option_text": "29 Ekim 1923",
+          "is_correct": false,
+          "id": 74617
+        },
+        {
+          "label": "C",
+          "option_text": "3 Mart 1924",
+          "is_correct": false,
+          "id": 74618
+        },
+        {
+          "label": "D",
+          "option_text": "1 Kasım 1928",
+          "is_correct": false,
+          "id": 74619
+        },
+        {
+          "label": "E",
+          "option_text": "5 Aralık 1934",
+          "is_correct": false,
+          "id": 74620
+        }
+      ],
+      "id": 15619
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Cumhuriyet hangi tarihte ilan edilmiştir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Cumhuriyet 29 Ekim 1923’te ilan edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "23 Nisan 1920",
+          "is_correct": false,
+          "id": 74621
+        },
+        {
+          "label": "B",
+          "option_text": "29 Ekim 1923",
+          "is_correct": true,
+          "id": 74622
+        },
+        {
+          "label": "C",
+          "option_text": "3 Mart 1924",
+          "is_correct": false,
+          "id": 74623
+        },
+        {
+          "label": "D",
+          "option_text": "24 Temmuz 1923",
+          "is_correct": false,
+          "id": 74624
+        },
+        {
+          "label": "E",
+          "option_text": "10 Kasım 1938",
+          "is_correct": false,
+          "id": 74625
+        }
+      ],
+      "id": 15620
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "3 Mart 1924 düzenlemelerinden biri hangisidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "3 Mart 1924’te halifelik kaldırılmış, Tevhid-i Tedrisat Kanunu çıkarılmış ve önemli kurumsal düzenlemeler yapılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Lozan’ın imzalanması",
+          "is_correct": false,
+          "id": 74626
+        },
+        {
+          "label": "B",
+          "option_text": "Cumhuriyetin ilanı",
+          "is_correct": false,
+          "id": 74627
+        },
+        {
+          "label": "C",
+          "option_text": "Halifeliğin kaldırılması",
+          "is_correct": true,
+          "id": 74628
+        },
+        {
+          "label": "D",
+          "option_text": "Saltanatın kaldırılması",
+          "is_correct": false,
+          "id": 74629
+        },
+        {
+          "label": "E",
+          "option_text": "Montrö’nün imzalanması",
+          "is_correct": false,
+          "id": 74630
+        }
+      ],
+      "id": 15621
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Tevhid-i Tedrisat Kanunu’nun amacı nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Tevhid-i Tedrisat eğitimde birlik ve laik-modern eğitim anlayışı bakımından önemlidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Saltanatı güçlendirmek",
+          "is_correct": false,
+          "id": 74631
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyonları artırmak",
+          "is_correct": false,
+          "id": 74632
+        },
+        {
+          "label": "C",
+          "option_text": "Manda yönetimini kurmak",
+          "is_correct": false,
+          "id": 74633
+        },
+        {
+          "label": "D",
+          "option_text": "Eğitimi birleştirip devlet denetimine almak",
+          "is_correct": true,
+          "id": 74634
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan’ı iptal etmek",
+          "is_correct": false,
+          "id": 74635
+        }
+      ],
+      "id": 15622
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Medeni Kanun’un kabulü hangi alanla ilgilidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Medeni Kanun hukuk alanındaki laikleşme ve toplumsal eşitlik açısından önemlidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dış politika",
+          "is_correct": false,
+          "id": 74636
+        },
+        {
+          "label": "B",
+          "option_text": "Askeri cephe",
+          "is_correct": false,
+          "id": 74637
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74638
+        },
+        {
+          "label": "D",
+          "option_text": "Boğazlar",
+          "is_correct": false,
+          "id": 74639
+        },
+        {
+          "label": "E",
+          "option_text": "Hukuk ve aile-toplum düzeni",
+          "is_correct": true,
+          "id": 74640
+        }
+      ],
+      "id": 15623
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Harf İnkılabı hangi yıl yapılmıştır?",
+      "correct_answer_text": "A",
+      "explanation_text": "Latin esaslı Türk alfabesine geçiş 1928’de yapılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1928",
+          "is_correct": true,
+          "id": 74641
+        },
+        {
+          "label": "B",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 74642
+        },
+        {
+          "label": "C",
+          "option_text": "1924",
+          "is_correct": false,
+          "id": 74643
+        },
+        {
+          "label": "D",
+          "option_text": "1930",
+          "is_correct": false,
+          "id": 74644
+        },
+        {
+          "label": "E",
+          "option_text": "1934",
+          "is_correct": false,
+          "id": 74645
+        }
+      ],
+      "id": 15624
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Şapka Kanunu hangi inkılap alanıyla ilgilidir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Şapka Kanunu toplumsal görünüm ve çağdaşlaşma alanındaki inkılaplardandır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dış politika",
+          "is_correct": false,
+          "id": 74646
+        },
+        {
+          "label": "B",
+          "option_text": "Toplumsal ve kültürel alanda çağdaşlaşma",
+          "is_correct": true,
+          "id": 74647
+        },
+        {
+          "label": "C",
+          "option_text": "İdari yargı",
+          "is_correct": false,
+          "id": 74648
+        },
+        {
+          "label": "D",
+          "option_text": "Askeri cephe",
+          "is_correct": false,
+          "id": 74649
+        },
+        {
+          "label": "E",
+          "option_text": "Lozan hükümleri",
+          "is_correct": false,
+          "id": 74650
+        }
+      ],
+      "id": 15625
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Kadınlara milletvekili seçme ve seçilme hakkı hangi yıl verilmiştir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Kadınlara milletvekili seçme ve seçilme hakkı 1934’te tanınmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1926",
+          "is_correct": false,
+          "id": 74651
+        },
+        {
+          "label": "B",
+          "option_text": "1930",
+          "is_correct": false,
+          "id": 74652
+        },
+        {
+          "label": "C",
+          "option_text": "1934",
+          "is_correct": true,
+          "id": 74653
+        },
+        {
+          "label": "D",
+          "option_text": "1928",
+          "is_correct": false,
+          "id": 74654
+        },
+        {
+          "label": "E",
+          "option_text": "1937",
+          "is_correct": false,
+          "id": 74655
+        }
+      ],
+      "id": 15626
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Terakkiperver Cumhuriyet Fırkası’nın kapatılmasında hangi gelişme etkili olmuştur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Terakkiperver Cumhuriyet Fırkası Şeyh Sait İsyanı sonrası kapatılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Menemen Olayı",
+          "is_correct": false,
+          "id": 74656
+        },
+        {
+          "label": "B",
+          "option_text": "Lozan",
+          "is_correct": false,
+          "id": 74657
+        },
+        {
+          "label": "C",
+          "option_text": "Montrö",
+          "is_correct": false,
+          "id": 74658
+        },
+        {
+          "label": "D",
+          "option_text": "Şeyh Sait İsyanı",
+          "is_correct": true,
+          "id": 74659
+        },
+        {
+          "label": "E",
+          "option_text": "Hatay sorunu",
+          "is_correct": false,
+          "id": 74660
+        }
+      ],
+      "id": 15627
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Serbest Cumhuriyet Fırkası deneyiminin sona ermesinde hangi olay rejim karşıtı ortamın göstergesi kabul edilir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Menemen Olayı, çok partili hayata geçiş için ortamın henüz olgunlaşmadığını göstermiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Trablusgarp",
+          "is_correct": false,
+          "id": 74661
+        },
+        {
+          "label": "B",
+          "option_text": "I. İnönü",
+          "is_correct": false,
+          "id": 74662
+        },
+        {
+          "label": "C",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74663
+        },
+        {
+          "label": "D",
+          "option_text": "Gümrü",
+          "is_correct": false,
+          "id": 74664
+        },
+        {
+          "label": "E",
+          "option_text": "Menemen Olayı",
+          "is_correct": true,
+          "id": 74665
+        }
+      ],
+      "id": 15628
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Tekke, zaviye ve türbelerin kapatılması hangi ilkeyle yakından ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Bu düzenleme laikleşme ve toplumsal modernleşme adımlarındandır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Laiklik",
+          "is_correct": true,
+          "id": 74666
+        },
+        {
+          "label": "B",
+          "option_text": "Mandacılık",
+          "is_correct": false,
+          "id": 74667
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanatçılık",
+          "is_correct": false,
+          "id": 74668
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74669
+        },
+        {
+          "label": "E",
+          "option_text": "Sömürgecilik",
+          "is_correct": false,
+          "id": 74670
+        }
+      ],
+      "id": 15629
+    },
+    {
+      "topic_id": 170,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Soyadı Kanunu hangi yıl kabul edilmiştir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Soyadı Kanunu 1934’te kabul edilmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1928",
+          "is_correct": false,
+          "id": 74671
+        },
+        {
+          "label": "B",
+          "option_text": "1934",
+          "is_correct": true,
+          "id": 74672
+        },
+        {
+          "label": "C",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 74673
+        },
+        {
+          "label": "D",
+          "option_text": "1920",
+          "is_correct": false,
+          "id": 74674
+        },
+        {
+          "label": "E",
+          "option_text": "1938",
+          "is_correct": false,
+          "id": 74675
+        }
+      ],
+      "id": 15630
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Atatürk dönemi dış politikasının temel niteliği hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Atatürk dış politikası barışçı, gerçekçi ve bağımsızlıkçı bir çizgi izlemiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Barışçı, gerçekçi ve milli çıkarları esas alan yaklaşım",
+          "is_correct": true,
+          "id": 74676
+        },
+        {
+          "label": "B",
+          "option_text": "Sürekli savaş politikası",
+          "is_correct": false,
+          "id": 74677
+        },
+        {
+          "label": "C",
+          "option_text": "Manda kabulü",
+          "is_correct": false,
+          "id": 74678
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonları genişletme",
+          "is_correct": false,
+          "id": 74679
+        },
+        {
+          "label": "E",
+          "option_text": "Sömürgecilik",
+          "is_correct": false,
+          "id": 74680
+        }
+      ],
+      "id": 15631
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "“Yurtta sulh, cihanda sulh” sözü hangi dış politika anlayışını yansıtır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Bu ilke iç ve dış barışı önceleyen dış politika anlayışını ifade eder.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Yayılmacılık",
+          "is_correct": false,
+          "id": 74681
+        },
+        {
+          "label": "B",
+          "option_text": "Barışçılık",
+          "is_correct": true,
+          "id": 74682
+        },
+        {
+          "label": "C",
+          "option_text": "Manda",
+          "is_correct": false,
+          "id": 74683
+        },
+        {
+          "label": "D",
+          "option_text": "İlhakçılık",
+          "is_correct": false,
+          "id": 74684
+        },
+        {
+          "label": "E",
+          "option_text": "Teslimiyetçilik",
+          "is_correct": false,
+          "id": 74685
+        }
+      ],
+      "id": 15632
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Montrö Boğazlar Sözleşmesi hangi yıl imzalanmıştır?",
+      "correct_answer_text": "C",
+      "explanation_text": "Montrö Boğazlar Sözleşmesi 1936’da imzalanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 74686
+        },
+        {
+          "label": "B",
+          "option_text": "1932",
+          "is_correct": false,
+          "id": 74687
+        },
+        {
+          "label": "C",
+          "option_text": "1936",
+          "is_correct": true,
+          "id": 74688
+        },
+        {
+          "label": "D",
+          "option_text": "1938",
+          "is_correct": false,
+          "id": 74689
+        },
+        {
+          "label": "E",
+          "option_text": "1939",
+          "is_correct": false,
+          "id": 74690
+        }
+      ],
+      "id": 15633
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Montrö’nün Türkiye açısından temel sonucu nedir?",
+      "correct_answer_text": "D",
+      "explanation_text": "Montrö, Lozan’daki Boğazlar sınırlamalarını Türkiye lehine değiştirmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kapitülasyonları geri getirmesi",
+          "is_correct": false,
+          "id": 74691
+        },
+        {
+          "label": "B",
+          "option_text": "Boğazları tamamen yabancılara bırakması",
+          "is_correct": false,
+          "id": 74692
+        },
+        {
+          "label": "C",
+          "option_text": "Sevr’i uygulaması",
+          "is_correct": false,
+          "id": 74693
+        },
+        {
+          "label": "D",
+          "option_text": "Boğazlar üzerindeki egemenliği güçlendirmesi",
+          "is_correct": true,
+          "id": 74694
+        },
+        {
+          "label": "E",
+          "option_text": "Hatay’ı kaybettirmesi",
+          "is_correct": false,
+          "id": 74695
+        }
+      ],
+      "id": 15634
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Türkiye Milletler Cemiyeti’ne hangi yıl üye olmuştur?",
+      "correct_answer_text": "E",
+      "explanation_text": "Türkiye 1932’de Milletler Cemiyeti’ne üye olmuştur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 74696
+        },
+        {
+          "label": "B",
+          "option_text": "1928",
+          "is_correct": false,
+          "id": 74697
+        },
+        {
+          "label": "C",
+          "option_text": "1930",
+          "is_correct": false,
+          "id": 74698
+        },
+        {
+          "label": "D",
+          "option_text": "1936",
+          "is_correct": false,
+          "id": 74699
+        },
+        {
+          "label": "E",
+          "option_text": "1932",
+          "is_correct": true,
+          "id": 74700
+        }
+      ],
+      "id": 15635
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Sadabat Paktı hangi bölgesel barış arayışıyla ilişkilidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Sadabat Paktı Türkiye, İran, Irak ve Afganistan arasında bölgesel barış girişimidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Ortadoğu ülkeleriyle güvenlik ve dostluk işbirliği",
+          "is_correct": true,
+          "id": 74701
+        },
+        {
+          "label": "B",
+          "option_text": "Balkan devletlerinin savaşı",
+          "is_correct": false,
+          "id": 74702
+        },
+        {
+          "label": "C",
+          "option_text": "Boğazlar Komisyonu",
+          "is_correct": false,
+          "id": 74703
+        },
+        {
+          "label": "D",
+          "option_text": "Lozan Konferansı",
+          "is_correct": false,
+          "id": 74704
+        },
+        {
+          "label": "E",
+          "option_text": "Trablusgarp direnişi",
+          "is_correct": false,
+          "id": 74705
+        }
+      ],
+      "id": 15636
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Balkan Antantı’nın amacı nedir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Balkan Antantı bölgesel güvenlik ve barış arayışının ürünüdür.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kapitülasyonları sürdürmek",
+          "is_correct": false,
+          "id": 74706
+        },
+        {
+          "label": "B",
+          "option_text": "Balkanlarda barış ve güvenliği korumak",
+          "is_correct": true,
+          "id": 74707
+        },
+        {
+          "label": "C",
+          "option_text": "Sevr’i uygulamak",
+          "is_correct": false,
+          "id": 74708
+        },
+        {
+          "label": "D",
+          "option_text": "İtalya’ya Trablusgarp’ı bırakmak",
+          "is_correct": false,
+          "id": 74709
+        },
+        {
+          "label": "E",
+          "option_text": "TBMM’yi kapatmak",
+          "is_correct": false,
+          "id": 74710
+        }
+      ],
+      "id": 15637
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Hatay’ın Türkiye’ye katılması hangi yıl gerçekleşmiştir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Hatay 1939’da Türkiye’ye katılmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "1936",
+          "is_correct": false,
+          "id": 74711
+        },
+        {
+          "label": "B",
+          "option_text": "1938",
+          "is_correct": false,
+          "id": 74712
+        },
+        {
+          "label": "C",
+          "option_text": "1939",
+          "is_correct": true,
+          "id": 74713
+        },
+        {
+          "label": "D",
+          "option_text": "1923",
+          "is_correct": false,
+          "id": 74714
+        },
+        {
+          "label": "E",
+          "option_text": "1932",
+          "is_correct": false,
+          "id": 74715
+        }
+      ],
+      "id": 15638
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Musul sorunu hangi devletle yaşanmıştır?",
+      "correct_answer_text": "D",
+      "explanation_text": "Musul sorunu İngiltere ile yaşanmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Fransa",
+          "is_correct": false,
+          "id": 74716
+        },
+        {
+          "label": "B",
+          "option_text": "İtalya",
+          "is_correct": false,
+          "id": 74717
+        },
+        {
+          "label": "C",
+          "option_text": "Yunanistan",
+          "is_correct": false,
+          "id": 74718
+        },
+        {
+          "label": "D",
+          "option_text": "İngiltere",
+          "is_correct": true,
+          "id": 74719
+        },
+        {
+          "label": "E",
+          "option_text": "Sovyetler Birliği",
+          "is_correct": false,
+          "id": 74720
+        }
+      ],
+      "id": 15639
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Musul sorunu sonucunda Türkiye hangi antlaşmayla Irak sınırını kabul etmiştir?",
+      "correct_answer_text": "E",
+      "explanation_text": "1926 Ankara Antlaşması ile Musul Irak’a bırakılmış, sınır belirlenmiştir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Lozan",
+          "is_correct": false,
+          "id": 74721
+        },
+        {
+          "label": "B",
+          "option_text": "Montrö",
+          "is_correct": false,
+          "id": 74722
+        },
+        {
+          "label": "C",
+          "option_text": "Gümrü",
+          "is_correct": false,
+          "id": 74723
+        },
+        {
+          "label": "D",
+          "option_text": "Mudanya",
+          "is_correct": false,
+          "id": 74724
+        },
+        {
+          "label": "E",
+          "option_text": "Ankara Antlaşması 1926",
+          "is_correct": true,
+          "id": 74725
+        }
+      ],
+      "id": 15640
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Atatürk dönemi dış politikada revizyonist değil gerçekçi davranışa örnek hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Atatürk dönemi dış politika gerçekçi ve diplomasi ağırlıklı yürütülmüştür.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sorunları diplomasi ve uluslararası denge içinde çözmeye çalışma",
+          "is_correct": true,
+          "id": 74726
+        },
+        {
+          "label": "B",
+          "option_text": "Sürekli fetih politikası",
+          "is_correct": false,
+          "id": 74727
+        },
+        {
+          "label": "C",
+          "option_text": "Manda kabulü",
+          "is_correct": false,
+          "id": 74728
+        },
+        {
+          "label": "D",
+          "option_text": "Savaşla Avrupa’ya yayılma",
+          "is_correct": false,
+          "id": 74729
+        },
+        {
+          "label": "E",
+          "option_text": "Sevr’i uygulama",
+          "is_correct": false,
+          "id": 74730
+        }
+      ],
+      "id": 15641
+    },
+    {
+      "topic_id": 171,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "II. Dünya Savaşı’na giden süreçte Türkiye’nin temel amacı ne olmuştur?",
+      "correct_answer_text": "B",
+      "explanation_text": "Türkiye savaş öncesi dönemde güvenlik ve barış politikasını sürdürmeye çalışmıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Savaşı başlatmak",
+          "is_correct": false,
+          "id": 74731
+        },
+        {
+          "label": "B",
+          "option_text": "Bağımsızlığını ve güvenliğini korumak",
+          "is_correct": true,
+          "id": 74732
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyonları kabul etmek",
+          "is_correct": false,
+          "id": 74733
+        },
+        {
+          "label": "D",
+          "option_text": "Milletler Cemiyeti’nden çıkmak",
+          "is_correct": false,
+          "id": 74734
+        },
+        {
+          "label": "E",
+          "option_text": "Hatay’dan vazgeçmek",
+          "is_correct": false,
+          "id": 74735
+        }
+      ],
+      "id": 15642
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Cumhuriyetçilik ilkesi neyi ifade eder?",
+      "correct_answer_text": "A",
+      "explanation_text": "Cumhuriyetçilik milli egemenliğin devlet yönetiminde somutlaşmasıdır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Egemenliğin millete ait olduğu yönetim biçimini",
+          "is_correct": true,
+          "id": 74736
+        },
+        {
+          "label": "B",
+          "option_text": "Saltanatın güçlendirilmesini",
+          "is_correct": false,
+          "id": 74737
+        },
+        {
+          "label": "C",
+          "option_text": "Manda yönetimini",
+          "is_correct": false,
+          "id": 74738
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonları",
+          "is_correct": false,
+          "id": 74739
+        },
+        {
+          "label": "E",
+          "option_text": "Sömürgeciliği",
+          "is_correct": false,
+          "id": 74740
+        }
+      ],
+      "id": 15643
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Milliyetçilik ilkesi Atatürkçü düşüncede nasıl anlaşılır?",
+      "correct_answer_text": "B",
+      "explanation_text": "Atatürk milliyetçiliği birleştirici, bağımsızlıkçı ve vatandaşlık temelli bir anlayıştır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Irkçı üstünlük anlayışı",
+          "is_correct": false,
+          "id": 74741
+        },
+        {
+          "label": "B",
+          "option_text": "Ortak tarih, kültür ve vatandaşlık bilinciyle milli birlik",
+          "is_correct": true,
+          "id": 74742
+        },
+        {
+          "label": "C",
+          "option_text": "Yabancı manda",
+          "is_correct": false,
+          "id": 74743
+        },
+        {
+          "label": "D",
+          "option_text": "Hanedan egemenliği",
+          "is_correct": false,
+          "id": 74744
+        },
+        {
+          "label": "E",
+          "option_text": "Dinsel devlet",
+          "is_correct": false,
+          "id": 74745
+        }
+      ],
+      "id": 15644
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Halkçılık ilkesi hangi anlayışla ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Halkçılık, ayrıcalıkların reddi ve halk yararı düşüncesiyle ilişkilidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Sınıf ayrıcalıklarını güçlendirme",
+          "is_correct": false,
+          "id": 74746
+        },
+        {
+          "label": "B",
+          "option_text": "Hanedan üstünlüğü",
+          "is_correct": false,
+          "id": 74747
+        },
+        {
+          "label": "C",
+          "option_text": "Eşitlik, sosyal dayanışma ve halk egemenliği",
+          "is_correct": true,
+          "id": 74748
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74749
+        },
+        {
+          "label": "E",
+          "option_text": "Mandacılık",
+          "is_correct": false,
+          "id": 74750
+        }
+      ],
+      "id": 15645
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Devletçilik ilkesi neyi ifade eder?",
+      "correct_answer_text": "D",
+      "explanation_text": "Devletçilik, özellikle kalkınma ihtiyacı içinde devletin ekonomik hayatta aktif rol almasını ifade eder.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Devletin her alanı sınırsız denetlemesi",
+          "is_correct": false,
+          "id": 74751
+        },
+        {
+          "label": "B",
+          "option_text": "Ekonominin tamamen yabancıya bırakılması",
+          "is_correct": false,
+          "id": 74752
+        },
+        {
+          "label": "C",
+          "option_text": "Özel girişimin yasaklanması",
+          "is_correct": false,
+          "id": 74753
+        },
+        {
+          "label": "D",
+          "option_text": "Kamu yararı gereği devletin ekonomide düzenleyici ve öncü rol üstlenmesi",
+          "is_correct": true,
+          "id": 74754
+        },
+        {
+          "label": "E",
+          "option_text": "Sadece tarım vergisi",
+          "is_correct": false,
+          "id": 74755
+        }
+      ],
+      "id": 15646
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Laiklik ilkesi neyi gerektirir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Laiklik devlet ve hukuk düzeninin dini esaslara değil akıl ve bilime dayanmasını gerektirir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Dini kuralların devlet yönetimine esas olmasını",
+          "is_correct": false,
+          "id": 74756
+        },
+        {
+          "label": "B",
+          "option_text": "Halifeliğin güçlenmesini",
+          "is_correct": false,
+          "id": 74757
+        },
+        {
+          "label": "C",
+          "option_text": "Eğitimin parçalı kalmasını",
+          "is_correct": false,
+          "id": 74758
+        },
+        {
+          "label": "D",
+          "option_text": "Manda yönetimini",
+          "is_correct": false,
+          "id": 74759
+        },
+        {
+          "label": "E",
+          "option_text": "Din ve devlet işlerinin ayrılması, akıl-bilim esaslı hukuk ve eğitim",
+          "is_correct": true,
+          "id": 74760
+        }
+      ],
+      "id": 15647
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "İnkılapçılık ilkesi hangi anlayışı taşır?",
+      "correct_answer_text": "A",
+      "explanation_text": "İnkılapçılık, yapılan inkılapları korumak ve çağın gereklerine göre yenilenmektir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Çağın gereklerine göre sürekli yenileşme ve çağdaşlaşma",
+          "is_correct": true,
+          "id": 74761
+        },
+        {
+          "label": "B",
+          "option_text": "Eski kurumların aynen korunması",
+          "is_correct": false,
+          "id": 74762
+        },
+        {
+          "label": "C",
+          "option_text": "Yabancı denetim",
+          "is_correct": false,
+          "id": 74763
+        },
+        {
+          "label": "D",
+          "option_text": "Saltanatın geri gelmesi",
+          "is_correct": false,
+          "id": 74764
+        },
+        {
+          "label": "E",
+          "option_text": "Kapitülasyonların sürmesi",
+          "is_correct": false,
+          "id": 74765
+        }
+      ],
+      "id": 15648
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Atatürk ilkelerinin bir sistem oluşturması ne anlama gelir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Atatürk ilkeleri birbirini tamamlayan bütüncül bir düşünce sistemi oluşturur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "İlkelerin birbirinden kopuk olması",
+          "is_correct": false,
+          "id": 74766
+        },
+        {
+          "label": "B",
+          "option_text": "İlkelerin bağımsızlık, egemenlik, çağdaşlaşma ve milli birlik hedeflerini birlikte tamamlaması",
+          "is_correct": true,
+          "id": 74767
+        },
+        {
+          "label": "C",
+          "option_text": "Her ilkenin diğerini reddetmesi",
+          "is_correct": false,
+          "id": 74768
+        },
+        {
+          "label": "D",
+          "option_text": "Sadece dış politikayı kapsaması",
+          "is_correct": false,
+          "id": 74769
+        },
+        {
+          "label": "E",
+          "option_text": "Yalnız tarih ezberi olması",
+          "is_correct": false,
+          "id": 74770
+        }
+      ],
+      "id": 15649
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Bütünleyici ilkelerden “tam bağımsızlık” hangi temel düşünceyle ilişkilidir?",
+      "correct_answer_text": "C",
+      "explanation_text": "Tam bağımsızlık, siyasal, ekonomik ve hukuki bağımsızlığı birlikte savunur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Manda",
+          "is_correct": false,
+          "id": 74771
+        },
+        {
+          "label": "B",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74772
+        },
+        {
+          "label": "C",
+          "option_text": "Milli egemenlik ve milli dış politika",
+          "is_correct": true,
+          "id": 74773
+        },
+        {
+          "label": "D",
+          "option_text": "Sömürgecilik",
+          "is_correct": false,
+          "id": 74774
+        },
+        {
+          "label": "E",
+          "option_text": "Saltanat",
+          "is_correct": false,
+          "id": 74775
+        }
+      ],
+      "id": 15650
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Milli birlik ve beraberlik hangi ilkenin bütünleyici unsurudur?",
+      "correct_answer_text": "D",
+      "explanation_text": "Milli birlik, Atatürkçü düşüncenin toplumsal dayanışma boyutudur.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74776
+        },
+        {
+          "label": "B",
+          "option_text": "Manda",
+          "is_correct": false,
+          "id": 74777
+        },
+        {
+          "label": "C",
+          "option_text": "Saltanat",
+          "is_correct": false,
+          "id": 74778
+        },
+        {
+          "label": "D",
+          "option_text": "Atatürk milliyetçiliği ve halkçılık anlayışı",
+          "is_correct": true,
+          "id": 74779
+        },
+        {
+          "label": "E",
+          "option_text": "Düyun-u Umumiye",
+          "is_correct": false,
+          "id": 74780
+        }
+      ],
+      "id": 15651
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "easy",
+      "status": "active",
+      "question_text": "Akılcılık ve bilimsellik en çok hangi ilkeyle ilişkilidir?",
+      "correct_answer_text": "E",
+      "explanation_text": "Akıl-bilim rehberliği laik ve çağdaşlaşmacı düşüncenin temelidir.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Saltanatçılık",
+          "is_correct": false,
+          "id": 74781
+        },
+        {
+          "label": "B",
+          "option_text": "Mandacılık",
+          "is_correct": false,
+          "id": 74782
+        },
+        {
+          "label": "C",
+          "option_text": "Kapitülasyon",
+          "is_correct": false,
+          "id": 74783
+        },
+        {
+          "label": "D",
+          "option_text": "Sömürgecilik",
+          "is_correct": false,
+          "id": 74784
+        },
+        {
+          "label": "E",
+          "option_text": "Laiklik ve inkılapçılık",
+          "is_correct": true,
+          "id": 74785
+        }
+      ],
+      "id": 15652
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "hard",
+      "status": "active",
+      "question_text": "Cumhuriyetçilik ile halkçılık arasındaki ilişki için doğru ifade hangisidir?",
+      "correct_answer_text": "A",
+      "explanation_text": "Cumhuriyetçilik ve halkçılık milli egemenlik ve eşitlik anlayışında birbirini tamamlar.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Cumhuriyetçilik egemenliğin millete aitliğini, halkçılık bu egemenliğin ayrıcalıksız halk yararıyla kullanılmasını destekler",
+          "is_correct": true,
+          "id": 74786
+        },
+        {
+          "label": "B",
+          "option_text": "İki ilke birbirini reddeder",
+          "is_correct": false,
+          "id": 74787
+        },
+        {
+          "label": "C",
+          "option_text": "Halkçılık saltanatı savunur",
+          "is_correct": false,
+          "id": 74788
+        },
+        {
+          "label": "D",
+          "option_text": "Cumhuriyetçilik manda ister",
+          "is_correct": false,
+          "id": 74789
+        },
+        {
+          "label": "E",
+          "option_text": "İkisi yalnız ekonomik ilkelerdir",
+          "is_correct": false,
+          "id": 74790
+        }
+      ],
+      "id": 15653
+    },
+    {
+      "topic_id": 172,
+      "question_type": "multiple_choice",
+      "q_version": 5,
+      "difficulty": "medium",
+      "status": "active",
+      "question_text": "Atatürkçü düşünce sisteminin çağdaşlaşma hedefi hangi ifadeyle özetlenebilir?",
+      "correct_answer_text": "B",
+      "explanation_text": "Atatürkçü düşüncenin temel hedeflerinden biri çağdaş uygarlık düzeyine ulaşmaktır.",
+      "explanation_basis": "Atatürk İlkeleri ve İnkılap Tarihi konu anlatımı v1",
+      "explanation_relevant_provision": null,
+      "explanation_answer_link": null,
+      "options": [
+        {
+          "label": "A",
+          "option_text": "Eski kurumları değişmeden sürdürmek",
+          "is_correct": false,
+          "id": 74791
+        },
+        {
+          "label": "B",
+          "option_text": "Çağdaş uygarlık düzeyine ulaşmak",
+          "is_correct": true,
+          "id": 74792
+        },
+        {
+          "label": "C",
+          "option_text": "Yabancı himayeyi kabul etmek",
+          "is_correct": false,
+          "id": 74793
+        },
+        {
+          "label": "D",
+          "option_text": "Kapitülasyonlara dönmek",
+          "is_correct": false,
+          "id": 74794
+        },
+        {
+          "label": "E",
+          "option_text": "Siyasi katılımı kaldırmak",
+          "is_correct": false,
+          "id": 74795
+        }
+      ],
+      "id": 15654
+    }
+  ],
+  "import_result": {
+    "imported_at": "2026-06-08T19:54:47",
+    "created_count": 144,
+    "duplicate_count": 0,
+    "db_status": "active",
+    "db_approval_status": null,
+    "approval_flow": "v5_review_pending",
+    "db_q_version": 5
+  }
+}

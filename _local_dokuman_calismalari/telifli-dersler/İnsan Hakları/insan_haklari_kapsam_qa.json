@@ -1,0 +1,100 @@
+{
+  "course": "İnsan Hakları",
+  "target_exam_id": 1,
+  "topic_count": 9,
+  "coverage_matrix": [
+    {
+      "source_area": "Terminoloji; hak, özgürlük, ödev; doğal/pozitif hukuk",
+      "covered_in": [
+        "İnsan Hakları Terminolojisi, Kavramı ve Nitelikleri"
+      ]
+    },
+    {
+      "source_area": "Aydınlanma, sosyal sözleşme, Locke, Hobbes, Montesquieu, Rousseau, Paine, Voltaire",
+      "covered_in": [
+        "Düşünsel Temeller ve Tarihsel İnsan Hakları Belgeleri"
+      ]
+    },
+    {
+      "source_area": "İngiltere, Amerika ve Fransa tarihsel belgeleri",
+      "covered_in": [
+        "Düşünsel Temeller ve Tarihsel İnsan Hakları Belgeleri"
+      ]
+    },
+    {
+      "source_area": "Jellinek statüleri; 1., 2., 3. ve 4. kuşak haklar",
+      "covered_in": [
+        "İnsan Haklarının Sınıflandırılması ve Hak Kuşakları"
+      ]
+    },
+    {
+      "source_area": "Ulusal koruma, 1982 Anayasası, Türkiye anayasal gelişimi",
+      "covered_in": [
+        "İnsan Haklarının Ulusal Korunması ve Türkiye’de Gelişimi"
+      ]
+    },
+    {
+      "source_area": "BM sistemi, Evrensel Bildirge, hak kataloğu",
+      "covered_in": [
+        "Birleşmiş Milletler Sistemi ve Evrensel İnsan Hakları Bildirgesi"
+      ]
+    },
+    {
+      "source_area": "BM sözleşmeleri, komiteler, şart/sözleşme temelli mekanizmalar",
+      "covered_in": [
+        "BM İnsan Hakları Sözleşmeleri ve Denetim Mekanizmaları"
+      ]
+    },
+    {
+      "source_area": "Avrupa Konseyi, AİHS, AİHM yapısı, hak listesi, kararların infazı",
+      "covered_in": [
+        "Avrupa Konseyi, AİHS ve Avrupa İnsan Hakları Mahkemesi"
+      ]
+    },
+    {
+      "source_area": "Avrupa Sosyal Şartı, CPT, Azınlık Çerçeve Sözleşmesi, bölgesel sistemler",
+      "covered_in": [
+        "Avrupa Sosyal Şartı, CPT ve Diğer Bölgesel Koruma Mekanizmaları"
+      ]
+    },
+    {
+      "source_area": "İhlalde başvuru yolları; idari, yargısal, AYM, AİHM",
+      "covered_in": [
+        "İnsan Hakları İhlallerinde Başvuru Yolları ve Uygulama Mantığı"
+      ]
+    }
+  ],
+  "copyright_review": {
+    "long_source_like_paragraphs": "Paragraflar özgün anlatım olarak yeniden yazıldı; kaynak metindeki uzun açıklamalar birebir taşınmadı.",
+    "tables_and_diagrams": "Kaynaklardaki tablo/şema bilgileri sistem rendererına uygun özgün tablolarla temsil edildi.",
+    "human_review_notes": [
+      "AİHM bireysel başvuru süresi gibi değişmiş olabilecek güncel usul bilgileri kaynak notlarında görüldüğü şekliyle ders mantığına alınmış, uyarı callout ile işaretlenmiştir.",
+      "Uluslararası sözleşmelerde taraflık/tarih bilgileri sınav kaynağı temelli tutulmuştur; güncel mevzuat revizyonu yapılacaksa ayrıca resmi kaynak kontrolü önerilir."
+    ]
+  },
+  "validation_expectations": {
+    "topics_length": 9,
+    "status": "active",
+    "max_paragraph_chars": 620,
+    "required_block_types": [
+      "section_heading",
+      "section_title",
+      "paragraph",
+      "list",
+      "table",
+      "callout"
+    ]
+  },
+  "subject_id": 30,
+  "topic_ids": [
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149
+  ]
+}

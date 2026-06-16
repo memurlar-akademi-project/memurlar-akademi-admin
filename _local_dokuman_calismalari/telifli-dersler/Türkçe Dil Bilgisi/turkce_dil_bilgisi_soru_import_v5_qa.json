@@ -1,0 +1,34 @@
+{
+  "course": "Türkçe Dil Bilgisi",
+  "subject_id": 29,
+  "q_version": 5,
+  "total_questions": 96,
+  "per_topic_counts": {
+    "133": 12,
+    "134": 12,
+    "135": 12,
+    "136": 12,
+    "137": 12,
+    "138": 12,
+    "139": 12,
+    "140": 12
+  },
+  "difficulty_counts": {
+    "easy": 23,
+    "hard": 17,
+    "medium": 56
+  },
+  "all_status_active": true,
+  "all_db_approval_status_pending": true,
+  "all_have_question_ids": true,
+  "all_have_option_ids": true,
+  "option_shape_valid": true,
+  "duplicate_question_text_count": 0,
+  "notes": [
+    "Sorular v5 altında active olarak DB’ye kaydedildi.",
+    "approval_status NULL bırakıldı; sorular v5 onay ekranına düşmelidir.",
+    "Türkçe uygulama sorularında tek doğru cevap mantığı ayrıca kontrol edildi.",
+    "correct_answer_text alanı doğru cevap harfini tutar; doğru seçenek options[].is_correct ile işaretlidir.",
+    "Metinler özgün soru diliyle hazırlandı; kaynak içerik birebir kopyalanmadı."
+  ]
+}

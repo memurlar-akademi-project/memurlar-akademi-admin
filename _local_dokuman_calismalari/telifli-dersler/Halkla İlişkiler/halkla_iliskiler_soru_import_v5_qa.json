@@ -1,0 +1,27 @@
+{
+  "course": "Halkla İlişkiler",
+  "subject_id": 27,
+  "q_version": 5,
+  "total_questions": 60,
+  "per_topic_counts": {
+    "119": 10,
+    "120": 10,
+    "121": 10,
+    "122": 10,
+    "123": 10,
+    "124": 10
+  },
+  "all_status_active": true,
+  "all_db_approval_status_approved": false,
+  "all_have_question_ids": true,
+  "all_have_option_ids": true,
+  "option_shape_valid": true,
+  "duplicate_question_text_count": 0,
+  "notes": [
+    "Sorular v5 altında active olarak DB’ye kaydedildi.",
+    "approval_status NULL bırakıldı; sorular v5 onay ekranına düşmelidir.",
+    "correct_answer_text alanı doğru cevap harfini tutar; doğru seçenek options[].is_correct ile işaretlidir.",
+    "Metinler özgün soru diliyle hazırlandı; kaynak içerik birebir kopyalanmadı."
+  ],
+  "all_db_approval_status_pending": true
+}

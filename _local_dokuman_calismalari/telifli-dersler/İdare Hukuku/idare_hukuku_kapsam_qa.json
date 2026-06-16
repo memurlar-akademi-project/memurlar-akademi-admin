@@ -1,0 +1,108 @@
+{
+  "course": "İdare Hukuku",
+  "target_exam_id": 1,
+  "topic_count": 11,
+  "coverage_matrix": [
+    {
+      "source_area": "İdare kavramı, idare hukukunun kaynakları ve özellikleri",
+      "covered_in": [
+        "İdare Kavramı, İdare Hukukunun Kaynakları ve Özellikleri"
+      ]
+    },
+    {
+      "source_area": "Hukuk devleti, sosyal devlet, laiklik, kamu tüzel kişiliği, idarenin bütünlüğü, hiyerarşi ve vesayet",
+      "covered_in": [
+        "İdareye Hakim Temel İlkeler ve Kamu Tüzel Kişiliği"
+      ]
+    },
+    {
+      "source_area": "Merkezden yönetim, yetki genişliği, yetki devri, imza devri, kanunsuz emir",
+      "covered_in": [
+        "Merkezden Yönetim, Yetki Genişliği, Yetki Devri ve İmza Devri"
+      ]
+    },
+    {
+      "source_area": "Merkezi idare, başkent ve taşra teşkilatı, il ve ilçe idaresi",
+      "covered_in": [
+        "Türkiye’nin İdari Teşkilatı: Merkezi İdare ve Taşra"
+      ]
+    },
+    {
+      "source_area": "Yerinden yönetim, mahalli idareler, kamu kurumları, meslek kuruluşları, düzenleyici kurumlar",
+      "covered_in": [
+        "Yerinden Yönetim, Mahalli İdareler ve Hizmet Kuruluşları"
+      ]
+    },
+    {
+      "source_area": "İdari eylem, idari işlem, işlem türleri, unsurlar, sakatlık, sona erme",
+      "covered_in": [
+        "İdari Eylemler, İdari İşlemler ve İşlemin Unsurları"
+      ]
+    },
+    {
+      "source_area": "İdarenin sözleşmeleri, idari sözleşmeler, özel hukuk sözleşmeleri, ihale süreci",
+      "covered_in": [
+        "İdarenin Sözleşmeleri, Kamu İhaleleri ve Sözleşme Usulleri"
+      ]
+    },
+    {
+      "source_area": "Kamu hizmeti, kamu hizmeti ilkeleri, görülme usulleri, kolluk ve kamu düzeni",
+      "covered_in": [
+        "İdari Faaliyetler: Kamu Hizmeti ve Kolluk"
+      ]
+    },
+    {
+      "source_area": "Kamu malları, özel mallar, kamulaştırma ve diğer mal edinme usulleri",
+      "covered_in": [
+        "İdarenin Malları ve Mal Edinme Usulleri"
+      ]
+    },
+    {
+      "source_area": "İdarenin sorumluluğu, kamu görevlileri, memurluk, disiplin",
+      "covered_in": [
+        "İdarenin Sorumluluğu ve Kamu Görevlileri"
+      ]
+    },
+    {
+      "source_area": "İdari yargı, dava türleri, yürütmenin durdurulması, kanun yolları",
+      "covered_in": [
+        "İdari Yargı, Dava Türleri ve Kanun Yolları"
+      ]
+    }
+  ],
+  "copyright_review": {
+    "long_source_like_paragraphs": "Kaynaklardaki uzun açıklamalar özgün ve kısa ders paragraflarına dönüştürüldü.",
+    "tables_and_diagrams": "Kapsam tablolarla yeniden kuruldu; kaynak tablolardan birebir aktarım yapılmadı.",
+    "human_review_notes": [
+      "Kaynaklarda Cumhurbaşkanlığı hükümet sistemi öncesi teşkilat başlıkları bulunduğundan içerik güncel idare hukuku mantığıyla sadeleştirildi.",
+      "Mevzuat değişikliğine açık alanlarda sınav öncesi resmi mevzuat kontrolü önerilir."
+    ]
+  },
+  "validation_expectations": {
+    "topics_length": 11,
+    "status": "active",
+    "max_paragraph_chars": 620,
+    "required_block_types": [
+      "section_heading",
+      "section_title",
+      "paragraph",
+      "list",
+      "table",
+      "callout"
+    ]
+  },
+  "subject_id": 31,
+  "topic_ids": [
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160
+  ]
+}

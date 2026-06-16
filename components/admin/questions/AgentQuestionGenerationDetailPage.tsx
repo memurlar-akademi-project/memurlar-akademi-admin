@@ -2,15 +2,19 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Check, Loader2, Pencil, RefreshCcw, Save, Trash2, X } from "lucide-react";
+import { ArrowLeft, Check, FileDown, Loader2, Pencil, RefreshCcw, Save, Trash2, X } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminQuestion } from "@/lib/types";
-import type { AgentJobDetailResponse } from "@/components/admin/questions/AgentQuestionGenerationTypes";
+import type { AgentJobDetailResponse, AgentJobStatus } from "@/components/admin/questions/AgentQuestionGenerationTypes";
 import {
+  cancelableStatuses,
   formatDateTime,
+  formatMoney,
+  formatTokenCount,
+  modelNameFromProfile,
   runningStatuses,
   statusLabel,
   statusTone,
@@ -34,10 +38,12 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
   const { showToast } = useAdminToast();
   const { setTitle } = useAdminPageMeta();
   const [detail, setDetail] = useState<AgentJobDetailResponse | null>(null);
+  const [agentStatus, setAgentStatus] = useState<AgentJobStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [editingQuestionId, setEditingQuestionId] = useState<number | null>(null);
   const [draft, setDraft] = useState<EditableQuestionDraft | null>(null);
   const [savingQuestionId, setSavingQuestionId] = useState<number | null>(null);
+  const [canceling, setCanceling] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -45,6 +51,22 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
 
     return () => setTitle(null);
   }, [setTitle]);
+
+  const loadAgentStatus = useCallback(
+    async () => {
+      if (!token || !jobId) {
+        return;
+      }
+
+      try {
+        const response = await adminApiRequest<AgentJobStatus>(`/admin/agent/question-generation/${jobId}`, { token });
+        setAgentStatus(response.data);
+      } catch {
+        // Detay local kayıtla kullanılabilsin; agent status geçici okunamazsa maliyet boş kalır.
+      }
+    },
+    [jobId, token],
+  );
 
   const loadDetail = useCallback(
     async (options: { silent?: boolean } = {}) => {
@@ -63,6 +85,7 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
           { token },
         );
         setDetail(response.data);
+        void loadAgentStatus();
       } catch (loadError) {
         const message = loadError instanceof Error ? loadError.message : "Agent job detayı okunamadı.";
         setError(message);
@@ -77,7 +100,7 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
         }
       }
     },
-    [jobId, showToast, token],
+    [jobId, loadAgentStatus, showToast, token],
   );
 
   useEffect(() => {
@@ -91,10 +114,11 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
 
     const intervalId = window.setInterval(() => {
       void loadDetail({ silent: true });
+      void loadAgentStatus();
     }, 7000);
 
     return () => window.clearInterval(intervalId);
-  }, [detail?.job.status, loadDetail]);
+  }, [detail?.job.status, loadAgentStatus, loadDetail]);
 
   function startEditing(question: AdminQuestion) {
     if (question.approval_status) {
@@ -235,8 +259,104 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
     );
   }
 
+  function exportQuestions() {
+    if (!job || questions.length === 0) {
+      showToast({
+        title: "Export alınamadı",
+        description: "Bu üretim işinde export edilecek soru yok.",
+        tone: "error",
+      });
+      return;
+    }
+
+    const printFrame = document.createElement("iframe");
+    printFrame.setAttribute("aria-hidden", "true");
+    printFrame.style.position = "fixed";
+    printFrame.style.right = "0";
+    printFrame.style.bottom = "0";
+    printFrame.style.width = "0";
+    printFrame.style.height = "0";
+    printFrame.style.border = "0";
+
+    const cleanup = () => {
+      window.setTimeout(() => {
+        printFrame.remove();
+      }, 1000);
+    };
+
+    document.body.appendChild(printFrame);
+    const frameDocument = printFrame.contentDocument;
+    const frameWindow = printFrame.contentWindow;
+    if (!frameDocument || !frameWindow) {
+      cleanup();
+      showToast({
+        title: "Export başlatılamadı",
+        description: "Tarayıcı export içeriğini hazırlayamadı.",
+        tone: "error",
+      });
+      return;
+    }
+
+    frameDocument.open();
+    frameDocument.write(buildExportHtml(job, questions));
+    frameDocument.close();
+
+    frameWindow.onafterprint = cleanup;
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        frameWindow.focus();
+        frameWindow.print();
+        cleanup();
+      });
+    });
+  }
+
+  async function cancelJob() {
+    if (!token || !job) {
+      return;
+    }
+
+    const confirmed = window.confirm("Bu agent üretim işi iptal edilsin mi?");
+    if (!confirmed) {
+      return;
+    }
+
+    setCanceling(true);
+    try {
+      const response = await adminApiRequest<Pick<AgentJobDetailResponse, "job">>(
+        `/admin/agent/question-generation/${job.job_id}/cancel`,
+        {
+          token,
+          method: "POST",
+        },
+      );
+      setDetail((current) =>
+        current
+          ? {
+              ...current,
+              job: response.data.job,
+            }
+          : current,
+      );
+      showToast({
+        title: "Job iptal edildi",
+        description: "Kuyrukta bekliyorsa başlamayacak; çalışıyorsa sıradaki kontrol noktasında duracak.",
+        tone: "warning",
+      });
+    } catch (cancelError) {
+      showToast({
+        title: "Job iptal edilemedi",
+        description: cancelError instanceof Error ? cancelError.message : "İptal isteği gönderilemedi.",
+        tone: "error",
+      });
+    } finally {
+      setCanceling(false);
+    }
+  }
+
   const job = detail?.job ?? null;
   const questions = detail?.questions ?? [];
+  const aiStats = agentStatus?.ai_stats ?? null;
 
   return (
     <div className="space-y-6">
@@ -287,15 +407,29 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
                 <div className="rounded-2xl border border-white/60 bg-white/75 px-4 py-3 text-right shadow-sm">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">Oluşturma</p>
                   <p className="mt-1 text-sm font-extrabold text-[var(--color-admin-ink)]">{formatDateTime(job.created_at)}</p>
+                  {cancelableStatuses.has(job.status) ? (
+                    <button
+                      className="admin-button admin-button-danger mt-3 h-9 px-3 py-2 text-xs"
+                      disabled={canceling}
+                      onClick={() => void cancelJob()}
+                      type="button"
+                    >
+                      {canceling ? <Loader2 className="animate-spin" size={14} /> : <X size={14} />}
+                      İptal et
+                    </button>
+                  ) : null}
                 </div>
               </div>
             </div>
 
-            <div className="grid gap-3 p-5 md:grid-cols-4">
+            <div className="grid gap-3 p-5 md:grid-cols-4 xl:grid-cols-8">
               <JobMetric label="Konu" value={job.requested_topic_count} />
               <JobMetric label="İstenen" value={job.requested_question_count} />
               <JobMetric label="Üretilen" value={job.generated_question_count} />
               <JobMetric label="Duplicate" value={job.duplicate_question_count} />
+              <JobInfoMetric className="md:col-span-2" label="Model" value={modelNameFromProfile(job.model_profile)} />
+              <JobInfoMetric label="Maliyet" value={typeof aiStats?.estimated_cost_usd === "number" ? formatMoney(aiStats.estimated_cost_usd) : "hesaplanıyor"} />
+              <JobInfoMetric label="Token" value={`${formatTokenCount(aiStats?.total_input_tokens)} / ${formatTokenCount(aiStats?.total_output_tokens)}`} />
             </div>
 
             {job.error_message ? (
@@ -307,10 +441,23 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
 
           <section className="admin-card overflow-hidden">
             <div className="border-b border-[var(--color-admin-line)] px-5 py-4">
-              <h2 className="text-base font-extrabold text-[var(--color-admin-ink)]">Üretilen sorular</h2>
-              <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
-                Onay verilmemiş soruları burada düzenleyebilir, onaylayabilir veya silebilirsin. Onaylandıktan sonra bu detay ekranında kilitlenir.
-              </p>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h2 className="text-base font-extrabold text-[var(--color-admin-ink)]">Üretilen sorular</h2>
+                  <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                    Onay verilmemiş soruları burada düzenleyebilir, onaylayabilir veya silebilirsin. Onaylandıktan sonra bu detay ekranında kilitlenir.
+                  </p>
+                </div>
+                <button
+                  className="admin-button admin-button-secondary"
+                  disabled={questions.length === 0}
+                  onClick={exportQuestions}
+                  type="button"
+                >
+                  <FileDown size={16} />
+                  PDF / Yazdır
+                </button>
+              </div>
             </div>
 
             <div className="space-y-4 p-5">
@@ -433,6 +580,15 @@ function JobMetric({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-2xl bg-[var(--color-admin-panel-soft)] px-4 py-4">
       <p className="text-xl font-extrabold text-[var(--color-admin-ink)]">{value}</p>
+      <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">{label}</p>
+    </div>
+  );
+}
+
+function JobInfoMetric({ className = "", label, value }: { className?: string; label: string; value: string }) {
+  return (
+    <div className={`min-w-0 rounded-2xl bg-[var(--color-admin-panel-soft)] px-4 py-4 ${className}`}>
+      <p className="truncate text-sm font-extrabold text-[var(--color-admin-ink)]" title={value}>{value}</p>
       <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">{label}</p>
     </div>
   );
@@ -746,4 +902,228 @@ function validateDraft(draft: EditableQuestionDraft) {
   }
 
   return null;
+}
+
+function buildExportHtml(job: AgentJobDetailResponse["job"], questions: AdminQuestion[]) {
+  const title = `${job.subject_name ?? job.source_law_name ?? "Agent Soru Üretimi"} - ${job.job_id}`;
+  const questionItems = questions
+    .map((question, index) => {
+      const options = sortedOptions(question)
+        .map(
+          (option) => `
+            <li class="${option.is_correct ? "correct" : ""}">
+              <span class="label">${escapeHtml(option.label)}</span>
+              <span>${escapeHtml(option.option_text)}</span>
+            </li>
+          `,
+        )
+        .join("");
+      const explanation = exportExplanation(question);
+
+      return `
+        <article class="question">
+          <div class="meta">
+            <span>${index + 1}. Soru</span>
+            <span>#${question.id}</span>
+            <span>${escapeHtml(question.topic?.name ?? "Konu yok")}</span>
+            <span>${escapeHtml(question.difficulty ?? "-")}</span>
+          </div>
+          <h2>${escapeHtml(question.question_text ?? "")}</h2>
+          <ol class="options">${options}</ol>
+          <section class="explanation">
+            <strong>Açıklama</strong>
+            ${explanation}
+          </section>
+        </article>
+      `;
+    })
+    .join("");
+
+  return `<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(title)}</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f7fb;
+      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 24px;
+      border-bottom: 1px solid #dbe3ef;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+    }
+    .toolbar button {
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 800;
+      padding: 10px 14px;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+    }
+    header {
+      margin-bottom: 18px;
+      padding: 22px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #fff;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    .job-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      color: #526071;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .question {
+      break-inside: avoid;
+      margin-top: 16px;
+      padding: 22px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: #526071;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 14px 0 16px;
+      font-size: 18px;
+      letter-spacing: 0;
+      line-height: 1.5;
+    }
+    .options {
+      display: grid;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .options li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 12px;
+      border: 1px solid #e3e8f0;
+      border-radius: 8px;
+      background: #f8fafc;
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .options li.correct {
+      border-color: #86efac;
+      background: #ecfdf3;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #fff;
+      color: #526071;
+      font-weight: 900;
+    }
+    .correct .label {
+      background: #059669;
+      color: #fff;
+    }
+    .explanation {
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      background: #f0fdf4;
+      color: #064e3b;
+      font-size: 13px;
+    }
+    .explanation p {
+      margin: 6px 0 0;
+    }
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      main { max-width: none; padding: 0; }
+      header, .question { border-color: #cbd5e1; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <strong>${escapeHtml(title)}</strong>
+    <button onclick="window.print()">PDF / Yazdır</button>
+  </div>
+  <main>
+    <header>
+      <h1>${escapeHtml(job.subject_name ?? job.source_law_name ?? "Agent Soru Üretimi")}</h1>
+      <div class="job-meta">
+        <span>Job: ${escapeHtml(job.job_id)}</span>
+        <span>Durum: ${escapeHtml(statusLabel(job.status))}</span>
+        <span>Soru: ${questions.length}</span>
+        <span>Oluşturma: ${escapeHtml(formatDateTime(job.created_at))}</span>
+      </div>
+    </header>
+    ${questionItems}
+  </main>
+</body>
+</html>`;
+}
+
+function exportExplanation(question: AdminQuestion) {
+  const rows = [
+    ["Dayanak", question.explanation_basis ?? question.explanation?.basis ?? null],
+    ["İlgili Hüküm", question.explanation_relevant_provision ?? question.explanation?.relevant_provision ?? null],
+    ["Cevap Bağlantısı", question.explanation_answer_link ?? question.explanation?.answer_link ?? null],
+  ].filter(([, value]) => typeof value === "string" && value.trim().length > 0);
+
+  if (rows.length > 0) {
+    return rows
+      .map(([label, value]) => `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(value ?? "")}</p>`)
+      .join("");
+  }
+
+  return `<p>${escapeHtml(question.explanation_text || "Açıklama girilmemiş.")}</p>`;
+}
+
+function escapeHtml(value: string | number | null | undefined) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }

@@ -2,14 +2,14 @@ import type { AdminQuestion } from "@/lib/types";
 
 export type ModelProfile = {
   model?: string | null;
-  generator: string;
-  qa: string;
+  generator?: string | null;
+  qa?: string | null;
   editor_qa?: string;
   source_qa?: string;
   style_qa?: string;
   distractor_qa?: string;
-  rewrite: string;
-  selector: string;
+  rewrite?: string | null;
+  selector?: string | null;
 };
 
 export type AgentGenerationStartResponse = {
@@ -78,6 +78,7 @@ export type AgentGenerationJob = {
   generated_question_count: number;
   duplicate_question_count: number;
   status: string;
+  model_profile?: ModelProfile | null;
   topics?: Array<{
     topic_id: number;
     topic_name: string;
@@ -107,6 +108,7 @@ export type AgentJobDetailResponse = {
 };
 
 export const runningStatuses = new Set(["queued", "generating_questions", "parsing", "chunking", "generating_topics"]);
+export const cancelableStatuses = new Set(["queued", "running", "generating_questions", "parsing", "chunking", "generating_topics"]);
 
 export function statusLabel(status: string) {
   if (status === "queued") {
@@ -129,6 +131,10 @@ export function statusLabel(status: string) {
     return "Hatalı";
   }
 
+  if (status === "cancelled") {
+    return "İptal edildi";
+  }
+
   return status;
 }
 
@@ -139,6 +145,10 @@ export function statusTone(status: string) {
 
   if (status === "failed") {
     return "border-rose-200 bg-rose-50 text-rose-700";
+  }
+
+  if (status === "cancelled") {
+    return "border-slate-200 bg-slate-100 text-slate-700";
   }
 
   if (status === "partial") {
@@ -154,6 +164,20 @@ export function formatMoney(value?: number) {
   }
 
   return `$${value.toFixed(4)}`;
+}
+
+export function modelNameFromProfile(profile?: ModelProfile | null) {
+  const model = profile?.model || profile?.generator || profile?.qa || profile?.rewrite || profile?.selector;
+
+  return model?.trim() || "-";
+}
+
+export function formatTokenCount(value?: number | null) {
+  if (typeof value !== "number") {
+    return "-";
+  }
+
+  return new Intl.NumberFormat("tr-TR").format(value);
 }
 
 export function formatDateTime(value?: string | null) {

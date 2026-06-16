@@ -11,6 +11,7 @@ import {
   Search,
   Sparkles,
   Wand2,
+  X,
 } from "lucide-react";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
@@ -27,6 +28,8 @@ import type {
 import {
   formatDateTime,
   formatMoney,
+  modelNameFromProfile,
+  cancelableStatuses,
   runningStatuses,
   statusLabel,
   statusTone,
@@ -139,7 +142,9 @@ export function AgentQuestionGenerationPage() {
   const [loadingStatus, setLoadingStatus] = useState(false);
   const [currentJob, setCurrentJob] = useState<AgentJobStatus | null>(null);
   const [jobs, setJobs] = useState<AgentJobListResponse["jobs"]>([]);
+  const [jobStatuses, setJobStatuses] = useState<Record<string, AgentJobStatus>>({});
   const [jobsLoading, setJobsLoading] = useState(false);
+  const [cancelingJobId, setCancelingJobId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const { items: subjects, loading: subjectsLoading } = useAdminList<AdminSubject>({
@@ -229,6 +234,25 @@ export function AgentQuestionGenerationPage() {
     [currentJob, jobs],
   );
 
+  const loadJobCostStatus = useCallback(
+    async (jobId: string) => {
+      if (!token) {
+        return;
+      }
+
+      try {
+        const response = await adminApiRequest<AgentJobStatus>(`/admin/agent/question-generation/${jobId}`, { token });
+        setJobStatuses((current) => ({
+          ...current,
+          [jobId]: response.data,
+        }));
+      } catch {
+        // Geçmiş kartları agent servisi geçici ulaşılamazsa yine local veriyle gösterilsin.
+      }
+    },
+    [token],
+  );
+
   useEffect(() => {
     setSelectedTopicIds([]);
     setTopicQuery("");
@@ -247,6 +271,10 @@ export function AgentQuestionGenerationPage() {
       try {
         const response = await adminApiRequest<AgentJobStatus>(`/admin/agent/question-generation/${jobId}`, { token });
         setCurrentJob(response.data);
+        setJobStatuses((current) => ({
+          ...current,
+          [jobId]: response.data,
+        }));
       } catch (loadError) {
         showToast({
           title: "Job durumu alınamadı",
@@ -297,6 +325,22 @@ export function AgentQuestionGenerationPage() {
   useEffect(() => {
     void loadJobs();
   }, [loadJobs]);
+
+  useEffect(() => {
+    if (!token || jobs.length === 0) {
+      return;
+    }
+
+    const missingJobIds = jobs
+      .map((job) => job.job_id)
+      .filter((jobId) => !jobStatuses[jobId]);
+
+    if (missingJobIds.length === 0) {
+      return;
+    }
+
+    void Promise.all(missingJobIds.map((jobId) => loadJobCostStatus(jobId)));
+  }, [jobStatuses, jobs, loadJobCostStatus, token]);
 
   useEffect(() => {
     if (!currentJob?.job_id || !runningStatuses.has(currentJob.status)) {
@@ -382,6 +426,52 @@ export function AgentQuestionGenerationPage() {
       });
     } finally {
       setSubmitting(false);
+    }
+  }
+
+  async function cancelJob(jobId: string) {
+    if (!token) {
+      return;
+    }
+
+    const confirmed = window.confirm("Bu agent üretim işi iptal edilsin mi?");
+    if (!confirmed) {
+      return;
+    }
+
+    setCancelingJobId(jobId);
+    try {
+      const response = await adminApiRequest<{ job: AgentJobListResponse["jobs"][number] }>(
+        `/admin/agent/question-generation/${jobId}/cancel`,
+        {
+          token,
+          method: "POST",
+        },
+      );
+
+      setJobs((current) => current.map((job) => (job.job_id === jobId ? response.data.job : job)));
+      setCurrentJob((current) =>
+        current?.job_id === jobId
+          ? {
+              ...current,
+              status: response.data.job.status,
+              error_message: response.data.job.error_message,
+            }
+          : current,
+      );
+      showToast({
+        title: "Job iptal edildi",
+        description: "Kuyrukta bekliyorsa başlamayacak; çalışıyorsa sıradaki kontrol noktasında duracak.",
+        tone: "warning",
+      });
+    } catch (cancelError) {
+      showToast({
+        title: "Job iptal edilemedi",
+        description: cancelError instanceof Error ? cancelError.message : "İptal isteği gönderilemedi.",
+        tone: "error",
+      });
+    } finally {
+      setCancelingJobId(null);
     }
   }
 
@@ -643,19 +733,34 @@ export function AgentQuestionGenerationPage() {
                     <h2 className="text-sm font-extrabold text-[var(--color-admin-ink)]">Son job</h2>
                     <p className="mt-1 break-all text-xs font-semibold text-[var(--color-admin-muted)]">{currentJob.job_id}</p>
                   </div>
-                  <button
-                    className="admin-button admin-button-secondary h-10 px-3 py-2"
-                    disabled={loadingStatus}
-                    onClick={() => void loadJobStatus(currentJob.job_id)}
-                    type="button"
-                  >
-                    {loadingStatus ? <Loader2 className="animate-spin" size={15} /> : <RefreshCcw size={15} />}
-                  </button>
+                  <div className="flex shrink-0 gap-2">
+                    {cancelableStatuses.has(currentJob.status) ? (
+                      <button
+                        className="admin-button admin-button-danger h-10 px-3 py-2"
+                        disabled={cancelingJobId === currentJob.job_id}
+                        onClick={() => void cancelJob(currentJob.job_id)}
+                        type="button"
+                      >
+                        {cancelingJobId === currentJob.job_id ? <Loader2 className="animate-spin" size={15} /> : <X size={15} />}
+                      </button>
+                    ) : null}
+                    <button
+                      className="admin-button admin-button-secondary h-10 px-3 py-2"
+                      disabled={loadingStatus}
+                      onClick={() => void loadJobStatus(currentJob.job_id)}
+                      type="button"
+                    >
+                      {loadingStatus ? <Loader2 className="animate-spin" size={15} /> : <RefreshCcw size={15} />}
+                    </button>
+                  </div>
                 </div>
 
                 <div className="mt-4 flex flex-wrap items-center gap-2">
                   <span className={`rounded-full border px-3 py-1 text-xs font-extrabold ${statusTone(currentJob.status)}`}>
                     {statusLabel(currentJob.status)}
+                  </span>
+                  <span className="max-w-full truncate rounded-full bg-indigo-50 px-3 py-1 text-xs font-extrabold text-indigo-700">
+                    {modelNameFromProfile(jobs.find((job) => job.job_id === currentJob.job_id)?.model_profile)}
                   </span>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-extrabold text-slate-600">
                     {currentJob.question_count ?? 0} soru
@@ -756,38 +861,69 @@ export function AgentQuestionGenerationPage() {
             </div>
           ) : (
             <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-              {jobs.map((job) => (
-                <Link
-                  className="group rounded-2xl border border-[var(--color-admin-line)] bg-white px-4 py-4 text-left transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
-                  href={`/sorular/agent-uret/${job.job_id}`}
-                  key={job.job_id}
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        {job.subject_code ? (
-                          <span className="rounded-full bg-blue-100 px-2.5 py-1 text-[11px] font-extrabold text-blue-700">
-                            {job.subject_code}
+              {jobs.map((job) => {
+                const status = jobStatuses[job.job_id];
+                const estimatedCost = status?.ai_stats?.estimated_cost_usd;
+
+                return (
+                  <div
+                    className="group rounded-2xl border border-[var(--color-admin-line)] bg-white px-4 py-4 text-left transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
+                    key={job.job_id}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <Link className="min-w-0 flex-1" href={`/sorular/agent-uret/${job.job_id}`}>
+                        <div className="flex flex-wrap items-center gap-2">
+                          {job.subject_code ? (
+                            <span className="rounded-full bg-blue-100 px-2.5 py-1 text-[11px] font-extrabold text-blue-700">
+                              {job.subject_code}
+                            </span>
+                          ) : null}
+                          <span className={`rounded-full border px-2.5 py-1 text-[11px] font-extrabold ${statusTone(status?.status ?? job.status)}`}>
+                            {statusLabel(status?.status ?? job.status)}
                           </span>
+                        </div>
+                        <p className="mt-2 truncate text-sm font-extrabold text-[var(--color-admin-ink)]">
+                          {job.subject_name ?? job.source_law_name ?? "Agent üretimi"}
+                        </p>
+                        <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                          {job.requested_topic_count} konu · {job.requested_question_count} istendi · {status?.question_count ?? job.generated_question_count} üretildi
+                        </p>
+                        <div className="mt-2 grid gap-2 text-[11px] font-bold text-[var(--color-admin-muted)] sm:grid-cols-2">
+                          <span className="truncate rounded-xl bg-[var(--color-admin-panel-soft)] px-2.5 py-2">
+                            Model: {modelNameFromProfile(job.model_profile)}
+                          </span>
+                          <span className="rounded-xl bg-[var(--color-admin-panel-soft)] px-2.5 py-2">
+                            Maliyet: {typeof estimatedCost === "number" ? formatMoney(estimatedCost) : "hesaplanıyor"}
+                          </span>
+                        </div>
+                        <p className="mt-2 text-[11px] font-bold text-[var(--color-admin-muted)]">
+                          {formatDateTime(job.created_at)}
+                        </p>
+                      </Link>
+                      <div className="flex shrink-0 items-center gap-2">
+                        {cancelableStatuses.has(job.status) ? (
+                          <button
+                            className="admin-button admin-button-danger h-9 px-3 py-2"
+                            disabled={cancelingJobId === job.job_id}
+                            onClick={() => void cancelJob(job.job_id)}
+                            title="Job iptal et"
+                            type="button"
+                          >
+                            {cancelingJobId === job.job_id ? <Loader2 className="animate-spin" size={14} /> : <X size={14} />}
+                          </button>
                         ) : null}
-                        <span className={`rounded-full border px-2.5 py-1 text-[11px] font-extrabold ${statusTone(job.status)}`}>
-                          {statusLabel(job.status)}
-                        </span>
+                        <Link
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-xl text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-600"
+                          href={`/sorular/agent-uret/${job.job_id}`}
+                          title="Detaya git"
+                        >
+                          <ChevronRight size={18} />
+                        </Link>
                       </div>
-                      <p className="mt-2 truncate text-sm font-extrabold text-[var(--color-admin-ink)]">
-                        {job.subject_name ?? job.source_law_name ?? "Agent üretimi"}
-                      </p>
-                      <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
-                        {job.requested_topic_count} konu · {job.requested_question_count} istendi · {job.generated_question_count} üretildi
-                      </p>
-                      <p className="mt-1 text-[11px] font-bold text-[var(--color-admin-muted)]">
-                        {formatDateTime(job.created_at)}
-                      </p>
                     </div>
-                    <ChevronRight className="mt-8 shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-600" size={18} />
                   </div>
-                </Link>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

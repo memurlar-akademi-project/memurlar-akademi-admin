@@ -24,11 +24,15 @@ import type {
   AgentGenerationStartResponse,
   AgentJobListResponse,
   AgentJobStatus,
+  GenerationBehavior,
+  QuestionBankType,
 } from "@/components/admin/questions/AgentQuestionGenerationTypes";
 import {
   formatDateTime,
   formatMoney,
+  generationBehaviorLabel,
   modelNameFromProfile,
+  questionBankTypeLabel,
   cancelableStatuses,
   runningStatuses,
   statusLabel,
@@ -40,11 +44,8 @@ const MODEL_GEMINI_25_FLASH = "google/gemini-2.5-flash";
 const MODEL_GEMINI_25_FLASH_LITE = "google/gemini-2.5-flash-lite";
 const MODEL_GEMINI_35_FLASH = "google/gemini-3.5-flash";
 const MODEL_GEMINI_31_FLASH_LITE = "google/gemini-3.1-flash-lite";
-const MODEL_V32 = "deepseek/deepseek-v3.2";
-const MODEL_V4_PRO = "deepseek/deepseek-v4-pro";
 const MODEL_GEMMA_4_26B = "google/gemma-4-26b-a4b-it";
-const MODEL_CLAUDE_HAIKU_45 = "anthropic/claude-haiku-4.5";
-const DEFAULT_MODEL = MODEL_V4_PRO;
+const DEFAULT_MODEL = MODEL_GEMINI_35_FLASH;
 
 const MODEL_OPTIONS: Array<{
   value: string;
@@ -87,36 +88,12 @@ const MODEL_OPTIONS: Array<{
     context: "1M",
   },
   {
-    value: MODEL_V4_PRO,
-    label: "DeepSeek V4 Pro",
-    hint: "Mevzuat sorusu üretimi için ana güçlü model.",
-    inputPrice: 0.435,
-    outputPrice: 0.87,
-    context: "1M",
-  },
-  {
-    value: MODEL_V32,
-    label: "DeepSeek V3.2",
-    hint: "Hızlı/ucuz deneme; final üretimde tek başına zayıf kalabilir.",
-    inputPrice: 0.2288,
-    outputPrice: 0.3432,
-    context: "131K",
-  },
-  {
     value: MODEL_GEMMA_4_26B,
     label: "Gemma 4 26B A4B",
     hint: "Çok ucuz açık model alternatifi; kaliteyi küçük batch ile ölçmek iyi olur.",
     inputPrice: 0.06,
     outputPrice: 0.33,
     context: "262K",
-  },
-  {
-    value: MODEL_CLAUDE_HAIKU_45,
-    label: "Claude Haiku 4.5",
-    hint: "Dili güçlü ve dengeli; maliyet Gemini/DeepSeek hızlı modellere göre yüksek.",
-    inputPrice: 1,
-    outputPrice: 5,
-    context: "200K",
   },
 ];
 
@@ -137,6 +114,8 @@ export function AgentQuestionGenerationPage() {
   const [topicQuery, setTopicQuery] = useState("");
   const [requestedCount, setRequestedCount] = useState(5);
   const [qVersion, setQVersion] = useState("5");
+  const [questionBankType, setQuestionBankType] = useState<QuestionBankType>("practice");
+  const [generationBehavior, setGenerationBehavior] = useState<GenerationBehavior>("law");
   const [selectedModel, setSelectedModel] = useState(DEFAULT_MODEL);
   const [submitting, setSubmitting] = useState(false);
   const [loadingStatus, setLoadingStatus] = useState(false);
@@ -399,6 +378,9 @@ export function AgentQuestionGenerationPage() {
           topic_ids: selectedTopicIds,
           requested_count: requestedCount,
           q_version: parsedQVersion,
+          question_bank_type: questionBankType,
+          generation_type: questionBankType,
+          generation_behavior: generationBehavior,
           model_profile: {
             model: selectedModel.trim() || null,
           },
@@ -412,7 +394,7 @@ export function AgentQuestionGenerationPage() {
       void loadJobs({ silent: true });
       showToast({
         title: "Soru üretimi kuyruğa alındı",
-        description: `${selectedTopicIds.length} konu için toplam hedef ${totalRequested} soru. Detay kartı üretim geçmişine eklenecek.`,
+        description: `${questionBankTypeLabel(questionBankType)} · ${generationBehaviorLabel(generationBehavior)} · ${selectedTopicIds.length} konu için toplam hedef ${totalRequested} soru.`,
         tone: "success",
       });
       void loadJobStatus(response.data.job_id, { silent: true });
@@ -557,6 +539,54 @@ export function AgentQuestionGenerationPage() {
               ))}
             </div>
 
+            <section className="rounded-[20px] border border-[var(--color-admin-line)] bg-white p-4">
+              <h2 className="text-sm font-extrabold text-[var(--color-admin-ink)]">Soru tipi</h2>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                {([
+                  ["practice", "Normal soru", "Mevcut soru onay/pratik havuzuna eklenir."],
+                  ["mock_exam", "Deneme sorusu", "Deneme sınavı havuzu için ayrı işaretlenir."],
+                ] as const).map(([value, label, hint]) => (
+                  <button
+                    className={`rounded-2xl border px-4 py-3 text-left transition ${
+                      questionBankType === value
+                        ? "border-blue-500 bg-blue-50 text-blue-800"
+                        : "border-[var(--color-admin-line)] bg-white text-[var(--color-admin-muted)] hover:border-blue-200"
+                    }`}
+                    key={value}
+                    onClick={() => setQuestionBankType(value)}
+                    type="button"
+                  >
+                    <span className="block text-sm font-extrabold">{label}</span>
+                    <span className="mt-1 block text-xs font-semibold leading-5">{hint}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <section className="rounded-[20px] border border-[var(--color-admin-line)] bg-white p-4">
+              <h2 className="text-sm font-extrabold text-[var(--color-admin-ink)]">Üretim davranışı</h2>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                {([
+                  ["law", "Kanun/Yönetmelik", "Mevzuat dili, kaynak adı ve hüküm odaklı soru üretir."],
+                  ["course", "Normal ders", "Türkçe, İK, İnkılap gibi derslerde kavram/yorum odaklı üretir."],
+                ] as const).map(([value, label, hint]) => (
+                  <button
+                    className={`rounded-2xl border px-4 py-3 text-left transition ${
+                      generationBehavior === value
+                        ? "border-emerald-500 bg-emerald-50 text-emerald-800"
+                        : "border-[var(--color-admin-line)] bg-white text-[var(--color-admin-muted)] hover:border-emerald-200"
+                    }`}
+                    key={value}
+                    onClick={() => setGenerationBehavior(value)}
+                    type="button"
+                  >
+                    <span className="block text-sm font-extrabold">{label}</span>
+                    <span className="mt-1 block text-xs font-semibold leading-5">{hint}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+
             <section className="rounded-[20px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--color-admin-line)] px-4 py-4">
                 <div>
@@ -687,6 +717,12 @@ export function AgentQuestionGenerationPage() {
                 <SummaryBox label="Adet" value={requestedCount} />
                 <SummaryBox label="Hedef" value={totalRequested} />
               </div>
+              <div className="mt-3 rounded-2xl bg-blue-50 px-4 py-3 text-xs font-extrabold text-blue-700">
+                {questionBankTypeLabel(questionBankType)}
+              </div>
+              <div className="mt-2 rounded-2xl bg-emerald-50 px-4 py-3 text-xs font-extrabold text-emerald-700">
+                {generationBehaviorLabel(generationBehavior)}
+              </div>
 
               {selectedTopics.length > 0 ? (
                 <div className="mt-4 max-h-40 space-y-2 overflow-y-auto rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-2">
@@ -761,6 +797,12 @@ export function AgentQuestionGenerationPage() {
                   </span>
                   <span className="max-w-full truncate rounded-full bg-indigo-50 px-3 py-1 text-xs font-extrabold text-indigo-700">
                     {modelNameFromProfile(jobs.find((job) => job.job_id === currentJob.job_id)?.model_profile)}
+                  </span>
+                  <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-extrabold text-blue-700">
+                    {questionBankTypeLabel(jobs.find((job) => job.job_id === currentJob.job_id)?.question_bank_type)}
+                  </span>
+                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-extrabold text-emerald-700">
+                    {generationBehaviorLabel(jobs.find((job) => job.job_id === currentJob.job_id)?.generation_behavior)}
                   </span>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-extrabold text-slate-600">
                     {currentJob.question_count ?? 0} soru
@@ -880,6 +922,12 @@ export function AgentQuestionGenerationPage() {
                           ) : null}
                           <span className={`rounded-full border px-2.5 py-1 text-[11px] font-extrabold ${statusTone(status?.status ?? job.status)}`}>
                             {statusLabel(status?.status ?? job.status)}
+                          </span>
+                          <span className="rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-extrabold text-blue-700">
+                            {questionBankTypeLabel(job.question_bank_type)}
+                          </span>
+                          <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-extrabold text-emerald-700">
+                            {generationBehaviorLabel(job.generation_behavior)}
                           </span>
                         </div>
                         <p className="mt-2 truncate text-sm font-extrabold text-[var(--color-admin-ink)]">

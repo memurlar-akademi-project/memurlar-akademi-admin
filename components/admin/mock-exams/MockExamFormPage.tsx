@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { X } from "lucide-react";
+import { Loader2, Wand2, X } from "lucide-react";
 import { AdminMultiSelect } from "@/components/admin/AdminMultiSelect";
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
@@ -22,6 +22,30 @@ const emptyForm = {
   scheduled_at: "",
   is_tr_general: false,
   question_ids: [] as number[],
+};
+
+type MockExamAutoDraftResponse = {
+  question_ids: number[];
+  questions: AdminQuestion[];
+  summary: {
+    target_count: number;
+    selected_count: number;
+    missing_count: number;
+    sections: Array<{
+      section_id: number | null;
+      title: string;
+      target_count: number;
+      selected_count: number;
+      available_count: number;
+      subjects: Array<{
+        subject_id: number;
+        subject_name?: string | null;
+        target_count: number;
+        selected_count: number;
+        available_count: number;
+      }>;
+    }>;
+  };
 };
 
 export function MockExamFormPage({
@@ -44,6 +68,8 @@ export function MockExamFormPage({
   const [questionsLoading, setQuestionsLoading] = useState(true);
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
+  const [autoDrafting, setAutoDrafting] = useState(false);
+  const [autoDraftSummary, setAutoDraftSummary] = useState<MockExamAutoDraftResponse["summary"] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(null);
@@ -61,24 +87,40 @@ export function MockExamFormPage({
       setQuestionsLoading(true);
 
       try {
-        const [examsResponse, questionsResponse] = await Promise.all([
-          adminApiRequest<{ exams: AdminExam[] }>("/admin/exams", { token }),
-          adminApiRequest<{ questions: AdminQuestion[] }>("/admin/questions", { token }),
-        ]);
+        const examsResponse = await adminApiRequest<{ exams: AdminExam[] }>("/admin/exams", { token });
 
         if (cancelled) {
           return;
         }
 
         setExams(examsResponse.data.exams);
-        setQuestions(questionsResponse.data.questions);
       } catch (loadError) {
         if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : "Deneme verileri yüklenemedi.");
+          setError(loadError instanceof Error ? loadError.message : "Sınav verileri yüklenemedi.");
         }
       } finally {
         if (!cancelled) {
           setExamsLoading(false);
+        }
+      }
+
+      try {
+        const questionsResponse = await adminApiRequest<{ questions: AdminQuestion[] }>(
+          "/admin/questions?per_page=500&question_bank_type=mock_exam&approval_status=approved&status=active&question_type=multiple_choice",
+          { token },
+        );
+
+        if (cancelled) {
+          return;
+        }
+
+        setQuestions(questionsResponse.data.questions);
+      } catch (loadError) {
+        if (!cancelled) {
+          setError(loadError instanceof Error ? loadError.message : "Deneme soru havuzu yüklenemedi.");
+        }
+      } finally {
+        if (!cancelled) {
           setQuestionsLoading(false);
         }
       }
@@ -249,6 +291,14 @@ export function MockExamFormPage({
           return false;
         }
 
+        if (question.question_bank_type !== "mock_exam") {
+          return false;
+        }
+
+        if (question.approval_status !== "approved") {
+          return false;
+        }
+
         if (selectedTopicId !== null && question.topic?.id !== selectedTopicId) {
           return false;
         }
@@ -390,6 +440,52 @@ export function MockExamFormPage({
     }
   }
 
+  async function createAutoDraft() {
+    if (!token || !form.exam_id) {
+      setError("Önce bir sınav seçmelisin.");
+      return;
+    }
+
+    setAutoDrafting(true);
+    setError(null);
+
+    try {
+      const response = await adminApiRequest<MockExamAutoDraftResponse>("/admin/mock-exams/auto-draft", {
+        token,
+        method: "POST",
+        body: { exam_id: form.exam_id },
+      });
+
+      setQuestions((current) => {
+        const questionMap = new Map(current.map((question) => [question.id, question]));
+        response.data.questions.forEach((question) => questionMap.set(question.id, question));
+        return Array.from(questionMap.values());
+      });
+      setForm((current) => ({
+        ...current,
+        question_ids: response.data.question_ids,
+        duration_min: String(selectedExam?.duration_min ?? current.duration_min),
+        title: current.title.trim() || `${selectedExam?.name ?? "Sınav"} Deneme 1`,
+      }));
+      setAutoDraftSummary(response.data.summary);
+
+      showToast({
+        tone: response.data.summary.missing_count > 0 ? "warning" : "success",
+        title: "Deneme taslağı oluşturuldu",
+        description:
+          response.data.summary.missing_count > 0
+            ? `${response.data.summary.selected_count}/${response.data.summary.target_count} soru seçildi. Eksik havuz var.`
+            : `${response.data.summary.selected_count} soru blueprint'e göre seçildi.`,
+      });
+    } catch (draftError) {
+      const message = draftError instanceof Error ? draftError.message : "Deneme taslağı oluşturulamadı.";
+      setError(message);
+      showToast({ tone: "error", title: "Taslak oluşturulamadı", description: message });
+    } finally {
+      setAutoDrafting(false);
+    }
+  }
+
   if (loading) {
     return (
       <AdminTableCard>
@@ -488,6 +584,67 @@ export function MockExamFormPage({
               />
               TR geneli deneme olarak işaretle
             </label>
+
+            <section className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">Blueprint taslağı</p>
+                  <p className="mt-1 text-xs font-semibold leading-5 text-[var(--color-admin-muted)]">
+                    Sınavdaki soru dağılımına göre onaylı deneme sorularından dengeli bir taslak seçer.
+                  </p>
+                </div>
+                <button
+                  className="admin-button admin-button-primary h-10 px-3 py-2 text-xs"
+                  disabled={!form.exam_id || autoDrafting}
+                  onClick={() => void createAutoDraft()}
+                  type="button"
+                >
+                  {autoDrafting ? <Loader2 className="animate-spin" size={15} /> : <Wand2 size={15} />}
+                  Taslak oluştur
+                </button>
+              </div>
+
+              {autoDraftSummary ? (
+                <div className="mt-4 space-y-2">
+                  <div className="grid gap-2 sm:grid-cols-3">
+                    <SummaryMetric label="Hedef" value={autoDraftSummary.target_count} />
+                    <SummaryMetric label="Seçilen" value={autoDraftSummary.selected_count} />
+                    <SummaryMetric
+                      label="Eksik"
+                      tone={autoDraftSummary.missing_count > 0 ? "warn" : "ok"}
+                      value={autoDraftSummary.missing_count}
+                    />
+                  </div>
+                  <div className="max-h-52 overflow-y-auto rounded-2xl border border-[var(--color-admin-line)] bg-white">
+                    {autoDraftSummary.sections.map((section) => (
+                      <div
+                        className="border-b border-[var(--color-admin-line)]/80 px-3 py-2 last:border-b-0"
+                        key={`${section.section_id ?? "general"}-${section.title}`}
+                      >
+                        <div className="flex items-center justify-between gap-3">
+                          <p className="truncate text-xs font-extrabold text-[var(--color-admin-ink)]">
+                            {section.title}
+                          </p>
+                          <p className="text-xs font-bold text-[var(--color-admin-muted)]">
+                            {section.selected_count}/{section.target_count}
+                          </p>
+                        </div>
+                        {section.subjects.length > 0 ? (
+                          <p className="mt-1 text-[11px] font-semibold text-[var(--color-admin-muted)]">
+                            {section.subjects
+                              .map(
+                                (subject) =>
+                                  `${subject.subject_name ?? "Ders"} ${subject.selected_count}/${subject.target_count}`,
+                              )
+                              .join(" · ")}
+                          </p>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </section>
 
             <div className="grid gap-4 lg:grid-cols-2">
               <label className="block space-y-2">
@@ -690,6 +847,30 @@ export function MockExamFormPage({
           </div>
         </AdminTableCard>
       </div>
+    </div>
+  );
+}
+
+function SummaryMetric({
+  label,
+  value,
+  tone = "neutral",
+}: {
+  label: string;
+  value: number;
+  tone?: "neutral" | "warn" | "ok";
+}) {
+  const toneClass =
+    tone === "warn"
+      ? "bg-amber-50 text-amber-700"
+      : tone === "ok"
+        ? "bg-emerald-50 text-emerald-700"
+        : "bg-white text-[var(--color-admin-ink)]";
+
+  return (
+    <div className={`rounded-2xl px-3 py-3 text-center ${toneClass}`}>
+      <p className="text-base font-extrabold">{value}</p>
+      <p className="mt-1 text-[10px] font-black uppercase tracking-[0.14em]">{label}</p>
     </div>
   );
 }

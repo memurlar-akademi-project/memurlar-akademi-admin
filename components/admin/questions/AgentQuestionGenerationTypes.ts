@@ -12,6 +12,9 @@ export type ModelProfile = {
   selector?: string | null;
 };
 
+export type QuestionBankType = "practice" | "mock_exam";
+export type GenerationBehavior = "law" | "course";
+
 export type AgentGenerationStartResponse = {
   job_id: string;
   status: string;
@@ -78,6 +81,9 @@ export type AgentGenerationJob = {
   generated_question_count: number;
   duplicate_question_count: number;
   status: string;
+  question_bank_type?: QuestionBankType | string | null;
+  generation_type?: QuestionBankType | string | null;
+  generation_behavior?: GenerationBehavior | string | null;
   model_profile?: ModelProfile | null;
   topics?: Array<{
     topic_id: number;
@@ -178,6 +184,22 @@ export function formatTokenCount(value?: number | null) {
   }
 
   return new Intl.NumberFormat("tr-TR").format(value);
+}
+
+export function questionBankTypeLabel(value?: string | null) {
+  if (value === "mock_exam") {
+    return "Deneme sorusu";
+  }
+
+  return "Normal soru";
+}
+
+export function generationBehaviorLabel(value?: string | null) {
+  if (value === "course") {
+    return "Normal ders";
+  }
+
+  return "Kanun/Yönetmelik";
 }
 
 export function formatDateTime(value?: string | null) {

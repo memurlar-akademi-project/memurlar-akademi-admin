@@ -14,7 +14,9 @@ import {
   formatDateTime,
   formatMoney,
   formatTokenCount,
+  generationBehaviorLabel,
   modelNameFromProfile,
+  questionBankTypeLabel,
   runningStatuses,
   statusLabel,
   statusTone,
@@ -396,6 +398,12 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
                     <span className={`rounded-full border px-3 py-1 text-xs font-extrabold ${statusTone(job.status)}`}>
                       {statusLabel(job.status)}
                     </span>
+                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-extrabold text-blue-700">
+                      {questionBankTypeLabel(job.question_bank_type)}
+                    </span>
+                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-extrabold text-emerald-700">
+                      {generationBehaviorLabel(job.generation_behavior)}
+                    </span>
                   </div>
                   <h1 className="mt-3 text-2xl font-extrabold tracking-[-0.04em] text-[var(--color-admin-ink)]">
                     {job.subject_name ?? job.source_law_name ?? "Agent üretim detayı"}
@@ -427,6 +435,8 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
               <JobMetric label="İstenen" value={job.requested_question_count} />
               <JobMetric label="Üretilen" value={job.generated_question_count} />
               <JobMetric label="Duplicate" value={job.duplicate_question_count} />
+              <JobInfoMetric label="Havuz" value={questionBankTypeLabel(job.question_bank_type)} />
+              <JobInfoMetric label="Davranış" value={generationBehaviorLabel(job.generation_behavior)} />
               <JobInfoMetric className="md:col-span-2" label="Model" value={modelNameFromProfile(job.model_profile)} />
               <JobInfoMetric label="Maliyet" value={typeof aiStats?.estimated_cost_usd === "number" ? formatMoney(aiStats.estimated_cost_usd) : "hesaplanıyor"} />
               <JobInfoMetric label="Token" value={`${formatTokenCount(aiStats?.total_input_tokens)} / ${formatTokenCount(aiStats?.total_output_tokens)}`} />
@@ -492,6 +502,9 @@ export function AgentQuestionGenerationDetailPage({ jobId }: { jobId: string }) 
                               locked ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"
                             }`}>
                               {approvalLabel(question)}
+                            </span>
+                            <span className="rounded-full bg-blue-50 px-2.5 py-1 text-[11px] font-extrabold text-blue-700">
+                              {questionBankTypeLabel(question.question_bank_type)}
                             </span>
                           </div>
                           <p className="mt-2 text-xs font-semibold text-[var(--color-admin-muted)]">
@@ -837,6 +850,7 @@ function buildQuestionUpdatePayload(question: AdminQuestion, draft: EditableQues
     q_version: question.q_version ?? null,
     difficulty: question.difficulty,
     status: question.status,
+    question_bank_type: question.question_bank_type ?? "practice",
     is_free: question.is_free ?? false,
     free_preview_order: question.free_preview_order ?? null,
     is_past_exam_question: question.is_past_exam_question ?? false,

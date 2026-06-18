@@ -30,6 +30,7 @@ type EditableItem = {
   q_version: string;
   difficulty: "easy" | "medium" | "hard";
   status: "active" | "passive" | "draft";
+  question_bank_type: "practice" | "mock_exam";
   question_text: string;
   correct_answer_text: string;
   explanation_text: string;
@@ -66,6 +67,7 @@ function toEditableItem(item: AdminQuestionImportItem): EditableItem {
     q_version: item.q_version ? String(item.q_version) : "",
     difficulty: item.difficulty,
     status: item.review_status === "pending_review" && item.status === "draft" ? "active" : item.status,
+    question_bank_type: item.question_bank_type === "mock_exam" ? "mock_exam" : "practice",
     question_text: item.question_text,
     correct_answer_text: item.correct_answer_text,
     explanation_text: item.explanation_text,
@@ -86,6 +88,7 @@ function toImportItemPayload(
     q_version: draft.q_version ? Number(draft.q_version) : null,
     difficulty: draft.difficulty,
     status: draft.status,
+    question_bank_type: draft.question_bank_type,
     question_text: draft.question_text,
     correct_answer_text: draft.correct_answer_text,
     explanation_text: draft.explanation_text,

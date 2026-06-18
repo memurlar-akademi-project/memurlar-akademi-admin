@@ -180,6 +180,7 @@ export type AdminQuestion = {
   q_version?: number | null;
   difficulty: string;
   status: string;
+  question_bank_type?: "practice" | "mock_exam" | string;
   is_free?: boolean;
   free_preview_order?: number | null;
   is_past_exam_question?: boolean;
@@ -388,6 +389,7 @@ export type AdminQuestionImportItem = {
   q_version?: number | null;
   difficulty: "easy" | "medium" | "hard";
   status: "active" | "passive" | "draft";
+  question_bank_type?: "practice" | "mock_exam" | string;
   question_text: string;
   correct_answer_text: string;
   explanation_text: string;

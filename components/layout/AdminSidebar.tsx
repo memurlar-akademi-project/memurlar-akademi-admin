@@ -8,6 +8,7 @@ import {
   Boxes,
   Building2,
   BadgeCheck,
+  Eye,
   ChevronDown,
   FileAudio2,
   FileUp,
@@ -50,6 +51,7 @@ const navigation = [
     icon: ScrollText,
     items: [
       { href: "/sorular", label: "Sorular", icon: ScrollText },
+      { href: "/sorular/preview", label: "Soru Preview", icon: Eye },
       { href: "/sorular/onayla", label: "Soru Onayla", icon: BadgeCheck },
       { href: "/sorular/kalite", label: "Soru Kalite", icon: Gauge },
       { href: "/sorular/agent-uret", label: "Agent Soru Üret", icon: Sparkles },

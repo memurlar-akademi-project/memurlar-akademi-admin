@@ -7,6 +7,7 @@ import {
   ArrowUpDown,
   CheckCircle2,
   BookOpenCheck,
+  Eye,
   ListChecks,
   PauseCircle,
   Plus,
@@ -682,6 +683,10 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
             </AdminListToolbarFields>
 
             <AdminListToolbarActions>
+              <Link className="admin-button admin-button-secondary" href="/sorular/preview">
+                <Eye size={16} />
+                Soru Preview
+              </Link>
               <Link className="admin-button admin-button-secondary" href="/sorular/onayla">
                 <BookOpenCheck size={16} />
                 Soru Onayla

@@ -77,6 +77,10 @@ function resolvePageMeta(pathname: string) {
     return { title: "Soru İnceleme", backHref: "/sorular" };
   }
 
+  if (pathname === "/sorular/preview") {
+    return { title: "Soru Preview", backHref: "/sorular" };
+  }
+
   if (pathname === "/sorular/onayla") {
     return { title: "Soru Onayla", backHref: "/sorular" };
   }

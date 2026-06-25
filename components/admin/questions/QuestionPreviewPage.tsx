@@ -229,9 +229,7 @@ export function QuestionPreviewPage() {
         body: buildQuestionUpdatePayload(question, draft),
       });
 
-      setQuestions((current) =>
-        sortQuestionsForPreview(current.map((item) => (item.id === question.id ? response.data.question : item))),
-      );
+      setQuestions((current) => current.map((item) => (item.id === question.id ? response.data.question : item)));
       showToast({
         tone: "success",
         title: "Soru güncellendi",
@@ -452,13 +450,15 @@ function QuestionPreviewCard({
       </button>
 
       <div className="absolute left-1/2 top-0 flex -translate-x-1/2 items-center gap-2">
-        <Link
-          className={`flex h-11 items-center gap-2 rounded-2xl bg-[var(--color-admin-accent)] px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 ${controlsDisabled ? "pointer-events-none opacity-45" : ""}`}
-          href={`/sorular/${question.id}/duzenle`}
+        <button
+          className="flex h-11 items-center gap-2 rounded-2xl bg-[var(--color-admin-accent)] px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 disabled:opacity-45"
+          disabled={controlsDisabled}
+          onClick={() => setEditing(true)}
+          type="button"
         >
           <Pencil size={17} />
           Edit
-        </Link>
+        </button>
         <ConfirmDialog
           busy={busy}
           confirmLabel="Soruyu Sil"
@@ -520,17 +520,7 @@ function QuestionPreviewCard({
                 Kaydet
               </button>
             </div>
-          ) : (
-            <button
-              className="inline-flex items-center gap-2 rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] px-3 py-2 text-xs font-black text-[var(--color-admin-ink)] transition hover:border-[var(--color-admin-accent)]"
-              disabled={busy}
-              onClick={() => setEditing(true)}
-              type="button"
-            >
-              <Pencil size={14} />
-              Hızlı düzenle
-            </button>
-          )}
+          ) : null}
         </div>
 
         {editing ? (

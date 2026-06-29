@@ -173,6 +173,55 @@ export type AdminTopic = {
   updated_at?: string | null;
 };
 
+export type AdminLawDurationCategory = {
+  id: number;
+  subject_id: number;
+  title: string;
+  slug: string;
+  description: string | null;
+  status: string;
+  sort_order: number;
+  items_count: number;
+  active_items_count: number;
+  subject: {
+    id: number;
+    code?: string | null;
+    name: string;
+  } | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
+export type AdminLawDurationItem = {
+  id: number;
+  category_id: number;
+  topic_id: number | null;
+  item_type: "duration" | "rule";
+  title: string;
+  value: string;
+  description: string | null;
+  article_reference: string | null;
+  source_excerpt: string | null;
+  status: string;
+  sort_order: number;
+  category: {
+    id: number;
+    title: string;
+    subject: {
+      id: number;
+      code?: string | null;
+      name: string;
+    } | null;
+  } | null;
+  topic: {
+    id: number;
+    name: string;
+    subject_id: number;
+  } | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
 export type AdminQuestion = {
   id: number;
   topic_id: number;

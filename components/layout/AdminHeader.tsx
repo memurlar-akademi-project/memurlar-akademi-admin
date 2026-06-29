@@ -69,6 +69,10 @@ function resolvePageMeta(pathname: string) {
     return { title: "Konu İçerikleri" };
   }
 
+  if (pathname === "/sureler") {
+    return { title: "Süre/Kural Dokümanı" };
+  }
+
   if (pathname === "/sorular") {
     return { title: "Sorular" };
   }

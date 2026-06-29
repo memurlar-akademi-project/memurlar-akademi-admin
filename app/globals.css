@@ -170,6 +170,16 @@ body {
   color: var(--color-admin-ink);
 }
 
+.admin-button-soft {
+  background: var(--color-admin-accent-soft);
+  color: var(--color-admin-accent);
+}
+
+.admin-button-danger {
+  background: var(--color-admin-danger);
+  color: white;
+}
+
 .admin-button-ghost {
   background: transparent;
   color: var(--color-admin-muted);

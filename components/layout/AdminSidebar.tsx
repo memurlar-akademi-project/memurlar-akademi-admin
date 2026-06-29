@@ -8,6 +8,7 @@ import {
   Boxes,
   Building2,
   BadgeCheck,
+  Clock3,
   Eye,
   ChevronDown,
   FileAudio2,
@@ -43,6 +44,7 @@ const navigation = [
       { href: "/dersler", label: "Ders Listesi", icon: LibraryBig },
       { href: "/konular", label: "Konular", icon: BookOpenText },
       { href: "/konular/import", label: "Konu Import", icon: FileUp },
+      { href: "/sureler", label: "Süre/Kural Dokümanı", icon: Clock3 },
     ],
   },
   {

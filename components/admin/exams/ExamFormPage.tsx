@@ -100,6 +100,10 @@ export function ExamFormPage({
       })),
     [subjects],
   );
+  const subjectLabelMap = useMemo(
+    () => new Map(subjectOptions.map((subject) => [subject.id, subject.label])),
+    [subjectOptions],
+  );
 
   const sectionQuestionTotal = useMemo(
     () =>
@@ -323,9 +327,9 @@ export function ExamFormPage({
           is_active_for_signup: form.is_active_for_signup,
           topic_ids: form.topic_ids,
           sections: form.sections
-            .filter((section) => section.title.trim() && Number(section.question_count) > 0 && section.subject_ids.length > 0)
+            .filter((section) => Number(section.question_count) > 0 && section.subject_ids.length > 0)
             .map((section) => ({
-              title: section.title.trim(),
+              title: resolveExamSectionTitle(section),
               question_count: Number(section.question_count),
               subject_ids: section.subject_ids,
             })),
@@ -454,6 +458,19 @@ export function ExamFormPage({
         };
       }),
     }));
+  }
+
+  function resolveExamSectionTitle(section: ExamSectionForm) {
+    const customTitle = section.title.trim();
+
+    if (customTitle) {
+      return customTitle;
+    }
+
+    return section.subject_ids
+      .map((subjectId) => subjectLabelMap.get(subjectId))
+      .filter(Boolean)
+      .join(" / ");
   }
 
   return (
@@ -601,7 +618,7 @@ export function ExamFormPage({
                           Soru Dağılımı
                         </label>
                         <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">
-                          Resmî duyurudaki başlıkları burada gruplarsın. Bu başlıklar ders tablosuna yazılmaz; sadece sınav bilgisi ve deneme şablonu için kullanılır.
+                          Ders seçip soru sayısını yazman yeterli. Başlık boşsa sistem seçili ders adını kullanır.
                         </p>
                       </div>
                       <button
@@ -609,7 +626,7 @@ export function ExamFormPage({
                         onClick={addExamSection}
                         type="button"
                       >
-                        Dağılım Başlığı Ekle
+                        Soru Dağılımı Ekle
                       </button>
                     </div>
 
@@ -630,7 +647,7 @@ export function ExamFormPage({
 
                     {form.sections.length === 0 ? (
                       <p className="rounded-2xl border border-dashed border-[var(--color-admin-line)] px-4 py-4 text-sm text-[var(--color-admin-muted)]">
-                        Henüz soru dağılımı eklenmedi. Örn. “Polis Meslek Mevzuatı / 30 soru” gibi başlıklar ekleyebilirsin.
+                        Henüz soru dağılımı eklenmedi. Ders seçip soru sayısını yazman yeterli.
                       </p>
                     ) : (
                       <div className="space-y-3">
@@ -642,12 +659,12 @@ export function ExamFormPage({
                             <div className="grid gap-3 md:grid-cols-[minmax(0,1fr)_130px_auto]">
                               <label className="block space-y-1.5">
                                 <span className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-                                  Dağılım Başlığı
+                                  Dağılım Başlığı (opsiyonel)
                                 </span>
                                 <input
                                   className="admin-input h-10 text-sm"
                                   onChange={(event) => updateExamSection(section.client_id, { title: event.target.value })}
-                                  placeholder={sectionIndex === 0 ? "Polis Meslek Mevzuatı" : "Başlık"}
+                                  placeholder={sectionIndex === 0 ? "Boşsa ders adı kullanılır" : "Opsiyonel başlık"}
                                   value={section.title}
                                 />
                               </label>

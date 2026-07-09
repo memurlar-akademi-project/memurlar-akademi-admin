@@ -185,6 +185,10 @@ function resolvePageMeta(pathname: string) {
     return { title: "Podcast Dersi Düzenle", backHref: "/podcast" };
   }
 
+  if (/^\/podcast\/bolumler\/\d+$/.test(pathname)) {
+    return { title: "Podcast Bölümü", backHref: "/podcast" };
+  }
+
   if (pathname === "/denemeler") {
     return { title: "Denemeler" };
   }

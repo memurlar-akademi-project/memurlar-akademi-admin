@@ -10,7 +10,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminExam, AdminMinistry, AdminTopic } from "@/lib/types";
+import type { AdminExam, AdminMinistry, AdminSubject, AdminTopic } from "@/lib/types";
 
 const emptyForm = {
   ministry_id: "",
@@ -78,6 +78,7 @@ export function ExamFormPage({
   const [form, setForm] = useState(emptyForm);
   const [exam, setExam] = useState<AdminExam | null>(null);
   const [ministries, setMinistries] = useState<AdminMinistry[]>([]);
+  const [subjects, setSubjects] = useState<AdminSubject[]>([]);
   const [topics, setTopics] = useState<AdminTopic[]>([]);
   const [loading, setLoading] = useState(mode === "edit");
   const [saving, setSaving] = useState(false);
@@ -204,21 +205,91 @@ export function ExamFormPage({
     [selectedTopicGroups],
   );
 
-  const filteredSelectedExamSubjects = useMemo(() => {
-    const normalized = subjectQuestionQuery.trim().toLocaleLowerCase("tr");
+  const subjectInfoMap = useMemo(() => {
+    const next = new Map<
+      number,
+      {
+        id: number;
+        name: string;
+        code: string | null;
+        selectedTopicCount: number;
+        totalTopicCount: number;
+      }
+    >();
 
-    if (!normalized) {
-      return selectedExamSubjects;
+    subjects.forEach((subject) => {
+      next.set(subject.id, {
+        id: subject.id,
+        name: subject.name,
+        code: subject.code?.trim() || null,
+        selectedTopicCount: 0,
+        totalTopicCount: subject.topic_count ?? 0,
+      });
+    });
+
+    topicGroups.forEach((group) => {
+      next.set(group.subjectId, {
+        id: group.subjectId,
+        name: group.subjectName,
+        code: group.subjectCode,
+        selectedTopicCount: group.selectedCount,
+        totalTopicCount: group.totalCount,
+      });
+    });
+
+    exam?.sections.forEach((section) => {
+      section.subjects.forEach((subject) => {
+        if (!next.has(subject.id)) {
+          next.set(subject.id, {
+            id: subject.id,
+            name: subject.name,
+            code: subject.code?.trim() || null,
+            selectedTopicCount: 0,
+            totalTopicCount: 0,
+          });
+        }
+      });
+    });
+
+    return next;
+  }, [exam?.sections, subjects, topicGroups]);
+
+  const selectedSectionSubjectIds = useMemo(() => {
+    const next = new Set<number>();
+
+    form.sections.forEach((section) => {
+      section.subject_ids.forEach((subjectId) => next.add(subjectId));
+    });
+
+    return next;
+  }, [form.sections]);
+
+  const subjectQuestionSubjects = useMemo(() => {
+    const normalized = subjectQuestionQuery.trim().toLocaleLowerCase("tr");
+    const allSubjects = Array.from(subjectInfoMap.values()).sort((left, right) => {
+      const leftCode = left.code ?? "";
+      const rightCode = right.code ?? "";
+
+      return leftCode.localeCompare(rightCode, "tr") || left.name.localeCompare(right.name, "tr") || left.id - right.id;
+    });
+
+    if (normalized) {
+      return allSubjects.filter((subject) =>
+        [subject.code, subject.name]
+          .filter(Boolean)
+          .join(" ")
+          .toLocaleLowerCase("tr")
+          .includes(normalized),
+      );
     }
 
-    return selectedExamSubjects.filter((subject) =>
-      [subject.code, subject.name]
-        .filter(Boolean)
-        .join(" ")
-        .toLocaleLowerCase("tr")
-        .includes(normalized),
-    );
-  }, [selectedExamSubjects, subjectQuestionQuery]);
+    const visibleSubjectIds = new Set<number>([
+      ...selectedExamSubjects.map((subject) => subject.id),
+      ...Array.from(selectedSectionSubjectIds),
+    ]);
+
+    return allSubjects.filter((subject) => visibleSubjectIds.has(subject.id));
+  }, [selectedExamSubjects, selectedSectionSubjectIds, subjectInfoMap, subjectQuestionQuery]);
 
   const subjectQuestionCountMap = useMemo(() => {
     const next = new Map<number, string>();
@@ -251,12 +322,20 @@ export function ExamFormPage({
   }, [form.sections]);
 
   const subjectQuestionTotal = useMemo(
+    () => Array.from(subjectQuestionCountMap.values()).reduce((total, value) => total + (Number(value) || 0), 0),
+    [subjectQuestionCountMap],
+  );
+  const subjectQuestionDifference = expectedQuestionTotal > 0 ? subjectQuestionTotal - expectedQuestionTotal : 0;
+
+  const sectionSubjects = useMemo(
     () =>
-      selectedExamSubjects.reduce(
-        (total, subject) => total + (Number(subjectQuestionCountMap.get(subject.id)) || 0),
-        0,
-      ),
-    [selectedExamSubjects, subjectQuestionCountMap],
+      Array.from(subjectQuestionCountMap.entries())
+        .flatMap(([subjectId, questionCount]) => {
+          const subject = subjectInfoMap.get(subjectId);
+
+          return subject ? [{ subject, questionCount }] : [];
+        }),
+    [subjectInfoMap, subjectQuestionCountMap],
   );
 
   const selectedMinistry = useMemo(
@@ -276,8 +355,9 @@ export function ExamFormPage({
       setError(null);
 
       try {
-        const [ministriesResponse, topicsResponse, examResponse] = await Promise.all([
+        const [ministriesResponse, subjectsResponse, topicsResponse, examResponse] = await Promise.all([
           adminApiRequest<{ ministries: AdminMinistry[] }>("/admin/ministries", { token }),
+          adminApiRequest<{ subjects: AdminSubject[] }>("/admin/subjects", { token }),
           adminApiRequest<{ topics: AdminTopic[] }>("/admin/topics", { token }),
           mode === "edit" && id
             ? adminApiRequest<{ exam: AdminExam }>(`/admin/exams/${id}`, { token })
@@ -289,6 +369,7 @@ export function ExamFormPage({
         }
 
         setMinistries(ministriesResponse.data.ministries);
+        setSubjects(subjectsResponse.data.subjects);
         setTopics(topicsResponse.data.topics);
 
         if (examResponse?.data.exam) {
@@ -371,10 +452,10 @@ export function ExamFormPage({
           passing_score: form.passing_score ? Number(form.passing_score) : null,
           is_active_for_signup: form.is_active_for_signup,
           topic_ids: form.topic_ids,
-          sections: selectedExamSubjects
-            .map((subject) => ({
+          sections: sectionSubjects
+            .map(({ subject, questionCount }) => ({
               title: subject.name,
-              question_count: Number(getSubjectQuestionCount(subject.id)) || 0,
+              question_count: Number(questionCount) || 0,
               subject_ids: [subject.id],
             }))
             .filter((section) => section.question_count > 0),
@@ -721,7 +802,7 @@ export function ExamFormPage({
                             Ders Bazlı Soru Sayısı
                           </label>
                           <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">
-                            Seçili konuların dersleri burada otomatik görünür. Her dersin yanına bu sınavda gelecek soru sayısını yaz.
+                            Konu seçilen dersler otomatik görünür. Diğer dersleri arayıp soru sayısı yazabilirsin.
                           </p>
                         </div>
                         <div className="flex flex-wrap gap-2 text-xs font-bold">
@@ -740,69 +821,63 @@ export function ExamFormPage({
                         </div>
                       </div>
 
-                      {selectedExamSubjects.length === 0 ? (
-                        <p className="rounded-2xl border border-dashed border-[var(--color-admin-line)] px-4 py-4 text-sm text-[var(--color-admin-muted)]">
-                          Konu seçtiğinde dersler burada listelenecek.
-                        </p>
-                      ) : (
-                        <div className="space-y-3">
-                          <div className="flex flex-wrap items-center gap-3">
-                            <label className="admin-input-shell min-w-0 flex-1">
-                              <Search className="admin-input-icon" size={15} />
-                              <input
-                                className="admin-input admin-input-with-icon h-10 text-sm"
-                                onChange={(event) => setSubjectQuestionQuery(event.target.value)}
-                                placeholder="Sayı girilecek dersi ara"
-                                value={subjectQuestionQuery}
-                              />
-                            </label>
-                            <span className="shrink-0 text-xs font-semibold text-[var(--color-admin-muted)]">
-                              {filteredSelectedExamSubjects.length}/{selectedExamSubjects.length} ders
-                            </span>
-                          </div>
-
-                          <div className="divide-y divide-[var(--color-admin-line)] overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
-                            {filteredSelectedExamSubjects.length === 0 ? (
-                              <p className="px-4 py-5 text-sm text-[var(--color-admin-muted)]">
-                                Aramaya uygun ders bulunamadı.
-                              </p>
-                            ) : (
-                              filteredSelectedExamSubjects.map((subject) => (
-                                <div
-                                  className="grid gap-3 px-4 py-3 md:grid-cols-[auto_minmax(0,1fr)_132px]"
-                                  key={subject.id}
-                                >
-                                  <span className="flex h-9 min-w-12 items-center justify-center rounded-xl bg-[var(--color-admin-accent-soft)] px-2 text-xs font-extrabold text-[var(--color-admin-accent)]">
-                                    {subject.code ?? "Ders"}
-                                  </span>
-
-                                  <div className="min-w-0">
-                                    <p className="truncate text-sm font-bold text-[var(--color-admin-ink)]">
-                                      {subject.name}
-                                    </p>
-                                    <p className="mt-0.5 text-xs font-semibold text-[var(--color-admin-muted)]">
-                                      {subject.selectedTopicCount}/{subject.totalTopicCount} konu seçili
-                                    </p>
-                                  </div>
-
-                                  <label className="block space-y-1">
-                                    <span className="sr-only">{subject.name} soru sayısı</span>
-                                    <input
-                                      className="admin-input h-10 text-sm"
-                                      inputMode="numeric"
-                                      min={0}
-                                      onChange={(event) => updateSubjectQuestionCount(subject, event.target.value)}
-                                      placeholder="0"
-                                      type="number"
-                                      value={getSubjectQuestionCount(subject.id)}
-                                    />
-                                  </label>
-                                </div>
-                              ))
-                            )}
-                          </div>
+                      <div className="space-y-3">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <label className="admin-input-shell min-w-0 flex-1">
+                            <Search className="admin-input-icon" size={15} />
+                            <input
+                              className="admin-input admin-input-with-icon h-10 text-sm"
+                              onChange={(event) => setSubjectQuestionQuery(event.target.value)}
+                              placeholder="Sayı girilecek dersi ara"
+                              value={subjectQuestionQuery}
+                            />
+                          </label>
+                          <span className="shrink-0 text-xs font-semibold text-[var(--color-admin-muted)]">
+                            {subjectQuestionSubjects.length}/{subjectInfoMap.size} ders
+                          </span>
                         </div>
-                      )}
+
+                        <div className="divide-y divide-[var(--color-admin-line)] overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
+                          {subjectQuestionSubjects.length === 0 ? (
+                            <p className="px-4 py-5 text-sm text-[var(--color-admin-muted)]">
+                              {subjectQuestionQuery.trim() ? "Aramaya uygun ders bulunamadı." : "Konu seçtiğinde dersler burada listelenecek."}
+                            </p>
+                          ) : (
+                            subjectQuestionSubjects.map((subject) => (
+                              <div
+                                className="grid gap-3 px-4 py-3 md:grid-cols-[auto_minmax(0,1fr)_132px]"
+                                key={subject.id}
+                              >
+                                <span className="flex h-9 min-w-12 items-center justify-center rounded-xl bg-[var(--color-admin-accent-soft)] px-2 text-xs font-extrabold text-[var(--color-admin-accent)]">
+                                  {subject.code ?? "Ders"}
+                                </span>
+
+                                <div className="min-w-0">
+                                  <p className="truncate text-sm font-bold text-[var(--color-admin-ink)]">
+                                    {subject.name}
+                                  </p>
+                                  <p className="mt-0.5 text-xs font-semibold text-[var(--color-admin-muted)]">
+                                    {subject.selectedTopicCount}/{subject.totalTopicCount} konu seçili
+                                  </p>
+                                </div>
+
+                                <label className="block space-y-1">
+                                  <span className="sr-only">{subject.name} soru sayısı</span>
+                                  <input
+                                    className="admin-input h-10 text-sm"
+                                    inputMode="numeric"
+                                    min={0}
+                                    onChange={(event) => updateSubjectQuestionCount(subject, event.target.value)}
+                                    placeholder="0"
+                                    type="number"
+                                    value={getSubjectQuestionCount(subject.id)}
+                                  />
+                                </label>
+                              </div>
+                            ))
+                          )}
+                        </div>
+                      </div>
                     </div>
 
                     <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
@@ -897,6 +972,54 @@ export function ExamFormPage({
               />
             </AdminTableCard>
           ) : null}
+
+          <AdminTableCard>
+            <div className="px-5 py-5">
+              <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+                Soru Sayısı Özeti
+              </h3>
+
+              <div className="mt-4 grid gap-3">
+                <div className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+                    Toplam Seçilen Soru
+                  </p>
+                  <p className="mt-2 text-3xl font-extrabold tracking-[-0.03em] text-[var(--color-admin-ink)]">
+                    {subjectQuestionTotal}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                    Ders bazlı yazdığın soru sayılarının toplamı
+                  </p>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+                  <div className="rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-3">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+                      Sınav Hedefi
+                    </p>
+                    <p className="mt-2 text-lg font-bold text-[var(--color-admin-ink)]">
+                      {expectedQuestionTotal || "-"}
+                    </p>
+                  </div>
+
+                  <div
+                    className={`rounded-[16px] border px-4 py-3 ${
+                      !expectedQuestionTotal || subjectQuestionDifference === 0
+                        ? "border-[var(--color-admin-line)] bg-[var(--color-admin-panel)]"
+                        : "border-[var(--color-admin-warn-soft)] bg-[var(--color-admin-warn-soft)]"
+                    }`}
+                  >
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+                      Fark
+                    </p>
+                    <p className="mt-2 text-lg font-bold text-[var(--color-admin-ink)]">
+                      {expectedQuestionTotal ? (subjectQuestionDifference > 0 ? `+${subjectQuestionDifference}` : subjectQuestionDifference) : "-"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AdminTableCard>
 
           <AdminTableCard>
             <div className="px-5 py-5">

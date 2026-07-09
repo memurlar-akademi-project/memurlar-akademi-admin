@@ -502,6 +502,8 @@ export type AdminFlashcard = {
       name: string;
     } | null;
   } | null;
+  created_at?: string | null;
+  updated_at?: string | null;
 };
 
 export type AdminFlashcardImportItem = {
@@ -568,6 +570,17 @@ export type AdminPodcastEpisode = {
   title: string;
   duration_seconds: number;
   transcript: string[];
+  script_text?: string | null;
+  script_status?: "missing" | "draft" | "ready" | "sent" | "generated" | "failed" | string | null;
+  script_source_hash?: string | null;
+  script_character_count?: number;
+  script_generation_meta?: Record<string, unknown> | null;
+  script_generated_at?: string | null;
+  tts_provider?: string | null;
+  tts_voice_id?: string | null;
+  tts_model_id?: string | null;
+  audio_disk?: string | null;
+  audio_path?: string | null;
   audio_original_filename?: string | null;
   audio_url?: string | null;
   sort_order: number;
@@ -585,6 +598,19 @@ export type AdminPodcastEpisode = {
       name: string;
     } | null;
   } | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
+export type AdminPodcastVoice = {
+  voice_id: string;
+  name: string;
+  category?: string | null;
+  description?: string | null;
+  labels?: Record<string, string>;
+  preview_url?: string | null;
+  is_owner?: boolean | null;
+  is_legacy?: boolean | null;
 };
 
 export type AdminMockExam = {

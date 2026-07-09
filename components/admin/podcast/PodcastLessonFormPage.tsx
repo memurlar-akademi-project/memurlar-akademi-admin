@@ -3,12 +3,15 @@
 import {
   AudioLines,
   Clock3,
+  Loader2,
   MicVocal,
   PauseCircle,
   Plus,
   SquarePen,
   Trash2,
   CheckCircle2,
+  Volume2,
+  WandSparkles,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState } from "react";
@@ -21,6 +24,8 @@ import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminPodcastEpisode, AdminPodcastLesson, AdminSubject, AdminTopic } from "@/lib/types";
+
+const preferredVoiceId = "fXhoW006nc5Wf8xkGVSy";
 
 const emptyLessonForm = {
   subject_id: null as number | null,
@@ -35,6 +40,10 @@ const emptyEpisodeEditor = {
   title: "",
   duration_seconds: "300",
   transcript: "",
+  script_text: "",
+  script_status: "missing",
+  tts_voice_id: preferredVoiceId,
+  tts_model_id: "eleven_multilingual_v2",
   sort_order: "1",
   is_active: true,
 };
@@ -70,6 +79,7 @@ export function PodcastLessonFormPage({
   const [episodesLoading, setEpisodesLoading] = useState(mode === "edit");
   const [episodeBusyId, setEpisodeBusyId] = useState<number | null>(null);
   const [episodeSaving, setEpisodeSaving] = useState(false);
+  const [scriptBusy, setScriptBusy] = useState<"script" | "audio" | null>(null);
   const [selectedEpisodeId, setSelectedEpisodeId] = useState<number | null>(null);
   const [isEpisodeModalOpen, setIsEpisodeModalOpen] = useState(false);
   const [episodeEditor, setEpisodeEditor] = useState(emptyEpisodeEditor);
@@ -234,6 +244,10 @@ export function PodcastLessonFormPage({
       title: selectedEpisode.title,
       duration_seconds: String(selectedEpisode.duration_seconds),
       transcript: (selectedEpisode.transcript ?? []).join("\n"),
+      script_text: selectedEpisode.script_text ?? "",
+      script_status: selectedEpisode.script_status ?? "missing",
+      tts_voice_id: selectedEpisode.tts_voice_id ?? "",
+      tts_model_id: selectedEpisode.tts_model_id ?? "eleven_multilingual_v2",
       sort_order: String(selectedEpisode.sort_order),
       is_active: selectedEpisode.is_active,
     });
@@ -321,6 +335,11 @@ export function PodcastLessonFormPage({
               .split("\n")
               .map((line) => line.trim())
               .filter(Boolean),
+            script_text: episodeEditor.script_text.trim() || null,
+            script_status: episodeEditor.script_text.trim() ? episodeEditor.script_status || "ready" : "missing",
+            tts_provider: "elevenlabs",
+            tts_voice_id: preferredVoiceId,
+            tts_model_id: "eleven_multilingual_v2",
             sort_order: Number(episodeEditor.sort_order || 1),
             is_active: episodeEditor.is_active,
           },
@@ -345,6 +364,126 @@ export function PodcastLessonFormPage({
       });
     } finally {
       setEpisodeSaving(false);
+    }
+  }
+
+  async function handleGenerateScript() {
+    if (!token || !id || !episodeEditor.topic_id) {
+      showToast({
+        tone: "warning",
+        title: "Önce konu seç",
+        description: "Script üretimi konu anlatımı üzerinden yapılır.",
+      });
+      return;
+    }
+
+    setScriptBusy("script");
+
+    try {
+      const response = await adminApiRequest<{ podcast: AdminPodcastEpisode }>(
+        `/admin/topics/${episodeEditor.topic_id}/podcast/script`,
+        {
+          token,
+          method: "POST",
+          body: {
+            podcast_lesson_id: id,
+            max_characters: 10000,
+            overwrite: Boolean(episodeEditor.script_text.trim()),
+            tts_provider: "elevenlabs",
+            tts_voice_id: preferredVoiceId,
+            tts_model_id: "eleven_multilingual_v2",
+          },
+        },
+      );
+
+      const podcast = response.data.podcast;
+
+      setEpisodeEditor((current) => ({
+        ...current,
+        title: podcast.title || current.title,
+        duration_seconds: String(podcast.duration_seconds || current.duration_seconds || 300),
+        script_text: podcast.script_text ?? "",
+        script_status: podcast.script_status ?? "ready",
+        tts_voice_id: podcast.tts_voice_id ?? preferredVoiceId,
+        tts_model_id: podcast.tts_model_id ?? "eleven_multilingual_v2",
+        sort_order: String(podcast.sort_order || current.sort_order),
+        is_active: Boolean(podcast.is_active),
+      }));
+      setSelectedEpisodeId(podcast.id);
+      await refreshEpisodes();
+      showToast({
+        tone: "success",
+        title: "Script hazır",
+        description: `${podcast.script_character_count ?? (podcast.script_text ?? "").length} karakterlik seslendirme metni üretildi.`,
+      });
+    } catch (submitError) {
+      showToast({
+        tone: "error",
+        title: "Script üretilemedi",
+        description: submitError instanceof Error ? submitError.message : "Konu anlatımı script'e çevrilemedi.",
+      });
+    } finally {
+      setScriptBusy(null);
+    }
+  }
+
+  async function handleSynthesizeAudio() {
+    if (!token || !id || !episodeEditor.topic_id) {
+      showToast({
+        tone: "warning",
+        title: "Önce konu seç",
+        description: "Ses üretimi için konu bağlantısı gerekli.",
+      });
+      return;
+    }
+
+    setScriptBusy("audio");
+
+    try {
+      const response = await adminApiRequest<{ podcast: AdminPodcastEpisode }>(
+        `/admin/topics/${episodeEditor.topic_id}/podcast/synthesize`,
+        {
+          token,
+          method: "POST",
+          body: {
+            podcast_lesson_id: id,
+            max_characters: 10000,
+            force_audio: Boolean(selectedEpisode?.audio_url),
+            script_text: episodeEditor.script_text.trim() || null,
+            voice_id: preferredVoiceId,
+            model_id: "eleven_multilingual_v2",
+          },
+        },
+      );
+
+      const podcast = response.data.podcast;
+
+      setEpisodeEditor((current) => ({
+        ...current,
+        title: podcast.title || current.title,
+        duration_seconds: String(podcast.duration_seconds || current.duration_seconds || 300),
+        script_text: podcast.script_text ?? current.script_text,
+        script_status: podcast.script_status ?? "generated",
+        tts_voice_id: podcast.tts_voice_id ?? preferredVoiceId,
+        tts_model_id: podcast.tts_model_id ?? "eleven_multilingual_v2",
+        sort_order: String(podcast.sort_order || current.sort_order),
+        is_active: true,
+      }));
+      setSelectedEpisodeId(podcast.id);
+      await refreshEpisodes();
+      showToast({
+        tone: "success",
+        title: "Ses üretildi",
+        description: podcast.audio_original_filename ?? "MP3 dosyası podcast bölümüne bağlandı.",
+      });
+    } catch (submitError) {
+      showToast({
+        tone: "error",
+        title: "Ses üretilemedi",
+        description: submitError instanceof Error ? submitError.message : "Ses üretimi tamamlanamadı.",
+      });
+    } finally {
+      setScriptBusy(null);
     }
   }
 
@@ -572,7 +711,9 @@ export function PodcastLessonFormPage({
                       <div className="min-w-0">
                         <p className="truncate text-sm font-bold text-[var(--color-admin-ink)]">{episode.title}</p>
                         <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
-                          {episode.topic?.name ?? "Konu yok"} · {formatDuration(episode.duration_seconds)} · {(episode.transcript ?? []).length} satır transkript
+                          {episode.topic?.name ?? "Konu yok"} · {formatDuration(episode.duration_seconds)} ·{" "}
+                          {episode.script_status === "generated" ? "Ses üretildi" : episode.script_status === "ready" ? "Script hazır" : `${(episode.transcript ?? []).length} satır transkript`}
+                          {episode.audio_original_filename ? ` · ${episode.audio_original_filename}` : ""}
                         </p>
                       </div>
                       <div className="flex justify-end gap-2">
@@ -622,7 +763,7 @@ export function PodcastLessonFormPage({
 
         {isEpisodeModalOpen ? (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/35 p-4">
-            <div className="w-full max-w-4xl rounded-[28px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
+            <div className="max-h-[92vh] w-full max-w-6xl overflow-y-auto rounded-[28px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
               <form className="space-y-5 p-6" onSubmit={handleEpisodeSubmit}>
                 <div className="flex items-center justify-between gap-3">
                   <div>
@@ -630,7 +771,7 @@ export function PodcastLessonFormPage({
                       {selectedEpisode ? "Podcast Bölümü Düzenle" : "Yeni Podcast Bölümü"}
                     </h3>
                     <p className="text-sm text-[var(--color-admin-muted)]">
-                      Transkript şimdilik manuel giriliyor. Sonraki adımda ses dosyasından otomatik STT ekleyebiliriz.
+                      Konu anlatımından script oluştur, gerekirse düzenle ve sesi aynı ekranda üret.
                     </p>
                   </div>
                   <button
@@ -706,6 +847,81 @@ export function PodcastLessonFormPage({
                     value={episodeEditor.transcript}
                   />
                 </label>
+
+                <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_260px]">
+                  <div className="space-y-3 rounded-[22px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">Seslendirme Scripti</p>
+                        <p className="text-xs leading-5 text-[var(--color-admin-muted)]">
+                          Konu anlatımındaki başlık tekrarları temizlenir, madde satırları konuşmaya uygun hale getirilir.
+                        </p>
+                      </div>
+                      <button
+                        className="admin-button admin-button-secondary"
+                        disabled={scriptBusy !== null}
+                        onClick={handleGenerateScript}
+                        type="button"
+                      >
+                        {scriptBusy === "script" ? <Loader2 className="animate-spin" size={16} /> : <WandSparkles size={16} />}
+                        {episodeEditor.script_text.trim() ? "Scripti Yenile" : "Script Oluştur"}
+                      </button>
+                    </div>
+
+                    <textarea
+                      className="admin-input min-h-80"
+                      onChange={(event) =>
+                        setEpisodeEditor((current) => ({
+                          ...current,
+                          script_text: event.target.value,
+                          script_status: event.target.value.trim() ? "ready" : "missing",
+                        }))
+                      }
+                      placeholder="Konu seçip Script Oluştur butonuna basınca seslendirilecek metin burada oluşur."
+                      value={episodeEditor.script_text}
+                    />
+
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-[var(--color-admin-muted)]">
+                      <span className="rounded-full border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-3 py-1">
+                        Durum: {episodeEditor.script_status || "missing"}
+                      </span>
+                      <span className="rounded-full border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-3 py-1">
+                        {episodeEditor.script_text.length.toLocaleString("tr-TR")} karakter
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3 rounded-[22px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
+                    <div>
+                      <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">Ses Dosyası</p>
+                      <p className="text-xs leading-5 text-[var(--color-admin-muted)]">
+                        Script hazırsa sesi üretip draft olarak dinleyebilirsin.
+                      </p>
+                    </div>
+
+                    {selectedEpisode?.audio_url ? (
+                      <a
+                        className="flex items-center justify-center gap-2 rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-3 text-sm font-bold text-[var(--color-admin-ink)] transition hover:border-[var(--color-admin-accent)] hover:text-[var(--color-admin-accent)]"
+                        href={selectedEpisode.audio_url}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Volume2 size={16} />
+                        Üretilen Sesi Aç
+                      </a>
+                    ) : null}
+
+                    <button
+                      className="admin-button admin-button-primary w-full justify-center"
+                      disabled={scriptBusy !== null}
+                      onClick={handleSynthesizeAudio}
+                      type="button"
+                    >
+                      {scriptBusy === "audio" ? <Loader2 className="animate-spin" size={16} /> : <Volume2 size={16} />}
+                      {selectedEpisode?.audio_url ? "Sesi Yeniden Üret" : "Sesi Üret"}
+                    </button>
+                  </div>
+                </div>
 
                 <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_280px]">
                   <label className="flex items-center gap-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm font-semibold text-[var(--color-admin-ink)]">

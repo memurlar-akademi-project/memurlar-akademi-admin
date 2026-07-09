@@ -48,6 +48,25 @@ type MockExamAutoDraftResponse = {
   };
 };
 
+function isMockCandidate(question: AdminQuestion) {
+  return (
+    question.question_type === "multiple_choice" &&
+    question.status === "active" &&
+    question.approval_status === "approved"
+  );
+}
+
+function sortMockCandidates(left: AdminQuestion, right: AdminQuestion) {
+  const leftIsMock = left.question_bank_type === "mock_exam";
+  const rightIsMock = right.question_bank_type === "mock_exam";
+
+  if (leftIsMock !== rightIsMock) {
+    return leftIsMock ? -1 : 1;
+  }
+
+  return left.id - right.id;
+}
+
 export function MockExamFormPage({
   mode,
   id,
@@ -106,7 +125,7 @@ export function MockExamFormPage({
 
       try {
         const questionsResponse = await adminApiRequest<{ questions: AdminQuestion[] }>(
-          "/admin/questions?per_page=500&question_bank_type=mock_exam&approval_status=approved&status=active&question_type=multiple_choice",
+          "/admin/questions?per_page=1000&approval_status=approved&status=active&question_type=multiple_choice",
           { token },
         );
 
@@ -213,6 +232,17 @@ export function MockExamFormPage({
     [selectedExam],
   );
 
+  const examSectionSubjectIds = useMemo(() => {
+    const next = new Set<number>();
+
+    selectedExam?.sections.forEach((section) => {
+      section.subject_ids.forEach((subjectId) => next.add(subjectId));
+      section.subjects.forEach((subject) => next.add(subject.id));
+    });
+
+    return next;
+  }, [selectedExam?.sections]);
+
   const examSubjects = useMemo(
     () => {
       const subjectMap = new Map<number, { id: number; name: string }>();
@@ -224,7 +254,13 @@ export function MockExamFormPage({
           return;
         }
 
-        if (!question.topic?.id || !(selectedExam?.topic_ids ?? []).includes(question.topic.id)) {
+        const topicId = question.topic?.id;
+        const subjectId = question.topic?.subject?.id;
+
+        if (
+          (!topicId || !examTopicIds.has(topicId)) &&
+          (!subjectId || !examSectionSubjectIds.has(subjectId))
+        ) {
           return;
         }
 
@@ -235,16 +271,21 @@ export function MockExamFormPage({
 
       return Array.from(subjectMap.values());
     },
-    [questions, selectedExam?.topic_ids],
+    [examSectionSubjectIds, examTopicIds, questions],
   );
 
   const examQuestions = useMemo(
     () =>
       questions.filter((question) => {
         const topicId = question.topic?.id;
-        return topicId ? examTopicIds.has(topicId) : false;
+        const subjectId = question.topic?.subject?.id;
+
+        return Boolean(
+          (topicId && examTopicIds.has(topicId)) ||
+            (subjectId && examSectionSubjectIds.has(subjectId)),
+        );
       }),
-    [examTopicIds, questions],
+    [examSectionSubjectIds, examTopicIds, questions],
   );
 
   const topicOptions = useMemo(() => {
@@ -283,19 +324,7 @@ export function MockExamFormPage({
   const filteredQuestions = useMemo(
     () =>
       examQuestions.filter((question) => {
-        if (question.question_type !== "multiple_choice") {
-          return false;
-        }
-
-        if (question.status !== "active") {
-          return false;
-        }
-
-        if (question.question_bank_type !== "mock_exam") {
-          return false;
-        }
-
-        if (question.approval_status !== "approved") {
+        if (!isMockCandidate(question)) {
           return false;
         }
 
@@ -312,9 +341,101 @@ export function MockExamFormPage({
         }
 
         return true;
-      }),
+      }).sort(sortMockCandidates),
     [difficultyFilter, examQuestions, selectedSubjectId, selectedTopicId],
   );
+
+  const localAutoDraft = useMemo(() => {
+    const sections = selectedExam?.sections ?? [];
+    const usedQuestionIds = new Set<number>();
+    const selectedQuestionIds: number[] = [];
+    const summarySections: MockExamAutoDraftResponse["summary"]["sections"] = [];
+    const candidates = examQuestions.filter(isMockCandidate);
+
+    const pickQuestions = (subjectIds: number[], targetCount: number) => {
+      const subjectIdSet = new Set(subjectIds);
+      const pool = candidates
+        .filter((question) => {
+          if (usedQuestionIds.has(question.id)) {
+            return false;
+          }
+
+          if (subjectIdSet.size === 0) {
+            return true;
+          }
+
+          const subjectId = question.topic?.subject?.id;
+          return subjectId ? subjectIdSet.has(subjectId) : false;
+        })
+        .sort(sortMockCandidates)
+        .slice(0, targetCount);
+
+      pool.forEach((question) => {
+        usedQuestionIds.add(question.id);
+        selectedQuestionIds.push(question.id);
+      });
+
+      return pool;
+    };
+
+    if (sections.length > 0) {
+      sections.forEach((section) => {
+        const sectionSubjectIds = Array.from(new Set([
+          ...section.subject_ids,
+          ...section.subjects.map((subject) => subject.id),
+        ]));
+        const targetCount = section.question_count;
+        const picked = pickQuestions(sectionSubjectIds, targetCount);
+
+        summarySections.push({
+          section_id: section.id,
+          title: section.title,
+          target_count: targetCount,
+          selected_count: picked.length,
+          available_count: candidates.filter((question) => {
+            const subjectId = question.topic?.subject?.id;
+            return sectionSubjectIds.length === 0 || (subjectId ? sectionSubjectIds.includes(subjectId) : false);
+          }).length,
+          subjects: section.subjects.map((subject) => {
+            const subjectPickedCount = picked.filter((question) => question.topic?.subject?.id === subject.id).length;
+            const subjectAvailableCount = candidates.filter((question) => question.topic?.subject?.id === subject.id).length;
+
+            return {
+              subject_id: subject.id,
+              subject_name: subject.name,
+              target_count: section.subjects.length > 0 ? Math.floor(targetCount / section.subjects.length) : targetCount,
+              selected_count: subjectPickedCount,
+              available_count: subjectAvailableCount,
+            };
+          }),
+        });
+      });
+    } else {
+      const picked = pickQuestions([], expectedMockQuestionCount);
+
+      summarySections.push({
+        section_id: null,
+        title: "Genel",
+        target_count: expectedMockQuestionCount,
+        selected_count: picked.length,
+        available_count: candidates.length,
+        subjects: [],
+      });
+    }
+
+    const targetCount = summarySections.reduce((total, section) => total + section.target_count, 0);
+    const selectedCount = selectedQuestionIds.length;
+
+    return {
+      question_ids: selectedQuestionIds,
+      summary: {
+        target_count: targetCount,
+        selected_count: selectedCount,
+        missing_count: Math.max(targetCount - selectedCount, 0),
+        sections: summarySections,
+      },
+    };
+  }, [examQuestions, expectedMockQuestionCount, selectedExam?.sections]);
 
   const questionOptions = useMemo(
     () =>
@@ -461,26 +582,53 @@ export function MockExamFormPage({
         response.data.questions.forEach((question) => questionMap.set(question.id, question));
         return Array.from(questionMap.values());
       });
+      const nextQuestionIds =
+        response.data.summary.missing_count > 0 && localAutoDraft.question_ids.length > response.data.question_ids.length
+          ? localAutoDraft.question_ids
+          : response.data.question_ids;
+      const nextSummary =
+        response.data.summary.missing_count > 0 && localAutoDraft.question_ids.length > response.data.question_ids.length
+          ? localAutoDraft.summary
+          : response.data.summary;
+
       setForm((current) => ({
         ...current,
-        question_ids: response.data.question_ids,
+        question_ids: nextQuestionIds,
         duration_min: String(selectedExam?.duration_min ?? current.duration_min),
         title: current.title.trim() || `${selectedExam?.name ?? "Sınav"} Deneme 1`,
       }));
-      setAutoDraftSummary(response.data.summary);
+      setAutoDraftSummary(nextSummary);
 
       showToast({
-        tone: response.data.summary.missing_count > 0 ? "warning" : "success",
+        tone: nextSummary.missing_count > 0 ? "warning" : "success",
         title: "Deneme taslağı oluşturuldu",
         description:
-          response.data.summary.missing_count > 0
-            ? `${response.data.summary.selected_count}/${response.data.summary.target_count} soru seçildi. Eksik havuz var.`
-            : `${response.data.summary.selected_count} soru blueprint'e göre seçildi.`,
+          nextSummary.missing_count > 0
+            ? `${nextSummary.selected_count}/${nextSummary.target_count} soru seçildi. Eksik havuz var.`
+            : `${nextSummary.selected_count} soru blueprint'e göre seçildi.`,
       });
     } catch (draftError) {
-      const message = draftError instanceof Error ? draftError.message : "Deneme taslağı oluşturulamadı.";
-      setError(message);
-      showToast({ tone: "error", title: "Taslak oluşturulamadı", description: message });
+      if (localAutoDraft.question_ids.length > 0) {
+        setForm((current) => ({
+          ...current,
+          question_ids: localAutoDraft.question_ids,
+          duration_min: String(selectedExam?.duration_min ?? current.duration_min),
+          title: current.title.trim() || `${selectedExam?.name ?? "Sınav"} Deneme 1`,
+        }));
+        setAutoDraftSummary(localAutoDraft.summary);
+        showToast({
+          tone: localAutoDraft.summary.missing_count > 0 ? "warning" : "success",
+          title: "Deneme taslağı oluşturuldu",
+          description:
+            localAutoDraft.summary.missing_count > 0
+              ? `${localAutoDraft.summary.selected_count}/${localAutoDraft.summary.target_count} soru mevcut havuzdan seçildi.`
+              : `${localAutoDraft.summary.selected_count} soru mevcut havuzdan seçildi.`,
+        });
+      } else {
+        const message = draftError instanceof Error ? draftError.message : "Deneme taslağı oluşturulamadı.";
+        setError(message);
+        showToast({ tone: "error", title: "Taslak oluşturulamadı", description: message });
+      }
     } finally {
       setAutoDrafting(false);
     }
@@ -590,7 +738,7 @@ export function MockExamFormPage({
                 <div>
                   <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">Blueprint taslağı</p>
                   <p className="mt-1 text-xs font-semibold leading-5 text-[var(--color-admin-muted)]">
-                    Sınavdaki soru dağılımına göre onaylı deneme sorularından dengeli bir taslak seçer.
+                    Sınavdaki soru dağılımına göre onaylı deneme sorularını, eksik kalırsa normal soruları seçer.
                   </p>
                 </div>
                 <button
@@ -704,7 +852,7 @@ export function MockExamFormPage({
                   ? "Bu filtrelerle eşleşen soru bulunamadı."
                   : "Önce sınav seçerek soru havuzunu daralt."
               }
-              helperText={`Denemeye sadece seçilen sınava bağlı derslerin aktif test sorularından ekleme yapılır. Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşmalıdır.`}
+              helperText={`Denemeye seçilen sınava bağlı derslerin aktif/onaylı sorularından ekleme yapılır. Deneme soruları önceliklidir; eksikse normal sorular da kullanılabilir. Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşmalıdır.`}
               hideSelectedFromOptions
               label="Denemeye Dahil Edilen Sorular"
               onChange={(question_ids) => setForm((current) => ({ ...current, question_ids }))}

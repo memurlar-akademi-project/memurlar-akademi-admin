@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import type { FormEvent, ReactNode } from "react";
-import { Check, Loader2, Plus, RefreshCw, Wand2, X } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Loader2, Plus, RefreshCw, Wand2, X } from "lucide-react";
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
@@ -226,6 +226,9 @@ export function MockExamFormPage({
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(null);
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
   const [replacementQuestionId, setReplacementQuestionId] = useState<number | null>(null);
+  const [activeSelectedQuestionIndex, setActiveSelectedQuestionIndex] = useState(0);
+  const [activeAddableQuestionIndex, setActiveAddableQuestionIndex] = useState(0);
+  const [activeReplacementQuestionIndex, setActiveReplacementQuestionIndex] = useState(0);
 
   useEffect(() => {
     if (!token) {
@@ -466,11 +469,25 @@ export function MockExamFormPage({
 
   const subjectOptions = useMemo(
     () =>
-      examSubjects.map((subject) => ({
-        id: subject.id,
-        label: subject.name,
-      })),
-    [examSubjects],
+      examSubjects.map((subject) => {
+        const selectedCount = form.question_ids.filter((questionId) => {
+          const question = questions.find((item) => item.id === questionId);
+          return question?.topic?.subject?.id === subject.id;
+        }).length;
+        const availableCount = examQuestions.filter(
+          (question) =>
+            isMockCandidate(question) &&
+            !unavailableQuestionIds.has(question.id) &&
+            question.topic?.subject?.id === subject.id,
+        ).length;
+
+        return {
+          id: subject.id,
+          label: `${subject.name} (${selectedCount}/${availableCount})`,
+          hint: `Seçili ${selectedCount} · Havuz ${availableCount}`,
+        };
+      }),
+    [examQuestions, examSubjects, form.question_ids, questions, unavailableQuestionIds],
   );
 
   const filteredQuestions = useMemo(
@@ -540,6 +557,11 @@ export function MockExamFormPage({
     [filteredQuestions, selectedQuestionIds],
   );
 
+  const activeSelectedQuestion = visibleSelectedQuestions[activeSelectedQuestionIndex] ?? null;
+  const activeAddableQuestion = addableQuestions[activeAddableQuestionIndex] ?? null;
+  const activeReplacementCandidates = activeSelectedQuestion ? replacementCandidatesFor(activeSelectedQuestion) : [];
+  const activeReplacementQuestion = activeReplacementCandidates[activeReplacementQuestionIndex] ?? null;
+
   const topicDistribution = useMemo(() => {
     const distribution = new Map<string, { subjectName: string; topicName: string; count: number }>();
 
@@ -587,6 +609,24 @@ export function MockExamFormPage({
       setForm((current) => ({ ...current, question_ids: nextIds }));
     }
   }, [examQuestions, form.exam_id, form.question_ids, unavailableQuestionIds]);
+
+  useEffect(() => {
+    setActiveSelectedQuestionIndex(0);
+    setActiveAddableQuestionIndex(0);
+    setActiveReplacementQuestionIndex(0);
+  }, [difficultyFilter, selectedSubjectId, selectedTopicId]);
+
+  useEffect(() => {
+    setActiveSelectedQuestionIndex((current) => clampIndex(current, visibleSelectedQuestions.length));
+  }, [visibleSelectedQuestions.length]);
+
+  useEffect(() => {
+    setActiveAddableQuestionIndex((current) => clampIndex(current, addableQuestions.length));
+  }, [addableQuestions.length]);
+
+  useEffect(() => {
+    setActiveReplacementQuestionIndex((current) => clampIndex(current, activeReplacementCandidates.length));
+  }, [activeReplacementCandidates.length, replacementQuestionId]);
 
   function addQuestion(questionId: number) {
     setForm((current) => {
@@ -1052,59 +1092,51 @@ export function MockExamFormPage({
                   <div className="rounded-[18px] border border-dashed border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-8 text-center text-sm font-semibold text-[var(--color-admin-muted)]">
                     Bu filtrede seçili soru yok. Filtreyi temizleyebilir veya havuzdan soru ekleyebilirsin.
                   </div>
-                ) : (
-                  visibleSelectedQuestions.map((question) => {
-                    const originalIndex = form.question_ids.indexOf(question.id);
-                    const replacementCandidates = replacementCandidatesFor(question);
-
-                    return (
-                      <QuestionWorkCard
-                        key={question.id}
-                        index={originalIndex + 1}
-                        onRemove={() => removeQuestion(question.id)}
-                        onReplace={() =>
-                          setReplacementQuestionId((current) => (current === question.id ? null : question.id))
-                        }
-                        question={question}
-                        replacing={replacementQuestionId === question.id}
-                      >
-                        {replacementQuestionId === question.id ? (
-                          <div className="mt-4 rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
-                            <div className="flex items-center justify-between gap-3 border-b border-[var(--color-admin-line)] px-4 py-3">
-                              <p className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-                                Değişim adayları
-                              </p>
-                              <button
-                                className="text-xs font-bold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
-                                onClick={() => setReplacementQuestionId(null)}
-                                type="button"
-                              >
-                                Kapat
-                              </button>
-                            </div>
-                            {replacementCandidates.length === 0 ? (
-                              <p className="px-4 py-4 text-sm font-semibold text-[var(--color-admin-muted)]">
-                                Bu filtrede uygun yedek soru yok.
-                              </p>
-                            ) : (
-                              <div className="divide-y divide-[var(--color-admin-line)]">
-                                {replacementCandidates.map((candidate) => (
-                                  <QuestionCandidateRow
-                                    key={candidate.id}
-                                    actionLabel="Bu soruyla değiştir"
-                                    icon={<RefreshCw size={14} />}
-                                    onSelect={() => replaceQuestion(question.id, candidate.id)}
-                                    question={candidate}
-                                  />
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        ) : null}
-                      </QuestionWorkCard>
-                    );
-                  })
-                )}
+                ) : activeSelectedQuestion ? (
+                  <QuestionCarouselFrame
+                    count={visibleSelectedQuestions.length}
+                    index={activeSelectedQuestionIndex}
+                    onNext={() =>
+                      setActiveSelectedQuestionIndex((current) => wrapIndex(current + 1, visibleSelectedQuestions.length))
+                    }
+                    onPrevious={() =>
+                      setActiveSelectedQuestionIndex((current) => wrapIndex(current - 1, visibleSelectedQuestions.length))
+                    }
+                  >
+                    <QuestionWorkCard
+                      index={form.question_ids.indexOf(activeSelectedQuestion.id) + 1}
+                      onRemove={() => removeQuestion(activeSelectedQuestion.id)}
+                      onReplace={() => {
+                        setReplacementQuestionId((current) =>
+                          current === activeSelectedQuestion.id ? null : activeSelectedQuestion.id,
+                        );
+                        setActiveReplacementQuestionIndex(0);
+                      }}
+                      question={activeSelectedQuestion}
+                      replacing={replacementQuestionId === activeSelectedQuestion.id}
+                    >
+                      {replacementQuestionId === activeSelectedQuestion.id ? (
+                        <ReplacementCarousel
+                          candidate={activeReplacementQuestion}
+                          count={activeReplacementCandidates.length}
+                          index={activeReplacementQuestionIndex}
+                          onClose={() => setReplacementQuestionId(null)}
+                          onNext={() =>
+                            setActiveReplacementQuestionIndex((current) =>
+                              wrapIndex(current + 1, activeReplacementCandidates.length),
+                            )
+                          }
+                          onPrevious={() =>
+                            setActiveReplacementQuestionIndex((current) =>
+                              wrapIndex(current - 1, activeReplacementCandidates.length),
+                            )
+                          }
+                          onSelect={(candidateId) => replaceQuestion(activeSelectedQuestion.id, candidateId)}
+                        />
+                      ) : null}
+                    </QuestionWorkCard>
+                  </QuestionCarouselFrame>
+                ) : null}
               </div>
 
               <div className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
@@ -1121,19 +1153,27 @@ export function MockExamFormPage({
                   <p className="px-4 py-5 text-sm font-semibold text-[var(--color-admin-muted)]">
                     Bu filtrede eklenebilir soru kalmadı.
                   </p>
-                ) : (
-                  <div className="max-h-[520px] overflow-y-auto divide-y divide-[var(--color-admin-line)]">
-                    {addableQuestions.map((question) => (
-                      <QuestionCandidateRow
-                        key={question.id}
+                ) : activeAddableQuestion ? (
+                  <div className="px-4 py-4">
+                    <QuestionCarouselFrame
+                      count={addableQuestions.length}
+                      index={activeAddableQuestionIndex}
+                      onNext={() =>
+                        setActiveAddableQuestionIndex((current) => wrapIndex(current + 1, addableQuestions.length))
+                      }
+                      onPrevious={() =>
+                        setActiveAddableQuestionIndex((current) => wrapIndex(current - 1, addableQuestions.length))
+                      }
+                    >
+                      <QuestionCandidateCard
                         actionLabel="Ekle"
                         icon={<Plus size={14} />}
-                        onSelect={() => addQuestion(question.id)}
-                        question={question}
+                        onSelect={() => addQuestion(activeAddableQuestion.id)}
+                        question={activeAddableQuestion}
                       />
-                    ))}
+                    </QuestionCarouselFrame>
                   </div>
-                )}
+                ) : null}
               </div>
             </section>
 
@@ -1292,7 +1332,101 @@ function QuestionWorkCard({
   );
 }
 
-function QuestionCandidateRow({
+function QuestionCarouselFrame({
+  children,
+  count,
+  index,
+  onNext,
+  onPrevious,
+}: {
+  children: ReactNode;
+  count: number;
+  index: number;
+  onNext: () => void;
+  onPrevious: () => void;
+}) {
+  const hasMultiple = count > 1;
+
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-3 py-2">
+        <button
+          className="admin-button h-9 px-3 py-2 text-xs"
+          disabled={!hasMultiple}
+          onClick={onPrevious}
+          type="button"
+        >
+          <ChevronLeft size={15} />
+          Önceki
+        </button>
+        <span className="text-xs font-black text-[var(--color-admin-muted)]">
+          {count === 0 ? "0 / 0" : `${index + 1} / ${count}`}
+        </span>
+        <button
+          className="admin-button h-9 px-3 py-2 text-xs"
+          disabled={!hasMultiple}
+          onClick={onNext}
+          type="button"
+        >
+          Sonraki
+          <ChevronRight size={15} />
+        </button>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function ReplacementCarousel({
+  candidate,
+  count,
+  index,
+  onClose,
+  onNext,
+  onPrevious,
+  onSelect,
+}: {
+  candidate: AdminQuestion | null;
+  count: number;
+  index: number;
+  onClose: () => void;
+  onNext: () => void;
+  onPrevious: () => void;
+  onSelect: (questionId: number) => void;
+}) {
+  return (
+    <div className="mt-4 rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+        <p className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+          Değişim adayları
+        </p>
+        <button
+          className="text-xs font-bold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
+          onClick={onClose}
+          type="button"
+        >
+          Kapat
+        </button>
+      </div>
+      {candidate ? (
+        <QuestionCarouselFrame count={count} index={index} onNext={onNext} onPrevious={onPrevious}>
+          <QuestionCandidateCard
+            actionLabel="Bu soruyla değiştir"
+            icon={<RefreshCw size={14} />}
+            onSelect={() => onSelect(candidate.id)}
+            question={candidate}
+          />
+        </QuestionCarouselFrame>
+      ) : (
+        <p className="rounded-[14px] border border-dashed border-[var(--color-admin-line)] bg-white px-4 py-5 text-sm font-semibold text-[var(--color-admin-muted)]">
+          Bu filtrede uygun yedek soru yok.
+        </p>
+      )}
+    </div>
+  );
+}
+
+function QuestionCandidateCard({
   actionLabel,
   icon,
   onSelect,
@@ -1304,27 +1438,10 @@ function QuestionCandidateRow({
   question: AdminQuestion;
 }) {
   return (
-    <div className="grid gap-3 px-4 py-4 lg:grid-cols-[minmax(0,1fr)_150px]">
+    <div className="grid gap-4 rounded-[16px] border border-[var(--color-admin-line)] bg-white px-4 py-4 lg:grid-cols-[minmax(0,1fr)_150px]">
       <div className="min-w-0">
         <QuestionMeta question={question} />
-        <p className="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-[var(--color-admin-ink)]">
-          {question.question_text || "Soru metni yok"}
-        </p>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {(question.options ?? []).slice(0, 5).map((option) => (
-            <span
-              className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold ${
-                option.is_correct
-                  ? "bg-emerald-50 text-emerald-700"
-                  : "bg-[var(--color-admin-panel)] text-[var(--color-admin-muted)]"
-              }`}
-              key={`${question.id}-${option.label}`}
-            >
-              {option.is_correct ? <Check size={11} /> : null}
-              {option.label}
-            </span>
-          ))}
-        </div>
+        <QuestionBody question={question} compact />
       </div>
       <div className="flex items-start justify-end">
         <button
@@ -1340,22 +1457,24 @@ function QuestionCandidateRow({
   );
 }
 
-function QuestionBody({ question }: { question: AdminQuestion }) {
+function QuestionBody({ compact = false, question }: { compact?: boolean; question: AdminQuestion }) {
   const sortedOptions = [...(question.options ?? [])].sort(
     (left, right) => (left.sort_order ?? 0) - (right.sort_order ?? 0) || left.label.localeCompare(right.label, "tr"),
   );
 
   return (
-    <div className="mt-4 space-y-4">
-      <p className="text-base font-bold leading-8 text-[var(--color-admin-ink)]">
+    <div className={`${compact ? "mt-3 space-y-3" : "mt-4 space-y-4"}`}>
+      <p className={`${compact ? "text-sm leading-6" : "text-base leading-8"} font-bold text-[var(--color-admin-ink)]`}>
         {question.question_text || "Soru metni yok"}
       </p>
 
       {sortedOptions.length > 0 ? (
-        <div className="grid gap-2">
+        <div className={`grid ${compact ? "gap-1.5" : "gap-2"}`}>
           {sortedOptions.map((option) => (
             <div
-              className={`flex items-start gap-3 rounded-[14px] border px-3 py-2.5 text-sm leading-6 ${
+              className={`flex items-start gap-3 rounded-[14px] border px-3 ${
+                compact ? "py-2 text-xs leading-5" : "py-2.5 text-sm leading-6"
+              } ${
                 option.is_correct
                   ? "border-emerald-200 bg-emerald-50 text-emerald-800"
                   : "border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] text-[var(--color-admin-ink)]"
@@ -1413,4 +1532,20 @@ function difficultyLabel(value?: string) {
   }
 
   return "Orta";
+}
+
+function clampIndex(index: number, length: number) {
+  if (length <= 0) {
+    return 0;
+  }
+
+  return Math.min(Math.max(index, 0), length - 1);
+}
+
+function wrapIndex(index: number, length: number) {
+  if (length <= 0) {
+    return 0;
+  }
+
+  return ((index % length) + length) % length;
 }

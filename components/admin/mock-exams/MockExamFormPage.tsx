@@ -101,6 +101,7 @@ function buildLocalDraft(
   selectedExam: AdminExam | null,
   examQuestions: AdminQuestion[],
   expectedMockQuestionCount: number,
+  unavailableQuestionIds = new Set<number>(),
 ) {
   const sections = selectedExam?.sections ?? [];
   const usedQuestionIds = new Set<number>();
@@ -113,6 +114,10 @@ function buildLocalDraft(
     const pool = candidates
       .filter((question) => {
         if (usedQuestionIds.has(question.id)) {
+          return false;
+        }
+
+        if (unavailableQuestionIds.has(question.id)) {
           return false;
         }
 
@@ -193,6 +198,40 @@ function buildLocalDraft(
   };
 }
 
+function buildQuestionBankTypeUpdatePayload(question: AdminQuestion) {
+  return {
+    topic_id: question.topic_id,
+    question_type: question.question_type,
+    q_version: question.q_version ?? null,
+    difficulty: question.difficulty,
+    status: question.status,
+    question_bank_type: "mock_exam",
+    is_free: question.is_free ?? false,
+    free_preview_order: question.free_preview_order ?? null,
+    is_past_exam_question: question.is_past_exam_question ?? false,
+    question_text: question.question_text ?? "",
+    correct_answer_text: question.correct_answer_text ?? "",
+    explanation_text: question.explanation_text ?? "",
+    explanation_basis: question.explanation?.basis ?? question.explanation_basis ?? null,
+    explanation_relevant_provision: question.explanation?.relevant_provision ?? question.explanation_relevant_provision ?? null,
+    explanation_answer_link: question.explanation?.answer_link ?? question.explanation_answer_link ?? null,
+    review_flags: question.review_flags ?? [],
+    review_note: question.review_note ?? null,
+    approval_status: question.approval_status ?? null,
+    published_at: question.published_at ?? null,
+    options:
+      question.question_type === "multiple_choice"
+        ? [...(question.options ?? [])]
+            .sort((left, right) => (left.sort_order ?? 0) - (right.sort_order ?? 0) || left.label.localeCompare(right.label, "tr"))
+            .map((option) => ({
+              label: option.label,
+              option_text: option.option_text,
+              is_correct: option.is_correct,
+            }))
+        : [],
+  };
+}
+
 export function MockExamFormPage({
   mode,
   id,
@@ -208,6 +247,7 @@ export function MockExamFormPage({
 
   const [form, setForm] = useState(emptyForm);
   const [exams, setExams] = useState<AdminExam[]>([]);
+  const [mockExams, setMockExams] = useState<AdminMockExam[]>([]);
   const [questions, setQuestions] = useState<AdminQuestion[]>([]);
   const [examsLoading, setExamsLoading] = useState(true);
   const [questionsLoading, setQuestionsLoading] = useState(true);
@@ -233,13 +273,17 @@ export function MockExamFormPage({
       setQuestionsLoading(true);
 
       try {
-        const examsResponse = await adminApiRequest<{ exams: AdminExam[] }>("/admin/exams", { token: authToken });
+        const [examsResponse, mockExamsResponse] = await Promise.all([
+          adminApiRequest<{ exams: AdminExam[] }>("/admin/exams", { token: authToken }),
+          adminApiRequest<{ mock_exams: AdminMockExam[] }>("/admin/mock-exams?per_page=1000", { token: authToken }),
+        ]);
 
         if (cancelled) {
           return;
         }
 
         setExams(examsResponse.data.exams);
+        setMockExams(mockExamsResponse.data.mock_exams);
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Sınav verileri yüklenemedi.");
@@ -343,6 +387,20 @@ export function MockExamFormPage({
     [exams, form.exam_id],
   );
   const expectedMockQuestionCount = selectedExam?.total_question_count ?? 80;
+
+  const unavailableQuestionIds = useMemo(() => {
+    const next = new Set<number>();
+
+    mockExams.forEach((mockExam) => {
+      if (mode === "edit" && mockExam.id === id) {
+        return;
+      }
+
+      mockExam.question_ids?.forEach((questionId) => next.add(questionId));
+    });
+
+    return next;
+  }, [id, mockExams, mode]);
 
   const examOptions = useMemo(
     () =>
@@ -455,6 +513,10 @@ export function MockExamFormPage({
           return false;
         }
 
+        if (unavailableQuestionIds.has(question.id)) {
+          return false;
+        }
+
         if (selectedTopicId !== null && question.topic?.id !== selectedTopicId) {
           return false;
         }
@@ -469,12 +531,12 @@ export function MockExamFormPage({
 
         return true;
       }).sort(sortMockCandidates),
-    [difficultyFilter, examQuestions, selectedSubjectId, selectedTopicId],
+    [difficultyFilter, examQuestions, selectedSubjectId, selectedTopicId, unavailableQuestionIds],
   );
 
   const localAutoDraft = useMemo(() => {
-    return buildLocalDraft(selectedExam, examQuestions, expectedMockQuestionCount);
-  }, [examQuestions, expectedMockQuestionCount, selectedExam]);
+    return buildLocalDraft(selectedExam, examQuestions, expectedMockQuestionCount, unavailableQuestionIds);
+  }, [examQuestions, expectedMockQuestionCount, selectedExam, unavailableQuestionIds]);
 
   const questionOptions = useMemo(
     () =>
@@ -530,13 +592,49 @@ export function MockExamFormPage({
       return;
     }
 
-    const allowedIds = new Set(examQuestions.map((question) => question.id));
+    const allowedIds = new Set(
+      examQuestions
+        .filter((question) => !unavailableQuestionIds.has(question.id))
+        .map((question) => question.id),
+    );
     const nextIds = form.question_ids.filter((questionId) => allowedIds.has(questionId));
 
     if (nextIds.length !== form.question_ids.length) {
       setForm((current) => ({ ...current, question_ids: nextIds }));
     }
-  }, [examQuestions, form.exam_id, form.question_ids]);
+  }, [examQuestions, form.exam_id, form.question_ids, unavailableQuestionIds]);
+
+  async function ensureSelectedQuestionsAreMockExam(questionIds: number[]) {
+    if (!token) {
+      return questionIds;
+    }
+
+    const selectedById = new Map(questions.map((question) => [question.id, question]));
+    const questionsToPromote = questionIds
+      .map((questionId) => selectedById.get(questionId))
+      .filter((question): question is AdminQuestion => Boolean(question))
+      .filter((question) => question.question_bank_type !== "mock_exam");
+
+    if (questionsToPromote.length === 0) {
+      return questionIds;
+    }
+
+    const updatedQuestions = await Promise.all(
+      questionsToPromote.map(async (question) => {
+        const response = await adminApiRequest<{ question: AdminQuestion }>(`/admin/questions/${question.id}`, {
+          token,
+          method: "PUT",
+          body: buildQuestionBankTypeUpdatePayload(question),
+        });
+
+        return response.data.question;
+      }),
+    );
+
+    setQuestions((current) => uniqueQuestions([...current, ...updatedQuestions]));
+
+    return questionIds;
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -559,6 +657,7 @@ export function MockExamFormPage({
     setError(null);
 
     try {
+      const questionIds = await ensureSelectedQuestionsAreMockExam(form.question_ids);
       const response = await adminApiRequest<{ mock_exam: AdminMockExam }>(
         mode === "edit" ? `/admin/mock-exams/${id}` : "/admin/mock-exams",
         {
@@ -571,10 +670,14 @@ export function MockExamFormPage({
             status: form.status,
             duration_min: Number(form.duration_min),
             is_tr_general: form.is_tr_general,
-            question_ids: form.question_ids,
+            question_ids: questionIds,
           },
         },
       );
+      const savedMockExam = response.data.mock_exam;
+
+      setForm((current) => ({ ...current, question_ids: savedMockExam.question_ids ?? questionIds }));
+      setMockExams((current) => [savedMockExam, ...current.filter((mockExam) => mockExam.id !== savedMockExam.id)]);
 
       showToast({
         tone: "success",
@@ -642,7 +745,12 @@ export function MockExamFormPage({
 
           if (extraQuestions.length > 0) {
             const mergedQuestions = uniqueQuestions([...questions, ...response.data.questions, ...extraQuestions]);
-            const expandedDraft = buildLocalDraft(selectedExam, mergedQuestions, expectedMockQuestionCount);
+            const expandedDraft = buildLocalDraft(
+              selectedExam,
+              mergedQuestions,
+              expectedMockQuestionCount,
+              unavailableQuestionIds,
+            );
             fallbackDraft = expandedDraft;
 
             setQuestions(mergedQuestions);
@@ -650,14 +758,20 @@ export function MockExamFormPage({
         }
       }
 
+      const backendQuestionIds = response.data.question_ids.filter((questionId) => !unavailableQuestionIds.has(questionId));
+      const backendSummary = {
+        ...response.data.summary,
+        selected_count: backendQuestionIds.length,
+        missing_count: Math.max(response.data.summary.target_count - backendQuestionIds.length, 0),
+      };
       const nextQuestionIds =
-        response.data.summary.missing_count > 0 && fallbackDraft.question_ids.length > response.data.question_ids.length
+        backendSummary.missing_count > 0 && fallbackDraft.question_ids.length > backendQuestionIds.length
           ? fallbackDraft.question_ids
-          : response.data.question_ids;
+          : backendQuestionIds;
       const nextSummary =
-        response.data.summary.missing_count > 0 && fallbackDraft.question_ids.length > response.data.question_ids.length
+        backendSummary.missing_count > 0 && fallbackDraft.question_ids.length > backendQuestionIds.length
           ? fallbackDraft.summary
-          : response.data.summary;
+          : backendSummary;
 
       setForm((current) => ({
         ...current,

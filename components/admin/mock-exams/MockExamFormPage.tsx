@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FormEvent, useEffect, useMemo, useState } from "react";
-import { Loader2, Wand2, X } from "lucide-react";
-import { AdminMultiSelect } from "@/components/admin/AdminMultiSelect";
+import { useEffect, useMemo, useState } from "react";
+import type { FormEvent, ReactNode } from "react";
+import { Check, Loader2, Plus, RefreshCw, Wand2, X } from "lucide-react";
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
@@ -225,6 +225,7 @@ export function MockExamFormPage({
   const [difficultyFilter, setDifficultyFilter] = useState<"all" | "easy" | "medium" | "hard">("all");
   const [selectedSubjectId, setSelectedSubjectId] = useState<number | null>(null);
   const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null);
+  const [replacementQuestionId, setReplacementQuestionId] = useState<number | null>(null);
 
   useEffect(() => {
     if (!token) {
@@ -504,22 +505,39 @@ export function MockExamFormPage({
     return buildLocalDraft(selectedExam, examQuestions, expectedMockQuestionCount, unavailableQuestionIds);
   }, [examQuestions, expectedMockQuestionCount, selectedExam, unavailableQuestionIds]);
 
-  const questionOptions = useMemo(
-    () =>
-      filteredQuestions.map((question) => ({
-        id: question.id,
-        label: question.question_text?.slice(0, 110) ?? "Soru",
-        hint: `${question.topic?.subject?.name ?? "Ders"} · ${question.topic?.name ?? "Konu"}`,
-      })),
-    [filteredQuestions],
-  );
-
   const selectedQuestions = useMemo(
     () =>
       form.question_ids
         .map((questionId) => questions.find((question) => question.id === questionId))
         .filter((question): question is AdminQuestion => Boolean(question)),
     [form.question_ids, questions],
+  );
+
+  const selectedQuestionIds = useMemo(() => new Set(form.question_ids), [form.question_ids]);
+
+  const visibleSelectedQuestions = useMemo(
+    () =>
+      selectedQuestions.filter((question) => {
+        if (selectedTopicId !== null && question.topic?.id !== selectedTopicId) {
+          return false;
+        }
+
+        if (selectedSubjectId !== null && question.topic?.subject?.id !== selectedSubjectId) {
+          return false;
+        }
+
+        if (difficultyFilter !== "all" && question.difficulty !== difficultyFilter) {
+          return false;
+        }
+
+        return true;
+      }),
+    [difficultyFilter, selectedQuestions, selectedSubjectId, selectedTopicId],
+  );
+
+  const addableQuestions = useMemo(
+    () => filteredQuestions.filter((question) => !selectedQuestionIds.has(question.id)).slice(0, 24),
+    [filteredQuestions, selectedQuestionIds],
   );
 
   const topicDistribution = useMemo(() => {
@@ -569,6 +587,51 @@ export function MockExamFormPage({
       setForm((current) => ({ ...current, question_ids: nextIds }));
     }
   }, [examQuestions, form.exam_id, form.question_ids, unavailableQuestionIds]);
+
+  function addQuestion(questionId: number) {
+    setForm((current) => {
+      if (current.question_ids.includes(questionId)) {
+        return current;
+      }
+
+      return { ...current, question_ids: [...current.question_ids, questionId] };
+    });
+  }
+
+  function removeQuestion(questionId: number) {
+    setForm((current) => ({
+      ...current,
+      question_ids: current.question_ids.filter((currentId) => currentId !== questionId),
+    }));
+    setReplacementQuestionId((current) => (current === questionId ? null : current));
+  }
+
+  function replaceQuestion(previousQuestionId: number, nextQuestionId: number) {
+    setForm((current) => ({
+      ...current,
+      question_ids: current.question_ids.map((questionId) =>
+        questionId === previousQuestionId ? nextQuestionId : questionId,
+      ),
+    }));
+    setReplacementQuestionId(null);
+  }
+
+  function replacementCandidatesFor(question: AdminQuestion) {
+    const subjectId = question.topic?.subject?.id;
+    const topicId = question.topic?.id;
+    const sameTopic = filteredQuestions.filter(
+      (candidate) => candidate.id !== question.id && !selectedQuestionIds.has(candidate.id) && candidate.topic?.id === topicId,
+    );
+    const sameSubject = filteredQuestions.filter(
+      (candidate) =>
+        candidate.id !== question.id &&
+        !selectedQuestionIds.has(candidate.id) &&
+        candidate.topic?.subject?.id === subjectId &&
+        candidate.topic?.id !== topicId,
+    );
+
+    return uniqueQuestions([...sameTopic, ...sameSubject, ...addableQuestions]).slice(0, 8);
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -909,124 +972,170 @@ export function MockExamFormPage({
               ) : null}
             </section>
 
-            <div className="grid gap-4 lg:grid-cols-2">
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Ders Filtresi
-                </span>
-                <AdminSearchSelect
-                  emptyText="Ders bulunamadı."
-                  hideLabel
-                  label="Ders"
-                  onChange={(next) => {
-                    setSelectedSubjectId(next);
-                    setSelectedTopicId(null);
-                  }}
-                  options={subjectOptions}
-                  placeholder="Ders seç"
-                  value={selectedSubjectId}
-                />
-              </label>
-
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Konu Filtresi
-                </span>
-                <AdminSearchSelect
-                  emptyText="Konu bulunamadı."
-                  hideLabel
-                  label="Konu"
-                  onChange={setSelectedTopicId}
-                  options={topicOptions}
-                  placeholder="Konu seç"
-                  value={selectedTopicId}
-                />
-              </label>
-
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Zorluk
-                </span>
-                <select
-                  className="admin-input h-11"
-                  onChange={(event) => setDifficultyFilter(event.target.value as typeof difficultyFilter)}
-                  value={difficultyFilter}
-                >
-                  <option value="all">Tüm zorluklar</option>
-                  <option value="easy">Kolay</option>
-                  <option value="medium">Orta</option>
-                  <option value="hard">Zor</option>
-                </select>
-              </label>
-
-            </div>
-
-            <AdminMultiSelect
-              emptyStateText={
-                form.exam_id
-                  ? "Bu filtrelerle eşleşen soru bulunamadı."
-                  : "Önce sınav seçerek soru havuzunu daralt."
-              }
-              helperText={`Denemeye seçilen sınava bağlı derslerin aktif/onaylı sorularından ekleme yapılır. Deneme soruları önceliklidir; eksikse normal sorular da kullanılabilir. Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşmalıdır.`}
-              hideSelectedFromOptions
-              label="Denemeye Dahil Edilen Sorular"
-              onChange={(question_ids) => setForm((current) => ({ ...current, question_ids }))}
-              options={questionOptions}
-              searchPlaceholder="Soru ara"
-              selectedSummaryLabel="soru seçildi"
-              showSelectedChips={false}
-              value={form.question_ids}
-            />
-
-            <div className="space-y-3">
-              <div>
-                <label className="text-sm font-semibold text-[var(--color-admin-ink)]">Seçili Sorular</label>
-                <p className="mt-1 text-xs leading-5 text-[var(--color-admin-muted)]">
-                  Denemeye giren sorular burada net görünür. İstersen buradan da çıkarabilirsin.
-                </p>
+            <section className="space-y-4">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">Soru çalışma alanı</p>
+                  <p className="mt-1 text-xs font-semibold leading-5 text-[var(--color-admin-muted)]">
+                    Filtrelediğin dersteki seçili sorular tam metin görünür; buradan ekleme, çıkarma ve değiştirme yapılır.
+                  </p>
+                </div>
+                <div className="rounded-full border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-3 py-1.5 text-xs font-black text-[var(--color-admin-ink)]">
+                  {form.question_ids.length}/{expectedMockQuestionCount} soru
+                </div>
               </div>
 
-              <div className="max-h-[420px] overflow-y-auto rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
+              <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_160px]">
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Ders
+                  </span>
+                  <AdminSearchSelect
+                    emptyText="Ders bulunamadı."
+                    hideLabel
+                    label="Ders"
+                    onChange={(next) => {
+                      setSelectedSubjectId(next);
+                      setSelectedTopicId(null);
+                      setReplacementQuestionId(null);
+                    }}
+                    options={subjectOptions}
+                    placeholder="Tüm dersler"
+                    value={selectedSubjectId}
+                  />
+                </label>
+
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Konu
+                  </span>
+                  <AdminSearchSelect
+                    emptyText="Konu bulunamadı."
+                    hideLabel
+                    label="Konu"
+                    onChange={(next) => {
+                      setSelectedTopicId(next);
+                      setReplacementQuestionId(null);
+                    }}
+                    options={topicOptions}
+                    placeholder="Tüm konular"
+                    value={selectedTopicId}
+                  />
+                </label>
+
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Zorluk
+                  </span>
+                  <select
+                    className="admin-input h-11"
+                    onChange={(event) => {
+                      setDifficultyFilter(event.target.value as typeof difficultyFilter);
+                      setReplacementQuestionId(null);
+                    }}
+                    value={difficultyFilter}
+                  >
+                    <option value="all">Tümü</option>
+                    <option value="easy">Kolay</option>
+                    <option value="medium">Orta</option>
+                    <option value="hard">Zor</option>
+                  </select>
+                </label>
+              </div>
+
+              <div className="space-y-3">
                 {selectedQuestions.length === 0 ? (
-                  <p className="px-4 py-4 text-sm text-[var(--color-admin-muted)]">Henüz soru eklenmedi.</p>
+                  <div className="rounded-[18px] border border-dashed border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-8 text-center text-sm font-semibold text-[var(--color-admin-muted)]">
+                    Henüz soru seçilmedi. Taslak oluşturabilir veya alttaki havuzdan soru ekleyebilirsin.
+                  </div>
+                ) : visibleSelectedQuestions.length === 0 ? (
+                  <div className="rounded-[18px] border border-dashed border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-8 text-center text-sm font-semibold text-[var(--color-admin-muted)]">
+                    Bu filtrede seçili soru yok. Filtreyi temizleyebilir veya havuzdan soru ekleyebilirsin.
+                  </div>
                 ) : (
-                  selectedQuestions.map((question, index) => (
-                    <div
-                      key={question.id}
-                      className={`flex items-start gap-3 px-4 py-3 ${
-                        index !== selectedQuestions.length - 1
-                          ? "border-b border-[var(--color-admin-line)]/80"
-                          : ""
-                      }`}
-                    >
-                      <div className="flex h-7 min-w-7 items-center justify-center rounded-full border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] text-[11px] font-bold text-[var(--color-admin-muted)]">
-                        {index + 1}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="overflow-hidden text-sm font-semibold leading-6 text-[var(--color-admin-ink)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
-                          {question.question_text}
-                        </p>
-                        <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
-                          {question.topic?.subject?.name ?? "Ders"} · {question.topic?.name ?? "Konu"}
-                        </p>
-                      </div>
-                      <button
-                        className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-danger)]"
-                        onClick={() =>
-                          setForm((current) => ({
-                            ...current,
-                            question_ids: current.question_ids.filter((id) => id !== question.id),
-                          }))
+                  visibleSelectedQuestions.map((question) => {
+                    const originalIndex = form.question_ids.indexOf(question.id);
+                    const replacementCandidates = replacementCandidatesFor(question);
+
+                    return (
+                      <QuestionWorkCard
+                        key={question.id}
+                        index={originalIndex + 1}
+                        onRemove={() => removeQuestion(question.id)}
+                        onReplace={() =>
+                          setReplacementQuestionId((current) => (current === question.id ? null : question.id))
                         }
-                        type="button"
+                        question={question}
+                        replacing={replacementQuestionId === question.id}
                       >
-                        <X size={15} />
-                      </button>
-                    </div>
-                  ))
+                        {replacementQuestionId === question.id ? (
+                          <div className="mt-4 rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
+                            <div className="flex items-center justify-between gap-3 border-b border-[var(--color-admin-line)] px-4 py-3">
+                              <p className="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
+                                Değişim adayları
+                              </p>
+                              <button
+                                className="text-xs font-bold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"
+                                onClick={() => setReplacementQuestionId(null)}
+                                type="button"
+                              >
+                                Kapat
+                              </button>
+                            </div>
+                            {replacementCandidates.length === 0 ? (
+                              <p className="px-4 py-4 text-sm font-semibold text-[var(--color-admin-muted)]">
+                                Bu filtrede uygun yedek soru yok.
+                              </p>
+                            ) : (
+                              <div className="divide-y divide-[var(--color-admin-line)]">
+                                {replacementCandidates.map((candidate) => (
+                                  <QuestionCandidateRow
+                                    key={candidate.id}
+                                    actionLabel="Bu soruyla değiştir"
+                                    icon={<RefreshCw size={14} />}
+                                    onSelect={() => replaceQuestion(question.id, candidate.id)}
+                                    question={candidate}
+                                  />
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : null}
+                      </QuestionWorkCard>
+                    );
+                  })
                 )}
               </div>
-            </div>
+
+              <div className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--color-admin-line)] px-4 py-3">
+                  <div>
+                    <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">Bu filtrede eklenebilir sorular</p>
+                    <p className="mt-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+                      Deneme soruları önce, normal onaylı sorular sonra listelenir.
+                    </p>
+                  </div>
+                  <span className="text-xs font-black text-[var(--color-admin-muted)]">{addableQuestions.length} aday</span>
+                </div>
+                {addableQuestions.length === 0 ? (
+                  <p className="px-4 py-5 text-sm font-semibold text-[var(--color-admin-muted)]">
+                    Bu filtrede eklenebilir soru kalmadı.
+                  </p>
+                ) : (
+                  <div className="max-h-[520px] overflow-y-auto divide-y divide-[var(--color-admin-line)]">
+                    {addableQuestions.map((question) => (
+                      <QuestionCandidateRow
+                        key={question.id}
+                        actionLabel="Ekle"
+                        icon={<Plus size={14} />}
+                        onSelect={() => addQuestion(question.id)}
+                        question={question}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </section>
 
             {error ? (
               <div className="rounded-[18px] border border-red-100 bg-red-50 px-4 py-3 text-sm text-[var(--color-admin-danger)]">
@@ -1136,4 +1245,172 @@ function SummaryMetric({
       <p className="mt-1 text-[10px] font-black uppercase tracking-[0.14em]">{label}</p>
     </div>
   );
+}
+
+function QuestionWorkCard({
+  children,
+  index,
+  onRemove,
+  onReplace,
+  question,
+  replacing,
+}: {
+  children?: ReactNode;
+  index: number;
+  onRemove: () => void;
+  onReplace: () => void;
+  question: AdminQuestion;
+  replacing: boolean;
+}) {
+  return (
+    <article className="rounded-[18px] border border-[var(--color-admin-line)] bg-white px-4 py-4 shadow-sm shadow-black/[0.02]">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <QuestionMeta index={index} question={question} />
+        <div className="flex items-center gap-2">
+          <button
+            className="admin-button h-9 px-3 py-2 text-xs"
+            onClick={onReplace}
+            type="button"
+          >
+            <RefreshCw size={14} />
+            {replacing ? "Adayları kapat" : "Değiştir"}
+          </button>
+          <button
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-danger)]"
+            onClick={onRemove}
+            title="Soruyu çıkar"
+            type="button"
+          >
+            <X size={15} />
+          </button>
+        </div>
+      </div>
+
+      <QuestionBody question={question} />
+      {children}
+    </article>
+  );
+}
+
+function QuestionCandidateRow({
+  actionLabel,
+  icon,
+  onSelect,
+  question,
+}: {
+  actionLabel: string;
+  icon: ReactNode;
+  onSelect: () => void;
+  question: AdminQuestion;
+}) {
+  return (
+    <div className="grid gap-3 px-4 py-4 lg:grid-cols-[minmax(0,1fr)_150px]">
+      <div className="min-w-0">
+        <QuestionMeta question={question} />
+        <p className="mt-2 line-clamp-3 text-sm font-semibold leading-6 text-[var(--color-admin-ink)]">
+          {question.question_text || "Soru metni yok"}
+        </p>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {(question.options ?? []).slice(0, 5).map((option) => (
+            <span
+              className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-bold ${
+                option.is_correct
+                  ? "bg-emerald-50 text-emerald-700"
+                  : "bg-[var(--color-admin-panel)] text-[var(--color-admin-muted)]"
+              }`}
+              key={`${question.id}-${option.label}`}
+            >
+              {option.is_correct ? <Check size={11} /> : null}
+              {option.label}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="flex items-start justify-end">
+        <button
+          className="admin-button admin-button-primary h-10 px-3 py-2 text-xs"
+          onClick={onSelect}
+          type="button"
+        >
+          {icon}
+          {actionLabel}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function QuestionBody({ question }: { question: AdminQuestion }) {
+  const sortedOptions = [...(question.options ?? [])].sort(
+    (left, right) => (left.sort_order ?? 0) - (right.sort_order ?? 0) || left.label.localeCompare(right.label, "tr"),
+  );
+
+  return (
+    <div className="mt-4 space-y-4">
+      <p className="text-base font-bold leading-8 text-[var(--color-admin-ink)]">
+        {question.question_text || "Soru metni yok"}
+      </p>
+
+      {sortedOptions.length > 0 ? (
+        <div className="grid gap-2">
+          {sortedOptions.map((option) => (
+            <div
+              className={`flex items-start gap-3 rounded-[14px] border px-3 py-2.5 text-sm leading-6 ${
+                option.is_correct
+                  ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                  : "border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] text-[var(--color-admin-ink)]"
+              }`}
+              key={`${question.id}-${option.label}`}
+            >
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-current/20 text-xs font-black">
+                {option.label}
+              </span>
+              <span className="min-w-0 flex-1">{option.option_text}</span>
+              {option.is_correct ? <Check className="mt-1 shrink-0" size={15} /> : null}
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function QuestionMeta({ index, question }: { index?: number; question: AdminQuestion }) {
+  return (
+    <div className="flex min-w-0 flex-wrap items-center gap-2">
+      {index ? (
+        <span className="flex h-7 min-w-7 items-center justify-center rounded-full border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] text-[11px] font-black text-[var(--color-admin-muted)]">
+          {index}
+        </span>
+      ) : null}
+      <span className="rounded-full bg-[var(--color-admin-panel-soft)] px-2.5 py-1 text-[11px] font-black text-[var(--color-admin-ink)]">
+        {question.topic?.subject?.name ?? "Ders yok"}
+      </span>
+      <span className="rounded-full bg-[var(--color-admin-panel-soft)] px-2.5 py-1 text-[11px] font-bold text-[var(--color-admin-muted)]">
+        {question.topic?.name ?? "Konu yok"}
+      </span>
+      <span className="rounded-full bg-[var(--color-admin-panel-soft)] px-2.5 py-1 text-[11px] font-bold text-[var(--color-admin-muted)]">
+        {questionBankLabel(question.question_bank_type)}
+      </span>
+      <span className="rounded-full bg-[var(--color-admin-panel-soft)] px-2.5 py-1 text-[11px] font-bold text-[var(--color-admin-muted)]">
+        {difficultyLabel(question.difficulty)}
+      </span>
+    </div>
+  );
+}
+
+function questionBankLabel(value?: string) {
+  return value === "mock_exam" ? "Deneme" : "Normal";
+}
+
+function difficultyLabel(value?: string) {
+  if (value === "easy") {
+    return "Kolay";
+  }
+
+  if (value === "hard") {
+    return "Zor";
+  }
+
+  return "Orta";
 }

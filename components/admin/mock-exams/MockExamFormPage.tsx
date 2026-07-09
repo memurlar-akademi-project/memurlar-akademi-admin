@@ -198,40 +198,6 @@ function buildLocalDraft(
   };
 }
 
-function buildQuestionBankTypeUpdatePayload(question: AdminQuestion) {
-  return {
-    topic_id: question.topic_id,
-    question_type: question.question_type,
-    q_version: question.q_version ?? null,
-    difficulty: question.difficulty,
-    status: question.status,
-    question_bank_type: "mock_exam",
-    is_free: question.is_free ?? false,
-    free_preview_order: question.free_preview_order ?? null,
-    is_past_exam_question: question.is_past_exam_question ?? false,
-    question_text: question.question_text ?? "",
-    correct_answer_text: question.correct_answer_text ?? "",
-    explanation_text: question.explanation_text ?? "",
-    explanation_basis: question.explanation?.basis ?? question.explanation_basis ?? null,
-    explanation_relevant_provision: question.explanation?.relevant_provision ?? question.explanation_relevant_provision ?? null,
-    explanation_answer_link: question.explanation?.answer_link ?? question.explanation_answer_link ?? null,
-    review_flags: question.review_flags ?? [],
-    review_note: question.review_note ?? null,
-    approval_status: question.approval_status ?? null,
-    published_at: question.published_at ?? null,
-    options:
-      question.question_type === "multiple_choice"
-        ? [...(question.options ?? [])]
-            .sort((left, right) => (left.sort_order ?? 0) - (right.sort_order ?? 0) || left.label.localeCompare(right.label, "tr"))
-            .map((option) => ({
-              label: option.label,
-              option_text: option.option_text,
-              is_correct: option.is_correct,
-            }))
-        : [],
-  };
-}
-
 export function MockExamFormPage({
   mode,
   id,
@@ -604,38 +570,6 @@ export function MockExamFormPage({
     }
   }, [examQuestions, form.exam_id, form.question_ids, unavailableQuestionIds]);
 
-  async function ensureSelectedQuestionsAreMockExam(questionIds: number[]) {
-    if (!token) {
-      return questionIds;
-    }
-
-    const selectedById = new Map(questions.map((question) => [question.id, question]));
-    const questionsToPromote = questionIds
-      .map((questionId) => selectedById.get(questionId))
-      .filter((question): question is AdminQuestion => Boolean(question))
-      .filter((question) => question.question_bank_type !== "mock_exam");
-
-    if (questionsToPromote.length === 0) {
-      return questionIds;
-    }
-
-    const updatedQuestions = await Promise.all(
-      questionsToPromote.map(async (question) => {
-        const response = await adminApiRequest<{ question: AdminQuestion }>(`/admin/questions/${question.id}`, {
-          token,
-          method: "PUT",
-          body: buildQuestionBankTypeUpdatePayload(question),
-        });
-
-        return response.data.question;
-      }),
-    );
-
-    setQuestions((current) => uniqueQuestions([...current, ...updatedQuestions]));
-
-    return questionIds;
-  }
-
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -657,7 +591,6 @@ export function MockExamFormPage({
     setError(null);
 
     try {
-      const questionIds = await ensureSelectedQuestionsAreMockExam(form.question_ids);
       const response = await adminApiRequest<{ mock_exam: AdminMockExam }>(
         mode === "edit" ? `/admin/mock-exams/${id}` : "/admin/mock-exams",
         {
@@ -670,13 +603,13 @@ export function MockExamFormPage({
             status: form.status,
             duration_min: Number(form.duration_min),
             is_tr_general: form.is_tr_general,
-            question_ids: questionIds,
+            question_ids: form.question_ids,
           },
         },
       );
       const savedMockExam = response.data.mock_exam;
 
-      setForm((current) => ({ ...current, question_ids: savedMockExam.question_ids ?? questionIds }));
+      setForm((current) => ({ ...current, question_ids: savedMockExam.question_ids ?? form.question_ids }));
       setMockExams((current) => [savedMockExam, ...current.filter((mockExam) => mockExam.id !== savedMockExam.id)]);
 
       showToast({

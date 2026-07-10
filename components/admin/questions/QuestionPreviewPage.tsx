@@ -375,6 +375,9 @@ export function QuestionPreviewCard({
   onPrevious,
   onSave,
   question,
+  deleteConfirmLabel = "Soruyu Sil",
+  deleteDescription = "Soru kalıcı olarak silinir. Bağlı şık kayıtları da kaldırılır.",
+  deleteTitle = "Soru silinsin mi?",
   showDelete = true,
   total,
 }: {
@@ -385,6 +388,9 @@ export function QuestionPreviewCard({
   onPrevious: () => void;
   onSave: (draft: EditableQuestionDraft) => Promise<boolean>;
   question: AdminQuestion;
+  deleteConfirmLabel?: string;
+  deleteDescription?: string;
+  deleteTitle?: string;
   showDelete?: boolean;
   total: number;
 }) {
@@ -464,11 +470,11 @@ export function QuestionPreviewCard({
         {showDelete ? (
           <ConfirmDialog
             busy={busy}
-            confirmLabel="Soruyu Sil"
-            description="Soru kalıcı olarak silinir. Bağlı şık kayıtları da kaldırılır."
+            confirmLabel={deleteConfirmLabel}
+            description={deleteDescription}
             disabled={controlsDisabled}
             onConfirm={onDelete}
-            title="Soru silinsin mi?"
+            title={deleteTitle}
             trigger={
               <span className="flex h-11 items-center gap-2 rounded-2xl bg-slate-900 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-950">
                 <Trash2 size={17} />

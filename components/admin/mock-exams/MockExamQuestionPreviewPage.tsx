@@ -247,6 +247,90 @@ export function MockExamQuestionPreviewPage({ mode }: Props) {
     }
   }
 
+  async function removeQuestionFromMockExam(question: AdminQuestion) {
+    if (!token || !selectedMockExam || busy || mode !== "exam") {
+      return;
+    }
+
+    const currentIds = selectedMockExam.question_ids ?? [];
+    const nextIds = currentIds.filter((id) => id !== question.id);
+
+    if (nextIds.length === currentIds.length) {
+      showToast({
+        tone: "error",
+        title: "Soru bulunamadı",
+        description: "Bu soru denemenin soru listesinde görünmüyor.",
+      });
+      return;
+    }
+
+    if (nextIds.length === 0) {
+      showToast({
+        tone: "error",
+        title: "Son soru çıkarılamaz",
+        description: "Denemeyi tamamen kaldırmak istiyorsan denemeler listesinden silmelisin.",
+      });
+      return;
+    }
+
+    const nextStatus = selectedMockExam.status === "active" ? "draft" : selectedMockExam.status ?? "draft";
+
+    setBusy(true);
+
+    try {
+      const response = await adminApiRequest<{ mock_exam: AdminMockExam }>(`/admin/mock-exams/${selectedMockExam.id}`, {
+        token,
+        method: "PUT",
+        body: {
+          exam_id: selectedMockExam.exam_id ?? selectedMockExam.exam?.id,
+          title: selectedMockExam.title,
+          slug: selectedMockExam.slug ?? null,
+          status: nextStatus,
+          duration_min: selectedMockExam.duration_min,
+          sort_order: selectedMockExam.sort_order ?? 1,
+          scheduled_at: selectedMockExam.scheduled_at ?? null,
+          is_tr_general: Boolean(selectedMockExam.is_tr_general),
+          question_ids: nextIds,
+        },
+      });
+
+      const updatedMockExam: AdminMockExam = {
+        ...selectedMockExam,
+        ...response.data.mock_exam,
+        exam: response.data.mock_exam.exam ?? selectedMockExam.exam,
+        status: nextStatus,
+        question_count: nextIds.length,
+        question_ids: nextIds,
+      };
+
+      setMockExams((current) =>
+        current.map((item) => (item.id === selectedMockExam.id ? updatedMockExam : item)),
+      );
+      setQuestions((current) => {
+        const nextQuestions = current.filter((item) => item.id !== question.id);
+        setCurrentIndex((index) => Math.min(index, Math.max(nextQuestions.length - 1, 0)));
+
+        return nextQuestions;
+      });
+      showToast({
+        tone: nextStatus === "draft" && selectedMockExam.status === "active" ? "warning" : "success",
+        title: "Soru denemeden çıkarıldı",
+        description:
+          nextStatus === "draft" && selectedMockExam.status === "active"
+            ? "Soru sayısı eksildiği için deneme taslağa alındı."
+            : selectedMockExam.title,
+      });
+    } catch (removeError) {
+      showToast({
+        tone: "error",
+        title: "Soru çıkarılamadı",
+        description: removeError instanceof Error ? removeError.message : "Deneme güncellenemedi.",
+      });
+    } finally {
+      setBusy(false);
+    }
+  }
+
   if (selectorLoading) {
     return <CenteredLoader label={mode === "pool" ? "Sınavlar yükleniyor..." : "Denemeler yükleniyor..."} />;
   }
@@ -344,12 +428,15 @@ export function MockExamQuestionPreviewPage({ mode }: Props) {
             busy={busy}
             currentIndex={currentIndex}
             key={currentQuestion.id}
-            onDelete={() => undefined}
+            deleteConfirmLabel="Denemeden Çıkar"
+            deleteDescription="Soru kaydı silinmez; sadece bu denemenin soru listesinden çıkarılır."
+            deleteTitle="Soru denemeden çıkarılsın mı?"
+            onDelete={() => void removeQuestionFromMockExam(currentQuestion)}
             onNext={goNext}
             onPrevious={goPrevious}
             onSave={(draft) => saveQuestionEdits(currentQuestion, draft)}
             question={currentQuestion}
-            showDelete={false}
+            showDelete={mode === "exam"}
             total={total}
           />
         ) : (

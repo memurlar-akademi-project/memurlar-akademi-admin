@@ -10,7 +10,7 @@ import { AdminThemeToggle } from "@/components/layout/AdminThemeToggle";
 
 function resolvePageMeta(pathname: string) {
   if (pathname === "/dashboard") {
-    return { title: "Dashboard" };
+    return { title: "Gösterge Paneli" };
   }
 
   if (pathname === "/bakanliklar") {
@@ -154,23 +154,23 @@ function resolvePageMeta(pathname: string) {
   }
 
   if (pathname === "/flashcardlar") {
-    return { title: "Hap Bilgiler" };
+    return { title: "Bilgi Kartları" };
   }
 
   if (pathname === "/flashcardlar/yeni") {
-    return { title: "Yeni Hap Bilgi", backHref: "/flashcardlar" };
+    return { title: "Yeni Bilgi Kartı", backHref: "/flashcardlar" };
   }
 
   if (pathname === "/flashcardlar/import") {
-    return { title: "Hap Bilgi Import", backHref: "/flashcardlar" };
+    return { title: "Bilgi Kartı Import", backHref: "/flashcardlar" };
   }
 
   if (/^\/flashcardlar\/import\/\d+\/incele$/.test(pathname)) {
-    return { title: "Hap Bilgi Import İncele", backHref: "/flashcardlar/import" };
+    return { title: "Bilgi Kartı Import İncele", backHref: "/flashcardlar/import" };
   }
 
   if (/^\/flashcardlar\/\d+\/duzenle$/.test(pathname)) {
-    return { title: "Hap Bilgi Düzenle", backHref: "/flashcardlar" };
+    return { title: "Bilgi Kartı Düzenle", backHref: "/flashcardlar" };
   }
 
   if (pathname === "/podcast") {
@@ -195,6 +195,14 @@ function resolvePageMeta(pathname: string) {
 
   if (pathname === "/denemeler/yeni") {
     return { title: "Yeni Deneme", backHref: "/denemeler" };
+  }
+
+  if (pathname === "/denemeler/soru-preview") {
+    return { title: "Deneme Soruları Preview", backHref: "/denemeler" };
+  }
+
+  if (pathname === "/denemeler/preview") {
+    return { title: "Deneme Preview", backHref: "/denemeler" };
   }
 
   if (/^\/denemeler\/\d+\/duzenle$/.test(pathname)) {

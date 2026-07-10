@@ -14,11 +14,12 @@ import {
   FileAudio2,
   FileUp,
   ListChecks,
-  Files,
   Gauge,
   GraduationCap,
+  Layers,
   LayoutDashboard,
   LibraryBig,
+  PencilRuler,
   ReceiptText,
   ScrollText,
   ShieldUser,
@@ -64,11 +65,11 @@ const navigation = [
   },
   {
     id: "study",
-    title: "Hap Bilgi",
-    icon: Files,
+    title: "Bilgi Kartı",
+    icon: Layers,
     items: [
-      { href: "/flashcardlar", label: "Hap Bilgiler", icon: Files },
-      { href: "/flashcardlar/import", label: "Hap Bilgi Import", icon: FileUp },
+      { href: "/flashcardlar", label: "Bilgi Kartları", icon: Layers },
+      { href: "/flashcardlar/import", label: "Bilgi Kartı Import", icon: FileUp },
     ],
   },
   {
@@ -78,6 +79,8 @@ const navigation = [
     items: [
       { href: "/testler", label: "Testler", icon: Waypoints },
       { href: "/denemeler", label: "Denemeler", icon: FileAudio2 },
+      { href: "/denemeler/soru-preview", label: "Deneme Soruları Preview", icon: Eye },
+      { href: "/denemeler/preview", label: "Deneme Preview", icon: PencilRuler },
     ],
   },
   {
@@ -156,7 +159,7 @@ export function AdminSidebar() {
             href="/dashboard"
           >
             <LayoutDashboard size={17} />
-            <span className="font-semibold">Dashboard</span>
+            <span className="font-semibold">Gösterge Paneli</span>
           </Link>
 
           {navigation.map((group) => {

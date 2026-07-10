@@ -129,7 +129,7 @@ export default function HapBilgilerPage() {
       );
       showToast({
         tone: "success",
-        title: checked ? "Hap bilgi aktife alındı" : "Hap bilgi pasife alındı",
+        title: checked ? "Bilgi kartı aktife alındı" : "Bilgi kartı pasife alındı",
         description: item.topic?.name ?? "Konu havuzu",
       });
     } catch (submitError) {
@@ -159,13 +159,13 @@ export default function HapBilgilerPage() {
       setItems((current) => current.filter((entry) => entry.id !== item.id));
       showToast({
         tone: "success",
-        title: "Hap bilgi silindi",
+        title: "Bilgi kartı silindi",
         description: item.topic?.name ?? "Konu havuzu",
       });
     } catch (submitError) {
       showToast({
         tone: "error",
-        title: "Hap bilgi silinemedi",
+        title: "Bilgi kartı silinemedi",
         description: submitError instanceof Error ? submitError.message : "Silme işlemi başarısız oldu.",
       });
     } finally {
@@ -176,7 +176,7 @@ export default function HapBilgilerPage() {
   const columns: ColumnDef<AdminFlashcard>[] = [
     {
       accessorKey: "front_text",
-      header: "Hap Bilgi",
+      header: "Bilgi Kartı",
       cell: ({ row }) => (
         <div className="min-w-0 max-w-[520px]">
           <p className="overflow-hidden text-sm font-bold leading-6 text-[var(--color-admin-ink)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
@@ -238,9 +238,9 @@ export default function HapBilgilerPage() {
           <ConfirmDialog
             busy={busyId === row.original.id}
             confirmLabel={row.original.status === "active" ? "Pasife Al" : "Aktife Al"}
-            description={row.original.status === "active" ? "Bu hap bilgi öğrenci akışından çıkarılır." : "Bu hap bilgi tekrar aktif hale getirilir."}
+            description={row.original.status === "active" ? "Bu bilgi kartı öğrenci akışından çıkarılır." : "Bu bilgi kartı tekrar aktif hale getirilir."}
             onConfirm={() => handleStatusChange(row.original, row.original.status !== "active")}
-            title={row.original.status === "active" ? "Hap bilgi pasife alınsın mı?" : "Hap bilgi aktife alınsın mı?"}
+            title={row.original.status === "active" ? "Bilgi kartı pasife alınsın mı?" : "Bilgi kartı aktife alınsın mı?"}
             tone={row.original.status === "active" ? "danger" : "primary"}
             trigger={
               <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:border-[var(--color-admin-accent)] hover:text-[var(--color-admin-accent)]">
@@ -250,10 +250,10 @@ export default function HapBilgilerPage() {
           />
           <ConfirmDialog
             busy={busyId === row.original.id}
-            confirmLabel="Hap Bilgiyi Sil"
+            confirmLabel="Bilgi Kartını Sil"
             description="Kayıt kalıcı olarak silinir."
             onConfirm={() => handleDelete(row.original)}
-            title="Hap bilgi silinsin mi?"
+            title="Bilgi kartı silinsin mi?"
             trigger={
               <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:border-[var(--color-admin-danger)] hover:text-[var(--color-admin-danger)]">
                 <Trash2 size={16} />
@@ -275,7 +275,7 @@ export default function HapBilgilerPage() {
                 <input
                   className="admin-input h-10 text-sm"
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Hap bilgi metni, ders veya konu ara"
+                  placeholder="Bilgi kartı metni, ders veya konu ara"
                   value={query}
                 />
               </AdminListToolbarField>
@@ -340,7 +340,7 @@ export default function HapBilgilerPage() {
           </AdminListToolbarRow>
 
           <AdminListToolbarMeta>
-            <AdminListToolbarMetaPill>{filteredRows.length} hap bilgi</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>{filteredRows.length} bilgi kartı</AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>
               {items.filter((item) => item.status === "active").length} aktif
             </AdminListToolbarMetaPill>
@@ -355,7 +355,7 @@ export default function HapBilgilerPage() {
         ) : error ? (
           <div className="px-5 py-8 text-sm text-[var(--color-admin-danger)]">{error}</div>
         ) : (
-          <AdminDataGrid columns={columns} data={filteredRows} emptyState="Filtrelere uygun hap bilgi bulunamadı." />
+          <AdminDataGrid columns={columns} data={filteredRows} emptyState="Filtrelere uygun bilgi kartı bulunamadı." />
         )}
       </AdminTableCard>
     </div>

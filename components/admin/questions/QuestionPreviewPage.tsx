@@ -27,7 +27,7 @@ type SubjectsResponse = {
   subjects: AdminSubject[];
 };
 
-type EditableQuestionDraft = {
+export type EditableQuestionDraft = {
   question_text: string;
   options: Array<{
     label: string;
@@ -367,7 +367,7 @@ export function QuestionPreviewPage() {
   );
 }
 
-function QuestionPreviewCard({
+export function QuestionPreviewCard({
   busy,
   currentIndex,
   onDelete,
@@ -375,6 +375,7 @@ function QuestionPreviewCard({
   onPrevious,
   onSave,
   question,
+  showDelete = true,
   total,
 }: {
   busy: boolean;
@@ -384,6 +385,7 @@ function QuestionPreviewCard({
   onPrevious: () => void;
   onSave: (draft: EditableQuestionDraft) => Promise<boolean>;
   question: AdminQuestion;
+  showDelete?: boolean;
   total: number;
 }) {
   const [editing, setEditing] = useState(false);
@@ -459,20 +461,22 @@ function QuestionPreviewCard({
           <Pencil size={17} />
           Edit
         </button>
-        <ConfirmDialog
-          busy={busy}
-          confirmLabel="Soruyu Sil"
-          description="Soru kalıcı olarak silinir. Bağlı şık kayıtları da kaldırılır."
-          disabled={controlsDisabled}
-          onConfirm={onDelete}
-          title="Soru silinsin mi?"
-          trigger={
-            <span className="flex h-11 items-center gap-2 rounded-2xl bg-slate-900 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-950">
-              <Trash2 size={17} />
-              Delete
-            </span>
-          }
-        />
+        {showDelete ? (
+          <ConfirmDialog
+            busy={busy}
+            confirmLabel="Soruyu Sil"
+            description="Soru kalıcı olarak silinir. Bağlı şık kayıtları da kaldırılır."
+            disabled={controlsDisabled}
+            onConfirm={onDelete}
+            title="Soru silinsin mi?"
+            trigger={
+              <span className="flex h-11 items-center gap-2 rounded-2xl bg-slate-900 px-5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-950">
+                <Trash2 size={17} />
+                Delete
+              </span>
+            }
+          />
+        ) : null}
       </div>
 
       <article className="rounded-[28px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-7 py-6 shadow-[var(--color-admin-shadow)]">
@@ -992,7 +996,7 @@ function SoftBadge({ children }: { children: React.ReactNode }) {
   );
 }
 
-function CenteredLoader({ label }: { label: string }) {
+export function CenteredLoader({ label }: { label: string }) {
   return (
     <div className="flex min-h-[calc(100vh-9rem)] items-center justify-center">
       <div className="rounded-[28px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-8 py-7 text-center shadow-[var(--color-admin-shadow)]">
@@ -1003,7 +1007,7 @@ function CenteredLoader({ label }: { label: string }) {
   );
 }
 
-function ErrorMessage({ message }: { message: string }) {
+export function ErrorMessage({ message }: { message: string }) {
   return (
     <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-bold text-rose-700">
       {message}

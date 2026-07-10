@@ -30,7 +30,7 @@ const trueFalseTemplate = `{
       "question_type": "true_false",
       "difficulty": "medium",
       "status": "active",
-      "question_text": "Hap bilgiden üretilen ölçülü doğru/yanlış ifadesi buraya yazılır.",
+      "question_text": "Bilgi kartından üretilen ölçülü doğru/yanlış ifadesi buraya yazılır.",
       "correct_answer_text": "true",
       "explanation_text": "Kısa gerekçe burada yer alır."
     }
@@ -125,7 +125,7 @@ export function TrueFalseQuestionImportPage() {
         }
       } catch (loadError) {
         if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : "Hap bilgiler alınamadı.");
+          setError(loadError instanceof Error ? loadError.message : "Bilgi kartları alınamadı.");
         }
       } finally {
         if (!cancelled) {
@@ -160,7 +160,7 @@ export function TrueFalseQuestionImportPage() {
     () =>
       JSON.stringify(
         {
-          task: "Bu hap bilgilerden doğru/yanlış soru üret. Bariz cevaplı ve çocukça ifadeler üretme.",
+          task: "Bu bilgi kartlarından doğru/yanlış soru üret. Bariz cevaplı ve çocukça ifadeler üretme.",
           rules: [
             "Sadece question_type=true_false kullan.",
             "status active olmalı; kalite onayı question statusundan ayrı approval_status alanıyla sonradan yapılır.",
@@ -277,7 +277,7 @@ export function TrueFalseQuestionImportPage() {
 
             <div className="grid gap-3 md:grid-cols-3">
               <InfoPill label="Konu" value={selectedSubjectTopics.length} />
-              <InfoPill label="Hap bilgi" value={flashcards.length} loading={flashcardsLoading} />
+              <InfoPill label="Bilgi kartı" value={flashcards.length} loading={flashcardsLoading} />
               <InfoPill label="Son import" value={importsMeta?.total ?? imports.length} />
             </div>
 
@@ -365,7 +365,7 @@ export function TrueFalseQuestionImportPage() {
             <div className="flex items-center gap-2">
               <ListChecks size={17} className="text-[var(--color-admin-accent)]" />
               <h3 className="text-sm font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-                Hap Bilgi Kaynağı
+                Bilgi Kartı Kaynağı
               </h3>
             </div>
             <p className="mt-2 text-sm leading-6 text-[var(--color-admin-muted)]">
@@ -388,7 +388,7 @@ export function TrueFalseQuestionImportPage() {
               </h3>
             </div>
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4 text-sm leading-6 text-[var(--color-admin-muted)]">
-              D/Y soruda cevap bariz olmamalı. Yanlış cümlede tek kritik unsur değişsin; doğru cümle de hap bilginin aynısını kuru kuru tekrar etmesin.
+              D/Y soruda cevap bariz olmamalı. Yanlış cümlede tek kritik unsur değişsin; doğru cümle de bilgi kartının aynısını kuru kuru tekrar etmesin.
             </div>
           </div>
         </AdminTableCard>

@@ -71,7 +71,7 @@ export function FlashcardImportReviewPage({ importId }: Props) {
       setDraft(firstPending ? toEditableItem(firstPending) : null);
       setSelectedIds([]);
     } catch (loadError) {
-      setError(loadError instanceof Error ? loadError.message : "Hap bilgi importu yüklenemedi.");
+      setError(loadError instanceof Error ? loadError.message : "Bilgi kartı importu yüklenemedi.");
     } finally {
       setLoading(false);
     }
@@ -137,12 +137,12 @@ export function FlashcardImportReviewPage({ importId }: Props) {
       });
 
       applyImportPatch(response.data.import, [response.data.item]);
-      showToast({ tone: "success", title: "Hap bilgi kaydedildi" });
+      showToast({ tone: "success", title: "Bilgi kartı kaydedildi" });
     } catch (saveError) {
       showToast({
         tone: "error",
         title: "Kaydedilemedi",
-        description: saveError instanceof Error ? saveError.message : "Hap bilgi güncellenemedi.",
+        description: saveError instanceof Error ? saveError.message : "Bilgi kartı güncellenemedi.",
       });
     } finally {
       setSaving(false);
@@ -190,16 +190,16 @@ export function FlashcardImportReviewPage({ importId }: Props) {
       const wasDuplicate = approveResponse.data.item.review_status === "rejected";
       showToast({
         tone: wasDuplicate ? "warning" : "success",
-        title: wasDuplicate ? "Duplicate kart içeri alınmadı" : "Hap bilgi içe aktarıldı",
+        title: wasDuplicate ? "Duplicate kart içeri alınmadı" : "Bilgi kartı içe aktarıldı",
         description: wasDuplicate
-          ? approveResponse.data.item.review_note ?? "Bu hap bilgi zaten mevcut."
+          ? approveResponse.data.item.review_note ?? "Bu bilgi kartı zaten mevcut."
           : saveResponse.data.item.topic?.name ?? selectedItem.topic_name_snapshot,
       });
     } catch (approveError) {
       showToast({
         tone: "error",
         title: "Onaylanamadı",
-        description: approveError instanceof Error ? approveError.message : "Hap bilgi içe aktarılamadı.",
+        description: approveError instanceof Error ? approveError.message : "Bilgi kartı içe aktarılamadı.",
       });
     } finally {
       setSaving(false);
@@ -224,12 +224,12 @@ export function FlashcardImportReviewPage({ importId }: Props) {
 
       applyImportPatch(response.data.import, [response.data.item]);
       setSelectedIds((current) => current.filter((id) => id !== selectedItem.id));
-      showToast({ tone: "success", title: "Hap bilgi reddedildi" });
+      showToast({ tone: "success", title: "Bilgi kartı reddedildi" });
     } catch (rejectError) {
       showToast({
         tone: "error",
         title: "Reddedilemedi",
-        description: rejectError instanceof Error ? rejectError.message : "Hap bilgi reddedilemedi.",
+        description: rejectError instanceof Error ? rejectError.message : "Bilgi kartı reddedilemedi.",
       });
     } finally {
       setSaving(false);
@@ -261,7 +261,7 @@ export function FlashcardImportReviewPage({ importId }: Props) {
       setSelectedIds([]);
       showToast({
         tone: response.data.duplicate_count ? "warning" : "success",
-        title: "Seçili hap bilgiler içe aktarıldı",
+        title: "Seçili bilgi kartları içe aktarıldı",
         description: response.data.duplicate_count
           ? `${response.data.approved_count} kart içe aktarıldı, ${response.data.duplicate_count} duplicate içeri alınmadı.`
           : `${response.data.approved_count} kart içe aktarıldı.`,
@@ -270,7 +270,7 @@ export function FlashcardImportReviewPage({ importId }: Props) {
       showToast({
         tone: "error",
         title: "Toplu onay başarısız",
-        description: bulkError instanceof Error ? bulkError.message : "Seçili hap bilgiler onaylanamadı.",
+        description: bulkError instanceof Error ? bulkError.message : "Seçili bilgi kartları onaylanamadı.",
       });
     } finally {
       setSaving(false);
@@ -306,7 +306,7 @@ export function FlashcardImportReviewPage({ importId }: Props) {
             </Link>
           </div>
           <h1 className="mt-2 text-2xl font-black tracking-[-0.05em] text-[var(--color-admin-ink)]">
-            Hap Bilgi Import #{importId}
+            Bilgi Kartı Import #{importId}
           </h1>
         </div>
 

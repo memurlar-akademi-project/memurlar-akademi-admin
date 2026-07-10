@@ -108,7 +108,7 @@ export default function DashboardPage() {
           setError(
             loadError instanceof Error
               ? loadError.message
-              : "Dashboard yüklenirken hata oluştu.",
+              : "Gösterge paneli yüklenirken hata oluştu.",
           );
         }
       } finally {

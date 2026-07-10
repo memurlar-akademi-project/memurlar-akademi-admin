@@ -7,6 +7,7 @@ import { Check, ChevronLeft, ChevronRight, Loader2, Plus, RefreshCw, Wand2, X } 
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
+import { AdminQuestionTextBlock } from "@/components/admin/questions/AdminQuestionTextBlock";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
@@ -1464,9 +1465,7 @@ function QuestionBody({ compact = false, question }: { compact?: boolean; questi
 
   return (
     <div className={`${compact ? "mt-3 space-y-3" : "mt-4 space-y-4"}`}>
-      <p className={`${compact ? "text-sm leading-6" : "text-base leading-8"} font-bold text-[var(--color-admin-ink)]`}>
-        {question.question_text || "Soru metni yok"}
-      </p>
+      <AdminQuestionTextBlock compact={compact} text={question.question_text || "Soru metni yok"} />
 
       {sortedOptions.length > 0 ? (
         <div className={`grid ${compact ? "gap-1.5" : "gap-2"}`}>

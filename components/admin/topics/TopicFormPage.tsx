@@ -428,7 +428,7 @@ export function TopicFormPage({
               </h3>
               <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
                 <p className="text-sm leading-6 text-[var(--color-admin-muted)]">
-                  Konu, ders altındaki bir ana başlıktır. İçerik, soru, hap bilgi ve podcast akışları sonrasında bu konuya bağlanır.
+                  Konu, ders altındaki bir ana başlıktır. İçerik, soru, bilgi kartı ve podcast akışları sonrasında bu konuya bağlanır.
                 </p>
                 {topic ? (
                   <div className="mt-4 grid grid-cols-2 gap-3">

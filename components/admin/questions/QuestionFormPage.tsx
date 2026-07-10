@@ -6,6 +6,7 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { AdminReadinessPanel } from "@/components/admin/crud/AdminReadinessPanel";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
+import { AdminQuestionTextBlock } from "@/components/admin/questions/AdminQuestionTextBlock";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
@@ -583,9 +584,7 @@ export function QuestionFormPage({
                         Önizleme
                       </h3>
                       <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-4">
-                        <p className="text-base font-bold leading-8 text-[var(--color-admin-ink)]">
-                          {form.question_text || "Soru metni burada önizlenecek."}
-                        </p>
+                        <AdminQuestionTextBlock text={form.question_text || "Soru metni burada önizlenecek."} />
 
                         {form.question_type === "multiple_choice" ? (
                           <div className="mt-5 space-y-3">

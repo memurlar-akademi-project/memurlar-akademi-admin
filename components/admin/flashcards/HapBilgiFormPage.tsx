@@ -105,7 +105,7 @@ export function HapBilgiFormPage({
         });
       } catch (loadError) {
         if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : "Hap bilgi yüklenemedi.");
+          setError(loadError instanceof Error ? loadError.message : "Bilgi kartı yüklenemedi.");
         }
       } finally {
         if (!cancelled) {
@@ -128,7 +128,7 @@ export function HapBilgiFormPage({
     }
 
     const preview = form.front_text.trim();
-    setTitle(preview ? preview.slice(0, 72) : "Hap Bilgi Düzenle");
+    setTitle(preview ? preview.slice(0, 72) : "Bilgi Kartı Düzenle");
 
     return () => setTitle(null);
   }, [form.front_text, mode, setTitle]);
@@ -180,16 +180,16 @@ export function HapBilgiFormPage({
 
       showToast({
         tone: "success",
-        title: mode === "edit" ? "Hap bilgi güncellendi" : "Hap bilgi oluşturuldu",
+        title: mode === "edit" ? "Bilgi kartı güncellendi" : "Bilgi kartı oluşturuldu",
         description: selectedTopic?.name ?? "Konu havuzu",
       });
     } catch (submitError) {
       showToast({
         tone: "error",
         title: "Kayıt tamamlanamadı",
-        description: submitError instanceof Error ? submitError.message : "Hap bilgi kaydı başarısız oldu.",
+        description: submitError instanceof Error ? submitError.message : "Bilgi kartı kaydı başarısız oldu.",
       });
-      setError(submitError instanceof Error ? submitError.message : "Hap bilgi kaydı başarısız oldu.");
+      setError(submitError instanceof Error ? submitError.message : "Bilgi kartı kaydı başarısız oldu.");
     } finally {
       setSaving(false);
     }
@@ -199,7 +199,7 @@ export function HapBilgiFormPage({
     return (
       <div className="space-y-4">
         <AdminTableCard>
-          <div className="px-5 py-10 text-sm text-[var(--color-admin-muted)]">Hap bilgi yükleniyor...</div>
+          <div className="px-5 py-10 text-sm text-[var(--color-admin-muted)]">Bilgi kartı yükleniyor...</div>
         </AdminTableCard>
       </div>
     );
@@ -294,7 +294,7 @@ export function HapBilgiFormPage({
 
         {mode === "edit" && flashcard?.readiness ? (
           <AdminTableCard>
-            <AdminReadinessPanel entityLabel="Hap bilgi" readiness={flashcard.readiness} />
+            <AdminReadinessPanel entityLabel="Bilgi kartı" readiness={flashcard.readiness} />
           </AdminTableCard>
         ) : null}
 
@@ -318,7 +318,7 @@ export function HapBilgiFormPage({
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm text-[var(--color-admin-muted)]">
               {topicsLoading
                 ? "Konular yükleniyor..."
-                : "Hap bilgi kartları konu bazlı çalışır. Ön yüz kısa, arka yüz ise açıklayıcı olmalıdır."}
+                : "Bilgi kartları konu bazlı çalışır. Ön yüz kısa, arka yüz ise açıklayıcı olmalıdır."}
             </div>
           </div>
         </AdminTableCard>

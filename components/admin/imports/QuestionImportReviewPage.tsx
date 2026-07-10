@@ -5,6 +5,7 @@ import { FormEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState
 import { ChevronLeft, ChevronRight, CircleCheckBig, Trash2 } from "lucide-react";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
+import { AdminQuestionTextBlock } from "@/components/admin/questions/AdminQuestionTextBlock";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
@@ -992,9 +993,9 @@ export function QuestionImportReviewPage({ importId }: Props) {
                                 {item.topic?.name ?? item.topic_name_snapshot}
                                 {item.q_version ? ` · v${item.q_version}` : ""}
                               </p>
-                              <p className="mt-0.5 line-clamp-2 text-sm font-semibold leading-5 text-[var(--color-admin-ink)]">
-                                {item.question_text}
-                              </p>
+                              <div className="mt-0.5">
+                                <AdminQuestionTextBlock compact text={item.question_text} />
+                              </div>
                               {item.review_note ? (
                                 <p className="mt-1 rounded-xl border border-amber-200 bg-amber-50 px-2.5 py-1.5 text-[11px] font-semibold text-amber-700">
                                   {item.review_note}

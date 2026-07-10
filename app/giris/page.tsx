@@ -68,7 +68,7 @@ export default function LoginPage() {
           <div className="grid grid-cols-2 gap-4">
             {[
               ["Katalog", "Bakanlık, sınav, ders ve konu ilişkileri"],
-              ["İçerik", "Konu anlatımı, podcast ve hap bilgi yönetimi"],
+              ["İçerik", "Konu anlatımı, podcast ve bilgi kartı yönetimi"],
               ["Ölçek", "Purpose-built servislerle hızlı admin akışı"],
               ["Kontrol", "Tek rol, net izin sınırı, temiz operasyon yüzeyi"],
             ].map(([title, copy]) => (

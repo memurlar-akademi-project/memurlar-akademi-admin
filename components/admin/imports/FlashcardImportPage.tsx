@@ -73,7 +73,7 @@ export function FlashcardImportPage() {
         setImportsMeta(parsePagination(importsResponse.meta.pagination));
       } catch (loadError) {
         if (!cancelled) {
-          setError(loadError instanceof Error ? loadError.message : "Hap bilgi import ekranı yüklenemedi.");
+          setError(loadError instanceof Error ? loadError.message : "Bilgi kartı import ekranı yüklenemedi.");
         }
       } finally {
         if (!cancelled) {
@@ -195,7 +195,7 @@ export function FlashcardImportPage() {
 
       showToast({
         tone: "success",
-        title: "Hap bilgi import kaydı oluşturuldu",
+        title: "Bilgi kartı import kaydı oluşturuldu",
         description:
           response.data.import.rejected_count > 0
             ? `${response.data.import.pending_count} kart incelemeye hazır, ${response.data.import.rejected_count} duplicate içeri alınmadı.`
@@ -205,7 +205,7 @@ export function FlashcardImportPage() {
       router.replace(`/flashcardlar/import/${response.data.import.id}/incele`);
     } catch (submitError) {
       const description =
-        submitError instanceof Error ? submitError.message : "Hap bilgi import işlemi başarısız oldu.";
+        submitError instanceof Error ? submitError.message : "Bilgi kartı import işlemi başarısız oldu.";
       setError(description);
       showToast({
         tone: "error",
@@ -274,7 +274,7 @@ export function FlashcardImportPage() {
                   Son Importlar
                 </h3>
                 <p className="mt-1 text-sm text-[var(--color-admin-muted)]">
-                  Onay bekleyen hap bilgi importlarını buradan tekrar açabilirsin.
+                  Onay bekleyen bilgi kartı importlarını buradan tekrar açabilirsin.
                 </p>
               </div>
               <span className="rounded-full border border-[var(--color-admin-line)] px-3 py-1 text-xs font-semibold text-[var(--color-admin-muted)]">
@@ -289,7 +289,7 @@ export function FlashcardImportPage() {
                 </div>
               ) : imports.length === 0 ? (
                 <div className="rounded-[18px] border border-dashed border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4 text-sm text-[var(--color-admin-muted)]">
-                  Henüz hap bilgi import kaydı yok.
+                  Henüz bilgi kartı import kaydı yok.
                 </div>
               ) : (
                 imports.map((item) => (
@@ -327,7 +327,7 @@ export function FlashcardImportPage() {
               AI Şablonu
             </h3>
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4 text-sm leading-6 text-[var(--color-admin-muted)]">
-              Hap bilgi JSON&apos;u `topic_id` bazlı gelir. Konu adı JSON&apos;a yazılmaz; konu ve ders bilgisi backend tarafından `topic_id` üzerinden bağlanır.
+              Bilgi kartı JSON&apos;u `topic_id` bazlı gelir. Konu adı JSON&apos;a yazılmaz; konu ve ders bilgisi backend tarafından `topic_id` üzerinden bağlanır.
             </div>
 
             <pre className="mt-4 overflow-x-auto rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] p-4 text-[12px] leading-6 text-[var(--color-admin-ink)]">
@@ -374,7 +374,7 @@ export function FlashcardImportPage() {
             <div className="mt-4 flex items-start gap-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm text-[var(--color-admin-muted)]">
               <FileJson2 className="mt-0.5 shrink-0" size={16} />
               <p>
-                Bu listeyi AI’a verip hap bilgi JSON’unu `topic_id` bazlı ürettirebilirsin. Import sonrası her kart review ekranında konu bilgisiyle görünür.
+                Bu listeyi AI’a verip bilgi kartı JSON’unu `topic_id` bazlı ürettirebilirsin. Import sonrası her kart review ekranında konu bilgisiyle görünür.
               </p>
             </div>
           </div>

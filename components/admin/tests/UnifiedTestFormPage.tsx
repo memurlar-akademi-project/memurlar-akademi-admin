@@ -16,6 +16,7 @@ import {
 import { AdminReadinessPanel } from "@/components/admin/crud/AdminReadinessPanel";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
+import { AdminQuestionTextBlock } from "@/components/admin/questions/AdminQuestionTextBlock";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
@@ -1080,9 +1081,7 @@ function QuestionsStep({
                       {index + 1}
                     </span>
                     <button className="min-w-0 flex-1 text-left" onClick={() => setPreviewQuestion(question)} type="button">
-                      <p className="overflow-hidden text-xs font-bold leading-5 text-[var(--color-admin-ink)] [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:3]">
-                        {question.question_text}
-                      </p>
+                      <AdminQuestionTextBlock compact text={question.question_text ?? "Soru metni yok"} />
                       <p className="mt-1 text-[11px] text-[var(--color-admin-muted)]">
                         {question.topic?.name ?? "Konu yok"}
                       </p>
@@ -1154,7 +1153,7 @@ function ReviewStep({
                   {index + 1}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-semibold leading-6 text-[var(--color-admin-ink)]">{question.question_text}</p>
+                  <AdminQuestionTextBlock compact text={question.question_text ?? "Soru metni yok"} />
                   <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
                     {question.topic?.subject?.name ?? "Ders"} · {question.topic?.name ?? "Konu"}
                   </p>
@@ -1258,9 +1257,9 @@ function QuestionCard({
               {question.topic?.name ?? "Konu yok"}
             </span>
           </div>
-          <p className="mt-3 text-sm font-semibold leading-7 text-[var(--color-admin-ink)]">
-            {question.question_text}
-          </p>
+          <div className="mt-3">
+            <AdminQuestionTextBlock compact text={question.question_text ?? "Soru metni yok"} />
+          </div>
 
           {question.options?.length ? (
             <div className="mt-4 grid gap-2 lg:grid-cols-2">
@@ -1334,7 +1333,7 @@ function QuestionPreviewModal({
         </div>
 
         <div className="max-h-[calc(92vh-92px)] overflow-y-auto px-6 py-6">
-          <p className="text-lg font-bold leading-9 text-[var(--color-admin-ink)]">{question.question_text}</p>
+          <AdminQuestionTextBlock text={question.question_text ?? "Soru metni yok"} />
 
           {question.options?.length ? (
             <div className="mt-6 grid gap-3">

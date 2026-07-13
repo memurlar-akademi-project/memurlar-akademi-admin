@@ -80,7 +80,7 @@ body {
 .admin-shell-grid {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 286px minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr);
 }
 
 .admin-card {

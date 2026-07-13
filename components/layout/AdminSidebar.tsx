@@ -19,6 +19,9 @@ import {
   Layers,
   LayoutDashboard,
   LibraryBig,
+  MessagesSquare,
+  PanelLeftClose,
+  PanelLeftOpen,
   PencilRuler,
   ReceiptText,
   ScrollText,
@@ -90,6 +93,7 @@ const navigation = [
     items: [
       { href: "/kullanicilar", label: "Kullanıcılar", icon: ShieldUser },
       { href: "/siparisler", label: "Siparişler", icon: ReceiptText },
+      { href: "/topluluk", label: "Topluluk Onayı", icon: MessagesSquare },
     ],
   },
 ];
@@ -119,6 +123,7 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const activeHref = findActiveHref(pathname);
   const activeGroupId = findActiveGroupId(pathname);
+  const [collapsed, setCollapsed] = useState(false);
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
     return navigation.reduce<Record<string, boolean>>((accumulator, group, index) => {
       accumulator[group.id] = activeGroupId ? group.id === activeGroupId : index === 0;
@@ -133,18 +138,35 @@ export function AdminSidebar() {
   const isDashboardActive = pathname === "/dashboard";
 
   function toggleGroup(groupId: string) {
+    if (collapsed) {
+      setCollapsed(false);
+    }
+
     setOpenGroups((current) => ({ ...current, [groupId]: !current[groupId] }));
   }
 
   return (
-    <aside className="sticky top-0 hidden h-screen border-r border-[var(--color-admin-sidebar-line)] bg-[linear-gradient(180deg,var(--color-admin-sidebar)_0%,var(--color-admin-sidebar-2)_100%)] px-4 py-5 lg:block">
+    <aside
+      className={`sticky top-0 hidden h-screen border-r border-[var(--color-admin-sidebar-line)] bg-[linear-gradient(180deg,var(--color-admin-sidebar)_0%,var(--color-admin-sidebar-2)_100%)] py-5 transition-[width] duration-200 lg:block ${
+        collapsed ? "w-[88px] px-3" : "w-[286px] px-4"
+      }`}
+    >
+      <button
+        aria-label={collapsed ? "Sidebarı aç" : "Sidebarı kapat"}
+        className="absolute right-0 top-1/2 z-30 flex h-10 w-10 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-[var(--color-admin-sidebar-line)] bg-[var(--color-admin-sidebar-2)] text-white/70 shadow-[0_16px_40px_rgba(0,0,0,0.18)] transition hover:bg-white/10 hover:text-white"
+        onClick={() => setCollapsed((current) => !current)}
+        type="button"
+      >
+        {collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}
+      </button>
+
       <div className="flex h-full flex-col">
-        <div className="rounded-[22px] border border-[var(--color-admin-sidebar-line)] bg-white/4 px-4 py-4">
-          <div className="flex items-center gap-3">
+        <div className={`rounded-[22px] border border-[var(--color-admin-sidebar-line)] bg-white/4 py-4 ${collapsed ? "px-2" : "px-4"}`}>
+          <div className={`flex items-center ${collapsed ? "justify-center" : "gap-3"}`}>
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/8 text-white">
               <Boxes size={20} />
             </div>
-            <div>
+            <div className={collapsed ? "sr-only" : ""}>
               <p className="text-[14px] font-extrabold tracking-[-0.03em] text-white">
                 Memurlar Akademi
               </p>
@@ -155,11 +177,13 @@ export function AdminSidebar() {
 
         <nav className="mt-6 flex-1 overflow-y-auto pr-1">
           <Link
-            className={`admin-nav-item mb-3 ${isDashboardActive ? "admin-nav-item-active" : ""}`}
+            aria-label={collapsed ? "Gösterge Paneli" : undefined}
+            className={`admin-nav-item mb-3 ${collapsed ? "justify-center px-0" : ""} ${isDashboardActive ? "admin-nav-item-active" : ""}`}
             href="/dashboard"
+            title={collapsed ? "Gösterge Paneli" : undefined}
           >
             <LayoutDashboard size={17} />
-            <span className="font-semibold">Gösterge Paneli</span>
+            <span className={collapsed ? "sr-only" : "font-semibold"}>Gösterge Paneli</span>
           </Link>
 
           {navigation.map((group) => {
@@ -168,20 +192,25 @@ export function AdminSidebar() {
             return (
               <div key={group.id} className="mb-2 rounded-[18px] border border-white/6 bg-white/[0.025] p-1">
                 <button
-                  className="flex w-full items-center gap-3 rounded-[14px] px-3 py-2.5 text-left text-[13px] font-extrabold text-white/78 transition hover:bg-white/5 hover:text-white"
+                  className={`flex w-full items-center rounded-[14px] py-2.5 text-left text-[13px] font-extrabold text-white/78 transition hover:bg-white/5 hover:text-white ${
+                    collapsed ? "justify-center px-0" : "gap-3 px-3"
+                  }`}
                   type="button"
                   aria-expanded={visibleOpenGroups[group.id] ?? false}
                   onClick={() => toggleGroup(group.id)}
+                  title={collapsed ? group.title : undefined}
                 >
                   <GroupIcon size={17} />
-                  <span className="flex-1">{group.title}</span>
-                  <ChevronDown
-                    size={16}
-                    className={`text-white/45 transition-transform ${visibleOpenGroups[group.id] ? "rotate-180" : ""}`}
-                  />
+                  <span className={collapsed ? "sr-only" : "flex-1"}>{group.title}</span>
+                  {collapsed ? null : (
+                    <ChevronDown
+                      size={16}
+                      className={`text-white/45 transition-transform ${visibleOpenGroups[group.id] ? "rotate-180" : ""}`}
+                    />
+                  )}
                 </button>
 
-                {visibleOpenGroups[group.id] ? (
+                {!collapsed && visibleOpenGroups[group.id] ? (
                   <div className="mt-1 space-y-1 border-t border-white/6 pt-1">
                     {group.items.map((item) => {
                       const isActive = activeHref === item.href;

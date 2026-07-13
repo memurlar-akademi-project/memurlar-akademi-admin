@@ -3,13 +3,15 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import {
-  Activity,
-  CircleDollarSign,
+  BookOpenCheck,
+  CalendarDays,
   ClipboardCheck,
+  Clock3,
+  FileQuestion,
+  Layers3,
   type LucideIcon,
-  Gauge,
   ShieldCheck,
-  Users,
+  Target,
 } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { adminApiRequest } from "@/lib/admin-api";
@@ -27,6 +29,11 @@ const dateFormatter = new Intl.DateTimeFormat("tr-TR", {
   month: "short",
   hour: "2-digit",
   minute: "2-digit",
+});
+const examDateFormatter = new Intl.DateTimeFormat("tr-TR", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
 });
 
 type DashboardIconSource =
@@ -140,6 +147,12 @@ export default function DashboardPage() {
           {error}
         </div>
       ) : null}
+
+      {loading ? (
+        <SkeletonBlock className="h-64 rounded-[20px]" />
+      ) : (
+        <ExamOverviewPanel exam={data?.exam_overview ?? null} />
+      )}
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {loading ? (
@@ -551,6 +564,158 @@ export default function DashboardPage() {
   );
 }
 
+function ExamOverviewPanel({ exam }: { exam: AdminDashboard["exam_overview"] }) {
+  if (!exam) {
+    return (
+      <section className="admin-card p-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+              Aktif sınav
+            </p>
+            <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-[var(--color-admin-ink)]">
+              Aktif sınav bilgisi bulunamadı
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--color-admin-muted)]">
+              Sınav kartını doldurmak için aktif bir sınav tanımlayıp tarih, süre ve soru dağılımı bilgilerini gir.
+            </p>
+          </div>
+          <DashboardIconBadge icon={CalendarDays} />
+        </div>
+      </section>
+    );
+  }
+
+  const daysTone =
+    exam.days_until_exam === null
+      ? "neutral"
+      : exam.days_until_exam < 0
+        ? "past"
+        : exam.days_until_exam <= 14
+          ? "urgent"
+          : "normal";
+
+  return (
+    <section className="admin-card overflow-hidden p-0">
+      <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="p-6 md:p-7">
+          <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+            <div className="min-w-0">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                Aktif sınav
+              </p>
+              <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-[var(--color-admin-ink)] md:text-3xl">
+                {exam.name}
+              </h1>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <ExamPill label={exam.ministry_name ?? "Bakanlık yok"} />
+                {exam.year ? <ExamPill label={`${exam.year} dönemi`} /> : null}
+                <ExamPill label={exam.status === "active" ? "Aktif" : exam.status} />
+              </div>
+            </div>
+
+            <div className={`rounded-[18px] px-4 py-3 text-right ${daysToneClass(daysTone)}`}>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em]">
+                {exam.exam_date ? "Sınava kalan" : "Sınav tarihi"}
+              </p>
+              <p className="mt-1 text-3xl font-extrabold tracking-tight">
+                {exam.exam_date ? formatDaysUntilExam(exam.days_until_exam) : "Girilmedi"}
+              </p>
+              <p className="mt-1 text-xs">
+                {exam.exam_date ? formatExamDate(exam.exam_date) : "Sınav ekranından tarih eklenebilir"}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <ExamMetric icon={FileQuestion} label="Soru" value={numberFormatter.format(exam.total_question_count)} />
+            <ExamMetric icon={Clock3} label="Süre" value={formatDuration(exam.duration_min)} />
+            <ExamMetric icon={Target} label="Geçme puanı" value={formatPassingScore(exam.passing_score)} />
+            <ExamMetric
+              icon={ShieldCheck}
+              label="Aktif erişim"
+              value={numberFormatter.format(exam.active_membership_count)}
+            />
+          </div>
+        </div>
+
+        <div className="border-t border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-6 md:p-7 lg:border-l lg:border-t-0">
+          <p className="text-sm font-bold text-[var(--color-admin-ink)]">Sınav kapsamı</p>
+          <p className="mt-1 text-sm leading-6 text-[var(--color-admin-muted)]">
+            Ders dağılımı, konu bağlantıları ve deneme şablon durumunu hızlı kontrol et.
+          </p>
+
+          <div className="mt-5 grid gap-3">
+            <ExamScopeRow icon={Layers3} label="Bölüm" value={exam.section_count} />
+            <ExamScopeRow icon={BookOpenCheck} label="Ders" value={exam.subject_count} />
+            <ExamScopeRow icon={ClipboardCheck} label="Konu" value={exam.topic_count} />
+          </div>
+
+          <div className="mt-5 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-4">
+            <div className="flex items-center justify-between gap-4 text-sm">
+              <span className="font-semibold text-[var(--color-admin-ink)]">Deneme durumu</span>
+              <span className="text-[var(--color-admin-muted)]">
+                {numberFormatter.format(exam.active_mock_exam_count)} aktif /{" "}
+                {numberFormatter.format(exam.draft_mock_exam_count)} taslak
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ExamPill({ label }: { label: string }) {
+  return (
+    <span className="rounded-full border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-3 py-1 text-xs font-semibold text-[var(--color-admin-muted)]">
+      {label}
+    </span>
+  );
+}
+
+function ExamMetric({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-admin-muted)]">
+          {label}
+        </p>
+        <Icon aria-hidden="true" className="size-4 text-[var(--color-admin-muted)]" strokeWidth={2.1} />
+      </div>
+      <p className="mt-3 text-xl font-extrabold tracking-tight text-[var(--color-admin-ink)]">{value}</p>
+    </div>
+  );
+}
+
+function ExamScopeRow({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: LucideIcon;
+  label: string;
+  value: number;
+}) {
+  return (
+    <div className="flex items-center justify-between gap-4 rounded-[16px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-3">
+      <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-admin-ink)]">
+        <Icon aria-hidden="true" className="size-4 text-[var(--color-admin-muted)]" strokeWidth={2.1} />
+        {label}
+      </span>
+      <span className="text-sm font-bold text-[var(--color-admin-ink)]">{numberFormatter.format(value)}</span>
+    </div>
+  );
+}
+
 function DashboardStatCard({
   icon: Icon,
   label,
@@ -911,6 +1076,62 @@ function formatDateTime(value: string | null) {
   }
 
   return dateFormatter.format(new Date(value));
+}
+
+function formatExamDate(value: string | null) {
+  if (!value) {
+    return "Tarih girilmedi";
+  }
+
+  return examDateFormatter.format(new Date(value));
+}
+
+function formatDaysUntilExam(days: number | null) {
+  if (days === null) {
+    return "-";
+  }
+
+  if (days < 0) {
+    return `${numberFormatter.format(Math.abs(days))} gün geçti`;
+  }
+
+  if (days === 0) {
+    return "Bugün";
+  }
+
+  return `${numberFormatter.format(days)} gün`;
+}
+
+function formatDuration(durationMin: number) {
+  if (!durationMin) {
+    return "-";
+  }
+
+  return `${numberFormatter.format(durationMin)} dk`;
+}
+
+function formatPassingScore(score: number | null) {
+  if (score === null) {
+    return "-";
+  }
+
+  return numberFormatter.format(score);
+}
+
+function daysToneClass(tone: "neutral" | "normal" | "urgent" | "past") {
+  if (tone === "urgent") {
+    return "border border-[var(--color-admin-warn)] bg-[var(--color-admin-warn-soft)] text-[var(--color-admin-warn)]";
+  }
+
+  if (tone === "past") {
+    return "border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-muted)] text-[var(--color-admin-muted)]";
+  }
+
+  if (tone === "normal") {
+    return "border border-[var(--color-admin-success)] bg-[var(--color-admin-success-soft)] text-[var(--color-admin-success)]";
+  }
+
+  return "border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] text-[var(--color-admin-muted)]";
 }
 
 function membershipLabel(type: string) {

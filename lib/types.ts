@@ -703,6 +703,25 @@ export type AdminTestGenerationResult = {
 };
 
 export type AdminDashboard = {
+  exam_overview: {
+    id: number;
+    name: string;
+    slug: string;
+    status: string;
+    year: number | null;
+    ministry_name: string | null;
+    exam_date: string | null;
+    days_until_exam: number | null;
+    total_question_count: number;
+    duration_min: number;
+    passing_score: number | null;
+    section_count: number;
+    subject_count: number;
+    topic_count: number;
+    active_membership_count: number;
+    active_mock_exam_count: number;
+    draft_mock_exam_count: number;
+  } | null;
   totals: {
     users: number;
     active_memberships: number;

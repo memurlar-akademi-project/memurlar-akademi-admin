@@ -38,11 +38,25 @@ export type AdminUser = {
   membership: {
     type: string;
     status: string;
+    starts_at?: string | null;
+    ends_at?: string | null;
     exam: {
       id: number;
       name: string;
     } | null;
   } | null;
+  activity: {
+    answered_question_count: number;
+    correct_answer_count: number;
+    accuracy_rate: number;
+    practice_session_count: number;
+    completed_mock_exam_count: number;
+    in_progress_mock_exam_count: number;
+    completed_topic_count: number;
+    in_progress_topic_count: number;
+    note_count: number;
+    favorite_question_count: number;
+  };
   created_at?: string | null;
   updated_at?: string | null;
 };

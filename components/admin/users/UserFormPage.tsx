@@ -361,6 +361,37 @@ export function UserFormPage({
                 <span className="text-[var(--color-admin-muted)]">Toplam harcama</span>
                 <span className="font-semibold text-[var(--color-admin-ink)]">{user?.total_spent ?? 0} TL</span>
               </div>
+              <div className="h-px bg-[var(--color-admin-line)]" />
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[var(--color-admin-muted)]">Çözülen soru</span>
+                <span className="font-semibold text-[var(--color-admin-ink)]">
+                  {user?.activity.answered_question_count ?? 0}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[var(--color-admin-muted)]">Doğruluk oranı</span>
+                <span className="font-semibold text-[var(--color-admin-ink)]">
+                  %{user?.activity.accuracy_rate ?? 0}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[var(--color-admin-muted)]">Tamamlanan deneme</span>
+                <span className="font-semibold text-[var(--color-admin-ink)]">
+                  {user?.activity.completed_mock_exam_count ?? 0}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[var(--color-admin-muted)]">Tamamlanan konu</span>
+                <span className="font-semibold text-[var(--color-admin-ink)]">
+                  {user?.activity.completed_topic_count ?? 0}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[var(--color-admin-muted)]">Not / favori</span>
+                <span className="font-semibold text-[var(--color-admin-ink)]">
+                  {user?.activity.note_count ?? 0} / {user?.activity.favorite_question_count ?? 0}
+                </span>
+              </div>
             </div>
           </div>
         </AdminTableCard>

@@ -2,8 +2,8 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
-import { useMemo, useState } from "react";
-import { CheckCircle2, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2 } from "lucide-react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { CheckCircle2, Crown, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2, UserCheck } from "lucide-react";
 import { AdminDataGrid } from "@/components/admin/crud/AdminDataGrid";
 import {
   AdminListToolbar,
@@ -25,6 +25,12 @@ import { useAdminList } from "@/hooks/useAdminList";
 import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminUser } from "@/lib/types";
 
+type ExamOption = {
+  id: number;
+  name: string;
+  ministry_name: string | null;
+};
+
 function formatDate(value: string | null | undefined) {
   if (!value) {
     return "Henüz yok";
@@ -41,52 +47,82 @@ function formatDate(value: string | null | undefined) {
 export default function UsersPage() {
   const { token } = useAdminAuth();
   const { showToast } = useAdminToast();
-  const { items, setItems, loading, error, refresh } = useAdminList<AdminUser>({
-    endpoint: "/admin/users",
-    responseKey: "users",
-  });
-
   const [query, setQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | "active" | "passive">("all");
   const [selectedExamId, setSelectedExamId] = useState<number | null>(null);
+  const [membershipTypeFilter, setMembershipTypeFilter] = useState<"all" | "free" | "paid">("all");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
+  const [exams, setExams] = useState<ExamOption[]>([]);
   const [busyId, setBusyId] = useState<number | null>(null);
+  const deferredQuery = useDeferredValue(query);
 
-  const examOptions = useMemo(() => {
-    const map = new Map<number, { id: number; label: string }>();
+  const { items, setItems, loading, error, refresh, pagination } = useAdminList<AdminUser>({
+    endpoint: "/admin/users",
+    responseKey: "users",
+    params: {
+      page,
+      per_page: pageSize,
+      search: deferredQuery.trim(),
+      status: statusFilter,
+      exam_id: selectedExamId,
+      membership_type: membershipTypeFilter,
+    },
+  });
 
-    items.forEach((item) => {
-      const exam = item.membership?.exam;
-      if (exam && !map.has(exam.id)) {
-        map.set(exam.id, { id: exam.id, label: exam.name });
+  useEffect(() => {
+    setPage(1);
+  }, [deferredQuery, membershipTypeFilter, selectedExamId, statusFilter]);
+
+  useEffect(() => {
+    if (!token) {
+      return;
+    }
+
+    let cancelled = false;
+
+    async function loadExams() {
+      try {
+        const response = await adminApiRequest<{ exams: ExamOption[] }>("/admin/users/options/exams", { token });
+
+        if (!cancelled) {
+          setExams(response.data.exams);
+        }
+      } catch {
+        if (!cancelled) {
+          setExams([]);
+        }
       }
-    });
+    }
 
-    return Array.from(map.values());
+    void loadExams();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [token]);
+
+  const examOptions = useMemo(
+    () =>
+      exams.map((exam) => ({
+        id: exam.id,
+        label: exam.name,
+        hint: exam.ministry_name ?? undefined,
+      })),
+    [exams],
+  );
+
+  const summary = useMemo(() => {
+    return items.reduce(
+      (totals, item) => ({
+        active: totals.active + (item.status === "active" ? 1 : 0),
+        paid: totals.paid + (item.membership?.type === "paid" ? 1 : 0),
+        answered: totals.answered + item.activity.answered_question_count,
+        completedMocks: totals.completedMocks + item.activity.completed_mock_exam_count,
+      }),
+      { active: 0, paid: 0, answered: 0, completedMocks: 0 },
+    );
   }, [items]);
-
-  const filteredRows = useMemo(() => {
-    const normalized = query.trim().toLocaleLowerCase("tr");
-
-    return items.filter((item) => {
-      if (statusFilter !== "all" && item.status !== statusFilter) {
-        return false;
-      }
-
-      if (selectedExamId !== null && item.membership?.exam?.id !== selectedExamId) {
-        return false;
-      }
-
-      if (!normalized) {
-        return true;
-      }
-
-      return [item.name, item.email, item.membership?.exam?.name]
-        .filter(Boolean)
-        .join(" ")
-        .toLocaleLowerCase("tr")
-        .includes(normalized);
-    });
-  }, [items, query, selectedExamId, statusFilter]);
 
   async function handleStatusChange(item: AdminUser, nextStatus: "active" | "passive") {
     if (!token) {
@@ -181,10 +217,24 @@ export default function UsersPage() {
     },
     {
       accessorKey: "order_count",
-      header: "Sipariş",
+      header: "Kullanım",
       cell: ({ row }) => (
         <div className="text-sm">
-          <p className="font-semibold text-[var(--color-admin-ink)]">{row.original.order_count}</p>
+          <p className="font-semibold text-[var(--color-admin-ink)]">
+            {row.original.activity.answered_question_count} soru · %{row.original.activity.accuracy_rate}
+          </p>
+          <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
+            {row.original.activity.completed_mock_exam_count} deneme · {row.original.activity.completed_topic_count} konu
+          </p>
+        </div>
+      ),
+    },
+    {
+      accessorKey: "orders",
+      header: "Ticari",
+      cell: ({ row }) => (
+        <div className="text-sm">
+          <p className="font-semibold text-[var(--color-admin-ink)]">{row.original.order_count} sipariş</p>
           <p className="mt-1 text-xs text-[var(--color-admin-muted)]">{row.original.total_spent} TL</p>
         </div>
       ),
@@ -259,6 +309,30 @@ export default function UsersPage() {
 
   return (
     <div className="space-y-4">
+      <div className="grid gap-3 md:grid-cols-4">
+        {[
+          { label: "Toplam Kullanıcı", value: pagination?.total ?? items.length, icon: UserCheck },
+          { label: "Bu Sayfada Aktif", value: summary.active, icon: CheckCircle2 },
+          { label: "Bu Sayfada Premium", value: summary.paid, icon: Crown },
+          { label: "Bu Sayfada Çözülen", value: summary.answered, icon: RefreshCcw },
+        ].map((card) => (
+          <div
+            className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] px-4 py-4"
+            key={card.label}
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold text-[var(--color-admin-muted)]">{card.label}</p>
+                <p className="mt-1 text-2xl font-black text-[var(--color-admin-ink)]">{card.value}</p>
+              </div>
+              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-admin-accent-soft)] text-[var(--color-admin-accent)]">
+                <card.icon size={18} />
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <AdminTableCard>
         <AdminListToolbar>
           <AdminListToolbarRow>
@@ -297,6 +371,18 @@ export default function UsersPage() {
                   <option value="passive">Pasif</option>
                 </select>
               </AdminListToolbarField>
+
+              <AdminListToolbarField className="min-w-[150px] sm:max-w-[180px]">
+                <select
+                  className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
+                  onChange={(event) => setMembershipTypeFilter(event.target.value as "all" | "free" | "paid")}
+                  value={membershipTypeFilter}
+                >
+                  <option value="all">Tüm üyelikler</option>
+                  <option value="paid">Premium</option>
+                  <option value="free">Free</option>
+                </select>
+              </AdminListToolbarField>
             </AdminListToolbarFields>
 
             <AdminListToolbarActions>
@@ -315,7 +401,9 @@ export default function UsersPage() {
           </AdminListToolbarRow>
 
           <AdminListToolbarMeta>
-            <AdminListToolbarMetaPill>{filteredRows.length} kullanıcı listeleniyor</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>{pagination?.total ?? items.length} kullanıcı</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>{items.length} kayıt bu sayfada</AdminListToolbarMetaPill>
+            <AdminListToolbarMetaPill>Server-side filtreleme aktif</AdminListToolbarMetaPill>
           </AdminListToolbarMeta>
         </AdminListToolbar>
       </AdminTableCard>
@@ -325,8 +413,20 @@ export default function UsersPage() {
       ) : (
         <AdminDataGrid
           columns={columns}
-          data={filteredRows}
+          data={items}
           emptyState="Arama veya filtre sonucuna uygun kullanıcı bulunamadı."
+          pagination={
+            pagination
+              ? {
+                  ...pagination,
+                  onPageChange: setPage,
+                  onPageSizeChange: (nextPageSize) => {
+                    setPageSize(nextPageSize);
+                    setPage(1);
+                  },
+                }
+              : undefined
+          }
         />
       )}
 

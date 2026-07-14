@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:500;color:#16233A;background:#E9E3D6;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#C9A24B;color:#0E2745;}
+  a{color:#9A7A2E;text-decoration:none;}
+  a:hover{color:#0E2745;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+</style>
+</helmet>
+
+<div style="width:1400px;margin:0 auto;background:#E9E3D6;padding:0 0 90px;">
+
+<!-- ===== COVER ===== -->
+<section style="background:#0E2745;color:#fff;padding:64px 80px 58px;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-140px;right:-90px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,0.20),transparent 62%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-30px;left:60px;width:180px;height:120px;background-image:radial-gradient(rgba(201,162,75,0.45) 1.5px,transparent 1.5px);background-size:16px 16px;opacity:0.5;pointer-events:none;"></div>
+  <div style="position:relative;max-width:900px;">
+    <div style="display:flex;align-items:center;gap:13px;margin-bottom:30px;">
+      <span style="width:52px;height:52px;border-radius:13px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:40px;width:auto;display:block;" /></span>
+      <span style="display:flex;flex-direction:column;line-height:1;">
+        <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-0.01em;">Memurlar</span>
+        <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span>
+      </span>
+    </div>
+    <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(201,162,75,0.14);border:1px solid rgba(201,162,75,0.35);color:#E2C173;padding:8px 16px;border-radius:100px;font-size:12.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px;">Transactional E-posta Tasarım Sistemi</div>
+    <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:52px;line-height:1.08;letter-spacing:-0.025em;margin:0 0 18px;text-wrap:pretty;">Güven veren, sade, premium e-posta sistemi</h1>
+    <p style="font-size:19px;line-height:1.65;color:#C2D0E6;margin:0 0 30px;max-width:720px;">Bir temel dil, yeniden kullanılabilir bileşenler ve 17 hazır şablon. Tüm dinamik alanlar <span class="mono" style="color:#E2C173;">{{ handlebars }}</span> formatında; HTML'e çeviren geliştirici/LLM için birebir referans.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:9px 15px;border-radius:11px;font-size:13.5px;font-weight:600;color:#E7EDF7;">600px · tek kolon</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:9px 15px;border-radius:11px;font-size:13.5px;font-weight:600;color:#E7EDF7;">Gmail · Outlook · Apple Mail</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:9px 15px;border-radius:11px;font-size:13.5px;font-weight:600;color:#E7EDF7;">17 şablon · 4 ton grubu</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION WRAPPER START ===== -->
+<div style="padding:64px 80px 0;">
+
+<!-- ===== 01 FOUNDATIONS ===== -->
+<div style="margin-bottom:64px;">
+  <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px;">
+    <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#C9A24B;">01</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;margin:0;color:#16233A;">Temel Dil</h2>
+  </div>
+  <p style="font-size:16px;color:#5A6A82;margin:0 0 28px;max-width:640px;">Renk, tipografi ve boşluk sistemi. Tüm şablonlar bu değerlerden beslenir.</p>
+
+  <!-- Color palette -->
+  <div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:32px;margin-bottom:20px;">
+    <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#9A7A2E;margin-bottom:20px;">Renk Paleti</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;">
+      <div><div style="height:76px;border-radius:12px;background:#0E2745;border:1px solid rgba(0,0,0,0.06);"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Lacivert</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#0E2745</div><div style="font-size:11px;color:#9AA7BD;margin-top:2px;">Header, başlık, ana metin</div></div>
+      <div><div style="height:76px;border-radius:12px;background:#0A1D36;border:1px solid rgba(0,0,0,0.06);"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Koyu Lacivert</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#0A1D36</div><div style="font-size:11px;color:#9AA7BD;margin-top:2px;">Footer zemini</div></div>
+      <div><div style="height:76px;border-radius:12px;background:#C9A24B;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Altın</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#C9A24B</div><div style="font-size:11px;color:#9AA7BD;margin-top:2px;">Birincil CTA, vurgu</div></div>
+      <div><div style="height:76px;border-radius:12px;background:#E2C173;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Açık Altın</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#E2C173</div><div style="font-size:11px;color:#9AA7BD;margin-top:2px;">Lacivert üstü vurgu</div></div>
+      <div><div style="height:76px;border-radius:12px;background:#FAF6EE;border:1px solid #E3DCCB;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Krem</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#FAF6EE</div><div style="font-size:11px;color:#9AA7BD;margin-top:2px;">Mail dış zemini</div></div>
+      <div><div style="height:76px;border-radius:12px;background:#FBF3DF;border:1px solid #F0E2BE;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Altın Tint</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#FBF3DF</div><div style="font-size:11px;color:#9AA7BD;margin-top:2px;">Bilgi kartı / vurgu kutu</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:20px;">
+      <div><div style="height:56px;border-radius:12px;background:#fff;border:1px solid #ECE3D2;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Kart Beyaz</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#FFFFFF</div></div>
+      <div><div style="height:56px;border-radius:12px;background:#46566F;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Gövde Metni</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#46566F</div></div>
+      <div><div style="height:56px;border-radius:12px;background:#1E8E5A;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Başarı</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#1E8E5A</div></div>
+      <div><div style="height:56px;border-radius:12px;background:#D9694A;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Hata</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#D9694A</div></div>
+      <div><div style="height:56px;border-radius:12px;background:#C9A24B;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Uyarı</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#C9A24B</div></div>
+      <div><div style="height:56px;border-radius:12px;background:#16335B;"></div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;margin-top:9px;color:#16233A;">Bilgi</div><div class="mono" style="font-size:11.5px;color:#7A8AA3;">#16335B</div></div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:20px;">
+    <!-- Typography -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:32px;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#9A7A2E;margin-bottom:8px;">Tipografi</div>
+      <p style="font-size:13.5px;color:#7A8AA3;margin:0 0 22px;">Başlık: <strong style="color:#16233A;">Sora</strong> · Gövde: <strong style="color:#16233A;">Plus Jakarta Sans</strong>. E-posta güvenli yedek: <span class="mono" style="font-size:12px;">Arial, Helvetica, sans-serif</span> (Sora yerine), <span class="mono" style="font-size:12px;">Georgia</span> gerekmez.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="padding-bottom:16px;border-bottom:1px solid #F0EBDD;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:28px;color:#16233A;line-height:1.1;">Ana Başlık · 28/24px</div><div class="mono" style="font-size:11.5px;color:#9AA7BD;margin-top:6px;">Sora 800 · line-height 1.15 · letter-spacing -0.02em</div></div>
+        <div style="padding-bottom:16px;border-bottom:1px solid #F0EBDD;"><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Alt Başlık · 18px</div><div class="mono" style="font-size:11.5px;color:#9AA7BD;margin-top:6px;">Sora 700 · line-height 1.3</div></div>
+        <div style="padding-bottom:16px;border-bottom:1px solid #F0EBDD;"><div style="font-size:16px;color:#46566F;line-height:1.65;">Gövde metni · 16px. Rahat okunur satır yüksekliği ve nötr lacivert-gri renk.</div><div class="mono" style="font-size:11.5px;color:#9AA7BD;margin-top:6px;">Jakarta 500 · line-height 1.65 · #46566F</div></div>
+        <div><div style="font-size:13px;color:#7A8AA3;">Yardımcı / dipnot metni · 13px · #7A8AA3</div><div class="mono" style="font-size:11.5px;color:#9AA7BD;margin-top:6px;">Jakarta 500 · footer, meta, yasal</div></div>
+      </div>
+    </div>
+    <!-- Spacing + merge -->
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:28px;">
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#9A7A2E;margin-bottom:16px;">Boşluk & Ölçü</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14px;color:#46566F;">
+          <div style="display:flex;justify-content:space-between;"><span>Mail genişliği</span><span class="mono" style="color:#16233A;font-weight:700;">600px</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>İç kenar boşluğu</span><span class="mono" style="color:#16233A;font-weight:700;">32–40px</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>Mobil kenar boşluğu</span><span class="mono" style="color:#16233A;font-weight:700;">20–24px</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>Blok arası dikey</span><span class="mono" style="color:#16233A;font-weight:700;">24 / 32px</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>Köşe yarıçapı</span><span class="mono" style="color:#16233A;font-weight:700;">12–16px</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>CTA yüksekliği</span><span class="mono" style="color:#16233A;font-weight:700;">≥48px</span></div>
+        </div>
+      </div>
+      <div style="background:#0E2745;border:1px solid #0A1D36;border-radius:20px;padding:28px;color:#fff;">
+        <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;color:#E2C173;margin-bottom:12px;">Dinamik Alanlar</div>
+        <p style="font-size:13.5px;color:#C2D0E6;margin:0 0 14px;line-height:1.6;">Handlebars formatı. Uzun değerler için tasarım daima esner (kırpma yok, alt satıra akar).</p>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;">
+          <span class="mono" style="font-size:11.5px;background:rgba(201,162,75,0.16);color:#E2C173;padding:5px 9px;border-radius:7px;">{{ user_name }}</span>
+          <span class="mono" style="font-size:11.5px;background:rgba(201,162,75,0.16);color:#E2C173;padding:5px 9px;border-radius:7px;">{{ exam_name }}</span>
+          <span class="mono" style="font-size:11.5px;background:rgba(201,162,75,0.16);color:#E2C173;padding:5px 9px;border-radius:7px;">{{ plan_name }}</span>
+          <span class="mono" style="font-size:11.5px;background:rgba(201,162,75,0.16);color:#E2C173;padding:5px 9px;border-radius:7px;">{{ order_no }}</span>
+          <span class="mono" style="font-size:11.5px;background:rgba(201,162,75,0.16);color:#E2C173;padding:5px 9px;border-radius:7px;">{{ amount }}</span>
+          <span class="mono" style="font-size:11.5px;background:rgba(201,162,75,0.16);color:#E2C173;padding:5px 9px;border-radius:7px;">{{ date }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 02 COMPONENTS ===== -->
+<div style="margin-bottom:64px;">
+  <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px;">
+    <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#C9A24B;">02</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;margin:0;color:#16233A;">Yeniden Kullanılabilir Bileşenler</h2>
+  </div>
+  <p style="font-size:16px;color:#5A6A82;margin:0 0 28px;max-width:640px;">Her şablon bu parçalardan kurulur. Geliştirici bunları tablo tabanlı bloklar olarak birebir kodlayabilir.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;">
+
+    <!-- Header -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">Header</span><span class="mono" style="font-size:11px;color:#9AA7BD;">tüm maillerde</span></div>
+      <div style="padding:24px;background:#F3EEE3;">
+        <div style="background:#0E2745;border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:12px;">
+          <span style="width:40px;height:40px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="" style="height:30px;width:auto;" /></span>
+          <span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:17px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:10.5px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span>
+          <span style="margin-left:auto;width:34px;height:4px;border-radius:3px;background:#C9A24B;"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA buttons -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">CTA Butonları</span><span class="mono" style="font-size:11px;color:#9AA7BD;">birincil / ikincil / metin</span></div>
+      <div style="padding:28px 24px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+        <span style="background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:15px;padding:14px 30px;border-radius:11px;box-shadow:0 10px 22px rgba(201,162,75,0.3);">Birincil eylem →</span>
+        <span style="background:#fff;color:#0E2745;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;padding:13px 28px;border-radius:11px;border:1.5px solid #D8CFB9;">İkincil eylem</span>
+        <span style="color:#9A7A2E;font-weight:700;font-size:14px;border-bottom:2px solid #E2C173;padding-bottom:2px;">Metin bağlantısı →</span>
+        <p style="font-size:12.5px;color:#8A96AB;margin:6px 0 0;">Birincil buton mailde tek olur. Bulletproof (VML) yapı Outlook için.</p>
+      </div>
+    </div>
+
+    <!-- Info card / detail table -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">Detay Tablosu</span></div>
+      <div style="padding:24px;">
+        <div style="border:1px solid #ECE3D2;border-radius:14px;overflow:hidden;">
+          <div style="display:flex;justify-content:space-between;padding:13px 18px;background:#FCFBF7;font-size:13.5px;"><span style="color:#7A8AA3;">Sipariş No</span><span class="mono" style="color:#16233A;font-weight:700;">{{ order_no }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:13px 18px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Paket</span><span style="color:#16233A;font-weight:700;">{{ plan_name }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:13px 18px;border-top:1px solid #F0EBDD;background:#FBF3DF;font-size:14.5px;"><span style="color:#8A7238;font-weight:600;">Tutar</span><span style="color:#16233A;font-weight:800;">{{ amount }}</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">Durum & Uyarı Alanları</span></div>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:11px;">
+        <div style="background:#E7F3EC;border-left:4px solid #1E8E5A;border-radius:0 10px 10px 0;padding:12px 15px;font-size:13.5px;color:#1B6E48;"><strong>Başarılı</strong> · işlem tamamlandı.</div>
+        <div style="background:#FCEAE5;border-left:4px solid #D9694A;border-radius:0 10px 10px 0;padding:12px 15px;font-size:13.5px;color:#B04A30;"><strong>Hata</strong> · işlem tamamlanamadı.</div>
+        <div style="background:#FBF3DF;border-left:4px solid #C9A24B;border-radius:0 10px 10px 0;padding:12px 15px;font-size:13.5px;color:#8A7238;"><strong>Uyarı</strong> · dikkat gereken durum.</div>
+        <div style="background:#EDF1F7;border-left:4px solid #16335B;border-radius:0 10px 10px 0;padding:12px 15px;font-size:13.5px;color:#2C3A52;"><strong>Bilgi</strong> · nötr bilgilendirme.</div>
+      </div>
+    </div>
+
+    <!-- OTP / code -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">Kod / OTP Bloğu</span></div>
+      <div style="padding:28px 24px;text-align:center;">
+        <div style="display:inline-block;background:#FBF3DF;border:1px dashed #C9A24B;border-radius:14px;padding:16px 30px;"><span class="mono" style="font-size:30px;font-weight:700;letter-spacing:0.32em;color:#0E2745;">{{ code }}</span></div>
+        <p style="font-size:12.5px;color:#8A96AB;margin:14px 0 0;">Kodun geçerlilik süresi: <strong style="color:#16233A;">{{ expiry }}</strong></p>
+      </div>
+    </div>
+
+    <!-- Stat / result -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">İstatistik / Sonuç Kartları</span></div>
+      <div style="padding:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;">
+        <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:16px 10px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;color:#0E2745;">{{ net }}</div><div style="font-size:11.5px;color:#7A8AA3;margin-top:3px;">Net</div></div>
+        <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:16px 10px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;color:#1E8E5A;">{{ score }}</div><div style="font-size:11.5px;color:#7A8AA3;margin-top:3px;">Başarı</div></div>
+        <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:16px 10px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;color:#C9A24B;">{{ rank }}</div><div style="font-size:11.5px;color:#7A8AA3;margin-top:3px;">Sıralama</div></div>
+      </div>
+    </div>
+
+    <!-- Footer (full width) -->
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;overflow:hidden;grid-column:1 / -1;">
+      <div style="padding:16px 22px;border-bottom:1px solid #F0EBDD;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#16233A;">Footer</span><span class="mono" style="font-size:11px;color:#9AA7BD;">transactional · abonelikten çık YOK</span></div>
+      <div style="padding:24px;background:#F3EEE3;">
+        <div style="background:#0A1D36;border-radius:12px;padding:26px 30px;color:#9DB0CC;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="" style="height:26px;width:auto;" /></span><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar Akademi</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;margin-bottom:14px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik Politikası</a><a style="color:#C9D3E4;" href="#">Destek</a></div>
+          <div style="display:flex;gap:9px;margin-bottom:16px;">
+            <span style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="#C9D3E4"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.2 1 .46 1.4.87.4.4.67.8.87 1.4.17.4.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.2.6-.46 1-.87 1.4-.4.4-.8.67-1.4.87-.4.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.2-1-.46-1.4-.87-.4-.4-.67-.8-.87-1.4-.17-.4-.36-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.2-.6.46-1 .87-1.4.4-.4.8-.67 1.4-.87.4-.17 1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 3.16A6.64 6.64 0 1 0 18.64 12 6.64 6.64 0 0 0 12 5.36zm0 10.96A4.32 4.32 0 1 1 16.32 12 4.32 4.32 0 0 1 12 16.32zm6.9-11.2a1.55 1.55 0 1 1-1.56-1.56 1.55 1.55 0 0 1 1.55 1.55z"/></svg></span>
+            <span style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="#C9D3E4"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.5 31 31 0 0 0-.5-4.5zM9.75 15.02V8.98L15.5 12z"/></svg></span>
+            <span style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="#C9D3E4"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5zm-1.2 18h1.7L7.3 3.8H5.5z"/></svg></span>
+            <span style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#C9D3E4"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6 2.5 2.5 0 0 1 4.98 3.5zM2.9 8.9h4.2V22H2.9zM9.5 8.9h4v1.8h.06a4.4 4.4 0 0 1 3.96-2.2c4.24 0 5.02 2.8 5.02 6.4V22h-4.2v-5.8c0-1.4 0-3.2-2-3.2s-2.24 1.5-2.24 3.1V22h-4.2z"/></svg></span>
+          </div>
+          <p style="font-size:12px;line-height:1.6;margin:0 0 6px;color:#6E82A0;">Bu e-posta <strong style="color:#9DB0CC;">Memurlar Akademi</strong> hesabınızla ilgili otomatik olarak gönderilmiştir. Sorularınız için <a style="color:#C9D3E4;" href="mailto:info@memurlarkademi.com">info@memurlarkademi.com</a> · <a style="color:#C9D3E4;" href="#">memurlarakademi.com</a></p>
+          <p class="mono" style="font-size:11px;color:#54688A;margin:8px 0 0;">{{ company_legal_name }} · {{ company_address }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 03 TONE + RESPONSIVE ===== -->
+<div style="margin-bottom:60px;">
+  <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px;">
+    <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#C9A24B;">03</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;margin:0;color:#16233A;">Ton, Responsive & E-posta Uyumu</h2>
+  </div>
+  <p style="font-size:16px;color:#5A6A82;margin:0 0 28px;max-width:640px;">Mail grubuna göre dil ve renk aksanı değişir; yapı hep aynı kalır.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px;">
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:16px;padding:22px;border-top:4px solid #16335B;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:16px;color:#16233A;margin-bottom:6px;">🔐 Güvenlik</div>
+      <p style="font-size:13.5px;line-height:1.6;color:#5A6A82;margin:0 0 10px;">Sakin, net, telaşsız. Kısa cümleler. Kullanıcıyı korkutmadan bilgilendir.</p>
+      <div style="font-size:12.5px;color:#7A8AA3;"><strong style="color:#16233A;">Aksan:</strong> lacivert · nötr. <strong style="color:#16233A;">Vurgu:</strong> "sen yapmadıysan" güvenlik notu.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:16px;padding:22px;border-top:4px solid #1E8E5A;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:16px;color:#16233A;margin-bottom:6px;">💳 Ödeme</div>
+      <p style="font-size:13.5px;line-height:1.6;color:#5A6A82;margin:0 0 10px;">Şeffaf ve güven verici. Tutar, tarih, sipariş net tabloda. Belirsizlik yok.</p>
+      <div style="font-size:12.5px;color:#7A8AA3;"><strong style="color:#16233A;">Aksan:</strong> duruma göre yeşil/altın/kırmızı. <strong style="color:#16233A;">Vurgu:</strong> detay tablosu.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:16px;padding:22px;border-top:4px solid #C9A24B;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:16px;color:#16233A;margin-bottom:6px;">📈 Eğitim & Performans</div>
+      <p style="font-size:13.5px;line-height:1.6;color:#5A6A82;margin:0 0 10px;">Motive edici ama abartısız. Veriyi öne çıkar, tek net sonraki adım öner.</p>
+      <div style="font-size:12.5px;color:#7A8AA3;"><strong style="color:#16233A;">Aksan:</strong> altın · lacivert. <strong style="color:#16233A;">Vurgu:</strong> istatistik kartları.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:16px;padding:22px;border-top:4px solid #7A8AA3;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:16px;color:#16233A;margin-bottom:6px;">📣 Duyuru</div>
+      <p style="font-size:13.5px;line-height:1.6;color:#5A6A82;margin:0 0 10px;">Bilgilendirici, kurumsal. Pazarlama gibi bağırmaz. Tek konu, tek CTA.</p>
+      <div style="font-size:12.5px;color:#7A8AA3;"><strong style="color:#16233A;">Aksan:</strong> lacivert · krem. <strong style="color:#16233A;">Vurgu:</strong> opsiyonel abonelik alanı.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;padding:28px;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:#16233A;margin-bottom:14px;">Masaüstü ↔ Mobil davranışı</div>
+      <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.85;color:#46566F;">
+        <li>Tek kolon, <strong>600px</strong> masaüstü; mobilde <strong>%100 genişlik</strong>, kenar boşluğu 24→20px.</li>
+        <li>Çok kolonlu bloklar (istatistik/tablo) mobilde <strong>alt alta yığılır</strong> (stack).</li>
+        <li>CTA mobilde <strong>tam genişlik</strong>, dokunma alanı ≥48px.</li>
+        <li>Başlık 28→24px, gövde 16→15px otomatik iner.</li>
+        <li>Uzun <span class="mono" style="font-size:12px;">{{ value }}</span> alanları sarar; <span class="mono" style="font-size:12px;">word-break</span> ile taşma engellenir.</li>
+      </ul>
+    </div>
+    <div style="background:#fff;border:1px solid #DBD2BF;border-radius:18px;padding:28px;">
+      <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:#16233A;margin-bottom:14px;">Gmail · Outlook · Apple Mail için kurallar</div>
+      <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.85;color:#46566F;">
+        <li><strong>Tablo tabanlı</strong> düzen + <strong>inline CSS</strong>. Fl/grid yerine <span class="mono" style="font-size:12px;">&lt;table&gt;</span>.</li>
+        <li>Butonlar <strong>bulletproof</strong> (VML) — Outlook'ta yuvarlak köşe + renk korunur.</li>
+        <li>Web font yüklenmezse <strong>Arial/Helvetica</strong> yedeği; ikonlar PNG veya güvenli SVG değil <strong>düz PNG</strong>.</li>
+        <li>Görseller <span class="mono" style="font-size:12px;">alt</span> metinli; kapalı görselde de mail okunur (bg renkleri taşımaz).</li>
+        <li>Light odaklı; koyu zeminlerde metin açık renk sabitlenir, dark mode ters çevirmede kırılmaz.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 04 TEMPLATES HEADER ===== -->
+<div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px;">
+  <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#C9A24B;">04</span>
+  <h2 style="font-family:'Sora',sans-serif;font-weight:700;font-size:32px;letter-spacing:-0.02em;margin:0;color:#16233A;">17 E-posta Şablonu</h2>
+</div>
+<p style="font-size:16px;color:#5A6A82;margin:0 0 8px;max-width:680px;">Her şablon; konu (subject), preheader, ana başlık, gövde yaklaşımı ve CTA ile birlikte, gerçek 600px mail görünümünde.</p>
+
+<!-- ===== GROUP A: ONBOARDING & GÜVENLİK ===== -->
+<div style="display:flex;align-items:center;gap:13px;margin:38px 0 20px;">
+  <span style="width:40px;height:40px;border-radius:11px;background:#16335B;display:flex;align-items:center;justify-content:center;font-size:19px;">🔐</span>
+  <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.01em;margin:0;color:#16233A;">Onboarding & Güvenlik</h3>
+  <span style="flex:1;height:1px;background:#D3CAB6;"></span>
+  <span style="font-size:13px;color:#7A8AA3;font-weight:600;">Ton: sakin, net, telaşsız</span>
+</div>
+
+<!-- Template 1 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">01</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Hoş geldin + e-posta doğrulama</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu (Subject)</div><div style="font-size:15px;color:#16233A;font-weight:600;">Memurlar Akademi'ye hoş geldin — hesabını doğrula</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Tek adım kaldı: e-postanı doğrula, hazırlığa başla.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Sıcak ama sade karşılama. Tek net eylem: doğrulama butonu. Buton çalışmazsa düz bağlantı + isteğe bağlı OTP. Süre uyarısı eklenir.</div></div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;"><div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">E-postamı Doğrula</span></div></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ verify_url }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ code }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ expiry }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:25px;line-height:1.18;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">Aramıza hoş geldin, {{ user_name }}</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 10px;">Memurlar Akademi hesabın oluşturuldu. Başlamadan önce e-posta adresinin sana ait olduğunu doğrulayalım.</p>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 24px;">Aşağıdaki butona tıklaman yeterli:</p>
+          <div style="text-align:center;margin-bottom:22px;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">E-postamı Doğrula →</span></div>
+          <div style="background:#FBF3DF;border:1px dashed #C9A24B;border-radius:12px;padding:14px;text-align:center;margin-bottom:18px;"><div style="font-size:12px;color:#8A7238;margin-bottom:6px;">Butonu kullanamıyorsan doğrulama kodun:</div><span class="mono" style="font-size:24px;font-weight:700;letter-spacing:0.28em;color:#0E2745;">{{ code }}</span></div>
+          <p style="font-size:13px;line-height:1.6;color:#7A8AA3;margin:0;">Bağlantı ve kod <strong style="color:#16233A;">{{ expiry }}</strong> boyunca geçerlidir. Bu hesabı sen oluşturmadıysan bu e-postayı yok sayabilirsin.</p>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 2 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">02</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">E-posta doğrulandı</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">E-posta adresin doğrulandı ✓</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Hesabın hazır — hazırlığa başlayabilirsin.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Kısa onay + başarı durumu. Kullanıcıyı panele/ilk denemeye yönlendiren tek CTA. Motive edici ama kısa.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Panele Git</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ dashboard_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:34px 30px;text-align:center;">
+          <span style="display:inline-flex;width:66px;height:66px;border-radius:50%;background:#E7F3EC;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E8E5A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:25px;line-height:1.18;letter-spacing:-0.02em;margin:0 0 12px;color:#16233A;">E-posta adresin doğrulandı</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 auto 24px;max-width:420px;">Teşekkürler {{ user_name }}. Hesabın artık tam olarak aktif. Konu çalışmaya, soru çözmeye ve ilk denemene bugün başlayabilirsin.</p>
+          <div style="margin-bottom:6px;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Panele Git →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 3 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">03</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Şifre sıfırlama</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Şifreni sıfırlama isteği</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Şifreni sıfırlamak için güvenli bağlantı — kısa süre geçerli.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Net ve güven verici. Tek CTA. "Bu isteği sen yapmadıysan" güvenlik notu her zaman altta. Süre vurgulanır.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Şifremi Sıfırla</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ reset_url }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ expiry }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:25px;line-height:1.18;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">Şifreni sıfırla</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 10px;">Merhaba {{ user_name }}, hesabın için bir şifre sıfırlama isteği aldık. Yeni şifreni belirlemek için aşağıdaki butonu kullan:</p>
+          <div style="text-align:center;margin:24px 0;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Şifremi Sıfırla →</span></div>
+          <p style="font-size:13.5px;line-height:1.6;color:#7A8AA3;margin:0 0 18px;">Buton çalışmazsa bu bağlantıyı tarayıcına yapıştır:<br><span class="mono" style="font-size:12px;color:#16335B;word-break:break-all;">{{ reset_url }}</span></p>
+          <div style="background:#EDF1F7;border-left:4px solid #16335B;border-radius:0 10px 10px 0;padding:13px 16px;"><p style="margin:0;font-size:13px;line-height:1.6;color:#2C3A52;">Bu bağlantı <strong>{{ expiry }}</strong> boyunca geçerlidir. Bu isteği sen yapmadıysan hiçbir şey yapmana gerek yok — şifren değişmez.</p></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 4 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">04</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Şifre değiştirildi — güvenlik bildirimi</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Şifren değiştirildi</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Bu değişikliği sen yapmadıysan hemen aksiyon al.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Bilgilendirici + güvenlik. İşlem detayları (tarih, cihaz, konum) tabloda. "Sen değilsen" için belirgin ama panik yaratmayan kırmızı uyarı ve tek CTA.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#0E2745;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Hesabımı Güvene Al</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ date }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ device }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ location }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ secure_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:25px;line-height:1.18;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">Şifren değiştirildi</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 20px;">Merhaba {{ user_name }}, hesabının şifresi az önce güncellendi. Kayıt bilgileri:</p>
+          <div style="border:1px solid #ECE3D2;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;background:#FCFBF7;font-size:13.5px;"><span style="color:#7A8AA3;">Tarih & saat</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ date }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Cihaz</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ device }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Konum</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ location }}</span></div>
+          </div>
+          <div style="background:#FCEAE5;border-left:4px solid #D9694A;border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:22px;"><p style="margin:0;font-size:13.5px;line-height:1.6;color:#B04A30;"><strong>Bu değişikliği sen yapmadıysan</strong> hesabın risk altında olabilir. Hemen hesabını güvene al ve şifreni yenile.</p></div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#0E2745;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 38px;border-radius:12px;">Hesabımı Güvene Al →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GROUP B: ÖDEME & FATURA ===== -->
+<div style="display:flex;align-items:center;gap:13px;margin:38px 0 20px;">
+  <span style="width:40px;height:40px;border-radius:11px;background:#1E8E5A;display:flex;align-items:center;justify-content:center;font-size:19px;">💳</span>
+  <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.01em;margin:0;color:#16233A;">Ödeme & Fatura</h3>
+  <span style="flex:1;height:1px;background:#D3CAB6;"></span>
+  <span style="font-size:13px;color:#7A8AA3;font-weight:600;">Ton: şeffaf, güven verici</span>
+</div>
+
+<!-- Template 5 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">05</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Ödeme başlatıldı / ödeme bekleniyor</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Siparişini aldık — ödemeni bekliyoruz</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">{{ plan_name }} için ödeme adımını tamamla.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Bekleyen durum net gösterilir (altın/uyarı aksanı). Özet tablo + ödemeyi tamamla CTA. Son ödeme tarihi vurgulanır.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Ödemeyi Tamamla</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ order_no }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ plan_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ amount }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ due_date }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ pay_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <span style="display:inline-flex;align-items:center;gap:7px;background:#FBF3DF;border:1px solid #F0E2BE;color:#8A7238;font-size:12px;font-weight:700;padding:6px 12px;border-radius:100px;margin-bottom:16px;"><span style="width:7px;height:7px;border-radius:50%;background:#C9A24B;"></span> Ödeme bekleniyor</span>
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">Siparişini aldık, {{ user_name }}</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 20px;">Premium üyeliğin için son bir adım kaldı: ödemeyi tamamladığında hesabın anında aktifleşecek.</p>
+          <div style="border:1px solid #ECE3D2;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;background:#FCFBF7;font-size:13.5px;"><span style="color:#7A8AA3;">Sipariş No</span><span class="mono" style="color:#16233A;font-weight:700;">{{ order_no }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Paket</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ plan_name }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Son ödeme</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ due_date }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #F0EBDD;background:#FBF3DF;font-size:15px;"><span style="color:#8A7238;font-weight:600;">Tutar</span><span style="color:#16233A;font-weight:800;">{{ amount }}</span></div>
+          </div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Ödemeyi Tamamla →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 6 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">06</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Ödeme başarılı / premium aktif</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Ödemen alındı — Premium üyeliğin aktif ✓</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">{{ plan_name }} artık aktif. Tüm özellikler açıldı.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Başarı durumu (yeşil). Kısa tebrik + neyin açıldığı + geçerlilik tarihi. Fatura linki ikincil. Tek birincil CTA.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Premium'a Başla</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ plan_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ amount }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ valid_until }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ invoice_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:34px 30px 32px;text-align:center;">
+          <span style="display:inline-flex;width:66px;height:66px;border-radius:50%;background:#E7F3EC;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1E8E5A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:25px;line-height:1.18;letter-spacing:-0.02em;margin:0 0 12px;color:#16233A;">Premium üyeliğin aktif!</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 auto 22px;max-width:440px;">Tebrikler {{ user_name }}, ödemen başarıyla alındı. Sınırsız soru, tam denemeler ve AI Mentör artık tamamen açık.</p>
+        </div>
+        <div style="padding:0 30px 30px;">
+          <div style="border:1px solid #ECE3D2;border-radius:12px;overflow:hidden;margin-bottom:22px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;background:#FCFBF7;font-size:13.5px;"><span style="color:#7A8AA3;">Paket</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ plan_name }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Geçerlilik</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ valid_until }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #F0EBDD;background:#E7F3EC;font-size:15px;"><span style="color:#1B6E48;font-weight:600;">Ödenen tutar</span><span style="color:#16233A;font-weight:800;">{{ amount }}</span></div>
+          </div>
+          <div style="text-align:center;margin-bottom:14px;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Premium'a Başla →</span></div>
+          <div style="text-align:center;"><a href="#" style="font-size:13.5px;font-weight:700;color:#9A7A2E;border-bottom:2px solid #E2C173;padding-bottom:2px;">Faturanı görüntüle</a></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 7 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">07</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Ödeme başarısız</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Ödemen tamamlanamadı</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Endişelenme — birkaç saniyede tekrar deneyebilirsin.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Hata durumu (kırmızı) ama suçlayıcı değil. Olası neden + net "tekrar dene" CTA. Destek linki ikincil.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Ödemeyi Tekrar Dene</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ plan_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ amount }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ reason }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ retry_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <span style="display:inline-flex;width:56px;height:56px;border-radius:50%;background:#FCEAE5;align-items:center;justify-content:center;margin-bottom:16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D9694A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 12px;color:#16233A;">Ödemen tamamlanamadı</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 18px;">Merhaba {{ user_name }}, {{ plan_name }} için {{ amount }} tutarındaki ödemen alınamadı. Üyeliğinde henüz bir değişiklik olmadı.</p>
+          <div style="background:#FCEAE5;border-left:4px solid #D9694A;border-radius:0 10px 10px 0;padding:13px 16px;margin-bottom:22px;"><p style="margin:0;font-size:13.5px;line-height:1.6;color:#B04A30;"><strong>Olası neden:</strong> {{ reason }}. Kart bilgilerini kontrol edip tekrar deneyebilir ya da farklı bir yöntem kullanabilirsin.</p></div>
+          <div style="text-align:center;margin-bottom:14px;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Ödemeyi Tekrar Dene →</span></div>
+          <div style="text-align:center;"><span style="font-size:13.5px;color:#7A8AA3;">Sorun devam ederse <a href="mailto:info@memurlarkademi.com" style="font-weight:700;">destek ekibimize</a> yaz.</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 8 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">08</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Sipariş & fatura bilgilendirme</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Faturan hazır — {{ order_no }}</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Sipariş özetin ve faturanı görüntüle.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Belge niteliğinde, sade ve kurumsal. Tam sipariş kalemleri tablosu + toplam. Fatura indir CTA.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#0E2745;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Faturayı İndir (PDF)</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ order_no }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ invoice_no }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ date }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ plan_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ subtotal }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ tax }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ total }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 6px;color:#16233A;">Sipariş özetin</h1>
+          <p style="font-size:14px;color:#7A8AA3;margin:0 0 20px;">Fatura No <span class="mono" style="color:#16233A;font-weight:700;">{{ invoice_no }}</span> · {{ date }}</p>
+          <div style="border:1px solid #ECE3D2;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;padding:14px 16px;background:#FCFBF7;font-size:13.5px;"><span style="color:#16233A;font-weight:700;">{{ plan_name }}</span><span style="color:#16233A;font-weight:700;">{{ subtotal }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Ara toplam</span><span style="color:#46566F;">{{ subtotal }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">KDV</span><span style="color:#46566F;">{{ tax }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:15px 16px;border-top:2px solid #ECE3D2;background:#0E2745;font-size:16px;"><span style="color:#E2C173;font-weight:600;">Genel Toplam</span><span style="color:#fff;font-weight:800;">{{ total }}</span></div>
+          </div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#0E2745;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:15px;padding:14px 34px;border-radius:12px;">Faturayı İndir (PDF) →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 9 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">09</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">İade / iptal bildirimi</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">İade talebin işleme alındı</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">{{ amount }} iaden {{ refund_eta }} içinde hesabına geçecek.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Nötr, güven verici, savunmacı değil. Ne iptal edildi, ne kadar iade edilecek, ne zaman. Erişimin ne zaman biteceği net.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#fff;color:#0E2745;border:1.5px solid #D8CFB9;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;padding:8px 16px;border-radius:8px;">Detayları Görüntüle</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ order_no }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ amount }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ refund_eta }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ access_until }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">İade talebin işleme alındı</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 20px;">Merhaba {{ user_name }}, üyelik iptal ve iade talebini aldık. Aşağıdaki detaylara göz atabilirsin.</p>
+          <div style="border:1px solid #ECE3D2;border-radius:12px;overflow:hidden;margin-bottom:20px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;background:#FCFBF7;font-size:13.5px;"><span style="color:#7A8AA3;">Sipariş No</span><span class="mono" style="color:#16233A;font-weight:700;">{{ order_no }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">İade tutarı</span><span style="color:#16233A;font-weight:700;">{{ amount }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;"><span style="color:#7A8AA3;">Tahmini iade süresi</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ refund_eta }}</span></div>
+          </div>
+          <div style="background:#EDF1F7;border-left:4px solid #16335B;border-radius:0 10px 10px 0;padding:13px 16px;margin-bottom:22px;"><p style="margin:0;font-size:13.5px;line-height:1.6;color:#2C3A52;">Premium erişimin <strong>{{ access_until }}</strong> tarihine kadar açık kalacak. Bu tarihten sonra hesabın ücretsiz plana dönecek.</p></div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#fff;color:#0E2745;border:1.5px solid #D8CFB9;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;padding:13px 32px;border-radius:12px;">Detayları Görüntüle</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GROUP C: ÜYELİK & EĞİTİM/PERFORMANS ===== -->
+<div style="display:flex;align-items:center;gap:13px;margin:38px 0 20px;">
+  <span style="width:40px;height:40px;border-radius:11px;background:#C9A24B;display:flex;align-items:center;justify-content:center;font-size:19px;">📈</span>
+  <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.01em;margin:0;color:#16233A;">Üyelik & Eğitim / Performans</h3>
+  <span style="flex:1;height:1px;background:#D3CAB6;"></span>
+  <span style="font-size:13px;color:#7A8AA3;font-weight:600;">Ton: motive edici, abartısız</span>
+</div>
+
+<!-- Template 10 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">10</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Üyelik bitişi yaklaşıyor</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Premium üyeliğin {{ days_left }} gün sonra bitiyor</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Hazırlığın kesintiye uğramasın — yenile.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Hatırlatıcı, baskısız. Kalan gün belirgin. Kaybedilecek erişim kısaca. Yenile CTA. Bitiş tarihi net.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Üyeliğimi Yenile</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ plan_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ days_left }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ end_date }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 16px;color:#16233A;">Hazırlığın yarıda kalmasın</h1>
+          <div style="background:#FBF3DF;border:1px solid #F0E2BE;border-radius:14px;padding:22px;text-align:center;margin-bottom:20px;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:44px;line-height:1;color:#C9A24B;">{{ days_left }}</div><div style="font-size:13.5px;color:#8A7238;margin-top:6px;font-weight:600;">gün sonra {{ plan_name }} sona eriyor</div></div>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 22px;">Merhaba {{ user_name }}, üyeliğin <strong style="color:#16233A;">{{ end_date }}</strong> tarihinde bitiyor. Yenilemezsen sınırsız soru, tam denemeler ve AI Mentör erişimin duracak. Şimdi yenilersen kaldığın yerden devam edersin.</p>
+          <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Üyeliğimi Yenile →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 11 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">11</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Üyelik bitti</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Premium üyeliğin sona erdi</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Verilerin duruyor — istediğinde geri dönebilirsin.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Kapanışı yumuşat. Ücretsiz plana geçildiğini bildir, verilerin durduğunu garanti et. Geri dönüşü kolay kıl.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Premium'a Geri Dön</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ end_date }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ renew_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">Premium üyeliğin sona erdi</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 18px;">Merhaba {{ user_name }}, {{ end_date }} itibarıyla Premium üyeliğin sona erdi ve hesabın ücretsiz plana geçti. Bugüne kadarki tüm ilerlemen, notların ve deneme sonuçların güvende.</p>
+          <div style="background:#EDF1F7;border-left:4px solid #16335B;border-radius:0 10px 10px 0;padding:13px 16px;margin-bottom:22px;"><p style="margin:0;font-size:13.5px;line-height:1.6;color:#2C3A52;">İstediğin an Premium'a geri dönebilirsin — kaldığın yerden, tüm verilerinle devam edersin.</p></div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Premium'a Geri Dön →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 12 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">12</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Deneme sınavı tamamlandı — sonuç özeti</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">{{ exam_name }} sonucun hazır</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">{{ net }} net · analiz ve çözümler seni bekliyor.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Veri öne çıkar: istatistik kartları (net/başarı/sıralama). Kısa yorum. Detaylı analize tek CTA.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Sonuçları İncele</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ exam_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ net }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ score }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ rank }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <p style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#9A7A2E;margin:0 0 6px;">Deneme tamamlandı</p>
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:23px;line-height:1.22;letter-spacing:-0.02em;margin:0 0 20px;color:#16233A;">{{ exam_name }}</h1>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:20px;">
+            <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:18px 8px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:26px;color:#0E2745;">{{ net }}</div><div style="font-size:11.5px;color:#7A8AA3;margin-top:3px;">Net</div></div>
+            <div style="background:#E7F3EC;border:1px solid #C9E6D5;border-radius:13px;padding:18px 8px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:26px;color:#1E8E5A;">{{ score }}</div><div style="font-size:11.5px;color:#1B6E48;margin-top:3px;">Başarı</div></div>
+            <div style="background:#FBF3DF;border:1px solid #F0E2BE;border-radius:13px;padding:18px 8px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:26px;color:#C9A24B;">{{ rank }}</div><div style="font-size:11.5px;color:#8A7238;margin-top:3px;">Sıralama</div></div>
+          </div>
+          <p style="font-size:15px;line-height:1.65;color:#46566F;margin:0 0 22px;">Güzel iş {{ user_name }}! Her sorunun çözümünü, ders bazlı doğru/yanlış dağılımını ve AI Mentör'ün yorumunu detaylı raporda bulabilirsin.</p>
+          <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Sonuçları İncele →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 13 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">13</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Haftalık çalışma özeti</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Bu hafta ne kadar ilerledin? İşte özetin</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">{{ questions_solved }} soru · {{ study_time }} çalışma. Devam et!</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Haftanın verisi kartlarda. Bir güçlü, bir gelişmeli alan. Motive edici tek satır + panele dön CTA.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Çalışmaya Devam Et</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ questions_solved }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ study_time }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ accuracy }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ strong_topic }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ weak_topic }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:23px;line-height:1.22;letter-spacing:-0.02em;margin:0 0 6px;color:#16233A;">Haftalık özetin, {{ user_name }}</h1>
+          <p style="font-size:14px;color:#7A8AA3;margin:0 0 20px;">Son 7 günde neler başardığına bir bak.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:18px;">
+            <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:16px 8px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:23px;color:#0E2745;">{{ questions_solved }}</div><div style="font-size:11px;color:#7A8AA3;margin-top:3px;">soru çözüldü</div></div>
+            <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:16px 8px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:23px;color:#0E2745;">{{ study_time }}</div><div style="font-size:11px;color:#7A8AA3;margin-top:3px;">çalışma süresi</div></div>
+            <div style="background:#FCFBF7;border:1px solid #ECE3D2;border-radius:13px;padding:16px 8px;text-align:center;"><div style="font-family:'Sora',sans-serif;font-weight:800;font-size:23px;color:#1E8E5A;">{{ accuracy }}</div><div style="font-size:11px;color:#7A8AA3;margin-top:3px;">doğruluk</div></div>
+          </div>
+          <div style="display:flex;gap:11px;margin-bottom:22px;">
+            <div style="flex:1;background:#E7F3EC;border-radius:12px;padding:14px 16px;"><div style="font-size:11.5px;color:#1B6E48;font-weight:700;margin-bottom:3px;">💪 En güçlü</div><div style="font-size:14px;color:#16233A;font-weight:600;">{{ strong_topic }}</div></div>
+            <div style="flex:1;background:#FBF3DF;border-radius:12px;padding:14px 16px;"><div style="font-size:11.5px;color:#8A7238;font-weight:700;margin-bottom:3px;">🎯 Gelişmeli</div><div style="font-size:14px;color:#16233A;font-weight:600;">{{ weak_topic }}</div></div>
+          </div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Çalışmaya Devam Et →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 14 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">14</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">AI analiz raporu hazır</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">AI Mentör analizin hazır</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Bu hafta neye öncelik vermelisin — sana özel plan.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Lacivert AI kartı (üründeki dil). Kısa değerlendirme + 3 maddelik günün planı. Rapora tek CTA.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Raporu Görüntüle</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ readiness }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ focus_topic }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ action_1 }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ action_2 }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ action_3 }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 18px;color:#16233A;">AI Mentör analizin hazır</h1>
+          <div style="background:linear-gradient(140deg,#0E2745,#16335B);border-radius:14px;padding:20px;color:#fff;margin-bottom:18px;">
+            <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:32px;height:32px;border-radius:9px;background:rgba(201,162,75,0.2);display:flex;align-items:center;justify-content:center;color:#E2C173;">✦</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;">Değerlendirme</span></div>
+            <p style="margin:0;font-size:14px;line-height:1.65;color:#CDD8E9;">Merhaba {{ user_name }}, genel hazırlık seviyen <strong style="color:#fff;">{{ readiness }}</strong>. Şu an en çok dikkat etmen gereken alan <strong style="color:#E2C173;">{{ focus_topic }}</strong>.</p>
+          </div>
+          <div style="background:#FBF3DF;border:1px solid #F0E2BE;border-radius:12px;padding:16px 18px;margin-bottom:22px;">
+            <div style="font-size:12px;color:#8A7238;font-weight:700;margin-bottom:10px;">Bu haftanın önceliği</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:#6B5520;">
+              <div style="display:flex;gap:9px;"><span style="color:#C9A24B;font-weight:800;">1.</span> {{ action_1 }}</div>
+              <div style="display:flex;gap:9px;"><span style="color:#C9A24B;font-weight:800;">2.</span> {{ action_2 }}</div>
+              <div style="display:flex;gap:9px;"><span style="color:#C9A24B;font-weight:800;">3.</span> {{ action_3 }}</div>
+            </div>
+          </div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Raporu Görüntüle →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GROUP D: TOPLULUK · DUYURU · HESAP ===== -->
+<div style="display:flex;align-items:center;gap:13px;margin:38px 0 20px;">
+  <span style="width:40px;height:40px;border-radius:11px;background:#7A8AA3;display:flex;align-items:center;justify-content:center;font-size:19px;">📣</span>
+  <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.01em;margin:0;color:#16233A;">Topluluk · Duyuru · Hesap</h3>
+  <span style="flex:1;height:1px;background:#D3CAB6;"></span>
+  <span style="font-size:13px;color:#7A8AA3;font-weight:600;">Ton: bilgilendirici, kurumsal</span>
+</div>
+
+<!-- Template 15 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">15</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Topluluk moderasyon bildirimi</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Topluluk içeriğin hakkında bir bildirim</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Gönderin kurallarımıza göre değerlendirildi.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Tarafsız, saygılı, net. Hangi içerik, hangi karar, hangi kural. İtiraz yolu her zaman sunulur. Suçlayıcı dil yok.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#fff;color:#0E2745;border:1.5px solid #D8CFB9;font-family:'Sora',sans-serif;font-weight:700;font-size:13px;padding:8px 16px;border-radius:8px;">Kuralları İncele / İtiraz Et</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ content_title }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ action_taken }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ reason }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ appeal_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 14px;color:#16233A;">Topluluk içeriğin hakkında</h1>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 20px;">Merhaba {{ user_name }}, topluluk alanındaki bir paylaşımın moderasyon ekibimiz tarafından değerlendirildi.</p>
+          <div style="border:1px solid #ECE3D2;border-radius:12px;overflow:hidden;margin-bottom:18px;">
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;background:#FCFBF7;font-size:13.5px;gap:12px;"><span style="color:#7A8AA3;flex:none;">İçerik</span><span style="color:#16233A;font-weight:700;text-align:right;word-break:break-word;">{{ content_title }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;gap:12px;"><span style="color:#7A8AA3;flex:none;">Karar</span><span style="color:#16233A;font-weight:700;text-align:right;">{{ action_taken }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:12px 16px;border-top:1px solid #F0EBDD;font-size:13.5px;gap:12px;"><span style="color:#7A8AA3;flex:none;">Gerekçe</span><span style="color:#16233A;font-weight:700;text-align:right;word-break:break-word;">{{ reason }}</span></div>
+          </div>
+          <div style="background:#EDF1F7;border-left:4px solid #16335B;border-radius:0 10px 10px 0;padding:13px 16px;margin-bottom:22px;"><p style="margin:0;font-size:13.5px;line-height:1.6;color:#2C3A52;">Bu kararın hatalı olduğunu düşünüyorsan itiraz edebilirsin. Ekibimiz talebini yeniden değerlendirir.</p></div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#fff;color:#0E2745;border:1.5px solid #D8CFB9;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;padding:13px 30px;border-radius:12px;">Kuralları İncele / İtiraz Et</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 16 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">16</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Platform duyurusu</span><span style="margin-left:auto;font-size:11.5px;font-weight:700;color:#8A7238;background:#FBF3DF;border:1px solid #F0E2BE;padding:4px 10px;border-radius:100px;">footer'da opsiyonel abonelik alanı</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Yeni: {{ feature_name }} artık yayında</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Hazırlığını kolaylaştıracak yeni bir özellik ekledik.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Kurumsal, sakin. Tek konu, tek fayda, tek CTA. Pazarlama gibi bağırmaz. Bu grupta footer'a <strong>abonelikten çık</strong> alanı eklenir.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Keşfet</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ feature_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ feature_desc }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ cta_url }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ unsubscribe_url }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:0;">
+          <div style="background:linear-gradient(135deg,#16335B,#0E2745);padding:34px 30px;text-align:center;">
+            <span style="display:inline-block;background:rgba(201,162,75,0.16);border:1px solid rgba(201,162,75,0.4);color:#E2C173;font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:14px;">Yeni Özellik</span>
+            <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:26px;line-height:1.18;letter-spacing:-0.02em;margin:0;color:#fff;">{{ feature_name }}</h1>
+          </div>
+          <div style="padding:30px 30px 34px;">
+            <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 22px;">Merhaba {{ user_name }}, hazırlığını kolaylaştıracak yeni bir özelliği kullanıma açtık: {{ feature_desc }}</p>
+            <div style="text-align:center;"><span style="display:inline-block;background:#C9A24B;color:#0E2745;font-family:'Sora',sans-serif;font-weight:800;font-size:16px;padding:15px 40px;border-radius:12px;box-shadow:0 12px 26px rgba(201,162,75,0.32);">Keşfet →</span></div>
+          </div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 10px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><div style="padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);"><p style="font-size:11px;color:#6E82A0;margin:0;">Bu bir duyuru e-postasıdır. Duyuru e-postalarını almak istemiyorsan <a href="#" style="color:#C9D3E4;text-decoration:underline;">abonelikten çıkabilirsin</a>.</p></div><p class="mono" style="font-size:10.5px;color:#54688A;margin:10px 0 0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template 17 -->
+<div style="background:#fff;border:1px solid #DBD2BF;border-radius:20px;padding:26px;margin-bottom:20px;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:#fff;background:#0E2745;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;">17</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:#16233A;">Hesap durumu değişti</span></div>
+  <div style="display:grid;grid-template-columns:1fr 600px;gap:30px;align-items:start;">
+    <div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Konu</div><div style="font-size:15px;color:#16233A;font-weight:600;">Hesap durumunda bir değişiklik oldu</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Preheader</div><div style="font-size:14px;color:#5A6A82;">Hesabın {{ new_status }} durumuna geçti.</div></div>
+      <div style="margin-bottom:14px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">Gövde yaklaşımı</div><div style="font-size:14px;color:#5A6A82;line-height:1.6;">Nötr bilgilendirme. Eski → yeni durum net. Sebep ve etkisi kısaca. Ne yapılabileceği + destek yolu. Duruma göre bilgi/uyarı rengi.</div></div>
+      <div><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:5px;">CTA</div><span style="display:inline-block;background:#0E2745;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:13px;padding:8px 16px;border-radius:8px;">Hesabımı Görüntüle</span></div>
+      <div style="margin-top:16px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#9A7A2E;margin-bottom:6px;">Dinamik alanlar</div><div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ user_name }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ old_status }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ new_status }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ date }}</span><span class="mono" style="font-size:11px;background:#FBF3DF;color:#8A7238;padding:4px 8px;border-radius:6px;">{{ reason }}</span></div></div>
+    </div>
+    <div style="justify-self:center;width:600px;background:#EFE9DC;border-radius:16px;padding:22px;">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px -26px rgba(14,39,69,0.45);">
+        <div style="background:#0E2745;padding:18px 30px;display:flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;"><img src="assets/logo-shield.png" alt="Memurlar Akademi" style="height:26px;width:auto;"/></span><span style="display:flex;flex-direction:column;line-height:1;"><span style="font-family:'Sora',sans-serif;font-weight:800;font-size:15px;color:#fff;">Memurlar</span><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:9px;color:#C9A24B;letter-spacing:0.2em;text-transform:uppercase;">Akademi</span></span><span style="margin-left:auto;width:30px;height:4px;border-radius:3px;background:#C9A24B;"></span></div>
+        <div style="padding:32px 30px 34px;">
+          <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 18px;color:#16233A;">Hesap durumun güncellendi</h1>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+            <div style="flex:1;background:#F4F1EA;border:1px solid #E3DCCB;border-radius:12px;padding:14px;text-align:center;"><div style="font-size:11px;color:#9AA7BD;margin-bottom:4px;">Önceki</div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:#7A8AA3;">{{ old_status }}</div></div>
+            <span style="color:#C9A24B;font-size:20px;flex:none;">→</span>
+            <div style="flex:1;background:#FBF3DF;border:1px solid #F0E2BE;border-radius:12px;padding:14px;text-align:center;"><div style="font-size:11px;color:#8A7238;margin-bottom:4px;">Yeni</div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:15px;color:#16233A;">{{ new_status }}</div></div>
+          </div>
+          <p style="font-size:15.5px;line-height:1.65;color:#46566F;margin:0 0 18px;">Merhaba {{ user_name }}, {{ date }} tarihinde hesabının durumu güncellendi. Gerekçe: <strong style="color:#16233A;">{{ reason }}</strong>.</p>
+          <div style="background:#EDF1F7;border-left:4px solid #16335B;border-radius:0 10px 10px 0;padding:13px 16px;margin-bottom:22px;"><p style="margin:0;font-size:13.5px;line-height:1.6;color:#2C3A52;">Bu değişiklikle ilgili sorun olduğunu düşünüyorsan destek ekibimiz yardımcı olur.</p></div>
+          <div style="text-align:center;"><span style="display:inline-block;background:#0E2745;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:15px;padding:14px 34px;border-radius:12px;">Hesabımı Görüntüle →</span></div>
+        </div>
+        <div style="background:#0A1D36;padding:22px 30px;color:#9DB0CC;"><div style="display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;margin-bottom:10px;"><a style="color:#C9D3E4;" href="#">KVKK Aydınlatma Metni</a><a style="color:#C9D3E4;" href="#">Kullanım Şartları</a><a style="color:#C9D3E4;" href="#">Gizlilik</a><a style="color:#C9D3E4;" href="#">Destek</a></div><p style="font-size:11.5px;line-height:1.55;margin:0 0 5px;color:#6E82A0;">Bu e-posta Memurlar Akademi hesabınızla ilgili otomatik olarak gönderilmiştir. <a href="mailto:info@memurlarkademi.com" style="color:#C9D3E4;">info@memurlarkademi.com</a> · <a href="#" style="color:#C9D3E4;">memurlarakademi.com</a></p><p class="mono" style="font-size:10.5px;color:#54688A;margin:0;">© 2026 {{ company_legal_name }} · {{ company_address }}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CLOSING NOTE ===== -->
+<div style="background:#0E2745;border-radius:20px;padding:34px 40px;margin-top:12px;color:#C2D0E6;display:flex;align-items:center;gap:24px;">
+  <span style="width:52px;height:52px;border-radius:13px;background:rgba(201,162,75,0.16);display:flex;align-items:center;justify-content:center;flex:none;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E2C173" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span>
+  <div><div style="font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:4px;">HTML'e çevirirken</div><p style="margin:0;font-size:14.5px;line-height:1.6;">Her mail 600px tek kolon <span class="mono" style="color:#E2C173;font-size:13px;">&lt;table&gt;</span> yapısına, tüm stiller inline'a taşınır; butonlar Outlook için VML sarmalı alır; <span class="mono" style="color:#E2C173;font-size:13px;">{{ value }}</span> alanları backend tarafından doldurulur. Renkler, boşluklar ve tipografi bu dosyadaki değerlerle birebir eşleşir.</p></div>
+</div>
+
+</div><!-- section wrapper end -->
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      "handlebars": "{{ handlebars }}",
+      "user_name": "{{ user_name }}",
+      "exam_name": "{{ exam_name }}",
+      "plan_name": "{{ plan_name }}",
+      "order_no": "{{ order_no }}",
+      "amount": "{{ amount }}",
+      "date": "{{ date }}",
+      "code": "{{ code }}",
+      "expiry": "{{ expiry }}",
+      "net": "{{ net }}",
+      "score": "{{ score }}",
+      "rank": "{{ rank }}",
+      "company_legal_name": "{{ company_legal_name }}",
+      "company_address": "{{ company_address }}",
+      "value": "{{ value }}",
+      "verify_url": "{{ verify_url }}",
+      "dashboard_url": "{{ dashboard_url }}",
+      "reset_url": "{{ reset_url }}",
+      "device": "{{ device }}",
+      "location": "{{ location }}",
+      "secure_url": "{{ secure_url }}",
+      "due_date": "{{ due_date }}",
+      "pay_url": "{{ pay_url }}",
+      "valid_until": "{{ valid_until }}",
+      "invoice_url": "{{ invoice_url }}",
+      "reason": "{{ reason }}",
+      "retry_url": "{{ retry_url }}",
+      "invoice_no": "{{ invoice_no }}",
+      "subtotal": "{{ subtotal }}",
+      "tax": "{{ tax }}",
+      "total": "{{ total }}",
+      "refund_eta": "{{ refund_eta }}",
+      "access_until": "{{ access_until }}",
+      "days_left": "{{ days_left }}",
+      "end_date": "{{ end_date }}",
+      "renew_url": "{{ renew_url }}",
+      "questions_solved": "{{ questions_solved }}",
+      "study_time": "{{ study_time }}",
+      "accuracy": "{{ accuracy }}",
+      "strong_topic": "{{ strong_topic }}",
+      "weak_topic": "{{ weak_topic }}",
+      "readiness": "{{ readiness }}",
+      "focus_topic": "{{ focus_topic }}",
+      "action_1": "{{ action_1 }}",
+      "action_2": "{{ action_2 }}",
+      "action_3": "{{ action_3 }}",
+      "content_title": "{{ content_title }}",
+      "action_taken": "{{ action_taken }}",
+      "appeal_url": "{{ appeal_url }}",
+      "feature_name": "{{ feature_name }}",
+      "feature_desc": "{{ feature_desc }}",
+      "cta_url": "{{ cta_url }}",
+      "unsubscribe_url": "{{ unsubscribe_url }}",
+      "new_status": "{{ new_status }}",
+      "old_status": "{{ old_status }}"
+    };
+  }
+}
+</script>
+
+
+</body>
+</html>

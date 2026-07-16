@@ -94,10 +94,10 @@ export default function OrdersPage() {
     },
     {
       accessorKey: "plan",
-      header: "Plan",
+      header: "Sınav / Erişim",
       cell: ({ row }) => (
         <span className="text-sm font-semibold text-[var(--color-admin-ink)]">
-          {row.original.plan?.name ?? "Plan yok"}
+          {row.original.plan?.name ?? "Sınav bilgisi yok"}
         </span>
       ),
     },
@@ -156,7 +156,7 @@ export default function OrdersPage() {
                 <input
                   className="admin-input h-10 text-sm"
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Sipariş no, kullanıcı veya plan ara"
+                  placeholder="Sipariş no, kullanıcı veya sınav ara"
                   value={query}
                 />
               </AdminListToolbarField>

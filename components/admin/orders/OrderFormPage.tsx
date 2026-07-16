@@ -266,7 +266,7 @@ export function OrderFormPage({ id }: { id: number }) {
                 <span className="font-semibold text-[var(--color-admin-ink)]">{order?.total_amount ?? 0} TL</span>
               </div>
               <div className="flex items-center justify-between gap-3">
-                <span className="text-[var(--color-admin-muted)]">Plan</span>
+                <span className="text-[var(--color-admin-muted)]">Sınav / Erişim</span>
                 <span className="font-semibold text-[var(--color-admin-ink)]">{order?.plan?.name ?? "-"}</span>
               </div>
             </div>

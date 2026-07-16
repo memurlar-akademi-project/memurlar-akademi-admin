@@ -74,6 +74,10 @@ export type AdminOrder = {
     id: number;
     name: string;
   } | null;
+  exam: {
+    id: number;
+    name: string;
+  } | null;
   user: {
     id: number;
     name: string;

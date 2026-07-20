@@ -642,6 +642,7 @@ export type AdminMockExam = {
   sort_order?: number;
   scheduled_at?: string | null;
   is_tr_general?: boolean;
+  is_free?: boolean;
   question_ids?: number[];
   exam: {
     id: number;

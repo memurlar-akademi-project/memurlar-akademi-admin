@@ -345,6 +345,7 @@ export function MockExamQuestionPreviewPage({ mode }: Props) {
           sort_order: selectedMockExam.sort_order ?? 1,
           scheduled_at: selectedMockExam.scheduled_at ?? null,
           is_tr_general: Boolean(selectedMockExam.is_tr_general),
+          is_free: Boolean(selectedMockExam.is_free),
           question_ids: nextIds,
         },
       });

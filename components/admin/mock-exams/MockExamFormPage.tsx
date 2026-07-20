@@ -22,6 +22,7 @@ const emptyForm = {
   duration_min: "110",
   scheduled_at: "",
   is_tr_general: false,
+  is_free: false,
   question_ids: [] as number[],
 };
 
@@ -322,6 +323,7 @@ export function MockExamFormPage({
           duration_min: String(item.duration_min ?? 110),
           scheduled_at: "",
           is_tr_general: Boolean(item.is_tr_general),
+          is_free: Boolean(item.is_free),
           question_ids: item.question_ids ?? [],
         });
       } catch (loadError) {
@@ -707,6 +709,7 @@ export function MockExamFormPage({
             status: form.status,
             duration_min: Number(form.duration_min),
             is_tr_general: form.is_tr_general,
+            is_free: form.is_free,
             question_ids: form.question_ids,
           },
         },
@@ -950,6 +953,15 @@ export function MockExamFormPage({
                 type="checkbox"
               />
               TR geneli deneme olarak işaretle
+            </label>
+
+            <label className="flex items-center gap-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm font-semibold text-[var(--color-admin-ink)]">
+              <input
+                checked={form.is_free}
+                onChange={(event) => setForm((current) => ({ ...current, is_free: event.target.checked }))}
+                type="checkbox"
+              />
+              Ücretsiz üyelerin başlatabileceği deneme olarak işaretle
             </label>
 
             <section className="rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-4">

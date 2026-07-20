@@ -95,6 +95,7 @@ export default function MockExamsPage() {
           duration_min: item.duration_min,
           scheduled_at: item.scheduled_at ?? null,
           is_tr_general: Boolean(item.is_tr_general),
+          is_free: Boolean(item.is_free),
           question_ids: item.question_ids ?? [],
         },
       });
@@ -173,6 +174,21 @@ export default function MockExamsPage() {
       header: "Süre",
       cell: ({ row }) => (
         <span className="text-sm font-semibold text-[var(--color-admin-ink)]">{row.original.duration_min} dk</span>
+      ),
+    },
+    {
+      accessorKey: "is_free",
+      header: "Erişim",
+      cell: ({ row }) => (
+        <span
+          className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${
+            row.original.is_free
+              ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+              : "border-indigo-200 bg-indigo-50 text-indigo-700"
+          }`}
+        >
+          {row.original.is_free ? "Free açık" : "Premium"}
+        </span>
       ),
     },
     {

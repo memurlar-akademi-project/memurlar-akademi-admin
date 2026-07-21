@@ -587,7 +587,15 @@ export type AdminPodcastEpisode = {
   topic_id: number | null;
   title: string;
   duration_seconds: number;
-  transcript: string[];
+  transcript: Array<
+    | string
+    | {
+        startSec: number;
+        endSec?: number;
+        speaker?: string;
+        text: string;
+      }
+  >;
   script_text?: string | null;
   script_status?: "missing" | "draft" | "ready" | "sent" | "generated" | "failed" | string | null;
   script_source_hash?: string | null;

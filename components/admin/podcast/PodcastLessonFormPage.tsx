@@ -23,6 +23,7 @@ import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { adminApiRequest } from "@/lib/admin-api";
+import { podcastTranscriptToText } from "@/lib/podcast";
 import type { AdminPodcastEpisode, AdminPodcastLesson, AdminSubject, AdminTopic } from "@/lib/types";
 
 const preferredVoiceId = "fXhoW006nc5Wf8xkGVSy";
@@ -243,7 +244,7 @@ export function PodcastLessonFormPage({
       topic_id: selectedEpisode.topic_id ?? null,
       title: selectedEpisode.title,
       duration_seconds: String(selectedEpisode.duration_seconds),
-      transcript: (selectedEpisode.transcript ?? []).join("\n"),
+      transcript: podcastTranscriptToText(selectedEpisode.transcript),
       script_text: selectedEpisode.script_text ?? "",
       script_status: selectedEpisode.script_status ?? "missing",
       tts_voice_id: selectedEpisode.tts_voice_id ?? "",

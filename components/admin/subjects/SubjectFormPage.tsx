@@ -8,12 +8,14 @@ import {
   ChevronDown,
   FilePenLine,
   Headphones,
+  Loader2,
   List,
   ListOrdered,
   ShieldCheck,
   TextQuote,
   Trash2,
   Upload,
+  WandSparkles,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -25,6 +27,7 @@ import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { adminApiRequest } from "@/lib/admin-api";
+import { podcastTranscriptToText } from "@/lib/podcast";
 import type { AdminPodcastEpisode, AdminSubject, AdminTopic } from "@/lib/types";
 
 type TopicContentPayload = {
@@ -138,6 +141,7 @@ export function SubjectFormPage({
   const [podcastEditor, setPodcastEditor] = useState(emptyPodcastEditor);
   const [podcastLoading, setPodcastLoading] = useState(false);
   const [podcastSaving, setPodcastSaving] = useState(false);
+  const [podcastTranscribing, setPodcastTranscribing] = useState(false);
   const [podcastError, setPodcastError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -336,7 +340,7 @@ export function SubjectFormPage({
         const podcast = response.data.podcast;
 
         setPodcastEditor({
-          transcript: (podcast?.transcript ?? []).join("\n"),
+          transcript: podcastTranscriptToText(podcast?.transcript),
           is_active: podcast?.is_active ?? true,
           audio_file: null,
           audio_name: podcast?.audio_original_filename ?? "",
@@ -662,6 +666,7 @@ export function SubjectFormPage({
         audio_name: file.name,
         audio_url: "",
         duration_seconds: duration,
+        transcript: "",
       }));
     } catch (loadError) {
       setPodcastError(loadError instanceof Error ? loadError.message : "Ses dosyası okunamadı.");
@@ -694,6 +699,9 @@ export function SubjectFormPage({
       }
       if (podcastEditor.audio_file) {
         formData.set("audio_file", podcastEditor.audio_file);
+        if (!podcastEditor.transcript.trim()) {
+          formData.set("auto_transcribe", "1");
+        }
       }
 
       await adminApiRequest<{ podcast: AdminPodcastEpisode }>(`/admin/topics/${selectedPodcastTopic.id}/podcast`, {
@@ -718,6 +726,38 @@ export function SubjectFormPage({
       });
     } finally {
       setPodcastSaving(false);
+    }
+  }
+
+  async function handleGeneratePodcastTranscript() {
+    if (!token || !selectedPodcastTopic || !podcastEditor.audio_url || podcastTranscribing) {
+      return;
+    }
+
+    setPodcastTranscribing(true);
+    setPodcastError(null);
+
+    try {
+      const response = await adminApiRequest<{ podcast: AdminPodcastEpisode }>(
+        `/admin/topics/${selectedPodcastTopic.id}/podcast/transcript`,
+        { token, method: "POST" },
+      );
+
+      setPodcastEditor((current) => ({
+        ...current,
+        transcript: podcastTranscriptToText(response.data.podcast.transcript),
+      }));
+      showToast({
+        tone: "success",
+        title: "Transkript hazır",
+        description: `${response.data.podcast.transcript.length} zaman damgalı bölüm oluşturuldu.`,
+      });
+    } catch (transcriptionError) {
+      const message = transcriptionError instanceof Error ? transcriptionError.message : "Transkript oluşturulamadı.";
+      setPodcastError(message);
+      showToast({ tone: "error", title: "Transkript oluşturulamadı", description: message });
+    } finally {
+      setPodcastTranscribing(false);
     }
   }
 
@@ -1304,15 +1344,26 @@ export function SubjectFormPage({
                     </div>
                   </div>
 
-                  <label className="block space-y-2.5">
-                    <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Transcript</span>
+                  <div className="block space-y-2.5">
+                    <span className="flex items-center justify-between gap-3 text-[13px] font-semibold text-[var(--color-admin-ink)]">
+                      <span>Transkript</span>
+                      <button
+                        className="admin-button admin-button-secondary min-h-9 px-3 py-1.5 text-xs"
+                        disabled={!podcastEditor.audio_url || podcastTranscribing || podcastSaving}
+                        onClick={() => void handleGeneratePodcastTranscript()}
+                        type="button"
+                      >
+                        {podcastTranscribing ? <Loader2 className="animate-spin" size={14} /> : <WandSparkles size={14} />}
+                        {podcastTranscribing ? "Hazırlanıyor" : podcastEditor.audio_file && !podcastEditor.audio_url ? "Kaydedince oluşturulur" : "Otomatik oluştur"}
+                      </button>
+                    </span>
                     <textarea
                       className="admin-input min-h-[320px] resize-y leading-7"
                       onChange={(event) => setPodcastEditor((current) => ({ ...current, transcript: event.target.value }))}
-                      placeholder="Transcript metnini buraya ekle."
+                      placeholder="Ses yüklenince transkript otomatik oluşturulur; istersen burada düzenleyebilirsin."
                       value={podcastEditor.transcript}
                     />
-                  </label>
+                  </div>
 
                   {podcastError ? (
                     <div className="rounded-2xl border border-[var(--color-admin-danger-soft)] bg-[var(--color-admin-danger-soft)] px-4 py-3 text-sm text-[var(--color-admin-danger)]">

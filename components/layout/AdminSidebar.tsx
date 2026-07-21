@@ -23,6 +23,7 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   PencilRuler,
+  PlugZap,
   ReceiptText,
   ScrollText,
   ShieldUser,
@@ -93,6 +94,7 @@ const navigation = [
     items: [
       { href: "/kullanicilar", label: "Kullanıcılar", icon: ShieldUser },
       { href: "/siparisler", label: "Siparişler", icon: ReceiptText },
+      { href: "/entegrasyonlar", label: "Entegrasyonlar", icon: PlugZap },
       { href: "/topluluk", label: "Topluluk Onayı", icon: MessagesSquare },
     ],
   },

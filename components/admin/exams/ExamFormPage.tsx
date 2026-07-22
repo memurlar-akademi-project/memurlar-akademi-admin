@@ -18,6 +18,10 @@ const emptyForm = {
   slug: "",
   status: "active",
   price: "",
+  original_price: "",
+  discount_percentage: "",
+  discount_is_active: false,
+  discount_campaign_label: "",
   exam_date: "",
   total_question_count: "",
   duration_min: "",
@@ -93,6 +97,16 @@ export function ExamFormPage({
   const selectedTopicIdSet = useMemo(() => new Set(form.topic_ids), [form.topic_ids]);
 
   const expectedQuestionTotal = Number(form.total_question_count) || 0;
+  const discountedPrice = useMemo(() => {
+    const originalPrice = Number(form.original_price) || 0;
+    const percentage = Number(form.discount_percentage) || 0;
+
+    if (!form.discount_is_active || originalPrice <= 0 || percentage <= 0 || percentage >= 100) {
+      return Number(form.price) || 0;
+    }
+
+    return Math.round(originalPrice * (100 - percentage) / 100);
+  }, [form.discount_is_active, form.discount_percentage, form.original_price, form.price]);
 
   const orderedTopicIds = useMemo(() => {
     return [...topics]
@@ -381,6 +395,10 @@ export function ExamFormPage({
             slug: exam.slug ?? "",
             status: exam.status,
             price: String(exam.price ?? 0),
+            original_price: exam.original_price ? String(exam.original_price) : "",
+            discount_percentage: exam.discount_percentage ? String(exam.discount_percentage) : "",
+            discount_is_active: exam.discount_is_active,
+            discount_campaign_label: exam.discount_campaign_label ?? "",
             exam_date: toDateTimeLocalValue(exam.exam_date),
             total_question_count: exam.total_question_count ? String(exam.total_question_count) : "",
             duration_min: exam.duration_min ? String(exam.duration_min) : "",
@@ -445,7 +463,11 @@ export function ExamFormPage({
           name: form.name,
           slug: form.slug || null,
           status: form.status,
-          price: Number(form.price || 0),
+          price: form.discount_is_active ? discountedPrice : Number(form.price || 0),
+          original_price: form.original_price ? Number(form.original_price) : null,
+          discount_percentage: form.discount_percentage ? Number(form.discount_percentage) : null,
+          discount_is_active: form.discount_is_active,
+          discount_campaign_label: form.discount_campaign_label.trim() || null,
           exam_date: form.exam_date ? new Date(form.exam_date).toISOString() : null,
           total_question_count: form.total_question_count ? Number(form.total_question_count) : null,
           duration_min: form.duration_min ? Number(form.duration_min) : null,
@@ -643,20 +665,28 @@ export function ExamFormPage({
                 <section className="space-y-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)]/70 p-4">
                   <div className="pb-1">
                     <h3 className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
-                      Takvim ve Konular
+                      Fiyat, Kampanya ve Takvim
                     </h3>
                   </div>
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <label className="block space-y-2.5">
-                      <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Yıllık Abonelik Ücreti</span>
+                      <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">
+                        {form.discount_is_active ? "İndirimli Satış Fiyatı" : "Yıllık Abonelik Ücreti"}
+                      </span>
                       <input
-                        className="admin-input h-12"
+                        className={`admin-input h-12 ${form.discount_is_active ? "cursor-not-allowed opacity-70" : ""}`}
                         inputMode="numeric"
                         onChange={(event) => setForm((current) => ({ ...current, price: event.target.value }))}
                         placeholder="1490"
-                        value={form.price}
+                        readOnly={form.discount_is_active}
+                        value={form.discount_is_active ? String(discountedPrice) : form.price}
                       />
+                      {form.discount_is_active ? (
+                        <small className="block text-xs leading-5 text-[var(--color-admin-muted)]">
+                          Normal fiyat ve indirim oranından otomatik hesaplanır.
+                        </small>
+                      ) : null}
                     </label>
 
                     <label className="block space-y-2.5">
@@ -701,6 +731,76 @@ export function ExamFormPage({
                         value={form.passing_score}
                       />
                     </label>
+                  </div>
+
+                  <div className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50/70 p-4">
+                    <label className="flex cursor-pointer items-center justify-between gap-4">
+                      <span>
+                        <strong className="block text-sm font-bold text-[var(--color-admin-ink)]">İndirim kampanyası</strong>
+                        <small className="mt-1 block text-xs leading-5 text-[var(--color-admin-muted)]">
+                          Açıldığında fiyat tüm landing, kayıt ve yükseltme ekranlarına otomatik yansır.
+                        </small>
+                      </span>
+                      <input
+                        checked={form.discount_is_active}
+                        className="h-5 w-5 accent-[var(--color-admin-accent)]"
+                        onChange={(event) => setForm((current) => ({ ...current, discount_is_active: event.target.checked }))}
+                        type="checkbox"
+                      />
+                    </label>
+
+                    {form.discount_is_active ? (
+                      <div className="grid gap-4 md:grid-cols-3">
+                        <label className="block space-y-2.5">
+                          <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Normal Fiyat</span>
+                          <input
+                            className="admin-input h-12"
+                            inputMode="numeric"
+                            onChange={(event) => setForm((current) => ({ ...current, original_price: event.target.value }))}
+                            placeholder="1990"
+                            value={form.original_price}
+                          />
+                        </label>
+
+                        <label className="block space-y-2.5">
+                          <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">İndirim Oranı (%)</span>
+                          <input
+                            className="admin-input h-12"
+                            inputMode="numeric"
+                            max="99"
+                            min="1"
+                            onChange={(event) => setForm((current) => ({ ...current, discount_percentage: event.target.value }))}
+                            placeholder="20"
+                            value={form.discount_percentage}
+                          />
+                        </label>
+
+                        <label className="block space-y-2.5">
+                          <span className="block text-[13px] font-semibold text-[var(--color-admin-ink)]">Kampanya Metni</span>
+                          <input
+                            className="admin-input h-12"
+                            maxLength={80}
+                            onChange={(event) => setForm((current) => ({ ...current, discount_campaign_label: event.target.value }))}
+                            placeholder="İlk 100 kişiye özel"
+                            value={form.discount_campaign_label}
+                          />
+                        </label>
+                      </div>
+                    ) : null}
+
+                    {form.discount_is_active && discountedPrice > 0 ? (
+                      <div className="flex flex-wrap items-center gap-3 rounded-xl border border-amber-200 bg-white px-4 py-3 text-sm">
+                        <span className="text-[var(--color-admin-muted)] line-through">
+                          ₺{Number(form.original_price || 0).toLocaleString("tr-TR")}
+                        </span>
+                        <strong className="text-lg text-[var(--color-admin-ink)]">
+                          ₺{discountedPrice.toLocaleString("tr-TR")}
+                        </strong>
+                        <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-extrabold text-amber-800">
+                          %{Number(form.discount_percentage || 0)} İNDİRİM
+                        </span>
+                      </div>
+                    ) : null}
                   </div>
 
                   <div className="space-y-4">

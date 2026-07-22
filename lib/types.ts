@@ -117,6 +117,12 @@ export type AdminExam = {
   status: string;
   year: number | null;
   price: number;
+  original_price: number | null;
+  discount_percentage: number | null;
+  discount_is_active: boolean;
+  has_discount: boolean;
+  discount_label: string | null;
+  discount_campaign_label: string | null;
   exam_date: string | null;
   total_question_count: number | null;
   duration_min: number | null;

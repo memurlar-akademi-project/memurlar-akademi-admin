@@ -192,9 +192,17 @@ export default function ExamsPage() {
       header: "Abonelik Ücreti",
       enableSorting: true,
       cell: ({ row }) => (
-        <p className="font-semibold text-[var(--color-admin-ink)]">
-          {row.original.price.toLocaleString("tr-TR")} TL
-        </p>
+        <div>
+          <p className="font-semibold text-[var(--color-admin-ink)]">
+            {row.original.price.toLocaleString("tr-TR")} TL
+          </p>
+          {row.original.has_discount && row.original.original_price ? (
+            <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
+              <span className="line-through">{row.original.original_price.toLocaleString("tr-TR")} TL</span>
+              {" · "}%{row.original.discount_percentage} indirim
+            </p>
+          ) : null}
+        </div>
       ),
     },
     {

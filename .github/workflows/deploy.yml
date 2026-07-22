@@ -64,6 +64,8 @@ jobs:
             DEPLOY_IMAGE="$DEPLOY_IMAGE" \
             'bash -s' <<'REMOTE'
           set -euo pipefail
+          exec 9>/tmp/memurlar-akademi-deploy.lock
+          flock -w 600 9
 
           APP_DIR="/var/www/memurlar-akademi/admin"
           ENV_FILE="$APP_DIR/.env.production"

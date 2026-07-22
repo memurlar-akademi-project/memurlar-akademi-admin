@@ -8,7 +8,7 @@ on:
 
 env:
   IMAGE_NAME: ghcr.io/${{ secrets.GHCR_USERNAME }}/memurlarakademi-admin
-  NEXT_PUBLIC_API_URL: https://memurlarakademi.com/api/v1
+  NEXT_PUBLIC_API_URL: /api/v1
 
 jobs:
   build-and-deploy:

@@ -602,6 +602,10 @@ export type AdminPodcastEpisode = {
         text: string;
       }
   >;
+  transcript_status?: "missing" | "pending" | "processing" | "ready" | "failed" | string | null;
+  transcript_error?: string | null;
+  transcript_requested_at?: string | null;
+  transcript_generated_at?: string | null;
   script_text?: string | null;
   script_status?: "missing" | "draft" | "ready" | "sent" | "generated" | "failed" | string | null;
   script_source_hash?: string | null;

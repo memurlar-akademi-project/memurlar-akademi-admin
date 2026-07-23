@@ -78,6 +78,8 @@ const emptyTopicEditor = {
 
 const emptyPodcastEditor = {
   transcript: "",
+  transcript_status: "missing",
+  transcript_error: "",
   is_active: true,
   audio_file: null as File | null,
   audio_name: "",
@@ -341,6 +343,8 @@ export function SubjectFormPage({
 
         setPodcastEditor({
           transcript: podcastTranscriptToText(podcast?.transcript),
+          transcript_status: podcast?.transcript_status ?? (podcast?.transcript?.length ? "ready" : "missing"),
+          transcript_error: podcast?.transcript_error ?? "",
           is_active: podcast?.is_active ?? true,
           audio_file: null,
           audio_name: podcast?.audio_original_filename ?? "",
@@ -364,6 +368,80 @@ export function SubjectFormPage({
       cancelled = true;
     };
   }, [isPodcastModalOpen, selectedPodcastTopic, token]);
+
+  useEffect(() => {
+    if (
+      !isPodcastModalOpen
+      || !selectedPodcastTopic
+      || !token
+      || !["pending", "processing"].includes(podcastEditor.transcript_status)
+    ) {
+      return;
+    }
+
+    let cancelled = false;
+    const activePodcastTopic = selectedPodcastTopic;
+
+    async function pollTranscript() {
+      try {
+        const response = await adminApiRequest<TopicPodcastPayload>(
+          `/admin/topics/${activePodcastTopic.id}/podcast`,
+          { token },
+        );
+        const podcast = response.data.podcast;
+
+        if (cancelled || !podcast) {
+          return;
+        }
+
+        const nextStatus = podcast.transcript_status ?? (podcast.transcript.length ? "ready" : "missing");
+
+        setPodcastEditor((current) => ({
+          ...current,
+          transcript: nextStatus === "ready" ? podcastTranscriptToText(podcast.transcript) : current.transcript,
+          transcript_status: nextStatus,
+          transcript_error: podcast.transcript_error ?? "",
+        }));
+
+        if (nextStatus === "ready") {
+          showToast({
+            tone: "success",
+            title: "Transkript hazır",
+            description: `${activePodcastTopic.name} için transkript tamamlandı.`,
+          });
+        } else if (nextStatus === "failed") {
+          const message = podcast.transcript_error || "Transkript oluşturulamadı. Tekrar deneyebilirsin.";
+          setPodcastError(message);
+          showToast({
+            tone: "error",
+            title: "Transkript oluşturulamadı",
+            description: message,
+          });
+        }
+      } catch (pollError) {
+        if (!cancelled) {
+          setPodcastError(pollError instanceof Error ? pollError.message : "Transkript durumu kontrol edilemedi.");
+        }
+      }
+    }
+
+    const intervalId = window.setInterval(() => {
+      void pollTranscript();
+    }, 3000);
+
+    void pollTranscript();
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(intervalId);
+    };
+  }, [
+    isPodcastModalOpen,
+    podcastEditor.transcript_status,
+    selectedPodcastTopic,
+    showToast,
+    token,
+  ]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -667,6 +745,8 @@ export function SubjectFormPage({
         audio_url: "",
         duration_seconds: duration,
         transcript: "",
+        transcript_status: "missing",
+        transcript_error: "",
       }));
     } catch (loadError) {
       setPodcastError(loadError instanceof Error ? loadError.message : "Ses dosyası okunamadı.");
@@ -704,16 +784,19 @@ export function SubjectFormPage({
         }
       }
 
-      await adminApiRequest<{ podcast: AdminPodcastEpisode }>(`/admin/topics/${selectedPodcastTopic.id}/podcast`, {
+      const response = await adminApiRequest<{ podcast: AdminPodcastEpisode }>(`/admin/topics/${selectedPodcastTopic.id}/podcast`, {
         token,
         method: "POST",
         body: formData,
       });
+      const transcriptQueued = ["pending", "processing"].includes(response.data.podcast.transcript_status ?? "");
 
       showToast({
         tone: "success",
         title: "Podcast kaydedildi",
-        description: `${selectedPodcastTopic.name} için podcast bilgisi güncellendi.`,
+        description: transcriptQueued
+          ? "Transkript arka planda hazırlanıyor. Diğer podcastleri eklemeye devam edebilirsin."
+          : `${selectedPodcastTopic.name} için podcast bilgisi güncellendi.`,
       });
       setIsPodcastModalOpen(false);
     } catch (saveError) {
@@ -745,12 +828,13 @@ export function SubjectFormPage({
 
       setPodcastEditor((current) => ({
         ...current,
-        transcript: podcastTranscriptToText(response.data.podcast.transcript),
+        transcript_status: response.data.podcast.transcript_status ?? "pending",
+        transcript_error: response.data.podcast.transcript_error ?? "",
       }));
       showToast({
-        tone: "success",
-        title: "Transkript hazır",
-        description: `${response.data.podcast.transcript.length} zaman damgalı bölüm oluşturuldu.`,
+        tone: "warning",
+        title: "Transkript hazırlanıyor",
+        description: "İşlem arka planda devam ediyor. Bu pencereyi açık tutman gerekmiyor.",
       });
     } catch (transcriptionError) {
       const message = transcriptionError instanceof Error ? transcriptionError.message : "Transkript oluşturulamadı.";
@@ -1346,10 +1430,38 @@ export function SubjectFormPage({
 
                   <div className="block space-y-2.5">
                     <span className="flex items-center justify-between gap-3 text-[13px] font-semibold text-[var(--color-admin-ink)]">
-                      <span>Transkript</span>
+                      <span className="flex items-center gap-2">
+                        <span>Transkript</span>
+                        <span
+                          className={
+                            podcastEditor.transcript_status === "ready"
+                              ? "rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-bold text-emerald-700"
+                              : podcastEditor.transcript_status === "failed"
+                                ? "rounded-full bg-red-50 px-2.5 py-1 text-[11px] font-bold text-red-700"
+                                : ["pending", "processing"].includes(podcastEditor.transcript_status)
+                                  ? "rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-bold text-amber-700"
+                                  : "rounded-full bg-[var(--color-admin-panel-soft)] px-2.5 py-1 text-[11px] font-bold text-[var(--color-admin-muted)]"
+                          }
+                        >
+                          {podcastEditor.transcript_status === "ready"
+                            ? "Hazır"
+                            : podcastEditor.transcript_status === "failed"
+                              ? "Hata"
+                              : podcastEditor.transcript_status === "processing"
+                                ? "İşleniyor"
+                                : podcastEditor.transcript_status === "pending"
+                                  ? "Sırada"
+                                  : "Bekliyor"}
+                        </span>
+                      </span>
                       <button
                         className="admin-button admin-button-secondary min-h-9 px-3 py-1.5 text-xs"
-                        disabled={!podcastEditor.audio_url || podcastTranscribing || podcastSaving}
+                        disabled={
+                          !podcastEditor.audio_url
+                          || podcastTranscribing
+                          || podcastSaving
+                          || ["pending", "processing"].includes(podcastEditor.transcript_status)
+                        }
                         onClick={() => void handleGeneratePodcastTranscript()}
                         type="button"
                       >
@@ -1359,6 +1471,7 @@ export function SubjectFormPage({
                     </span>
                     <textarea
                       className="admin-input min-h-[320px] resize-y leading-7"
+                      disabled={["pending", "processing"].includes(podcastEditor.transcript_status)}
                       onChange={(event) => setPodcastEditor((current) => ({ ...current, transcript: event.target.value }))}
                       placeholder="Ses yüklenince transkript otomatik oluşturulur; istersen burada düzenleyebilirsin."
                       value={podcastEditor.transcript}

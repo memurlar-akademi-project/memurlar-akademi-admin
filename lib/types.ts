@@ -14,6 +14,50 @@ export type AdminPaginationMeta = {
   to: number | null;
 };
 
+export type AdminBlogSection = {
+  title: string;
+  body: string[];
+  bullets?: string[];
+};
+
+export type AdminBlogFaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type AdminBlogPost = {
+  id: number;
+  slug: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  status: "draft" | "published" | "scheduled" | "archived";
+  is_featured: boolean;
+  reading_minutes: number;
+  read: string;
+  author: string;
+  published_at: string | null;
+  cover_url: string | null;
+  has_uploaded_cover: boolean;
+  cover_alt: string;
+  seo_title: string;
+  seo_description: string;
+  intro: string;
+  content_markdown: string | null;
+  content_html: string | null;
+  exam_cta: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    label: string;
+    href: string;
+  };
+  sections: AdminBlogSection[];
+  faq_items: AdminBlogFaqItem[];
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
 export type AdminSession = {
   token: string;
   tokenType: string;

@@ -13,6 +13,18 @@ function resolvePageMeta(pathname: string) {
     return { title: "Gösterge Paneli" };
   }
 
+  if (pathname === "/sayfa-yonetimi/bloglar") {
+    return { title: "Bloglar" };
+  }
+
+  if (pathname === "/sayfa-yonetimi/bloglar/yeni") {
+    return { title: "Yeni Blog Yazısı", backHref: "/sayfa-yonetimi/bloglar" };
+  }
+
+  if (/^\/sayfa-yonetimi\/bloglar\/\d+\/duzenle$/.test(pathname)) {
+    return { title: "Blog Yazısını Düzenle", backHref: "/sayfa-yonetimi/bloglar" };
+  }
+
   if (pathname === "/bakanliklar") {
     return { title: "Bakanlıklar" };
   }

@@ -73,3 +73,16 @@ export async function adminApiRequest<T>(
 
   return request as Promise<ApiEnvelope<T>>;
 }
+
+export async function adminApiBlob(path: string, token: string): Promise<Blob> {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: { Authorization: `Bearer ${token}` },
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error("Görsel önizlemesi yüklenemedi.");
+  }
+
+  return response.blob();
+}

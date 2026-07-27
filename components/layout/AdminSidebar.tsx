@@ -20,6 +20,7 @@ import {
   LayoutDashboard,
   LibraryBig,
   MessagesSquare,
+  Newspaper,
   PanelLeftClose,
   PanelLeftOpen,
   PencilRuler,
@@ -85,6 +86,14 @@ const navigation = [
       { href: "/denemeler", label: "Denemeler", icon: FileAudio2 },
       { href: "/denemeler/soru-preview", label: "Deneme Soruları Preview", icon: Eye },
       { href: "/denemeler/preview", label: "Deneme Preview", icon: PencilRuler },
+    ],
+  },
+  {
+    id: "page-management",
+    title: "Sayfa Yönetimi",
+    icon: Newspaper,
+    items: [
+      { href: "/sayfa-yonetimi/bloglar", label: "Bloglar", icon: Newspaper },
     ],
   },
   {

@@ -1,6 +1,16 @@
 "use client";
 
-import { CircleCheck, ExternalLink, LoaderCircle, PlugZap, RefreshCcw, TriangleAlert } from "lucide-react";
+import {
+  CircleCheck,
+  Camera,
+  ExternalLink,
+  LoaderCircle,
+  PlugZap,
+  RefreshCcw,
+  Share2,
+  TriangleAlert,
+  Unplug,
+} from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
@@ -17,6 +27,24 @@ type ParasutIntegration = {
   last_error: string | null;
 };
 
+type MetaPage = {
+  id: string;
+  name: string;
+  instagram_account_id: string | null;
+  instagram_username: string | null;
+};
+
+type MetaIntegration = {
+  configured: boolean;
+  authorized: boolean;
+  callback_url: string;
+  available_pages: MetaPage[];
+  selected_page: MetaPage | null;
+  authorized_at: string | null;
+  last_refreshed_at: string | null;
+  last_error: string | null;
+};
+
 function formatDate(value: string | null) {
   if (!value) return "-";
 
@@ -28,16 +56,24 @@ export default function IntegrationsPage() {
   const { setTitle } = useAdminPageMeta();
   const { showToast } = useAdminToast();
   const [integration, setIntegration] = useState<ParasutIntegration | null>(null);
+  const [metaIntegration, setMetaIntegration] = useState<MetaIntegration | null>(null);
   const [loading, setLoading] = useState(true);
   const [connecting, setConnecting] = useState(false);
+  const [metaBusy, setMetaBusy] = useState(false);
+  const [selectedPageId, setSelectedPageId] = useState("");
 
   const load = useCallback(async () => {
     if (!token) return;
 
     setLoading(true);
     try {
-      const response = await adminApiRequest<ParasutIntegration>("/admin/integrations/parasut", { token });
-      setIntegration(response.data);
+      const [parasutResponse, metaResponse] = await Promise.all([
+        adminApiRequest<ParasutIntegration>("/admin/integrations/parasut", { token }),
+        adminApiRequest<MetaIntegration>("/admin/integrations/meta", { token }),
+      ]);
+      setIntegration(parasutResponse.data);
+      setMetaIntegration(metaResponse.data);
+      setSelectedPageId(metaResponse.data.selected_page?.id ?? metaResponse.data.available_pages[0]?.id ?? "");
     } catch (error) {
       showToast({ title: "Paraşüt bağlantı durumu alınamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
@@ -69,10 +105,161 @@ export default function IntegrationsPage() {
     }
   }
 
+  async function connectMeta() {
+    if (!token) return;
+
+    setMetaBusy(true);
+    try {
+      const response = await adminApiRequest<{ authorization_url: string }>("/admin/integrations/meta/start", {
+        method: "POST",
+        token,
+      });
+      window.location.assign(response.data.authorization_url);
+    } catch (error) {
+      setMetaBusy(false);
+      showToast({ title: "Meta bağlantısı başlatılamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    }
+  }
+
+  async function selectMetaPage() {
+    if (!token || !selectedPageId) return;
+
+    setMetaBusy(true);
+    try {
+      await adminApiRequest("/admin/integrations/meta/select-page", {
+        method: "POST",
+        token,
+        body: { page_id: selectedPageId },
+      });
+      showToast({ title: "Memurlar Akademi sayfası seçildi", tone: "success" });
+      await load();
+    } catch (error) {
+      showToast({ title: "Sayfa seçilemedi", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function disconnectMeta() {
+    if (!token || !window.confirm("Meta bağlantısı kesilsin mi? Saklanan erişim anahtarları temizlenecek.")) return;
+
+    setMetaBusy(true);
+    try {
+      await adminApiRequest("/admin/integrations/meta/disconnect", { method: "POST", token });
+      showToast({ title: "Meta bağlantısı kesildi", tone: "success" });
+      await load();
+    } catch (error) {
+      showToast({ title: "Meta bağlantısı kesilemedi", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
   const isReady = integration?.configured && integration.authorized;
+  const isMetaReady = metaIntegration?.configured && metaIntegration.authorized && metaIntegration.selected_page;
 
   return (
     <div className="max-w-4xl space-y-5">
+      <AdminTableCard>
+        <div className="flex flex-col gap-5 p-5 sm:p-7">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
+            <div className="flex gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-600/10 text-blue-700">
+                <Share2 size={22} />
+              </div>
+              <div>
+                <h2 className="text-lg font-extrabold tracking-[-0.03em] text-[var(--color-admin-ink)]">Meta Sosyal Medya</h2>
+                <p className="mt-1 max-w-xl text-sm leading-6 text-[var(--color-admin-muted)]">
+                  Memurlar Akademi Facebook Sayfasını ve ona bağlı profesyonel Instagram hesabını güvenli yayın akışına bağlar.
+                </p>
+              </div>
+            </div>
+            <button
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-blue-700 px-4 text-sm font-bold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
+              disabled={loading || metaBusy || !metaIntegration?.configured}
+              onClick={() => void connectMeta()}
+              type="button"
+            >
+              {metaBusy ? <LoaderCircle className="animate-spin" size={17} /> : <ExternalLink size={17} />}
+              {metaIntegration?.authorized ? "Yetkiyi Yenile" : "Meta'ya Bağlan"}
+            </button>
+          </div>
+
+          <div className={`flex items-start gap-3 rounded-2xl border px-4 py-3 ${isMetaReady ? "border-emerald-200 bg-emerald-50 text-emerald-800" : "border-amber-200 bg-amber-50 text-amber-900"}`}>
+            {isMetaReady ? <CircleCheck className="mt-0.5 shrink-0" size={18} /> : <TriangleAlert className="mt-0.5 shrink-0" size={18} />}
+            <div>
+              <p className="text-sm font-bold">
+                {isMetaReady ? "Yayın bağlantısı hazır" : metaIntegration?.configured ? "Bağlantı veya sayfa seçimi bekleniyor" : "Sunucu yapılandırması bekleniyor"}
+              </p>
+              <p className="mt-1 text-sm leading-5 opacity-80">
+                {isMetaReady
+                  ? `${metaIntegration.selected_page?.name} için onaylı yayın akışı kullanılabilir.`
+                  : "Önce Meta uygulama ayarları tamamlanır, ardından yetkili hesap bağlanır ve Memurlar Akademi Sayfası seçilir."}
+              </p>
+            </div>
+          </div>
+
+          {metaIntegration?.authorized && metaIntegration.available_pages.length > 0 ? (
+            <div className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] p-4">
+              <label className="text-sm font-bold text-[var(--color-admin-ink)]" htmlFor="meta-page">
+                Yayın yapılacak Facebook Sayfası
+              </label>
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                <select
+                  className="h-11 flex-1 rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm text-[var(--color-admin-ink)]"
+                  id="meta-page"
+                  onChange={(event) => setSelectedPageId(event.target.value)}
+                  value={selectedPageId}
+                >
+                  {metaIntegration.available_pages.map((page) => (
+                    <option key={page.id} value={page.id}>
+                      {page.name}{page.instagram_username ? ` · @${page.instagram_username}` : " · Instagram bağlı değil"}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  className="admin-button admin-button-primary"
+                  disabled={metaBusy || !selectedPageId}
+                  onClick={() => void selectMetaPage()}
+                  type="button"
+                >
+                  Sayfayı Seç
+                </button>
+              </div>
+            </div>
+          ) : null}
+
+          {metaIntegration?.selected_page ? (
+            <dl className="grid gap-3 sm:grid-cols-2">
+              <StatusItem label="Facebook" value={metaIntegration.selected_page.name} />
+              <StatusItem
+                label="Instagram"
+                value={metaIntegration.selected_page.instagram_username ? `@${metaIntegration.selected_page.instagram_username}` : "Profesyonel hesap bağlı değil"}
+              />
+            </dl>
+          ) : null}
+
+          {metaIntegration?.last_error ? (
+            <p className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-5 text-rose-800">Son hata: {metaIntegration.last_error}</p>
+          ) : null}
+
+          <div className="flex flex-wrap items-center gap-4">
+            <button className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 hover:underline" onClick={() => void load()} type="button">
+              <RefreshCcw size={15} /> Durumu yenile
+            </button>
+            {metaIntegration?.authorized ? (
+              <button className="inline-flex items-center gap-2 text-sm font-bold text-rose-700 hover:underline" disabled={metaBusy} onClick={() => void disconnectMeta()} type="button">
+                <Unplug size={15} /> Bağlantıyı kes
+              </button>
+            ) : null}
+          </div>
+
+          <p className="flex items-center gap-2 text-xs leading-5 text-[var(--color-admin-muted)]">
+            <Camera size={15} /> Erişim anahtarları bu ekranda gösterilmez; şifrelenmiş olarak backend tarafında saklanır.
+          </p>
+        </div>
+      </AdminTableCard>
+
       <AdminTableCard>
         <div className="flex flex-col gap-5 p-5 sm:p-7">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">

@@ -3,7 +3,9 @@
 import {
   CircleCheck,
   Camera,
+  Copy,
   ExternalLink,
+  KeyRound,
   LoaderCircle,
   PlugZap,
   RefreshCcw,
@@ -45,6 +47,12 @@ type MetaIntegration = {
   last_error: string | null;
 };
 
+type SocialAgentConnection = {
+  connected: boolean;
+  created_at: string | null;
+  last_used_at: string | null;
+};
+
 function formatDate(value: string | null) {
   if (!value) return "-";
 
@@ -57,6 +65,8 @@ export default function IntegrationsPage() {
   const { showToast } = useAdminToast();
   const [integration, setIntegration] = useState<ParasutIntegration | null>(null);
   const [metaIntegration, setMetaIntegration] = useState<MetaIntegration | null>(null);
+  const [socialAgent, setSocialAgent] = useState<SocialAgentConnection | null>(null);
+  const [socialAgentToken, setSocialAgentToken] = useState("");
   const [loading, setLoading] = useState(true);
   const [connecting, setConnecting] = useState(false);
   const [metaBusy, setMetaBusy] = useState(false);
@@ -67,15 +77,17 @@ export default function IntegrationsPage() {
 
     setLoading(true);
     try {
-      const [parasutResponse, metaResponse] = await Promise.all([
+      const [parasutResponse, metaResponse, socialAgentResponse] = await Promise.all([
         adminApiRequest<ParasutIntegration>("/admin/integrations/parasut", { token }),
         adminApiRequest<MetaIntegration>("/admin/integrations/meta", { token }),
+        adminApiRequest<SocialAgentConnection>("/admin/integrations/social-agent", { token }),
       ]);
       setIntegration(parasutResponse.data);
       setMetaIntegration(metaResponse.data);
+      setSocialAgent(socialAgentResponse.data);
       setSelectedPageId(metaResponse.data.selected_page?.id ?? metaResponse.data.available_pages[0]?.id ?? "");
     } catch (error) {
-      showToast({ title: "Paraşüt bağlantı durumu alınamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
+      showToast({ title: "Entegrasyon durumları alınamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
       setLoading(false);
     }
@@ -150,6 +162,52 @@ export default function IntegrationsPage() {
       await load();
     } catch (error) {
       showToast({ title: "Meta bağlantısı kesilemedi", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function rotateSocialAgentToken() {
+    if (!token || !window.confirm("Yeni ajan anahtarı oluşturulsun mu? Varsa önceki ajan anahtarı hemen geçersiz olur.")) return;
+
+    setMetaBusy(true);
+    setSocialAgentToken("");
+    try {
+      const response = await adminApiRequest<{ plain_text_token: string; created_at: string | null }>("/admin/integrations/social-agent/rotate", {
+        method: "POST",
+        token,
+      });
+      setSocialAgentToken(response.data.plain_text_token);
+      setSocialAgent({
+        connected: true,
+        created_at: response.data.created_at,
+        last_used_at: null,
+      });
+      showToast({ title: "Ajan anahtarı oluşturuldu", description: "Anahtarı şimdi kopyala; bu ekrandan ayrılınca tekrar gösterilmez.", tone: "success" });
+    } catch (error) {
+      showToast({ title: "Ajan anahtarı oluşturulamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function copySocialAgentToken() {
+    if (!socialAgentToken) return;
+    await navigator.clipboard.writeText(socialAgentToken);
+    showToast({ title: "Ajan anahtarı panoya kopyalandı", tone: "success" });
+  }
+
+  async function disconnectSocialAgent() {
+    if (!token || !window.confirm("Sosyal medya ajanının yayın erişimi kaldırılsın mı?")) return;
+
+    setMetaBusy(true);
+    try {
+      await adminApiRequest("/admin/integrations/social-agent", { method: "DELETE", token });
+      setSocialAgentToken("");
+      setSocialAgent({ connected: false, created_at: null, last_used_at: null });
+      showToast({ title: "Ajan bağlantısı kaldırıldı", tone: "success" });
+    } catch (error) {
+      showToast({ title: "Ajan bağlantısı kaldırılamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
       setMetaBusy(false);
     }
@@ -257,6 +315,70 @@ export default function IntegrationsPage() {
           <p className="flex items-center gap-2 text-xs leading-5 text-[var(--color-admin-muted)]">
             <Camera size={15} /> Erişim anahtarları bu ekranda gösterilmez; şifrelenmiş olarak backend tarafında saklanır.
           </p>
+        </div>
+      </AdminTableCard>
+
+      <AdminTableCard>
+        <div className="flex flex-col gap-5 p-5 sm:p-7">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
+            <div className="flex gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-700">
+                <KeyRound size={22} />
+              </div>
+              <div>
+                <h2 className="text-lg font-extrabold tracking-[-0.03em] text-[var(--color-admin-ink)]">Sosyal Medya Ajanı</h2>
+                <p className="mt-1 max-w-xl text-sm leading-6 text-[var(--color-admin-muted)]">
+                  Ajana yalnızca onaylı sosyal medya taslaklarını yükleme ve yayınlama yetkisi verir. Kullanıcılar, siparişler ve diğer yönetim alanları bu anahtarla açılamaz.
+                </p>
+              </div>
+            </div>
+            <button
+              className="admin-button admin-button-primary"
+              disabled={loading || metaBusy || !isMetaReady}
+              onClick={() => void rotateSocialAgentToken()}
+              type="button"
+            >
+              {metaBusy ? <LoaderCircle className="animate-spin" size={17} /> : <KeyRound size={17} />}
+              {socialAgent?.connected ? "Anahtarı Yenile" : "Ajanı Bağla"}
+            </button>
+          </div>
+
+          <div className={`flex items-start gap-3 rounded-2xl border px-4 py-3 ${socialAgent?.connected ? "border-emerald-200 bg-emerald-50 text-emerald-800" : "border-amber-200 bg-amber-50 text-amber-900"}`}>
+            {socialAgent?.connected ? <CircleCheck className="mt-0.5 shrink-0" size={18} /> : <TriangleAlert className="mt-0.5 shrink-0" size={18} />}
+            <div>
+              <p className="text-sm font-bold">{socialAgent?.connected ? "Ajan erişimi aktif" : "Ajan bağlantısı bekleniyor"}</p>
+              <p className="mt-1 text-sm leading-5 opacity-80">
+                {socialAgent?.connected
+                  ? `Oluşturma: ${formatDate(socialAgent.created_at)} · Son kullanım: ${formatDate(socialAgent.last_used_at)}`
+                  : "Meta bağlantısı hazır olduktan sonra tek kullanımlık kurulum anahtarı oluştur."}
+              </p>
+            </div>
+          </div>
+
+          {socialAgentToken ? (
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+              <p className="text-sm font-bold text-amber-950">Bu anahtar yalnızca şimdi gösteriliyor</p>
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                <input
+                  aria-label="Sosyal medya ajanı anahtarı"
+                  className="h-11 min-w-0 flex-1 rounded-xl border border-amber-300 bg-white px-3 font-mono text-xs text-slate-900"
+                  readOnly
+                  type="password"
+                  value={socialAgentToken}
+                />
+                <button className="admin-button admin-button-primary" onClick={() => void copySocialAgentToken()} type="button">
+                  <Copy size={16} /> Panoya Kopyala
+                </button>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-amber-800">Anahtarı mesaj, e-posta veya dosya ile paylaşma. Kurulumdan sonra cihazın güvenli anahtar kasasında tutulur.</p>
+            </div>
+          ) : null}
+
+          {socialAgent?.connected ? (
+            <button className="inline-flex w-fit items-center gap-2 text-sm font-bold text-rose-700 hover:underline" disabled={metaBusy} onClick={() => void disconnectSocialAgent()} type="button">
+              <Unplug size={15} /> Ajan erişimini kaldır
+            </button>
+          ) : null}
         </div>
       </AdminTableCard>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   Check,
   Camera,
@@ -13,7 +14,7 @@ import {
   TriangleAlert,
   X,
 } from "lucide-react";
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
@@ -72,8 +73,10 @@ export default function SocialMediaPage() {
   const [busyId, setBusyId] = useState<number | "new" | null>(null);
   const [channel, setChannel] = useState<Channel>("instagram");
   const [caption, setCaption] = useState("");
-  const [mediaUrl, setMediaUrl] = useState("");
+  const [mediaFile, setMediaFile] = useState<File | null>(null);
+  const [mediaPreviewUrl, setMediaPreviewUrl] = useState<string | null>(null);
   const [isAiGenerated, setIsAiGenerated] = useState(false);
+  const mediaInputRef = useRef<HTMLInputElement>(null);
 
   const load = useCallback(async () => {
     if (!token) return;
@@ -96,24 +99,71 @@ export default function SocialMediaPage() {
     void load();
   }, [load]);
 
+  useEffect(() => {
+    return () => {
+      if (mediaPreviewUrl) URL.revokeObjectURL(mediaPreviewUrl);
+    };
+  }, [mediaPreviewUrl]);
+
+  function selectMedia(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0] ?? null;
+
+    if (file && !["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+      showToast({ title: "JPG, PNG veya WebP görsel seçmelisin", tone: "error" });
+      event.target.value = "";
+      return;
+    }
+    if (file && file.size > 10 * 1024 * 1024) {
+      showToast({ title: "Görsel en fazla 10 MB olabilir", tone: "error" });
+      event.target.value = "";
+      return;
+    }
+
+    setMediaFile(file);
+    setMediaPreviewUrl(file ? URL.createObjectURL(file) : null);
+  }
+
+  function clearMedia() {
+    setMediaFile(null);
+    setMediaPreviewUrl(null);
+    if (mediaInputRef.current) mediaInputRef.current.value = "";
+  }
+
   async function createDraft(event: FormEvent) {
     event.preventDefault();
     if (!token) return;
+    if (channel === "instagram" && !mediaFile) {
+      showToast({ title: "Instagram gönderisi için görsel seçmelisin", tone: "error" });
+      return;
+    }
 
     setBusyId("new");
     try {
+      let uploadedMediaUrl: string | null = null;
+
+      if (mediaFile) {
+        const mediaData = new FormData();
+        mediaData.append("media", mediaFile);
+        const uploadResponse = await adminApiRequest<{ media_url: string }>("/admin/social-publications/media", {
+          method: "POST",
+          token,
+          body: mediaData,
+        });
+        uploadedMediaUrl = uploadResponse.data.media_url;
+      }
+
       await adminApiRequest("/admin/social-publications", {
         method: "POST",
         token,
         body: {
           channel,
           caption,
-          media_url: mediaUrl.trim() || null,
+          media_url: uploadedMediaUrl,
           is_ai_generated: isAiGenerated,
         },
       });
       setCaption("");
-      setMediaUrl("");
+      clearMedia();
       setIsAiGenerated(false);
       showToast({ title: "Yayın taslağı oluşturuldu", tone: "success" });
       await load();
@@ -179,18 +229,48 @@ export default function SocialMediaPage() {
               </select>
             </label>
 
-            <label className="space-y-2">
-              <span className="text-sm font-bold text-[var(--color-admin-ink)]">Görselin HTTPS adresi</span>
+            <div className="space-y-2">
+              <span className="text-sm font-bold text-[var(--color-admin-ink)]">
+                Görsel {channel === "instagram" ? "(zorunlu)" : "(isteğe bağlı)"}
+              </span>
               <input
-                className="h-11 w-full rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm text-[var(--color-admin-ink)]"
-                onChange={(event) => setMediaUrl(event.target.value)}
-                placeholder="https://..."
-                required={channel === "instagram"}
-                type="url"
-                value={mediaUrl}
+                accept="image/jpeg,image/png,image/webp"
+                className="sr-only"
+                onChange={selectMedia}
+                ref={mediaInputRef}
+                type="file"
               />
-            </label>
+              <button
+                className="flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-dashed border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm font-bold text-[var(--color-admin-ink)] hover:border-[var(--color-admin-accent)]"
+                onClick={() => mediaInputRef.current?.click()}
+                type="button"
+              >
+                <ImageIcon size={17} />
+                {mediaFile ? "Başka Görsel Seç" : "Bilgisayardan Görsel Seç"}
+              </button>
+              <p className="text-xs text-[var(--color-admin-muted)]">JPG, PNG veya WebP · en fazla 10 MB</p>
+            </div>
           </div>
+
+          {mediaFile && mediaPreviewUrl ? (
+            <div className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]">
+              <div className="relative aspect-square max-h-[28rem] w-full">
+                <Image
+                  alt="Yüklenecek sosyal medya görseli önizlemesi"
+                  className="object-contain"
+                  fill
+                  src={mediaPreviewUrl}
+                  unoptimized
+                />
+              </div>
+              <div className="flex items-center justify-between gap-3 border-t border-[var(--color-admin-line)] px-4 py-3">
+                <p className="min-w-0 truncate text-sm font-semibold text-[var(--color-admin-ink)]">{mediaFile.name}</p>
+                <button className="inline-flex shrink-0 items-center gap-1 text-xs font-bold text-rose-700 hover:underline" onClick={clearMedia} type="button">
+                  <X size={14} /> Kaldır
+                </button>
+              </div>
+            </div>
+          ) : null}
 
           <label className="block space-y-2">
             <span className="text-sm font-bold text-[var(--color-admin-ink)]">Caption</span>
@@ -218,7 +298,11 @@ export default function SocialMediaPage() {
             </span>
           </label>
 
-          <button className="admin-button admin-button-primary" disabled={busyId === "new" || !caption.trim()} type="submit">
+          <button
+            className="admin-button admin-button-primary"
+            disabled={busyId === "new" || !caption.trim() || (channel === "instagram" && !mediaFile)}
+            type="submit"
+          >
             {busyId === "new" ? <LoaderCircle className="animate-spin" size={17} /> : <Send size={17} />}
             Taslak Oluştur
           </button>

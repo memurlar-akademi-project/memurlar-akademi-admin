@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import {
+  ArrowDown,
+  ArrowUp,
   Check,
   Camera,
   CircleCheck,
+  Film,
   ImageIcon,
+  Layers3,
   LoaderCircle,
   RefreshCcw,
   Send,
@@ -22,6 +26,19 @@ import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
 
 type Channel = "facebook" | "instagram";
+type ContentType = "text" | "link" | "single" | "carousel" | "video" | "reel" | "story";
+type MediaItem = {
+  url: string;
+  type: "image" | "video";
+  mime_type: string | null;
+  name: string | null;
+};
+type SelectedMedia = {
+  id: string;
+  file: File;
+  previewUrl: string;
+  type: "image" | "video";
+};
 type PublicationStatus =
   | "draft"
   | "awaiting_publish_approval"
@@ -34,8 +51,15 @@ type PublicationStatus =
 type SocialPublication = {
   id: number;
   channel: Channel;
+  content_type: ContentType;
   caption: string;
   media_url: string | null;
+  media_items: MediaItem[];
+  publish_settings: {
+    link_url?: string;
+    share_to_feed?: boolean;
+    cover_url?: string;
+  };
   is_ai_generated: boolean;
   status: PublicationStatus;
   approval_requested_at: string | null;
@@ -59,6 +83,16 @@ const statusLabels: Record<PublicationStatus, string> = {
   cancelled: "İptal edildi",
 };
 
+const contentTypeLabels: Record<ContentType, string> = {
+  text: "Metin",
+  link: "Link",
+  single: "Tek Görsel",
+  carousel: "Carousel",
+  video: "Video",
+  reel: "Reels",
+  story: "Story",
+};
+
 function formatDate(value: string | null) {
   if (!value) return "-";
   return new Intl.DateTimeFormat("tr-TR", { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
@@ -72,11 +106,15 @@ export default function SocialMediaPage() {
   const [loading, setLoading] = useState(true);
   const [busyId, setBusyId] = useState<number | "new" | null>(null);
   const [channel, setChannel] = useState<Channel>("instagram");
+  const [contentType, setContentType] = useState<ContentType>("single");
   const [caption, setCaption] = useState("");
-  const [mediaFile, setMediaFile] = useState<File | null>(null);
-  const [mediaPreviewUrl, setMediaPreviewUrl] = useState<string | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<SelectedMedia[]>([]);
+  const [linkUrl, setLinkUrl] = useState("");
+  const [shareToFeed, setShareToFeed] = useState(true);
   const [isAiGenerated, setIsAiGenerated] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState<string | null>(null);
   const mediaInputRef = useRef<HTMLInputElement>(null);
+  const selectedMediaRef = useRef<SelectedMedia[]>([]);
 
   const load = useCallback(async () => {
     if (!token) return;
@@ -100,56 +138,124 @@ export default function SocialMediaPage() {
   }, [load]);
 
   useEffect(() => {
-    return () => {
-      if (mediaPreviewUrl) URL.revokeObjectURL(mediaPreviewUrl);
-    };
-  }, [mediaPreviewUrl]);
+    selectedMediaRef.current = selectedMedia;
+  }, [selectedMedia]);
+
+  useEffect(() => () => {
+    selectedMediaRef.current.forEach((item) => URL.revokeObjectURL(item.previewUrl));
+  }, []);
 
   function selectMedia(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0] ?? null;
+    const files = Array.from(event.target.files ?? []);
+    const supportedTypes = ["image/jpeg", "image/png", "image/webp", "video/mp4", "video/quicktime"];
 
-    if (file && !["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-      showToast({ title: "JPG, PNG veya WebP görsel seçmelisin", tone: "error" });
+    if (files.some((file) => !supportedTypes.includes(file.type))) {
+      showToast({ title: "JPG, PNG, WebP, MP4 veya MOV dosyası seçmelisin", tone: "error" });
       event.target.value = "";
       return;
     }
-    if (file && file.size > 10 * 1024 * 1024) {
-      showToast({ title: "Görsel en fazla 10 MB olabilir", tone: "error" });
+    if (files.some((file) => file.size > 1024 * 1024 * 1024)) {
+      showToast({ title: "Her dosya en fazla 1 GB olabilir", tone: "error" });
+      event.target.value = "";
+      return;
+    }
+    if (selectedMedia.length + files.length > 10) {
+      showToast({ title: "Bir gönderiye en fazla 10 medya eklenebilir", tone: "error" });
       event.target.value = "";
       return;
     }
 
-    setMediaFile(file);
-    setMediaPreviewUrl(file ? URL.createObjectURL(file) : null);
+    const additions = files.map((file) => ({
+      id: `${file.name}-${file.lastModified}-${crypto.randomUUID()}`,
+      file,
+      previewUrl: URL.createObjectURL(file),
+      type: file.type.startsWith("video/") ? "video" as const : "image" as const,
+    }));
+    setSelectedMedia((current) => [...current, ...additions]);
+    if (selectedMedia.length + additions.length > 1) setContentType("carousel");
+    event.target.value = "";
   }
 
   function clearMedia() {
-    setMediaFile(null);
-    setMediaPreviewUrl(null);
+    selectedMedia.forEach((item) => URL.revokeObjectURL(item.previewUrl));
+    setSelectedMedia([]);
     if (mediaInputRef.current) mediaInputRef.current.value = "";
+  }
+
+  function removeMedia(id: string) {
+    setSelectedMedia((current) => {
+      const removed = current.find((item) => item.id === id);
+      if (removed) URL.revokeObjectURL(removed.previewUrl);
+      return current.filter((item) => item.id !== id);
+    });
+  }
+
+  function moveMedia(index: number, direction: -1 | 1) {
+    setSelectedMedia((current) => {
+      const next = [...current];
+      const target = index + direction;
+      if (target < 0 || target >= next.length) return current;
+      [next[index], next[target]] = [next[target], next[index]];
+      return next;
+    });
+  }
+
+  async function uploadSelectedFile(file: File): Promise<MediaItem> {
+    if (!token) throw new Error("Yönetici oturumu bulunamadı.");
+    const initialized = await adminApiRequest<{ upload_id: string; chunk_size: number; total_chunks: number }>(
+      "/admin/social-publications/media/uploads",
+      {
+        method: "POST",
+        token,
+        body: { name: file.name, size: file.size, mime_type: file.type },
+      },
+    );
+
+    const { upload_id: uploadId, chunk_size: chunkSize, total_chunks: totalChunks } = initialized.data;
+    for (let index = 0; index < totalChunks; index += 1) {
+      setUploadProgress(`${file.name} · ${index + 1}/${totalChunks} parça`);
+      const chunkData = new FormData();
+      chunkData.append("chunk", file.slice(index * chunkSize, Math.min(file.size, (index + 1) * chunkSize)), `${index}.part`);
+      await adminApiRequest(`/admin/social-publications/media/uploads/${uploadId}/chunks/${index}`, {
+        method: "POST",
+        token,
+        body: chunkData,
+      });
+    }
+
+    const finalized = await adminApiRequest<{ media_url: string; media_item: MediaItem }>(
+      `/admin/social-publications/media/uploads/${uploadId}/finalize`,
+      { method: "POST", token },
+    );
+    return finalized.data.media_item;
   }
 
   async function createDraft(event: FormEvent) {
     event.preventDefault();
     if (!token) return;
-    if (channel === "instagram" && !mediaFile) {
-      showToast({ title: "Instagram gönderisi için görsel seçmelisin", tone: "error" });
+    const mediaTypes = selectedMedia.map((item) => item.type);
+    const formatError =
+      contentType === "single" && (selectedMedia.length !== 1 || mediaTypes[0] !== "image")
+        ? "Tek görsel gönderisi için bir görsel seçmelisin"
+        : contentType === "carousel" && (selectedMedia.length < 2 || selectedMedia.length > 10)
+          ? "Carousel için 2–10 medya seçmelisin"
+          : contentType === "carousel" && channel === "facebook" && mediaTypes.some((type) => type !== "image")
+            ? "Facebook carousel yalnızca görsellerden oluşabilir"
+            : ["video", "reel"].includes(contentType) && (selectedMedia.length !== 1 || mediaTypes[0] !== "video")
+              ? "Video ve Reels için bir video seçmelisin"
+              : contentType === "story" && selectedMedia.length !== 1
+                ? "Story için bir görsel veya video seçmelisin"
+                : null;
+    if (formatError) {
+      showToast({ title: formatError, tone: "error" });
       return;
     }
 
     setBusyId("new");
     try {
-      let uploadedMediaUrl: string | null = null;
-
-      if (mediaFile) {
-        const mediaData = new FormData();
-        mediaData.append("media", mediaFile);
-        const uploadResponse = await adminApiRequest<{ media_url: string }>("/admin/social-publications/media", {
-          method: "POST",
-          token,
-          body: mediaData,
-        });
-        uploadedMediaUrl = uploadResponse.data.media_url;
+      const uploadedMedia: MediaItem[] = [];
+      for (const selected of selectedMedia) {
+        uploadedMedia.push(await uploadSelectedFile(selected.file));
       }
 
       await adminApiRequest("/admin/social-publications", {
@@ -157,19 +263,27 @@ export default function SocialMediaPage() {
         token,
         body: {
           channel,
+          content_type: contentType,
           caption,
-          media_url: uploadedMediaUrl,
+          media_items: uploadedMedia,
+          publish_settings: {
+            link_url: contentType === "link" ? linkUrl.trim() : null,
+            share_to_feed: contentType === "reel" ? shareToFeed : null,
+          },
           is_ai_generated: isAiGenerated,
         },
       });
       setCaption("");
       clearMedia();
+      setLinkUrl("");
+      setShareToFeed(true);
       setIsAiGenerated(false);
       showToast({ title: "Yayın taslağı oluşturuldu", tone: "success" });
       await load();
     } catch (error) {
       showToast({ title: "Taslak oluşturulamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
+      setUploadProgress(null);
       setBusyId(null);
     }
   }
@@ -221,7 +335,11 @@ export default function SocialMediaPage() {
               <span className="text-sm font-bold text-[var(--color-admin-ink)]">Mecra</span>
               <select
                 className="h-11 w-full rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm text-[var(--color-admin-ink)]"
-                onChange={(event) => setChannel(event.target.value as Channel)}
+                onChange={(event) => {
+                  const nextChannel = event.target.value as Channel;
+                  setChannel(nextChannel);
+                  if (nextChannel === "instagram" && ["text", "link"].includes(contentType)) setContentType("single");
+                }}
                 value={channel}
               >
                 <option value="instagram">Instagram</option>
@@ -229,13 +347,45 @@ export default function SocialMediaPage() {
               </select>
             </label>
 
-            <div className="space-y-2">
-              <span className="text-sm font-bold text-[var(--color-admin-ink)]">
-                Görsel {channel === "instagram" ? "(zorunlu)" : "(isteğe bağlı)"}
-              </span>
+            <label className="space-y-2">
+              <span className="text-sm font-bold text-[var(--color-admin-ink)]">Gönderi türü</span>
+              <select
+                className="h-11 w-full rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm text-[var(--color-admin-ink)]"
+                onChange={(event) => setContentType(event.target.value as ContentType)}
+                value={contentType}
+              >
+                {channel === "facebook" ? <option value="text">Metin</option> : null}
+                {channel === "facebook" ? <option value="link">Link</option> : null}
+                <option value="single">Tek Görsel</option>
+                <option value="carousel">Carousel</option>
+                <option value="video">Video</option>
+                <option value="reel">Reels</option>
+                <option value="story">Story</option>
+              </select>
+            </label>
+          </div>
+
+          {contentType === "link" ? (
+            <label className="block space-y-2">
+              <span className="text-sm font-bold text-[var(--color-admin-ink)]">Paylaşılacak HTTPS bağlantısı</span>
               <input
-                accept="image/jpeg,image/png,image/webp"
+                className="h-11 w-full rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm text-[var(--color-admin-ink)]"
+                onChange={(event) => setLinkUrl(event.target.value)}
+                placeholder="https://..."
+                required
+                type="url"
+                value={linkUrl}
+              />
+            </label>
+          ) : null}
+
+          {!["text", "link"].includes(contentType) ? (
+            <div className="space-y-2">
+              <span className="text-sm font-bold text-[var(--color-admin-ink)]">Görsel veya video</span>
+              <input
+                accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime"
                 className="sr-only"
+                multiple={contentType === "carousel"}
                 onChange={selectMedia}
                 ref={mediaInputRef}
                 type="file"
@@ -245,31 +395,50 @@ export default function SocialMediaPage() {
                 onClick={() => mediaInputRef.current?.click()}
                 type="button"
               >
-                <ImageIcon size={17} />
-                {mediaFile ? "Başka Görsel Seç" : "Bilgisayardan Görsel Seç"}
+                {contentType === "carousel" ? <Layers3 size={17} /> : contentType === "video" || contentType === "reel" ? <Film size={17} /> : <ImageIcon size={17} />}
+                {selectedMedia.length ? "Medya Ekle" : "Bilgisayardan Medya Seç"}
               </button>
-              <p className="text-xs text-[var(--color-admin-muted)]">JPG, PNG veya WebP · en fazla 10 MB</p>
+              <p className="text-xs text-[var(--color-admin-muted)]">JPG, PNG, WebP, MP4 veya MOV · dosya başına en fazla 1 GB</p>
             </div>
-          </div>
+          ) : null}
 
-          {mediaFile && mediaPreviewUrl ? (
-            <div className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]">
-              <div className="relative aspect-square max-h-[28rem] w-full">
-                <Image
-                  alt="Yüklenecek sosyal medya görseli önizlemesi"
-                  className="object-contain"
-                  fill
-                  src={mediaPreviewUrl}
-                  unoptimized
-                />
-              </div>
-              <div className="flex items-center justify-between gap-3 border-t border-[var(--color-admin-line)] px-4 py-3">
-                <p className="min-w-0 truncate text-sm font-semibold text-[var(--color-admin-ink)]">{mediaFile.name}</p>
-                <button className="inline-flex shrink-0 items-center gap-1 text-xs font-bold text-rose-700 hover:underline" onClick={clearMedia} type="button">
-                  <X size={14} /> Kaldır
-                </button>
+          {selectedMedia.length ? (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {selectedMedia.map((item, index) => (
+                <div className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)]" key={item.id}>
+                  <div className="relative aspect-square w-full">
+                    {item.type === "image" ? (
+                      <Image alt={`${index + 1}. medya önizlemesi`} className="object-contain" fill src={item.previewUrl} unoptimized />
+                    ) : (
+                      <video className="h-full w-full object-contain" controls preload="metadata" src={item.previewUrl} />
+                    )}
+                    <span className="absolute left-3 top-3 rounded-full bg-slate-950/80 px-2.5 py-1 text-xs font-bold text-white">{index + 1}</span>
+                  </div>
+                  <div className="space-y-3 border-t border-[var(--color-admin-line)] px-4 py-3">
+                    <p className="truncate text-sm font-semibold text-[var(--color-admin-ink)]">{item.file.name}</p>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex gap-1">
+                        <button aria-label="Yukarı taşı" className="rounded-lg border p-1.5 disabled:opacity-30" disabled={index === 0} onClick={() => moveMedia(index, -1)} type="button"><ArrowUp size={14} /></button>
+                        <button aria-label="Aşağı taşı" className="rounded-lg border p-1.5 disabled:opacity-30" disabled={index === selectedMedia.length - 1} onClick={() => moveMedia(index, 1)} type="button"><ArrowDown size={14} /></button>
+                      </div>
+                      <button className="inline-flex items-center gap-1 text-xs font-bold text-rose-700 hover:underline" onClick={() => removeMedia(item.id)} type="button">
+                        <X size={14} /> Kaldır
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div className="sm:col-span-2">
+                <button className="text-xs font-bold text-rose-700 hover:underline" onClick={clearMedia} type="button">Tüm medyayı kaldır</button>
               </div>
             </div>
+          ) : null}
+
+          {contentType === "reel" && channel === "instagram" ? (
+            <label className="flex items-start gap-3 rounded-xl border border-[var(--color-admin-line)] p-4">
+              <input checked={shareToFeed} className="mt-1 h-4 w-4" onChange={(event) => setShareToFeed(event.target.checked)} type="checkbox" />
+              <span className="text-sm font-bold text-[var(--color-admin-ink)]">Reels gönderisini Instagram akışında da göster</span>
+            </label>
           ) : null}
 
           <label className="block space-y-2">
@@ -279,7 +448,7 @@ export default function SocialMediaPage() {
               maxLength={2200}
               onChange={(event) => setCaption(event.target.value)}
               placeholder="Yayınlanacak son metin..."
-              required
+              required={contentType !== "story"}
               value={caption}
             />
             <span className="block text-right text-xs text-[var(--color-admin-muted)]">{caption.length}/2200</span>
@@ -300,11 +469,16 @@ export default function SocialMediaPage() {
 
           <button
             className="admin-button admin-button-primary"
-            disabled={busyId === "new" || !caption.trim() || (channel === "instagram" && !mediaFile)}
+            disabled={
+              busyId === "new"
+              || (contentType !== "story" && !caption.trim())
+              || (!["text", "link"].includes(contentType) && selectedMedia.length === 0)
+              || (contentType === "link" && !linkUrl.trim())
+            }
             type="submit"
           >
             {busyId === "new" ? <LoaderCircle className="animate-spin" size={17} /> : <Send size={17} />}
-            Taslak Oluştur
+            {uploadProgress ?? "Taslak Oluştur"}
           </button>
         </form>
       </AdminTableCard>
@@ -373,7 +547,9 @@ function PublicationCard({
               <p className="text-sm font-extrabold text-[var(--color-admin-ink)]">
                 {publication.channel === "facebook" ? "Facebook" : "Instagram"} · #{publication.id}
               </p>
-              <p className="mt-0.5 text-xs text-[var(--color-admin-muted)]">Oluşturma: {formatDate(publication.created_at)}</p>
+              <p className="mt-0.5 text-xs text-[var(--color-admin-muted)]">
+                {contentTypeLabels[publication.content_type] ?? publication.content_type} · Oluşturma: {formatDate(publication.created_at)}
+              </p>
             </div>
           </div>
           <span className={`inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-bold ${tone}`}>
@@ -382,9 +558,26 @@ function PublicationCard({
           </span>
         </div>
 
-        {publication.media_url ? (
-          <a className="flex items-center gap-2 break-all text-sm font-bold text-[var(--color-admin-accent)] hover:underline" href={publication.media_url} rel="noreferrer" target="_blank">
-            <ImageIcon size={16} /> Onaylanacak görseli aç
+        {publication.media_items?.length ? (
+          <div className="grid gap-2 sm:grid-cols-2">
+            {publication.media_items.map((item, index) => (
+              <a
+                className="flex items-center gap-2 rounded-xl border border-[var(--color-admin-line)] px-3 py-2 text-sm font-bold text-[var(--color-admin-accent)] hover:bg-[var(--color-admin-bg-raised)]"
+                href={item.url}
+                key={`${item.url}-${index}`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {item.type === "video" ? <Film size={16} /> : <ImageIcon size={16} />}
+                {index + 1}. {item.type === "video" ? "videoyu" : "görseli"} aç
+              </a>
+            ))}
+          </div>
+        ) : null}
+
+        {publication.content_type === "link" && publication.publish_settings.link_url ? (
+          <a className="break-all text-sm font-bold text-[var(--color-admin-accent)] hover:underline" href={publication.publish_settings.link_url} rel="noreferrer" target="_blank">
+            Paylaşılacak bağlantıyı aç
           </a>
         ) : null}
 

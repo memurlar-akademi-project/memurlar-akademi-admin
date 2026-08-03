@@ -17,6 +17,18 @@ const statusLabels: Record<AdminBlogPost["status"], string> = {
   archived: "Arşiv",
 };
 
+function effectiveStatus(post: AdminBlogPost): AdminBlogPost["status"] {
+  if (
+    post.status === "scheduled"
+    && post.published_at
+    && new Date(post.published_at).getTime() <= Date.now()
+  ) {
+    return "published";
+  }
+
+  return post.status;
+}
+
 export default function BlogPostsPage() {
   const { token } = useAdminAuth();
   const { showToast } = useAdminToast();
@@ -32,7 +44,7 @@ export default function BlogPostsPage() {
     const normalized = query.trim().toLocaleLowerCase("tr-TR");
 
     return items.filter((post) => {
-      if (status !== "all" && post.status !== status) return false;
+      if (status !== "all" && effectiveStatus(post) !== status) return false;
       if (!normalized) return true;
 
       return [post.title, post.slug, post.category]
@@ -145,9 +157,12 @@ export default function BlogPostsPage() {
                 </tr>
               </thead>
               <tbody>
-                {filtered.map((post) => (
-                  <tr key={post.id} className="border-b border-[var(--color-admin-line)] last:border-0">
-                    <td className="min-w-[360px] px-5 py-4">
+                {filtered.map((post) => {
+                  const displayStatus = effectiveStatus(post);
+
+                  return (
+                    <tr key={post.id} className="border-b border-[var(--color-admin-line)] last:border-0">
+                      <td className="min-w-[360px] px-5 py-4">
                       <div className="flex items-start gap-3">
                         {post.is_featured ? <Star size={17} className="mt-1 fill-[var(--color-admin-warn)] text-[var(--color-admin-warn)]" /> : null}
                         <div>
@@ -158,15 +173,15 @@ export default function BlogPostsPage() {
                     </td>
                     <td className="px-5 py-4">
                       <span className={`rounded-full px-3 py-1.5 text-xs font-extrabold ${
-                        post.status === "published"
+                        displayStatus === "published"
                           ? "bg-emerald-50 text-emerald-700"
-                          : post.status === "scheduled"
+                          : displayStatus === "scheduled"
                             ? "bg-sky-50 text-sky-700"
-                          : post.status === "draft"
+                          : displayStatus === "draft"
                             ? "bg-amber-50 text-amber-700"
                             : "bg-slate-100 text-slate-600"
                       }`}>
-                        {statusLabels[post.status]}
+                        {statusLabels[displayStatus]}
                       </span>
                     </td>
                     <td className="whitespace-nowrap px-5 py-4 text-sm text-[var(--color-admin-muted)]">
@@ -198,9 +213,10 @@ export default function BlogPostsPage() {
                           {deletingId === post.id ? "Siliniyor" : "Sil"}
                         </button>
                       </div>
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

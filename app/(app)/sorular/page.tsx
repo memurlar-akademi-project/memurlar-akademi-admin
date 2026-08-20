@@ -39,15 +39,17 @@ import { useAdminList } from "@/hooks/useAdminList";
 import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminExam, AdminMinistry, AdminQuestion, AdminSubject, AdminTopic } from "@/lib/types";
 
+type QuestionTypeFilter = "all" | "multiple_choice" | "true_false";
+
 type QuestionsListPageProps = {
-  questionType?: "multiple_choice" | "true_false";
+  questionType?: QuestionTypeFilter;
 };
 
-export function QuestionsListPage({ questionType = "multiple_choice" }: QuestionsListPageProps) {
+export function QuestionsListPage({ questionType = "all" }: QuestionsListPageProps) {
   const { token } = useAdminAuth();
   const { showToast } = useAdminToast();
-  const isTrueFalseList = questionType === "true_false";
   const [query, setQuery] = useState("");
+  const [questionTypeFilter, setQuestionTypeFilter] = useState<QuestionTypeFilter>(questionType);
   const [selectedMinistryId, setSelectedMinistryId] = useState("all");
   const [selectedExamId, setSelectedExamId] = useState("all");
   const [selectedSubjectId, setSelectedSubjectId] = useState("all");
@@ -75,7 +77,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
       exam_id: selectedExamId,
       subject_id: selectedSubjectId,
       topic_id: selectedTopicId,
-      question_type: questionType,
+      question_type: questionTypeFilter,
       q_version: qVersionFilter === "all" ? undefined : qVersionFilter,
       difficulty: difficultyFilter,
       status: statusFilter,
@@ -162,6 +164,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
   }, [
     deferredQuery,
     difficultyFilter,
+    questionTypeFilter,
     qVersionFilter,
     selectedExamId,
     selectedMinistryId,
@@ -621,6 +624,27 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
                 />
               </AdminListToolbarField>
 
+              <AdminListToolbarField className="min-w-[180px]">
+                <AdminFilterMenu
+                  compact
+                  icon={<ListChecks size={15} />}
+                  label="Soru Tipi"
+                  onChange={(nextQuestionType) => {
+                    setQuestionTypeFilter(nextQuestionType);
+
+                    if (nextQuestionType === "true_false") {
+                      setQVersionFilter("all");
+                    }
+                  }}
+                  options={[
+                    { value: "all", label: "Tüm soru tipleri" },
+                    { value: "multiple_choice", label: "Çoktan Seçmeli" },
+                    { value: "true_false", label: "Doğru / Yanlış" },
+                  ]}
+                  value={questionTypeFilter}
+                />
+              </AdminListToolbarField>
+
               <AdminListToolbarField className="min-w-[170px]">
                 <select
                   className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
@@ -647,7 +671,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
                 </select>
               </AdminListToolbarField>
 
-              {!isTrueFalseList ? (
+              {questionTypeFilter !== "true_false" ? (
                 <AdminListToolbarField className="min-w-[180px]">
                   <select
                     className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
@@ -671,6 +695,7 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
                     setSelectedExamId("all");
                     setSelectedSubjectId("all");
                     setSelectedTopicId(null);
+                    setQuestionTypeFilter(questionType);
                     setDifficultyFilter("all");
                     setStatusFilter("active");
                     setQVersionFilter("all");
@@ -718,7 +743,12 @@ export function QuestionsListPage({ questionType = "multiple_choice" }: Question
 
           <AdminListToolbarMeta>
             <AdminListToolbarMetaPill>
-              {pagination?.total ?? filteredRows.length} {isTrueFalseList ? "doğru / yanlış soru" : "çoktan seçmeli soru"}
+              {pagination?.total ?? filteredRows.length}{" "}
+              {questionTypeFilter === "true_false"
+                ? "doğru / yanlış soru"
+                : questionTypeFilter === "multiple_choice"
+                  ? "çoktan seçmeli soru"
+                  : "soru"}
             </AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>{filteredRows.length} kayıt bu sayfada</AdminListToolbarMetaPill>
             <AdminListToolbarMetaPill>Server-side filtreleme aktif</AdminListToolbarMetaPill>

@@ -81,6 +81,10 @@ function resolvePageMeta(pathname: string) {
     return { title: "Konu İçerikleri" };
   }
 
+  if (pathname === "/mevzuat-takibi") {
+    return { title: "Mevzuat Takibi" };
+  }
+
   if (pathname === "/sureler") {
     return { title: "Süre/Kural Dokümanı" };
   }

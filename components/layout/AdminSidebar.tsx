@@ -15,6 +15,7 @@ import {
   FileUp,
   ListChecks,
   Gauge,
+  Gavel,
   GraduationCap,
   Layers,
   LayoutDashboard,
@@ -67,6 +68,14 @@ const navigation = [
       { href: "/sorular/import", label: "Soru Import", icon: FileUp },
       { href: "/sorular/dogru-yanlis", label: "D/Y Soruları", icon: ListChecks },
       { href: "/sorular/dogru-yanlis-import", label: "D/Y Import", icon: ListChecks },
+    ],
+  },
+  {
+    id: "legal-monitoring",
+    title: "İçerik Güvenliği",
+    icon: Gavel,
+    items: [
+      { href: "/mevzuat-takibi", label: "Mevzuat Takibi", icon: Gavel },
     ],
   },
   {

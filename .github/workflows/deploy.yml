@@ -130,5 +130,8 @@ jobs:
           done
 
           pm2 save
-          docker image prune -f >/dev/null 2>&1 || true
+          # Keep active images and a seven-day rollback window. Persistent
+          # volumes are intentionally excluded from automated cleanup.
+          docker container prune --filter "until=168h" --force >/dev/null 2>&1 || true
+          docker image prune --all --filter "until=168h" --force >/dev/null 2>&1 || true
           REMOTE

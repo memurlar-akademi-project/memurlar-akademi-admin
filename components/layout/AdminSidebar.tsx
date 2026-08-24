@@ -29,6 +29,7 @@ import {
   ReceiptText,
   ScrollText,
   Send,
+  RadioTower,
   ShieldUser,
   Sparkles,
   Waypoints,
@@ -94,6 +95,7 @@ const navigation = [
     items: [
       { href: "/testler", label: "Testler", icon: Waypoints },
       { href: "/denemeler", label: "Denemeler", icon: FileAudio2 },
+      { href: "/canli-sinavlar", label: "Canlı Sınavlar", icon: RadioTower },
       { href: "/denemeler/soru-preview", label: "Deneme Soruları Preview", icon: Eye },
       { href: "/denemeler/preview", label: "Deneme Preview", icon: PencilRuler },
     ],

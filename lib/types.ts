@@ -910,3 +910,45 @@ export type AdminSubscriptionPlan = {
   price: number;
   order_count: number;
 };
+
+export type AdminLiveExamEvent = {
+  id: number;
+  exam_id: number;
+  mock_exam_id: number;
+  title: string;
+  slug: string;
+  status: string;
+  phase: string;
+  question_count: number;
+  duration_min: number;
+  registration_opens_at: string;
+  waiting_room_opens_at: string;
+  starts_at: string;
+  late_entry_ends_at: string;
+  ends_at: string;
+  submission_grace_ends_at: string;
+  rankings_built_at: string | null;
+  results_published_at: string | null;
+  questions_count: number;
+  participations_count: number;
+  results_count: number;
+  exam?: { id: number; name: string } | null;
+  mock_exam?: { id: number; title: string } | null;
+};
+
+export type AdminLiveExamQuestionAnalytics = {
+  id: number;
+  display_order: number;
+  question_text: string;
+  is_cancelled: boolean;
+  review_note: string | null;
+  answered_count: number;
+  empty_count: number;
+  options: Array<{
+    token: string;
+    label: string;
+    option_text: string;
+    is_correct: boolean;
+    answer_count: number;
+  }>;
+};

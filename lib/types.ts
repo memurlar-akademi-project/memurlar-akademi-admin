@@ -705,6 +705,7 @@ export type AdminMockExam = {
   scheduled_at?: string | null;
   is_tr_general?: boolean;
   is_free?: boolean;
+  sessions_count?: number;
   question_ids?: number[];
   exam: {
     id: number;

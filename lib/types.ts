@@ -706,6 +706,7 @@ export type AdminMockExam = {
   is_tr_general?: boolean;
   is_free?: boolean;
   sessions_count?: number;
+  selected_question_count?: number;
   question_ids?: number[];
   exam: {
     id: number;

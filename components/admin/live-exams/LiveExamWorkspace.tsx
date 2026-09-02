@@ -2,7 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Archive, ArrowLeft, BarChart3, CheckCircle2, Clock3, Loader2, LockKeyhole, Plus, RadioTower, RefreshCw, Send, Snowflake, UsersRound } from "lucide-react";
+import { Archive, ArrowLeft, BarChart3, CheckCircle2, Clock3, Loader2, LockKeyhole, Plus, RadioTower, RefreshCw, Save, Send, Snowflake, UsersRound } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
@@ -20,6 +20,10 @@ const initialForm = {
 function localIso(value: string) { return new Date(value).toISOString(); }
 function formatDate(value: string | null) { return value ? new Date(value).toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" }) : "—"; }
 function selectedQuestionCount(mockExam: AdminMockExam) { return mockExam.selected_question_count ?? mockExam.question_ids?.length ?? mockExam.question_count; }
+function dateTimeLocal(value: string) {
+  const date = new Date(value);
+  return new Date(date.getTime() - date.getTimezoneOffset() * 60_000).toISOString().slice(0, 16);
+}
 
 export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelectedId?: number | null }) {
   const { token } = useAdminAuth();
@@ -33,6 +37,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const isEditMode = initialSelectedId !== null;
 
   useEffect(() => { setTitle("Canlı Sınav Operasyonu"); return () => setTitle(null); }, [setTitle]);
 
@@ -55,16 +60,30 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
 
   useEffect(() => { void load(); }, [load]);
   useEffect(() => { if (selectedId) void loadDetail(selectedId); else setDetail(null); }, [loadDetail, selectedId]);
+  useEffect(() => {
+    if (!isEditMode || !detail) return;
+    setForm({
+      mock_exam_id: String(detail.event.mock_exam_id),
+      title: detail.event.title,
+      slug: detail.event.slug,
+      registration_opens_at: dateTimeLocal(detail.event.registration_opens_at),
+      starts_at: dateTimeLocal(detail.event.starts_at),
+      question_count: String(detail.event.question_count),
+      duration_min: String(detail.event.duration_min),
+    });
+  }, [detail, isEditMode]);
 
   const selectedMock = useMemo(() => mockExams.find((item) => item.id === Number(form.mock_exam_id)), [form.mock_exam_id, mockExams]);
 
-  async function createEvent(e: FormEvent) {
+  async function submitEvent(e: FormEvent) {
     e.preventDefault(); if (!token || !selectedMock || busy) return;
-    setBusy("create");
+    if (isEditMode && !selectedId) return;
+    setBusy("save");
     try {
       const start = new Date(form.starts_at);
-      const response = await adminApiRequest<{ event: AdminLiveExamEvent }>("/admin/live-exams", {
-        token, method: "POST", body: {
+      const endpoint = isEditMode ? `/admin/live-exams/${selectedId}` : "/admin/live-exams";
+      const response = await adminApiRequest<{ event: AdminLiveExamEvent }>(endpoint, {
+        token, method: isEditMode ? "PUT" : "POST", body: {
           exam_id: selectedMock.exam_id, mock_exam_id: selectedMock.id, title: form.title, slug: form.slug,
           question_count: Number(form.question_count), duration_min: Number(form.duration_min),
           registration_opens_at: localIso(form.registration_opens_at),
@@ -74,9 +93,11 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
           submission_grace_ends_at: new Date(start.getTime() + (Number(form.duration_min) * 60_000) + 60_000).toISOString(),
         },
       });
-      showToast({ tone: "success", title: "Canlı sınav oluşturuldu", description: response.data.event.title });
-      setSelectedId(response.data.event.id); await load();
-    } catch (reason) { showToast({ tone: "error", title: "Etkinlik oluşturulamadı", description: reason instanceof Error ? reason.message : "İşlem başarısız." }); }
+      showToast({ tone: "success", title: isEditMode ? "Canlı sınav güncellendi" : "Canlı sınav oluşturuldu", description: response.data.event.title });
+      setSelectedId(response.data.event.id);
+      await load();
+      if (isEditMode) await loadDetail(response.data.event.id);
+    } catch (reason) { showToast({ tone: "error", title: isEditMode ? "Etkinlik güncellenemedi" : "Etkinlik oluşturulamadı", description: reason instanceof Error ? reason.message : "İşlem başarısız." }); }
     finally { setBusy(null); }
   }
 
@@ -126,16 +147,16 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
     {error ? <div className="rounded-xl bg-red-50 p-4 text-sm font-bold text-red-700">{error}</div> : null}
     <div className="grid gap-6 2xl:grid-cols-[390px_1fr]">
       <aside className="space-y-5">
-        <form onSubmit={createEvent} className="space-y-4 rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] p-5">
-          <div className="flex items-center gap-2"><Plus size={17} /><h2 className="font-extrabold">Yeni etkinlik</h2></div>
+        <form onSubmit={submitEvent} className="space-y-4 rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] p-5">
+          <div className="flex items-center gap-2">{isEditMode ? <Save size={17} /> : <Plus size={17} />}<h2 className="font-extrabold">{isEditMode ? "Etkinliği düzenle" : "Yeni etkinlik"}</h2></div>
           <label className="admin-field"><span>Kaynak deneme</span><select required value={form.mock_exam_id} onChange={(e) => { const mock = mockExams.find((item) => item.id === Number(e.target.value)); setForm({ ...form, mock_exam_id: e.target.value, question_count: String(mock ? selectedQuestionCount(mock) : 100), duration_min: String(mock?.duration_min ?? 120) }); }}><option value="">Seç</option>{mockExams.map((item) => <option key={item.id} value={item.id} disabled={selectedQuestionCount(item) === 0}>{item.title} · {selectedQuestionCount(item)} seçili soru · {item.status === "active" ? "yayında" : "taslak"}{item.sessions_count ? ` · ${item.sessions_count} eski oturum` : ""}</option>)}</select></label>
           <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs font-semibold leading-5 text-amber-900">Seçilen deneme, canlı etkinlik oluşturulunca normal deneme ekranlarından otomatik gizlenir. Etkinlik iptal edilince veya sonuçlar yayınlanınca tekrar kendi yayın durumuna döner.</p>
           <label className="admin-field"><span>Başlık</span><input required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></label>
-          <label className="admin-field"><span>Slug</span><input required value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} /></label>
+          <label className="admin-field"><span>Slug</span><input required readOnly={isEditMode} title={isEditMode ? "Mevcut sınav güncellenirken slug korunur." : undefined} value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} /></label>
           <div className="grid grid-cols-2 gap-3"><label className="admin-field"><span>Soru</span><input type="number" required value={form.question_count} onChange={(e) => setForm({ ...form, question_count: e.target.value })} /></label><label className="admin-field"><span>Dakika</span><input type="number" required value={form.duration_min} onChange={(e) => setForm({ ...form, duration_min: e.target.value })} /></label></div>
           <label className="admin-field"><span>Kayıt açılışı</span><input type="datetime-local" required value={form.registration_opens_at} onChange={(e) => setForm({ ...form, registration_opens_at: e.target.value })} /></label>
           <label className="admin-field"><span>Sınav başlangıcı</span><input type="datetime-local" required value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></label>
-          <button className="admin-button admin-button-primary w-full justify-center" disabled={busy === "create"}>{busy === "create" ? <Loader2 className="animate-spin" size={16} /> : <Plus size={16} />}Etkinliği oluştur</button>
+          <button className="admin-button admin-button-primary w-full justify-center" disabled={busy === "save"}>{busy === "save" ? <Loader2 className="animate-spin" size={16} /> : isEditMode ? <Save size={16} /> : <Plus size={16} />}{isEditMode ? "Değişiklikleri kaydet" : "Etkinliği oluştur"}</button>
         </form>
         <section className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)]">
           <header className="border-b border-[var(--color-admin-line)] p-4 text-sm font-extrabold">Etkinlikler</header>

@@ -938,6 +938,29 @@ export type AdminLiveExamEvent = {
   mock_exam?: { id: number; title: string } | null;
 };
 
+export type AdminLiveExamParticipant = {
+  id: string;
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    phone: string | null;
+  };
+  status: "registered" | "in_progress" | "submitted";
+  registered_at: string | null;
+  started_at: string | null;
+  submitted_at: string | null;
+  spent_seconds: number;
+  answered_count: number | null;
+  submission_source: string | null;
+  result: {
+    net: number;
+    rank: number;
+    status: string;
+    published_at: string | null;
+  } | null;
+};
+
 export type AdminLiveExamQuestionAnalytics = {
   id: number;
   display_order: number;

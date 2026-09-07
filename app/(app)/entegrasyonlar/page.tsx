@@ -47,6 +47,27 @@ type MetaIntegration = {
   last_error: string | null;
 };
 
+type MetaAdsAccount = {
+  id: string;
+  name: string;
+  account_status: number | null;
+  currency: string | null;
+  timezone_name: string | null;
+};
+
+type MetaAdsIntegration = {
+  configured: boolean;
+  authorized: boolean;
+  callback_url: string;
+  available_accounts: MetaAdsAccount[];
+  selected_account: MetaAdsAccount | null;
+  authorized_at: string | null;
+  last_refreshed_at: string | null;
+  last_error: string | null;
+  automation: false;
+  change_approval_required: true;
+};
+
 type SocialAgentConnection = {
   connected: boolean;
   created_at: string | null;
@@ -65,27 +86,32 @@ export default function IntegrationsPage() {
   const { showToast } = useAdminToast();
   const [integration, setIntegration] = useState<ParasutIntegration | null>(null);
   const [metaIntegration, setMetaIntegration] = useState<MetaIntegration | null>(null);
+  const [metaAdsIntegration, setMetaAdsIntegration] = useState<MetaAdsIntegration | null>(null);
   const [socialAgent, setSocialAgent] = useState<SocialAgentConnection | null>(null);
   const [socialAgentToken, setSocialAgentToken] = useState("");
   const [loading, setLoading] = useState(true);
   const [connecting, setConnecting] = useState(false);
   const [metaBusy, setMetaBusy] = useState(false);
   const [selectedPageId, setSelectedPageId] = useState("");
+  const [selectedAdAccountId, setSelectedAdAccountId] = useState("");
 
   const load = useCallback(async () => {
     if (!token) return;
 
     setLoading(true);
     try {
-      const [parasutResponse, metaResponse, socialAgentResponse] = await Promise.all([
+      const [parasutResponse, metaResponse, metaAdsResponse, socialAgentResponse] = await Promise.all([
         adminApiRequest<ParasutIntegration>("/admin/integrations/parasut", { token }),
         adminApiRequest<MetaIntegration>("/admin/integrations/meta", { token }),
+        adminApiRequest<MetaAdsIntegration>("/admin/integrations/meta-ads", { token }),
         adminApiRequest<SocialAgentConnection>("/admin/integrations/social-agent", { token }),
       ]);
       setIntegration(parasutResponse.data);
       setMetaIntegration(metaResponse.data);
+      setMetaAdsIntegration(metaAdsResponse.data);
       setSocialAgent(socialAgentResponse.data);
       setSelectedPageId(metaResponse.data.selected_page?.id ?? metaResponse.data.available_pages[0]?.id ?? "");
+      setSelectedAdAccountId(metaAdsResponse.data.selected_account?.id ?? metaAdsResponse.data.available_accounts[0]?.id ?? "");
     } catch (error) {
       showToast({ title: "Entegrasyon durumları alınamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
@@ -167,6 +193,56 @@ export default function IntegrationsPage() {
     }
   }
 
+  async function connectMetaAds() {
+    if (!token) return;
+
+    setMetaBusy(true);
+    try {
+      const response = await adminApiRequest<{ authorization_url: string }>("/admin/integrations/meta-ads/start", {
+        method: "POST",
+        token,
+      });
+      window.location.assign(response.data.authorization_url);
+    } catch (error) {
+      setMetaBusy(false);
+      showToast({ title: "Meta Ads bağlantısı başlatılamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    }
+  }
+
+  async function selectMetaAdsAccount() {
+    if (!token || !selectedAdAccountId) return;
+
+    setMetaBusy(true);
+    try {
+      await adminApiRequest("/admin/integrations/meta-ads/select-account", {
+        method: "POST",
+        token,
+        body: { account_id: selectedAdAccountId },
+      });
+      showToast({ title: "Memurlar Akademi reklam hesabı seçildi", tone: "success" });
+      await load();
+    } catch (error) {
+      showToast({ title: "Reklam hesabı seçilemedi", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function disconnectMetaAds() {
+    if (!token || !window.confirm("Meta Ads bağlantısı kesilsin mi? Saklanan erişim anahtarları temizlenecek.")) return;
+
+    setMetaBusy(true);
+    try {
+      await adminApiRequest("/admin/integrations/meta-ads/disconnect", { method: "POST", token });
+      showToast({ title: "Meta Ads bağlantısı kesildi", tone: "success" });
+      await load();
+    } catch (error) {
+      showToast({ title: "Meta Ads bağlantısı kesilemedi", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
   async function rotateSocialAgentToken() {
     if (!token || !window.confirm("Yeni ajan anahtarı oluşturulsun mu? Varsa önceki ajan anahtarı hemen geçersiz olur.")) return;
 
@@ -215,6 +291,7 @@ export default function IntegrationsPage() {
 
   const isReady = integration?.configured && integration.authorized;
   const isMetaReady = metaIntegration?.configured && metaIntegration.authorized && metaIntegration.selected_page;
+  const isMetaAdsReady = metaAdsIntegration?.configured && metaAdsIntegration.authorized && metaAdsIntegration.selected_account;
 
   return (
     <div className="max-w-4xl space-y-5">
@@ -315,6 +392,99 @@ export default function IntegrationsPage() {
           <p className="flex items-center gap-2 text-xs leading-5 text-[var(--color-admin-muted)]">
             <Camera size={15} /> Erişim anahtarları bu ekranda gösterilmez; şifrelenmiş olarak backend tarafında saklanır.
           </p>
+        </div>
+      </AdminTableCard>
+
+      <AdminTableCard>
+        <div className="flex flex-col gap-5 p-5 sm:p-7">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
+            <div className="flex gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-600/10 text-indigo-700">
+                <PlugZap size={22} />
+              </div>
+              <div>
+                <h2 className="text-lg font-extrabold tracking-[-0.03em] text-[var(--color-admin-ink)]">Meta Ads Uzmanı</h2>
+                <p className="mt-1 max-w-xl text-sm leading-6 text-[var(--color-admin-muted)]">
+                  Uzmanın yalnız insan isteğiyle raporlama yapacağı ve açık onaydan sonra tekil kampanya değişikliği uygulayacağı reklam hesabını bağlar.
+                </p>
+              </div>
+            </div>
+            <button
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-indigo-700 px-4 text-sm font-bold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
+              disabled={loading || metaBusy || !metaAdsIntegration?.configured}
+              onClick={() => void connectMetaAds()}
+              type="button"
+            >
+              {metaBusy ? <LoaderCircle className="animate-spin" size={17} /> : <ExternalLink size={17} />}
+              {metaAdsIntegration?.authorized ? "Yetkiyi Yenile" : "Meta Ads'e Bağlan"}
+            </button>
+          </div>
+
+          <div className={`flex items-start gap-3 rounded-2xl border px-4 py-3 ${isMetaAdsReady ? "border-emerald-200 bg-emerald-50 text-emerald-800" : "border-amber-200 bg-amber-50 text-amber-900"}`}>
+            {isMetaAdsReady ? <CircleCheck className="mt-0.5 shrink-0" size={18} /> : <TriangleAlert className="mt-0.5 shrink-0" size={18} />}
+            <div>
+              <p className="text-sm font-bold">
+                {isMetaAdsReady ? "Reklam hesabı hazır" : metaAdsIntegration?.configured ? "Bağlantı veya hesap seçimi bekleniyor" : "Sunucu yapılandırması bekleniyor"}
+              </p>
+              <p className="mt-1 text-sm leading-5 opacity-80">
+                {isMetaAdsReady
+                  ? `${metaAdsIntegration.selected_account?.name} için görev-tetiklemeli raporlama etkin. Değişiklikler her işlemde açık onay ister.`
+                  : "Meta hesabını yetkilendir, ardından uzmanın çalışacağı tek reklam hesabını seç."}
+              </p>
+            </div>
+          </div>
+
+          {metaAdsIntegration?.authorized && metaAdsIntegration.available_accounts.length > 0 ? (
+            <div className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] p-4">
+              <label className="text-sm font-bold text-[var(--color-admin-ink)]" htmlFor="meta-ads-account">
+                Uzmanın çalışacağı reklam hesabı
+              </label>
+              <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                <select
+                  className="h-11 flex-1 rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] px-3 text-sm text-[var(--color-admin-ink)]"
+                  id="meta-ads-account"
+                  onChange={(event) => setSelectedAdAccountId(event.target.value)}
+                  value={selectedAdAccountId}
+                >
+                  {metaAdsIntegration.available_accounts.map((account) => (
+                    <option key={account.id} value={account.id}>
+                      {account.name || account.id}{account.currency ? ` · ${account.currency}` : ""}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  className="admin-button admin-button-primary"
+                  disabled={metaBusy || !selectedAdAccountId}
+                  onClick={() => void selectMetaAdsAccount()}
+                  type="button"
+                >
+                  Hesabı Seç
+                </button>
+              </div>
+            </div>
+          ) : null}
+
+          {metaAdsIntegration?.selected_account ? (
+            <dl className="grid gap-3 sm:grid-cols-2">
+              <StatusItem label="Reklam hesabı" value={metaAdsIntegration.selected_account.name || metaAdsIntegration.selected_account.id} />
+              <StatusItem label="Para birimi" value={metaAdsIntegration.selected_account.currency ?? "-"} />
+            </dl>
+          ) : null}
+
+          {metaAdsIntegration?.last_error ? (
+            <p className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-5 text-rose-800">Son hata: {metaAdsIntegration.last_error}</p>
+          ) : null}
+
+          <div className="flex flex-wrap items-center gap-4">
+            <button className="inline-flex items-center gap-2 text-sm font-bold text-indigo-700 hover:underline" onClick={() => void load()} type="button">
+              <RefreshCcw size={15} /> Durumu yenile
+            </button>
+            {metaAdsIntegration?.authorized ? (
+              <button className="inline-flex items-center gap-2 text-sm font-bold text-rose-700 hover:underline" disabled={metaBusy} onClick={() => void disconnectMetaAds()} type="button">
+                <Unplug size={15} /> Bağlantıyı kes
+              </button>
+            ) : null}
+          </div>
         </div>
       </AdminTableCard>
 

@@ -561,7 +561,7 @@ export default function IntegrationsPage() {
                   </p>
                   <p className="mt-2 text-xs leading-5 text-[var(--color-admin-muted)]">
                     {metaAdsAgent?.connected
-                      ? `Oluşturma: ${formatDate(metaAdsAgent.created_at)} · Son kullanım: ${formatDate(metaAdsAgent.last_used_at)} · Bitiş: ${formatDate(metaAdsAgent.expires_at)}`
+                  ? `Oluşturma: ${formatDate(metaAdsAgent.created_at)} · Son kullanım: ${formatDate(metaAdsAgent.last_used_at)} · Siz iptal edene kadar geçerli.`
                       : "Anahtar oluşturulduğunda uzman görevi doğrudan Meta Marketing API üzerinden yürütür."}
                   </p>
                 </div>

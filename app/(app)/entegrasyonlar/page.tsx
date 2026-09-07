@@ -68,6 +68,13 @@ type MetaAdsIntegration = {
   change_approval_required: true;
 };
 
+type MetaAdsReport = {
+  since: string;
+  until: string;
+  active_campaign_count: number;
+  active_campaigns: Array<{ id: string; name: string }>;
+};
+
 type SocialAgentConnection = {
   connected: boolean;
   created_at: string | null;
@@ -87,6 +94,7 @@ export default function IntegrationsPage() {
   const [integration, setIntegration] = useState<ParasutIntegration | null>(null);
   const [metaIntegration, setMetaIntegration] = useState<MetaIntegration | null>(null);
   const [metaAdsIntegration, setMetaAdsIntegration] = useState<MetaAdsIntegration | null>(null);
+  const [metaAdsReport, setMetaAdsReport] = useState<MetaAdsReport | null>(null);
   const [socialAgent, setSocialAgent] = useState<SocialAgentConnection | null>(null);
   const [socialAgentToken, setSocialAgentToken] = useState("");
   const [loading, setLoading] = useState(true);
@@ -213,6 +221,7 @@ export default function IntegrationsPage() {
     if (!token || !selectedAdAccountId) return;
 
     setMetaBusy(true);
+    setMetaAdsReport(null);
     try {
       await adminApiRequest("/admin/integrations/meta-ads/select-account", {
         method: "POST",
@@ -232,12 +241,28 @@ export default function IntegrationsPage() {
     if (!token || !window.confirm("Meta Ads bağlantısı kesilsin mi? Saklanan erişim anahtarları temizlenecek.")) return;
 
     setMetaBusy(true);
+    setMetaAdsReport(null);
     try {
       await adminApiRequest("/admin/integrations/meta-ads/disconnect", { method: "POST", token });
       showToast({ title: "Meta Ads bağlantısı kesildi", tone: "success" });
       await load();
     } catch (error) {
       showToast({ title: "Meta Ads bağlantısı kesilemedi", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function loadMetaAdsReport() {
+    if (!token || !isMetaAdsReady) return;
+
+    setMetaBusy(true);
+    try {
+      const response = await adminApiRequest<MetaAdsReport>("/admin/integrations/meta-ads/report", { token });
+      setMetaAdsReport(response.data);
+      showToast({ title: "Meta Ads raporu alındı", description: `Aktif kampanya: ${response.data.active_campaign_count}`, tone: "success" });
+    } catch (error) {
+      showToast({ title: "Meta Ads raporu alınamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
       setMetaBusy(false);
     }
@@ -471,11 +496,28 @@ export default function IntegrationsPage() {
             </dl>
           ) : null}
 
+          {metaAdsReport ? (
+            <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-4 text-indigo-950">
+              <p className="text-sm font-bold">İnsan isteğiyle alınan son rapor</p>
+              <p className="mt-1 text-sm leading-5">{metaAdsReport.since} – {metaAdsReport.until} · Aktif kampanya: <strong>{metaAdsReport.active_campaign_count}</strong></p>
+              {metaAdsReport.active_campaigns.length > 0 ? (
+                <ul className="mt-3 list-inside list-disc text-sm leading-6">
+                  {metaAdsReport.active_campaigns.map((campaign) => <li key={campaign.id}>{campaign.name || campaign.id}</li>)}
+                </ul>
+              ) : null}
+            </div>
+          ) : null}
+
           {metaAdsIntegration?.last_error ? (
             <p className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-5 text-rose-800">Son hata: {metaAdsIntegration.last_error}</p>
           ) : null}
 
           <div className="flex flex-wrap items-center gap-4">
+            {isMetaAdsReady ? (
+              <button className="inline-flex items-center gap-2 text-sm font-bold text-indigo-700 hover:underline" disabled={metaBusy} onClick={() => void loadMetaAdsReport()} type="button">
+                <RefreshCcw size={15} /> Son 30 Gün Raporunu Al
+              </button>
+            ) : null}
             <button className="inline-flex items-center gap-2 text-sm font-bold text-indigo-700 hover:underline" onClick={() => void load()} type="button">
               <RefreshCcw size={15} /> Durumu yenile
             </button>

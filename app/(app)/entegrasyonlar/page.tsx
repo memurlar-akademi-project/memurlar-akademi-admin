@@ -81,6 +81,10 @@ type SocialAgentConnection = {
   last_used_at: string | null;
 };
 
+type MetaAdsAgentConnection = SocialAgentConnection & {
+  expires_at: string | null;
+};
+
 function formatDate(value: string | null) {
   if (!value) return "-";
 
@@ -95,6 +99,8 @@ export default function IntegrationsPage() {
   const [metaIntegration, setMetaIntegration] = useState<MetaIntegration | null>(null);
   const [metaAdsIntegration, setMetaAdsIntegration] = useState<MetaAdsIntegration | null>(null);
   const [metaAdsReport, setMetaAdsReport] = useState<MetaAdsReport | null>(null);
+  const [metaAdsAgent, setMetaAdsAgent] = useState<MetaAdsAgentConnection | null>(null);
+  const [metaAdsAgentToken, setMetaAdsAgentToken] = useState("");
   const [socialAgent, setSocialAgent] = useState<SocialAgentConnection | null>(null);
   const [socialAgentToken, setSocialAgentToken] = useState("");
   const [loading, setLoading] = useState(true);
@@ -108,15 +114,17 @@ export default function IntegrationsPage() {
 
     setLoading(true);
     try {
-      const [parasutResponse, metaResponse, metaAdsResponse, socialAgentResponse] = await Promise.all([
+      const [parasutResponse, metaResponse, metaAdsResponse, metaAdsAgentResponse, socialAgentResponse] = await Promise.all([
         adminApiRequest<ParasutIntegration>("/admin/integrations/parasut", { token }),
         adminApiRequest<MetaIntegration>("/admin/integrations/meta", { token }),
         adminApiRequest<MetaAdsIntegration>("/admin/integrations/meta-ads", { token }),
+        adminApiRequest<MetaAdsAgentConnection>("/admin/integrations/meta-ads-agent", { token }),
         adminApiRequest<SocialAgentConnection>("/admin/integrations/social-agent", { token }),
       ]);
       setIntegration(parasutResponse.data);
       setMetaIntegration(metaResponse.data);
       setMetaAdsIntegration(metaAdsResponse.data);
+      setMetaAdsAgent(metaAdsAgentResponse.data);
       setSocialAgent(socialAgentResponse.data);
       setSelectedPageId(metaResponse.data.selected_page?.id ?? metaResponse.data.available_pages[0]?.id ?? "");
       setSelectedAdAccountId(metaAdsResponse.data.selected_account?.id ?? metaAdsResponse.data.available_accounts[0]?.id ?? "");
@@ -263,6 +271,53 @@ export default function IntegrationsPage() {
       showToast({ title: "Meta Ads raporu alındı", description: `Aktif kampanya: ${response.data.active_campaign_count}`, tone: "success" });
     } catch (error) {
       showToast({ title: "Meta Ads raporu alınamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function rotateMetaAdsAgentToken() {
+    if (!token || !window.confirm("Meta Ads uzmanı için yeni API anahtarı oluşturulsun mu? Varsa önceki anahtar hemen geçersiz olur.")) return;
+
+    setMetaBusy(true);
+    setMetaAdsAgentToken("");
+    try {
+      const response = await adminApiRequest<{ plain_text_token: string; created_at: string | null; expires_at: string | null }>("/admin/integrations/meta-ads-agent/rotate", {
+        method: "POST",
+        token,
+      });
+      setMetaAdsAgentToken(response.data.plain_text_token);
+      setMetaAdsAgent({
+        connected: true,
+        created_at: response.data.created_at,
+        expires_at: response.data.expires_at,
+        last_used_at: null,
+      });
+      showToast({ title: "Meta Ads uzmanı anahtarı oluşturuldu", description: "Anahtarı şimdi güvenli anahtar kasasına kopyala; bu ekrandan ayrılınca tekrar gösterilmez.", tone: "success" });
+    } catch (error) {
+      showToast({ title: "Meta Ads uzmanı anahtarı oluşturulamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
+    } finally {
+      setMetaBusy(false);
+    }
+  }
+
+  async function copyMetaAdsAgentToken() {
+    if (!metaAdsAgentToken) return;
+    await navigator.clipboard.writeText(metaAdsAgentToken);
+    showToast({ title: "Meta Ads uzmanı anahtarı panoya kopyalandı", tone: "success" });
+  }
+
+  async function disconnectMetaAdsAgent() {
+    if (!token || !window.confirm("Meta Ads uzmanının API erişimi kaldırılsın mı? Uzman canlı rapor ve değişiklik önizlemesi alamaz.")) return;
+
+    setMetaBusy(true);
+    try {
+      await adminApiRequest("/admin/integrations/meta-ads-agent", { method: "DELETE", token });
+      setMetaAdsAgentToken("");
+      setMetaAdsAgent({ connected: false, created_at: null, expires_at: null, last_used_at: null });
+      showToast({ title: "Meta Ads uzmanı erişimi kaldırıldı", tone: "success" });
+    } catch (error) {
+      showToast({ title: "Meta Ads uzmanı erişimi kaldırılamadı", description: error instanceof Error ? error.message : undefined, tone: "error" });
     } finally {
       setMetaBusy(false);
     }
@@ -494,6 +549,45 @@ export default function IntegrationsPage() {
               <StatusItem label="Reklam hesabı" value={metaAdsIntegration.selected_account.name || metaAdsIntegration.selected_account.id} />
               <StatusItem label="Para birimi" value={metaAdsIntegration.selected_account.currency ?? "-"} />
             </dl>
+          ) : null}
+
+          {isMetaAdsReady ? (
+            <div className={`rounded-2xl border p-4 ${metaAdsAgent?.connected ? "border-emerald-200 bg-emerald-50" : "border-amber-200 bg-amber-50"}`}>
+              <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
+                <div>
+                  <p className="text-sm font-bold text-[var(--color-admin-ink)]">Uzmanın API erişimi</p>
+                  <p className="mt-1 text-sm leading-5 text-[var(--color-admin-muted)]">
+                    Tarayıcı kullanmadan, yalnız seçili hesap için canlı rapor ve onay-korumalı değişiklik akışı sağlar.
+                  </p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--color-admin-muted)]">
+                    {metaAdsAgent?.connected
+                      ? `Oluşturma: ${formatDate(metaAdsAgent.created_at)} · Son kullanım: ${formatDate(metaAdsAgent.last_used_at)} · Bitiş: ${formatDate(metaAdsAgent.expires_at)}`
+                      : "Anahtar oluşturulduğunda uzman görevi doğrudan Meta Marketing API üzerinden yürütür."}
+                  </p>
+                </div>
+                <button className="admin-button admin-button-primary" disabled={metaBusy} onClick={() => void rotateMetaAdsAgentToken()} type="button">
+                  {metaBusy ? <LoaderCircle className="animate-spin" size={17} /> : <KeyRound size={17} />}
+                  {metaAdsAgent?.connected ? "Anahtarı Yenile" : "API Anahtarı Oluştur"}
+                </button>
+              </div>
+
+              {metaAdsAgentToken ? (
+                <div className="mt-4 rounded-xl border border-indigo-200 bg-white p-3">
+                  <p className="text-sm font-bold text-indigo-950">Bu anahtar yalnızca şimdi gösteriliyor</p>
+                  <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+                    <input aria-label="Meta Ads uzmanı anahtarı" className="h-11 min-w-0 flex-1 rounded-xl border border-indigo-300 bg-white px-3 font-mono text-xs text-slate-900" readOnly type="password" value={metaAdsAgentToken} />
+                    <button className="admin-button admin-button-primary" onClick={() => void copyMetaAdsAgentToken()} type="button"><Copy size={16} /> Panoya Kopyala</button>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-indigo-800">Anahtarı yalnız bu cihazın güvenli anahtar kasasına kaydet; mesaj, e-posta veya dosya ile paylaşma.</p>
+                </div>
+              ) : null}
+
+              {metaAdsAgent?.connected ? (
+                <button className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-bold text-rose-700 hover:underline" disabled={metaBusy} onClick={() => void disconnectMetaAdsAgent()} type="button">
+                  <Unplug size={15} /> API erişimini kaldır
+                </button>
+              ) : null}
+            </div>
           ) : null}
 
           {metaAdsReport ? (

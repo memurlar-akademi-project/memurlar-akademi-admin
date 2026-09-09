@@ -12,7 +12,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
-import type { AdminExam, AdminMockExam, AdminQuestion } from "@/lib/types";
+import type { AdminExam, AdminMockExam, AdminPaginationMeta, AdminQuestion } from "@/lib/types";
 
 const emptyForm = {
   exam_id: null as number | null,
@@ -79,24 +79,70 @@ function uniqueQuestions(questions: AdminQuestion[]) {
 }
 
 async function fetchApprovedQuestions(token: string, params: QuestionSearchParams = {}) {
-  const searchParams = new URLSearchParams({
-    per_page: "1000",
-    approval_status: "approved",
-    status: "active",
-    question_type: "multiple_choice",
-  });
+  const questions: AdminQuestion[] = [];
+  let page = 1;
+  let lastPage = 1;
 
-  if (params.questionBankType) {
-    searchParams.set("question_bank_type", params.questionBankType);
+  do {
+    const searchParams = new URLSearchParams({
+      per_page: "500",
+      page: String(page),
+      approval_status: "approved",
+      status: "active",
+      question_type: "multiple_choice",
+    });
+
+    if (params.questionBankType) {
+      searchParams.set("question_bank_type", params.questionBankType);
+    }
+
+    if (params.subjectId) {
+      searchParams.set("subject_id", String(params.subjectId));
+    }
+
+    const response = await adminApiRequest<{ questions: AdminQuestion[] }>(
+      `/admin/questions?${searchParams.toString()}`,
+      { token },
+    );
+
+    questions.push(...response.data.questions);
+    lastPage = parsePagination(response.meta.pagination)?.last_page ?? page;
+    page += 1;
+  } while (page <= lastPage);
+
+  return questions;
+}
+
+async function fetchQuestionsByIds(token: string, questionIds: number[]) {
+  if (questionIds.length === 0) {
+    return [];
   }
 
-  if (params.subjectId) {
-    searchParams.set("subject_id", String(params.subjectId));
+  const questions: AdminQuestion[] = [];
+
+  for (let offset = 0; offset < questionIds.length; offset += 500) {
+    const ids = questionIds.slice(offset, offset + 500);
+    const response = await adminApiRequest<{ questions: AdminQuestion[] }>(
+      `/admin/questions?ids=${encodeURIComponent(ids.join(","))}&per_page=500`,
+      { token },
+    );
+
+    questions.push(...response.data.questions);
   }
 
-  const response = await adminApiRequest<{ questions: AdminQuestion[] }>(`/admin/questions?${searchParams.toString()}`, { token });
+  return uniqueQuestions(questions);
+}
 
-  return response.data.questions;
+function parsePagination(value: unknown): AdminPaginationMeta | null {
+  if (!value || typeof value !== "object") {
+    return null;
+  }
+
+  const pagination = value as Partial<AdminPaginationMeta>;
+
+  return typeof pagination.last_page === "number"
+    ? pagination as AdminPaginationMeta
+    : null;
 }
 
 function buildLocalDraft(
@@ -220,6 +266,7 @@ export function MockExamFormPage({
   const [examsLoading, setExamsLoading] = useState(true);
   const [questionsLoading, setQuestionsLoading] = useState(true);
   const [loading, setLoading] = useState(mode === "edit");
+  const [selectedQuestionsHydrated, setSelectedQuestionsHydrated] = useState(mode !== "edit");
   const [saving, setSaving] = useState(false);
   const [autoDrafting, setAutoDrafting] = useState(false);
   const [autoDraftSummary, setAutoDraftSummary] = useState<MockExamAutoDraftResponse["summary"] | null>(null);
@@ -276,7 +323,7 @@ export function MockExamFormPage({
           return;
         }
 
-        setQuestions(uniqueQuestions([...mockQuestions, ...practiceQuestions]));
+        setQuestions((current) => uniqueQuestions([...current, ...mockQuestions, ...practiceQuestions]));
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Deneme soru havuzu yüklenemedi.");
@@ -301,19 +348,25 @@ export function MockExamFormPage({
       return;
     }
 
+    const authToken = token;
     let cancelled = false;
 
     async function loadExam() {
       setLoading(true);
+      setSelectedQuestionsHydrated(false);
       setError(null);
 
       try {
-        const response = await adminApiRequest<{ mock_exam: AdminMockExam }>(`/admin/mock-exams/${id}`, { token });
+        const response = await adminApiRequest<{ mock_exam: AdminMockExam }>(`/admin/mock-exams/${id}`, { token: authToken });
         const item = response.data.mock_exam;
+        const questionIds = item.question_ids ?? [];
+        const selectedQuestions = await fetchQuestionsByIds(authToken, questionIds);
 
         if (cancelled) {
           return;
         }
+
+        setQuestions((current) => uniqueQuestions([...current, ...selectedQuestions]));
 
         setForm({
           exam_id: item.exam?.id ?? item.exam_id ?? null,
@@ -324,8 +377,9 @@ export function MockExamFormPage({
           scheduled_at: "",
           is_tr_general: Boolean(item.is_tr_general),
           is_free: Boolean(item.is_free),
-          question_ids: item.question_ids ?? [],
+          question_ids: questionIds,
         });
+        setSelectedQuestionsHydrated(true);
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Deneme kaydı yüklenemedi.");
@@ -591,6 +645,10 @@ export function MockExamFormPage({
   }, [selectedQuestions]);
 
   useEffect(() => {
+    if (loading || examsLoading || questionsLoading || !selectedQuestionsHydrated) {
+      return;
+    }
+
     if (!form.exam_id) {
       if (form.question_ids.length > 0) {
         setForm((current) => ({ ...current, question_ids: [] }));
@@ -611,7 +669,16 @@ export function MockExamFormPage({
     if (nextIds.length !== form.question_ids.length) {
       setForm((current) => ({ ...current, question_ids: nextIds }));
     }
-  }, [examQuestions, form.exam_id, form.question_ids, unavailableQuestionIds]);
+  }, [
+    examQuestions,
+    examsLoading,
+    form.exam_id,
+    form.question_ids,
+    loading,
+    questionsLoading,
+    selectedQuestionsHydrated,
+    unavailableQuestionIds,
+  ]);
 
   useEffect(() => {
     setActiveSelectedQuestionIndex(0);

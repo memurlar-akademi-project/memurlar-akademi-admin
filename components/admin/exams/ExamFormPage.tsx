@@ -3,6 +3,7 @@
 import { CalendarDays, Check, GraduationCap, Plus, Search, ShieldCheck, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState } from "react";
+import { AdminOrderedMultiSelect } from "@/components/admin/AdminOrderedMultiSelect";
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
 import { AdminReadinessPanel } from "@/components/admin/crud/AdminReadinessPanel";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
@@ -28,6 +29,7 @@ const emptyForm = {
   passing_score: "",
   is_active_for_signup: true,
   topic_ids: [] as number[],
+  subject_ids: [] as number[],
   sections: [] as ExamSectionForm[],
 };
 
@@ -196,16 +198,21 @@ export function ExamFormPage({
     });
   }, [activeTopicGroup, showOnlySelectedTopics, topicDraftIds, topicModalQuery]);
 
-  const selectedTopicGroups = useMemo(
-    () =>
-      topicGroups
+  const selectedTopicGroups = useMemo(() => {
+    const subjectOrder = new Map(form.subject_ids.map((subjectId, index) => [subjectId, index]));
+
+    return topicGroups
         .map((group) => ({
           ...group,
           topics: group.topics.filter((topic) => selectedTopicIdSet.has(topic.id)),
         }))
-        .filter((group) => group.topics.length > 0),
-    [selectedTopicIdSet, topicGroups],
-  );
+        .filter((group) => group.topics.length > 0)
+        .sort((left, right) =>
+          (subjectOrder.get(left.subjectId) ?? Number.MAX_SAFE_INTEGER)
+          - (subjectOrder.get(right.subjectId) ?? Number.MAX_SAFE_INTEGER)
+          || left.subjectId - right.subjectId,
+        );
+  }, [form.subject_ids, selectedTopicIdSet, topicGroups]);
 
   const selectedExamSubjects = useMemo(
     () =>
@@ -405,6 +412,11 @@ export function ExamFormPage({
             passing_score: exam.passing_score !== null && exam.passing_score !== undefined ? String(exam.passing_score) : "",
             is_active_for_signup: exam.is_active_for_signup,
             topic_ids: exam.topic_ids ?? [],
+            subject_ids: exam.subject_ids ?? Array.from(new Set(
+              (exam.topic_ids ?? [])
+                .map((topicId) => topicsResponse.data.topics.find((topic) => topic.id === topicId)?.subject_id)
+                .filter((subjectId): subjectId is number => subjectId !== undefined),
+            )),
             sections: (exam.sections ?? []).map((section) => ({
               client_id: `existing-${section.id}`,
               title: section.title,
@@ -474,6 +486,7 @@ export function ExamFormPage({
           passing_score: form.passing_score ? Number(form.passing_score) : null,
           is_active_for_signup: form.is_active_for_signup,
           topic_ids: form.topic_ids,
+          subject_ids: selectedExamSubjects.map((subject) => subject.id),
           sections: sectionSubjects
             .map(({ subject, questionCount }) => ({
               title: subject.name,
@@ -550,10 +563,22 @@ export function ExamFormPage({
 
     setForm((current) => {
       const otherTopicIds = current.topic_ids.filter((topicId) => !activeTopicIds.has(topicId));
+      const topicIds = normalizeTopicIds([...otherTopicIds, ...Array.from(topicDraftIds)]);
+      const selectedSubjectIds = new Set(
+        topics.filter((topic) => topicIds.includes(topic.id)).map((topic) => topic.subject_id),
+      );
+      const subjectIds = current.subject_ids.filter((subjectId) => selectedSubjectIds.has(subjectId));
+
+      topicGroups.forEach((group) => {
+        if (selectedSubjectIds.has(group.subjectId) && !subjectIds.includes(group.subjectId)) {
+          subjectIds.push(group.subjectId);
+        }
+      });
 
       return {
         ...current,
-        topic_ids: normalizeTopicIds([...otherTopicIds, ...Array.from(topicDraftIds)]),
+        topic_ids: topicIds,
+        subject_ids: subjectIds,
       };
     });
     closeTopicModal();
@@ -894,6 +919,21 @@ export function ExamFormPage({
                       )}
                       </div>
                     </div>
+
+                    <AdminOrderedMultiSelect
+                      entityLabel="Ders"
+                      entityPluralLabel="Dersler"
+                      helperText="Seçtiğin derslerin öğrenci ekranlarında hangi sırayla gösterileceğini belirler. Sıra yalnızca bu sınav için geçerlidir."
+                      label="Ders Gösterim Sırası"
+                      onChange={(subjectIds) => setForm((current) => ({ ...current, subject_ids: subjectIds }))}
+                      options={selectedExamSubjects.map((subject) => ({
+                        id: subject.id,
+                        label: subject.name,
+                        hint: subject.code ?? undefined,
+                      }))}
+                      orderingOnly
+                      value={selectedExamSubjects.map((subject) => subject.id)}
+                    />
 
                     <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)] p-4">
                       <div className="flex flex-wrap items-center justify-between gap-3">

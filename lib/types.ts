@@ -173,6 +173,7 @@ export type AdminExam = {
   passing_score: number | null;
   is_active_for_signup: boolean;
   topic_ids: number[];
+  subject_ids: number[];
   sections: AdminExamSection[];
   ministry: {
     id: number;

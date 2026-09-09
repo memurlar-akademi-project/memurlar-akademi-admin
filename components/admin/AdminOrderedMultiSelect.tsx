@@ -17,6 +17,7 @@ export function AdminOrderedMultiSelect({
   helperText,
   entityLabel = "Ders",
   entityPluralLabel = "Dersler",
+  orderingOnly = false,
 }: {
   label: string;
   options: Option[];
@@ -25,6 +26,7 @@ export function AdminOrderedMultiSelect({
   helperText?: string;
   entityLabel?: string;
   entityPluralLabel?: string;
+  orderingOnly?: boolean;
 }) {
   const [query, setQuery] = useState("");
 
@@ -97,6 +99,7 @@ export function AdminOrderedMultiSelect({
       </div>
 
       <div className="space-y-4">
+        {!orderingOnly ? (
         <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--color-admin-muted)]">
@@ -143,6 +146,7 @@ export function AdminOrderedMultiSelect({
             )}
           </div>
         </div>
+        ) : null}
 
         <div className="space-y-3 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -157,7 +161,7 @@ export function AdminOrderedMultiSelect({
           <div className="h-72 overflow-y-auto rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-panel)]">
             {selectedOptions.length === 0 ? (
               <p className="p-4 text-sm text-[var(--color-admin-muted)]">
-                Sağ tarafta sıralanacak {entityLabel.toLocaleLowerCase("tr")} yok. Soldan {entityLabel.toLocaleLowerCase("tr")} ekleyebilirsin.
+                Sıralanacak {entityLabel.toLocaleLowerCase("tr")} bulunmuyor.
               </p>
             ) : (
               selectedOptions.map((option, index) => (
@@ -199,13 +203,15 @@ export function AdminOrderedMultiSelect({
                     >
                       <ArrowDown size={15} />
                     </button>
-                    <button
-                      className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-danger)]"
-                      onClick={() => remove(option.id)}
-                      type="button"
-                    >
-                      <X size={15} />
-                    </button>
+                    {!orderingOnly ? (
+                      <button
+                        className="flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-danger)]"
+                        onClick={() => remove(option.id)}
+                        type="button"
+                      >
+                        <X size={15} />
+                      </button>
+                    ) : null}
                   </div>
                 </div>
               ))

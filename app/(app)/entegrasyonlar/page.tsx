@@ -78,6 +78,14 @@ type MetaAdsIntegration = {
   last_error: string | null;
   automation: false;
   change_approval_required: true;
+  source?: "central_meta_executor" | "meta_marketing_api";
+  readiness?: {
+    provider_selected: boolean;
+    ready: boolean;
+    credential_ready: boolean;
+    socket_ready: boolean;
+    blockers: string[];
+  };
   capability: {
     ready: boolean;
     required_scopes: string[];
@@ -392,6 +400,7 @@ export default function IntegrationsPage() {
   const isReady = integration?.configured && integration.authorized;
   const isMetaReady = Boolean(metaIntegration?.configured && metaIntegration.capabilities?.publishing?.ready);
   const isMetaAdsReady = Boolean(metaAdsIntegration?.configured && metaAdsIntegration.capability?.ready);
+  const isCentralMetaAds = metaAdsIntegration?.source === "central_meta_executor";
 
   return (
     <div className="max-w-4xl space-y-5">
@@ -526,12 +535,12 @@ export default function IntegrationsPage() {
             </div>
             <button
               className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-indigo-700 px-4 text-sm font-bold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60"
-              disabled={loading || metaBusy || !metaAdsIntegration?.configured}
+              disabled={loading || metaBusy || !metaAdsIntegration?.configured || isCentralMetaAds}
               onClick={() => void connectMetaAds()}
               type="button"
             >
               {metaBusy ? <LoaderCircle className="animate-spin" size={17} /> : <ExternalLink size={17} />}
-              {metaAdsIntegration?.authorized ? "Yetkiyi Yenile" : "Meta Ads'e Bağlan"}
+              {isCentralMetaAds ? "Merkezi bağlantı" : metaAdsIntegration?.authorized ? "Yetkiyi Yenile" : "Meta Ads'e Bağlan"}
             </button>
           </div>
 
@@ -543,13 +552,15 @@ export default function IntegrationsPage() {
               </p>
               <p className="mt-1 text-sm leading-5 opacity-80">
                 {isMetaAdsReady
-                  ? `${metaAdsIntegration?.selected_account?.name} için görev-tetiklemeli raporlama etkin. Değişiklikler her işlemde açık onay ister.`
+                  ? isCentralMetaAds
+                    ? "Korunan merkezi broker üzerinden raporlama ve hedef kitle envanteri hazır. Her reklam değişikliği ayrı insan onayı ister."
+                    : `${metaAdsIntegration?.selected_account?.name} için görev-tetiklemeli raporlama etkin. Değişiklikler her işlemde açık onay ister.`
                   : "Meta hesabını yetkilendir, ardından uzmanın çalışacağı tek reklam hesabını seç."}
               </p>
             </div>
           </div>
 
-          {metaAdsIntegration?.authorized && metaAdsIntegration.available_accounts.length > 0 ? (
+          {!isCentralMetaAds && metaAdsIntegration?.authorized && metaAdsIntegration.available_accounts.length > 0 ? (
             <div className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] p-4">
               <label className="text-sm font-bold text-[var(--color-admin-ink)]" htmlFor="meta-ads-account">
                 Uzmanın çalışacağı reklam hesabı
@@ -637,7 +648,7 @@ export default function IntegrationsPage() {
             </div>
           ) : null}
 
-          {metaAdsIntegration?.capability?.missing_scopes.length ? (
+          {!isCentralMetaAds && metaAdsIntegration?.capability?.missing_scopes.length ? (
             <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-5 text-amber-900">
               Meta Ads bağlantısında eksik izinler: {metaAdsIntegration.capability.missing_scopes.join(", ")}. Yetkiyi yenileyip aynı reklam hesabını yeniden seçin.
             </p>
@@ -660,7 +671,7 @@ export default function IntegrationsPage() {
             <button className="inline-flex items-center gap-2 text-sm font-bold text-indigo-700 hover:underline" onClick={() => void load()} type="button">
               <RefreshCcw size={15} /> Durumu yenile
             </button>
-            {metaAdsIntegration?.authorized ? (
+            {metaAdsIntegration?.authorized && !isCentralMetaAds ? (
               <button className="inline-flex items-center gap-2 text-sm font-bold text-rose-700 hover:underline" disabled={metaBusy} onClick={() => void disconnectMetaAds()} type="button">
                 <Unplug size={15} /> Bağlantıyı kes
               </button>

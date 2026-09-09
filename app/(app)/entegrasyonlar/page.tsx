@@ -45,6 +45,18 @@ type MetaIntegration = {
   authorized_at: string | null;
   last_refreshed_at: string | null;
   last_error: string | null;
+  capabilities: Record<string, MetaOrganicCapability>;
+  automation: false;
+  human_approval_required: true;
+};
+
+type MetaOrganicCapability = {
+  ready: boolean;
+  required_scopes: string[];
+  missing_scopes: string[];
+  required_page_tasks: string[];
+  missing_page_tasks: string[];
+  endpoint_status: string;
 };
 
 type MetaAdsAccount = {
@@ -66,6 +78,14 @@ type MetaAdsIntegration = {
   last_error: string | null;
   automation: false;
   change_approval_required: true;
+  capability: {
+    ready: boolean;
+    required_scopes: string[];
+    missing_scopes: string[];
+    selected_account: boolean;
+    automation: false;
+    change_approval_required: true;
+  };
 };
 
 type MetaAdsReport = {
@@ -370,8 +390,8 @@ export default function IntegrationsPage() {
   }
 
   const isReady = integration?.configured && integration.authorized;
-  const isMetaReady = metaIntegration?.configured && metaIntegration.authorized && metaIntegration.selected_page;
-  const isMetaAdsReady = metaAdsIntegration?.configured && metaAdsIntegration.authorized && metaAdsIntegration.selected_account;
+  const isMetaReady = Boolean(metaIntegration?.configured && metaIntegration.capabilities?.publishing?.ready);
+  const isMetaAdsReady = Boolean(metaAdsIntegration?.configured && metaAdsIntegration.capability?.ready);
 
   return (
     <div className="max-w-4xl space-y-5">
@@ -408,7 +428,7 @@ export default function IntegrationsPage() {
               </p>
               <p className="mt-1 text-sm leading-5 opacity-80">
                 {isMetaReady
-                  ? `${metaIntegration.selected_page?.name} için onaylı yayın akışı kullanılabilir.`
+                  ? `${metaIntegration?.selected_page?.name} için onaylı yayın akışı kullanılabilir.`
                   : "Önce Meta uygulama ayarları tamamlanır, ardından yetkili hesap bağlanır ve Memurlar Akademi Sayfası seçilir."}
               </p>
             </div>
@@ -453,6 +473,21 @@ export default function IntegrationsPage() {
               />
             </dl>
           ) : null}
+
+          {metaIntegration?.capabilities ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <CapabilityItem label="İçerik planlama ve yayınlama" capability={metaIntegration.capabilities.publishing} />
+              <CapabilityItem label="Facebook yorum yönetimi" capability={metaIntegration.capabilities.facebook_comments} />
+              <CapabilityItem label="Facebook mesaj yönetimi" capability={metaIntegration.capabilities.facebook_messages} />
+              <CapabilityItem label="Instagram yorum yönetimi" capability={metaIntegration.capabilities.instagram_comments} />
+              <CapabilityItem label="Instagram mesaj yönetimi" capability={metaIntegration.capabilities.instagram_messages} />
+              <CapabilityItem label="Organik içgörüler" capability={metaIntegration.capabilities.organic_insights} />
+            </div>
+          ) : null}
+
+          <p className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm leading-5 text-blue-900">
+            Bu bağlantı yalnız organik sosyal operasyonlara aittir. Reklam hesabı, kampanya, hedef kitle, bütçe ve teklif yetkileri aşağıdaki Meta Ads Uzmanı bağlantısında ayrı tutulur.
+          </p>
 
           {metaIntegration?.last_error ? (
             <p className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-5 text-rose-800">Son hata: {metaIntegration.last_error}</p>
@@ -508,7 +543,7 @@ export default function IntegrationsPage() {
               </p>
               <p className="mt-1 text-sm leading-5 opacity-80">
                 {isMetaAdsReady
-                  ? `${metaAdsIntegration.selected_account?.name} için görev-tetiklemeli raporlama etkin. Değişiklikler her işlemde açık onay ister.`
+                  ? `${metaAdsIntegration?.selected_account?.name} için görev-tetiklemeli raporlama etkin. Değişiklikler her işlemde açık onay ister.`
                   : "Meta hesabını yetkilendir, ardından uzmanın çalışacağı tek reklam hesabını seç."}
               </p>
             </div>
@@ -601,6 +636,16 @@ export default function IntegrationsPage() {
               ) : null}
             </div>
           ) : null}
+
+          {metaAdsIntegration?.capability?.missing_scopes.length ? (
+            <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-5 text-amber-900">
+              Meta Ads bağlantısında eksik izinler: {metaAdsIntegration.capability.missing_scopes.join(", ")}. Yetkiyi yenileyip aynı reklam hesabını yeniden seçin.
+            </p>
+          ) : null}
+
+          <p className="rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm leading-5 text-indigo-900">
+            Bu bağlantı yalnız seçilen reklam hesabına aittir. Arka plan otomasyonu yoktur; her reklam değişikliği tam hedef ve değişiklik gösterildikten sonra ayrı insan onayı ister.
+          </p>
 
           {metaAdsIntegration?.last_error ? (
             <p className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-5 text-rose-800">Son hata: {metaAdsIntegration.last_error}</p>
@@ -750,6 +795,26 @@ function StatusItem({ label, value, compact = false }: { label: string; value: s
     <div className="rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] px-4 py-3">
       <dt className="text-xs font-semibold text-[var(--color-admin-muted)]">{label}</dt>
       <dd className={`mt-1 font-bold text-[var(--color-admin-ink)] ${compact ? "break-all text-xs leading-5" : "text-sm"}`}>{value}</dd>
+    </div>
+  );
+}
+
+function CapabilityItem({ label, capability }: { label: string; capability?: MetaOrganicCapability }) {
+  const ready = capability?.ready ?? false;
+  const missing = capability?.missing_scopes ?? [];
+  const implemented = capability?.endpoint_status === "implemented";
+  const detail = ready
+    ? "Hazır"
+    : !implemented
+      ? "Meta App Review ve güvenli API uçları bekleniyor"
+      : missing.length > 0
+        ? `Eksik izin: ${missing.join(", ")}`
+        : "Bağlantı ve hedef seçimi bekleniyor";
+
+  return (
+    <div className={`rounded-xl border px-4 py-3 ${ready ? "border-emerald-200 bg-emerald-50" : "border-amber-200 bg-amber-50"}`}>
+      <p className="text-xs font-semibold text-[var(--color-admin-muted)]">{label}</p>
+      <p className={`mt-1 text-sm font-bold ${ready ? "text-emerald-800" : "text-amber-900"}`}>{detail}</p>
     </div>
   );
 }

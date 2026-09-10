@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Archive, ArrowLeft, BarChart3, CheckCircle2, Clock3, Loader2, LockKeyhole, Play, Plus, RadioTower, RefreshCw, Save, Send, Snowflake, UsersRound } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
@@ -28,6 +29,7 @@ function dateTimeLocal(value: string) {
 }
 
 export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelectedId?: number | null }) {
+  const router = useRouter();
   const { token } = useAdminAuth();
   const { setTitle } = useAdminPageMeta();
   const { showToast } = useAdminToast();
@@ -49,7 +51,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
     try {
       const response = await adminApiRequest<IndexPayload>("/admin/live-exams", { token });
       setEvents(response.data.events); setMockExams(response.data.mock_exams);
-      setSelectedId((current) => response.data.events.some((event) => event.id === current) ? current : response.data.events[0]?.id ?? null);
+      setSelectedId((current) => current && response.data.events.some((event) => event.id === current) ? current : null);
     } catch (reason) { setError(reason instanceof Error ? reason.message : "Canlı sınavlar alınamadı."); }
     finally { setLoading(false); }
   }, [token]);
@@ -61,6 +63,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
   }, [token]);
 
   useEffect(() => { void load(); }, [load]);
+  useEffect(() => { setSelectedId(initialSelectedId); }, [initialSelectedId]);
   useEffect(() => { if (selectedId) void loadDetail(selectedId); else setDetail(null); }, [loadDetail, selectedId]);
   useEffect(() => {
     if (!isEditMode || !detail) return;
@@ -107,9 +110,12 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
         },
       });
       showToast({ tone: "success", title: isEditMode ? "Canlı sınav güncellendi" : "Canlı sınav oluşturuldu", description: response.data.event.title });
-      setSelectedId(response.data.event.id);
-      await load();
-      if (isEditMode) await loadDetail(response.data.event.id);
+      if (isEditMode) {
+        await load();
+        await loadDetail(response.data.event.id);
+      } else {
+        router.push(`/canli-sinavlar/${response.data.event.id}`);
+      }
     } catch (reason) { showToast({ tone: "error", title: isEditMode ? "Etkinlik güncellenemedi" : "Etkinlik oluşturulamadı", description: reason instanceof Error ? reason.message : "İşlem başarısız." }); }
     finally { setBusy(null); }
   }
@@ -177,7 +183,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
         </form>
         <section className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)]">
           <header className="border-b border-[var(--color-admin-line)] p-4 text-sm font-extrabold">Etkinlikler</header>
-          {loading ? <div className="grid place-items-center p-10"><Loader2 className="animate-spin" /></div> : events.map((event) => <button key={event.id} onClick={() => setSelectedId(event.id)} className={`block w-full border-b border-[var(--color-admin-line)] p-4 text-left transition hover:bg-black/[.025] ${selectedId === event.id ? "bg-amber-50" : ""}`}><div className="flex items-center justify-between gap-3"><strong className="text-sm">{event.title}</strong><span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-extrabold uppercase">{event.phase}</span></div><small className="mt-2 block text-[var(--color-admin-muted)]">{event.start_mode === "manual" && !event.manually_started_at ? "Manuel başlatılacak" : formatDate(event.starts_at)} · {event.participations_count} katılımcı · {event.access_type === "private" ? "Özel" : "Herkese açık"}</small></button>)}
+          {loading ? <div className="grid place-items-center p-10"><Loader2 className="animate-spin" /></div> : events.map((event) => <Link key={event.id} href={`/canli-sinavlar/${event.id}`} className={`block w-full border-b border-[var(--color-admin-line)] p-4 text-left transition hover:bg-black/[.025] ${selectedId === event.id ? "bg-amber-50" : ""}`}><div className="flex items-center justify-between gap-3"><strong className="text-sm">{event.title}</strong><span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-extrabold uppercase">{event.phase}</span></div><small className="mt-2 block text-[var(--color-admin-muted)]">{event.start_mode === "manual" && !event.manually_started_at ? "Manuel başlatılacak" : formatDate(event.starts_at)} · {event.participations_count} katılımcı · {event.access_type === "private" ? "Özel" : "Herkese açık"}</small></Link>)}
         </section>
       </aside>
       <main>{detail ? <div className="space-y-6">
@@ -187,7 +193,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
         </section>
         <LiveExamParticipants accessType={detail.event.access_type} eventId={detail.event.id} key={detail.event.id} onChanged={() => { void load(); void loadDetail(detail.event.id); }} questionsFrozen={detail.event.questions_count === detail.event.question_count} />
         <section className="space-y-3"><div><h2 className="text-lg font-black">Soru kontrolü</h2><p className="text-sm text-[var(--color-admin-muted)]">Cevap dağılımını incele; gerekiyorsa anahtarı düzelt veya soruyu değerlendirme dışı bırak.</p></div>{detail.analytics.length === 0 ? <div className="rounded-2xl border border-dashed p-10 text-center text-sm text-[var(--color-admin-muted)]">Önce soru paketini dondur.</div> : detail.analytics.map((question) => <QuestionReview key={question.id} question={question} busy={busy === `question-${question.id}`} onSave={saveQuestion} />)}</section>
-      </div> : <div className="grid min-h-[420px] place-items-center rounded-2xl border border-dashed text-[var(--color-admin-muted)]">Bir etkinlik seç.</div>}</main>
+      </div> : <div className="grid min-h-[420px] place-items-center rounded-2xl border border-dashed px-8 text-center text-[var(--color-admin-muted)]">{isEditMode ? "Etkinlik bulunamadı." : "Önce etkinliği oluştur. Oluşturma tamamlanınca yeni etkinliğin soru dondurma ve kullanıcı davet ekranı açılacak."}</div>}</main>
     </div>
   </div>;
 }

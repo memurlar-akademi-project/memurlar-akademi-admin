@@ -984,6 +984,7 @@ export function MockExamFormPage({
                   <option value="draft">Taslak</option>
                   <option value="passive">Pasif</option>
                 </select>
+                <span className="block text-xs font-semibold leading-5 text-[var(--color-admin-muted)]">Kısa bir canlı sınav kaynağı hazırlıyorsan “Taslak” seçebilirsin; 100 soru zorunluluğu yalnızca aktif PAEM denemeleri içindir.</span>
               </label>
             </div>
 

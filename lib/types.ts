@@ -917,11 +917,13 @@ export type AdminSubscriptionPlan = {
 export type AdminLiveExamEvent = {
   id: number;
   exam_id: number;
-  mock_exam_id: number;
+  mock_exam_id: number | null;
   title: string;
   slug: string;
   status: string;
   access_type: "public" | "private";
+  start_mode: "scheduled" | "manual";
+  manually_started_at: string | null;
   phase: string;
   question_count: number;
   duration_min: number;

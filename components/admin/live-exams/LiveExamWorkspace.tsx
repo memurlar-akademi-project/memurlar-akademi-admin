@@ -2,7 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Archive, ArrowLeft, BarChart3, CheckCircle2, Clock3, Loader2, LockKeyhole, Plus, RadioTower, RefreshCw, Save, Send, Snowflake, UsersRound } from "lucide-react";
+import { Archive, ArrowLeft, BarChart3, CheckCircle2, Clock3, Loader2, LockKeyhole, Play, Plus, RadioTower, RefreshCw, Save, Send, Snowflake, UsersRound } from "lucide-react";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
@@ -16,10 +16,10 @@ type DetailPayload = { event: AdminLiveExamEvent; analytics: AdminLiveExamQuesti
 const initialForm = {
   mock_exam_id: "", title: "PAEM Türkiye Geneli Canlı Deneme", slug: "paem-turkiye-geneli-deneme-sinavi",
   access_type: "private" as "public" | "private",
+  start_mode: "manual" as "scheduled" | "manual",
   registration_opens_at: "", starts_at: "", question_count: "100", duration_min: "120",
 };
 
-function localIso(value: string) { return new Date(value).toISOString(); }
 function formatDate(value: string | null) { return value ? new Date(value).toLocaleString("tr-TR", { dateStyle: "short", timeStyle: "short" }) : "—"; }
 function selectedQuestionCount(mockExam: AdminMockExam) { return mockExam.selected_question_count ?? mockExam.question_ids?.length ?? mockExam.question_count; }
 function dateTimeLocal(value: string) {
@@ -65,10 +65,11 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
   useEffect(() => {
     if (!isEditMode || !detail) return;
     setForm({
-      mock_exam_id: String(detail.event.mock_exam_id),
+      mock_exam_id: detail.event.mock_exam_id === null ? "" : String(detail.event.mock_exam_id),
       title: detail.event.title,
       slug: detail.event.slug,
       access_type: detail.event.access_type,
+      start_mode: detail.event.start_mode,
       registration_opens_at: dateTimeLocal(detail.event.registration_opens_at),
       starts_at: dateTimeLocal(detail.event.starts_at),
       question_count: String(detail.event.question_count),
@@ -83,18 +84,26 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
     if (isEditMode && !selectedId) return;
     setBusy("save");
     try {
-      const start = new Date(form.starts_at);
+      const durationMs = Number(form.duration_min) * 60_000;
+      const now = new Date();
+      const start = form.start_mode === "manual" ? new Date(now.getTime() + 60_000) : new Date(form.starts_at);
+      const registrationOpensAt = form.start_mode === "manual" ? new Date(now.getTime() - 60_000) : new Date(form.registration_opens_at);
+      const waitingRoomOpensAt = form.start_mode === "manual"
+        ? new Date(now.getTime() - 1_000)
+        : new Date(Math.max(registrationOpensAt.getTime(), start.getTime() - 30 * 60_000));
+      const lateEntryMs = Math.min(15 * 60_000, Math.max(30_000, Math.floor(durationMs / 2)));
       const endpoint = isEditMode ? `/admin/live-exams/${selectedId}` : "/admin/live-exams";
       const response = await adminApiRequest<{ event: AdminLiveExamEvent }>(endpoint, {
         token, method: isEditMode ? "PUT" : "POST", body: {
           exam_id: selectedMock.exam_id, mock_exam_id: selectedMock.id, title: form.title, slug: form.slug,
           access_type: form.access_type,
+          start_mode: form.start_mode,
           question_count: Number(form.question_count), duration_min: Number(form.duration_min),
-          registration_opens_at: localIso(form.registration_opens_at),
-          waiting_room_opens_at: new Date(start.getTime() - 30 * 60_000).toISOString(),
-          starts_at: start.toISOString(), late_entry_ends_at: new Date(start.getTime() + 15 * 60_000).toISOString(),
-          ends_at: new Date(start.getTime() + Number(form.duration_min) * 60_000).toISOString(),
-          submission_grace_ends_at: new Date(start.getTime() + (Number(form.duration_min) * 60_000) + 60_000).toISOString(),
+          registration_opens_at: registrationOpensAt.toISOString(),
+          waiting_room_opens_at: waitingRoomOpensAt.toISOString(),
+          starts_at: start.toISOString(), late_entry_ends_at: new Date(start.getTime() + lateEntryMs).toISOString(),
+          ends_at: new Date(start.getTime() + durationMs).toISOString(),
+          submission_grace_ends_at: new Date(start.getTime() + durationMs + 60_000).toISOString(),
         },
       });
       showToast({ tone: "success", title: isEditMode ? "Canlı sınav güncellendi" : "Canlı sınav oluşturuldu", description: response.data.event.title });
@@ -105,9 +114,10 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
     finally { setBusy(null); }
   }
 
-  async function action(name: "freeze" | "rankings" | "publish-results") {
+  async function action(name: "freeze" | "start" | "rankings" | "publish-results") {
     if (!token || !selectedId || busy) return;
     if (name === "publish-results" && !window.confirm("Taslak sonuçlar kesinleştirilecek ve katılımcılara bildirim gönderilecek. Yayınlamak istiyor musun?")) return;
+    if (name === "start" && !window.confirm("Sınav şimdi başlayacak ve süre bütün katılımcılar için işlemeye başlayacak. Başlatmak istiyor musun?")) return;
     setBusy(name);
     try {
       const response = await adminApiRequest(`/admin/live-exams/${selectedId}/${name}`, { token, method: "POST" });
@@ -157,21 +167,22 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
           <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs font-semibold leading-5 text-amber-900">Seçilen deneme, canlı etkinlik oluşturulunca normal deneme ekranlarından otomatik gizlenir. Etkinlik iptal edilince veya sonuçlar yayınlanınca tekrar kendi yayın durumuna döner.</p>
           <label className="admin-field"><span>Başlık</span><input required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></label>
           <label className="admin-field"><span>Slug</span><input required readOnly={isEditMode} title={isEditMode ? "Mevcut sınav güncellenirken slug korunur." : undefined} value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} /></label>
-          <label className="admin-field"><span>Erişim</span><select value={form.access_type} onChange={(e) => setForm({ ...form, access_type: e.target.value as "public" | "private" })}><option value="private">Özel — yalnızca davetliler</option><option value="public">Herkese açık — uygun üyeler kayıt olabilir</option></select></label>
+          <label className="admin-field"><span>Erişim</span><select value={form.access_type} onChange={(e) => { const accessType = e.target.value as "public" | "private"; setForm({ ...form, access_type: accessType, start_mode: accessType === "public" ? "scheduled" : form.start_mode }); }}><option value="private">Özel — yalnızca davetliler</option><option value="public">Herkese açık — uygun üyeler kayıt olabilir</option></select></label>
           <p className={`rounded-xl border p-3 text-xs font-semibold leading-5 ${form.access_type === "private" ? "border-emerald-200 bg-emerald-50 text-emerald-900" : "border-red-200 bg-red-50 text-red-900"}`}>{form.access_type === "private" ? "Bu sınavı yalnızca aşağıdan davet ettiğin kullanıcılar görebilir ve açabilir." : "Bu sınav ilgili programa kayıtlı tüm aktif üyelerin panelinde görünür."}</p>
+          <label className="admin-field"><span>Başlatma şekli</span><select value={form.start_mode} onChange={(e) => setForm({ ...form, start_mode: e.target.value as "scheduled" | "manual" })} disabled={form.access_type === "public"}><option value="manual">Panelden manuel başlat</option><option value="scheduled">Belirlenen saatte otomatik başlat</option></select></label>
+          {form.start_mode === "manual" ? <p className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-xs font-semibold leading-5 text-sky-900">Etkinliği oluştur, soruları dondur ve katılımcıları davet et. Hazır olduğunda etkinlik kartındaki “Sınavı başlat” düğmesine bas; gerçek başlangıç ve bitiş saatleri o anda hesaplanır.</p> : null}
           <div className="grid grid-cols-2 gap-3"><label className="admin-field"><span>Soru</span><input type="number" required value={form.question_count} onChange={(e) => setForm({ ...form, question_count: e.target.value })} /></label><label className="admin-field"><span>Dakika</span><input type="number" required value={form.duration_min} onChange={(e) => setForm({ ...form, duration_min: e.target.value })} /></label></div>
-          <label className="admin-field"><span>Kayıt açılışı</span><input type="datetime-local" required value={form.registration_opens_at} onChange={(e) => setForm({ ...form, registration_opens_at: e.target.value })} /></label>
-          <label className="admin-field"><span>Sınav başlangıcı</span><input type="datetime-local" required value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></label>
+          {form.start_mode === "scheduled" ? <><label className="admin-field"><span>Kayıt açılışı</span><input type="datetime-local" required value={form.registration_opens_at} onChange={(e) => setForm({ ...form, registration_opens_at: e.target.value })} /></label><label className="admin-field"><span>Sınav başlangıcı</span><input type="datetime-local" required value={form.starts_at} onChange={(e) => setForm({ ...form, starts_at: e.target.value })} /></label></> : null}
           <button className="admin-button admin-button-primary w-full justify-center" disabled={busy === "save"}>{busy === "save" ? <Loader2 className="animate-spin" size={16} /> : isEditMode ? <Save size={16} /> : <Plus size={16} />}{isEditMode ? "Değişiklikleri kaydet" : "Etkinliği oluştur"}</button>
         </form>
         <section className="overflow-hidden rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)]">
           <header className="border-b border-[var(--color-admin-line)] p-4 text-sm font-extrabold">Etkinlikler</header>
-          {loading ? <div className="grid place-items-center p-10"><Loader2 className="animate-spin" /></div> : events.map((event) => <button key={event.id} onClick={() => setSelectedId(event.id)} className={`block w-full border-b border-[var(--color-admin-line)] p-4 text-left transition hover:bg-black/[.025] ${selectedId === event.id ? "bg-amber-50" : ""}`}><div className="flex items-center justify-between gap-3"><strong className="text-sm">{event.title}</strong><span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-extrabold uppercase">{event.phase}</span></div><small className="mt-2 block text-[var(--color-admin-muted)]">{formatDate(event.starts_at)} · {event.participations_count} katılımcı · {event.access_type === "private" ? "Özel" : "Herkese açık"}</small></button>)}
+          {loading ? <div className="grid place-items-center p-10"><Loader2 className="animate-spin" /></div> : events.map((event) => <button key={event.id} onClick={() => setSelectedId(event.id)} className={`block w-full border-b border-[var(--color-admin-line)] p-4 text-left transition hover:bg-black/[.025] ${selectedId === event.id ? "bg-amber-50" : ""}`}><div className="flex items-center justify-between gap-3"><strong className="text-sm">{event.title}</strong><span className="rounded-full bg-slate-100 px-2 py-1 text-[10px] font-extrabold uppercase">{event.phase}</span></div><small className="mt-2 block text-[var(--color-admin-muted)]">{event.start_mode === "manual" && !event.manually_started_at ? "Manuel başlatılacak" : formatDate(event.starts_at)} · {event.participations_count} katılımcı · {event.access_type === "private" ? "Özel" : "Herkese açık"}</small></button>)}
         </section>
       </aside>
       <main>{detail ? <div className="space-y-6">
         <section className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] p-6">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between"><div><span className="text-xs font-extrabold uppercase tracking-wider text-amber-600">{detail.event.phase}</span><h2 className="mt-2 text-2xl font-black tracking-[-.03em]">{detail.event.title}</h2><p className="mt-2 text-sm text-[var(--color-admin-muted)]">{formatDate(detail.event.starts_at)} — {formatDate(detail.event.ends_at)}</p></div><div className="flex flex-wrap gap-2"><button className="admin-button admin-button-secondary" onClick={() => void archiveEvent()} disabled={Boolean(busy) || Boolean(detail.event.results_published_at)}><Archive size={16} />Arşivle</button><button className="admin-button admin-button-secondary" onClick={() => void action("freeze")} disabled={Boolean(busy) || detail.event.participations_count > 0}><Snowflake size={16} />Soruları dondur</button><button className="admin-button admin-button-secondary" onClick={() => void action("rankings")} disabled={Boolean(busy) || !["reviewing", "ranked"].includes(detail.event.phase)}><BarChart3 size={16} />Sıralamayı oluştur</button><button className="admin-button admin-button-primary" onClick={() => void action("publish-results")} disabled={Boolean(busy) || detail.event.phase !== "ranked"}><Send size={16} />Yayınla ve bildir</button></div></div>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between"><div><span className="text-xs font-extrabold uppercase tracking-wider text-amber-600">{detail.event.phase}</span><h2 className="mt-2 text-2xl font-black tracking-[-.03em]">{detail.event.title}</h2><p className="mt-2 text-sm text-[var(--color-admin-muted)]">{detail.event.start_mode === "manual" && !detail.event.manually_started_at ? "Panelden başlatılmayı bekliyor" : `${formatDate(detail.event.starts_at)} — ${formatDate(detail.event.ends_at)}`}</p></div><div className="flex flex-wrap gap-2"><button className="admin-button admin-button-secondary" onClick={() => void archiveEvent()} disabled={Boolean(busy) || Boolean(detail.event.results_published_at)}><Archive size={16} />Arşivle</button><button className="admin-button admin-button-secondary" onClick={() => void action("freeze")} disabled={Boolean(busy) || detail.event.participations_count > 0}><Snowflake size={16} />Soruları dondur</button>{detail.event.start_mode === "manual" && !detail.event.manually_started_at ? <button className="admin-button admin-button-primary" onClick={() => void action("start")} disabled={Boolean(busy) || detail.event.questions_count !== detail.event.question_count}><Play size={16} />Sınavı başlat</button> : null}<button className="admin-button admin-button-secondary" onClick={() => void action("rankings")} disabled={Boolean(busy) || !["reviewing", "ranked"].includes(detail.event.phase)}><BarChart3 size={16} />Sıralamayı oluştur</button><button className="admin-button admin-button-primary" onClick={() => void action("publish-results")} disabled={Boolean(busy) || detail.event.phase !== "ranked"}><Send size={16} />Yayınla ve bildir</button></div></div>
           <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-[var(--color-admin-line)] lg:grid-cols-4"><Metric icon={<UsersRound />} label="Katılımcı" value={detail.event.participations_count} /><Metric icon={<LockKeyhole />} label="Dondurulan soru" value={detail.event.questions_count} /><Metric icon={<BarChart3 />} label="Taslak sonuç" value={detail.event.results_count} /><Metric icon={<Clock3 />} label="Süre" value={`${detail.event.duration_min} dk`} /></div>
         </section>
         <LiveExamParticipants accessType={detail.event.access_type} eventId={detail.event.id} key={detail.event.id} onChanged={() => { void load(); void loadDetail(detail.event.id); }} questionsFrozen={detail.event.questions_count === detail.event.question_count} />

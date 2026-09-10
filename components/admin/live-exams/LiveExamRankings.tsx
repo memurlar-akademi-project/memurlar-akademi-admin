@@ -80,9 +80,9 @@ export function LiveExamRankings({ eventId, published }: { eventId: number; publ
       ) : "—",
     },
     {
-      id: "net",
-      header: "Net",
-      cell: ({ row }) => <span className="text-base font-black">{row.original.result?.net.toLocaleString("tr-TR") ?? "—"}</span>,
+      id: "score",
+      header: "Puan",
+      cell: ({ row }) => <span className="text-base font-black">{row.original.result?.score.toLocaleString("tr-TR") ?? "—"}</span>,
     },
     {
       id: "duration",
@@ -96,7 +96,7 @@ export function LiveExamRankings({ eventId, published }: { eventId: number; publ
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h2 className="flex items-center gap-2 text-lg font-black"><Trophy size={19} className="text-amber-600" />{published ? "Kesin Sıralama" : "Taslak Sıralama"}</h2>
-          <p className="mt-1 text-sm text-[var(--color-admin-muted)]">Net eşitliğinde doğru sayısı, ardından daha kısa tamamlama süresi önceliklidir.</p>
+          <p className="mt-1 text-sm text-[var(--color-admin-muted)]">Yanlışlar doğruyu götürmez. Puan eşitliğinde doğru sayısı, ardından daha kısa tamamlama süresi önceliklidir.</p>
         </div>
         <span className={`rounded-full px-3 py-1.5 text-xs font-extrabold ${published ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"}`}>
           {published ? "Yayınlandı" : "Henüz yayınlanmadı"}

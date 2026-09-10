@@ -193,7 +193,7 @@ export function LiveExamParticipants({ accessType, eventId, onChanged, questions
       header: "Sonuç",
       cell: ({ row }) => row.original.result ? (
         <div className="min-w-[100px]">
-          <p className="text-sm font-bold">{row.original.result.net.toLocaleString("tr-TR")} net</p>
+          <p className="text-sm font-bold">{row.original.result.score.toLocaleString("tr-TR")} puan</p>
           <p className="mt-1 text-xs text-[var(--color-admin-muted)]">#{row.original.result.rank} sıra</p>
         </div>
       ) : <span className="text-sm text-[var(--color-admin-muted)]">—</span>,

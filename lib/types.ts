@@ -962,7 +962,7 @@ export type AdminLiveExamParticipant = {
     wrong_count: number;
     empty_count: number;
     cancelled_count: number;
-    net: number;
+    score: number;
     spent_seconds: number;
     rank: number;
     status: string;

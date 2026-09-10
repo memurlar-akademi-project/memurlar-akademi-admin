@@ -921,6 +921,7 @@ export type AdminLiveExamEvent = {
   title: string;
   slug: string;
   status: string;
+  access_type: "public" | "private";
   phase: string;
   question_count: number;
   duration_min: number;

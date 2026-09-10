@@ -1,7 +1,7 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { RefreshCw, Search, UsersRound } from "lucide-react";
+import { Loader2, RefreshCw, Search, UserPlus, UsersRound } from "lucide-react";
 import { useCallback, useDeferredValue, useEffect, useMemo, useState } from "react";
 import { AdminDataGrid } from "@/components/admin/crud/AdminDataGrid";
 import {
@@ -21,6 +21,7 @@ import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminLiveExamParticipant, AdminPaginationMeta } from "@/lib/types";
 
 type ParticipantPayload = { participants: AdminLiveExamParticipant[] };
+type EligibleUser = { id: number; name: string; email: string; phone: string | null };
 
 const statusLabels: Record<AdminLiveExamParticipant["status"], string> = {
   registered: "Kayıtlı",
@@ -52,7 +53,7 @@ function statusStyle(status: AdminLiveExamParticipant["status"]) {
   return "border-amber-200 bg-amber-50 text-amber-700";
 }
 
-export function LiveExamParticipants({ eventId }: { eventId: number }) {
+export function LiveExamParticipants({ accessType, eventId, onChanged, questionsFrozen }: { accessType: "public" | "private"; eventId: number; onChanged: () => void; questionsFrozen: boolean }) {
   const { token } = useAdminAuth();
   const [participants, setParticipants] = useState<AdminLiveExamParticipant[]>([]);
   const [pagination, setPagination] = useState<AdminPaginationMeta | null>(null);
@@ -63,6 +64,12 @@ export function LiveExamParticipants({ eventId }: { eventId: number }) {
   const [pageSize, setPageSize] = useState(20);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [inviteSearch, setInviteSearch] = useState("");
+  const deferredInviteSearch = useDeferredValue(inviteSearch);
+  const [eligibleUsers, setEligibleUsers] = useState<EligibleUser[]>([]);
+  const [inviteLoading, setInviteLoading] = useState(false);
+  const [inviteBusyId, setInviteBusyId] = useState<number | null>(null);
+  const [inviteError, setInviteError] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     if (!token) return;
@@ -90,6 +97,50 @@ export function LiveExamParticipants({ eventId }: { eventId: number }) {
   useEffect(() => {
     void load();
   }, [load]);
+
+  useEffect(() => {
+    if (!token || accessType !== "private" || !questionsFrozen || deferredInviteSearch.trim().length < 2) {
+      setEligibleUsers([]);
+      setInviteError(null);
+      return;
+    }
+
+    let cancelled = false;
+    setInviteLoading(true);
+    setInviteError(null);
+    adminApiRequest<{ users: EligibleUser[] }>(
+      `/admin/live-exams/${eventId}/eligible-users?search=${encodeURIComponent(deferredInviteSearch.trim())}`,
+      { token },
+    ).then((response) => {
+      if (!cancelled) setEligibleUsers(response.data.users);
+    }).catch((reason) => {
+      if (!cancelled) setInviteError(reason instanceof Error ? reason.message : "Kullanıcılar aranamadı.");
+    }).finally(() => {
+      if (!cancelled) setInviteLoading(false);
+    });
+
+    return () => { cancelled = true; };
+  }, [accessType, deferredInviteSearch, eventId, questionsFrozen, token]);
+
+  async function invite(user: EligibleUser) {
+    if (!token || inviteBusyId) return;
+    setInviteBusyId(user.id);
+    setInviteError(null);
+    try {
+      await adminApiRequest(`/admin/live-exams/${eventId}/participants`, {
+        token,
+        method: "POST",
+        body: { user_id: user.id },
+      });
+      setEligibleUsers((current) => current.filter((item) => item.id !== user.id));
+      await load();
+      onChanged();
+    } catch (reason) {
+      setInviteError(reason instanceof Error ? reason.message : "Kullanıcı davet edilemedi.");
+    } finally {
+      setInviteBusyId(null);
+    }
+  }
 
   const columns = useMemo<ColumnDef<AdminLiveExamParticipant>[]>(() => [
     {
@@ -158,6 +209,25 @@ export function LiveExamParticipants({ eventId }: { eventId: number }) {
         </div>
         <span className="text-sm font-bold text-[var(--color-admin-muted)]">{pagination?.total ?? 0} kişi</span>
       </div>
+
+      {accessType === "private" ? (
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-4">
+          <div className="flex items-start gap-3">
+            <span className="mt-0.5 rounded-lg bg-emerald-600 p-2 text-white"><UserPlus size={17} /></span>
+            <div className="min-w-0 flex-1">
+              <h3 className="text-sm font-extrabold text-emerald-950">Özel sınava kullanıcı davet et</h3>
+              <p className="mt-1 text-xs font-medium leading-5 text-emerald-800">En az iki karakterle ad, e-posta veya telefon ara. Eklenen kullanıcı sınavı panelinde görür ve kendisine giriş bağlantısı gönderilir.</p>
+              {!questionsFrozen ? <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs font-bold text-amber-900">Önce “Soruları dondur” işlemini tamamla; ardından ekip kullanıcılarını ekleyebilirsin.</p> : <div className="relative mt-3">
+                <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-emerald-700" size={15} />
+                <input className="admin-input h-11 bg-white pl-9 text-sm" onChange={(event) => setInviteSearch(event.target.value)} placeholder="Ekip kullanıcısını ara" value={inviteSearch} />
+                {inviteLoading ? <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 animate-spin text-emerald-700" size={16} /> : null}
+              </div>}
+              {inviteError ? <p className="mt-2 text-xs font-bold text-red-700">{inviteError}</p> : null}
+              {eligibleUsers.length > 0 ? <div className="mt-2 overflow-hidden rounded-xl border border-emerald-200 bg-white">{eligibleUsers.map((user) => <div key={user.id} className="flex items-center justify-between gap-3 border-b border-emerald-100 p-3 last:border-0"><div className="min-w-0"><p className="truncate text-sm font-bold text-[var(--color-admin-ink)]">{user.name}</p><p className="truncate text-xs text-[var(--color-admin-muted)]">{user.email}{user.phone ? ` · ${user.phone}` : ""}</p></div><button className="admin-button admin-button-primary shrink-0" disabled={inviteBusyId !== null} onClick={() => void invite(user)}>{inviteBusyId === user.id ? <Loader2 className="animate-spin" size={15} /> : <UserPlus size={15} />}Davet et</button></div>)}</div> : deferredInviteSearch.trim().length >= 2 && !inviteLoading && !inviteError ? <p className="mt-2 text-xs font-semibold text-emerald-800">Davet edilebilecek eşleşen kullanıcı bulunamadı.</p> : null}
+            </div>
+          </div>
+        </div>
+      ) : null}
 
       <AdminTableCard>
         <AdminListToolbar>

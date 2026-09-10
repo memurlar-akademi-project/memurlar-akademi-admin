@@ -958,7 +958,12 @@ export type AdminLiveExamParticipant = {
   answered_count: number | null;
   submission_source: string | null;
   result: {
+    correct_count: number;
+    wrong_count: number;
+    empty_count: number;
+    cancelled_count: number;
     net: number;
+    spent_seconds: number;
     rank: number;
     status: string;
     published_at: string | null;

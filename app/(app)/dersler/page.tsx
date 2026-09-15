@@ -26,6 +26,7 @@ import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { AdminTableSkeleton } from "@/components/ui/Skeleton";
 import { useAdminList } from "@/hooks/useAdminList";
 import { adminApiRequest } from "@/lib/admin-api";
+import { formatSubjectName } from "@/lib/subject-label";
 import type { AdminExam, AdminSubject } from "@/lib/types";
 
 export default function SubjectsPage() {
@@ -119,13 +120,13 @@ export default function SubjectsPage() {
       showToast({
         tone: "success",
         title: checked ? "Ders aktife alındı" : "Ders pasife alındı",
-        description: subject.name,
+        description: formatSubjectName(subject.name),
       });
     } catch (loadError) {
       showToast({
         tone: "error",
         title: "Durum güncellenemedi",
-        description: loadError instanceof Error ? loadError.message : subject.name,
+        description: loadError instanceof Error ? loadError.message : formatSubjectName(subject.name),
       });
     } finally {
       setTogglingId(null);
@@ -144,7 +145,7 @@ export default function SubjectsPage() {
                 {row.original.code}
               </span>
             ) : null}
-            <p className="font-bold text-[var(--color-admin-ink)]">{row.original.name}</p>
+            <p className="font-bold text-[var(--color-admin-ink)]">{formatSubjectName(row.original.name)}</p>
           </div>
           <p className="mt-1 text-xs text-[var(--color-admin-muted)]">#{row.original.id} · {row.original.slug}</p>
           <AdminReadinessHint readiness={row.original.readiness} />

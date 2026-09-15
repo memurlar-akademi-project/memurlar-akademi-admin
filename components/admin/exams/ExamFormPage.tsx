@@ -11,6 +11,7 @@ import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
 import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
+import { formatSubjectName } from "@/lib/subject-label";
 import type { AdminExam, AdminMinistry, AdminSubject, AdminTopic } from "@/lib/types";
 
 const emptyForm = {
@@ -145,7 +146,9 @@ export function ExamFormPage({
 
         groups.set(subjectId, {
           subjectId,
-          subjectName: topic.subject?.name ?? "Ders bilgisi yok",
+          subjectName: topic.subject?.name
+            ? formatSubjectName(topic.subject.name)
+            : "Ders bilgisi yok",
           subjectCode: topic.subject?.code?.trim() || null,
           topics: [topic],
         });
@@ -241,7 +244,7 @@ export function ExamFormPage({
     subjects.forEach((subject) => {
       next.set(subject.id, {
         id: subject.id,
-        name: subject.name,
+        name: formatSubjectName(subject.name),
         code: subject.code?.trim() || null,
         selectedTopicCount: 0,
         totalTopicCount: subject.topic_count ?? 0,
@@ -263,7 +266,7 @@ export function ExamFormPage({
         if (!next.has(subject.id)) {
           next.set(subject.id, {
             id: subject.id,
-            name: subject.name,
+            name: formatSubjectName(subject.name),
             code: subject.code?.trim() || null,
             selectedTopicCount: 0,
             totalTopicCount: 0,

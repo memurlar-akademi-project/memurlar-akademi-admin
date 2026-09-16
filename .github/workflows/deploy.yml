@@ -1,18 +1,68 @@
 name: Deploy Admin
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      release_sha:
+        description: "Exact 40-character commit SHA to release from main"
+        required: true
+        type: string
+      production_confirmation:
+        description: "Type DEPLOY_MEMURLAR_PRODUCTION to continue"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: memurlar-admin-production
+  cancel-in-progress: false
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/memurlar-akademi-admin
   NEXT_PUBLIC_API_URL: /api/v1
 
 jobs:
-  build-and-deploy:
+  release-gate:
     runs-on: ubuntu-latest
+    steps:
+      - name: Reject ambiguous or unconfirmed production release
+        env:
+          REQUESTED_RELEASE_SHA: ${{ inputs.release_sha }}
+          PRODUCTION_CONFIRMATION: ${{ inputs.production_confirmation }}
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_REF: ${{ github.ref }}
+          ACTUAL_REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          test "$EVENT_NAME" = "workflow_dispatch"
+          test "$DISPATCH_REF" = "refs/heads/main"
+          test "$ACTUAL_REPOSITORY" = "memurlar-akademi-project/memurlar-akademi-admin"
+          test "$PRODUCTION_CONFIRMATION" = "DEPLOY_MEMURLAR_PRODUCTION"
+          printf '%s' "$REQUESTED_RELEASE_SHA" | grep -Eq '^[0-9a-f]{40}$'
+
+      - name: Checkout requested release
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_sha }}
+          fetch-depth: 0
+
+      - name: Verify requested SHA is an exact main commit
+        env:
+          REQUESTED_RELEASE_SHA: ${{ inputs.release_sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$REQUESTED_RELEASE_SHA"
+          git fetch --no-tags origin main
+          git merge-base --is-ancestor "$REQUESTED_RELEASE_SHA" origin/main
+
+  build-and-deploy:
+    needs: release-gate
+    if: needs.release-gate.result == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: memurlar-production
     permissions:
       contents: read
       packages: write
@@ -20,6 +70,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_sha }}
+          fetch-depth: 0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -39,7 +92,7 @@ jobs:
           build-args: |
             NEXT_PUBLIC_API_URL=${{ env.NEXT_PUBLIC_API_URL }}
           tags: |
-            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:${{ inputs.release_sha }}
             ${{ env.IMAGE_NAME }}:latest
 
       - name: Deploy on server
@@ -50,7 +103,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           GHCR_USERNAME: ${{ github.actor }}
           GHCR_TOKEN: ${{ github.token }}
-          DEPLOY_IMAGE: ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          DEPLOY_IMAGE: ${{ env.IMAGE_NAME }}:${{ inputs.release_sha }}
         run: |
           set -euo pipefail
           mkdir -p ~/.ssh

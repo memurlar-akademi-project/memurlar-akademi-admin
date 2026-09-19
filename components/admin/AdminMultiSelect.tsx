@@ -71,6 +71,7 @@ export function AdminMultiSelect({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="min-w-[220px] flex-1">
           <input
+            autoComplete="off"
             className="admin-input h-11"
             onChange={(event) => setQuery(event.target.value)}
             placeholder={searchPlaceholder}

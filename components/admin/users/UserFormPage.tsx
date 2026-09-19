@@ -359,6 +359,7 @@ export function UserFormPage({
                 {mode === "edit" ? "Yeni Şifre" : "Şifre"}
               </span>
               <input
+                autoComplete="new-password"
                 className="admin-input h-11"
                 onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
                 placeholder={mode === "edit" ? "Boş bırakırsan değişmez" : "En az 8 karakter"}

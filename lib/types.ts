@@ -89,6 +89,18 @@ export type AdminUser = {
       name: string;
     } | null;
   } | null;
+  memberships: Array<{
+    id: number;
+    type: string;
+    status: string;
+    starts_at?: string | null;
+    ends_at?: string | null;
+    is_selected: boolean;
+    exam: {
+      id: number;
+      name: string;
+    } | null;
+  }>;
   activity: {
     answered_question_count: number;
     correct_answer_count: number;

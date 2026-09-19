@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AdminFormActionsCard } from "@/components/admin/crud/AdminFormActionsCard";
+import { AdminMultiSelect } from "@/components/admin/AdminMultiSelect";
 import { AdminSearchSelect } from "@/components/admin/crud/AdminSearchSelect";
 import { AdminTableCard } from "@/components/admin/crud/AdminTableCard";
 import { useAdminAuth } from "@/components/providers/AdminAuthProvider";
@@ -22,7 +23,8 @@ const emptyForm = {
   email: "",
   password: "",
   status: "active",
-  exam_id: null as number | null,
+  exam_ids: [] as number[],
+  active_exam_id: null as number | null,
   membership_type: "paid",
   membership_status: "active",
 };
@@ -108,12 +110,23 @@ export function UserFormPage({
         }
 
         setUser(item);
+        const memberships = item.memberships?.length
+          ? item.memberships
+          : item.membership
+            ? [{ ...item.membership, id: 0, is_selected: true }]
+            : [];
+        const examIds = memberships
+          .map((membership) => membership.exam?.id)
+          .filter((examId): examId is number => typeof examId === "number");
+
         setForm({
           name: item.name,
           email: item.email,
           password: "",
           status: item.status,
-          exam_id: item.membership?.exam?.id ?? null,
+          exam_ids: examIds,
+          active_exam_id:
+            memberships.find((membership) => membership.is_selected)?.exam?.id ?? examIds[0] ?? null,
           membership_type: item.membership?.type ?? "paid",
           membership_status: item.membership?.status ?? item.status,
         });
@@ -152,8 +165,8 @@ export function UserFormPage({
       return;
     }
 
-    if (!form.exam_id) {
-      setError("Bir sınav seçmelisin.");
+    if (form.exam_ids.length === 0 || !form.active_exam_id) {
+      setError("En az bir sınav seçmelisin.");
       return;
     }
 
@@ -171,7 +184,8 @@ export function UserFormPage({
             email: form.email,
             password: form.password || undefined,
             status: form.status,
-            exam_id: form.exam_id,
+            exam_ids: form.exam_ids,
+            active_exam_id: form.active_exam_id,
             membership_type: form.membership_type,
             membership_status: form.membership_status,
           },
@@ -301,20 +315,44 @@ export function UserFormPage({
               </label>
             </div>
 
-            <label className="block space-y-2">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                Sınav
-              </span>
-              <AdminSearchSelect
-                emptyText="Sınav bulunamadı."
-                hideLabel
-                label="Sınav"
-                onChange={(next) => setForm((current) => ({ ...current, exam_id: next }))}
-                options={examOptions}
-                placeholder="Sınav seç"
-                value={form.exam_id}
-              />
-            </label>
+            <AdminMultiSelect
+              emptyStateText="Sınav bulunamadı."
+              helperText="Kullanıcının erişebileceği bir veya daha fazla sınavı seç."
+              label="Sınavlar"
+              onChange={(nextExamIds) =>
+                setForm((current) => ({
+                  ...current,
+                  exam_ids: nextExamIds,
+                  active_exam_id: nextExamIds.includes(current.active_exam_id ?? -1)
+                    ? current.active_exam_id
+                    : nextExamIds[0] ?? null,
+                }))
+              }
+              options={examOptions}
+              searchPlaceholder="Sınav ara"
+              selectedSummaryLabel="sınav seçildi"
+              value={form.exam_ids}
+            />
+
+            {form.exam_ids.length > 1 ? (
+              <label className="block space-y-2">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                  Aktif Sınav
+                </span>
+                <AdminSearchSelect
+                  emptyText="Aktif sınav bulunamadı."
+                  hideLabel
+                  label="Aktif sınav"
+                  onChange={(next) => setForm((current) => ({ ...current, active_exam_id: next }))}
+                  options={examOptions.filter((exam) => form.exam_ids.includes(exam.id))}
+                  placeholder="Aktif sınavı seç"
+                  value={form.active_exam_id}
+                />
+                <span className="block text-xs leading-5 text-[var(--color-admin-muted)]">
+                  Kullanıcı giriş yaptığında ilk olarak bu sınavı görür.
+                </span>
+              </label>
+            ) : null}
 
             <label className="block space-y-2">
               <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
@@ -350,7 +388,13 @@ export function UserFormPage({
               <div className="flex items-center justify-between gap-3">
                 <span className="text-[var(--color-admin-muted)]">Bağlı sınav</span>
                 <span className="font-semibold text-[var(--color-admin-ink)]">
-                  {exams.find((exam) => exam.id === form.exam_id)?.name ?? "Seçilmedi"}
+                  {form.exam_ids.length > 0 ? `${form.exam_ids.length} sınav` : "Seçilmedi"}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-[var(--color-admin-muted)]">Aktif sınav</span>
+                <span className="max-w-44 text-right font-semibold text-[var(--color-admin-ink)]">
+                  {exams.find((exam) => exam.id === form.active_exam_id)?.name ?? "Seçilmedi"}
                 </span>
               </div>
               <div className="flex items-center justify-between gap-3">

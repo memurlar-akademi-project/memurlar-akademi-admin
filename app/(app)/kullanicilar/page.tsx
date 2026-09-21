@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
-import { CheckCircle2, Crown, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2, UserCheck } from "lucide-react";
+import { CheckCircle2, Crown, Download, LoaderCircle, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2, UserCheck } from "lucide-react";
 import { AdminDataGrid } from "@/components/admin/crud/AdminDataGrid";
 import {
   AdminListToolbar,
@@ -22,7 +22,7 @@ import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { AdminTableSkeleton } from "@/components/ui/Skeleton";
 import { useAdminList } from "@/hooks/useAdminList";
-import { adminApiRequest } from "@/lib/admin-api";
+import { adminApiDownload, adminApiRequest } from "@/lib/admin-api";
 import type { AdminUser } from "@/lib/types";
 
 type ExamOption = {
@@ -55,6 +55,7 @@ export default function UsersPage() {
   const [pageSize, setPageSize] = useState(20);
   const [exams, setExams] = useState<ExamOption[]>([]);
   const [busyId, setBusyId] = useState<number | null>(null);
+  const [exporting, setExporting] = useState(false);
   const deferredQuery = useDeferredValue(query);
 
   const { items, setItems, loading, error, refresh, pagination } = useAdminList<AdminUser>({
@@ -187,6 +188,55 @@ export default function UsersPage() {
       });
     } finally {
       setBusyId(null);
+    }
+  }
+
+  async function handleExport() {
+    if (!token || exporting) {
+      return;
+    }
+
+    const exportParams = new URLSearchParams();
+    const search = query.trim();
+
+    if (search) exportParams.set("search", search);
+    if (statusFilter !== "all") exportParams.set("status", statusFilter);
+    if (selectedExamId !== null) exportParams.set("exam_id", String(selectedExamId));
+    if (membershipTypeFilter !== "all") exportParams.set("membership_type", membershipTypeFilter);
+
+    const exportPath = `/admin/users/export${exportParams.size > 0 ? `?${exportParams.toString()}` : ""}`;
+    setExporting(true);
+
+    try {
+      const { blob, filename } = await adminApiDownload(exportPath, token);
+      const objectUrl = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      const fallbackDate = new Intl.DateTimeFormat("sv-SE", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(new Date());
+
+      anchor.href = objectUrl;
+      anchor.download = filename ?? `kullanicilar-${fallbackDate}.csv`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      window.setTimeout(() => URL.revokeObjectURL(objectUrl), 0);
+
+      showToast({
+        tone: "success",
+        title: "Kullanıcı listesi indirildi",
+        description: `${pagination?.total ?? items.length} filtrelenmiş kullanıcı CSV dosyasına aktarıldı.`,
+      });
+    } catch (exportError) {
+      showToast({
+        tone: "error",
+        title: "Kullanıcılar dışa aktarılamadı",
+        description: exportError instanceof Error ? exportError.message : "Dosya indirilemedi.",
+      });
+    } finally {
+      setExporting(false);
     }
   }
 
@@ -386,6 +436,15 @@ export default function UsersPage() {
             </AdminListToolbarFields>
 
             <AdminListToolbarActions>
+              <button
+                className="admin-button admin-button-secondary h-10 gap-2 px-3 text-sm"
+                disabled={exporting || loading}
+                onClick={() => void handleExport()}
+                type="button"
+              >
+                {exporting ? <LoaderCircle className="animate-spin" size={16} /> : <Download size={16} />}
+                {exporting ? "Hazırlanıyor" : "Dışa aktar"}
+              </button>
               <AdminListToolbarIconButton
                 aria-label="Listeyi yenile"
                 onClick={() => void refresh()}

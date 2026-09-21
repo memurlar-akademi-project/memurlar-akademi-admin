@@ -86,3 +86,37 @@ export async function adminApiBlob(path: string, token: string): Promise<Blob> {
 
   return response.blob();
 }
+
+export async function adminApiDownload(
+  path: string,
+  token: string,
+): Promise<{ blob: Blob; filename: string | null }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}${path}`, {
+      headers: {
+        Accept: "text/csv",
+        Authorization: `Bearer ${token}`,
+      },
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      const json = (await response.json().catch(() => null)) as ApiEnvelope<unknown> | null;
+      throw new Error(json?.message ?? "Dosya indirilemedi.");
+    }
+
+    const disposition = response.headers.get("Content-Disposition");
+    const filenameMatch = disposition?.match(/filename\*?=(?:UTF-8''|["']?)([^"';\n]+)/i);
+
+    return {
+      blob: await response.blob(),
+      filename: filenameMatch?.[1] ? decodeURIComponent(filenameMatch[1].trim()) : null,
+    };
+  } catch (error) {
+    if (error instanceof TypeError) {
+      throw new Error("Sunucuya ulaşılamadı. Backend servisi, CORS ayarı veya ağ bağlantısını kontrol et.");
+    }
+
+    throw error;
+  }
+}

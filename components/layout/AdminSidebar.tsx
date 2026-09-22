@@ -27,6 +27,7 @@ import {
   PencilRuler,
   PlugZap,
   ReceiptText,
+  TicketPercent,
   ScrollText,
   Send,
   RadioTower,
@@ -115,6 +116,7 @@ const navigation = [
     items: [
       { href: "/kullanicilar", label: "Kullanıcılar", icon: ShieldUser },
       { href: "/siparisler", label: "Siparişler", icon: ReceiptText },
+      { href: "/indirim-kuponlari", label: "İndirim Kuponları", icon: TicketPercent },
       { href: "/entegrasyonlar", label: "Entegrasyonlar", icon: PlugZap },
       { href: "/sosyal-medya", label: "Sosyal Medya", icon: Send },
       { href: "/topluluk", label: "Topluluk Onayı", icon: MessagesSquare },

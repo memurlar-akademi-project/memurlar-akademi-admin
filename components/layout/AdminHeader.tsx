@@ -141,6 +141,10 @@ function resolvePageMeta(pathname: string) {
     return { title: "Siparişler" };
   }
 
+  if (pathname === "/indirim-kuponlari") {
+    return { title: "İndirim Kuponları" };
+  }
+
   if (/^\/siparisler\/\d+\/duzenle$/.test(pathname)) {
     return { title: "Sipariş Düzenle", backHref: "/siparisler" };
   }

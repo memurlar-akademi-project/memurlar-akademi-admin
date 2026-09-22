@@ -926,6 +926,38 @@ export type AdminSubscriptionPlan = {
   order_count: number;
 };
 
+export type AdminDiscountCoupon = {
+  id: number;
+  code: string;
+  discount_type: "percentage" | "fixed";
+  discount_value: number;
+  starts_at: string | null;
+  ends_at: string | null;
+  usage_limit: number | null;
+  per_user_limit: number;
+  is_active: boolean;
+  completed_usage_count: number;
+  pending_usage_count: number;
+  exam: {
+    id: number;
+    name: string;
+    slug: string;
+    price: number;
+  } | null;
+  created_at: string | null;
+  updated_at: string | null;
+};
+
+export type AdminCouponExamOption = {
+  id: number;
+  name: string;
+  slug: string;
+  year: number | null;
+  price: number;
+  status: string;
+  ministry: { id: number; name: string } | null;
+};
+
 export type AdminLiveExamEvent = {
   id: number;
   exam_id: number;

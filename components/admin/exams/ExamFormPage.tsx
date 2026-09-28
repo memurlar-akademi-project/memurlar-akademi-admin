@@ -487,7 +487,7 @@ export function ExamFormPage({
           total_question_count: form.total_question_count ? Number(form.total_question_count) : null,
           duration_min: form.duration_min ? Number(form.duration_min) : null,
           passing_score: form.passing_score ? Number(form.passing_score) : null,
-          is_active_for_signup: form.is_active_for_signup,
+          is_active_for_signup: form.status === "test" ? false : form.is_active_for_signup,
           topic_ids: form.topic_ids,
           subject_ids: selectedExamSubjects.map((subject) => subject.id),
           sections: sectionSubjects
@@ -1177,17 +1177,24 @@ export function ExamFormPage({
                   <div className="mt-4 space-y-4">
                     <select
                       className="admin-input h-12"
-                      onChange={(event) => setForm((current) => ({ ...current, status: event.target.value }))}
+                      onChange={(event) => setForm((current) => ({
+                        ...current,
+                        status: event.target.value,
+                        is_active_for_signup: event.target.value === "test" ? false : current.is_active_for_signup,
+                      }))}
                       value={form.status}
                     >
                       <option value="active">Aktif</option>
                       <option value="draft">Taslak</option>
+                      <option value="test">Test (yalnız atanmış üyeler)</option>
                       <option value="passive">Pasif</option>
                     </select>
 
                     <p className="text-sm leading-6 text-[var(--color-admin-muted)]">
                       {form.status === "active"
                         ? "Aktif sınavlar listeleme ve ilişki kurma akışında kullanılabilir."
+                        : form.status === "test"
+                          ? "Test sınavı yalnız yönetici tarafından atanmış üyelerde görünür; genel kayıt kapalıdır."
                         : form.status === "draft"
                           ? "Taslak sınavlar hazırlık aşamasında tutulur."
                           : "Pasif sınavlar geçmiş kayıt olarak korunur."}

@@ -45,7 +45,7 @@ export default function ExamsPage() {
 
   const [query, setQuery] = useState("");
   const [selectedMinistryId, setSelectedMinistryId] = useState(ministryIdFilter ?? "all");
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "passive">("all");
+  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "draft" | "test" | "passive">("all");
   const [sortMode, setSortMode] = useState<"default" | "upcoming" | "members">("default");
   const [togglingId, setTogglingId] = useState<number | null>(null);
 
@@ -242,6 +242,8 @@ export default function ExamsPage() {
           className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold ${
             row.original.status === "active"
               ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+              : row.original.status === "test"
+                ? "border-sky-200 bg-sky-50 text-sky-700"
               : row.original.status === "draft"
                 ? "border-amber-200 bg-amber-50 text-amber-700"
                 : "border-slate-200 bg-slate-100 text-slate-600"
@@ -249,6 +251,8 @@ export default function ExamsPage() {
         >
           {row.original.status === "active"
             ? "Aktif"
+            : row.original.status === "test"
+              ? "Test"
             : row.original.status === "draft"
               ? "Taslak"
               : "Pasif"}
@@ -273,7 +277,7 @@ export default function ExamsPage() {
           >
             <SquarePen size={16} />
           </Link>
-          <ConfirmDialog
+          {row.original.status !== "test" ? <ConfirmDialog
             busy={togglingId === row.original.id}
             confirmLabel={row.original.status === "active" ? "Pasife Al" : "Aktife Al"}
             description={
@@ -299,7 +303,7 @@ export default function ExamsPage() {
                 )}
               </span>
             }
-          />
+          /> : null}
         </div>
       ),
     },
@@ -337,12 +341,13 @@ export default function ExamsPage() {
               <AdminListToolbarField className="min-w-[190px]">
                 <select
                   className="admin-input h-10 appearance-none pr-9 text-sm leading-none"
-                  onChange={(event) => setStatusFilter(event.target.value as "all" | "active" | "draft" | "passive")}
+                  onChange={(event) => setStatusFilter(event.target.value as "all" | "active" | "draft" | "test" | "passive")}
                   value={statusFilter}
                 >
                   <option value="all">Tüm durumlar</option>
                   <option value="active">Aktif</option>
                   <option value="draft">Taslak</option>
+                  <option value="test">Test</option>
                   <option value="passive">Pasif</option>
                 </select>
               </AdminListToolbarField>

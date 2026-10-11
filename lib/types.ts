@@ -69,6 +69,16 @@ export type AdminSession = {
   };
 };
 
+export type AdminMembershipAccess = {
+  type: string;
+  status: string;
+  starts_at: string | null;
+  ends_at: string | null;
+  study_allowed: boolean;
+  premium: boolean;
+  expired_paid: boolean;
+};
+
 export type AdminUser = {
   id: number;
   name: string;
@@ -80,6 +90,7 @@ export type AdminUser = {
   last_activity_at: string | null;
   is_currently_active: boolean;
   membership: {
+    access?: AdminMembershipAccess;
     type: string;
     status: string;
     starts_at?: string | null;
@@ -90,6 +101,7 @@ export type AdminUser = {
     } | null;
   } | null;
   memberships: Array<{
+    access?: AdminMembershipAccess;
     id: number;
     type: string;
     status: string;

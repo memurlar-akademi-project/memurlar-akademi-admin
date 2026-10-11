@@ -120,6 +120,8 @@ const navigation = [
       { href: "/entegrasyonlar", label: "Entegrasyonlar", icon: PlugZap },
       { href: "/sosyal-medya", label: "Sosyal Medya", icon: Send },
       { href: "/topluluk", label: "Topluluk Onayı", icon: MessagesSquare },
+      { href: "/destek", label: "Destek Talepleri", icon: MessagesSquare },
+      { href: "/hesap-silme-talepleri", label: "Hesap Silme Talepleri", icon: ShieldUser },
     ],
   },
 ];

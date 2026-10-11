@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  distDir: process.env.MA_ADMIN_QA_DIST_DIR ?? ".next",
   output: "standalone",
   productionBrowserSourceMaps: false,
   async headers() {

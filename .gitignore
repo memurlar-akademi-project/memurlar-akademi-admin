@@ -5,6 +5,9 @@
 
 # next.js
 /.next/
+/.next-isolated-qa/
+/.next-deletion-guard-qa/
+/.next-deletion-closure/
 /out/
 
 # production

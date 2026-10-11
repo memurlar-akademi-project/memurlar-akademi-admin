@@ -11,6 +11,7 @@ import { useAdminPageMeta } from "@/components/providers/AdminPageMetaProvider";
 import { useAdminToast } from "@/components/providers/AdminToastProvider";
 import { adminApiRequest } from "@/lib/admin-api";
 import type { AdminUser } from "@/lib/types";
+import { userFormSubmission, userFormValues, type UserFormValues } from "@/lib/user-form";
 
 type ExamOption = {
   id: number;
@@ -18,7 +19,7 @@ type ExamOption = {
   ministry_name: string | null;
 };
 
-const emptyForm = {
+const emptyForm: UserFormValues = {
   name: "",
   email: "",
   password: "",
@@ -110,26 +111,7 @@ export function UserFormPage({
         }
 
         setUser(item);
-        const memberships = item.memberships?.length
-          ? item.memberships
-          : item.membership
-            ? [{ ...item.membership, id: 0, is_selected: true }]
-            : [];
-        const examIds = memberships
-          .map((membership) => membership.exam?.id)
-          .filter((examId): examId is number => typeof examId === "number");
-
-        setForm({
-          name: item.name,
-          email: item.email,
-          password: "",
-          status: item.status,
-          exam_ids: examIds,
-          active_exam_id:
-            memberships.find((membership) => membership.is_selected)?.exam?.id ?? examIds[0] ?? null,
-          membership_type: item.membership?.type ?? "paid",
-          membership_status: item.membership?.status ?? item.status,
-        });
+        setForm(userFormValues(item));
       } catch (loadError) {
         if (!cancelled) {
           setError(loadError instanceof Error ? loadError.message : "Kullanıcı yüklenemedi.");
@@ -161,7 +143,7 @@ export function UserFormPage({
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!token) {
+    if (!token || saving || (mode === "edit" && !user)) {
       return;
     }
 
@@ -179,24 +161,12 @@ export function UserFormPage({
         {
           token,
           method: mode === "edit" ? "PUT" : "POST",
-          body: {
-            name: form.name,
-            email: form.email,
-            password: form.password || undefined,
-            status: form.status,
-            exam_ids: form.exam_ids,
-            active_exam_id: form.active_exam_id,
-            membership_type: form.membership_type,
-            membership_status: form.membership_status,
-          },
+          body: userFormSubmission(form, mode === "edit" ? user : null),
         },
       );
 
       setUser(response.data.user);
-      setForm((current) => ({
-        ...current,
-        password: "",
-      }));
+      setForm(userFormValues(response.data.user));
 
       showToast({
         tone: "success",
@@ -232,147 +202,150 @@ export function UserFormPage({
     <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
       <div className="space-y-4">
         <AdminTableCard>
-          <form className="space-y-5 px-5 py-5" id={formId} onSubmit={handleSubmit}>
-            <div className="grid gap-4 lg:grid-cols-2">
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Ad Soyad
-                </span>
-                <input
-                  className="admin-input h-11"
-                  onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-                  placeholder="Kullanıcı adı"
-                  value={form.name}
-                />
-              </label>
+          <form className="px-5 py-5" id={formId} onSubmit={handleSubmit}>
+            <fieldset className="min-w-0 space-y-5 border-0 p-0" disabled={saving}>
+              <div className="grid gap-4 lg:grid-cols-2">
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Ad Soyad
+                  </span>
+                  <input
+                    className="admin-input h-11"
+                    onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
+                    placeholder="Kullanıcı adı"
+                    value={form.name}
+                  />
+                </label>
 
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  E-posta
-                </span>
-                <input
-                  className="admin-input h-11"
-                  onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-                  placeholder="ornek@mail.com"
-                  type="email"
-                  value={form.email}
-                />
-              </label>
-            </div>
-
-            <div className="grid gap-4 lg:grid-cols-3">
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Durum
-                </span>
-                <select
-                  className="admin-input h-11"
-                  onChange={(event) => {
-                    const nextStatus = event.target.value as "active" | "passive";
-                    setForm((current) => ({
-                      ...current,
-                      status: nextStatus,
-                      membership_status: nextStatus,
-                    }));
-                  }}
-                  value={form.status}
-                >
-                  <option value="active">Aktif</option>
-                  <option value="passive">Pasif</option>
-                </select>
-              </label>
-
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Üyelik Tipi
-                </span>
-                <select
-                  className="admin-input h-11"
-                  onChange={(event) =>
-                    setForm((current) => ({ ...current, membership_type: event.target.value as "free" | "paid" }))
-                  }
-                  value={form.membership_type}
-                >
-                  <option value="free">Free</option>
-                  <option value="paid">Ücretli</option>
-                </select>
-              </label>
-
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Üyelik Durumu
-                </span>
-                <select
-                  className="admin-input h-11"
-                  onChange={(event) =>
-                    setForm((current) => ({ ...current, membership_status: event.target.value as "active" | "passive" }))
-                  }
-                  value={form.membership_status}
-                >
-                  <option value="active">Aktif</option>
-                  <option value="passive">Pasif</option>
-                </select>
-              </label>
-            </div>
-
-            <AdminMultiSelect
-              emptyStateText="Sınav bulunamadı."
-              helperText="Kullanıcının erişebileceği bir veya daha fazla sınavı seç."
-              label="Sınavlar"
-              onChange={(nextExamIds) =>
-                setForm((current) => ({
-                  ...current,
-                  exam_ids: nextExamIds,
-                  active_exam_id: nextExamIds.includes(current.active_exam_id ?? -1)
-                    ? current.active_exam_id
-                    : nextExamIds[0] ?? null,
-                }))
-              }
-              options={examOptions}
-              searchPlaceholder="Sınav ara"
-              selectedSummaryLabel="sınav seçildi"
-              value={form.exam_ids}
-            />
-
-            {form.exam_ids.length > 1 ? (
-              <label className="block space-y-2">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                  Aktif Sınav
-                </span>
-                <AdminSearchSelect
-                  emptyText="Aktif sınav bulunamadı."
-                  hideLabel
-                  label="Aktif sınav"
-                  onChange={(next) => setForm((current) => ({ ...current, active_exam_id: next }))}
-                  options={examOptions.filter((exam) => form.exam_ids.includes(exam.id))}
-                  placeholder="Aktif sınavı seç"
-                  value={form.active_exam_id}
-                />
-                <span className="block text-xs leading-5 text-[var(--color-admin-muted)]">
-                  Kullanıcı giriş yaptığında ilk olarak bu sınavı görür.
-                </span>
-              </label>
-            ) : null}
-
-            <label className="block space-y-2">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
-                {mode === "edit" ? "Yeni Şifre" : "Şifre"}
-              </span>
-              <input
-                autoComplete="new-password"
-                className="admin-input h-11"
-                onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
-                placeholder={mode === "edit" ? "Boş bırakırsan değişmez" : "En az 8 karakter"}
-                type="password"
-                value={form.password}
-              />
-            </label>
-
-            {error ? (
-              <div className="rounded-2xl border border-[var(--color-admin-danger)]/20 bg-[var(--color-admin-danger-soft)] px-4 py-3 text-sm text-[var(--color-admin-danger)]">
-                {error}
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    E-posta
+                  </span>
+                  <input
+                    className="admin-input h-11"
+                    onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
+                    placeholder="ornek@mail.com"
+                    type="email"
+                    value={form.email}
+                  />
+                </label>
               </div>
-            ) : null}
+
+              <div className="grid gap-4 lg:grid-cols-3">
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Durum
+                  </span>
+                  <select
+                    className="admin-input h-11"
+                    onChange={(event) => {
+                      const nextStatus = event.target.value as "active" | "passive";
+                      setForm((current) => ({
+                        ...current,
+                        status: nextStatus,
+                        membership_status: nextStatus,
+                      }));
+                    }}
+                    value={form.status}
+                  >
+                    <option value="active">Aktif</option>
+                    <option value="passive">Pasif</option>
+                  </select>
+                </label>
+
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Üyelik Tipi
+                  </span>
+                  <select
+                    className="admin-input h-11"
+                    onChange={(event) =>
+                      setForm((current) => ({ ...current, membership_type: event.target.value as UserFormValues["membership_type"] }))
+                    }
+                    value={form.membership_type}
+                  >
+                    {mode === "edit" ? <option value="preserve">Mevcut erişimi koru</option> : null}
+                    <option value="free">Free</option>
+                    <option value="paid">Ücretli</option>
+                  </select>
+                </label>
+
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Üyelik Durumu
+                  </span>
+                  <select
+                    className="admin-input h-11"
+                    onChange={(event) =>
+                      setForm((current) => ({ ...current, membership_status: event.target.value as "active" | "passive" }))
+                    }
+                    value={form.membership_status}
+                  >
+                    <option value="active">Aktif</option>
+                    <option value="passive">Pasif</option>
+                  </select>
+                </label>
+              </div>
+
+              <AdminMultiSelect
+                emptyStateText="Sınav bulunamadı."
+                helperText="Kullanıcının erişebileceği bir veya daha fazla sınavı seç."
+                label="Sınavlar"
+                onChange={(nextExamIds) =>
+                  setForm((current) => ({
+                    ...current,
+                    exam_ids: nextExamIds,
+                    active_exam_id: nextExamIds.includes(current.active_exam_id ?? -1)
+                      ? current.active_exam_id
+                      : nextExamIds[0] ?? null,
+                  }))
+                }
+                options={examOptions}
+                searchPlaceholder="Sınav ara"
+                selectedSummaryLabel="sınav seçildi"
+                value={form.exam_ids}
+              />
+
+              {form.exam_ids.length > 1 ? (
+                <label className="block space-y-2">
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                    Aktif Sınav
+                  </span>
+                  <AdminSearchSelect
+                    emptyText="Aktif sınav bulunamadı."
+                    hideLabel
+                    label="Aktif sınav"
+                    onChange={(next) => setForm((current) => ({ ...current, active_exam_id: next }))}
+                    options={examOptions.filter((exam) => form.exam_ids.includes(exam.id))}
+                    placeholder="Aktif sınavı seç"
+                    value={form.active_exam_id}
+                  />
+                  <span className="block text-xs leading-5 text-[var(--color-admin-muted)]">
+                    Kullanıcı giriş yaptığında ilk olarak bu sınavı görür.
+                  </span>
+                </label>
+              ) : null}
+
+              <label className="block space-y-2">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-admin-muted)]">
+                  {mode === "edit" ? "Yeni Şifre" : "Şifre"}
+                </span>
+                <input
+                  autoComplete="new-password"
+                  className="admin-input h-11"
+                  onChange={(event) => setForm((current) => ({ ...current, password: event.target.value }))}
+                  placeholder={mode === "edit" ? "Boş bırakırsan değişmez" : "En az 8 karakter"}
+                  type="password"
+                  value={form.password}
+                />
+              </label>
+
+              {error ? (
+                <div className="rounded-2xl border border-[var(--color-admin-danger)]/20 bg-[var(--color-admin-danger-soft)] px-4 py-3 text-sm text-[var(--color-admin-danger)]">
+                  {error}
+                </div>
+              ) : null}
+            </fieldset>
           </form>
         </AdminTableCard>
       </div>
@@ -386,6 +359,14 @@ export function UserFormPage({
               Özet
             </h3>
             <div className="mt-4 space-y-3 text-sm">
+              {user?.membership?.access ? (
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-[var(--color-admin-muted)]">Mevcut erişim</span>
+                  <span className="font-semibold text-[var(--color-admin-ink)]">
+                    {!user.membership.access.study_allowed ? "Pasif" : user.membership.access.premium ? "Premium" : "Free"}
+                  </span>
+                </div>
+              ) : null}
               <div className="flex items-center justify-between gap-3">
                 <span className="text-[var(--color-admin-muted)]">Bağlı sınav</span>
                 <span className="font-semibold text-[var(--color-admin-ink)]">

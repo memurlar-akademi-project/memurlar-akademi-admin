@@ -1,7 +1,16 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useCallback,
+  useState,
+} from "react";
 import { adminApiRequest } from "@/lib/admin-api";
+import { endAdminSession } from "@/lib/admin-logout";
 import {
   clearAdminSessionStorage,
   loadAdminSessionStorage,
@@ -41,9 +50,12 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
       }
 
       try {
-        const response = await adminApiRequest<{ user: AdminSession["user"] }>("/admin/me", {
-          token: stored.token,
-        });
+        const response = await adminApiRequest<{ user: AdminSession["user"] }>(
+          "/admin/me",
+          {
+            token: stored.token,
+          },
+        );
 
         if (cancelled) {
           return;
@@ -95,10 +107,17 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     setSession(nextSession);
   }
 
-  function logout() {
-    clearAdminSessionStorage();
-    setSession(null);
-  }
+  const logout = useCallback(() => {
+    void endAdminSession(
+      session?.token ?? null,
+      () => {
+        clearAdminSessionStorage();
+        setSession(null);
+      },
+      (token) =>
+        adminApiRequest<null>("/auth/logout", { method: "POST", token }),
+    );
+  }, [session?.token]);
 
   const value = useMemo<AdminAuthContextValue>(
     () => ({
@@ -108,10 +127,14 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
       login,
       logout,
     }),
-    [isBootstrapping, session],
+    [isBootstrapping, session, logout],
   );
 
-  return <AdminAuthContext.Provider value={value}>{children}</AdminAuthContext.Provider>;
+  return (
+    <AdminAuthContext.Provider value={value}>
+      {children}
+    </AdminAuthContext.Provider>
+  );
 }
 
 export function useAdminAuth() {

@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
-import { CheckCircle2, Crown, Download, LoaderCircle, PauseCircle, Plus, RefreshCcw, SquarePen, Trash2, UserCheck } from "lucide-react";
+import { CheckCircle2, Crown, Download, LoaderCircle, PauseCircle, Plus, RefreshCcw, SquarePen, ClipboardList, UserCheck } from "lucide-react";
 import { AdminDataGrid } from "@/components/admin/crud/AdminDataGrid";
 import {
   AdminListToolbar,
@@ -30,6 +30,10 @@ type ExamOption = {
   name: string;
   ministry_name: string | null;
 };
+
+function membershipForExam(user: AdminUser, examId: number | null) {
+  return examId === null ? user.membership : user.memberships.find((membership) => membership.exam?.id === examId) ?? null;
+}
 
 function formatDate(value: string | null | undefined) {
   if (!value) {
@@ -117,13 +121,13 @@ export default function UsersPage() {
     return items.reduce(
       (totals, item) => ({
         active: totals.active + (item.status === "active" ? 1 : 0),
-        paid: totals.paid + (item.membership?.type === "paid" ? 1 : 0),
+        paid: totals.paid + ((membershipForExam(item, selectedExamId)?.access?.premium ?? membershipForExam(item, selectedExamId)?.type === "paid") ? 1 : 0),
         answered: totals.answered + item.activity.answered_question_count,
         completedMocks: totals.completedMocks + item.activity.completed_mock_exam_count,
       }),
       { active: 0, paid: 0, answered: 0, completedMocks: 0 },
     );
-  }, [items]);
+  }, [items, selectedExamId]);
 
   async function handleStatusChange(item: AdminUser, nextStatus: "active" | "passive") {
     if (!token) {
@@ -155,36 +159,6 @@ export default function UsersPage() {
         tone: "error",
         title: "Durum güncellenemedi",
         description: submitError instanceof Error ? submitError.message : "İşlem başarısız oldu.",
-      });
-    } finally {
-      setBusyId(null);
-    }
-  }
-
-  async function handleDelete(item: AdminUser) {
-    if (!token) {
-      return;
-    }
-
-    setBusyId(item.id);
-
-    try {
-      await adminApiRequest(`/admin/users/${item.id}`, {
-        token,
-        method: "DELETE",
-      });
-
-      setItems((current) => current.filter((entry) => entry.id !== item.id));
-      showToast({
-        tone: "success",
-        title: "Kullanıcı silindi",
-        description: item.email,
-      });
-    } catch (submitError) {
-      showToast({
-        tone: "error",
-        title: "Kullanıcı silinemedi",
-        description: submitError instanceof Error ? submitError.message : "Silme işlemi başarısız oldu.",
       });
     } finally {
       setBusyId(null);
@@ -254,16 +228,21 @@ export default function UsersPage() {
     {
       accessorKey: "membership",
       header: "Sınav / Üyelik",
-      cell: ({ row }) => (
-        <div className="text-sm">
-          <p className="font-semibold text-[var(--color-admin-ink)]">
-            {row.original.membership?.exam?.name ?? "Sınav yok"}
-          </p>
-          <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
-            {(row.original.membership?.type ?? "-").toUpperCase()} · {row.original.membership?.status ?? "-"}
-          </p>
-        </div>
-      ),
+      cell: ({ row }) => {
+        const membership = membershipForExam(row.original, selectedExamId);
+        return (
+          <div className="text-sm">
+            <p className="font-semibold text-[var(--color-admin-ink)]">
+              {membership?.exam?.name ?? "Sınav yok"}
+            </p>
+            <p className="mt-1 text-xs text-[var(--color-admin-muted)]">
+              {membership
+                ? `${(membership.access?.premium ?? membership.type === "paid") ? "PREMIUM" : "FREE"} · ${membership.access?.status ?? membership.status}`
+                : "-"}
+            </p>
+          </div>
+        );
+      },
     },
     {
       accessorKey: "order_count",
@@ -340,18 +319,14 @@ export default function UsersPage() {
               </span>
             }
           />
-          <ConfirmDialog
-            busy={busyId === row.original.id}
-            confirmLabel="Kullanıcıyı Sil"
-            description="Kullanıcıya ait kayıtlar da silinir. Bu işlem geri alınamaz."
-            onConfirm={() => handleDelete(row.original)}
-            title="Kullanıcı silinsin mi?"
-            trigger={
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:border-[var(--color-admin-danger)] hover:text-[var(--color-admin-danger)]">
-                <Trash2 size={16} />
-              </span>
-            }
-          />
+          <Link
+            href={`/hesap-silme-talepleri?user_id=${row.original.id}`}
+            aria-label={`${row.original.name} için hesap silme taleplerini incele`}
+            title="Hesap silme taleplerini incele"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-admin-line)] bg-[var(--color-admin-bg-raised)] text-[var(--color-admin-muted)] transition hover:border-[var(--color-admin-accent)] hover:text-[var(--color-admin-accent)]"
+          >
+            <ClipboardList size={16} />
+          </Link>
         </div>
       ),
     },

@@ -1,7 +1,8 @@
 import type { ApiEnvelope } from "@/lib/types";
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "http://127.0.0.1:8000/api/v1";
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ??
+  "http://127.0.0.1:8000/api/v1";
 
 const inflight = new Map<string, Promise<unknown>>();
 
@@ -10,6 +11,15 @@ type RequestOptions = {
   method?: "GET" | "POST" | "PUT" | "DELETE";
   body?: unknown | FormData;
 };
+
+export class AdminApiError extends Error {
+  readonly status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.status = status;
+    this.name = "AdminApiError";
+  }
+}
 
 export async function adminApiRequest<T>(
   path: string,
@@ -28,6 +38,7 @@ export async function adminApiRequest<T>(
   }
 
   const headers: Record<string, string> = {
+    Accept: "application/json",
     ...(options.token ? { Authorization: `Bearer ${options.token}` } : {}),
   };
 
@@ -46,21 +57,31 @@ export async function adminApiRequest<T>(
     cache: "no-store",
   })
     .then(async (response) => {
-      const json = (await response.json().catch(() => null)) as ApiEnvelope<T> | null;
+      const json = (await response
+        .json()
+        .catch(() => null)) as ApiEnvelope<T> | null;
 
       if (!response.ok || !json) {
-        throw new Error(json?.message ?? "API isteği başarısız oldu.");
+        throw new AdminApiError(
+          json?.message ?? "API isteği başarısız oldu.",
+          response.status,
+        );
       }
 
       if (!json.success) {
-        throw new Error(json.message ?? "API isteği başarısız oldu.");
+        throw new AdminApiError(
+          json.message ?? "API isteği başarısız oldu.",
+          response.status,
+        );
       }
 
       return json;
     })
     .catch((error) => {
       if (error instanceof TypeError) {
-        throw new Error("Sunucuya ulaşılamadı. Backend servisi, CORS ayarı veya ağ bağlantısını kontrol et.");
+        throw new Error(
+          "Sunucuya ulaşılamadı. Backend servisi, CORS ayarı veya ağ bağlantısını kontrol et.",
+        );
       }
 
       throw error;
@@ -101,20 +122,28 @@ export async function adminApiDownload(
     });
 
     if (!response.ok) {
-      const json = (await response.json().catch(() => null)) as ApiEnvelope<unknown> | null;
+      const json = (await response
+        .json()
+        .catch(() => null)) as ApiEnvelope<unknown> | null;
       throw new Error(json?.message ?? "Dosya indirilemedi.");
     }
 
     const disposition = response.headers.get("Content-Disposition");
-    const filenameMatch = disposition?.match(/filename\*?=(?:UTF-8''|["']?)([^"';\n]+)/i);
+    const filenameMatch = disposition?.match(
+      /filename\*?=(?:UTF-8''|["']?)([^"';\n]+)/i,
+    );
 
     return {
       blob: await response.blob(),
-      filename: filenameMatch?.[1] ? decodeURIComponent(filenameMatch[1].trim()) : null,
+      filename: filenameMatch?.[1]
+        ? decodeURIComponent(filenameMatch[1].trim())
+        : null,
     };
   } catch (error) {
     if (error instanceof TypeError) {
-      throw new Error("Sunucuya ulaşılamadı. Backend servisi, CORS ayarı veya ağ bağlantısını kontrol et.");
+      throw new Error(
+        "Sunucuya ulaşılamadı. Backend servisi, CORS ayarı veya ağ bağlantısını kontrol et.",
+      );
     }
 
     throw error;

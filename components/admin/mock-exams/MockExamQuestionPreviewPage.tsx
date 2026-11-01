@@ -149,6 +149,8 @@ export function MockExamQuestionPreviewPage({ mode }: Props) {
 
           if (!ignore) {
             setMockExams(response.data.mock_exams);
+            const requestedId = Number(new URLSearchParams(window.location.search).get("mock_exam_id"));
+            if (response.data.mock_exams.some((item) => item.id === requestedId)) setSelectedId(requestedId);
           }
         }
       } catch (loadError) {

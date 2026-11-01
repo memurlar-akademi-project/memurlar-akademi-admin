@@ -413,7 +413,8 @@ export function MockExamFormPage({
     () => exams.find((exam) => exam.id === form.exam_id) ?? null,
     [exams, form.exam_id],
   );
-  const expectedMockQuestionCount = selectedExam?.total_question_count ?? 80;
+  const isAnayasaLiveSource = form.slug === "adalet-bakanligi-anayasa-mini-deneme";
+  const expectedMockQuestionCount = isAnayasaLiveSource ? 40 : selectedExam?.total_question_count ?? 80;
 
   const unavailableQuestionIds = useMemo(() => {
     const next = new Set<number>();
@@ -980,7 +981,7 @@ export function MockExamFormPage({
                   onChange={(event) => setForm((current) => ({ ...current, status: event.target.value }))}
                   value={form.status}
                 >
-                  <option value="active">Aktif</option>
+                  <option value="active" disabled={isAnayasaLiveSource}>Aktif</option>
                   <option value="draft">Taslak</option>
                   <option value="passive">Pasif</option>
                 </select>
@@ -1335,7 +1336,7 @@ export function MockExamFormPage({
             <div className="mt-4 rounded-[18px] border border-[var(--color-admin-line)] bg-[var(--color-admin-panel-soft)] px-4 py-3 text-sm text-[var(--color-admin-muted)]">
               {examsLoading || questionsLoading
                 ? "Sınav ve soru havuzu yükleniyor..."
-                : `Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşur. Bu sayının altı veya üstü kayıtlar draft/pasif kalmalıdır.`}
+                : isAnayasaLiveSource ? "Bu kaynak deneme taslak kalır. Son soru listesi 40 soruya tamamlanınca canlı etkinlikten dondurulur ve ekip onayıyla katılıma açılır." : `Aktif bir deneme tam ${expectedMockQuestionCount} sorudan oluşur. Bu sayının altı veya üstü kayıtlar draft/pasif kalmalıdır.`}
             </div>
           </div>
         </AdminTableCard>

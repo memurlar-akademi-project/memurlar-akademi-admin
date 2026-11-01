@@ -17,6 +17,7 @@ type DetailPayload = { event: AdminLiveExamEvent; analytics: AdminLiveExamQuesti
 
 const initialForm = {
   mock_exam_id: "", title: "PAEM Türkiye Geneli Canlı Deneme", slug: "paem-turkiye-geneli-deneme-sinavi",
+  status: "draft",
   access_type: "private" as "public" | "private",
   start_mode: "manual" as "scheduled" | "manual",
   registration_opens_at: "", starts_at: "", question_count: "100", duration_min: "120",
@@ -43,7 +44,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const isEditMode = initialSelectedId !== null;
-  const canFreezeQuestions = detail ? ["scheduled", "registration_open", "waiting_room"].includes(detail.event.phase) : false;
+  const canFreezeQuestions = detail ? ["draft", "scheduled", "registration_open", "waiting_room"].includes(detail.event.phase) : false;
 
   useEffect(() => { setTitle("Canlı Sınav Operasyonu"); return () => setTitle(null); }, [setTitle]);
 
@@ -70,6 +71,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
   useEffect(() => {
     if (!isEditMode || !detail) return;
     setForm({
+      status: detail.event.status,
       mock_exam_id: detail.event.mock_exam_id === null ? "" : String(detail.event.mock_exam_id),
       title: detail.event.title,
       slug: detail.event.slug,
@@ -87,6 +89,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
   async function submitEvent(e: FormEvent) {
     e.preventDefault(); if (!token || !selectedMock || busy) return;
     if (isEditMode && !selectedId) return;
+    if (detail?.event.status === "draft" && form.status === "scheduled" && !window.confirm("Soruları son kez kontrol edip dondurduğunu onaylıyor musun? Etkinlik katılıma açılacak.")) return;
     setBusy("save");
     try {
       const durationMs = Number(form.duration_min) * 60_000;
@@ -100,6 +103,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
       const endpoint = isEditMode ? `/admin/live-exams/${selectedId}` : "/admin/live-exams";
       const response = await adminApiRequest<{ event: AdminLiveExamEvent }>(endpoint, {
         token, method: isEditMode ? "PUT" : "POST", body: {
+          ...(["draft", "scheduled"].includes(form.status) ? { status: form.status } : {}),
           exam_id: selectedMock.exam_id, mock_exam_id: selectedMock.id, title: form.title, slug: form.slug,
           access_type: form.access_type,
           start_mode: form.start_mode,
@@ -163,7 +167,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
 
   return <div className="space-y-6">
     <section className="flex flex-col gap-4 border-b border-[var(--color-admin-line)] pb-6 xl:flex-row xl:items-end xl:justify-between">
-      <div><Link href="/canli-sinavlar" className="mb-3 inline-flex items-center gap-1.5 text-xs font-bold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"><ArrowLeft size={14} />Canlı sınav listesi</Link><div className="mb-2 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.14em] text-amber-600"><RadioTower size={16} /> Operasyon merkezi</div><h1 className="text-3xl font-black tracking-[-.04em] text-[var(--color-admin-ink)]">PAEM Türkiye Geneli</h1><p className="mt-2 text-sm text-[var(--color-admin-muted)]">Etkinliği hazırla, soruları dondur, cevap dağılımını kontrol et ve sonuçları iki adımda yayınla.</p></div>
+      <div><Link href="/canli-sinavlar" className="mb-3 inline-flex items-center gap-1.5 text-xs font-bold text-[var(--color-admin-muted)] transition hover:text-[var(--color-admin-ink)]"><ArrowLeft size={14} />Canlı sınav listesi</Link><div className="mb-2 flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.14em] text-amber-600"><RadioTower size={16} /> Operasyon merkezi</div><h1 className="text-3xl font-black tracking-[-.04em] text-[var(--color-admin-ink)]">{detail?.event.title ?? "Canlı Sınav Operasyonu"}</h1><p className="mt-2 text-sm text-[var(--color-admin-muted)]">Etkinliği hazırla, soruları dondur, cevap dağılımını kontrol et ve sonuçları iki adımda yayınla.</p></div>
       <button onClick={() => void load()} className="admin-button admin-button-secondary"><RefreshCw size={16} />Yenile</button>
     </section>
     {error ? <div className="rounded-xl bg-red-50 p-4 text-sm font-bold text-red-700">{error}</div> : null}
@@ -175,6 +179,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
           <p className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs font-semibold leading-5 text-amber-900">Seçilen deneme, canlı etkinlik oluşturulunca normal deneme ekranlarından otomatik gizlenir. Etkinlik iptal edilince veya sonuçlar yayınlanınca tekrar kendi yayın durumuna döner.</p>
           <label className="admin-field"><span>Başlık</span><input required value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} /></label>
           <label className="admin-field"><span>Slug</span><input required readOnly={isEditMode} title={isEditMode ? "Mevcut sınav güncellenirken slug korunur." : undefined} value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} /></label>
+          {["draft", "scheduled"].includes(form.status) ? <label className="admin-field"><span>Hazırlık ve onay durumu</span><select value={form.status} onChange={(e) => setForm({ ...form, status: e.target.value })}><option value="draft">Taslak — ekip kontrolünde</option><option value="scheduled" disabled={!isEditMode}>Onaylandı — kayıtları aç</option></select></label> : null}
           <label className="admin-field"><span>Erişim</span><select value={form.access_type} onChange={(e) => { const accessType = e.target.value as "public" | "private"; setForm({ ...form, access_type: accessType, start_mode: accessType === "public" ? "scheduled" : form.start_mode }); }}><option value="private">Özel — yalnızca davetliler</option><option value="public">Herkese açık — uygun üyeler kayıt olabilir</option></select></label>
           <p className={`rounded-xl border p-3 text-xs font-semibold leading-5 ${form.access_type === "private" ? "border-emerald-200 bg-emerald-50 text-emerald-900" : "border-red-200 bg-red-50 text-red-900"}`}>{form.access_type === "private" ? "Bu sınavı yalnızca aşağıdan davet ettiğin kullanıcılar görebilir ve açabilir." : "Bu sınav ilgili programa kayıtlı tüm aktif üyelerin panelinde görünür."}</p>
           <label className="admin-field"><span>Başlatma şekli</span><select value={form.start_mode} onChange={(e) => setForm({ ...form, start_mode: e.target.value as "scheduled" | "manual" })} disabled={form.access_type === "public"}><option value="manual">Panelden manuel başlat</option><option value="scheduled">Belirlenen saatte otomatik başlat</option></select></label>
@@ -190,7 +195,9 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
       </aside>
       <main>{detail ? <div className="space-y-6">
         <section className="rounded-2xl border border-[var(--color-admin-line)] bg-[var(--color-admin-card)] p-6">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between"><div><span className="text-xs font-extrabold uppercase tracking-wider text-amber-600">{detail.event.phase}</span><h2 className="mt-2 text-2xl font-black tracking-[-.03em]">{detail.event.title}</h2><p className="mt-2 text-sm text-[var(--color-admin-muted)]">{detail.event.start_mode === "manual" && !detail.event.manually_started_at ? "Panelden başlatılmayı bekliyor" : `${formatDate(detail.event.starts_at)} — ${formatDate(detail.event.ends_at)}`}</p></div><div className="flex flex-wrap gap-2"><button className="admin-button admin-button-secondary" onClick={() => void archiveEvent()} disabled={Boolean(busy) || Boolean(detail.event.results_published_at)}><Archive size={16} />Arşivle</button><button className="admin-button admin-button-secondary" onClick={() => void action("freeze")} disabled={Boolean(busy) || !canFreezeQuestions}><Snowflake size={16} />Soruları dondur</button>{detail.event.start_mode === "manual" && !detail.event.manually_started_at ? <button className="admin-button admin-button-primary" onClick={() => void action("start")} disabled={Boolean(busy) || detail.event.questions_count !== detail.event.question_count}><Play size={16} />Sınavı başlat</button> : null}<button className="admin-button admin-button-secondary" onClick={() => void action("rankings")} disabled={Boolean(busy) || !["reviewing", "ranked"].includes(detail.event.phase)}><BarChart3 size={16} />Sıralamayı oluştur</button><button className="admin-button admin-button-primary" onClick={() => void action("publish-results")} disabled={Boolean(busy) || detail.event.phase !== "ranked"}><Send size={16} />Yayınla ve bildir</button></div></div>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between"><div><span className="text-xs font-extrabold uppercase tracking-wider text-amber-600">{detail.event.phase}</span><h2 className="mt-2 text-2xl font-black tracking-[-.03em]">{detail.event.title}</h2><p className="mt-2 text-sm text-[var(--color-admin-muted)]">{detail.event.start_mode === "manual" && !detail.event.manually_started_at ? "Panelden başlatılmayı bekliyor" : `${formatDate(detail.event.starts_at)} — ${formatDate(detail.event.ends_at)}`}</p></div><div className="flex flex-wrap gap-2"><button className="admin-button admin-button-secondary" onClick={() => void archiveEvent()} disabled={Boolean(busy) || Boolean(detail.event.results_published_at)}><Archive size={16} />Arşivle</button><button className="admin-button admin-button-secondary" onClick={() => void action("freeze")} disabled={Boolean(busy) || !canFreezeQuestions}><Snowflake size={16} />Soruları dondur</button>{detail.event.start_mode === "manual" && !detail.event.manually_started_at ? <button className="admin-button admin-button-primary" onClick={() => void action("start")} disabled={Boolean(busy) || detail.event.status === "draft" || detail.event.questions_count !== detail.event.question_count}><Play size={16} />Sınavı başlat</button> : null}<button className="admin-button admin-button-secondary" onClick={() => void action("rankings")} disabled={Boolean(busy) || !["reviewing", "ranked"].includes(detail.event.phase)}><BarChart3 size={16} />Sıralamayı oluştur</button><button className="admin-button admin-button-primary" onClick={() => void action("publish-results")} disabled={Boolean(busy) || detail.event.phase !== "ranked"}><Send size={16} />Yayınla ve bildir</button></div></div>
+          {detail.event.mock_exam_id ? <div className="mt-5 flex flex-wrap gap-3"><Link className="admin-button admin-button-secondary" href={`/denemeler/preview?mock_exam_id=${detail.event.mock_exam_id}`}>Soruları incele ve düzenle</Link><Link className="admin-button admin-button-secondary" href={`/denemeler/${detail.event.mock_exam_id}/duzenle`}>Soru ekle / çıkar ve sırala</Link></div> : null}
+          {detail.event.status === "draft" ? <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900">Ekip kontrolünde: bu taslak katılımcılara görünmez ve kayıt almaz. Kaynak denemede soruları düzenle; son haliyle “Soruları dondur” adımını tamamla. Ardından hazırlık durumunu “Onaylandı — kayıtları aç” olarak kaydet. Soru değişirse paket yeniden dondurulmalıdır.</p> : null}
           <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-[var(--color-admin-line)] lg:grid-cols-4"><Metric icon={<UsersRound />} label="Katılımcı" value={detail.event.participations_count} /><Metric icon={<LockKeyhole />} label="Dondurulan soru" value={detail.event.questions_count} /><Metric icon={<BarChart3 />} label="Taslak sonuç" value={detail.event.results_count} /><Metric icon={<Clock3 />} label="Süre" value={`${detail.event.duration_min} dk`} /></div>
         </section>
         {detail.event.results_count > 0 ? (
@@ -201,7 +208,7 @@ export function LiveExamWorkspace({ initialSelectedId = null }: { initialSelecte
           />
         ) : null}
         <LiveExamParticipants accessType={detail.event.access_type} eventId={detail.event.id} key={detail.event.id} onChanged={() => { void load(); void loadDetail(detail.event.id); }} questionsFrozen={detail.event.questions_count === detail.event.question_count} />
-        <section className="space-y-3"><div><h2 className="text-lg font-black">Soru kontrolü</h2><p className="text-sm text-[var(--color-admin-muted)]">Cevap dağılımını incele; gerekiyorsa anahtarı düzelt veya soruyu değerlendirme dışı bırak.</p></div>{detail.analytics.length === 0 ? <div className="rounded-2xl border border-dashed p-10 text-center text-sm text-[var(--color-admin-muted)]">Önce soru paketini dondur.</div> : detail.analytics.map((question) => <QuestionReview key={question.id} question={question} busy={busy === `question-${question.id}`} onSave={saveQuestion} />)}</section>
+        <section className="space-y-3"><div><h2 className="text-lg font-black">Soru kontrolü</h2><p className="text-sm text-[var(--color-admin-muted)]">Cevap dağılımını incele; gerekiyorsa anahtarı düzelt veya soruyu değerlendirme dışı bırak.</p></div>{detail.analytics.length === 0 ? <div className="rounded-2xl border border-dashed p-10 text-center text-sm text-[var(--color-admin-muted)]">Soruları incelemek ve değiştirmek için yukarıdaki kaynak deneme bağlantısını kullan. Kontrol tamamlanınca paketi dondur.</div> : detail.analytics.map((question) => <QuestionReview key={question.id} question={question} busy={busy === `question-${question.id}`} onSave={saveQuestion} />)}</section>
       </div> : <div className="grid min-h-[420px] place-items-center rounded-2xl border border-dashed px-8 text-center text-[var(--color-admin-muted)]">{isEditMode ? "Etkinlik bulunamadı." : "Önce etkinliği oluştur. Oluşturma tamamlanınca yeni etkinliğin soru dondurma ve kullanıcı davet ekranı açılacak."}</div>}</main>
     </div>
   </div>;

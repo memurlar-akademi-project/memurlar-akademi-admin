@@ -107,6 +107,7 @@ const navigation = [
     icon: Newspaper,
     items: [
       { href: "/sayfa-yonetimi/bloglar", label: "Bloglar", icon: Newspaper },
+      { href: "/sayfa-yonetimi/landing-sayfalari", label: "Landing Sayfaları", icon: PencilRuler },
     ],
   },
   {

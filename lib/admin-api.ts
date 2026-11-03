@@ -14,9 +14,11 @@ type RequestOptions = {
 
 export class AdminApiError extends Error {
   readonly status: number;
-  constructor(message: string, status: number) {
+  readonly errors?: Record<string, string[] | string>;
+  constructor(message: string, status: number, errors?: Record<string, string[] | string>) {
     super(message);
     this.status = status;
+    this.errors = errors;
     this.name = "AdminApiError";
   }
 }
@@ -59,12 +61,13 @@ export async function adminApiRequest<T>(
     .then(async (response) => {
       const json = (await response
         .json()
-        .catch(() => null)) as ApiEnvelope<T> | null;
+        .catch(() => null)) as (ApiEnvelope<T> & { errors?: Record<string, string[] | string> }) | null;
 
       if (!response.ok || !json) {
         throw new AdminApiError(
-          json?.message ?? "API isteği başarısız oldu.",
+          [json?.message ?? "API isteği başarısız oldu.", ...Array.from(new Set(Object.values(json?.errors ?? {}).flatMap(value => Array.isArray(value) ? value : [value])))].join(" "),
           response.status,
+          json?.errors,
         );
       }
 

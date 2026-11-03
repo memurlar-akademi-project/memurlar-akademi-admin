@@ -1,5 +1,6 @@
 "use client";
 
+import { normalizeChoiceOptions } from "@/lib/multiple-choice-options";
 import {
   ArrowLeft,
   ArrowRight,
@@ -60,19 +61,7 @@ const defaultOptions = (): QuestionOptionDraft[] =>
     is_correct: index === 0,
   }));
 
-function normalizeOptions(options?: QuestionOptionDraft[] | null): QuestionOptionDraft[] {
-  const optionMap = new Map((options ?? []).map((option) => [option.label, option]));
-
-  return optionLabels.map((label, index) => {
-    const existing = optionMap.get(label);
-
-    return {
-      label,
-      option_text: existing?.option_text ?? "",
-      is_correct: existing?.is_correct ?? index === 0,
-    };
-  });
-}
+const normalizeOptions = normalizeChoiceOptions;
 
 function toDateValue(value: string | null | undefined) {
   if (!value) {

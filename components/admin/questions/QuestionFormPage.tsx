@@ -1,5 +1,6 @@
 "use client";
 
+import { normalizeChoiceOptions } from "@/lib/multiple-choice-options";
 import { HelpCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -19,29 +20,8 @@ type QuestionOptionForm = {
   is_correct: boolean;
 };
 
-const optionLabels = ["A", "B", "C", "D", "E"];
-
-const defaultOptions = (): QuestionOptionForm[] => [
-  { label: "A", option_text: "", is_correct: true },
-  { label: "B", option_text: "", is_correct: false },
-  { label: "C", option_text: "", is_correct: false },
-  { label: "D", option_text: "", is_correct: false },
-  { label: "E", option_text: "", is_correct: false },
-];
-
-function normalizeMultipleChoiceOptions(options?: QuestionOptionForm[] | null): QuestionOptionForm[] {
-  const optionMap = new Map((options ?? []).map((option) => [option.label, option]));
-
-  return optionLabels.map((label, index) => {
-    const existing = optionMap.get(label);
-
-    return {
-      label,
-      option_text: existing?.option_text ?? "",
-      is_correct: existing?.is_correct ?? index === 0,
-    };
-  });
-}
+const defaultOptions = (): QuestionOptionForm[] => normalizeChoiceOptions();
+const normalizeMultipleChoiceOptions = normalizeChoiceOptions;
 
 const emptyForm = {
   topic_id: "",
@@ -427,9 +407,16 @@ export function QuestionFormPage({
                         ref={optionsSectionRef}
                       >
                         <div className="flex items-center justify-between gap-3">
-                          <h3 className="text-[13px] font-semibold text-[var(--color-admin-ink)]">Şıklar — 5 şık sabit, doğru cevabı işaretleyin</h3>
+                          <h3 className="text-[13px] font-semibold text-[var(--color-admin-ink)]">Şıklar — doğru cevabı işaretleyin</h3>
                         </div>
 
+                        <label className="flex items-center gap-3 text-sm font-semibold">
+                          Şık sayısı
+                          <select className="admin-input w-24" aria-label="Şık sayısı" value={form.options.length}
+                            onChange={event => setForm(current => ({ ...current, options: normalizeChoiceOptions(current.options, Number(event.target.value) as 4 | 5) }))}>
+                            <option value={4}>4 şık</option><option value={5}>5 şık</option>
+                          </select>
+                        </label>
                         <div className="space-y-3">
                           {form.options.map((option) => (
                             <div

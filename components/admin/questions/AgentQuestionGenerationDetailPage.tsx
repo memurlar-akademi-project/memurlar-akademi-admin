@@ -1,5 +1,7 @@
 "use client";
 
+import { hasValidChoiceLabels } from "@/lib/multiple-choice-options";
+
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, FileDown, Loader2, Pencil, RefreshCcw, Save, Trash2, X } from "lucide-react";
@@ -899,8 +901,8 @@ function validateDraft(draft: EditableQuestionDraft) {
     return "Soru kökü boş olamaz.";
   }
 
-  if (draft.options.length !== 5) {
-    return "Çoktan seçmeli soruda 5 şık olmalı.";
+  if (!hasValidChoiceLabels(draft.options)) {
+    return "A–D veya A–E sıralı 4 ya da 5 şık olmalı.";
   }
 
   if (draft.options.some((option) => !option.option_text.trim())) {

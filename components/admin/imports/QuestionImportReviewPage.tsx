@@ -1,5 +1,6 @@
 "use client";
 
+import { normalizeChoiceOptions } from "@/lib/multiple-choice-options";
 import { useRouter } from "next/navigation";
 import { FormEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, CircleCheckBig, Trash2 } from "lucide-react";
@@ -43,23 +44,7 @@ type EditableItem = {
   }>;
 };
 
-const fixedOptionLabels = ["A", "B", "C", "D", "E"] as const;
-
-function normalizeReviewOptions(
-  options?: EditableItem["options"] | AdminQuestionImportItem["options"] | null,
-): EditableItem["options"] {
-  const optionMap = new Map((options ?? []).map((option) => [option.label, option]));
-
-  return fixedOptionLabels.map((label, index) => {
-    const existing = optionMap.get(label);
-
-    return {
-      label,
-      option_text: existing?.option_text ?? "",
-      is_correct: existing?.is_correct ?? index === 0,
-    };
-  });
-}
+const normalizeReviewOptions = normalizeChoiceOptions;
 
 function toEditableItem(item: AdminQuestionImportItem): EditableItem {
   return {
